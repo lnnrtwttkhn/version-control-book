@@ -1,0 +1,40 @@
+You main / master branch is protected
+
+::: {.callout-note, title=“main or master branch”?}
+
+Every Git repository has an initial or original branch, which is the first branch to be created when a new repository is generated.
+Historically, the default name for this initial branch was master.
+This term came from Bitkeeper, a predecessor to Git.
+Bitkeeper referred to the source of truth as the “master repository” and other copies as “slave repositories”.
+This shows how common master/slave references have been in technology, and the difficulty in knowing how the term master should be interpreted.
+
+
+
+
+- Since October 1, 2020 the default branch name for new repositories on GitHub is main (see [this blogpost](https://github.blog/changelog/2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main/))
+
+https://sfconservancy.org/news/2020/jun/23/gitbranchname/
+
+Renaming the Local master Branch to main
+
+The first step is to rename the “master” branch in your local Git repositories:
+
+$ git branch -m master main
+
+https://www.git-tower.com/learn/git/faq/git-rename-master-to-main
+
+
+:::
+
+
+A short, descriptive branch name enables your collaborators to see ongoing work at a glance.
+For example, increase-test-timeout or add-code-of-conduct. For more information, see “Creating and deleting branches within your repository.”
+
+
+By creating a branch, you create a space to work without affecting the default branch. Additionally, you give collaborators a chance to review your work.
+
+On your branch, make any desired changes to the repository. For more information, see “Creating new files”, “Editing files”, “Renaming a file”, “Moving a file to a new location”, or “Deleting files in a repository”.
+
+Your branch is a safe place to make changes. If you make a mistake, you can revert your changes or push additional changes to fix the mistake. Your changes will not end up on the default branch until you merge your branch.
+
+Tip: Make a separate branch for each set of unrelated changes. This makes it easier for reviewers to give feedback. It also makes it easier for you and future collaborators to understand the changes and to revert or build on them. Additionally, if there is a delay in one set of changes, your other changes aren’t also delayed
