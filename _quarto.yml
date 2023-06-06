@@ -1,23 +1,78 @@
 project:
   type: book
+  output-dir: _book
+  
+  preview: 
+    port: 3333
+    browser: true
+    watch-inputs: true
+    navigate: true
 
 book:
   title: "Version control of code and data using Git and DataLad"
-  author: "Lennart Wittkuhn"
+  author:
+    - id: wittkuhn
+      name:
+        given: Lennart
+        family: Wittkuhn
+        literal: Lennart Wittkuhn
+        # dropping-particle: string
+        # non-dropping-particle: string
+      url: https://lennartwittkuhn.com/
+      email: lennart.wittkuhn@uni-hamburg.de
+      # fax: string
+      orcid: 0000-0003-2966-6888
+      # note: string
+      # acknowledgements: string
+      attributes:
+        corresponding: true
+        # equal-contributor: boolean
+        # deceased: boolean
+      # metadata: object
+      affiliations:
+        - ref: uhh-psych
+  search: true
+  repo-url: https://github.com/lnnrtwttkhn/version-control-book/
+  repo-actions: [edit, issue, source]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  favicon: static/images/git_icon.svg
+  twitter-card: false
+  site-url: https://lennartwittkuhn.com/version-control-book
 #  date: "6/3/2023"
   chapters:
     - index.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
+  page-navigation: true
 
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
+    page-layout: full
+    # fontcolor: black
+    # linkcolor: black
+    link-external-newwindow: true
+    toc: true
+    toc-depth: 4
+    toc-title: "Contents"
+    code-link: true
+    code-copy: true
+    code-overflow: wrap
+    html-math-method: katex
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true
+    highlight-style: pygments
+    include-after-body: plausible.html
   pdf:
     documentclass: scrreprt
 
+metadata-files:
+  - _affiliations.yml
 
 
