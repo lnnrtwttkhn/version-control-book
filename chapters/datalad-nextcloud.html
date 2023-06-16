@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.321">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Version Control of Code and Data for Scientists - 4&nbsp; DataLad Nextcloud</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../references.html" rel="next">
+<link href="../chapters/command-line.html" rel="prev">
+<link href="../static/images/git_icon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/datalad-nextcloud.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Version Control of Code and Data for Scientists</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data-for-Scientists.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data-for-Scientists.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intro-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Version Control</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installation &amp; Setup</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/command-line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Command Line Basics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/datalad-nextcloud.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation"><span class="header-section-number">4.1</span> Preparation</a>
+  <ul class="collapse">
+  <li><a href="#create-an-example-dataset" id="toc-create-an-example-dataset" class="nav-link" data-scroll-target="#create-an-example-dataset"><span class="header-section-number">4.1.1</span> Create an example dataset</a></li>
+  <li><a href="#install-datalad-next" id="toc-install-datalad-next" class="nav-link" data-scroll-target="#install-datalad-next"><span class="header-section-number">4.1.2</span> Install DataLad NEXT</a></li>
+  </ul></li>
+  <li><a href="#walkthrough-hosting-datalad-datasets-on-nextcloud" id="toc-walkthrough-hosting-datalad-datasets-on-nextcloud" class="nav-link" data-scroll-target="#walkthrough-hosting-datalad-datasets-on-nextcloud"><span class="header-section-number">4.2</span> Walkthrough: Hosting DataLad datasets on Nextcloud</a>
+  <ul class="collapse">
+  <li><a href="#get-the-webdav-address" id="toc-get-the-webdav-address" class="nav-link" data-scroll-target="#get-the-webdav-address"><span class="header-section-number">4.2.1</span> Get the WebDAV address</a></li>
+  <li><a href="#create-the-webdav-datalad-sibling" id="toc-create-the-webdav-datalad-sibling" class="nav-link" data-scroll-target="#create-the-webdav-datalad-sibling"><span class="header-section-number">4.2.2</span> Create the WebDAV DataLad sibling</a></li>
+  <li><a href="#create-a-new-app-password" id="toc-create-a-new-app-password" class="nav-link" data-scroll-target="#create-a-new-app-password"><span class="header-section-number">4.2.3</span> Create a new app password</a></li>
+  <li><a href="#push-the-dataset-to-nextcloud" id="toc-push-the-dataset-to-nextcloud" class="nav-link" data-scroll-target="#push-the-dataset-to-nextcloud"><span class="header-section-number">4.2.4</span> Push the dataset to Nextcloud</a></li>
+  <li><a href="#clone-dataset" id="toc-clone-dataset" class="nav-link" data-scroll-target="#clone-dataset"><span class="header-section-number">4.2.5</span> Clone dataset</a></li>
+  <li><a href="#link-sharing" id="toc-link-sharing" class="nav-link" data-scroll-target="#link-sharing"><span class="header-section-number">4.2.6</span> Link sharing</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links"><span class="header-section-number">4.2.7</span> Links</a></li>
+  </ul></li>
+  <li><a href="#walkthough-hosting-datalad-datasets-on-owncloud" id="toc-walkthough-hosting-datalad-datasets-on-owncloud" class="nav-link" data-scroll-target="#walkthough-hosting-datalad-datasets-on-owncloud"><span class="header-section-number">4.3</span> Walkthough: Hosting DataLad datasets on ownCloud</a>
+  <ul class="collapse">
+  <li><a href="#get-the-webdav-address-1" id="toc-get-the-webdav-address-1" class="nav-link" data-scroll-target="#get-the-webdav-address-1"><span class="header-section-number">4.3.1</span> Get the WebDAV address</a></li>
+  <li><a href="#public-sharing" id="toc-public-sharing" class="nav-link" data-scroll-target="#public-sharing"><span class="header-section-number">4.3.2</span> Public sharing</a></li>
+  <li><a href="#interacting-with-non-datalad-users." id="toc-interacting-with-non-datalad-users." class="nav-link" data-scroll-target="#interacting-with-non-datalad-users."><span class="header-section-number">4.3.3</span> Interacting with non datalad users.</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4.3.4</span> References</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/datalad-nextcloud.qmd" class="toc-action">View source</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="preparation" class="level2 page-columns page-full" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">4.1</span> Preparation</h2>
+<section id="create-an-example-dataset" class="level3 page-columns page-full" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="create-an-example-dataset"><span class="header-section-number">4.1.1</span> Create an example dataset</h3>
+<p>First, we create an example dataset. The steps below will download a small public neuroimaging dataset, and transform it into a DataLad dataset. We will use the <a href="https://www.fil.ion.ucl.ac.uk/spm/data/auditory/">MoAEpilot</a> dataset containing anatomical and functional images from a single participant, as well as some metadata. This procedure is copied from the chapter <a href="https://handbook.datalad.org/en/latest/basics/101-139-s3.html#your-datalad-dataset">“Walk-through: Amazon S3 as a special remote”</a> in the DataLad Handbook.</p>
+
+<div class="no-row-height column-margin column-container"><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Details about the MoAEpilot dataset
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The following text has been copied from the <a href="https://www.fil.ion.ucl.ac.uk/spm/data/auditory/">MoAEpilot</a> website:</p>
+<blockquote class="blockquote">
+<p>This experiment was conducted by Geraint Rees under the direction of Karl Friston and the FIL methods group. The purpose was to explore equipment and techniques in the early days of our fMRI experience. As such it has not been formally written up, and is freely available for personal education and evaluation purposes.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>96 acquisitions were made (RT=7s), in blocks of 6, giving 16 42s blocks. The condition for successive blocks alternated between rest and auditory stimulation, starting with rest. Auditory stimulation was with bi-syllabic words presented binaurally at a rate of 60 per minute. The functional data starts at acquisiton 4, image fM00223_004. Due to T1 effects it is advisable to discard the first few scans (there were no “dummy” lead-in scans).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>These whole brain BOLD/EPI images were acquired on a modified 2T Siemens MAGNETOM Vision system. Each acquisition consisted of 64 contiguous slices (64x64x64 3mm x 3mm x 3mm voxels). Acquisition took 6.05s, with the scan to scan repeat time (RT) set arbitrarily to 7s.</p>
+</blockquote>
+</div>
+</div>
+</div></div><p>First, move to the directory on your computer where you want to create the dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode bash code-annotation-code code-with-copy"><code class="sourceCode bash"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>wherever-you-want-to-create-the-dataset<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, we create a new directory called <code>mydataset</code>, we download and extract the data, and then we move the extracted contents into our new directory.</p>
+<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> mydataset</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://www.fil.ion.ucl.ac.uk/spm/download/data/MoAEpilot/MoAEpilot.bids.zip <span class="at">-O</span> mydataset.zip</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> mydataset.zip <span class="at">-d</span> mydataset</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4">4</button><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> mydataset.zip</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5">5</button><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> mydataset</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="6">6</button><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> MoAEpilot/<span class="pp">*</span> .</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="7">7</button><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-R</span> MoAEpilot</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="1" data-code-cell="annotated-cell-2" data-code-annotation="1">Create a new directory (<code>mkdir</code>) for the datatset called <code>mydataset</code></span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-lines="2" data-code-cell="annotated-cell-2" data-code-annotation="2">Download the dataset using <code>wget</code> and save the <code>.zip</code> file</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-lines="3" data-code-cell="annotated-cell-2" data-code-annotation="3">Unzip the dataset and extract the contents into the <code>mydataset</code> directory</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-lines="4" data-code-cell="annotated-cell-2" data-code-annotation="4">Remove the <code>.zip</code> file</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-lines="5" data-code-cell="annotated-cell-2" data-code-annotation="5"><code>cd</code> into the folder of the dataset</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-lines="6" data-code-cell="annotated-cell-2" data-code-annotation="6">Move (<code>mv</code>) the contents of the <code>MoAEpilot</code> into the root of the directory</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-lines="7" data-code-cell="annotated-cell-2" data-code-annotation="7">Remove the (now empty) <code>MoAEpilot</code> folder</span>
+</dd>
+</dl>
+<p>Now we can view the directory tree to see the dataset content:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> CHANGES</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> README</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> dataset_description.json</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sub-01</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── anat</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> │&nbsp;&nbsp; └── sub-01_T1w.nii</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── func</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span>     ├── sub-01_task-auditory_bold.nii</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span>     └── sub-01_task-auditory_events.tsv</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> task-auditory_bold.json</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">4</span> directories, 7 files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can turn our <code>neuro-data-s3</code> directory into a DataLad dataset with the <code>datalad create --force</code> command. After that, we save the dataset with <code>datalad save</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> create <span class="at">--force</span> <span class="at">--description</span> <span class="st">"neuro data to host via webdav"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> save <span class="at">-m</span> <span class="st">"Add public data"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="install-datalad-next" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="install-datalad-next"><span class="header-section-number">4.1.2</span> Install DataLad NEXT</h3>
+<p><a href="http://docs.datalad.org/projects/next/en/latest/index.html">DataLad NEXT</a> is a DataLad extension that “can be thought of as a staging area for additional functionality, or for improved performance and user experience.”</p>
+<ol type="1">
+<li>Install DataLad NEXT from <a href="https://pypi.org/project/datalad-next/">PyPi</a> or <a href="https://github.com/datalad/datalad-next">GitHub</a>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip: Use a virtual environment to install DataLad Next
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create and enter a new virtual environment (optional)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">virtualenv</span> <span class="at">--python</span><span class="op">=</span>python3 ~/env/dl-next</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> ~/env/dl-next/bin/activate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install datalad-next</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Enable the extension for autoloading:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--add</span> datalad.extensions.load next</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="walkthrough-hosting-datalad-datasets-on-nextcloud" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="walkthrough-hosting-datalad-datasets-on-nextcloud"><span class="header-section-number">4.2</span> Walkthrough: Hosting DataLad datasets on Nextcloud</h2>
+<p>This walktrough demonstrates how to collaborate on DataLad datasets using the WebDAV-enabled cloud storage Nextcloud. As an example, we use UHH-Cloud at University of Hamburg, which is based on Nextcloud.</p>
+<blockquote class="blockquote">
+<p>Nextcloud Hub is the industry-leading, fully open-source, on-premises content collaboration platform. Teams access, share and edit their documents, chat and participate in video calls and manage their mail and calendar and projects across mobile, desktop and web interfaces. – https://nextcloud.com/about/</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>“Students have a storage quota of 100 gigabytes each, while all other users have a storage quota of 5 terabytes each.”</em> – translated from §2 (2) of the <a href="https://www.rrz.uni-hamburg.de/services/kollaboration/uhhcloud/nutzungsbedingungen.html">terms of use for the UHH-Cloud service</a> (in German)</p>
+</blockquote>
+<section id="get-the-webdav-address" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="get-the-webdav-address"><span class="header-section-number">4.2.1</span> Get the WebDAV address</h3>
+<ol type="1">
+<li>Click on <i class="fa-solid fa-gear" aria-label="gear"></i> <code>Files settings</code> (bottom left)</li>
+<li>Copy the WebDAV address, for example: <code>https://cloud.uni-hamburg.de/remote.php/dav/files/BBC5706%40uni-hamburg.de/</code></li>
+</ol>
+</section>
+<section id="create-the-webdav-datalad-sibling" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="create-the-webdav-datalad-sibling"><span class="header-section-number">4.2.2</span> Create the WebDAV DataLad sibling</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> create-sibling-webdav <span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--dataset</span> . <span class="dt">\</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--name</span> uhhcloud <span class="dt">\</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--mode</span> filetree <span class="dt">\</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'https://cloud.uni-hamburg.de/remote.php/dav/files/BBC5706%40uni-hamburg.de/neuro-data-s3'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You will be asked for a user name and a password:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">User</span> name and password are required for WebDAV access at https://cloud.uni-hamburg.de/remote.php/dav/files/BBC5706%40uni-hamburg.de/neuro-data-s3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-a-new-app-password" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="create-a-new-app-password"><span class="header-section-number">4.2.3</span> Create a new app password</h3>
+<ol type="1">
+<li>Go to the <i class="fa-solid fa-lock" aria-label="lock"></i> <a href="https://cloud.uni-hamburg.de/settings/user/security">UHH-Cloud security settings</a></li>
+<li>Select an app name (e.g., “DataLad”) and click “Create new app passsword”.</li>
+<li>Save the username (e.g., <code>BBC5706@uni-hamburg.de</code>) and password securely (e.g., in a password manager). You will need them repeatedly.</li>
+</ol>
+<p>Enter the Nextcloud app username and password created in the previous step:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user:</span> <span class="op">&lt;</span>your_username<span class="op">&gt;</span> # insert your username, e.g., BBC5706@uni-hamburg.de</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">password:</span> <span class="co"># enter the app password</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">password</span> <span class="er">(</span><span class="ex">repeat</span><span class="kw">)</span><span class="bu">:</span> <span class="co"># enter the app password again</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The following output confirms that the configuration of the Nextcloud DataLad sibling was successful:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">create_sibling_webdav.storage</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> . [uhhcloud-storage: https://cloud.uni-hamburg.de/remote.php/dav/files/BBC5706%40uni-hamburg.de/neuro-data-s3]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[INFO</span>   ] Configure additional publication dependency on <span class="st">"uhhcloud-storage"</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">create_sibling_webdav</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> . [uhhcloud: datalad-annex::<span class="pp">?</span>type=webdav<span class="kw">&amp;</span><span class="va">encryption</span><span class="op">=</span>none<span class="kw">&amp;</span><span class="va">exporttree</span><span class="op">=</span>yes<span class="kw">&amp;</span><span class="va">url</span><span class="op">=</span>https%3A//cloud.uni-hamburg.de/remote.php/dav/files/BBC5706%2540uni-hamburg.de/neuro-data-s3]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">[WARNING]</span> The entered credential will not be stored, a credential with the default name <span class="st">'webdav-BBC5706@uni-hamburg.de-https://cloud.uni-hamburg.de/UHH-Cloud'</span> already exists. Specify a credential name via the <span class="kw">`</span><span class="ex">credential</span><span class="kw">`</span> parameter  and/or configure a credential with the datalad-credentials command with a <span class="kw">`</span><span class="va">realm</span><span class="op">=</span>https://cloud.uni-hamburg.de/UHH-Cloud<span class="kw">`</span> property </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="push-the-dataset-to-nextcloud" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="push-the-dataset-to-nextcloud"><span class="header-section-number">4.2.4</span> Push the dataset to Nextcloud</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> push <span class="at">--to</span> uhhcloud</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The following output confirms that the DataLad dataset has been successfully pushed to Nextcloud:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> .datalad/.gitattributes <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> .datalad/config <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> .gitattributes <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> CHANGES <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> README <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> dataset_description.json <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> sub-01/anat/sub-01_T1w.nii <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> sub-01/func/sub-01_task-auditory_bold.nii <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> sub-01/func/sub-01_task-auditory_events.tsv <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="ex">copy</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> task-auditory_bold.json <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="ex">publish</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> . <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span> <span class="ex">[refs/heads/main-</span><span class="op">&gt;</span>uhhcloud:refs/heads/main [new branch]]</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="ex">publish</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> . <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span> <span class="ex">[refs/heads/git-annex-</span><span class="op">&gt;</span>uhhcloud:refs/heads/git-annex [new branch]]</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="ex">action</span> summary:</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="ex">copy</span> <span class="er">(</span><span class="ex">ok:</span> 10<span class="kw">)</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="ex">publish</span> <span class="er">(</span><span class="ex">ok:</span> 2<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can now view the <a href="https://cloud.uni-hamburg.de/apps/files/">files on UHH-Cloud</a> and inspect them through the web browser.</p>
+<p><img src="../static/images/nextcloud_datalad_push.png" class="img-fluid"> Note that on the cloud storage portal, the dataset content looks like any other upload but it remains a complete datatset that can be cloned as if it would be hosted on GitLab or GitHub (for details, see the next chapter).</p>
+</section>
+<section id="clone-dataset" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="clone-dataset"><span class="header-section-number">4.2.5</span> Clone dataset</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="1">1</button><span id="annotated-cell-13-1" class="code-annotation-target"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="annotated-cell-13-2"><a href="#annotated-cell-13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> clone <span class="dt">\</span></span>
+<span id="annotated-cell-13-3"><a href="#annotated-cell-13-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'webdavs://cloud.uni-hamburg.de/remote.php/dav/files/BBC5706%40uni-hamburg.de/neuro-data-s3'</span> <span class="dt">\</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="2">2</button><span id="annotated-cell-13-4" class="code-annotation-target"><a href="#annotated-cell-13-4" aria-hidden="true" tabindex="-1"></a>  neuro-data-s3-clone</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="1" data-code-cell="annotated-cell-13" data-code-annotation="1"><code>cd</code> out of the current dataset. You can also chose any other target directory on your system.</span>
+</dd>
+<dt data-target-cell="annotated-cell-13" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-lines="4" data-code-cell="annotated-cell-13" data-code-annotation="2">Make sure to replace <code>https</code> with <code>webdavs</code>!</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>Note one important aspect of this step: We again use the WebDAV address to clone the dataset but replace <code>https</code> with <code>webdavs</code>.</p>
+<p>To complete cloning the dataset, we need to provide the access credentials again:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">A</span> credential is required for access</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1">1</button><span id="annotated-cell-14-2" class="code-annotation-target"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">user:</span></span>
+<span id="annotated-cell-14-3"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">password:</span></span>
+<span id="annotated-cell-14-4"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">password</span> <span class="er">(</span><span class="ex">repeat</span><span class="kw">)</span><span class="bu">:</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="2" data-code-cell="annotated-cell-14" data-code-annotation="1">Enter your app password user address (e.g., <code>BBC5706@uni-hamburg.de</code>)</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[INFO</span>   ] Remote origin uses a protocol not supported by git-annex<span class="kw">;</span> <span class="ex">setting</span> annex-ignore</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[INFO</span>   ] access to 1 dataset sibling uhhcloud-storage not auto-enabled, enable with:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>       <span class="ex">datalad</span> siblings <span class="at">-d</span> <span class="st">"/tmp/neuro-data-s3-clone"</span> enable <span class="at">-s</span> uhhcloud-storage</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> /tmp/neuro-data-s3-clone <span class="er">(</span><span class="ex">dataset</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We use the suggested command</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> siblings <span class="at">-d</span> <span class="st">"/tmp/neuro-data-s3-clone"</span> enable <span class="at">-s</span> uhhcloud-storage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CommandError:</span> <span class="st">'git -c diff.ignoreSubmodules=none annex enableremote uhhcloud-storage -c annex.dotfiles=true'</span> failed with exitcode 1 under /tmp/neuro-data-s3-clone</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">enableremote</span> uhhcloud-storage </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">failed</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">Set</span> both WEBDAV_USERNAME and WEBDAV_PASSWORD to use webdav</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ex">git-annex:</span> Need to configure webdav username and password.</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="ex">CallStack</span> <span class="er">(</span><span class="ex">from</span> HasCallStack<span class="kw">)</span><span class="bu">:</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">error,</span> called at ./Remote/WebDAV.hs:324:21 in main:Remote.WebDAV</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Set <code>WEBDAV_USERNAME</code> and <code>WEBDAV_PASSWORD</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-18"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="1">1</button><span id="annotated-cell-18-1" class="code-annotation-target"><a href="#annotated-cell-18-1" aria-hidden="true" tabindex="-1"></a><span class="va">DATALAD_CREDENTIAL_WEBDAV_USERNAME</span><span class="op">=</span>BBC5706@uni-hamburg.de</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="2">2</button><span id="annotated-cell-18-2" class="code-annotation-target"><a href="#annotated-cell-18-2" aria-hidden="true" tabindex="-1"></a><span class="va">DATALAD_CREDENTIAL_WEBDAV_PASSWORD</span><span class="op">=</span>gUdrc-ZX8sT-PqJLf-YRmS4-hKMPW</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-18" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="1" data-code-cell="annotated-cell-18" data-code-annotation="1">Enter your app user address (e.g., <code>BBC5706@uni-hamburg.de</code>)</span>
+</dd>
+<dt data-target-cell="annotated-cell-18" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-lines="2" data-code-cell="annotated-cell-18" data-code-annotation="2">Enter your app user password (e.g., <code>gUdrc-ZX8sT-PqJLf-YRmS4-hKMPW</code>)</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> tmp</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">WEBDAV_USERNAME</span><span class="op">=</span>BBC5706@uni-hamburg.de <span class="dt">\</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">WEBDAV_PASSWORD</span><span class="op">=</span>gUdrc-ZX8sT-PqJLf-YRmS4-hKMPW <span class="dt">\</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">git</span> annex enableremote uhhcloud-storage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The output confirms that initializing the <code>uhhcloud-storage</code> remote was successful:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">enableremote</span> uhhcloud-storage <span class="er">(</span><span class="ex">testing</span> WebDAV server...<span class="kw">)</span> <span class="ex">ok</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">recording</span> state in git...<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can now run <code>datalad get .</code> to retrieve all contents of the dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> get . </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The output confirms that all contents were successfully retrieved from the <code>uhhcloud-storage</code> sibling:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">get</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> CHANGES <span class="er">(</span><span class="fu">file</span><span class="kw">)</span> <span class="ex">[from</span> uhhcloud-storage...]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">get</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> README <span class="er">(</span><span class="fu">file</span><span class="kw">)</span> <span class="ex">[from</span> uhhcloud-storage...]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">get</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> dataset_description.json <span class="er">(</span><span class="fu">file</span><span class="kw">)</span> <span class="ex">[from</span> uhhcloud-storage...]</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="ex">get</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> sub-01/anat/sub-01_T1w.nii <span class="er">(</span><span class="fu">file</span><span class="kw">)</span> <span class="ex">[from</span> uhhcloud-storage...]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="ex">get</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> sub-01/func/sub-01_task-auditory_bold.nii <span class="er">(</span><span class="fu">file</span><span class="kw">)</span> <span class="ex">[from</span> uhhcloud-storage...]</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="ex">get</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> sub-01/func/sub-01_task-auditory_events.tsv <span class="er">(</span><span class="fu">file</span><span class="kw">)</span> <span class="ex">[from</span> uhhcloud-storage...]</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="ex">get</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> task-auditory_bold.json <span class="er">(</span><span class="fu">file</span><span class="kw">)</span> <span class="ex">[from</span> uhhcloud-storage...]</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="ex">action</span> summary:</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="ex">get</span> <span class="er">(</span><span class="ex">ok:</span> 7<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now the dataset is fully ready for local use and complete with its entire history.</p>
+</section>
+<section id="link-sharing" class="level3" data-number="4.2.6">
+<h3 data-number="4.2.6" class="anchored" data-anchor-id="link-sharing"><span class="header-section-number">4.2.6</span> Link sharing</h3>
+<p>Nextcloud allows to create a public and private links that can be used to share the dataset.</p>
+<ul>
+<li>:sparkles: <strong>Multiple links:</strong> Use of multiple share links with varying permissions and individual labels</li>
+<li>:sparkles: <strong>Custom permissions:</strong> Flexibly combine read, upload, edit or delete permissions</li>
+<li>:sparkles: <strong>Options:</strong> Hide download, password protect, set expiration date, note to recipient</li>
+</ul>
+</section>
+<section id="links" class="level3" data-number="4.2.7">
+<h3 data-number="4.2.7" class="anchored" data-anchor-id="links"><span class="header-section-number">4.2.7</span> Links</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=XkcwpqPQHQY">YouTube video: “Deposit and retrieve DataLad datasets with WebDAV services”</a></li>
+<li><a href="https://cloud.uni-hamburg.de/">UHH-Cloud</a> at the University of Hamburg, Germany</li>
+<li><a href="https://www.rrz.uni-hamburg.de/services/kollaboration/uhhcloud.html">Details on UHH-Cloud</a> (in German)</li>
+<li><a href="https://docs.nextcloud.com/server/25/user_manual/en/files/access_webdav.html">“Accessing Nextcloud files using WebDAV” - Nextcloud user manual</a></li>
+<li><a href="https://github.com/datalad/datalad-next">DataLad NEXT extension</a></li>
+<li><a href="http://docs.datalad.org/projects/next/en/latest/generated/man/datalad-create-sibling-webdav.html"><code>datalad create-sibling-webdav</code> documentation</a></li>
+<li><a href="https://git-annex.branchable.com/special_remotes/webdav/">WebDAV git annex</a></li>
+</ul>
+</section>
+</section>
+<section id="walkthough-hosting-datalad-datasets-on-owncloud" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="walkthough-hosting-datalad-datasets-on-owncloud"><span class="header-section-number">4.3</span> Walkthough: Hosting DataLad datasets on ownCloud</h2>
+<blockquote class="blockquote">
+<p>50 GByte default storage space per user; flexible increase possible upon request</p>
+</blockquote>
+<section id="get-the-webdav-address-1" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="get-the-webdav-address-1"><span class="header-section-number">4.3.1</span> Get the WebDAV address</h3>
+<ol type="1">
+<li>Click on <i class="fa-solid fa-gear" aria-label="gear"></i> <code>Settings</code> (bottom left)</li>
+<li>Copy the WebDAV address, for example: <code>https://owncloud.gwdg.de/remote.php/nonshib-webdav/</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> create-sibling-webdav <span class="dt">\</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--dataset</span> . <span class="dt">\</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--name</span> owncloud-gwdg <span class="dt">\</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--mode</span> filetree <span class="dt">\</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'https://owncloud.gwdg.de/remote.php/nonshib-webdav/&lt;dataset-name&gt;'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Replace <code>&lt;dataset-name&gt;</code> with the name of your dataset, i.e., the name of your dataset folder. In this example, we replace <code>&lt;dataset-name&gt;</code> with <code>neuro-data-s3</code>. The complete command for your example hence looks like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> create-sibling-webdav <span class="dt">\</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--dataset</span> . <span class="dt">\</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--name</span> owncloud-gwdg <span class="dt">\</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--mode</span> filetree <span class="dt">\</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">'https://owncloud.gwdg.de/remote.php/nonshib-webdav/neuro-data-s3'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You will be asked to provide your ownCloud account credentials:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-25"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="1">1</button><span id="annotated-cell-25-1" class="code-annotation-target"><a href="#annotated-cell-25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="2">2</button><span id="annotated-cell-25-2" class="code-annotation-target"><a href="#annotated-cell-25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">password:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="3">3</button><span id="annotated-cell-25-3" class="code-annotation-target"><a href="#annotated-cell-25-3" aria-hidden="true" tabindex="-1"></a><span class="ex">password</span> <span class="er">(</span><span class="ex">repeat</span><span class="kw">)</span><span class="bu">:</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-25" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="1" data-code-cell="annotated-cell-25" data-code-annotation="1">Enter the email address of your ownCloud account.</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-lines="2" data-code-cell="annotated-cell-25" data-code-annotation="2">Enter the password of your ownCloud account.</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-lines="3" data-code-cell="annotated-cell-25" data-code-annotation="3">Repeat the password of your ownCloud account.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">create_sibling_webdav.storage</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> . [owncloud-gwdg-storage: https://owncloud.gwdg.de/remote.php/nonshib-webdav/neuro-data-s3]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[INFO</span>   ] Configure additional publication dependency on <span class="st">"owncloud-gwdg-storage"</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">create_sibling_webdav</span><span class="er">(</span><span class="ex">ok</span><span class="kw">)</span><span class="bu">:</span> . [owncloud-gwdg: datalad-annex::<span class="pp">?</span>type=webdav<span class="kw">&amp;</span><span class="va">encryption</span><span class="op">=</span>none<span class="kw">&amp;</span><span class="va">exporttree</span><span class="op">=</span>yes<span class="kw">&amp;</span><span class="va">url</span><span class="op">=</span>https%3A//owncloud.gwdg.de/remote.php/nonshib-webdav/neuro-data-s3]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="ex">[WARNING]</span> The entered credential will not be stored, a credential with the default name <span class="st">'webdav-wittkuhn@mpib-berlin.mpg.de-https://owncloud.gwdg.de/ownCloud'</span> already exists. Specify a credential name via the <span class="kw">`</span><span class="ex">credential</span><span class="kw">`</span> parameter  and/or configure a credential with the datalad-credentials command with a <span class="kw">`</span><span class="va">realm</span><span class="op">=</span>https://owncloud.gwdg.de/ownCloud<span class="kw">`</span> property </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, we can push the dataset to ownCloud:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-27"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-27" data-target-annotation="1">1</button><span id="annotated-cell-27-1" class="code-annotation-target"><a href="#annotated-cell-27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> push <span class="at">--to</span> owncloud-gwdg</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-27" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="1" data-code-cell="annotated-cell-27" data-code-annotation="1">Use <code>datalad push</code> to push the dataset contents to ownCloud. For details on <code>datalad push</code>, see the <a href="http://docs.datalad.org/en/stable/generated/man/datalad-push.html">command line reference</a> and <a href="https://handbook.datalad.org/en/latest/basics/101-141-push.html">this chapter</a> in the DataLad Handbook.</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>We can now view the <a href="https://owncloud.gwdg.de/index.php/apps/files/">files on ownCloud</a> and inspect them through the web browser:</p>
+<p><img src="../static/images/owncloud_datalad_push.png" class="img-fluid"></p>
+</section>
+<section id="public-sharing" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="public-sharing"><span class="header-section-number">4.3.2</span> Public sharing</h3>
+<p>Create a public share link.</p>
+</section>
+<section id="interacting-with-non-datalad-users." class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="interacting-with-non-datalad-users."><span class="header-section-number">4.3.3</span> Interacting with non datalad users.</h3>
+</section>
+<section id="references" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="references"><span class="header-section-number">4.3.4</span> References</h3>
+<ul>
+<li>https://www.gwdg.de/storage-services/gwdg-owncloud</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script defer="" data-domain="lennartwittkuhn.com/version-control-book" src="https://plausible.io/js/script.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Handle positioning of the toggle
+      window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/command-line.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Command Line Basics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
