@@ -9,7 +9,7 @@ project:
     navigate: true
 
 book:
-  title: "Version control of code and data using Git and DataLad"
+  title: "Version Control of Code and Data for Scientists"
   author:
     - id: wittkuhn
       name:
@@ -33,7 +33,8 @@ book:
         - ref: uhh-psych
   search: true
   repo-url: https://github.com/lnnrtwttkhn/version-control-book/
-  repo-actions: [edit, issue, source]
+  repo-branch: main
+  repo-actions: [issue, source]
   downloads: [pdf, epub]
   sharing: [twitter, facebook]
   favicon: static/images/git_icon.svg
@@ -57,20 +58,22 @@ format:
     # linkcolor: black
     link-external-newwindow: true
     toc: true
-    toc-depth: 4
-    toc-title: "Contents"
+    toc-depth: 3
+    toc-title: "On this page"
+    number-sections: true
     code-link: true
     code-copy: true
+    code-fold: false
+    code-tools: false
+    code-line-numbers: false
+    code-annotations: hover
     code-overflow: wrap
-    html-math-method: katex
+    highlight-style: monokai
     anchor-sections: true
     fig-cap-location: margin
     reference-location: margin
     footnotes-hover: true
-    highlight-style: pygments
     include-after-body: plausible.html
-  pdf:
-    documentclass: scrreprt
 
 metadata-files:
   - _affiliations.yml
