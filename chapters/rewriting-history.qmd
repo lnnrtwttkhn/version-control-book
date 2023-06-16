@@ -1,0 +1,60 @@
+---
+title: "rewriting-history"
+---
+
+## How to avoid accidental commits
+
+There are a few simple tricks to avoid committing things you don't want committed:
+
+    Use a visual program like GitHub Desktop or gitk to commit changes. Visual programs generally make it easier to see exactly which files will be added, deleted, and modified with each commit.
+    Avoid the catch-all commands git add . and git commit -a on the command line—use git add filename and git rm filename to individually stage files, instead.
+    Use git add --interactive to individually review and stage changes within each file.
+    Use git diff --cached to review the changes that you have staged for commit. This is the exact diff that git commit will produce as long as you don't use the -a flag.
+
+
+
+You accidentally added a large file to a previous commit.
+
+Now you want to remove the file but keep all commits that came afterwards.
+
+callout box
+Warning: If you run git filter-repo after stashing changes, you won't be able to retrieve your changes with other stash commands. Before running git filter-repo, we recommend unstashing any changes you've made. To unstash the last set of changes you've stashed, run git stash show -p | git apply -R. For more information, see Git Tools - Stashing and Cleaning.
+
+### Install `git filter-repo`
+
+Install the latest release of the git filter-repo tool. You can install git-filter-repo manually or by using a package manager. For example, to install the tool with HomeBrew, use the brew install command.
+
+```{bash}
+brew install git-filter-repo
+```
+
+For more information, see INSTALL.md in the newren/git-filter-repo repository.
+
+### Clone the repository
+
+If you don't already have a local copy of your repository with sensitive data in its history, clone the repository to your local computer.
+
+```{bash}
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+### Navigate into the repository's working directory.
+
+```{bash}
+cd YOUR-REPOSITORY
+```
+
+Run the following command, replacing PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA with the path to the file you want to remove, not just its filename. These arguments will:
+
+Force Git to process, but not check out, the entire history of every branch and tag
+Remove the specified file, as well as any empty commits generated as a result
+Remove some configurations, such as the remote URL, stored in the .git/config file. You may want to back up this file in advance for restoration later.
+Overwrite your existing tags
+
+```{bash}
+git filter-repo --invert-paths --path PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA
+```
+
+## References
+
+- https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
