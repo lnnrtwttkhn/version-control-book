@@ -68,8 +68,6 @@ book:
     - references.qmd
   page-navigation: true
 
-bibliography: references.bib
-
 format:
   html:
     theme: cosmo
@@ -91,8 +89,14 @@ format:
     highlight-style: monokai
     anchor-sections: true
     fig-cap-location: margin
-    reference-location: margin
+    # references:
+    bibliography: references.bib
+    citations-hover: true
+    citation-location: document
+    citeproc: true
+    # footnotes:
     footnotes-hover: true
+    # includes:
     include-after-body: plausible.html
 
 metadata-files:
