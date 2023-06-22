@@ -75,20 +75,40 @@ Overview
 </div>
 <section id="setting-git-up" class="level1">
 <h1>Setting Git up</h1>
-<section id="identify-yourself" class="level2">
-<h2 class="anchored" data-anchor-id="identify-yourself">Identify yourself</h2>
+<p>Before you start using Git, you need to</p>
+<section id="identify-yourself-fa-clock" class="level2">
+<h2 class="anchored" data-anchor-id="identify-yourself-fa-clock">Identify yourself </h2>
 <p>Before you get going with Git, it is necessary for you to set an username and email. You can later change this. You can do this using the Terminal.</p>
-<pre class="{bash}"><code>$ git config --global user.name "Example"
-$ git config --global user.email beispiel@example.com</code></pre>
+<pre class="{bash}"><code>
+git config --global user.name "Example"
+git config --global user.email beispiel@example.com
+</code></pre>
 </section>
 <section id="set-git-editor" class="level2">
 <h2 class="anchored" data-anchor-id="set-git-editor">Set Git editor</h2>
-<pre class="{bash}"><code>git config --global core.editor "emacs"
+<pre class="{bash}"><code>
+git config --global core.editor "emacs"
 </code></pre>
 </section>
 <section id="configure-the-default-name-for-an-initial-branch" class="level2">
 <h2 class="anchored" data-anchor-id="configure-the-default-name-for-an-initial-branch">Configure the default name for an initial branch</h2>
-<pre class="{bash}"><code>git config --global init.defaultBranch main</code></pre>
+<pre class="{bash}"><code>
+git config --global init.defaultBranch main
+</code></pre>
+</section>
+<section id="check-your-settings" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-settings">Check your Settings</h2>
+<p>You can check if you configurations worked using</p>
+<pre class="{bash}"><code>
+git config --list
+</code></pre>
+<p>You should recive an output.</p>
+<pre class="{bash}"><code>
+user.name=Example
+user.email=beispiel@example.com
+init.defaultbranch=main
+core.editor=Atom
+</code></pre>
 </section>
 </section>
 
