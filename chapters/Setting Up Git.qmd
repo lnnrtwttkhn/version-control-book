@@ -1,29 +1,43 @@
 ---
-title: "Setting up Git - First steps"
-editor: visual
+title: "Setting up Git - First steps" 
+engine: knitr
+execute:
+  eval: false
 ---
 
-::: {.callout-note}
+::: callout-note
 ### Overview
 
-
-
-{{< fa clock >}} Duration: 20 min
+{{< fa clock >}} Duration: 10 min
 :::
 
 Objectives:
-- Configure user information
+
+- Configure user information 
 - Customize Git
 
 
 
-# Setting Git up
-Before you start using Git, you need to 
+In this chapter, we will cover three essential tasks to set up Git efficiently. 
 
-## Identify yourself {{< fa clock >}}
+The git config command in Git is used to get and set configuration variables that control various aspects of Git's behavior. 
+It allows you to customize your Git environment according to your preferences and requirements.
+The configuration variables are stored in configuration files and can be set at different levels: system, global, and local.
+To get a specific configuration value, you can use the following syntax 
 
-Before you get going with Git, it is necessary for you to set an username and email.
-You can later change this. You can do this using the Terminal. 
+```{bash}
+git config [--global|--local|--system] variable_name
+```
+
+
+## Identify yourself {{< fa person >}}
+
+Before you start using Git, it's important to configure your username and email address. 
+This information is crucial because Git uses it to identify the author of each commit you make. 
+By associating your commits with your username and email, it allows others to see who made the changes and facilitates collaboration within a project.
+
+Setting your username and email is a one-time setup process, but you can always update them later if needed. 
+To perform this configuration, you can use the Terminal.
 
 ```{bash}
 
@@ -32,8 +46,14 @@ git config --global user.email beispiel@example.com
 
 ```
 
+If you ever need to update your username or email, you can repeat the above steps and specify the new values. 
 
-## Set Git editor
+## Set Git editor {{< fa pen >}}
+When working with Git, you may come across various scenarios where you need to interact with text-based files, such as commit messages or merge conflict resolutions.
+Git relies on a text editor to allow you to make changes to these files within the Git workflow.
+Setting a Git editorallows you to work with a familiar and comfortable environment.
+To set your preferred text editor in Git, you can use the git config command 
+
 
 ```{bash}
 
@@ -41,7 +61,21 @@ git config --global core.editor "emacs"
 
 ```
 
-## Configure the default name for an initial branch
+From now on, when Git requires you to interact with a text editor, it will use the one you have set. 
+For example, when creating a commit, Git will open your chosen editor for you to enter the commit message.
+If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path. 
+
+
+## Configure the default name for an initial branch {{< fa code-branch >}}
+
+By default, Git uses the name "master" for the initial branch when creating a new repository. 
+However, there has been a growing movement to transition to using "main" as the default branch name instead.
+
+One of the main motivations behind this change is to promote inclusivity and remove potentially offensive terminology from the default Git workflow.
+The term "master" has historical associations that may be insensitive or evoke negative connotations for some people.
+Using "main" instead helps create a more inclusive and welcoming environment for all users.
+
+To configure the default branch name to "main" in Git, you can use the following command
 
 ```{bash}
 
@@ -49,7 +83,7 @@ git config --global init.defaultBranch main
 
 ```
 
-## Check your Settings
+## Check your Settings {{< fa gear >}}
 
 You can check if you configurations worked using
 
@@ -59,7 +93,7 @@ git config --list
 
 ```
 
-You should recive an output.
+You should recive an output similiar to this.
 
 ```{bash}
 
@@ -69,5 +103,7 @@ init.defaultbranch=main
 core.editor=Atom
 
 ```
+
+Now that your Git environment is customized to your preferences, you are ready to utilize Git.
 
 
