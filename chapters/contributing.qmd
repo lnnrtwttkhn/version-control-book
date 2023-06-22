@@ -1,0 +1,55 @@
+---
+title: "Contributing"
+engine: knitr
+execute:
+  eval: false
+---
+
+This book is made with [Quarto](https://quarto.org/).
+
+### Local development
+
+#### Setup
+
+1. Read the [Get Started](https://quarto.org/docs/get-started/) chapter of the Quarto documentation, which includes details on installation.
+
+#### Preparation
+
+1. Read this guide on how to contribute.
+2. Familiarize yourself with [Quarto Books](https://quarto.org/docs/books/).
+
+#### Build the book locally
+
+```{bash}
+quarto preview
+```
+
+#### How to add a new chapter
+
+1. Create a new Quarto document inside the `/chapters` folder
+2. Add the new chapter to `_quarto.yml`. Don't forget to specify the full path (including `/chapters/`)
+
+```{yaml}
+chapters:
+  - index.qmd
+  - chapters/YOUR-NEW-CHAPTER.qmd # <1>
+  - another-chapter.qmd
+```
+
+1. Replace `YOUR-NEW-CHAPTER` with a concise filename.
+
+### Adding references
+
+References are saved in `references.bib`.
+
+#### Resources
+
+- ["Citations & Footnotes"](https://quarto.org/docs/authoring/footnotes-and-citations.html) in the Quarto documentation.
+- [HTML options for references](https://quarto.org/docs/reference/formats/html.html#references).
+
+## Variables
+
+https://quarto.org/docs/authoring/variables.html
+
+## Acknowledgements & Attribution
+
