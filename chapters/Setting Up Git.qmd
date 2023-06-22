@@ -1,0 +1,65 @@
+---
+title: "Using Git - First steps"
+editor: visual
+---
+
+::: {.callout-note}
+### Overview
+
+
+
+{{< fa clock >}} Duration: 20 min
+:::
+
+# Setting Git up
+Before you start using Git, you need to 
+
+## Identify yourself {{< fa clock >}}
+
+Before you get going with Git, it is necessary for you to set an username and email.
+You can later change this. You can do this using the Terminal. 
+
+```{bash}
+
+git config --global user.name "Example"
+git config --global user.email beispiel@example.com
+
+```
+
+
+## Set Git editor
+
+```{bash}
+
+git config --global core.editor "emacs"
+
+```
+
+## Configure the default name for an initial branch
+
+```{bash}
+
+git config --global init.defaultBranch main
+
+```
+
+## Check your Settings
+
+You can check if you configurations worked using
+
+```{bash}
+
+git config --list
+
+```
+
+You should recive an output.
+
+```{bash}
+
+user.name=Example
+user.email=beispiel@example.com
+init.defaultbranch=main
+core.editor=Atom
+
+```
