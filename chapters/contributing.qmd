@@ -35,8 +35,15 @@ chapters:
   - chapters/YOUR-NEW-CHAPTER.qmd # <1>
   - another-chapter.qmd
 ```
-
 1. Replace `YOUR-NEW-CHAPTER` with a concise filename.
+
+<details>
+<summary>Click here to view the full current `_quarto.yml` file</summary>
+```{bash, filename="_quarto.yml"}
+#| file: _quarto.yml
+#| code-line-numbers: true
+```
+</details>
 
 ### Adding references
 
@@ -47,7 +54,39 @@ References are saved in `references.bib`.
 - ["Citations & Footnotes"](https://quarto.org/docs/authoring/footnotes-and-citations.html) in the Quarto documentation.
 - [HTML options for references](https://quarto.org/docs/reference/formats/html.html#references).
 
+## Images
+
+### Background
+
+Images are stored in a [NextCloud folder]({{< var links.nextcloud >}}).
+They are downloaded into the `/static` folder using the command specified in the `Makefile`.
+
+### Add new image
+
+1. Become a collaborator on the [UHH Cloud folder]({{< var links.nextcloud >}})
+1. Go to the [UHH Cloud folder]({{< var links.nextcloud >}})
+1. Place the new image inside folder
+1. Run `make download-images` to retrieve all files from the updated folder
+
+::: {.callout-tip title="What's a Makefile?" collapse="false"}
+
+```{bash, filename="Makefile"}
+#| file: Makefile
+#| code-line-numbers: true
+```
+
+:::
+
+It's also possible to include the `make download-images` as a project script in the `pre-render` script.
+This would re-execute `make download-images` before every render.
+For the moment, we disabled this option, but it can be enabled in `_quarto.yml`.
+
 ## Variables
+
+```{bash, filename="_variables.yml", echo=c(2, 3)}
+#| file: _variables.yml
+#| code-line-numbers: true
+```
 
 https://quarto.org/docs/authoring/variables.html
 
