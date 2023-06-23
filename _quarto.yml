@@ -1,15 +1,20 @@
 project:
+  # project options (https://quarto.org/docs/reference/projects/options.html):
   type: book
   output-dir: _book
-  
+  execute-dir: project
+  # pre-render: make download-images
+  # preview (https://quarto.org/docs/reference/projects/options.html#preview):
   preview: 
     port: 3333
+    host: 127.0.0.1
     browser: true
     watch-inputs: true
     navigate: true
 
 book:
   title: "Version Control of Code and Data for Scientists"
+<<<<<<< HEAD
   author:
     - id: wittkuhn
       name:
@@ -31,39 +36,48 @@ book:
       # metadata: object
       affiliations:
         - ref: uhh-psych
+=======
+>>>>>>> main
   search: true
   repo-url: https://github.com/lnnrtwttkhn/version-control-book/
   repo-branch: main
   repo-actions: [issue, source]
   downloads: [pdf, epub]
   sharing: [twitter, facebook]
-  favicon: static/images/git_icon.svg
+  favicon: static/git-icon.svg
   twitter-card: false
   site-url: https://lennartwittkuhn.com/version-control-book
 #  date: "6/3/2023"
   chapters:
     - index.qmd
+<<<<<<< HEAD
     - chapters/intro-version-control.qmd
     - chapters/installation.qmd
     - chapters/command-line.qmd
     - chapters/Setting Up Git.qmd
     - chapters/First-Steps-Git.qmd
     - chapters/datalad-nextcloud.qmd
+=======
+    - intro.qmd
+    - chapters/rewriting-history.qmd
+    - summary.qmd
+>>>>>>> main
     - references.qmd
+    - part: chapters/contributing.qmd
+      chapters:
+        - chapters/style-guide.qmd
   page-navigation: true
-
-bibliography: references.bib
 
 format:
   html:
     theme: cosmo
-    page-layout: full
     # fontcolor: black
     # linkcolor: black
     link-external-newwindow: true
     toc: true
     toc-depth: 3
     toc-title: "On this page"
+<<<<<<< HEAD
     number-sections: true
     code-link: true
     code-copy: true
@@ -73,13 +87,36 @@ format:
     code-annotations: hover
     code-overflow: wrap
     highlight-style: monokai
+=======
+    number-sections: false
+>>>>>>> main
     anchor-sections: true
+    # layout (https://quarto.org/docs/reference/formats/html.html#layout):
     fig-cap-location: margin
-    reference-location: margin
+    page-layout: full
+    title-block-style: none
+    # code (https://quarto.org/docs/reference/formats/html.html#code):
+    code-fold: false
+    code-overflow: wrap
+    code-line-numbers: false
+    code-copy: true
+    code-link: false
+    code-annotations: hover
+    code-tools: false
+    highlight-style: monokai
+    # references:
+    bibliography: references.bib
+    citations-hover: true
+    citation-location: document
+    citeproc: true
+    # footnotes:
     footnotes-hover: true
+<<<<<<< HEAD
+=======
+    # includes:
+>>>>>>> main
     include-after-body: plausible.html
 
 metadata-files:
+  - _authors.yml
   - _affiliations.yml
-
-
