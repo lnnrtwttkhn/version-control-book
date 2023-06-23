@@ -7,6 +7,170 @@ execute:
 
 This book is made with [Quarto](https://quarto.org/).
 
+## RStudio Project
+
+- {{< fa book >}} ["Using RStudio Projects"](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
+
+We recommend working in RStudio and open the RStudio Project.
+
+::: {.panel-tabset}
+
+## {{< fa brands r-project >}} RStudio
+
+- Double-click on the project file `version-control-book.Rproj` within your computer's file system (for example, macOS Finder).
+
+## {{< fa terminal >}} Terminal
+
+In the Terminal, run:
+
+```{bash}
+open version-control-book.Rproj
+```
+
+This will open the RStudio Project in RStudio.
+
+:::
+
+<details>
+<summary>Click here to view the full `version-control-book.Rproj` file of this project.</summary>
+```{yaml, filename="version-control-book.Rproj"}
+#| file: version-control-book.Rproj
+#| code-line-numbers: true
+```
+</details>
+
+## renv
+
+We use [`renv`](https://rstudio.github.io/renv/articles/renv.html) for project-local {{< fa brands r-project >}} dependency management.
+For details on `renv`, see the [renv documentation](https://rstudio.github.io/renv/articles/renv.html).
+
+### Using `renv` for the first time
+
+After you open the Rstudio Project, you will (hopefully) see a similar output in the RStudio console:
+
+```{bash}
+# Bootstrapping renv 0.17.3 --------------------------------------------------
+* Downloading renv 0.17.3 ... OK (downloaded binary)
+* Installing renv 0.17.3 ... Done!
+* Successfully installed and loaded renv 0.17.3.
+* Project '~/version-control-book' loaded. [renv 0.17.3]
+* This project contains a lockfile, but none of the recorded packages are installed.
+* Use `renv::restore()` to restore the project library.
+```
+
+This output tells you that (1) `renv` was automatically installed and loaded, (2) the `renv` environment for the project was loaded, and (3) that none of packages recorded in the `renv` lockfile are installed.
+
+The `renv` lockfile captures the state of the package library of the project at some point in time.
+It is defining the **version of `renv`** used when generating the lockfile, the **version of** {{< fa brands r-project >}} used in that project, the **R repositories that were active** when the lockfile was created and the **package records** defining each {{< fa brands r-project >}} package, their version, and their installation source.
+For details on the anatomy of `renv.lock`, see [this section](https://rstudio.github.io/renv/articles/lockfile.html) in the `renv` documentation.
+
+<details>
+<summary>Click here to view the full `renv.lock` file of this project.</summary>
+```{json, filename="renv.lock"}
+#| file: renv.lock
+#| code-line-numbers: true
+```
+</details>
+
+### Restoring `renv`
+
+If `renv` is activated but it recognized that (not all of) the packages listed in the `renv.lock` file are installed, `renv` will suggest to restore the project library using `renv::restore()`:
+
+```{bash}
+* This project contains a lockfile, but none of the recorded packages are installed.
+* Use `renv::restore()` to restore the project library.
+```
+
+```{r}
+renv::restore()
+```
+
+This will generate a list of files that will be updated.
+
+<details>
+<summary>Click here to view an example output of the `renv::restore()` command.</summary>
+```{bash}
+The following package(s) will be updated:
+
+# CRAN ===============================
+- R6            [* -> 2.5.1]
+- base64enc     [* -> 0.1-3]
+- bslib         [* -> 0.5.0]
+- cachem        [* -> 1.0.8]
+- cli           [* -> 3.6.1]
+- data.table    [* -> 1.14.8]
+- digest        [* -> 0.6.31]
+- ellipsis      [* -> 0.3.2]
+- evaluate      [* -> 0.21]
+- fastmap       [* -> 1.1.1]
+- fontawesome   [* -> 0.5.1]
+- fs            [* -> 1.6.2]
+- glue          [* -> 1.6.2]
+- here          [* -> 1.0.1]
+- highr         [* -> 0.10]
+- htmltools     [* -> 0.5.5]
+- jquerylib     [* -> 0.1.4]
+- jsonlite      [* -> 1.8.5]
+- knitr         [* -> 1.43]
+- lifecycle     [* -> 1.0.3]
+- magrittr      [* -> 2.0.3]
+- memoise       [* -> 2.0.1]
+- mime          [* -> 0.12]
+- rappdirs      [* -> 0.3.3]
+- rlang         [* -> 1.1.1]
+- rmarkdown     [* -> 2.22]
+- rprojroot     [* -> 2.0.3]
+- sass          [* -> 0.4.6]
+- stringi       [* -> 1.7.12]
+- stringr       [* -> 1.5.0]
+- tinytex       [* -> 0.45]
+- vctrs         [* -> 0.6.3]
+- xfun          [* -> 0.39]
+- yaml          [* -> 2.3.7]
+
+Do you want to proceed? [y/N]: 
+```
+</details>
+
+If you want to proceed with the update, type `y` and hit enter.
+
+### Adding / removing packages
+
+Install packages:
+
+```{r}
+install.packages("PACKAGE_NAME") # <1>
+renv::install("PACKAGE_NAME") # <2>
+```
+1. Replace `PACKAGE_NAME` with the actual name of the package that you want to install.
+1. Replace `PACKAGE_NAME` with the actual name of the package that you want to install.
+
+Remove packages:
+
+```{r}
+remove.packages("PACKAGE_NAME") # <1>
+renv::remove("PACKAGE_NAME") # <2>
+```
+1. Replace `PACKAGE_NAME` with the actual name of the package that you want to remove.
+1. Replace `PACKAGE_NAME` with the actual name of the package that you want to remove.
+
+Call `renv::snapshot()` to save the new state of the project library to the `renv.lock`:
+
+```{r}
+renv::snapshot()
+```
+
+### Commit your changes
+
+The `renv.lock` is checked into version control, so after you updated it, make a new commit:
+
+```{bash}
+git add renv.lock
+git commit -m "add package PACKAGE_NAME to renv" # <1>
+```
+1. Replace `PACKAGE_NAME` with the actual name of the package that you installed.
+Adapt the commit message as needed.
+
 ### Local development
 
 #### Setup
