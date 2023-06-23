@@ -27,9 +27,10 @@ quarto preview
 #### How to add a new chapter
 
 1. Create a new Quarto document inside the `/chapters` folder
-2. Add the new chapter to `_quarto.yml`. Don't forget to specify the full path (including `/chapters/`)
+2. Add the new chapter to `_quarto.yml`.
+Don't forget to specify the full path (including `/chapters/`)
 
-```{yaml}
+```{yaml, filename="_quarto.yml (excerpt)"}
 chapters:
   - index.qmd
   - chapters/YOUR-NEW-CHAPTER.qmd # <1>
@@ -38,7 +39,7 @@ chapters:
 1. Replace `YOUR-NEW-CHAPTER` with a concise filename.
 
 <details>
-<summary>Click here to view the full current `_quarto.yml` file</summary>
+<summary>Click here to view the full `_quarto.yml` file of this project.</summary>
 ```{bash, filename="_quarto.yml"}
 #| file: _quarto.yml
 #| code-line-numbers: true
