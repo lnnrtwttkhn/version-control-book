@@ -54,6 +54,65 @@ References are saved in `references.bib`.
 - ["Citations & Footnotes"](https://quarto.org/docs/authoring/footnotes-and-citations.html) in the Quarto documentation.
 - [HTML options for references](https://quarto.org/docs/reference/formats/html.html#references).
 
+## Code
+
+- {{< fa book >}} ["HTML Code Blocks"](https://quarto.org/docs/output-formats/html-code.html) in the Quarto documentation
+
+### Code inside the document
+
+Add code snippets to a Quarto document like this:
+
+````
+```{{bash}}
+git status
+```
+````
+
+::: {.callout-warning title="Disable code execution in all Quarto documents by default!"}
+
+Place the following code in the YAML header of **each** Quarto document:
+
+```{yaml}
+engine: knitr
+execute:
+  eval: false
+```
+
+<details>
+<summary>Example: Click here for the YAML header of the current document.</summary>
+```{yaml, filename="chapters/contributing.qmd", echo=c(1:6)}
+#| file: chapters/contributing.qmd
+#| code-line-numbers: true
+```
+</details>
+
+<details>
+<summary>Click here to learn more.</summary>
+Quarto enables the inclusion of executable code blocks in Markdown.
+This empowers users to create reproducible documents and reports, as the code needed for generating the output is embedded within the document and automatically executed during rendering.
+
+However, in this guide, we usually only want to **display code but not execute it**!
+We therefore need to disable code execution in the YAML header of each Quarto document.
+
+The YAML header in a Quarto document is used to specify important metadata and settings for the document.
+It is typically placed at the top of the document enclosed between three dashes (`---`) to separate it from the main content.
+The YAML header provides instructions to the Quarto rendering engine on how to process and present the document.
+</details>
+
+:::
+
+### Reference external code
+
+You can reference external code.
+For example, this code block will display the first five lines (`echo=c(1:5)`) of `_quarto.yml` (`#| file: _quarto.yml`) and add code line numbers (`#| code-line-numbers: true`) and a filename to the code block (`filename="_quarto.yml"`).
+
+````
+```{{bash, filename="_quarto.yml", echo=c(1:5)}}
+#| file: _quarto.yml
+#| code-line-numbers: true
+```
+````
+
 ## Images
 
 ### Background
