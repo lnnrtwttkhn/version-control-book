@@ -1,9 +1,13 @@
 project:
+  # project options (https://quarto.org/docs/reference/projects/options.html):
   type: book
   output-dir: _book
-  
+  execute-dir: project
+  # pre-render: make download-images
+  # preview (https://quarto.org/docs/reference/projects/options.html#preview):
   preview: 
     port: 3333
+    host: 127.0.0.1
     browser: true
     watch-inputs: true
     navigate: true
@@ -23,11 +27,13 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - chapters/rewriting-history.qmd
     - summary.qmd
     - references.qmd
+    - part: chapters/contributing.qmd
+      chapters:
+        - chapters/style-guide.qmd
   page-navigation: true
-
-bibliography: references.bib
 
 format:
   html:
@@ -60,6 +66,7 @@ format:
     citeproc: true
     # footnotes:
     footnotes-hover: true
+    # includes:
     include-after-body: plausible.html
 
 metadata-files:
