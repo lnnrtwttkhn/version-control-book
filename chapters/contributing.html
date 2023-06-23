@@ -244,8 +244,17 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#local-development" id="toc-local-development" class="nav-link active" data-scroll-target="#local-development">Local development</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#rstudio-project" id="toc-rstudio-project" class="nav-link" data-scroll-target="#rstudio-project">RStudio Project</a></li>
+  <li><a href="#renv" id="toc-renv" class="nav-link" data-scroll-target="#renv">renv</a>
+  <ul class="collapse">
+  <li><a href="#using-renv-for-the-first-time" id="toc-using-renv-for-the-first-time" class="nav-link" data-scroll-target="#using-renv-for-the-first-time">Using <code>renv</code> for the first time</a></li>
+  <li><a href="#restoring-renv" id="toc-restoring-renv" class="nav-link" data-scroll-target="#restoring-renv">Restoring <code>renv</code></a></li>
+  <li><a href="#adding-removing-packages" id="toc-adding-removing-packages" class="nav-link" data-scroll-target="#adding-removing-packages">Adding / removing packages</a></li>
+  <li><a href="#commit-your-changes" id="toc-commit-your-changes" class="nav-link" data-scroll-target="#commit-your-changes">Commit your changes</a></li>
+  <li><a href="#local-development" id="toc-local-development" class="nav-link" data-scroll-target="#local-development">Local development</a></li>
   <li><a href="#adding-references" id="toc-adding-references" class="nav-link" data-scroll-target="#adding-references">Adding references</a></li>
+  </ul></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a>
   <ul class="collapse">
   <li><a href="#code-inside-the-document" id="toc-code-inside-the-document" class="nav-link" data-scroll-target="#code-inside-the-document">Code inside the document</a></li>
@@ -255,7 +264,9 @@ div.csl-indent {
   <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images">Images</a>
   <ul class="collapse">
   <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
-  <li><a href="#add-new-image" id="toc-add-new-image" class="nav-link" data-scroll-target="#add-new-image">Add new image</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#retrieve-images" id="toc-retrieve-images" class="nav-link" data-scroll-target="#retrieve-images">Retrieve images</a></li>
+  <li><a href="#add-a-new-image" id="toc-add-a-new-image" class="nav-link" data-scroll-target="#add-a-new-image">Add a new image</a></li>
   <li><a href="#download-images-in-pre-render-command" id="toc-download-images-in-pre-render-command" class="nav-link" data-scroll-target="#download-images-in-pre-render-command">Download images in pre-render command</a></li>
   </ul></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
@@ -274,7 +285,634 @@ div.csl-indent {
 
 </header>
 
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
 <p>This book is made with <a href="https://quarto.org/">Quarto</a>.</p>
+</section>
+<section id="rstudio-project" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-project">RStudio Project</h2>
+<ul>
+<li><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">“Using RStudio Projects”</a></li>
+</ul>
+<p>We recommend working in RStudio and open the RStudio Project.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><i class="fa-brands fa-r-project" aria-label="r-project"></i> RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-solid fa-terminal" aria-label="terminal"></i> Terminal</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ul>
+<li>Double-click on the project file <code>version-control-book.Rproj</code> within your computer’s file system (for example, macOS Finder).</li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>In the Terminal, run:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will open the RStudio Project in RStudio.</p>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Click here to view the full <code>version-control-book.Rproj</code> file of this project.
+</summary>
+<div class="cell" data-file="version-control-book.Rproj">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>version-control-book.Rproj</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">Version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.0</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">RestoreWorkspace</span><span class="kw">:</span><span class="at"> </span><span class="ch">No</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">SaveWorkspace</span><span class="kw">:</span><span class="at"> </span><span class="ch">No</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">AlwaysSaveHistory</span><span class="kw">:</span><span class="at"> </span><span class="ch">No</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="fu">EnableCodeIndexing</span><span class="kw">:</span><span class="at"> </span><span class="ch">Yes</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">UseSpacesForTab</span><span class="kw">:</span><span class="at"> </span><span class="ch">Yes</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="fu">NumSpacesForTab</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="fu">RnwWeave</span><span class="kw">:</span><span class="at"> Sweave</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="fu">LaTeX</span><span class="kw">:</span><span class="at"> pdfLaTeX</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</details>
+</section>
+<section id="renv" class="level2">
+<h2 class="anchored" data-anchor-id="renv">renv</h2>
+<p>We use <a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a> for project-local <i class="fa-brands fa-r-project" aria-label="r-project"></i> dependency management. For details on <code>renv</code>, see the <a href="https://rstudio.github.io/renv/articles/renv.html">renv documentation</a>.</p>
+<section id="using-renv-for-the-first-time" class="level3">
+<h3 class="anchored" data-anchor-id="using-renv-for-the-first-time">Using <code>renv</code> for the first time</h3>
+<p>After you open the Rstudio Project, you will (hopefully) see a similar output in the RStudio console:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bootstrapping renv 0.17.3 --------------------------------------------------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> Downloading renv 0.17.3 ... OK <span class="er">(</span><span class="ex">downloaded</span> binary<span class="kw">)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> Installing renv 0.17.3 ... Done!</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> Successfully installed and loaded renv 0.17.3.</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> Project <span class="st">'~/version-control-book'</span> loaded. [renv 0.17.3]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> This project contains a lockfile, but none of the recorded packages are installed.</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> Use <span class="kw">`</span><span class="fu">renv::restore()</span><span class="kw">`</span> to restore the project library.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This output tells you that (1) <code>renv</code> was automatically installed and loaded, (2) the <code>renv</code> environment for the project was loaded, and (3) that none of packages recorded in the <code>renv</code> lockfile are installed.</p>
+<p>The <code>renv</code> lockfile captures the state of the package library of the project at some point in time. It is defining the <strong>version of <code>renv</code></strong> used when generating the lockfile, the <strong>version of</strong> <i class="fa-brands fa-r-project" aria-label="r-project"></i> used in that project, the <strong>R repositories that were active</strong> when the lockfile was created and the <strong>package records</strong> defining each <i class="fa-brands fa-r-project" aria-label="r-project"></i> package, their version, and their installation source. For details on the anatomy of <code>renv.lock</code>, see <a href="https://rstudio.github.io/renv/articles/lockfile.html">this section</a> in the <code>renv</code> documentation.</p>
+<details>
+<summary>
+Click here to view the full <code>renv.lock</code> file of this project.
+</summary>
+<div class="cell" data-file="renv.lock">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>renv.lock</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="dt">"R"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"4.3.0"</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="dt">"Repositories"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>      <span class="fu">{</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>        <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>        <span class="dt">"URL"</span><span class="fu">:</span> <span class="st">"https://cran.rstudio.com"</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>      <span class="fu">}</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="ot">]</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">},</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="dt">"Packages"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="dt">"R6"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"R6"</span><span class="fu">,</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"2.5.1"</span><span class="fu">,</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>        <span class="st">"R"</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"470851b6d5d0ac559e9d01bb352b4021"</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a>    <span class="fu">},</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a>    <span class="dt">"base64enc"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"base64enc"</span><span class="fu">,</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.1-3"</span><span class="fu">,</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a>        <span class="st">"R"</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"543776ae6848fde2f48ff3816d0628bc"</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a>    <span class="fu">},</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a>    <span class="dt">"bslib"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-33"><a href="#cb4-33"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"bslib"</span><span class="fu">,</span></span>
+<span id="cb4-34"><a href="#cb4-34"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.5.0"</span><span class="fu">,</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-36"><a href="#cb4-36"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-37"><a href="#cb4-37"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-38"><a href="#cb4-38"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a>        <span class="st">"base64enc"</span><span class="ot">,</span></span>
+<span id="cb4-40"><a href="#cb4-40"></a>        <span class="st">"cachem"</span><span class="ot">,</span></span>
+<span id="cb4-41"><a href="#cb4-41"></a>        <span class="st">"grDevices"</span><span class="ot">,</span></span>
+<span id="cb4-42"><a href="#cb4-42"></a>        <span class="st">"htmltools"</span><span class="ot">,</span></span>
+<span id="cb4-43"><a href="#cb4-43"></a>        <span class="st">"jquerylib"</span><span class="ot">,</span></span>
+<span id="cb4-44"><a href="#cb4-44"></a>        <span class="st">"jsonlite"</span><span class="ot">,</span></span>
+<span id="cb4-45"><a href="#cb4-45"></a>        <span class="st">"memoise"</span><span class="ot">,</span></span>
+<span id="cb4-46"><a href="#cb4-46"></a>        <span class="st">"mime"</span><span class="ot">,</span></span>
+<span id="cb4-47"><a href="#cb4-47"></a>        <span class="st">"rlang"</span><span class="ot">,</span></span>
+<span id="cb4-48"><a href="#cb4-48"></a>        <span class="st">"sass"</span></span>
+<span id="cb4-49"><a href="#cb4-49"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-50"><a href="#cb4-50"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"1b117970533deb6d4e992c1b34e9d905"</span></span>
+<span id="cb4-51"><a href="#cb4-51"></a>    <span class="fu">},</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a>    <span class="dt">"cachem"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-53"><a href="#cb4-53"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"cachem"</span><span class="fu">,</span></span>
+<span id="cb4-54"><a href="#cb4-54"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.0.8"</span><span class="fu">,</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-56"><a href="#cb4-56"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-57"><a href="#cb4-57"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-58"><a href="#cb4-58"></a>        <span class="st">"fastmap"</span><span class="ot">,</span></span>
+<span id="cb4-59"><a href="#cb4-59"></a>        <span class="st">"rlang"</span></span>
+<span id="cb4-60"><a href="#cb4-60"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-61"><a href="#cb4-61"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"c35768291560ce302c0a6589f92e837d"</span></span>
+<span id="cb4-62"><a href="#cb4-62"></a>    <span class="fu">},</span></span>
+<span id="cb4-63"><a href="#cb4-63"></a>    <span class="dt">"cli"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-64"><a href="#cb4-64"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"cli"</span><span class="fu">,</span></span>
+<span id="cb4-65"><a href="#cb4-65"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"3.6.1"</span><span class="fu">,</span></span>
+<span id="cb4-66"><a href="#cb4-66"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-67"><a href="#cb4-67"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-68"><a href="#cb4-68"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-69"><a href="#cb4-69"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-70"><a href="#cb4-70"></a>        <span class="st">"utils"</span></span>
+<span id="cb4-71"><a href="#cb4-71"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-72"><a href="#cb4-72"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"89e6d8219950eac806ae0c489052048a"</span></span>
+<span id="cb4-73"><a href="#cb4-73"></a>    <span class="fu">},</span></span>
+<span id="cb4-74"><a href="#cb4-74"></a>    <span class="dt">"data.table"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-75"><a href="#cb4-75"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"data.table"</span><span class="fu">,</span></span>
+<span id="cb4-76"><a href="#cb4-76"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.14.8"</span><span class="fu">,</span></span>
+<span id="cb4-77"><a href="#cb4-77"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-78"><a href="#cb4-78"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-79"><a href="#cb4-79"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-80"><a href="#cb4-80"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-81"><a href="#cb4-81"></a>        <span class="st">"methods"</span></span>
+<span id="cb4-82"><a href="#cb4-82"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-83"><a href="#cb4-83"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"b4c06e554f33344e044ccd7fdca750a9"</span></span>
+<span id="cb4-84"><a href="#cb4-84"></a>    <span class="fu">},</span></span>
+<span id="cb4-85"><a href="#cb4-85"></a>    <span class="dt">"digest"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-86"><a href="#cb4-86"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"digest"</span><span class="fu">,</span></span>
+<span id="cb4-87"><a href="#cb4-87"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.6.31"</span><span class="fu">,</span></span>
+<span id="cb4-88"><a href="#cb4-88"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-89"><a href="#cb4-89"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-90"><a href="#cb4-90"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-91"><a href="#cb4-91"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-92"><a href="#cb4-92"></a>        <span class="st">"utils"</span></span>
+<span id="cb4-93"><a href="#cb4-93"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-94"><a href="#cb4-94"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"8b708f296afd9ae69f450f9640be8990"</span></span>
+<span id="cb4-95"><a href="#cb4-95"></a>    <span class="fu">},</span></span>
+<span id="cb4-96"><a href="#cb4-96"></a>    <span class="dt">"ellipsis"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-97"><a href="#cb4-97"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"ellipsis"</span><span class="fu">,</span></span>
+<span id="cb4-98"><a href="#cb4-98"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.3.2"</span><span class="fu">,</span></span>
+<span id="cb4-99"><a href="#cb4-99"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-100"><a href="#cb4-100"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-101"><a href="#cb4-101"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-102"><a href="#cb4-102"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-103"><a href="#cb4-103"></a>        <span class="st">"rlang"</span></span>
+<span id="cb4-104"><a href="#cb4-104"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-105"><a href="#cb4-105"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"bb0eec2fe32e88d9e2836c2f73ea2077"</span></span>
+<span id="cb4-106"><a href="#cb4-106"></a>    <span class="fu">},</span></span>
+<span id="cb4-107"><a href="#cb4-107"></a>    <span class="dt">"evaluate"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-108"><a href="#cb4-108"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"evaluate"</span><span class="fu">,</span></span>
+<span id="cb4-109"><a href="#cb4-109"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.21"</span><span class="fu">,</span></span>
+<span id="cb4-110"><a href="#cb4-110"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-111"><a href="#cb4-111"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-112"><a href="#cb4-112"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-113"><a href="#cb4-113"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-114"><a href="#cb4-114"></a>        <span class="st">"methods"</span></span>
+<span id="cb4-115"><a href="#cb4-115"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-116"><a href="#cb4-116"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"d59f3b464e8da1aef82dc04b588b8dfb"</span></span>
+<span id="cb4-117"><a href="#cb4-117"></a>    <span class="fu">},</span></span>
+<span id="cb4-118"><a href="#cb4-118"></a>    <span class="dt">"fastmap"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-119"><a href="#cb4-119"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"fastmap"</span><span class="fu">,</span></span>
+<span id="cb4-120"><a href="#cb4-120"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.1.1"</span><span class="fu">,</span></span>
+<span id="cb4-121"><a href="#cb4-121"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-122"><a href="#cb4-122"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-123"><a href="#cb4-123"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"f7736a18de97dea803bde0a2daaafb27"</span></span>
+<span id="cb4-124"><a href="#cb4-124"></a>    <span class="fu">},</span></span>
+<span id="cb4-125"><a href="#cb4-125"></a>    <span class="dt">"fontawesome"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-126"><a href="#cb4-126"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"fontawesome"</span><span class="fu">,</span></span>
+<span id="cb4-127"><a href="#cb4-127"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.5.1"</span><span class="fu">,</span></span>
+<span id="cb4-128"><a href="#cb4-128"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-129"><a href="#cb4-129"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-130"><a href="#cb4-130"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-131"><a href="#cb4-131"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-132"><a href="#cb4-132"></a>        <span class="st">"htmltools"</span><span class="ot">,</span></span>
+<span id="cb4-133"><a href="#cb4-133"></a>        <span class="st">"rlang"</span></span>
+<span id="cb4-134"><a href="#cb4-134"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-135"><a href="#cb4-135"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"1e22b8cabbad1eae951a75e9f8b52378"</span></span>
+<span id="cb4-136"><a href="#cb4-136"></a>    <span class="fu">},</span></span>
+<span id="cb4-137"><a href="#cb4-137"></a>    <span class="dt">"fs"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-138"><a href="#cb4-138"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"fs"</span><span class="fu">,</span></span>
+<span id="cb4-139"><a href="#cb4-139"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.6.2"</span><span class="fu">,</span></span>
+<span id="cb4-140"><a href="#cb4-140"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-141"><a href="#cb4-141"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-142"><a href="#cb4-142"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-143"><a href="#cb4-143"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-144"><a href="#cb4-144"></a>        <span class="st">"methods"</span></span>
+<span id="cb4-145"><a href="#cb4-145"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-146"><a href="#cb4-146"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"94af08e0aa9675a16fadbb3aaaa90d2a"</span></span>
+<span id="cb4-147"><a href="#cb4-147"></a>    <span class="fu">},</span></span>
+<span id="cb4-148"><a href="#cb4-148"></a>    <span class="dt">"glue"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-149"><a href="#cb4-149"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"glue"</span><span class="fu">,</span></span>
+<span id="cb4-150"><a href="#cb4-150"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.6.2"</span><span class="fu">,</span></span>
+<span id="cb4-151"><a href="#cb4-151"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-152"><a href="#cb4-152"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-153"><a href="#cb4-153"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-154"><a href="#cb4-154"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-155"><a href="#cb4-155"></a>        <span class="st">"methods"</span></span>
+<span id="cb4-156"><a href="#cb4-156"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-157"><a href="#cb4-157"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"4f2596dfb05dac67b9dc558e5c6fba2e"</span></span>
+<span id="cb4-158"><a href="#cb4-158"></a>    <span class="fu">},</span></span>
+<span id="cb4-159"><a href="#cb4-159"></a>    <span class="dt">"here"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-160"><a href="#cb4-160"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"here"</span><span class="fu">,</span></span>
+<span id="cb4-161"><a href="#cb4-161"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.0.1"</span><span class="fu">,</span></span>
+<span id="cb4-162"><a href="#cb4-162"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-163"><a href="#cb4-163"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-164"><a href="#cb4-164"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-165"><a href="#cb4-165"></a>        <span class="st">"rprojroot"</span></span>
+<span id="cb4-166"><a href="#cb4-166"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-167"><a href="#cb4-167"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"24b224366f9c2e7534d2344d10d59211"</span></span>
+<span id="cb4-168"><a href="#cb4-168"></a>    <span class="fu">},</span></span>
+<span id="cb4-169"><a href="#cb4-169"></a>    <span class="dt">"highr"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-170"><a href="#cb4-170"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"highr"</span><span class="fu">,</span></span>
+<span id="cb4-171"><a href="#cb4-171"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.10"</span><span class="fu">,</span></span>
+<span id="cb4-172"><a href="#cb4-172"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-173"><a href="#cb4-173"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-174"><a href="#cb4-174"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-175"><a href="#cb4-175"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-176"><a href="#cb4-176"></a>        <span class="st">"xfun"</span></span>
+<span id="cb4-177"><a href="#cb4-177"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-178"><a href="#cb4-178"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"06230136b2d2b9ba5805e1963fa6e890"</span></span>
+<span id="cb4-179"><a href="#cb4-179"></a>    <span class="fu">},</span></span>
+<span id="cb4-180"><a href="#cb4-180"></a>    <span class="dt">"htmltools"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-181"><a href="#cb4-181"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"htmltools"</span><span class="fu">,</span></span>
+<span id="cb4-182"><a href="#cb4-182"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.5.5"</span><span class="fu">,</span></span>
+<span id="cb4-183"><a href="#cb4-183"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-184"><a href="#cb4-184"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-185"><a href="#cb4-185"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-186"><a href="#cb4-186"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-187"><a href="#cb4-187"></a>        <span class="st">"base64enc"</span><span class="ot">,</span></span>
+<span id="cb4-188"><a href="#cb4-188"></a>        <span class="st">"digest"</span><span class="ot">,</span></span>
+<span id="cb4-189"><a href="#cb4-189"></a>        <span class="st">"ellipsis"</span><span class="ot">,</span></span>
+<span id="cb4-190"><a href="#cb4-190"></a>        <span class="st">"fastmap"</span><span class="ot">,</span></span>
+<span id="cb4-191"><a href="#cb4-191"></a>        <span class="st">"grDevices"</span><span class="ot">,</span></span>
+<span id="cb4-192"><a href="#cb4-192"></a>        <span class="st">"rlang"</span><span class="ot">,</span></span>
+<span id="cb4-193"><a href="#cb4-193"></a>        <span class="st">"utils"</span></span>
+<span id="cb4-194"><a href="#cb4-194"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-195"><a href="#cb4-195"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"ba0240784ad50a62165058a27459304a"</span></span>
+<span id="cb4-196"><a href="#cb4-196"></a>    <span class="fu">},</span></span>
+<span id="cb4-197"><a href="#cb4-197"></a>    <span class="dt">"jquerylib"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-198"><a href="#cb4-198"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"jquerylib"</span><span class="fu">,</span></span>
+<span id="cb4-199"><a href="#cb4-199"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.1.4"</span><span class="fu">,</span></span>
+<span id="cb4-200"><a href="#cb4-200"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-201"><a href="#cb4-201"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-202"><a href="#cb4-202"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-203"><a href="#cb4-203"></a>        <span class="st">"htmltools"</span></span>
+<span id="cb4-204"><a href="#cb4-204"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-205"><a href="#cb4-205"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"5aab57a3bd297eee1c1d862735972182"</span></span>
+<span id="cb4-206"><a href="#cb4-206"></a>    <span class="fu">},</span></span>
+<span id="cb4-207"><a href="#cb4-207"></a>    <span class="dt">"jsonlite"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-208"><a href="#cb4-208"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"jsonlite"</span><span class="fu">,</span></span>
+<span id="cb4-209"><a href="#cb4-209"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.8.5"</span><span class="fu">,</span></span>
+<span id="cb4-210"><a href="#cb4-210"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-211"><a href="#cb4-211"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-212"><a href="#cb4-212"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-213"><a href="#cb4-213"></a>        <span class="st">"methods"</span></span>
+<span id="cb4-214"><a href="#cb4-214"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-215"><a href="#cb4-215"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"3ee4d9899e4db3e976fc82b98d24a31a"</span></span>
+<span id="cb4-216"><a href="#cb4-216"></a>    <span class="fu">},</span></span>
+<span id="cb4-217"><a href="#cb4-217"></a>    <span class="dt">"knitr"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-218"><a href="#cb4-218"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"knitr"</span><span class="fu">,</span></span>
+<span id="cb4-219"><a href="#cb4-219"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.43"</span><span class="fu">,</span></span>
+<span id="cb4-220"><a href="#cb4-220"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-221"><a href="#cb4-221"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-222"><a href="#cb4-222"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-223"><a href="#cb4-223"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-224"><a href="#cb4-224"></a>        <span class="st">"evaluate"</span><span class="ot">,</span></span>
+<span id="cb4-225"><a href="#cb4-225"></a>        <span class="st">"highr"</span><span class="ot">,</span></span>
+<span id="cb4-226"><a href="#cb4-226"></a>        <span class="st">"methods"</span><span class="ot">,</span></span>
+<span id="cb4-227"><a href="#cb4-227"></a>        <span class="st">"tools"</span><span class="ot">,</span></span>
+<span id="cb4-228"><a href="#cb4-228"></a>        <span class="st">"xfun"</span><span class="ot">,</span></span>
+<span id="cb4-229"><a href="#cb4-229"></a>        <span class="st">"yaml"</span></span>
+<span id="cb4-230"><a href="#cb4-230"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-231"><a href="#cb4-231"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"9775eb076713f627c07ce41d8199d8f6"</span></span>
+<span id="cb4-232"><a href="#cb4-232"></a>    <span class="fu">},</span></span>
+<span id="cb4-233"><a href="#cb4-233"></a>    <span class="dt">"lifecycle"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-234"><a href="#cb4-234"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"lifecycle"</span><span class="fu">,</span></span>
+<span id="cb4-235"><a href="#cb4-235"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.0.3"</span><span class="fu">,</span></span>
+<span id="cb4-236"><a href="#cb4-236"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-237"><a href="#cb4-237"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-238"><a href="#cb4-238"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-239"><a href="#cb4-239"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-240"><a href="#cb4-240"></a>        <span class="st">"cli"</span><span class="ot">,</span></span>
+<span id="cb4-241"><a href="#cb4-241"></a>        <span class="st">"glue"</span><span class="ot">,</span></span>
+<span id="cb4-242"><a href="#cb4-242"></a>        <span class="st">"rlang"</span></span>
+<span id="cb4-243"><a href="#cb4-243"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-244"><a href="#cb4-244"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"001cecbeac1cff9301bdc3775ee46a86"</span></span>
+<span id="cb4-245"><a href="#cb4-245"></a>    <span class="fu">},</span></span>
+<span id="cb4-246"><a href="#cb4-246"></a>    <span class="dt">"magrittr"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-247"><a href="#cb4-247"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"magrittr"</span><span class="fu">,</span></span>
+<span id="cb4-248"><a href="#cb4-248"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"2.0.3"</span><span class="fu">,</span></span>
+<span id="cb4-249"><a href="#cb4-249"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-250"><a href="#cb4-250"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-251"><a href="#cb4-251"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-252"><a href="#cb4-252"></a>        <span class="st">"R"</span></span>
+<span id="cb4-253"><a href="#cb4-253"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-254"><a href="#cb4-254"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"7ce2733a9826b3aeb1775d56fd305472"</span></span>
+<span id="cb4-255"><a href="#cb4-255"></a>    <span class="fu">},</span></span>
+<span id="cb4-256"><a href="#cb4-256"></a>    <span class="dt">"memoise"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-257"><a href="#cb4-257"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"memoise"</span><span class="fu">,</span></span>
+<span id="cb4-258"><a href="#cb4-258"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"2.0.1"</span><span class="fu">,</span></span>
+<span id="cb4-259"><a href="#cb4-259"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-260"><a href="#cb4-260"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-261"><a href="#cb4-261"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-262"><a href="#cb4-262"></a>        <span class="st">"cachem"</span><span class="ot">,</span></span>
+<span id="cb4-263"><a href="#cb4-263"></a>        <span class="st">"rlang"</span></span>
+<span id="cb4-264"><a href="#cb4-264"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-265"><a href="#cb4-265"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"e2817ccf4a065c5d9d7f2cfbe7c1d78c"</span></span>
+<span id="cb4-266"><a href="#cb4-266"></a>    <span class="fu">},</span></span>
+<span id="cb4-267"><a href="#cb4-267"></a>    <span class="dt">"mime"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-268"><a href="#cb4-268"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"mime"</span><span class="fu">,</span></span>
+<span id="cb4-269"><a href="#cb4-269"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.12"</span><span class="fu">,</span></span>
+<span id="cb4-270"><a href="#cb4-270"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-271"><a href="#cb4-271"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-272"><a href="#cb4-272"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-273"><a href="#cb4-273"></a>        <span class="st">"tools"</span></span>
+<span id="cb4-274"><a href="#cb4-274"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-275"><a href="#cb4-275"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"18e9c28c1d3ca1560ce30658b22ce104"</span></span>
+<span id="cb4-276"><a href="#cb4-276"></a>    <span class="fu">},</span></span>
+<span id="cb4-277"><a href="#cb4-277"></a>    <span class="dt">"rappdirs"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-278"><a href="#cb4-278"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"rappdirs"</span><span class="fu">,</span></span>
+<span id="cb4-279"><a href="#cb4-279"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.3.3"</span><span class="fu">,</span></span>
+<span id="cb4-280"><a href="#cb4-280"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-281"><a href="#cb4-281"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-282"><a href="#cb4-282"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-283"><a href="#cb4-283"></a>        <span class="st">"R"</span></span>
+<span id="cb4-284"><a href="#cb4-284"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-285"><a href="#cb4-285"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"5e3c5dc0b071b21fa128676560dbe94d"</span></span>
+<span id="cb4-286"><a href="#cb4-286"></a>    <span class="fu">},</span></span>
+<span id="cb4-287"><a href="#cb4-287"></a>    <span class="dt">"renv"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-288"><a href="#cb4-288"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"renv"</span><span class="fu">,</span></span>
+<span id="cb4-289"><a href="#cb4-289"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.17.3"</span><span class="fu">,</span></span>
+<span id="cb4-290"><a href="#cb4-290"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-291"><a href="#cb4-291"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-292"><a href="#cb4-292"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-293"><a href="#cb4-293"></a>        <span class="st">"utils"</span></span>
+<span id="cb4-294"><a href="#cb4-294"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-295"><a href="#cb4-295"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"4543b8cd233ae25c6aba8548be9e747e"</span></span>
+<span id="cb4-296"><a href="#cb4-296"></a>    <span class="fu">},</span></span>
+<span id="cb4-297"><a href="#cb4-297"></a>    <span class="dt">"rlang"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-298"><a href="#cb4-298"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"rlang"</span><span class="fu">,</span></span>
+<span id="cb4-299"><a href="#cb4-299"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.1.1"</span><span class="fu">,</span></span>
+<span id="cb4-300"><a href="#cb4-300"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-301"><a href="#cb4-301"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-302"><a href="#cb4-302"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-303"><a href="#cb4-303"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-304"><a href="#cb4-304"></a>        <span class="st">"utils"</span></span>
+<span id="cb4-305"><a href="#cb4-305"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-306"><a href="#cb4-306"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"a85c767b55f0bf9b7ad16c6d7baee5bb"</span></span>
+<span id="cb4-307"><a href="#cb4-307"></a>    <span class="fu">},</span></span>
+<span id="cb4-308"><a href="#cb4-308"></a>    <span class="dt">"rmarkdown"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-309"><a href="#cb4-309"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"rmarkdown"</span><span class="fu">,</span></span>
+<span id="cb4-310"><a href="#cb4-310"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"2.22"</span><span class="fu">,</span></span>
+<span id="cb4-311"><a href="#cb4-311"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-312"><a href="#cb4-312"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-313"><a href="#cb4-313"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-314"><a href="#cb4-314"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-315"><a href="#cb4-315"></a>        <span class="st">"bslib"</span><span class="ot">,</span></span>
+<span id="cb4-316"><a href="#cb4-316"></a>        <span class="st">"evaluate"</span><span class="ot">,</span></span>
+<span id="cb4-317"><a href="#cb4-317"></a>        <span class="st">"fontawesome"</span><span class="ot">,</span></span>
+<span id="cb4-318"><a href="#cb4-318"></a>        <span class="st">"htmltools"</span><span class="ot">,</span></span>
+<span id="cb4-319"><a href="#cb4-319"></a>        <span class="st">"jquerylib"</span><span class="ot">,</span></span>
+<span id="cb4-320"><a href="#cb4-320"></a>        <span class="st">"jsonlite"</span><span class="ot">,</span></span>
+<span id="cb4-321"><a href="#cb4-321"></a>        <span class="st">"knitr"</span><span class="ot">,</span></span>
+<span id="cb4-322"><a href="#cb4-322"></a>        <span class="st">"methods"</span><span class="ot">,</span></span>
+<span id="cb4-323"><a href="#cb4-323"></a>        <span class="st">"stringr"</span><span class="ot">,</span></span>
+<span id="cb4-324"><a href="#cb4-324"></a>        <span class="st">"tinytex"</span><span class="ot">,</span></span>
+<span id="cb4-325"><a href="#cb4-325"></a>        <span class="st">"tools"</span><span class="ot">,</span></span>
+<span id="cb4-326"><a href="#cb4-326"></a>        <span class="st">"utils"</span><span class="ot">,</span></span>
+<span id="cb4-327"><a href="#cb4-327"></a>        <span class="st">"xfun"</span><span class="ot">,</span></span>
+<span id="cb4-328"><a href="#cb4-328"></a>        <span class="st">"yaml"</span></span>
+<span id="cb4-329"><a href="#cb4-329"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-330"><a href="#cb4-330"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"75a01be060d800ceb14e32c666cacac9"</span></span>
+<span id="cb4-331"><a href="#cb4-331"></a>    <span class="fu">},</span></span>
+<span id="cb4-332"><a href="#cb4-332"></a>    <span class="dt">"rprojroot"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-333"><a href="#cb4-333"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"rprojroot"</span><span class="fu">,</span></span>
+<span id="cb4-334"><a href="#cb4-334"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"2.0.3"</span><span class="fu">,</span></span>
+<span id="cb4-335"><a href="#cb4-335"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-336"><a href="#cb4-336"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-337"><a href="#cb4-337"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-338"><a href="#cb4-338"></a>        <span class="st">"R"</span></span>
+<span id="cb4-339"><a href="#cb4-339"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-340"><a href="#cb4-340"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"1de7ab598047a87bba48434ba35d497d"</span></span>
+<span id="cb4-341"><a href="#cb4-341"></a>    <span class="fu">},</span></span>
+<span id="cb4-342"><a href="#cb4-342"></a>    <span class="dt">"sass"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-343"><a href="#cb4-343"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"sass"</span><span class="fu">,</span></span>
+<span id="cb4-344"><a href="#cb4-344"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.4.6"</span><span class="fu">,</span></span>
+<span id="cb4-345"><a href="#cb4-345"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-346"><a href="#cb4-346"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-347"><a href="#cb4-347"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-348"><a href="#cb4-348"></a>        <span class="st">"R6"</span><span class="ot">,</span></span>
+<span id="cb4-349"><a href="#cb4-349"></a>        <span class="st">"fs"</span><span class="ot">,</span></span>
+<span id="cb4-350"><a href="#cb4-350"></a>        <span class="st">"htmltools"</span><span class="ot">,</span></span>
+<span id="cb4-351"><a href="#cb4-351"></a>        <span class="st">"rappdirs"</span><span class="ot">,</span></span>
+<span id="cb4-352"><a href="#cb4-352"></a>        <span class="st">"rlang"</span></span>
+<span id="cb4-353"><a href="#cb4-353"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-354"><a href="#cb4-354"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"cc3ec7dd33982ef56570229b62d6388e"</span></span>
+<span id="cb4-355"><a href="#cb4-355"></a>    <span class="fu">},</span></span>
+<span id="cb4-356"><a href="#cb4-356"></a>    <span class="dt">"stringi"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-357"><a href="#cb4-357"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"stringi"</span><span class="fu">,</span></span>
+<span id="cb4-358"><a href="#cb4-358"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.7.12"</span><span class="fu">,</span></span>
+<span id="cb4-359"><a href="#cb4-359"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-360"><a href="#cb4-360"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-361"><a href="#cb4-361"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-362"><a href="#cb4-362"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-363"><a href="#cb4-363"></a>        <span class="st">"stats"</span><span class="ot">,</span></span>
+<span id="cb4-364"><a href="#cb4-364"></a>        <span class="st">"tools"</span><span class="ot">,</span></span>
+<span id="cb4-365"><a href="#cb4-365"></a>        <span class="st">"utils"</span></span>
+<span id="cb4-366"><a href="#cb4-366"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-367"><a href="#cb4-367"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"ca8bd84263c77310739d2cf64d84d7c9"</span></span>
+<span id="cb4-368"><a href="#cb4-368"></a>    <span class="fu">},</span></span>
+<span id="cb4-369"><a href="#cb4-369"></a>    <span class="dt">"stringr"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-370"><a href="#cb4-370"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"stringr"</span><span class="fu">,</span></span>
+<span id="cb4-371"><a href="#cb4-371"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"1.5.0"</span><span class="fu">,</span></span>
+<span id="cb4-372"><a href="#cb4-372"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-373"><a href="#cb4-373"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-374"><a href="#cb4-374"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-375"><a href="#cb4-375"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-376"><a href="#cb4-376"></a>        <span class="st">"cli"</span><span class="ot">,</span></span>
+<span id="cb4-377"><a href="#cb4-377"></a>        <span class="st">"glue"</span><span class="ot">,</span></span>
+<span id="cb4-378"><a href="#cb4-378"></a>        <span class="st">"lifecycle"</span><span class="ot">,</span></span>
+<span id="cb4-379"><a href="#cb4-379"></a>        <span class="st">"magrittr"</span><span class="ot">,</span></span>
+<span id="cb4-380"><a href="#cb4-380"></a>        <span class="st">"rlang"</span><span class="ot">,</span></span>
+<span id="cb4-381"><a href="#cb4-381"></a>        <span class="st">"stringi"</span><span class="ot">,</span></span>
+<span id="cb4-382"><a href="#cb4-382"></a>        <span class="st">"vctrs"</span></span>
+<span id="cb4-383"><a href="#cb4-383"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-384"><a href="#cb4-384"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"671a4d384ae9d32fc47a14e98bfa3dc8"</span></span>
+<span id="cb4-385"><a href="#cb4-385"></a>    <span class="fu">},</span></span>
+<span id="cb4-386"><a href="#cb4-386"></a>    <span class="dt">"tinytex"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-387"><a href="#cb4-387"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"tinytex"</span><span class="fu">,</span></span>
+<span id="cb4-388"><a href="#cb4-388"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.45"</span><span class="fu">,</span></span>
+<span id="cb4-389"><a href="#cb4-389"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-390"><a href="#cb4-390"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-391"><a href="#cb4-391"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-392"><a href="#cb4-392"></a>        <span class="st">"xfun"</span></span>
+<span id="cb4-393"><a href="#cb4-393"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-394"><a href="#cb4-394"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"e4e357f28c2edff493936b6cb30c3d65"</span></span>
+<span id="cb4-395"><a href="#cb4-395"></a>    <span class="fu">},</span></span>
+<span id="cb4-396"><a href="#cb4-396"></a>    <span class="dt">"vctrs"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-397"><a href="#cb4-397"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"vctrs"</span><span class="fu">,</span></span>
+<span id="cb4-398"><a href="#cb4-398"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.6.3"</span><span class="fu">,</span></span>
+<span id="cb4-399"><a href="#cb4-399"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-400"><a href="#cb4-400"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-401"><a href="#cb4-401"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-402"><a href="#cb4-402"></a>        <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb4-403"><a href="#cb4-403"></a>        <span class="st">"cli"</span><span class="ot">,</span></span>
+<span id="cb4-404"><a href="#cb4-404"></a>        <span class="st">"glue"</span><span class="ot">,</span></span>
+<span id="cb4-405"><a href="#cb4-405"></a>        <span class="st">"lifecycle"</span><span class="ot">,</span></span>
+<span id="cb4-406"><a href="#cb4-406"></a>        <span class="st">"rlang"</span></span>
+<span id="cb4-407"><a href="#cb4-407"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-408"><a href="#cb4-408"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"d0ef2856b83dc33ea6e255caf6229ee2"</span></span>
+<span id="cb4-409"><a href="#cb4-409"></a>    <span class="fu">},</span></span>
+<span id="cb4-410"><a href="#cb4-410"></a>    <span class="dt">"xfun"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-411"><a href="#cb4-411"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"xfun"</span><span class="fu">,</span></span>
+<span id="cb4-412"><a href="#cb4-412"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.39"</span><span class="fu">,</span></span>
+<span id="cb4-413"><a href="#cb4-413"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-414"><a href="#cb4-414"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-415"><a href="#cb4-415"></a>      <span class="dt">"Requirements"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-416"><a href="#cb4-416"></a>        <span class="st">"stats"</span><span class="ot">,</span></span>
+<span id="cb4-417"><a href="#cb4-417"></a>        <span class="st">"tools"</span></span>
+<span id="cb4-418"><a href="#cb4-418"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-419"><a href="#cb4-419"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"8f56e9acb54fb525e66464d57ab58bcb"</span></span>
+<span id="cb4-420"><a href="#cb4-420"></a>    <span class="fu">},</span></span>
+<span id="cb4-421"><a href="#cb4-421"></a>    <span class="dt">"yaml"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-422"><a href="#cb4-422"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"yaml"</span><span class="fu">,</span></span>
+<span id="cb4-423"><a href="#cb4-423"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"2.3.7"</span><span class="fu">,</span></span>
+<span id="cb4-424"><a href="#cb4-424"></a>      <span class="dt">"Source"</span><span class="fu">:</span> <span class="st">"Repository"</span><span class="fu">,</span></span>
+<span id="cb4-425"><a href="#cb4-425"></a>      <span class="dt">"Repository"</span><span class="fu">:</span> <span class="st">"CRAN"</span><span class="fu">,</span></span>
+<span id="cb4-426"><a href="#cb4-426"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"0d0056cc5383fbc240ccd0cb584bf436"</span></span>
+<span id="cb4-427"><a href="#cb4-427"></a>    <span class="fu">}</span></span>
+<span id="cb4-428"><a href="#cb4-428"></a>  <span class="fu">}</span></span>
+<span id="cb4-429"><a href="#cb4-429"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</details>
+</section>
+<section id="restoring-renv" class="level3">
+<h3 class="anchored" data-anchor-id="restoring-renv">Restoring <code>renv</code></h3>
+<p>If <code>renv</code> is activated but it recognized that (not all of) the packages listed in the <code>renv.lock</code> file are installed, <code>renv</code> will suggest to restore the project library using <code>renv::restore()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> This project contains a lockfile, but none of the recorded packages are installed.</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> Use <span class="kw">`</span><span class="fu">renv::restore()</span><span class="kw">`</span> to restore the project library.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will generate a list of files that will be updated.</p>
+<details>
+<summary>
+Click here to view an example output of the <code>renv::restore()</code> command.
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> following package<span class="er">(</span><span class="ex">s</span><span class="kw">)</span> <span class="ex">will</span> be updated:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># CRAN ===============================</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> R6            [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 2.5.1]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> base64enc     [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.1-3]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> bslib         [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.5.0]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> cachem        [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.0.8]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> cli           [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 3.6.1]</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> data.table    [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.14.8]</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> digest        [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.6.31]</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> ellipsis      [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.3.2]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> evaluate      [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.21]</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> fastmap       [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.1.1]</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> fontawesome   [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.5.1]</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> fs            [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.6.2]</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> glue          [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.6.2]</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> here          [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.0.1]</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> highr         [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.10]</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> htmltools     [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.5.5]</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> jquerylib     [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.1.4]</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> jsonlite      [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.8.5]</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> knitr         [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.43]</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> lifecycle     [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.0.3]</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> magrittr      [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 2.0.3]</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> memoise       [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 2.0.1]</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> mime          [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.12]</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> rappdirs      [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.3.3]</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> rlang         [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.1.1]</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> rmarkdown     [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 2.22]</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> rprojroot     [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 2.0.3]</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> sass          [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.4.6]</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> stringi       [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.7.12]</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> stringr       [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 1.5.0]</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> tinytex       [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.45]</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> vctrs         [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.6.3]</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> xfun          [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 0.39]</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> yaml          [<span class="pp">*</span> <span class="at">-</span><span class="op">&gt;</span> 2.3.7]</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="ex">Do</span> you want to proceed<span class="pp">?</span> <span class="pp">[</span><span class="ss">y/N</span><span class="pp">]</span>: </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
+<p>If you want to proceed with the update, type <code>y</code> and hit enter.</p>
+</section>
+<section id="adding-removing-packages" class="level3">
+<h3 class="anchored" data-anchor-id="adding-removing-packages">Adding / removing packages</h3>
+<p>Install packages:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1">1</button><span id="annotated-cell-7-1" class="code-annotation-target"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"PACKAGE_NAME"</span>)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2">2</button><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"PACKAGE_NAME"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="1" data-code-annotation="1">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to install.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="2">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to install.</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>Remove packages:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>(<span class="st">"PACKAGE_NAME"</span>)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="2">2</button><span id="annotated-cell-8-2" class="code-annotation-target"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">remove</span>(<span class="st">"PACKAGE_NAME"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="1" data-code-annotation="1">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to remove.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="2" data-code-annotation="2">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to remove.</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>Call <code>renv::snapshot()</code> to save the new state of the project library to the <code>renv.lock</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="commit-your-changes" class="level3">
+<h3 class="anchored" data-anchor-id="commit-your-changes">Commit your changes</h3>
+<p>The <code>renv.lock</code> is checked into version control, so after you updated it, make a new commit:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add renv.lock</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-2" class="code-annotation-target"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"add package PACKAGE_NAME to renv"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="2" data-code-annotation="1">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you installed. Adapt the commit message as needed.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
 <section id="local-development" class="level3">
 <h3 class="anchored" data-anchor-id="local-development">Local development</h3>
 <section id="setup" class="level4">
@@ -293,7 +931,7 @@ div.csl-indent {
 <section id="build-the-book-locally" class="level4">
 <h4 class="anchored" data-anchor-id="build-the-book-locally">Build the book locally</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="how-to-add-a-new-chapter" class="level4">
@@ -307,16 +945,16 @@ div.csl-indent {
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml (excerpt)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chapters</span><span class="kw">:</span></span>
-<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> chapters/YOUR-NEW-CHAPTER.qmd</span></span>
-<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> another-chapter.qmd</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="annotated-cell-12-2"><a href="#annotated-cell-12-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="1">1</button><span id="annotated-cell-12-3" class="code-annotation-target"><a href="#annotated-cell-12-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> chapters/YOUR-NEW-CHAPTER.qmd</span></span>
+<span id="annotated-cell-12-4"><a href="#annotated-cell-12-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> another-chapter.qmd</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-2" data-code-annotation="1">Replace <code>YOUR-NEW-CHAPTER</code> with a concise filename.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="3" data-code-annotation="1">Replace <code>YOUR-NEW-CHAPTER</code> with a concise filename.</span>
 </dd>
 </dl>
 </div>
@@ -330,80 +968,80 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">project:</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="co"># project options (https://quarto.org/docs/reference/projects/options.html):</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="ex">type:</span> book</span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="ex">output-dir:</span> _book</span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="ex">execute-dir:</span> project</span>
-<span id="cb2-6"><a href="#cb2-6"></a>  <span class="co"># pre-render: make download-images</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="co"># preview (https://quarto.org/docs/reference/projects/options.html#preview):</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="ex">preview:</span> </span>
-<span id="cb2-9"><a href="#cb2-9"></a>    <span class="ex">port:</span> 3333</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="ex">host:</span> 127.0.0.1</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    <span class="ex">browser:</span> true</span>
-<span id="cb2-12"><a href="#cb2-12"></a>    <span class="ex">watch-inputs:</span> true</span>
-<span id="cb2-13"><a href="#cb2-13"></a>    <span class="ex">navigate:</span> true</span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="ex">book:</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a>  <span class="ex">title:</span> <span class="st">"Version Control of Code and Data for Scientists"</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a>  <span class="ex">search:</span> true</span>
-<span id="cb2-18"><a href="#cb2-18"></a>  <span class="ex">repo-url:</span> https://github.com/lnnrtwttkhn/version-control-book/</span>
-<span id="cb2-19"><a href="#cb2-19"></a>  <span class="ex">repo-branch:</span> main</span>
-<span id="cb2-20"><a href="#cb2-20"></a>  <span class="ex">repo-actions:</span> [issue, source]</span>
-<span id="cb2-21"><a href="#cb2-21"></a>  <span class="ex">downloads:</span> [pdf, epub]</span>
-<span id="cb2-22"><a href="#cb2-22"></a>  <span class="ex">sharing:</span> [twitter, facebook]</span>
-<span id="cb2-23"><a href="#cb2-23"></a>  <span class="ex">favicon:</span> static/git-icon.svg</span>
-<span id="cb2-24"><a href="#cb2-24"></a>  <span class="ex">twitter-card:</span> false</span>
-<span id="cb2-25"><a href="#cb2-25"></a>  <span class="ex">site-url:</span> https://lennartwittkuhn.com/version-control-book</span>
-<span id="cb2-26"><a href="#cb2-26"></a><span class="co">#  date: "6/3/2023"</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a>  <span class="ex">chapters:</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>    <span class="ex">-</span> index.qmd</span>
-<span id="cb2-29"><a href="#cb2-29"></a>    <span class="ex">-</span> intro.qmd</span>
-<span id="cb2-30"><a href="#cb2-30"></a>    <span class="ex">-</span> chapters/rewriting-history.qmd</span>
-<span id="cb2-31"><a href="#cb2-31"></a>    <span class="ex">-</span> summary.qmd</span>
-<span id="cb2-32"><a href="#cb2-32"></a>    <span class="ex">-</span> references.qmd</span>
-<span id="cb2-33"><a href="#cb2-33"></a>    <span class="ex">-</span> part: chapters/contributing.qmd</span>
-<span id="cb2-34"><a href="#cb2-34"></a>      <span class="ex">chapters:</span></span>
-<span id="cb2-35"><a href="#cb2-35"></a>        <span class="ex">-</span> chapters/style-guide.qmd</span>
-<span id="cb2-36"><a href="#cb2-36"></a>  <span class="ex">page-navigation:</span> true</span>
-<span id="cb2-37"><a href="#cb2-37"></a></span>
-<span id="cb2-38"><a href="#cb2-38"></a><span class="ex">format:</span></span>
-<span id="cb2-39"><a href="#cb2-39"></a>  <span class="ex">html:</span></span>
-<span id="cb2-40"><a href="#cb2-40"></a>    <span class="ex">theme:</span> cosmo</span>
-<span id="cb2-41"><a href="#cb2-41"></a>    <span class="co"># fontcolor: black</span></span>
-<span id="cb2-42"><a href="#cb2-42"></a>    <span class="co"># linkcolor: black</span></span>
-<span id="cb2-43"><a href="#cb2-43"></a>    <span class="ex">link-external-newwindow:</span> true</span>
-<span id="cb2-44"><a href="#cb2-44"></a>    <span class="ex">toc:</span> true</span>
-<span id="cb2-45"><a href="#cb2-45"></a>    <span class="ex">toc-depth:</span> 3</span>
-<span id="cb2-46"><a href="#cb2-46"></a>    <span class="ex">toc-title:</span> <span class="st">"On this page"</span></span>
-<span id="cb2-47"><a href="#cb2-47"></a>    <span class="ex">number-sections:</span> false</span>
-<span id="cb2-48"><a href="#cb2-48"></a>    <span class="ex">anchor-sections:</span> true</span>
-<span id="cb2-49"><a href="#cb2-49"></a>    <span class="co"># layout (https://quarto.org/docs/reference/formats/html.html#layout):</span></span>
-<span id="cb2-50"><a href="#cb2-50"></a>    <span class="ex">fig-cap-location:</span> margin</span>
-<span id="cb2-51"><a href="#cb2-51"></a>    <span class="ex">page-layout:</span> full</span>
-<span id="cb2-52"><a href="#cb2-52"></a>    <span class="ex">title-block-style:</span> none</span>
-<span id="cb2-53"><a href="#cb2-53"></a>    <span class="co"># code (https://quarto.org/docs/reference/formats/html.html#code):</span></span>
-<span id="cb2-54"><a href="#cb2-54"></a>    <span class="ex">code-fold:</span> false</span>
-<span id="cb2-55"><a href="#cb2-55"></a>    <span class="ex">code-overflow:</span> wrap</span>
-<span id="cb2-56"><a href="#cb2-56"></a>    <span class="ex">code-line-numbers:</span> false</span>
-<span id="cb2-57"><a href="#cb2-57"></a>    <span class="ex">code-copy:</span> true</span>
-<span id="cb2-58"><a href="#cb2-58"></a>    <span class="ex">code-link:</span> false</span>
-<span id="cb2-59"><a href="#cb2-59"></a>    <span class="ex">code-annotations:</span> hover</span>
-<span id="cb2-60"><a href="#cb2-60"></a>    <span class="ex">code-tools:</span> false</span>
-<span id="cb2-61"><a href="#cb2-61"></a>    <span class="ex">highlight-style:</span> monokai</span>
-<span id="cb2-62"><a href="#cb2-62"></a>    <span class="co"># references:</span></span>
-<span id="cb2-63"><a href="#cb2-63"></a>    <span class="ex">bibliography:</span> references.bib</span>
-<span id="cb2-64"><a href="#cb2-64"></a>    <span class="ex">citations-hover:</span> true</span>
-<span id="cb2-65"><a href="#cb2-65"></a>    <span class="ex">citation-location:</span> document</span>
-<span id="cb2-66"><a href="#cb2-66"></a>    <span class="ex">citeproc:</span> true</span>
-<span id="cb2-67"><a href="#cb2-67"></a>    <span class="co"># footnotes:</span></span>
-<span id="cb2-68"><a href="#cb2-68"></a>    <span class="ex">footnotes-hover:</span> true</span>
-<span id="cb2-69"><a href="#cb2-69"></a>    <span class="co"># includes:</span></span>
-<span id="cb2-70"><a href="#cb2-70"></a>    <span class="ex">include-after-body:</span> plausible.html</span>
-<span id="cb2-71"><a href="#cb2-71"></a></span>
-<span id="cb2-72"><a href="#cb2-72"></a><span class="ex">metadata-files:</span></span>
-<span id="cb2-73"><a href="#cb2-73"></a>  <span class="ex">-</span> _authors.yml</span>
-<span id="cb2-74"><a href="#cb2-74"></a>  <span class="ex">-</span> _affiliations.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">project:</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="co"># project options (https://quarto.org/docs/reference/projects/options.html):</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="ex">type:</span> book</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="ex">output-dir:</span> _book</span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="ex">execute-dir:</span> project</span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="co"># pre-render: make download-images</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="co"># preview (https://quarto.org/docs/reference/projects/options.html#preview):</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>  <span class="ex">preview:</span> </span>
+<span id="cb10-9"><a href="#cb10-9"></a>    <span class="ex">port:</span> 3333</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="ex">host:</span> 127.0.0.1</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    <span class="ex">browser:</span> true</span>
+<span id="cb10-12"><a href="#cb10-12"></a>    <span class="ex">watch-inputs:</span> true</span>
+<span id="cb10-13"><a href="#cb10-13"></a>    <span class="ex">navigate:</span> true</span>
+<span id="cb10-14"><a href="#cb10-14"></a></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="ex">book:</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a>  <span class="ex">title:</span> <span class="st">"Version Control of Code and Data for Scientists"</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a>  <span class="ex">search:</span> true</span>
+<span id="cb10-18"><a href="#cb10-18"></a>  <span class="ex">repo-url:</span> https://github.com/lnnrtwttkhn/version-control-book/</span>
+<span id="cb10-19"><a href="#cb10-19"></a>  <span class="ex">repo-branch:</span> main</span>
+<span id="cb10-20"><a href="#cb10-20"></a>  <span class="ex">repo-actions:</span> [issue, source]</span>
+<span id="cb10-21"><a href="#cb10-21"></a>  <span class="ex">downloads:</span> [pdf, epub]</span>
+<span id="cb10-22"><a href="#cb10-22"></a>  <span class="ex">sharing:</span> [twitter, facebook]</span>
+<span id="cb10-23"><a href="#cb10-23"></a>  <span class="ex">favicon:</span> static/git-icon.svg</span>
+<span id="cb10-24"><a href="#cb10-24"></a>  <span class="ex">twitter-card:</span> false</span>
+<span id="cb10-25"><a href="#cb10-25"></a>  <span class="ex">site-url:</span> https://lennartwittkuhn.com/version-control-book</span>
+<span id="cb10-26"><a href="#cb10-26"></a><span class="co">#  date: "6/3/2023"</span></span>
+<span id="cb10-27"><a href="#cb10-27"></a>  <span class="ex">chapters:</span></span>
+<span id="cb10-28"><a href="#cb10-28"></a>    <span class="ex">-</span> index.qmd</span>
+<span id="cb10-29"><a href="#cb10-29"></a>    <span class="ex">-</span> intro.qmd</span>
+<span id="cb10-30"><a href="#cb10-30"></a>    <span class="ex">-</span> chapters/rewriting-history.qmd</span>
+<span id="cb10-31"><a href="#cb10-31"></a>    <span class="ex">-</span> summary.qmd</span>
+<span id="cb10-32"><a href="#cb10-32"></a>    <span class="ex">-</span> references.qmd</span>
+<span id="cb10-33"><a href="#cb10-33"></a>    <span class="ex">-</span> part: chapters/contributing.qmd</span>
+<span id="cb10-34"><a href="#cb10-34"></a>      <span class="ex">chapters:</span></span>
+<span id="cb10-35"><a href="#cb10-35"></a>        <span class="ex">-</span> chapters/style-guide.qmd</span>
+<span id="cb10-36"><a href="#cb10-36"></a>  <span class="ex">page-navigation:</span> true</span>
+<span id="cb10-37"><a href="#cb10-37"></a></span>
+<span id="cb10-38"><a href="#cb10-38"></a><span class="ex">format:</span></span>
+<span id="cb10-39"><a href="#cb10-39"></a>  <span class="ex">html:</span></span>
+<span id="cb10-40"><a href="#cb10-40"></a>    <span class="ex">theme:</span> cosmo</span>
+<span id="cb10-41"><a href="#cb10-41"></a>    <span class="co"># fontcolor: black</span></span>
+<span id="cb10-42"><a href="#cb10-42"></a>    <span class="co"># linkcolor: black</span></span>
+<span id="cb10-43"><a href="#cb10-43"></a>    <span class="ex">link-external-newwindow:</span> true</span>
+<span id="cb10-44"><a href="#cb10-44"></a>    <span class="ex">toc:</span> true</span>
+<span id="cb10-45"><a href="#cb10-45"></a>    <span class="ex">toc-depth:</span> 3</span>
+<span id="cb10-46"><a href="#cb10-46"></a>    <span class="ex">toc-title:</span> <span class="st">"On this page"</span></span>
+<span id="cb10-47"><a href="#cb10-47"></a>    <span class="ex">number-sections:</span> false</span>
+<span id="cb10-48"><a href="#cb10-48"></a>    <span class="ex">anchor-sections:</span> true</span>
+<span id="cb10-49"><a href="#cb10-49"></a>    <span class="co"># layout (https://quarto.org/docs/reference/formats/html.html#layout):</span></span>
+<span id="cb10-50"><a href="#cb10-50"></a>    <span class="ex">fig-cap-location:</span> margin</span>
+<span id="cb10-51"><a href="#cb10-51"></a>    <span class="ex">page-layout:</span> full</span>
+<span id="cb10-52"><a href="#cb10-52"></a>    <span class="ex">title-block-style:</span> none</span>
+<span id="cb10-53"><a href="#cb10-53"></a>    <span class="co"># code (https://quarto.org/docs/reference/formats/html.html#code):</span></span>
+<span id="cb10-54"><a href="#cb10-54"></a>    <span class="ex">code-fold:</span> false</span>
+<span id="cb10-55"><a href="#cb10-55"></a>    <span class="ex">code-overflow:</span> wrap</span>
+<span id="cb10-56"><a href="#cb10-56"></a>    <span class="ex">code-line-numbers:</span> false</span>
+<span id="cb10-57"><a href="#cb10-57"></a>    <span class="ex">code-copy:</span> true</span>
+<span id="cb10-58"><a href="#cb10-58"></a>    <span class="ex">code-link:</span> false</span>
+<span id="cb10-59"><a href="#cb10-59"></a>    <span class="ex">code-annotations:</span> hover</span>
+<span id="cb10-60"><a href="#cb10-60"></a>    <span class="ex">code-tools:</span> false</span>
+<span id="cb10-61"><a href="#cb10-61"></a>    <span class="ex">highlight-style:</span> monokai</span>
+<span id="cb10-62"><a href="#cb10-62"></a>    <span class="co"># references:</span></span>
+<span id="cb10-63"><a href="#cb10-63"></a>    <span class="ex">bibliography:</span> references.bib</span>
+<span id="cb10-64"><a href="#cb10-64"></a>    <span class="ex">citations-hover:</span> true</span>
+<span id="cb10-65"><a href="#cb10-65"></a>    <span class="ex">citation-location:</span> document</span>
+<span id="cb10-66"><a href="#cb10-66"></a>    <span class="ex">citeproc:</span> true</span>
+<span id="cb10-67"><a href="#cb10-67"></a>    <span class="co"># footnotes:</span></span>
+<span id="cb10-68"><a href="#cb10-68"></a>    <span class="ex">footnotes-hover:</span> true</span>
+<span id="cb10-69"><a href="#cb10-69"></a>    <span class="co"># includes:</span></span>
+<span id="cb10-70"><a href="#cb10-70"></a>    <span class="ex">include-after-body:</span> plausible.html</span>
+<span id="cb10-71"><a href="#cb10-71"></a></span>
+<span id="cb10-72"><a href="#cb10-72"></a><span class="ex">metadata-files:</span></span>
+<span id="cb10-73"><a href="#cb10-73"></a>  <span class="ex">-</span> _authors.yml</span>
+<span id="cb10-74"><a href="#cb10-74"></a>  <span class="ex">-</span> _affiliations.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -420,6 +1058,7 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 </ul>
 </section>
 </section>
+</section>
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
 <ul>
@@ -428,9 +1067,9 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <section id="code-inside-the-document" class="level3">
 <h3 class="anchored" data-anchor-id="code-inside-the-document">Code inside the document</h3>
 <p>Add code snippets to a Quarto document like this:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-warning callout-titled" title="Disable code execution in all Quarto documents by default!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -443,9 +1082,9 @@ Disable code execution in all Quarto documents by default!
 <div class="callout-body-container callout-body">
 <p>Place the following code in the YAML header of <strong>each</strong> Quarto document:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">eval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">eval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <details>
 <summary>
@@ -456,12 +1095,12 @@ Example: Click here for the YAML header of the current document.
 <div class="code-with-filename-file">
 <pre><strong>chapters/contributing.qmd</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Contributing"</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="at">  </span><span class="fu">eval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1"></a><span class="pp">---</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Contributing"</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="at">  </span><span class="fu">eval</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -479,20 +1118,20 @@ The YAML header in a Quarto document is used to specify important metadata and s
 <section id="reference-external-code" class="level3">
 <h3 class="anchored" data-anchor-id="reference-external-code">Reference external code</h3>
 <p>You can reference external code. For example, this code block will display the first five lines (<code>echo=c(1:5)</code>) of <code>_quarto.yml</code> (<code>#| file: _quarto.yml</code>) and add code line numbers (<code>#| code-line-numbers: true</code>) and a filename to the code block (<code>filename="_quarto.yml"</code>).</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash, filename="_quarto.yml", echo=c(1:5)}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| file: _quarto.yml</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-line-numbers: true</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash, filename="_quarto.yml", echo=c(1:5)}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| file: _quarto.yml</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-line-numbers: true</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="add-code-annotations" class="level3">
 <h3 class="anchored" data-anchor-id="add-code-annotations">Add code annotations</h3>
 <ul>
 <li><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://quarto.org/docs/authoring/code-annotation.html">“Code Annotation”</a> in the Quarto documentation</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status <span class="co"># &lt;1&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`git status`</span> displays the state of the working directory and the staging area.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status <span class="co"># &lt;1&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`git status`</span> displays the state of the working directory and the staging area.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="images" class="level2">
@@ -501,54 +1140,101 @@ The YAML header in a Quarto document is used to specify important metadata and s
 <h3 class="anchored" data-anchor-id="background">Background</h3>
 <p>Images are stored in a <a href="https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT">NextCloud folder</a>. They are downloaded into the <code>/static</code> folder using the command specified in the <code>Makefile</code>.</p>
 </section>
-<section id="add-new-image" class="level3">
-<h3 class="anchored" data-anchor-id="add-new-image">Add new image</h3>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>You need to install the following packages:</p>
 <ol type="1">
-<li>Become a collaborator on the <a href="https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT">UHH Cloud folder</a></li>
-<li>Go to the <a href="https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT">UHH Cloud folder</a></li>
-<li>Place the new image inside folder</li>
-<li>Run <code>make download-images</code> to retrieve all files from the updated folder</li>
+<li><a href="https://www.gnu.org/software/wget/">GNU Wget</a></li>
+<li><a href="https://www.gnu.org/software/make/">GNU Make</a></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="What's a Makefile?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="fa-brands fa-apple" aria-label="apple"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="fa-brands fa-windows" aria-label="windows"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false"><i class="fa-brands fa-linux" aria-label="linux"></i></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ol type="1">
+<li><strong>Prerequisite:</strong> Install <a href="https://brew.sh/">Homebrew</a></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>After you installed Homebrew, install <a href="https://www.gnu.org/software/wget/">GNU Wget</a></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install wget</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a href="https://www.gnu.org/software/make/">GNU Make</a> should already be installed. Try by entering the following command into the Terminal:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>TBA</p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p>TBA</p>
+</div>
+</div>
+</div>
+</section>
+<section id="retrieve-images" class="level3">
+<h3 class="anchored" data-anchor-id="retrieve-images">Retrieve images</h3>
+<p>After you installed all the required software, run this command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> download-images</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="What's a Makefile and what does it do?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What’s a Makefile?
+What’s a Makefile and what does it do?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell" data-file="Makefile">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># define URL to Nextcloud where static files are stored:</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co"># define a name for the .zip-archive with the cloud contents:</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="va">IMAGES_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># define the name of the local folder:</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="va">IMAGES_DIR</span><span class="op">=</span>static/</span>
-<span id="cb8-7"><a href="#cb8-7"></a></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="co"># define the default targets of the make command</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="ex">all:</span> download-images</span>
-<span id="cb8-10"><a href="#cb8-10"></a></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="co"># download and extract images:</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="ex">download-images:</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a>    <span class="fu">wget</span> <span class="va">$(</span><span class="ex">IMAGES_URL</span><span class="va">)</span> <span class="at">-O</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span></span>
-<span id="cb8-15"><a href="#cb8-15"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
-<span id="cb8-16"><a href="#cb8-16"></a></span>
-<span id="cb8-17"><a href="#cb8-17"></a><span class="co"># clean downloaded images folder:</span></span>
-<span id="cb8-18"><a href="#cb8-18"></a><span class="ex">clean:</span></span>
-<span id="cb8-19"><a href="#cb8-19"></a>    <span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span><span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># define URL to Nextcloud where static files are stored:</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="co"># define a name for the .zip-archive with the cloud contents:</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="va">IMAGES_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="co"># define the name of the local folder:</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="va">IMAGES_DIR</span><span class="op">=</span>static/</span>
+<span id="cb20-7"><a href="#cb20-7"></a></span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="co"># define the default targets of the make command</span></span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="ex">all:</span> download-images</span>
+<span id="cb20-10"><a href="#cb20-10"></a></span>
+<span id="cb20-11"><a href="#cb20-11"></a><span class="co"># download and extract images:</span></span>
+<span id="cb20-12"><a href="#cb20-12"></a><span class="ex">download-images:</span></span>
+<span id="cb20-13"><a href="#cb20-13"></a>    <span class="fu">wget</span> <span class="va">$(</span><span class="ex">IMAGES_URL</span><span class="va">)</span> <span class="at">-O</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb20-14"><a href="#cb20-14"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span></span>
+<span id="cb20-15"><a href="#cb20-15"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb20-16"><a href="#cb20-16"></a></span>
+<span id="cb20-17"><a href="#cb20-17"></a><span class="co"># clean downloaded images folder:</span></span>
+<span id="cb20-18"><a href="#cb20-18"></a><span class="ex">clean:</span></span>
+<span id="cb20-19"><a href="#cb20-19"></a>    <span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span><span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="add-a-new-image" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-new-image">Add a new image</h3>
+<ol type="1">
+<li>Become a collaborator on the <a href="https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT">UHH Cloud folder</a>.</li>
+<li>Go to the <a href="https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT">UHH Cloud folder</a>.</li>
+<li>Place the new image inside the folder. Please use <code>-</code> to separate word in the filename.</li>
+<li>Reference the image in the Quarto document relative to the root of the project directory:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](static/NEW-IMAGE.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="download-images-in-pre-render-command" class="level3">
@@ -568,8 +1254,8 @@ What’s a Makefile?
 <div class="code-with-filename-file">
 <pre><strong>_variables.yml (excerpt)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">links:</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="ex">nextcloud:</span> https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="ex">links:</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="ex">nextcloud:</span> https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <details>
@@ -581,20 +1267,20 @@ Click here to view the full <code>_variables.yml</code> file of this project.
 <div class="code-with-filename-file">
 <pre><strong>_variables.yml</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># https://quarto.org/docs/authoring/variables.html</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="ex">links:</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="ex">nextcloud:</span> https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT</span>
-<span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="ex">language:</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>  <span class="ex">dont:</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a>    <span class="ex">yes:</span> <span class="st">"don't"</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a>    <span class="ex">no:</span> <span class="st">"do not"</span></span>
-<span id="cb10-9"><a href="#cb10-9"></a>  <span class="ex">folder:</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a>    <span class="ex">yes:</span> <span class="st">"folder"</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a>    <span class="ex">no:</span> <span class="st">"directory"</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a>  <span class="ex">documentation:</span></span>
-<span id="cb10-13"><a href="#cb10-13"></a>    <span class="ex">yes:</span> <span class="st">"documentation"</span></span>
-<span id="cb10-14"><a href="#cb10-14"></a>    <span class="ex">no:</span> <span class="st">"docs"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># https://quarto.org/docs/authoring/variables.html</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="ex">links:</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="ex">nextcloud:</span> https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT</span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="ex">language:</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="ex">dont:</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a>    <span class="ex">yes:</span> <span class="st">"don't"</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a>    <span class="ex">no:</span> <span class="st">"do not"</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>  <span class="ex">folder:</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>    <span class="ex">yes:</span> <span class="st">"folder"</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a>    <span class="ex">no:</span> <span class="st">"directory"</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a>  <span class="ex">documentation:</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a>    <span class="ex">yes:</span> <span class="st">"documentation"</span></span>
+<span id="cb23-14"><a href="#cb23-14"></a>    <span class="ex">no:</span> <span class="st">"docs"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
