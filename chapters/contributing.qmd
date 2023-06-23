@@ -296,14 +296,56 @@ git status # <1>
 Images are stored in a [NextCloud folder]({{< var links.nextcloud >}}).
 They are downloaded into the `/static` folder using the command specified in the `Makefile`.
 
-### Add new image
+### Installation
 
-1. Become a collaborator on the [UHH Cloud folder]({{< var links.nextcloud >}})
-1. Go to the [UHH Cloud folder]({{< var links.nextcloud >}})
-1. Place the new image inside folder
-1. Run `make download-images` to retrieve all files from the updated folder
+You need to install the following packages:
 
-::: {.callout-tip title="What's a Makefile?" collapse="false"}
+1. [GNU Wget](https://www.gnu.org/software/wget/)
+1. [GNU Make](https://www.gnu.org/software/make/)
+
+::: {.panel-tabset}
+
+## {{< fa brands apple >}}
+
+1. **Prerequisite:** Install [Homebrew](https://brew.sh/)
+
+```{bash}
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+````
+
+2. After you installed Homebrew, install [GNU Wget](https://www.gnu.org/software/wget/)
+
+```{bash}
+brew install wget
+````
+
+[GNU Make](https://www.gnu.org/software/make/) should already be installed.
+Try by entering the following command into the Terminal:
+
+```{bash}
+make --version
+````
+
+## {{< fa brands windows >}}
+
+TBA
+
+## {{< fa brands linux >}}
+
+TBA
+
+:::
+
+
+### Retrieve images
+
+After you installed all the required software, run this command:
+
+```{bash}
+make download-images
+```
+
+::: {.callout-tip title="What's a Makefile and what does it do?" collapse="true"}
 
 ```{bash, filename="Makefile"}
 #| file: Makefile
@@ -311,6 +353,18 @@ They are downloaded into the `/static` folder using the command specified in the
 ```
 
 :::
+
+### Add a new image
+
+1. Become a collaborator on the [UHH Cloud folder]({{< var links.nextcloud >}}).
+1. Go to the [UHH Cloud folder]({{< var links.nextcloud >}}).
+1. Place the new image inside the folder.
+Please use `-` to separate word in the filename.
+1. Reference the image in the Quarto document relative to the root of the project directory:
+
+```{markdown}
+![](static/NEW-IMAGE.png)
+```
 
 ### Download images in pre-render command
 
