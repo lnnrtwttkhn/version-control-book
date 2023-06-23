@@ -85,19 +85,18 @@ For the moment, we disabled this option, but it can be enabled in `_quarto.yml`.
 
 ## Variables
 
+- {{< fa book >}} ["Variables"](https://quarto.org/docs/authoring/variables.html) in the Quarto documentation
+
 Quarto offers a number of ways to **include dynamic variables within documents**.
 Dynamic variables are useful for externalizing content that varies depending on context, or as an alternative to repeating a value in multiple places.
 
 In this project, we use a project-level `_variables.yml` file to define variables.
-Variables can be either simple values or can include arbitrary markdown content.
-The `var` shortcode then allows to include references to those variables within any document in this project.
+Variables can be either simple values or can include arbitrary Markdown content.
 
 ```{bash, filename="_variables.yml (excerpt)", echo=c(2, 3)}
 #| file: _variables.yml
 #| code-line-numbers: true
 ```
-
-For example, to include the link to the Nextcloud folder that stores static contents (images etc.) as a variable in a document, use `{{{< var links.nextcloud >}}}`.
 
 <details>
 <summary>Click here to view the full `_variables.yml` file of this project.</summary>
@@ -107,8 +106,11 @@ For example, to include the link to the Nextcloud folder that stores static cont
 ```
 </details>
 
+The `var` shortcode then allows to include references to those variables within any document in this project.
+For example, to include the link to the Nextcloud folder that stores static contents (images etc.) as a variable in a document, use `{{{< var links.nextcloud >}}}`.
+
 For more details on variables, read the chapter on [Variables](https://quarto.org/docs/authoring/variables.html) in the Quarto documentation. 
 
 ## Acknowledgements & Attribution
 
-@allaire2022, in particular the chapters on [Variables](https://quarto.org/docs/authoring/variables.html) in the Quarto documentation
+- The Quarto documentation [@allaire2022], in particular the chapters on [Variables](https://quarto.org/docs/authoring/variables.html), [Quarto Extensions](https://quarto.org/docs/extensions/) (License: [GNU GPL v2](https://quarto.org/license.html))
