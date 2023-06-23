@@ -14,10 +14,108 @@
     "text": "This is a book created from markdown and executable code.\nSee (knuth84?) for additional discussion of literate programming."
   },
   {
+    "objectID": "chapters/rewriting-history.html#how-to-avoid-accidental-commits",
+    "href": "chapters/rewriting-history.html#how-to-avoid-accidental-commits",
+    "title": "Rewriting history",
+    "section": "How to avoid accidental commits",
+    "text": "How to avoid accidental commits\nThere are a few simple tricks to avoid committing things you don’t want committed:\n\nUse a visual program like GitHub Desktop or gitk to commit changes. Visual programs generally make it easier to see exactly which files will be added, deleted, and modified with each commit.\nAvoid the catch-all commands git add . and git commit -a on the command line—use git add filename and git rm filename to individually stage files, instead.\nUse git add --interactive to individually review and stage changes within each file.\nUse git diff --cached to review the changes that you have staged for commit. This is the exact diff that git commit will produce as long as you don’t use the -a flag.\n\nYou accidentally added a large file to a previous commit.\nNow you want to remove the file but keep all commits that came afterwards."
+  },
+  {
+    "objectID": "chapters/rewriting-history.html#purging-a-file-from-your-repositorys-history",
+    "href": "chapters/rewriting-history.html#purging-a-file-from-your-repositorys-history",
+    "title": "Rewriting history",
+    "section": "Purging a file from your repository’s history",
+    "text": "Purging a file from your repository’s history\n\n\n\n\n\n\nNote\n\n\n\nIf sensitive data is located in a file that’s identified as a binary file, you’ll need to remove the file from the history, as you can’t modify it to remove or replace the data.\n\n\n\nUsing the BFG\nTODO: TBA\n\n\nUsing git filter-repo\n\n\n\n\n\n\nWarning\n\n\n\nWarning: If you run git filter-repo after stashing changes, you won’t be able to retrieve your changes with other stash commands. Before running git filter-repo, we recommend unstashing any changes you’ve made. To unstash the last set of changes you’ve stashed, run git stash show -p | git apply -R. For more information, see Git Tools - Stashing and Cleaning.\n\n\nTo illustrate how git filter-repo works, we’ll show you how to remove your file with sensitive data from the history of your repository and add it to .gitignore to ensure that it is not accidentally re-committed.\n\n\n\n\n\n\nInstall git filter-repo\n\n\n\n\n\nInstall the latest release of the git filter-repo tool. You can install git-filter-repo manually or by using a package manager. For example, to install the tool with HomeBrew on macOS, use the brew install command.\n\nbrew install git-filter-repo\n\nFor more information, see INSTALL.md in the newren/git-filter-repo repository.\n\n\n\n\n\nClone the repository\nIf you don’t already have a local copy of your repository with sensitive data in its history, clone the repository to your local computer.\n\n112git clone https://github.com/YOUR-USERNAME&gt;/YOUR-REPOSITORY\n\n\n1\n\nReplace YOUR-USERNAME with your GitHub username and YOUR-REPOSITORY with the name of your GitHub repository.\n\n\n\n\n\n\nNavigate into the repository’s working directory\nNavigate into the repository’s working directory.\n\n1cd YOUR-REPOSITORY\n# TODO: add reference to command line chapter\n\n\n1\n\nReplace YOUR-REPOSITORY with the name of your GitHub repository. For details on the cd command, see the chapter on command line.\n\n\n\n\n\n\nRun git filter-repo command\nRun the following command, replacing PATH-TO-FILE-YOU-WANT-TO-REMOVE with the path to the file you want to remove, not just its file name. These arguments will:\n\nForce Git to process, but not check out, the entire history of every branch and tag\nRemove the specified file, as well as any empty commits generated as a result\nRemove some configurations, such as the remote URL, stored in the .git/config file. You may want to back up this file in advance for restoration later.\nOverwrite your existing tags\n\n\n1git filter-repo --invert-paths --path PATH-TO-FILE-YOU-WANT-TO-REMOVE\n\n\n1\n\nReplace PATH-TO-FILE-YOU-WANT-TO-REMOVE with the path to the file you want to remove, not just its file name.\n\n\n\n\n\n\n\n\n\n\nI did not clone a fresh copy of the repository. Is this a problem?\n\n\n\n\n\nIf you did not clone a fresh copy of your repository, you may see this message after running the git filter-repo command:\n\nAborting: Refusing to destructively overwrite repo history since\nthis does not look like a fresh clone.\n  (expected freshly packed repo)\nPlease operate on a fresh clone instead.  If you want to proceed\nanyway, use --force.\n\nAs described in the message, you have two options:\n\nClone a fresh copy of your repository and execute the command there.\nAdd --force to proceed with the existing repository.\n\n\n\n\n\nAdd your file to .gitignore\nAdd your file to .gitignore to ensure that you don’t accidentally commit it again. You can edit .gitignore in your favorite text editor\n\n1echo \"PATH-TO-FILE-YOU-WANT-TO-REMOVE\" &gt;&gt; .gitignore\ngit add .gitignore\ngit commit -m \"Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore\"\n\n\n1\n\nThis command writes PATH-TO-FILE-YOU-WANT-TO-REMOVE inside the .gitignore file. &gt;&gt; makes sure that this is written to a new line inside the .gitignore file.\n\n\n\n\nThis will create the following output:\n\n[main 64dda05] Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore\n 1 files changed, 1 insertions(+), 0 deletions(-)\n\n\n\n\nDouble-check the state of your repository\nDouble-check that you’ve removed everything you wanted to from your repository’s history, and that all of your branches are checked out.\n\n\nForce-push your local changes to GitHub\nIf you are happy with the state of your repository, force-push your local changes to overwrite your repository on github.com/, as well as all the branches you’ve pushed up. A force push is required to remove sensitive data from your commit history.\n\ngit push origin --force --all\n\n\n\nOutput\n\n\nCounting objects: 1074, done.\nDelta compression using 2 threads.\nCompressing objects: 100% (677/677), done.\nWriting objects: 100% (1058/1058), 148.85 KiB, done.\nTotal 1058 (delta 590), reused 602 (delta 378)\nTo https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git\n  + 48dc599...64dda05 main -&gt; main (forced update)\n\n\n\n\n\n\n\n\nfatal: ‘origin’ does not appear to be a git repository\n\n\n\n\n\nDid you receive this error message?\n\nfatal: 'origin' does not appear to be a git repository\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\n\nAs described above, this could mean that origin was removed from your repo. Configure origin again:\n\nSSHHTTPS\n\n\n\ngit remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY\n\n\n1\n\nReplace YOUR-USERNAME with your GitHub username and YOUR-REPOSITORY with the name of your GitHub repository.\n\n\n\n\n\n\n\ngit remote add origin git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git\n\n\n2\n\nReplace &lt;YOUR-USERNAME&gt; with your GitHub username and &lt;YOUR-REPOSITORY&gt; with the name of your GitHub repository.\n\n\n\n\n\n\n\n\n\n\nIn order to remove the sensitive file from your tagged releases, you’ll also need to force-push against your Git tags:\n\ngit push origin --force --tags\n\n\n\nOutput\n\n\nCounting objects: 321, done.\nDelta compression using up to 8 threads.\nCompressing objects: 100% (166/166), done.\nWriting objects: 100% (321/321), 331.74 KiB | 0 bytes/s, done.\nTotal 321 (delta 124), reused 269 (delta 108)\nTo https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git\n + 48dc599...051452f main -&gt; main (forced update)"
+  },
+  {
+    "objectID": "chapters/rewriting-history.html#fully-removing-the-data-from-github",
+    "href": "chapters/rewriting-history.html#fully-removing-the-data-from-github",
+    "title": "Rewriting history",
+    "section": "Fully removing the data from GitHub",
+    "text": "Fully removing the data from GitHub\nAfter using either the BFG tool or git filter-repo to remove the sensitive data and pushing your changes to GitHub, you must take a few more steps to fully remove the data from GitHub.\n\nContact GitHub Support, asking them to remove cached views and references to the sensitive data in pull requests on GitHub. Please provide the name of the repository and/or a link to the commit you need removed.\nTell your collaborators to rebase, not merge, any branches they created off of your old (tainted) repository history. One merge commit could reintroduce some or all of the tainted history that you just went to the trouble of purging.\nAfter some time has passed and you’re confident that the BFG tool / git filter-repo had no unintended side effects, you can force all objects in your local repository to be dereferenced and garbage collected with the following commands (using Git 1.8.5 or newer)\n\n\n$ git for-each-ref --format=\"delete %(refname)\" refs/original | git update-ref --stdin\n$ git reflog expire --expire=now --all\n$ git gc --prune=now\n&gt; Counting objects: 2437, done.\n&gt; Delta compression using up to 4 threads.\n&gt; Compressing objects: 100% (1378/1378), done.\n&gt; Writing objects: 100% (2437/2437), done.\n&gt; Total 2437 (delta 1461), reused 1802 (delta 1048)\n\nNote: You can also achieve this by pushing your filtered history to a new or empty repository and then making a fresh clone from GitHub."
+  },
+  {
+    "objectID": "chapters/rewriting-history.html#references",
+    "href": "chapters/rewriting-history.html#references",
+    "title": "Rewriting history",
+    "section": "References",
+    "text": "References\n\nhttps://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Allaire, J. J., Charles Teague, Yihui Xie, and Christophe Dervieux.\n2022. “Quarto.” https://doi.org/10.5281/zenodo.5960048.\n\n\nCommunity, The Turing Way. 2022. The Turing Way: A Handbook for\nReproducible, Ethical and Collaborative Research. Zenodo. https://doi.org/10.5281/zenodo.3233853."
+  },
+  {
+    "objectID": "chapters/contributing.html#code",
+    "href": "chapters/contributing.html#code",
+    "title": "Contributing",
+    "section": "Code",
+    "text": "Code\n\n “HTML Code Blocks” in the Quarto documentation\n\n\nCode inside the document\nAdd code snippets to a Quarto document like this:\n```{bash}\ngit status\n```\n\n\n\n\n\n\nDisable code execution in all Quarto documents by default!\n\n\n\nPlace the following code in the YAML header of each Quarto document:\n\nengine: knitr\nexecute:\n  eval: false\n\n\n\nExample: Click here for the YAML header of the current document.\n\n\n\n\nchapters/contributing.qmd\n\n---\ntitle: \"Contributing\"\nengine: knitr\nexecute:\n  eval: false\n---\n\n\n\n\n\nClick here to learn more.\n\nQuarto enables the inclusion of executable code blocks in Markdown. This empowers users to create reproducible documents and reports, as the code needed for generating the output is embedded within the document and automatically executed during rendering.\nHowever, in this guide, we usually only want to display code but not execute it! We therefore need to disable code execution in the YAML header of each Quarto document.\nThe YAML header in a Quarto document is used to specify important metadata and settings for the document. It is typically placed at the top of the document enclosed between three dashes (---) to separate it from the main content. The YAML header provides instructions to the Quarto rendering engine on how to process and present the document.\n\n\n\n\n\nReference external code\nYou can reference external code. For example, this code block will display the first five lines (echo=c(1:5)) of _quarto.yml (#| file: _quarto.yml) and add code line numbers (#| code-line-numbers: true) and a filename to the code block (filename=\"_quarto.yml\").\n```{bash, filename=\"_quarto.yml\", echo=c(1:5)}\n#| file: _quarto.yml\n#| code-line-numbers: true\n```\n\n\nAdd code annotations\n\n “Code Annotation” in the Quarto documentation\n\n```{bash}\ngit status # &lt;1&gt;\n```\n1. `git status` displays the state of the working directory and the staging area."
+  },
+  {
+    "objectID": "chapters/contributing.html#images",
+    "href": "chapters/contributing.html#images",
+    "title": "Contributing",
+    "section": "Images",
+    "text": "Images\n\nBackground\nImages are stored in a NextCloud folder. They are downloaded into the /static folder using the command specified in the Makefile.\n\n\nAdd new image\n\nBecome a collaborator on the UHH Cloud folder\nGo to the UHH Cloud folder\nPlace the new image inside folder\nRun make download-images to retrieve all files from the updated folder\n\n\n\n\n\n\n\nWhat’s a Makefile?\n\n\n\n\n\n\n\n\nMakefile\n\n# define URL to Nextcloud where static files are stored:\nIMAGES_URL=https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download\n# define a name for the .zip-archive with the cloud contents:\nIMAGES_ARCHIVE=version-control-book.zip\n# define the name of the local folder:\nIMAGES_DIR=static/\n\n# define the default targets of the make command\nall: download-images\n\n# download and extract images:\ndownload-images:\n    wget $(IMAGES_URL) -O $(IMAGES_ARCHIVE)\n    unzip -j -o $(IMAGES_ARCHIVE) -d $(IMAGES_DIR)\n    rm -f $(IMAGES_ARCHIVE)\n\n# clean downloaded images folder:\nclean:\n    rm -rf $(IMAGES_DIR)*\n\n\n\n\n\n\n\nDownload images in pre-render command\nIt’s also possible to include the make download-images as a project script in the pre-render script. This would re-execute make download-images before every render. For the moment, we disabled this option, but it can be enabled in _quarto.yml."
+  },
+  {
+    "objectID": "chapters/contributing.html#variables",
+    "href": "chapters/contributing.html#variables",
+    "title": "Contributing",
+    "section": "Variables",
+    "text": "Variables\n\n “Variables” in the Quarto documentation\n\nQuarto offers a number of ways to include dynamic variables within documents. Dynamic variables are useful for externalizing content that varies depending on context, or as an alternative to repeating a value in multiple places.\nIn this project, we use a project-level _variables.yml file to define variables. Variables can be either simple values or can include arbitrary Markdown content.\n\n\n\n_variables.yml (excerpt)\n\nlinks:\n  nextcloud: https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT\n\n\n\n\nClick here to view the full _variables.yml file of this project.\n\n\n\n\n_variables.yml\n\n# https://quarto.org/docs/authoring/variables.html\nlinks:\n  nextcloud: https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT\n\nlanguage:\n  dont:\n    yes: \"don't\"\n    no: \"do not\"\n  folder:\n    yes: \"folder\"\n    no: \"directory\"\n  documentation:\n    yes: \"documentation\"\n    no: \"docs\"\n\n\n\nThe var shortcode then allows to include references to those variables within any document in this project. For example, to include the link to the Nextcloud folder that stores static contents (images etc.) as a variable in a document, use {{&lt; var links.nextcloud &gt;}}.\nFor more details on variables, read the chapter on Variables in the Quarto documentation."
+  },
+  {
+    "objectID": "chapters/contributing.html#fontawesome-icons",
+    "href": "chapters/contributing.html#fontawesome-icons",
+    "title": "Contributing",
+    "section": "Fontawesome Icons",
+    "text": "Fontawesome Icons\n\n Font Awesome Extension for Quarto\n Free Font Awesome icons\n\nWe use the Font Awesome Extension for Quarto to include Font Awesome icons.\n\nThis extension provides support including free icons provided by Font Awesome. Icons can be used in both HTML (via Font Awesome 6 Free) and PDF (via the fontawesome5 LaTeX package).\n\nThis extension includes support for only free Font Awesome icons.\nTo embed an icon, use the {{&lt; fa &gt;}} shortcode. For example, {{&lt; fa thumbs-up &gt;}} will result in . For details, see the project documentation on GitHub."
+  },
+  {
+    "objectID": "chapters/contributing.html#acknowledgements-attribution",
+    "href": "chapters/contributing.html#acknowledgements-attribution",
+    "title": "Contributing",
+    "section": "Acknowledgements & Attribution",
+    "text": "Acknowledgements & Attribution\n\nThe Quarto documentation (Allaire et al. 2022), in particular the chapters on Variables, Quarto Extensions, “Code Annotation” (License: GNU GPL v2)\nThe Font Awesome Extension for Quarto (License: MIT)\n\n\n\n\n\nAllaire, J. J., Charles Teague, Yihui Xie, and Christophe Dervieux. 2022. “Quarto.” https://doi.org/10.5281/zenodo.5960048."
+  },
+  {
+    "objectID": "chapters/style-guide.html#summary",
+    "href": "chapters/style-guide.html#summary",
+    "title": "Style Guide",
+    "section": "Summary",
+    "text": "Summary\n\nWrite one sentence per line\nUse consistent language"
+  },
+  {
+    "objectID": "chapters/style-guide.html#write-one-sentence-per-line",
+    "href": "chapters/style-guide.html#write-one-sentence-per-line",
+    "title": "Style Guide",
+    "section": "Write one sentence per line",
+    "text": "Write one sentence per line\nPlease write each sentence on a new line. Having each sentence on a new line will make no difference to how the text is displayed, there will still be paragraphs, but it will mean that any pull requests will be easier to check; the changes will be on a single line instead of somewhere in a paragraph. Consider the example below.\nToday you are you, that is truer than true. There is no one alive who is youer than you. - Dr Seuss\nA pull request on this correcting it to have a ‘.’ after Dr would show as a change to the whole paragraph. Contrast this with the next example which will be displayed online in the exact same way, but would see a change to a single line.\nToday you are you, that is truer than true.\nThere is no one alive who is youer than you.\n- Dr Seuss"
+  },
+  {
+    "objectID": "chapters/style-guide.html#use-consistent-language",
+    "href": "chapters/style-guide.html#use-consistent-language",
+    "title": "Style Guide",
+    "section": "Use consistent language",
+    "text": "Use consistent language\nWe try to use consistent language:\n\n\n\n\n\n\n\nTRUE\nFALSE\n\n\n\n\ndon’t\ndo not\n\n\nfolder\ndirectory\n\n\ndocumentation\ndocs"
+  },
+  {
+    "objectID": "chapters/style-guide.html#acknowledgements-attribution",
+    "href": "chapters/style-guide.html#acknowledgements-attribution",
+    "title": "Style Guide",
+    "section": "Acknowledgements & Attribution",
+    "text": "Acknowledgements & Attribution\n\nCommunity (2022): Style Guide\n\n\n\n\n\nCommunity, The Turing Way. 2022. The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research. Zenodo. https://doi.org/10.5281/zenodo.3233853."
   }
 ]
