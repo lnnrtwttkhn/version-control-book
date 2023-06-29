@@ -26,10 +26,19 @@ book:
 #  date: "6/3/2023"
   chapters:
     - index.qmd
-    - intro.qmd
-    - chapters/rewriting-history.qmd
-    - summary.qmd
-    - references.qmd
+    - chapters/intro.qmd
+    - part: Introduction
+    - part: Basics
+      chapters:
+        - chapters/committing.qmd
+        - chapters/branching.qmd
+        - chapters/rewriting-history.qmd
+    - part: Collaboration with Git
+      chapters:
+        - chapters/collaboration.qmd
+        - chapters/flows.qmd
+    - chapters/summary.qmd
+    - chapters/references.qmd
     - part: chapters/contributing.qmd
       chapters:
         - chapters/style-guide.qmd
