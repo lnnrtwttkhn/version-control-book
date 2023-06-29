@@ -11,9 +11,8 @@ execute:
 {{< fa clock >}} Duration: 30 min
 :::
 
-In this chapter, we will dive into the fundamental concepts and workflows of Git, providing you with a solid foundation to effectively manage your projects and collaborate with others. 
-We will cover the fundamental concepts of Git, such as initializing a repository, making commits, and managing branches.
-This Chapter is only going to be about local version control.
+Welcome to the chapter on initializing a Git repository and basic Git operations! 
+In this chapter, you will learn how to set up a Git repository, stage and commit changes, and explore the commit history.
 
 ## Initializing a Folder as a Git Repository {{< fa folder-closed >}}
 
@@ -23,14 +22,14 @@ You can also just create one the regular way.
 
 
 Now navigate to the directory or folder, using the Terminal, to where you want to create the Git repository. 
-You can use the cd command to change directories.
-Once you are in the desired directory, run the following command to initialize the folder as a Git repository.
+You can use the **cd** command to change directories.
+Once you are in the desired directory, run the **git init** command to initialize the folder as a Git repository.
 
 ```{bash}
 git init
 ```
 
-You should get the following output.
+should get the following output.
 
 ```{bash}
 Initialized empty Git repository in /Users/.../
@@ -40,21 +39,24 @@ Congratulations on successfully initializing your first Git repository! {{< fa c
 Git is now able to track your changes in this Folder.
 
 To be able to make changes you should create or move a file into your folder.
-You can do this using the terminal
+On a Mac, you can do this using the terminal with the **touch** command.
 
 ```{bash}
 touch example.txt
 ```
 
 
-## Staging and committing {{< fa file-export >}} 
+## Status, Staging and committing {{< fa file-export >}} 
+
+
+### Status
 Even though Git is now able to record the changes of your file, it will not do so automatically. 
 
-Use 
+Use **git status** to visualize this. 
 ```{bash}
 git status
 ``` 
-to visualize this. 
+
 You should receive an output like this
 ```{bash}
 On branch main
@@ -66,3 +68,76 @@ Untracked files:
 
 	example.txt
 ```
+
+As you see Git is not yet tracking your file. 
+Use **git add** to change this.
+
+### Staging
+
+```{bash}
+git add example.txt
+```
+If you use **git status** again, example.txt should now show up under  "changes to be commited". 
+
+```{bash}
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   example.txt
+```
+
+This means your change in this folder, in this case adding a file, is now **staged**. 
+
+::: {.callout-tip title="What is Staging?" collapse="false"}
+
+Staging in Git is the process of selecting and preparing changes to be included in the next commit. 
+It allows you to choose specific modifications from your working directory. 
+By staging changes, you have control over which modifications to commit, enabling selective committing. 
+Staging helps in reviewing and validating changes before committing them. 
+It also allows logical grouping of related changes together.
+:::
+
+
+### Committing
+Now that your changes are staged, you are ready to create a commit.
+To create a commit, use the **git commit** command followed by **-m** and a commit message **in qoutes** that describes the changes you made. 
+The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
+
+```{bash}
+git commit -m "Add example.txt file"
+```
+
+```{bash}
+[main (root-commit) e9ea807] adding txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 example.txt
+```
+
+Congratulations! 
+You have successfully created your first commit in the Git repository. 
+Commits are the core elements of version control,  they allow you to track the history of your project and easily revert changes if needed.
+
+You can use the same worklow of **git add** and **git commit** for every file you add or make changes in.
+
+#### Logging Commits
+To look at your past commits you can use the **git log** command.
+
+```{bash}
+git log
+```
+```{bash}
+commit e9ea80781ceed7cc3d6bff0c7bfa71f320ec1f60 (HEAD -> main)
+Author: Example <beispiel@example.de>
+Date:   Thu Jun 29 12:23:53 2023 +0200
+
+    adding txt file
+```
+
+**git log** is useful because it provides a clear and organized view of a repository's commit history. 
+It allows you to track the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps.
+The command can help identifying the source of bugs or issues by pinpointing the commit that introduced them. 
+It can aid collaboration and code review by showing who made specific changes to the codebase.
+
