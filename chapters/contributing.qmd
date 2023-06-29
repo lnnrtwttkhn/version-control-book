@@ -1,0 +1,426 @@
+---
+title: "Contributing"
+engine: knitr
+execute:
+  eval: false
+title-block-style: none
+author: ""
+---
+
+## Quarto
+
+This book is made with [Quarto](https://quarto.org/).
+
+## RStudio Project
+
+- {{< fa book >}} ["Using RStudio Projects"](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
+
+We recommend working in RStudio and open the RStudio Project.
+
+::: {.panel-tabset}
+
+## {{< fa brands r-project >}} RStudio
+
+- Double-click on the project file `version-control-book.Rproj` within your computer's file system (for example, macOS Finder).
+
+## {{< fa terminal >}} Terminal
+
+In the Terminal, run:
+
+```{bash}
+open version-control-book.Rproj
+```
+
+This will open the RStudio Project in RStudio.
+
+:::
+
+<details>
+<summary>Click here to view the full `version-control-book.Rproj` file of this project.</summary>
+```{yaml, filename="version-control-book.Rproj"}
+#| file: version-control-book.Rproj
+#| code-line-numbers: true
+```
+</details>
+
+## renv
+
+We use [`renv`](https://rstudio.github.io/renv/articles/renv.html) for project-local {{< fa brands r-project >}} dependency management.
+For details on `renv`, see the [renv documentation](https://rstudio.github.io/renv/articles/renv.html).
+
+### Using `renv` for the first time
+
+After you open the Rstudio Project, you will (hopefully) see a similar output in the RStudio console:
+
+```{bash}
+# Bootstrapping renv 0.17.3 --------------------------------------------------
+* Downloading renv 0.17.3 ... OK (downloaded binary)
+* Installing renv 0.17.3 ... Done!
+* Successfully installed and loaded renv 0.17.3.
+* Project '~/version-control-book' loaded. [renv 0.17.3]
+* This project contains a lockfile, but none of the recorded packages are installed.
+* Use `renv::restore()` to restore the project library.
+```
+
+This output tells you that (1) `renv` was automatically installed and loaded, (2) the `renv` environment for the project was loaded, and (3) that none of packages recorded in the `renv` lockfile are installed.
+
+The `renv` lockfile captures the state of the package library of the project at some point in time.
+It is defining the **version of `renv`** used when generating the lockfile, the **version of** {{< fa brands r-project >}} used in that project, the **R repositories that were active** when the lockfile was created and the **package records** defining each {{< fa brands r-project >}} package, their version, and their installation source.
+For details on the anatomy of `renv.lock`, see [this section](https://rstudio.github.io/renv/articles/lockfile.html) in the `renv` documentation.
+
+<details>
+<summary>Click here to view the full `renv.lock` file of this project.</summary>
+```{json, filename="renv.lock"}
+#| file: renv.lock
+#| code-line-numbers: true
+```
+</details>
+
+### Restoring `renv`
+
+If `renv` is activated but it recognized that (not all of) the packages listed in the `renv.lock` file are installed, `renv` will suggest to restore the project library using `renv::restore()`:
+
+```{bash}
+* This project contains a lockfile, but none of the recorded packages are installed.
+* Use `renv::restore()` to restore the project library.
+```
+
+```{r}
+renv::restore()
+```
+
+This will generate a list of files that will be updated.
+
+<details>
+<summary>Click here to view an example output of the `renv::restore()` command.</summary>
+```{bash}
+The following package(s) will be updated:
+
+# CRAN ===============================
+- R6            [* -> 2.5.1]
+- base64enc     [* -> 0.1-3]
+- bslib         [* -> 0.5.0]
+- cachem        [* -> 1.0.8]
+- cli           [* -> 3.6.1]
+- data.table    [* -> 1.14.8]
+- digest        [* -> 0.6.31]
+- ellipsis      [* -> 0.3.2]
+- evaluate      [* -> 0.21]
+- fastmap       [* -> 1.1.1]
+- fontawesome   [* -> 0.5.1]
+- fs            [* -> 1.6.2]
+- glue          [* -> 1.6.2]
+- here          [* -> 1.0.1]
+- highr         [* -> 0.10]
+- htmltools     [* -> 0.5.5]
+- jquerylib     [* -> 0.1.4]
+- jsonlite      [* -> 1.8.5]
+- knitr         [* -> 1.43]
+- lifecycle     [* -> 1.0.3]
+- magrittr      [* -> 2.0.3]
+- memoise       [* -> 2.0.1]
+- mime          [* -> 0.12]
+- rappdirs      [* -> 0.3.3]
+- rlang         [* -> 1.1.1]
+- rmarkdown     [* -> 2.22]
+- rprojroot     [* -> 2.0.3]
+- sass          [* -> 0.4.6]
+- stringi       [* -> 1.7.12]
+- stringr       [* -> 1.5.0]
+- tinytex       [* -> 0.45]
+- vctrs         [* -> 0.6.3]
+- xfun          [* -> 0.39]
+- yaml          [* -> 2.3.7]
+
+Do you want to proceed? [y/N]: 
+```
+</details>
+
+If you want to proceed with the update, type `y` and hit enter.
+
+### Adding / removing packages
+
+Install packages:
+
+```{r}
+install.packages("PACKAGE_NAME") # <1>
+renv::install("PACKAGE_NAME") # <2>
+```
+1. Replace `PACKAGE_NAME` with the actual name of the package that you want to install.
+1. Replace `PACKAGE_NAME` with the actual name of the package that you want to install.
+
+Remove packages:
+
+```{r}
+remove.packages("PACKAGE_NAME") # <1>
+renv::remove("PACKAGE_NAME") # <2>
+```
+1. Replace `PACKAGE_NAME` with the actual name of the package that you want to remove.
+1. Replace `PACKAGE_NAME` with the actual name of the package that you want to remove.
+
+Call `renv::snapshot()` to save the new state of the project library to the `renv.lock`:
+
+```{r}
+renv::snapshot()
+```
+
+### Commit your changes
+
+The `renv.lock` is checked into version control, so after you updated it, make a new commit:
+
+```{bash}
+git add renv.lock
+git commit -m "add package PACKAGE_NAME to renv" # <1>
+```
+1. Replace `PACKAGE_NAME` with the actual name of the package that you installed.
+Adapt the commit message as needed.
+
+### Local development
+
+#### Setup
+
+1. Read the [Get Started](https://quarto.org/docs/get-started/) chapter of the Quarto documentation, which includes details on installation.
+
+#### Preparation
+
+1. Read this guide on how to contribute.
+2. Familiarize yourself with [Quarto Books](https://quarto.org/docs/books/).
+
+#### Build the book locally
+
+```{bash}
+quarto preview
+```
+
+#### How to add a new chapter
+
+1. Create a new Quarto document inside the `/chapters` folder
+2. Add the new chapter to `_quarto.yml`.
+Don't forget to specify the full path (including `/chapters/`)
+
+```{yaml, filename="_quarto.yml (excerpt)"}
+chapters:
+  - index.qmd
+  - chapters/YOUR-NEW-CHAPTER.qmd # <1>
+  - another-chapter.qmd
+```
+1. Replace `YOUR-NEW-CHAPTER` with a concise filename.
+
+<details>
+<summary>Click here to view the full `_quarto.yml` file of this project.</summary>
+```{bash, filename="_quarto.yml"}
+#| file: _quarto.yml
+#| code-line-numbers: true
+```
+</details>
+
+### Adding references
+
+References are saved in `references.bib`.
+
+#### Resources
+
+- ["Citations & Footnotes"](https://quarto.org/docs/authoring/footnotes-and-citations.html) in the Quarto documentation.
+- [HTML options for references](https://quarto.org/docs/reference/formats/html.html#references).
+
+## Code
+
+- {{< fa book >}} ["HTML Code Blocks"](https://quarto.org/docs/output-formats/html-code.html) in the Quarto documentation
+
+### Code inside the document
+
+Add code snippets to a Quarto document like this:
+
+````
+```{{bash}}
+git status
+```
+````
+
+::: {.callout-warning title="Disable code execution in all Quarto documents by default!"}
+
+Place the following code in the YAML header of **each** Quarto document:
+
+```{yaml}
+engine: knitr
+execute:
+  eval: false
+```
+
+<details>
+<summary>Example: Click here for the YAML header of the current document.</summary>
+```{yaml, filename="chapters/contributing.qmd", echo=c(1:6)}
+#| file: chapters/contributing.qmd
+#| code-line-numbers: true
+```
+</details>
+
+<details>
+<summary>Click here to learn more.</summary>
+Quarto enables the inclusion of executable code blocks in Markdown.
+This empowers users to create reproducible documents and reports, as the code needed for generating the output is embedded within the document and automatically executed during rendering.
+
+However, in this guide, we usually only want to **display code but not execute it**!
+We therefore need to disable code execution in the YAML header of each Quarto document.
+
+The YAML header in a Quarto document is used to specify important metadata and settings for the document.
+It is typically placed at the top of the document enclosed between three dashes (`---`) to separate it from the main content.
+The YAML header provides instructions to the Quarto rendering engine on how to process and present the document.
+</details>
+
+:::
+
+### Reference external code
+
+You can reference external code.
+For example, this code block will display the first five lines (`echo=c(1:5)`) of `_quarto.yml` (`#| file: _quarto.yml`) and add code line numbers (`#| code-line-numbers: true`) and a filename to the code block (`filename="_quarto.yml"`).
+
+````
+```{{bash, filename="_quarto.yml", echo=c(1:5)}}
+#| file: _quarto.yml
+#| code-line-numbers: true
+```
+````
+
+### Add code annotations
+
+- {{< fa book >}} ["Code Annotation"](https://quarto.org/docs/authoring/code-annotation.html) in the Quarto documentation
+
+````
+```{{bash}}
+git status # <1>
+```
+1. `git status` displays the state of the working directory and the staging area.
+````
+
+## Images
+
+### Background
+
+Images are stored in a [NextCloud folder]({{< var links.nextcloud >}}).
+They are downloaded into the `/static` folder using the command specified in the `Makefile`.
+
+### Installation
+
+You need to install the following packages:
+
+1. [GNU Wget](https://www.gnu.org/software/wget/)
+1. [GNU Make](https://www.gnu.org/software/make/)
+
+::: {.panel-tabset}
+
+## {{< fa brands apple >}}
+
+1. **Prerequisite:** Install [Homebrew](https://brew.sh/)
+
+```{bash}
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+2. After you installed Homebrew, install [GNU Wget](https://www.gnu.org/software/wget/)
+
+```{bash}
+brew install wget
+````
+
+[GNU Make](https://www.gnu.org/software/make/) should already be installed.
+Try by entering the following command into the Terminal:
+
+```{bash}
+make --version
+````
+
+## {{< fa brands windows >}}
+
+TBA
+
+## {{< fa brands linux >}}
+
+TBA
+
+:::
+
+
+### Retrieve images
+
+After you installed all the required software, run this command:
+
+```{bash}
+make download-images
+```
+
+::: {.callout-tip title="What's a Makefile and what does it do?" collapse="true"}
+
+```{bash, filename="Makefile"}
+#| file: Makefile
+#| code-line-numbers: true
+```
+
+:::
+
+### Add a new image
+
+1. Become a collaborator on the [UHH Cloud folder]({{< var links.nextcloud >}}).
+1. Go to the [UHH Cloud folder]({{< var links.nextcloud >}}).
+1. Place the new image inside the folder.
+Please use `-` to separate word in the filename.
+1. Reference the image in the Quarto document relative to the root of the project directory:
+
+```{markdown}
+![](static/NEW-IMAGE.png)
+```
+
+### Download images in pre-render command
+
+It's also possible to include the `make download-images` as a project script in the `pre-render` script.
+This would re-execute `make download-images` before every render.
+For the moment, we disabled this option, but it can be enabled in `_quarto.yml`.
+
+## Variables
+
+- {{< fa book >}} ["Variables"](https://quarto.org/docs/authoring/variables.html) in the Quarto documentation
+
+Quarto offers a number of ways to **include dynamic variables within documents**.
+Dynamic variables are useful for externalizing content that varies depending on context, or as an alternative to repeating a value in multiple places.
+
+In this project, we use a project-level `_variables.yml` file to define variables.
+Variables can be either simple values or can include arbitrary Markdown content.
+
+```{bash, filename="_variables.yml (excerpt)", echo=c(2, 3)}
+#| file: _variables.yml
+#| code-line-numbers: true
+```
+
+<details>
+<summary>Click here to view the full `_variables.yml` file of this project.</summary>
+```{bash, filename="_variables.yml"}
+#| file: _variables.yml
+#| code-line-numbers: true
+```
+</details>
+
+The `var` shortcode then allows to include references to those variables within any document in this project.
+For example, to include the link to the Nextcloud folder that stores static contents (images etc.) as a variable in a document, use `{{{< var links.nextcloud >}}}`.
+
+For more details on variables, read the chapter on [Variables](https://quarto.org/docs/authoring/variables.html) in the Quarto documentation. 
+
+## Fontawesome Icons
+
+- {{< fa brands github >}} [Font Awesome Extension for Quarto](https://github.com/quarto-ext/fontawesome)
+- {{< fa icons >}} [Free Font Awesome icons](https://fontawesome.com/search?m=free)
+
+We use the Font Awesome Extension for Quarto to include [Font Awesome](https://fontawesome.com/) icons.
+
+> This extension provides support including free icons provided by [Font Awesome](https://fontawesome.com/).
+> Icons can be used in both HTML (via [Font Awesome 6 Free](https://fontawesome.com/search?m=free)) and PDF (via the [fontawesome5 LaTeX package](https://ctan.org/pkg/fontawesome5?lang=en)).
+
+This extension includes support for **only free Font Awesome icons**.
+
+To embed an icon, use the `{{{< fa >}}}` shortcode.
+For example, `{{{< fa thumbs-up >}}}` will result in {{< fa thumbs-up >}}.
+For details, see the [project documentation on GitHub](https://github.com/quarto-ext/fontawesome).
+
+## Acknowledgements & Attribution
+
+- The Quarto documentation [@allaire2022], in particular the chapters on [Variables](https://quarto.org/docs/authoring/variables.html), [Quarto Extensions](https://quarto.org/docs/extensions/), ["Code Annotation"](https://quarto.org/docs/authoring/code-annotation.html) (License: [GNU GPL v2](https://quarto.org/license.html))
+- The [Font Awesome Extension for Quarto](https://github.com/quarto-ext/fontawesome) (License: [MIT](https://github.com/quarto-ext/fontawesome/blob/main/LICENSE))
