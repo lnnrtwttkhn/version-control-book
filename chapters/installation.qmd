@@ -1,5 +1,5 @@
 ---
-title: "Installation & Setup"
+title: "Installation "
 engine: knitr
 execute:
   eval: false
@@ -12,15 +12,7 @@ execute:
 {{< fa clock >}} Duration: 20 min
 :::
 
-::: {.column width="33%"}
-contents...
-:::
 
-::: {.column width="33%"}
-contents...
-:::
-:::
-:::
 
 ::: callout-tip
 ### Questions
@@ -28,21 +20,7 @@ contents...
 {{< fa clock >}} Duration: 20 min
 :::
 
-::: callout-tip
-### Overview
 
-{{< fa clock >}} Duration: 20 min
-:::
-
-2.1.1 {{< fa question >}} Questions
-
--   What tools do I need to partake in this workshop?
--   How can I install the tools I need for my platform?
-
-2.1.2 Objectives
-
--   Get set up for learning git/GitHub and some command line.
--   Understand how to access the command line and git.
 
 ::: callout-note
 ### Acknowledgements and attribution
@@ -50,53 +28,24 @@ contents...
 These setup instructions are adapted from instructions that are copyright Software Carpentry and made available for re-use by them under the CC BY 4.0 license.
 :::
 
-## JupyterHub
 
-https://code.min.uni-hamburg.de/
 
-2.2 Software Setup
+## Software Setup
 
 The task here is to get you setup with 3 main components:
 
-```         
+         
 git - the version control software we will be studying
-Atom - a text editor with good integration with git/GitHub
+
 GitHub Account - access to the famed online git hosting service.
-```
+
+Atom - a text editor with good integration with git/GitHub
+
+
+
 
 ## {{< fa brands git-alt >}} Git
 
-### {{< fa brands windows >}} Windows
-
-Video Tutorial
-
-The following instructions are for git for Windows 2.19.1 installer:
-
-```         
-Download the Git for Windows installer.
-Run the installer and follow the steps bellow:
-    Click on “Next” to use the default install location.
-    Click on “Next” to use the default install components.
-    Click on “Next” to use the default Start Menu folder.
-    Click on “Next” to use the default editor, we will change it later.
-    Keep “Use Git from the Windows Command Prompt” selected and click on “Next”. If you forgot to do this programs that you need for the workshop will not work properly. If this happens rerun the installer and select the appropriate option.
-    Click on “Next” to use OpenSSL library.
-    Keep “Checkout Windows-style, commit Unix-style line endings” selected and click on “Next”.
-    Keep “Use Windows’ default console window” selected and click on “Next”.
-    Keep “Enable file systen caching” and “Enable Git Credential Manager” selected and click on “Next”.
-    Do not enable experimental updates. Click on “Install”.
-    Uncheck “View Release Notes”. Click on “Finish”.
-If your “HOME” environment variable is not set (or you don’t know what this is):
-    Open command prompt (Open Start Menu then type cmd and press [Enter])
-    Type the following line into the command prompt window exactly as shown:
-
-setx HOME "%USERPROFILE%"
-
-    Press [Enter], you should see SUCCESS: Specified value was saved.
-    Quit command prompt by typing exit then pressing [Enter]
-```
-
-This will provide you with both Git and Bash in the Git Bash program.
 
 ### {{< fa brands apple >}} macOS
 
@@ -114,7 +63,7 @@ Open the terminal and type:
 
 ```{bash}
 git --version
-
+```
 If git is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools.
 You may be asked for your administrator password.
 
@@ -128,12 +77,37 @@ You may be asked for your administrator password.
 
 Check if you have git installed by opening your terminal and running:
 
+```{bash}
 git --version
 ```
 
 If git is not installed, install it using your package manager, e.g., by running the following command in the terminal:
 
+```{bash}
 \`\`\`{bash} sudo apt-get install git \`\`\`\`
+```
+
+### {{< fa brands windows >}} Windows
+
+     
+Download the [Git for Windows installer](https://git-scm.com/download/win).
+
+Hit ‘Next’ through the prompts without modifying the installation destination or other settings
+
+
+If your “HOME” environment variable is not set 
+(or you don’t know what this is):  
+Open command prompt (Open Start Menu then type cmd and press [Enter])
+Type the following line into the command prompt window exactly as shown:
+
+```{bash}
+setx HOME "%USERPROFILE%"
+```
+
+Press [Enter], you should see SUCCESS: Specified value was saved.
+Quit command prompt by typing exit then pressing [Enter]
+
+Click [here](https://www.youtube.com/watch?v=-Bfx-v5mIDo) for a video tutorial.
 
 ## {{< fa brands github >}} GitHub
 
@@ -144,9 +118,33 @@ If git is not installed, install it using your package manager, e.g., by running
 5.  In step 2 select the free plan.
 6.  In step 3 you have the option to fill out a survey or immediately hit submit.
 
+::: {.callout-tip collapse="false"}
+### Choosing a Github Name
+
+Here are some tips for choosing a GitHub username:
+```
+Incorporate your name.
+Adapt your username from other platforms.
+Choose a professional username for your future boss.
+Opt for a shorter username.
+Be unique and concise.
+Avoid references to specific institutions.
+Use all lowercase and hyphens for word separation.
+```
+:::
+
+::: {.callout-tip collapse="true"}
 ### Register for educational discount
 
 1.  Open <https://education.github.com/> in your browser and log in to GitHub if prompted
 2.  Click "Join GitHub Education"
 3.  Select the category that describes you, most likely the category that describes you, most likely 'Researcher.'
 4.  Fill in the rest of your details, you will need to supply an .edu email, and a brief description of your planned GitHub usage. You might say "To version and share research projects."
+:::
+
+## Text Editor {{< fa align-left >}} 
+
+## JupyterHub
+In Case the Installation process did not work on your device, you can access a remote environment using JupyterHub.
+
+https://code.min.uni-hamburg.de/
