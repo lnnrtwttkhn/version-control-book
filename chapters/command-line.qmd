@@ -1,4 +1,7 @@
 ---
+engine: knitr
+execute:
+  eval: false
 title: "Command Line"
 title-block-style: none
 author: ""
@@ -33,7 +36,57 @@ In this lesson, we will introduce the command line as a general concept and lear
 
 ::::
 
+## Acknowledgements
+
+@millman2018 @milligan2014
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| output: false
+library("here")
+library("magrittr")
+library("rjson")
+json_data <- rjson::fromJSON(file = here::here("cheatsheet.json"))
+cli_data <- json_data$cli
+df <- data.frame(Command = names(cli_data), Description = unlist(cli_data),
+                 stringsAsFactors = FALSE, row.names = NULL)
+df <- df %>%
+  transform(Command = sprintf("`%s`", Command))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| output: asis
+knitr::kable(df, format = "markdown", escape = FALSE)
+```
+
+## Exercises
+
+- `cd` and `ls`
+  - Move to different directories on your computer and list the files and folder.
+- Hidden files:
+  - Are there more hidden files and folders than you expected?
+  - What did you notice about the names of the hidden files?
+  - Are there directories with more hidden folders than others?
+- Combining arguments and flags (In this exercise you will figure out how to use arguments and flags together)
+  - Using the flags you’ve seen so far, experiment to determine what order the flags have to be in.
+  - Create a command that lists all the contents of your ‘Documents’ folder in long format.
+- using flags:
+  - Obtain the usage information for ls. What is a flag that you can use to arrange the output according to date modified?
+  - By convention flags that are full words use a double dash -- and flags are a single letter have a singe dash. Why must this be the case?
+- Changing Challenges
+  - You should be in your Downloads folder. Change to your Documents folder in a single command incorporating the ~ in the path.
+  - Change to the root folder of the system and list its contents. Change to your home folder.
+- moving around
+  - Where does the following command place you on your system? How does it work? cd ~/../../..
+
 ## Introduction
+
+This will only teach you enough to be able to use git from the command line.
 
 ### Why using Git from the command line
 
@@ -53,132 +106,240 @@ The command line interface (cli), is a text-based interface to a computer progra
 ‘Terminal’ is short for ‘terminal emulator’ which is to say it is a program which emulates a physical input and display device called a terminal, that used to connect to a mainframe computer in the early days of computing. It is the program that draws the dark background, light text, and cursor.
 
 A ‘shell’ is a program that provides a cli to your operating system. Think of the functionality your operating system provides: manipulating your file system, running and stopping programs, changing system settings etc. All of this can be done via text with a shell. When you ‘open a terminal’ the program that the terminal is talking to initially is a shell. For a given operating system you often have a choice of many shells. The most popular shell is the ‘Bourne Again Shell’ or ‘bash’.
-4.4 File system navigation
-4.4.1 Listing files and folders
 
-We’re jumping in! Windows users, run the gitbash program now. MacOS and Linux users open a fresh terminal.
+## Open the command line
 
-First lets consider what we can see. Usually your terminal will greet you with a prompt that looks like this:
+::: {.panel-tabset}
 
-miles@miles-macbook:~$
+## {{< fa brands apple >}}
+
+Open a fresh Terminal.
+In the Finder, go to `Applications` > `Utilities` > `Terminal.app`.
+
+## {{< fa brands microsoft >}}
+
+Run Git BASH now.
+
+## {{< fa brands linux >}}
+
+Open a fresh Terminal.
+
+:::
+
+Typically, your terminal interface will present you with an initial message resembling the following prompt:
+
+```{bash}
+wittkuhn@lip-osx-005509:~$
+```
 
 On Windows it will contain the same elements but look like this:
 
-miles@miles-pc MINGW64 ~
-$
+```{bash}
+wittkuhn@lip-osx-005509:~$
+```
 
-Followed by a cursor. Type the command pwd, for ‘print working directory’, and hit enter. This will show us the folder in your file system the shell is currently looking. It should return text to the terminal like so:
+## Navigating the file system
 
-miles@miles-macbook:~$ pwd
-/home/miles
-miles@miles-macbook:~$
+### Current working directory
 
-The output can be interpreted like so:
+Enter the command `pwd` (short for "print working directory").
+This will display the current directory that the shell is currently focused on in your file system.
 
-/ --            # Root of directory structure 
-   | 
-   home --      # Home folder
-        | 
-        miles  # user's individual home folder - working directory
+```{bash}
+pwd
+```
 
-Now here’s a new command: ls will list the contents of the working directory. Run that command and you will see the contents of your home folder.
+<details>
+<summary>Click here to see an example output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+pwd
+```
+</details>
 
-But ls is much more versatile than this. We can use things called ‘flags’ and ‘arguments’ to interface with ls’s additional features. For example we can list the contents of our Documents folder like so:
+### Moving between folders
 
-miles@miles-macbook:~$ ls Documents
-acp_3d-1.png  _cert.png  parchemnt_pix2.xcf
-rock_opera.png  the_log.txt  uluru.jpg
-miles@miles-macbook:~$ 
+The `cd` command is used to change the current working directory (or "move" to a different directory).
+To use it, type `cd` followed by an argument, which is the path of the folder you want to navigate to. 
+The path can be either "absolute" or "relative".
 
-‘Documents’ is an argument to the ls command. We pass commands arguments by typing them after the command name.
+For example, if your current working directory is the user's home directory (`/home/wittkuhn`), you can switch to the `Downloads` folder by using either an absolute or relative path with the `cd` command:
 
-We can view hidden files using the flag -a for ‘all’. Do that for the working directory like so:
+```{bash, filename="Absolute path"}
+wittkuhn@lip-osx-005509:~$ cd /home/wittkuhn/Downloads
+wittkuhn@lip-osx-005509:~/Downloads$ 
+```
 
-miles@miles-macbook:~$ ls -a
+```{bash, filename="Relative path"}
+wittkuhn@lip-osx-005509:~$ cd Downloads
+wittkuhn@lip-osx-005509:~/Downloads$ 
+```
 
-Are there more hidden files and folders than you expected? What do you notice about their file names?
+You may notice that the prompt has been updated to show the new working directory.
+If a path starts with a forward slash (`/`), it is considered an absolute path.
+Paths that do not start with a forward slash are considered relative to the current working directory.
 
-A flag distinct from an argument in that a flag is a constant not a variable. If a flag is present it ‘switches on’ certain behaviour. There are two forms: ‘–word’ and ‘-a’.
+### Taking shortcuts
 
-Multiple single letter flags can be combined after a single dash. We can instruct ls to ‘list all in a long format, readable for humans’ with:
+#### Tilde: `~`
 
-miles@miles-macbook:~$ ls -alh
-total 428K
-drwxr-xr-x 36 miles miles 4.0K Oct 18 15:01 .
-drwxr-xr-x  3 root  root  4.0K Jul 30 21:14 ..
--rw-------  1 miles miles  19K Oct 18 01:29 .bash_history
--rw-r--r--  1 miles miles  220 Jul 30 21:14 .bash_logout
--rw-r--r--  1 miles miles 3.6K Oct 17 21:37 .bashrc
--rw-r--r--  1 miles miles  16K Oct 17 21:34 .bashrc.swp
-drwxr-xr-x  2 miles miles 4.0K Oct 16 19:49 bin
-drwxr-xr-x 12 miles miles 4.0K Oct 17 21:46 .cache
-drwxr-xr-x  4 miles miles 4.0K Aug 31 22:31 code
-drwx------ 23 miles miles 4.0K Oct 18 00:30 .config
-drwxr-xr-x  2 miles miles 4.0K Jul 30 21:16 Desktop
+The tilde symbol (`~`) provides a convenient and abbreviated way to refer to the user's home directory, enabling us to easily construct paths relative to that directory.
+To quickly change the current working directory to our user's home directory anywhere on our file system, we can use `cd ~` which will transport us back to our user's home directory.
 
-4.4.1.1 Combining arguments and flags
+```{bash}
+wittkuhn@lip-osx-005509:~/Downloads$ cd ~
+wittkuhn@lip-osx-005509:~$ 
+```
 
-In this exercise you will figure out how to use arguments and flags together.
+#### Dot: `.`
 
-    Using the flags you’ve seen so far, experiment to determine what order the flags have to be in.
-    Create a command that lists all the contents of your ‘Documents’ folder in long format.
+Another symbol with a special meaning in paths, aside from `~`, is the dot (`.`).
+It serves as a shorthand representation for the current working directory, and using it in a path means the reference remains within the same directory.
 
-4.4.1.2 One flag to rule them all
+```{bash}
+wittkuhn@lip-osx-005509:~$ cd .
+wittkuhn@lip-osx-005509:~$
+```
 
-Most commands can give you useage information about what kinds of flags and arguments they support if you call them with the flag --help, sometimes -h will work also.
+In turn, the two commands are equivalent:
 
-Answer the following:
+```{bash}
+wittkuhn@lip-osx-005509:~$ cd ./Downloads
+```
 
-    Obtain the usage information for ls. What is a flag that you can use to arrange the output according to date modified?
-    By convention flags that are full words use a double dash -- and flags are a single letter have a singe dash. Why must this be the case?
+```{bash}
+wittkuhn@lip-osx-005509:~$ cd Downloads
+```
 
-4.4.2 Moving between folders
+#### Dot Dot: `..`
 
-The command cd changes the working directory. To use it type cd followed by an argument which is the path of the folder to change to. The path can be either ‘absolute’ or ‘relative’. For example, assuming the current working directory is the user’s home (/home/miles), to change directory to their Downloads we could do either of these:
+The `..` symbol is a shorthand representation for the parent directory of the current working directory.
+It can be used repeatedly, allowing `cd ..` to move up one folder and ``cd ../..` to move up two folders.
+This is useful for creating relative paths to other branches within a directory tree.
 
-miles@miles-macbook:~$ cd Downloads
-miles@miles-macbook:~/Downloads$ 
+For instance, by executing the following sequence of commands, we will navigate horizontally (or sideways) to a folder located at the same hierarchical level as the current working directory:
 
-miles@miles-macbook:~$ cd /home/miles/Downloads
-miles@miles-macbook:~/Downloads$ 
 
-A path that starts with / is assumed to be absolute. Paths that do not are assumed to be relative to the current working directory.
+```{bash}
+wittkuhn@lip-osx-005509:~$ cd ~ # <1>
+wittkuhn@lip-osx-005509:~$ cd Downloads # <2>
+wittkuhn@lip-osx-005509:~/Downloads$ cd ../Documents # <3>
+wittkuhn@lip-osx-005509:~/Documents$ pwd # <4>
+/home/wittkuhn/Documents
+```
+1. Move to the user's home directory using the `~` shorthand.
+1. Move to the `Downloads` folder.
+1. Move sideways to the `Documents` folder.
+1. Display the current working directory.
 
-Notice how the prompt has changed to reflect the new working directory. The ~ symbol is a shorthand for the user’s home directory and we can use it to form paths.
-4.4.2.1 Changing Challenges
+## List files and folders
 
-    You should be in your Downloads folder. Change to your Documents folder in a single command incorporating the ~ in the path.
-    Change to the root folder of the system and list its contents. Change to your home folder.
+The `ls` command is used to list the files and folders in a specified directory or the current working directory.
+If you run this command, you will see the contents of your current working directory.
 
-4.4.3 Pathing shortcuts
+```{bash}
+ls
+```
 
-Apart from ~ there are two other symbols with special meanings in paths:
+For example, when the current working directory is the project directory of this book, `ls` will list the contents of the project directory.
 
-. is shorthand for ‘the current working directory’. So this won’t change anywhere:
+<details>
+<summary>Click here to view the output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls
+```
+</details>
 
-miles@miles-macbook:~$ cd .
+However, the `ls` command provides various options, such as flags and arguments, to enhance its functionality beyond simple file listing.
+To provide additional instructions to a command, we can pass flags and arguments by typing them after the command name.
 
-and these are equivalent:
+### List files in a specific directory
 
-miles@miles-macbook:~$ cd ./Downloads
+For example, we can list the contents of the `/chapters` folder:
 
-miles@miles-macbook:~$ cd Downloads
+```{bash}
+ls chapters
+```
 
-.. is shorthand for ‘the parent of the current working directory’. It can be used multiple times so, cd .. would move up one folder and cd ../.. would move up two. It is useful for creating relative paths to other branches of a directory tree e.g.:
+<details>
+<summary>Click here to view the output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls chapters
+```
+</details>
 
-miles@miles-macbook:~$ cd ~
-miles@miles-macbook:~$ cd Downloads
-miles@miles-macbook:~/Downloads$ cd ../Documents
-miles@miles-macbook:~/Documents$ 
+In this case, `chapters` is an argument to the `ls` command.
 
-We moved ‘sideways’ to a folder at the same level.
-4.4.3.1 Do Dot Dot
+### List hidden files
 
-    Where does the following command place you on your system? How does it work?
+To list hidden files, we can use the `-a` (for "all") flag in the `ls` command.
+For example, we can list hidden files in the project directory:
 
-cd ~/../../..
+```{bash}
+ls -a
+```
 
-4.5 Manipulating the Filesystem
+<details>
+<summary>Click here to view the output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls -a
+```
+</details>
+
+### Interlude: What is the difference between a flag and an argument?
+
+#### Overview
+
+The difference between a flag and an argument is that a **flag is used to modify the behavior** of a command, while an **argument provides additional input** or information to the command.
+
+#### What is a flag?
+
+A flag is typically a single character or a combination of characters preceded by a hyphen (`-`) or double hyphen (`--`).
+It is used to enable or disable specific options or features of a command.
+Flags are optional and are used to customize the behavior of the command.
+
+#### What is an argument?
+
+An argument is the actual input or information that is passed to a command to perform a specific action.
+It can be a value, a filename, a directory path, or any other data required by the command to complete its task.
+Arguments are often positioned after the command and any flags, and they can be mandatory or optional depending on the command's requirements.
+
+#### Multiple single-letter flags
+
+You can combine multiple single-letter flags by using a single dash.
+For example, to instruct the `ls` command to list *all* files (including hidden files) in a *long* format that is easy to read for *humans*, you can use the following combination of flags:
+
+```{bash}
+ls -alh
+```
+
+<details>
+<summary>Click here to view the output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls -alh
+```
+</details>
+
+#### The `--help` flag
+
+If you want to know what flags and arguments a command supports, most commands provide usage information when you use the flag `--help`.
+In some cases, the flag `-h` can also be used to achieve the same result.
+
+## Manipulating the file system
 
 The shell provides commands to create, move, and delete folders and files.
 4.5.1 Creating Folders
@@ -265,4 +426,3 @@ In this lesson we’ve:
     Learned a handful of shell commands.
 
 This is but a tiny fraction of what is available using the shell. The main objective here was to communicate some ideas that come in handy with git. You might like to see: http://swcarpentry.github.io/shell-novice/ for a more complete introduction.`
-
