@@ -20,6 +20,7 @@ In this Chapter your will learn basic Git operations including:
 -   Initialize a Git Repository
 -   Stage and Commit Changes
 -   Explore the commit history
+-   Compare Versions
 
 # Initializing a Folder as a Git Repository {{< fa folder-closed >}}
 
@@ -134,8 +135,35 @@ Date:   Thu Jun 29 12:23:53 2023 +0200
 
 **git log** is useful because it provides a clear and organized view of a repository's commit history. It allows you to track the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps. The command can help identifying the source of bugs or issues by pinpointing the commit that introduced them. It can aid collaboration and code review by showing who made specific changes to the codebase.
 
-# Questions
+
+### Comparing Versions
+Another very handy feature is the **git diff** command.
+It allows you to compare two different versions of your file. 
+By default it shows you any uncommited changes since the last commit. 
+Explore this by pasting this text in your .txt file
+```
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```
+and look at the change using
 
 
-##Sources https://happygitwithr.com/ 
+```{bash}
+git diff
+```
+```{bash}
++++ b/example.txt
+@@ -0,0 +1 @@
++Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\ No newline at end of file
+```
+
+
+# Exercise {{< fa list-check >}} 
+- Stage and commit the change with a meaningful commit message
+- look at your commit using the **git log** command
+
+
+# Sources 
+https://happygitwithr.com/ 
+
 https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git.html
