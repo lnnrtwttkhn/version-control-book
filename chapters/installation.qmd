@@ -5,49 +5,28 @@ execute:
   eval: false
   title-block-style: none
 author: ""
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 ::: callout-note
 ### Overview
 
-
 {{< fa clock >}} Duration: 20 min
 :::
 
-
-
-::: callout-tip
-### Questions
-
-{{< fa clock >}} Duration: 20 min
-:::
-
-
-
-::: callout-note
-### Acknowledgements and attribution
-
-These setup instructions are adapted from instructions that are copyright Software Carpentry and made available for re-use by them under the CC BY 4.0 license.
-:::
-
-
-
-## Software Setup
+## Objectives
 
 The task here is to get you setup with 3 main components:
 
-         
-git - the version control software we will be studying
+-   git - the version control software we will be studying
 
-GitHub Account - access to the famed online git hosting service.
+-   GitHub Account - access to the famed online git hosting service.
 
-Atom - a text editor with good integration with git/GitHub
-
-
-
+-   Text Editor - a text editor with good integration with the command line
 
 ## {{< fa brands git-alt >}} Git
-
 
 ### {{< fa brands apple >}} macOS
 
@@ -56,7 +35,8 @@ Check if you can access the "Terminal".
 ::: {.callout-tip collapse="true"}
 ### Question: Where is the Terminal?
 
-The Terminal can be found at `/Applications/Utilities/Terminal.app` or by searching the Spotlight for "Terminal". You may want to keep Terminal in your dock to find it more easily.
+The Terminal can be found at `/Applications/Utilities/Terminal.app` or by searching the Spotlight for "Terminal".
+You may want to keep Terminal in your dock to find it more easily.
 :::
 
 #### Option 1
@@ -66,13 +46,14 @@ Open the terminal and type:
 ```{bash}
 git --version
 ```
+
 If git is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools.
 You may be asked for your administrator password.
 
 #### Option 2
 
 Download and run the installer from: https://git-scm.com/download/mac.
-Hit ‘Continue’ through the prompts without modifying the installation destination or other settings.
+Hit 'Continue' through the prompts without modifying the installation destination or other settings.
 You may be asked for your administrator password.
 
 ### {{< fa brands linux >}} Linux
@@ -91,23 +72,19 @@ If git is not installed, install it using your package manager, e.g., by running
 
 ### {{< fa brands windows >}} Windows
 
-     
 Download the [Git for Windows installer](https://git-scm.com/download/win).
 
-Hit ‘Next’ through the prompts without modifying the installation destination or other settings
+Hit 'Next' through the prompts without modifying the installation destination or other settings
 
-
-If your “HOME” environment variable is not set 
-(or you don’t know what this is):  
-Open command prompt (Open Start Menu then type cmd and press [Enter])
-Type the following line into the command prompt window exactly as shown:
+If your "HOME" environment variable is not set (or you don't know what this is):\
+Open command prompt (Open Start Menu then type cmd and press \[Enter\]) Type the following line into the command prompt window exactly as shown:
 
 ```{bash}
 setx HOME "%USERPROFILE%"
 ```
 
-Press [Enter], you should see SUCCESS: Specified value was saved.
-Quit command prompt by typing exit then pressing [Enter]
+Press \[Enter\], you should see SUCCESS: Specified value was saved.
+Quit command prompt by typing exit then pressing \[Enter\]
 
 Click [here](https://www.youtube.com/watch?v=-Bfx-v5mIDo) for a video tutorial.
 
@@ -116,15 +93,14 @@ Click [here](https://www.youtube.com/watch?v=-Bfx-v5mIDo) for a video tutorial.
 1.  Open <https://github.com> in your browser
 2.  Click the `Sign up` button
 3.  Enter the required personal details for step 1
-4.  Note if you use a '.edu' email it will be slightly easier to get unlimited private repos for free with an educational discount. Although you can change this later.
-5.  In step 2 select the free plan.
-6.  In step 3 you have the option to fill out a survey or immediately hit submit.
+4.  In step 2 select the free plan.
 
 ::: {.callout-tip collapse="false"}
 ### Choosing a Github Name
 
 Here are some tips for choosing a GitHub username:
-```
+
+```         
 Incorporate your name.
 Adapt your username from other platforms.
 Choose a professional username for your future boss.
@@ -144,9 +120,18 @@ Use all lowercase and hyphens for word separation.
 4.  Fill in the rest of your details, you will need to supply an .edu email, and a brief description of your planned GitHub usage. You might say "To version and share research projects."
 :::
 
-## Text Editor {{< fa align-left >}} 
+## Text Editor {{< fa align-left >}}
+
+Setting up your favorite text editor for Git is a smart move!
+Sometimes, Git might ask you to write a commit message, and it can be annoying if you end up in an editor you don't like or don't know how to use.
+
+One Recommendation is [Nano](https://www.nano-editor.org/docs.php), which runs in the Terminal and is fairly easy to use.
+However there are a lot of alternatives.
 
 ## JupyterHub
-In Case the Installation process did not work on your device, you can access a remote environment using JupyterHub.
+
+In case the Installation process did not work on your device, you can access a remote environment using JupyterHub.
 
 https://code.min.uni-hamburg.de/
+
+##Sources https://happygitwithr.com/ https://swcarpentry.github.io/git-novice/

@@ -13,53 +13,36 @@ author: ""
 {{< fa clock >}} Duration: 10 min
 :::
 
-Objectives:
+# Objectives
 
-- Configure user information 
-- Customize Git
+After Installing Git, we will now get it set up for your use:
 
+-   Configure user information
+-   Customize Git
 
+# Configuration
 
-In this chapter, we will cover three essential tasks to set up Git efficiently. 
-
-The git config command in Git is used to get and set configuration.
-It allows you to customize Git according to your preferences and requirements.
-The configuration variables can be set at different levels: system, global, and local.
-To look at the different Configuration commands you can use 
+The git config command in Git is used to get and set configuration. It allows you to customize Git according to your preferences and requirements. The configuration variables can be set at different levels: system, global, and local. To look at the different Configuration commands you can use
 
 ```{bash}
 git config
 ```
 
 ::: {.callout-tip title="What are the different configuration levels?" collapse="true"}
-
 Git configuration values can be stored at three different levels:
 
-**System-level Configuration**: 
-This level applies configuration values to every user on the system and all their repositories. 
-To read or write configuration values at this level, you need administrative or superuser privileges.
+**System-level Configuration**: This level applies configuration values to every user on the system and all their repositories. To read or write configuration values at this level, you need administrative or superuser privileges.
 
+**User-level Configuration**: This level is specific to an individual user. Configuration values set at this level will be applied to all repositories owned by the user.
 
-**User-level Configuration**: 
-This level is specific to an individual user. 
-Configuration values set at this level will be applied to all repositories owned by the user. 
-
-
-**Repository-level Configuration**: 
-This level is specific to a particular Git repository. 
-Th Configuration values set at this level override values set at the system-level and user-level configurations for that specific repository. 
-By default, Git reads from and writes to this file when you use the git config command without any additional options.
+**Repository-level Configuration**: This level is specific to a particular Git repository. Th Configuration values set at this level override values set at the system-level and user-level configurations for that specific repository. By default, Git reads from and writes to this file when you use the git config command without any additional options.
 :::
-
 
 ## Identify yourself {{< fa person >}}
 
-Before you start using Git, it's important to configure your username and email address. 
-This information is crucial because Git uses it to identify the author of each commit you make. 
-By associating your commits with your username and email, it allows others to see who made the changes and facilitates collaboration within a project.
+Before you start using Git, it's important to configure your username and email address. This information is crucial because Git uses it to identify the author of each commit you make. By associating your commits with your username and email, it allows others to see who made the changes and facilitates collaboration within a project.
 
-Setting your username and email is a one-time setup process, but you can always update them later if needed. 
-To perform this configuration, you can use the Terminal.
+Setting your username and email is a one-time setup process, but you can always update them later if needed. To perform this configuration, you can use the Terminal.
 
 ```{bash}
 
@@ -68,24 +51,19 @@ git config --global user.email beispiel@example.com
 
 ```
 
-If you ever need to update your username or email, you can repeat the above steps and specify the new values. 
+If you ever need to update your username or email, you can repeat the above steps and specify the new values.
 
 ## Set Git editor {{< fa pen >}}
-When working with Git, you may come across various scenarios where you need to interact with text-based files, such as commit messages or merge conflict resolutions.
-Git relies on a text editor to allow you to make changes to these files within the Git workflow.
-Setting a Git editor allows you to work with a familiar and comfortable environment.
-To set your preferred text editor in Git, you can use the git config command 
 
+When working with Git, you may come across various scenarios where you need to interact with text-based files, such as commit messages or merge conflict resolutions. Git relies on a text editor to allow you to make changes to these files within the Git workflow. Setting a Git editor allows you to work with a familiar and comfortable environment. To set your preferred text editor in Git, you can use the git config command
 
 ```{bash}
 
-git config --global core.editor "emacs"
+git config --global core.editor "editor name"
 
 ```
 
-From now on, when Git requires you to interact with a text editor, it will use the one you have set. 
-For example, when creating a commit, Git will open your chosen editor for you to enter the commit message.
-If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path. 
+From now on, when Git requires you to interact with a text editor, it will use the one you have set. For example, when creating a commit, Git will open your chosen editor for you to enter the commit message. If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.
 
 ::: {.callout-tip title="What Editor should I use?" collapse="true"}
 WIP
@@ -93,12 +71,9 @@ WIP
 
 ## Configure the default name for an initial branch {{< fa code-branch >}}
 
-By default, Git uses the name "master" for the initial branch when creating a new repository. 
-However, there has been a growing movement to transition to using "main" as the default branch name instead.
+By default, Git uses the name "master" for the initial branch when creating a new repository. However, there has been a growing movement to transition to using "main" as the default branch name instead.
 
-One of the main motivations behind this change is to promote inclusivity and remove potentially offensive terminology from the default Git workflow.
-The term "master" has historical associations that may be insensitive or evoke negative connotations for some people.
-Using "main" instead helps create a more inclusive and welcoming environment for all users.
+One of the main motivations behind this change is to promote inclusivity and remove potentially offensive terminology from the default Git workflow. The term "master" has historical associations that may be insensitive or evoke negative connotations for some people. Using "main" instead helps create a more inclusive and welcoming environment for all users.
 
 To configure the default branch name to "main" in Git, you can use the following command
 
@@ -125,15 +100,15 @@ You should recive an output similiar to this.
 user.name=Example
 user.email=beispiel@example.com
 init.defaultbranch=main
-core.editor=Atom
+core.editor=nano
 
 ```
 
 Now that your Git environment is customized to your preferences, you are ready to utilize Git.
 
 ## Calling for Help {{< fa circle-question >}}
-The **--help** option in Git is a command that provides you with access to the built-in Git documentation and help resources.
-When you run a Git command followed by --help, Git displays  information about that command, including its usage, available options, and a brief description of its functionality.
+
+The **--help** option in Git is a command that provides you with access to the built-in Git documentation and help resources. When you run a Git command followed by --help, Git displays information about that command, including its usage, available options, and a brief description of its functionality.
 
 For example
 
@@ -143,7 +118,8 @@ git config --help
 
 ```
 
-will open up a  browser in the terminal containing information about the **config** command. To quit the browser use **q**.
+will open up a browser in the terminal containing information about the **config** command. To quit the browser use **q**.
 
 While the command provides extensive documentation and information about Git commands, it is not the most beginner-friendly resource.
 
+##Sources https://happygitwithr.com/ 
