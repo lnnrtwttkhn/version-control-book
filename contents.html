@@ -8,7 +8,7 @@
 
 <meta name="author" content="">
 
-<title>Version Control of Code and Data for Scientists - 1&nbsp; Introduction</title>
+<title>Version Control of Code and Data for Scientists - 1&nbsp; Contents</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,6 +34,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="./chapters/rewriting-history.html" rel="next">
 <link href="./index.html" rel="prev">
 <link href="./static/git-icon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,7 +65,38 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-chapters-listings .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-description','listing-image','listing-image-alt','listing-reading-time','listing-categories','listing-file-modified',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-chapters-listings'] = new List('listing-chapters-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -76,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./contents.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Contents</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -146,8 +179,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./contents.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Contents</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,20 +229,136 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Contents</span></h1>
 <p class="author"></p>
 
 </header>
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">(<a href="references.html#ref-knuth84" role="doc-biblioref"><strong>knuth84?</strong></a>)</span> for additional discussion of literate programming.</p>
+<p>The estimate of the <strong>reading time</strong> for each chapter is computed by counting the words in the chapter and assuming a reading speed of 200 words per minute.</p>
+<div id="listing-chapters-listings" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-chapters-listings-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-chapters-listings'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-file-modified-sort" data-direction="asc">
+          Modified - Oldest
+        </option>
+         <option value="listing-file-modified-sort" data-direction="desc">
+          Modified - Newest
+        </option>
+         <option value="listing-reading-time-sort" data-direction="asc">
+          Reading Time (Low to High)
+        </option>
+         <option value="listing-reading-time-sort" data-direction="desc">
+          Reading Time (High to Low)
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1688293523318" data-listing-reading-time-sort="7">
+<div class="thumbnail">
+<p><a href="./chapters/rewriting-history.html"> <img src="static/git-icon.svg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./chapters/rewriting-history.html">
+<h3 class="no-anchor listing-title">
+Rewriting history
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+There are a few simple tricks to avoid committing things you don’t want committed:
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./chapters/rewriting-history.html">
+<div class="listing-reading-time">
+7 min
+</div>
+<div class="metadata-value listing-file-modified">
+July 2, 2023
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1688293523318" data-listing-reading-time-sort="11">
+<div class="thumbnail">
+<p><a href="./chapters/contributing.html"> <img src="static/git-icon.svg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./chapters/contributing.html">
+<h3 class="no-anchor listing-title">
+Contributing
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+<span>Section&nbsp;5.2</span>: This section explains how to <strong>use RStudio Project</strong> to work on this project.
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./chapters/contributing.html">
+<div class="listing-reading-time">
+11 min
+</div>
+<div class="metadata-value listing-file-modified">
+July 2, 2023
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1688293523318" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./chapters/style-guide.html"> <img src="static/git-icon.svg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./chapters/style-guide.html">
+<h3 class="no-anchor listing-title">
+Style Guide
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+We have compiled a set of guidelines to keep a consistent style across all chapters of the book.
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./chapters/style-guide.html">
+<div class="listing-reading-time">
+2 min
+</div>
+<div class="metadata-value listing-file-modified">
+July 2, 2023
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
 
 
 
@@ -527,7 +676,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
@@ -543,4 +692,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/intro.qmd" class="toc-action">View source</a></p></div></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/contents.qmd" class="toc-action">View source</a></p></div></div></div></div></footer></body></html>
