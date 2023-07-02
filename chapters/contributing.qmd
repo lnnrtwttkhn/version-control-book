@@ -7,11 +7,25 @@ title-block-style: none
 author: ""
 ---
 
-## Quarto
+## Overview
 
-This book is made with [Quarto](https://quarto.org/).
+@sec-rstudio-project: This section explains how to **use RStudio Project** to work on this project.
 
-## RStudio Project
+@sec-quarto: This section explains how to **use Quarto** to work on this project.
+
+@sec-dependency-management: This section explains how this project **manages package dependencies** using `renv`.
+
+@sec-code: This section explains how to **add code snippets**.
+
+@sec-images: This section explains how to **add images**.
+
+@sec-references: This section explains how to **add references**.
+
+@sec-variables: This section explains how to **use variables**.
+
+@sec-icons: This section explains how to **add icons**.
+
+## RStudio Project {#sec-rstudio-project}
 
 - {{< fa book >}} ["Using RStudio Projects"](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
 
@@ -43,7 +57,52 @@ This will open the RStudio Project in RStudio.
 ```
 </details>
 
-## renv
+## Quarto {#sec-quarto}
+
+This book is made with [Quarto](https://quarto.org/).
+
+
+### Local development
+
+#### Setup
+
+1. Read the [Get Started](https://quarto.org/docs/get-started/) chapter of the Quarto documentation, which includes details on installation.
+
+#### Preparation
+
+1. Read this guide on how to contribute.
+2. Familiarize yourself with [Quarto Books](https://quarto.org/docs/books/).
+
+#### Local preview
+
+```{bash}
+quarto preview
+```
+
+### Add a new chapter
+
+1. Create a new Quarto document inside the `/chapters/` folder
+2. Add the new chapter to `_quarto.yml`.
+Don't forget to specify the full path (including `/chapters/`)
+
+```{yaml, filename="_quarto.yml (excerpt)"}
+chapters:
+  - index.qmd
+  - chapters/YOUR-NEW-CHAPTER.qmd # <1>
+  - another-chapter.qmd
+```
+1. Replace `YOUR-NEW-CHAPTER` with a concise filename.
+
+<details>
+<summary>Click here to view the full `_quarto.yml` file of this project.</summary>
+```{bash, filename="_quarto.yml"}
+#| file: _quarto.yml
+#| code-line-numbers: true
+```
+</details>
+
+
+## Dependency Management {#sec-dependency-management}
 
 We use [`renv`](https://rstudio.github.io/renv/articles/renv.html) for project-local {{< fa brands r-project >}} dependency management.
 For details on `renv`, see the [renv documentation](https://rstudio.github.io/renv/articles/renv.html).
@@ -175,59 +234,77 @@ git commit -m "add package PACKAGE_NAME to renv" # <1>
 1. Replace `PACKAGE_NAME` with the actual name of the package that you installed.
 Adapt the commit message as needed.
 
-### Local development
 
-#### Setup
+## References {#sec-references}
 
-1. Read the [Get Started](https://quarto.org/docs/get-started/) chapter of the Quarto documentation, which includes details on installation.
+- {{< fa book >}} ["Citations & Footnotes"](https://quarto.org/docs/authoring/footnotes-and-citations.html) in the Quarto documentation.
+- {{< fa book >}} [HTML options for references](https://quarto.org/docs/reference/formats/html.html#references).
 
-#### Preparation
+### Cite a reference
 
-1. Read this guide on how to contribute.
-2. Familiarize yourself with [Quarto Books](https://quarto.org/docs/books/).
-
-#### Build the book locally
-
-```{bash}
-quarto preview
-```
-
-#### How to add a new chapter
-
-1. Create a new Quarto document inside the `/chapters` folder
-2. Add the new chapter to `_quarto.yml`.
-Don't forget to specify the full path (including `/chapters/`)
-
-```{yaml, filename="_quarto.yml (excerpt)"}
-chapters:
-  - index.qmd
-  - chapters/YOUR-NEW-CHAPTER.qmd # <1>
-  - another-chapter.qmd
-```
-1. Replace `YOUR-NEW-CHAPTER` with a concise filename.
+References are stored in `references.bib`.
 
 <details>
-<summary>Click here to view the full `_quarto.yml` file of this project.</summary>
-```{bash, filename="_quarto.yml"}
-#| file: _quarto.yml
+<summary>Click here to view the full `references.bib` file of this project.</summary>
+```{bib, filename="references.bib"}
+#| file: references.bib
 #| code-line-numbers: true
 ```
 </details>
 
-### Adding references
+Use the citation handle of the `.bib`-entry that you want to cite.
+For example use `@chacon2014` to cite @chacon2014.
+For details, see teh chapter on ["Citations & Footnotes"](https://quarto.org/docs/authoring/footnotes-and-citations.html) in the Quarto documentation.
+Add the specific references that you used to the bottom of the document.
+If the reference consists of multiple chapters and pages, try to specify the exact chapter or page.
 
-References are saved in `references.bib`.
+### Add a new reference
 
-#### Resources
+1. Open `references.qmd`
+1. Switch to the `Visual` Quarto editor.
+1. Move the cursor into any place in the document.
+1. Click on `Insert` and select `@ Citation ...`
+1. If the reference has a DOI:
+  1. Select `From DOI`
+  1. Paste the DOI
+  1. Select `Insert`
+1. This should add the new reference to `references.bib`.
+1. Move the citation key to the correct place
 
-- ["Citations & Footnotes"](https://quarto.org/docs/authoring/footnotes-and-citations.html) in the Quarto documentation.
-- [HTML options for references](https://quarto.org/docs/reference/formats/html.html#references).
+### Add license information
 
-## Code
+We want to keep track of license information.
+If you add a new reference, please add the license information manually.
+
+1. Go to `references.bib` and find the reference.
+1. Inside the `.bib`-entry for the reference add a new field called `note` that includes the license information.
+
+```{bib}
+@book{
+  note = {License: CC BY-NC}
+}
+```
+
+For example, this is the references for @chacon2014:
+
+```{bib}
+@book{chacon2014,
+	title = {Pro Git},
+	author = {Chacon, Scott and Straub, Ben},
+	year = {2014},
+	date = {2014},
+	publisher = {Apress},
+	doi = {10.1007/978-1-4842-0076-6},
+	url = {http://dx.doi.org/10.1007/978-1-4842-0076-6},
+	note = {License: CC BY-NC}
+}
+```
+
+## Code {#sec-code}
 
 - {{< fa book >}} ["HTML Code Blocks"](https://quarto.org/docs/output-formats/html-code.html) in the Quarto documentation
 
-### Code inside the document
+### Add code snippets
 
 Add code snippets to a Quarto document like this:
 
@@ -293,7 +370,7 @@ git status # <1>
 1. `git status` displays the state of the working directory and the staging area.
 ````
 
-## Images
+## Images {#sec-images}
 
 ### Background
 
@@ -376,7 +453,7 @@ It's also possible to include the `make download-images` as a project script in 
 This would re-execute `make download-images` before every render.
 For the moment, we disabled this option, but it can be enabled in `_quarto.yml`.
 
-## Variables
+## Variables {#sec-variables}
 
 - {{< fa book >}} ["Variables"](https://quarto.org/docs/authoring/variables.html) in the Quarto documentation
 
@@ -404,7 +481,7 @@ For example, to include the link to the Nextcloud folder that stores static cont
 
 For more details on variables, read the chapter on [Variables](https://quarto.org/docs/authoring/variables.html) in the Quarto documentation. 
 
-## Fontawesome Icons
+## Fontawesome Icons {#sec-icons}
 
 - {{< fa brands github >}} [Font Awesome Extension for Quarto](https://github.com/quarto-ext/fontawesome)
 - {{< fa icons >}} [Free Font Awesome icons](https://fontawesome.com/search?m=free)
@@ -420,7 +497,8 @@ To embed an icon, use the `{{{< fa >}}}` shortcode.
 For example, `{{{< fa thumbs-up >}}}` will result in {{< fa thumbs-up >}}.
 For details, see the [project documentation on GitHub](https://github.com/quarto-ext/fontawesome).
 
-## Acknowledgements & Attribution
+## Acknowledgements & Attribution {#sec-acknowledgements}
 
 - The Quarto documentation [@allaire2022], in particular the chapters on [Variables](https://quarto.org/docs/authoring/variables.html), [Quarto Extensions](https://quarto.org/docs/extensions/), ["Code Annotation"](https://quarto.org/docs/authoring/code-annotation.html) (License: [GNU GPL v2](https://quarto.org/license.html))
+- [@blischak2016]
 - The [Font Awesome Extension for Quarto](https://github.com/quarto-ext/fontawesome) (License: [MIT](https://github.com/quarto-ext/fontawesome/blob/main/LICENSE))
