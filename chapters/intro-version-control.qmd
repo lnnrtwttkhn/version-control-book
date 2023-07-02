@@ -1,16 +1,20 @@
 ---
 title: "Introduction to Version Control"
+image: ../static/version-control-turing-way.svg
 engine: knitr
 execute:
   eval: false
 title-block-style: none
 author: ""
+categories: [beginner]
+description: "Introduction to fundamental concepts of version control."
 ---
 
 ## Learning Objetives
 
 - [x] What is version control?
-- [x] Why is version control important for research?
+- [x] Why is version control useful (for research)?
+- [x] What are git and GitHub?
 - [x] What is the difference between git and GitHub?
 
 ## Benefits of version control
@@ -18,3 +22,181 @@ author: ""
 - Go back to previous versions
 - Store history of changes
 - Collaborate with others
+
+## What is version control?
+
+> Version control is an approach to **record changes** made in a file or set of files **over time** so that you and your collaborators can track their history, review any changes, and revert or go back to earlier versions. -- by @community2022, chapter on [Version Control](https://the-turing-way.netlify.app/reproducible-research/vcs.html)
+
+![This illustration is created by [Scriberia](https://www.scriberia.com/) with [The Turing Way](https://the-turing-way.netlify.app/) community. Used under a [CC-BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/). DOI: [10.5281/zenodo.3695300](https://doi.org/10.5281/zenodo.3695300) (Version 3, [direct download link](https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1)).](../static/version-control-turing-way.svg)
+
+## Why is version control useful?
+
+- Great data management and documentation tool
+  - work with the latest version of a file
+  - backup previous versions of files
+  - save edit history (it's clear what you did & you have the option to revert back)
+  - test out new features without messing up your original code
+  - collaborate others and manage projects
+
+## Challenges
+
+### Example
+
+You have a person 1 who is developing a script to analyze their data.
+You go through different versions, script-v1, script-v2, script-v3.
+Now you want to test out a new feature.
+It takes you a while to test this feature.
+It becomes unclear what you should call all these files.
+Then you realize that you need help with this.
+So then researcher 2 comes in and they help ypu implementing this feature.
+More files are created, but no ideas how to name them.
+Person 3 has a lot of ideas but is not editing the files directly.
+So script v-3 is created.
+One you realize that this is becoming complicated, you create a meta document that you want to use to keep track of the project progress.
+Then you realize that you software has bugs and you can't figure out when this bug has occurred for the first time.
+Time has passed and you ask yourself: what is the latest version of my script and where is it? when did I incorporate that new featrure. who made that change and why? collaborator asks you to run version 2 of the script but you dont have it anymore.
+actually there are many more people involved and many more documents.
+
+
+## Implicit version control
+
+It is very likely that you are already engaged in some form of version control.
+
+### Versions in mulitple files
+
+One way to implement file versioning is by appending versions or descriptive labels to the filenames, or by adding initials at the end of the filename:
+
+- `file_v1.docx`, `file_v2.docx`, `file_v3.docx` etc.
+- `draft.docx`, `draft_comments_LW.docx`, `draft_comments_LW_final_edited.docx`, etc.
+
+Every time you make a critical change to a file, you duplicate it, rename it according to your versioning scheme and continue working in the duplicated file.
+While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files and multiple users, especially for large, long-term projects.
+In such cases, more advanced version control systems may be necessary.
+
+![This illustration is created by [Scriberia](https://www.scriberia.com/) with [The Turing Way](https://the-turing-way.netlify.app/) community. Used under a [CC-BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/). DOI: [10.5281/zenodo.3695300](https://doi.org/10.5281/zenodo.3695300) (Version 3, [direct download link](https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1)).](../static/project-history-turing-way.svg)
+
+### Versions in a single file
+
+Some software can keep track of all the changes made to a file without making new copies of the file.
+This allows you to look at the file's history and see how it has changed over time.
+Examples of such software include [Google Drive](https://www.google.com/drive/), [Dropbox](https://www.dropbox.com/), and [Overleaf](https://www.overleaf.com/).
+You may have noticed that these services automatically save different versions of your files and allow you to go back to previous versions if needed.
+
+![Image from [Chapter 3.1 on "Collaboration, Version Control, & GitHub"](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) of the [Mozilla Science Lab's Study Group Orientation handbook](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://github.com/mozillascience/study-group-orientation/blob/master/LICENSE) ([direct download link](https://github.com/mozillascience/study-group-orientation/blob/master/images/gh07.png))](../static/versions-single-file.png){#fig-versions-single-file}
+
+@fig-versions-single-file illustrates the concept of **tracking versions within a single file**.
+It illustrates a simplified linear project timeline (gray line).
+A version control system keeps track of the changes made to the file at specific time points (gray nodes in @fig-versions-single-file). These nodes represent various actions such as additions (first node), deletions (second node), or edits to the content (third node).
+The blue arrows at the bottom indicate the ability to navigate along this linear timeline.
+By recording these changes, it becomes possible to access previous versions of the file.
+This means that you can go back and examine earlier versions or even revert the entire workflow back to a specific version, if needed.
+Rather than saving new files for each change, this system saves the changes within the same file, allowing for easier management and tracking of version history.
+
+### Features of a version control system
+
+1. **What:** It keeps track of the changes made to a file when you edit it.
+1. **When:** It records the date and time when each change was made.
+1. **Who** It keeps a record of who made each change.
+1. **Why:** It allows you to add a note explaining why you made a particular change.
+
+The system takes snapshots of your project, giving them unique codes that include all these features.
+Instead of saving new files for each change, only the specific modifications made to the file are saved.
+This makes it easy to compare different versions, restore previous versions, and combine changes when needed.
+
+### Git as a distributed version control system
+
+Among various version control systems, Git is the most widely used.
+It was created by the Linux development community in 2005.
+Git is a software primarily written in C, but you don't need to know C.
+
+Here are some key features of Git:
+
+- Free, fast, and open source.
+- It is a distributed system, meaning everyone working on a project has a complete copy of it.
+- Most operations in Git can be performed using local files and resources, minimizing the need for external dependencies.
+- Git keeps a detailed history of changes, including what was changed, when it was changed, who made the change, and why it was made.
+- You can easily retrieve previous versions of your project, allowing you to see the progression of your work.
+- Git forms the foundation for collaboration tools like GitHub and GitLab.
+
+When you use Git, it takes snapshots of your project whenever you choose. It then compares the current snapshot with the previous one and prompts you to provide a message explaining why you made the specific changes.
+
+### Why is git called git?
+
+The name "git" was given by the main developer Linus Torvalds when he created the software.
+Torvalds is well-known for his involvement in the development of the Linux kernel.
+
+> *"I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."* -- [Wikipedia: Git](https://en.wikipedia.org/wiki/Git)
+
+::: {.callout-tip title="For more insights and discussions about the name, you can refer to the [README.md file on GitHub](https://github.com/git/git)." collapse="true"}
+
+The name "git" was given by Linus Torvalds when he wrote the very first version. He described the tool as "the stupid content tracker" and the name as (depending on your mood):
+
+- random three-letter combination that is pronounceable, and not actually used by any common UNIX command. The fact that it is a mispronunciation of "get" may or may not be relevant.
+- stupid. contemptible and despicable. simple. Take your pick from the dictionary of slang.
+- "global information tracker": you're in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.
+- "goddamn idiotic truckload of sh*t": when it breaks
+
+:::
+
+## Summary
+
+Git is a free **version control system** that helps you manage and track the history of your files, allowing you to retrieve previous changes.
+It is used **locally** on your computer.
+
+GitHub is a popular **cloud-based** hosting service for sharing projects tracked with Git.
+It offers **collaboration** features and serves as a reliable backup solution.
+
+## How do I interact with git on my computer?
+
+There are many options to interact with Git.
+
+### Command line / terminal
+
+See chapter on command line.
+
+### Extensions to existing software
+
+Your text editor or analytical software is very likely to have a git extensions / plugin, often via a Graphical User Interface (GUI).
+
+### Git clients (applications with a GUI)
+
+Examples: GitKraken, GitHub Desktop
+
+## Common misconceptions
+
+### git equals GitHub
+
+Git and GitHub are two distinct but related tools in the world of version control.
+
+Git is a version control system that allows you to track changes and manage the history of your files locally on your computer.
+It provides features such as branching, merging, and reverting to previous versions.
+
+GitHub is a web-based platform that utilizes Git for version control.
+It offers a cloud-based hosting service for your Git repositories, allowing you to store and share your projects online.
+GitHub provides additional collaboration features such as issue tracking, pull requests, and project management tools.
+
+In summary, Git is the version control system itself, while GitHub is a hosting service built on top of Git.
+Git can be used independently without GitHub, but GitHub relies on Git for its functionality.
+
+### git is only for code
+
+Git is often associated with version control for code, and it is indeed highly valuable for managing code-related projects.
+However, Git is not limited to code and is not only for programmers.
+While it is widely utilized in software development, Git can be employed to track changes and oversee the history of any file type.
+It can be used by anyone who seeks to utilize version control for monitoring the progress of their work.
+
+### git is only for collaboration
+
+Git offers remarkable benefits for collaboration, but its value extends beyond working with others.
+It enables you to collaborate effectively with your past and future self, fostering valuable skills and boosting your confidence when collaborating with others.
+Even if you currently don't have a specific reason to collaborate with others, trying git on your own can be highly beneficial and rewarding.
+
+### git auto-saves your changes
+
+Unlike automatic saving, where changes are continuously saved in the background, git requires manual intervention to capture snapshots.
+You have to explicitly inform the git when you want to take a snapshot, indicating that you want it to acknowledge your changes.
+
+## References
+
+- https://github.com/aim-rsf/training/tree/main/version-control
+- https://www.youtube.com/watch?v=z9-qAGq78qE
