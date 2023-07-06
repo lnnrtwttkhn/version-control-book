@@ -39,6 +39,8 @@ In this lesson, we will introduce the command line as a general concept and lear
 
 ## Acknowledgements
 
+@mcbain2019
+
 @millman2018 @milligan2014
 
 ## Cheatsheet
@@ -84,6 +86,11 @@ knitr::kable(df, format = "markdown", escape = FALSE)
   - Change to the root folder of the system and list its contents. Change to your home folder.
 - moving around
   - Where does the following command place you on your system? How does it work? cd ~/../../..
+- Move ‘output.csv’ into the results folder of ‘eg_project’ using the mv command.
+- Complete the command below to rename the ‘paper.Rmd’ file to ‘methods.Rmd’ using mv: miles@pa00120549:~/eg_project$ mv src/paper.Rmd ...
+- Be sure to check your result using ls.
+- Move a group: Using a single mv command, move the csv files with ‘table’ in the name to the ‘data’ folder.
+- Wildcard extermination: Combine the rm command with two wildcards to remove all .csv files in our project with a single command. Hint: You can use a wildcard in the path for both the folder and file name portion.
 
 ## Introduction
 
@@ -97,16 +104,23 @@ This is why comfort with the command line is essential for learning git.
 1. GUIs usually do not contain the **full set of features** available on the command line
 2. If you search for help with git online (e.g., on [Stack Overflow](https://stackoverflow.com/questions/tagged/git)), you will invariably stumble across **help in the form of command line instructions**
 
+## Terminology
 
-4.3 Shell, command line, cli, terminal
+The terms "shell", "command line", "command line interface (CLI)", and "Terminal" are used interchangeably and basically refer to the same thing: a simple window with a dark background and light text, showing a prompt and a blinking cursor.
+In movies, when people hack into computers, they often type rapidly in this window.
 
-All these words in the title above are used interchangeably to mean the same thing: a sparse window, usually with a dark backgroud and light text, featuring a prompt followed by a cursor. In the movies hacking computers often involves people typing really fast into this window.
+The **"command line interface (CLI)"** is a text-based way to interact with computer programs.
+Most people primarily use a Graphical User Interface (GUI) to work with their programs, but historically, text-based interfaces were more common.
+Often, the GUI can only access a limited set of features available through the CLI and some programs don't even have a GUI and can only be used through the command line.
 
-The command line interface (cli), is a text-based interface to a computer program. Pretty much everyone primarily uses a Graphical User Interface (GUI) to interact with their programs, but historically this is only recent. Most of the time we’ve had with computers has been using text-based interfaces and often the GUI can only access a subset of functionality available on the cli. There are many important programs that only have a cli (e.g. pandoc).
+**"Terminal"** is short for "terminal emulator", which is a program that mimics a physical device called a terminal.
+Terminals were used to connect to mainframe computers in the early days of computing.
+The terminal program creates the window with the dark background, light text, and cursor.
 
-‘Terminal’ is short for ‘terminal emulator’ which is to say it is a program which emulates a physical input and display device called a terminal, that used to connect to a mainframe computer in the early days of computing. It is the program that draws the dark background, light text, and cursor.
-
-A ‘shell’ is a program that provides a cli to your operating system. Think of the functionality your operating system provides: manipulating your file system, running and stopping programs, changing system settings etc. All of this can be done via text with a shell. When you ‘open a terminal’ the program that the terminal is talking to initially is a shell. For a given operating system you often have a choice of many shells. The most popular shell is the ‘Bourne Again Shell’ or ‘bash’.
+A **"shell"** is a program that provides the command line to your operating system.
+It allows you to perform various tasks that your operating system offers, such as managing files, running and stopping programs, and changing system settings, all through text commands.
+When you "open a terminal", the program initially communicating with the terminal is a shell.
+There are multiple shell options available for different operating systems, with the most popular one being the "Bourne Again Shell" or "bash".
 
 ## Open the command line
 
@@ -342,88 +356,130 @@ In some cases, the flag `-h` can also be used to achieve the same result.
 
 ## Manipulating the file system
 
-The shell provides commands to create, move, and delete folders and files.
-4.5.1 Creating Folders
+The command line offers commands for creating, moving, and deleting folders and files.
 
-Let’ create an example project folder from the command line:
+### Creating a folder
 
-First we’ll use the mkdir command to make a directory. The argument to the command is the path of the directory to be created. To create a directory in the current folder we just need to use its name since and the path is assumed to be relative.
+Let's use the command line to create a project folder as an example:
+To make a directory, we'll use the `mkdir` command.
+The path of the directory we want to create is given as an argument to the command.
+If we want to create a directory in the current folder, we just need to use its name, as the path is assumed to be relative.
 
-miles@miles-macbook:~$ mkdir eg_project
+```{bash}
+mkdir my-project
+```
 
-Confirm the project folder exists using ls and change into it with cd:
+Make sure the project folder is present by using the `ls` command, and then enter into it by using the `cd` command.
 
-miles@miles-macbook:~$ ls
-miles@miles-macbook:~$ cd eg_project
+```{bash}
+ls
+cd my-project
+```
 
-Then we’ll create several more folders as if the project is an analysis, mkdir can create multiple directories at once, for each argument passed.
+### Creating multiple folders
 
-mkdir doc data results scripts
+Next, we will proceed to create multiple additional folders within the `my-project` project folder.
+The `mkdir` command allows us to create multiple directories simultaneously by providing multiple arguments, each representing a separate folder.
+For example, for a data analysis project we might create the following three folders:
 
-4.5.2 Moving Folders/Files
+```{bash}
+mkdir data results scripts
+```
 
-Using Atom we’ll create some empty files. To open our project use File -> Open Folder… and select the ‘eg_project’ folder.
+### Creating files
 
-Create the 4 files in the eg_project folder as shown:
+Let's create some files in the `my-project` project folder.
+To do this, you can use your favorite text editor or the command line.
+In the command line, you can use the `touch` command to create a new empty file.
+The file doesn't need to contain anything.
+For example, to create an empty file called `file.txt`, we can use the following command:
 
-They don’t need to contain anything.
+```{bash}
+touch file.txt
+```
 
-Let’s say we want to move the .Rmd file to the scripts folder. We can use the mv command to move files or folders. mv takes two arguments, the first being files or folders to move and the second being the path to move then to. Our command would look like:
+### Moving folders and files
 
-miles@pa00120549:~/eg_project$ mv paper.rmd scripts
+Let's say we want to move the `file.txt` file to the `/scripts` folder.
+We can use the `mv` command to move files and folders.
+The `mv` command requires two arguments: the first is the files or folders to be moved, and the second is the path where they should be moved.
+To move the `file.txt` file, the command would look like this:
 
-Let’s say we don’t like the name ‘scripts’ since ‘paper.Rmd’ is not really a script - it’s a source file. We can also use mv to rename files and folders, by moving them to a new place in the file system e.g.:
+```{bash}
+mv file.txt scripts
+```
 
-miles@pa00120549:~/eg_project$ mv scripts src
+### Renaming files and folders
 
-4.5.2.1 Move a file
+Suppose we don't like the folder name `scripts` because `file.txt` is actually a documentation file, not a script.
+We can use the `mv` command to rename files and folders by moving them to a different location in the file system, for example `docs`, like this:
 
-Move ‘output.csv’ into the results folder of ‘eg_project’ using the mv command.
-4.5.2.2 Rename a file
+```{bash}
+mv scripts docs
+```
 
-Complete the command below to rename the ‘paper.Rmd’ file to ‘methods.Rmd’ using mv:
+### Wildcards
 
-miles@pa00120549:~/eg_project$ mv src/paper.Rmd ...
+Now, let's learn how to use wildcards to perform actions on multiple files or folders at the same time.
+A wildcard is denoted by the symbol `*`, and it helps us select file system arguments that match certain patterns.
+For example, suppose we wish to display a list of all the data files in the current directory:
 
-Be sure to check your result using ls.
-4.5.3 Wildcards and Manipulations
+```{bash}
+ls -alh *.yml
+```
 
-Now we’re going to see how we can use wildcards to perform actions on many files or folders at once. A wildcard is the the * symbol, and it can be used to provide file system arguments that match patterns.
+<details>
+<summary>Click here to see the output of this command executed in the project directory of this guide.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls -alh *.yml
+```
+</details>
 
-For example, lets say we want to list all the data files in the current folder:
+By using the wildcard `*`, we can generate a list of all files ending with `.yml`.
 
-miles@pa00120549:~/eg_project$ ls -alh *csv
+Similarly, we can apply the wildcard at the end of a path to match items starting with a specific letter, such as folders beginning with `i`:
 
-This lists all files that end in ‘csv’. We could also use it a the end of a path to match all items that start with a prefix, e.g. also folders starting with ‘d’:
+```{bash}
+ls -alh i*
+```
 
-miles@pa00120549:~/eg_project$ ls -alh d*
+<details>
+<summary>Click here to see the output of this command executed in the project directory of this guide.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls -alh i*
+```
+</details>
 
-We can use this with all types of file manipulations!
-4.5.3.1 Move a group
+### Removing files and folders
 
-    Using a single mv command, move the csv files with ‘table’ in the name to the ‘data’ folder.
+To delete files and folders, you can use the `rm` command.
+Provide the path of the files or folders that you want to delete as the argument.
+However, if you want to remove a folder, you need to include the `-r` (`--recursive`) flag.
 
-4.5.4 File Removal
+For example, to remove the `docs` folder, you would use the following command:
 
-The rm command can be used to remove files and folders. It takes the path of the files or folders as its argument. It requires the -r (recursive) flag to remove folders.
+```{bash}
+rm -r docs
+```
 
-To remove the ‘doc’ folder we’d do:
+## Summary
 
-miles@pa00120549:~/eg_project$ rm -r doc
+In this lesson, we have achieved the following:
 
-4.5.4.1 Wildcard extermination
+1. Simplified and clarified some of the technical terms associated with the command line.
+1. Explored the components of command line commands: paths, arguments, and flags.
+1. Gained knowledge about relative and absolute paths, including convenient shortcuts like `~`, `.` and `..`.
+1. Witnessed the functionality of wildcards.
+1. Acquired familiarity with several essential shell commands.
 
-    Combine the rm command with two wildcards to remove all .csv files in our project with a single command.
+## Further reading
 
-Hint: You can use a wildcard in the path for both the folder and file name portion.
-4.6 Summary
-
-In this lesson we’ve:
-
-    Demystified some of the jargon associated with the command line.
-    Learned the anatomy of cli commands: paths, arguments, and flags.
-    Learned about relative and absolute paths, including useful short hands (~, .., .)
-    Seen wildcards in action.
-    Learned a handful of shell commands.
-
-This is but a tiny fraction of what is available using the shell. The main objective here was to communicate some ideas that come in handy with git. You might like to see: http://swcarpentry.github.io/shell-novice/ for a more complete introduction.`
+It's important to note that what we covered here only scratches the surface of what can be accomplished using the shell.
+The primary aim was to provide useful concepts related to Git.
+If you're interested in delving deeper, you may find a more comprehensive introduction at the following resource: [http://swcarpentry.github.io/shell-novice/].
