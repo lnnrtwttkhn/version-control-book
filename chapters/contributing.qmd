@@ -350,7 +350,34 @@ The YAML header provides instructions to the Quarto rendering engine on how to p
 ### Reference external code
 
 You can reference external code.
-For example, this code block will display the first five lines (`echo=c(1:5)`) of `_quarto.yml` (`#| file: _quarto.yml`) and add code line numbers (`#| code-line-numbers: true`) and a filename to the code block (`filename="_quarto.yml"`).
+For example, the following code block will:
+
+```{r}
+#| eval: true
+#| echo: false
+df <- data.frame(
+  description = c(
+    "reference the `_quarto.yml` file",
+    "display the first five lines of code",
+    "add code line numbers",
+    "add a filename to the code block"
+  ),
+  code = c(
+    "`#| file: _quarto.yml`",
+    "`echo=c(1:5)`",
+    "`#| code-line-numbers: true`",
+    '`filename="_quarto.yml"`'
+  )
+)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| output: asis
+knitr::kable(df, format = "markdown", row.names = TRUE,
+             escape = FALSE)
+```
 
 ````
 ```{{bash, filename="_quarto.yml", echo=c(1:5)}}
@@ -359,9 +386,22 @@ For example, this code block will display the first five lines (`echo=c(1:5)`) o
 ```
 ````
 
+<details>
+<summary>Click here for the output of this example.</summary>
+```{bash, filename="_quarto.yml", echo=c(1:5)}
+#| file: _quarto.yml
+#| code-line-numbers: true
+```
+</details>
+
 ### Add code annotations
 
 - {{< fa book >}} ["Code Annotation"](https://quarto.org/docs/authoring/code-annotation.html) in the Quarto documentation
+
+> Code blocks and executable code cells in Quarto can include line-based annotations.
+> Line-based annotations provide a way to attach explanation to lines of code much like footnotes.
+
+For example, this is a code annotation for the `git status` command:
 
 ````
 ```{{bash}}
