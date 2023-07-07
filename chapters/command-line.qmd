@@ -21,14 +21,18 @@ In this lesson, we will introduce the command line as a general concept and lear
 {{< fa circle-question >}} Questions
 
 - What is the shell, command line, or terminal?
+- Why would I use the command line shell?
 - Why do I need to know the command line to use git?
 - How do I use the command line?
 - What commands do I need to know?
+
 :::
 
 ::: {.column width="50%"}
 {{< fa bullseye >}} Objectives
 
+- Explain how the shell relates to the keyboard, the screen, the operating system, and users’ programs.
+- Explain when and why command-line interfaces should be used instead of graphical interfaces.
 - Understand how to form file paths and navigate directories
 - Understand how arguments and flags are used to modify command line commands
 - Understand the concept of wild cards (`*`)
@@ -39,7 +43,7 @@ In this lesson, we will introduce the command line as a general concept and lear
 
 ## Acknowledgements
 
-@mcbain2019
+@mcbain2019, @capes2023
 
 @millman2018 @milligan2014
 
@@ -92,6 +96,10 @@ knitr::kable(df, format = "markdown", escape = FALSE)
 - Move a group: Using a single mv command, move the csv files with ‘table’ in the name to the ‘data’ folder.
 - Wildcard extermination: Combine the rm command with two wildcards to remove all .csv files in our project with a single command. Hint: You can use a wildcard in the path for both the folder and file name portion.
 
+## Prerequisites
+
+If you have stored files on a computer and are familiar with terms such as "file," "directory," or "folder," you are adequately prepared for this lesson.
+    
 ## Introduction
 
 This will only teach you enough to be able to use git from the command line.
@@ -101,8 +109,16 @@ This will only teach you enough to be able to use git from the command line.
 git is fundamentally a command line tool.
 This is why comfort with the command line is essential for learning git.
 
-1. GUIs usually do not contain the **full set of features** available on the command line
-2. If you search for help with git online (e.g., on [Stack Overflow](https://stackoverflow.com/questions/tagged/git)), you will invariably stumble across **help in the form of command line instructions**
+#### General advantages of the command line
+
+1. **Longevity:** The command line has stood the test of time, remaining relevant and widely used even as new technologies emerge.
+1. **Power:** The command line is a robust and powerful tool, enabling users to accomplish intricate tasks efficiently.
+1. **Simplicity:** With just a few keystrokes or lines of code, the command line empowers users to execute complex tasks effortlessly.
+1. **Task Automation:** The shell allows users to automate repetitive tasks, saving time and effort in performing them manually.
+1. **Workflow Integration:** Users can seamlessly combine smaller tasks into larger, more potent workflows, enhancing productivity and efficiency.
+1. **Comprehensive Feature Set:** The command line interface provides access to the complete range of Git features, offering more extensive functionality compared to graphical user interfaces (GUIs).
+1. **Extensive Online Support:** When seeking help or troubleshooting Git-related issues online, you will often find valuable assistance in the form of command line instructions.
+Platforms like [Stack Overflow](https://stackoverflow.com/questions/tagged/git) frequently provide guidance and solutions based on command line usage.
 
 ## Terminology
 
@@ -122,32 +138,63 @@ It allows you to perform various tasks that your operating system offers, such a
 When you "open a terminal", the program initially communicating with the terminal is a shell.
 There are multiple shell options available for different operating systems, with the most popular one being the "Bourne Again Shell" or "bash".
 
-## Open the command line
+## Find the command line
 
 ::: {.panel-tabset}
 
-## {{< fa brands apple >}}
+## {{< fa brands apple >}} MacOS
+
+On a Mac computer running macOS Mojave or earlier versions, the default Unix Shell is Bash.
+However, for a Mac computer operating on macOS Catalina or later releases, the default Unix Shell is Zsh.
+You can access your default shell through the Terminal program located within the Utilities folder.
+
+- In the Finder, go to `Applications` > `Utilities` > `Terminal.app`.
+- In the Finder, select the `Go` menu > `Utilities` > `Terminal.app`.
+- Activate the Mac `Spotlight` search function, type `Terminal` in the search bar, and press the `Return` key.
+
+To verify if your machine is configured to use a shell other than Bash, you can type "echo $SHELL" in your Terminal window.
+If your machine is configured to use a shell other than Bash, you can switch to Bash by opening a terminal and typing `bash`.
+
+## {{< fa brands microsoft >}} Windows
+
+By default, Windows operating systems do not come with a pre-installed Unix Shell program.
+In this lesson, we recommend using an emulator provided by [Git for Windows](https://gitforwindows.org/), which grants you access to both Bash shell commands and Git.
+
+Once you have installed Git for Windows, you can easily open a terminal by launching the program called Git Bash from the Windows start menu.
+
+## {{< fa brands linux >}} Linux
 
 Open a fresh Terminal.
-In the Finder, go to `Applications` > `Utilities` > `Terminal.app`.
 
-## {{< fa brands microsoft >}}
+## {{< fa rocket >}} JupyterHub
 
-Run Git BASH now.
-
-## {{< fa brands linux >}}
-
-Open a fresh Terminal.
+TBA
 
 :::
 
-Typically, your terminal interface will present you with an initial message resembling the following prompt:
+## Open command line
+
+When you open the shell, you'll see a prompt that tells you the shell is ready for input.
+Your terminal interface will usually show a message similar to the following prompt:
 
 ```{bash}
-wittkuhn@lip-osx-005509:~$
+$
 ```
 
-On Windows it will contain the same elements but look like this:
+In the shell, the prompt is usually represented by the symbol `$` but it can be different sometimes.
+In our lesson examples, we'll use `$` as the prompt.
+The important thing to remember is **not to type the prompt itself when entering commands**.
+Only type the command that comes after the prompt.
+For this reason, we remove the `$` prompt from all code examples.
+Also, remember to press the `Enter` key after typing a command to make it work.
+
+After the prompt, you'll see a text cursor that shows where you can type.
+The cursor can be a flashing or solid block, or it can be an underscore or a pipe symbol.
+You may have seen a similar cursor in a text editing program.
+
+Keep in mind that your prompt may look slightly different.
+Usually, in popular shell environments, your username and the host name appear before the `$` symbol.
+For example, your prompt might look like this:
 
 ```{bash}
 wittkuhn@lip-osx-005509:~$
@@ -173,6 +220,16 @@ pwd
 pwd
 ```
 </details>
+
+### Command not found
+
+If the shell cannot find the program you typed as a command, it will show an error message.
+This can happen if you made a mistake when typing the command or if the program for that command is not installed on your system.
+For example, if you made a mistake when typing the `pwd` command, and accidentally entered `pws`, the follwing error message might appear:
+
+```{bash}
+pws: command not found
+```
 
 ### Moving between folders
 
