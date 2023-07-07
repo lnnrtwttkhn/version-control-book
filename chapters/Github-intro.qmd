@@ -6,26 +6,28 @@ execute:
   title-block-style: none
 author: ""
 ---
+::: callout-note
+### Overview
 
-# Objectives
+{{< fa clock >}} Duration:  min
+:::
+
+## Learning objectives
 
 -   Connect Git and Github
--   Work with a Github Repo
+-   Set up a GitHub Repo in multiple ways
+-   Pull and push changes to/from Github repo
 
 # What is GitHub? {{< fa brands github >}}
-GitHub is a web-based platform that provides hosting for Git repositories. 
-That means you can use GitHub in your browser without downloading anything. 
-It offers an easy-to-use collaborative environment for software development projects, allowing developers to work together, contribute code, and manage version control. 
-You do not need to be a coder to be able to use it.
-It provides tools for issue tracking, project management, and code review, making it a powerful platform for open-source development and team collaboration.
-GitHub has become a central hub for sharing and discovering code.
-You can upload your scientific project onto Github, so other people can collaborate with you, or get to know your work.
+
+GitHub is a web-based platform that hosts Git repositories. You can use it in your browser without any downloads. It's a collaborative environment for software development, allowing developers to work together, manage code, and track changes. You don't have to be a coder to use it. GitHub also offers project management and code review tools, making it great for open-source development and team collaboration. It's a popular hub for sharing and discovering code. You can upload your scientific project on GitHub for collaboration and to showcase your work.
 
 # Connecting to GitHub {{< fa brands github >}}
-## Setting Account details
-To be able to integrate Github in your workflow, you´ll need to authenticate your GitHub account. 
 
-In the the setup chapter you have set your Username and Email.
+## Setting Account details
+
+To be able to integrate Github in your workflow, you´ll need to authenticate your GitHub account. In the the [setup chapter] it is explained how to set a Username and Email for Git to use on your Computer.
+
 ```{bash}
 
 git config --global user.name "Example"
@@ -33,90 +35,69 @@ git config --global user.email beispiel@example.com
 
 ```
 
-If you did not use your GitHub account details, you should change that.
+In the [installation chapter](installation.qmd) it is explained how to create an account on [Github.com.](Github.com).
+
+If you did not use your GitHub account details for the setup you should change that now.
 
 ## Authentication
-There a different ways to authenticate yourself. 
-Each way with different pros and cons that we will not look at in depth. 
+
+There a different ways to authenticate yourself. Each way with different pros and cons that we will not look at in depth.
 
 ### HTTPS Personal Access Token
-
+WIP
 ### SSH Key
-
-# GitHub Repositories
+WIP
+# GitHub Repositories {{< fa folder-closed >}}
 
 ## Creating a Repository
 
 ### Starting from Scratch
-Creating a new GitHub repository is a simple process. 
-To create a new repository, click on the "+" sign in the top-right corner of the GitHub page.
-From the dropdown menu, select "New repository." On the new repository page, enter a name for your repository and make sure the "Public" option is selected if you want it to be accessible to everyone.
-You should also choose to create a README file by checking the corresponding box.
-Finally, click the green "Create repository" button at the bottom of the page to complete the creation process.
-Once you have created the repository, you will find the README.md file in your repository. 
-This file serves as the landing page for your project on GitHub and is written in Markdown format. 
-You can edit this file to provide information and details about your project.
-Whatever you write in the README.md file will be displayed on the front page of your project, so make sure to use it to effectively communicate and describe your project to others.
-Markdown formatting allows you to structure and style your content in a readable and visually appealing manner.
 
-To add more files to your repository, click on the "Add file" button and choose whether to upload existing files or create a new file directly on GitHub. 
-Remember to provide a descriptive commit message each time you add a new file or make changes. 
-The commit message helps you keep track of the changes you've made and serves as a brief summary of the modifications made to the repository.
+Creating a new GitHub repository is a simple process. To create a new repository, click on the "+" sign in the top-right corner of the GitHub page. From the dropdown menu, select "New repository." On the new repository page, enter a name for your repository and make sure the "Public" option is selected if you want it to be accessible to everyone. You should also choose to create a README file by checking the corresponding box. Finally, click the green "Create repository" button at the bottom of the page to complete the creation process. Once you have created the repository, you will find the README.md file in your repository. This file serves as the landing page for your project on GitHub and is written in Markdown format. You can edit this file to provide information and details about your project. Whatever you write in the README.md file will be displayed on the front page of your project, so make sure to use it to effectively communicate and describe your project to others. Markdown formatting allows you to structure and style your content in a readable and visually appealing manner.
+
+To add more files to your repository, click on the "Add file" button and choose whether to upload existing files or create a new file directly on GitHub. Remember to provide a descriptive commit message each time you add a new file or make changes. The commit message helps you keep track of the changes you've made and serves as a brief summary of the modifications made to the repository.
 
 ::: {.callout-tip title="writing a README file" collapse="true"}
-WIP
+Keep it simple! When you're working in any field, whether it's coding or studying stars, you'll likely use specialized terms that might confuse others. So, use plain language and explain any unfamiliar words you use.
+
+Share your project! Describe what you're doing now and what you plan to do in the future. This helps people understand your work and goals.
+
+Introduce yourself! Tell people who you are and how they can reach you. It's great for networking and collaboration.
+
+Remember, if you're not sure how to start, take a look at other people's README.md files for inspiration.
 :::
 
-
-
 ### Uploading an existing folder
-To initilize an existing folder as a GitHub repository, you first need to create a new repository, like explained above.
-WIP...
 
-## Forking a Repository
-Forking refers to creating a personal copy of a repository within your GitHub account.
-When you fork a repository, it creates a separate copy of the entire project, including all files, commit history, and branches, under your GitHub account.
-Forking is typically used when you want to contribute to a project without directly modifying the original repository.
-It allows you to make changes to your forked repository independently, create new branches, and push your modifications to your own fork.
-You can also submit changes to the original repository by creating a pull request, which allows the repository owner to review and potentially merge your changes into the original project.
-To do thus, navigate to the repository on GitHub that you want to fork.
-On the repository page, click the "Fork" button located at the top-right corner of the page. 
-This will create a copy of the repository under your GitHub account.
-Once the forking process is complete, you will be redirected to your own forked repository. 
-This new repository is an exact copy of the original repository.
-Now, you have your own copy of the repository in your GitHub account. 
-You can clone this repository to your local machine using the git clone command.
-Now, you have your own copy of the repository in your GitHub account. You can clone this repository to your local machine using the git clone command.
+To initilize an existing folder as a GitHub repository, you first need to create a new repository, like explained above. You´ll then need to initialize the folder as a Git repository using `git init`. If you have already done this, you can of course skip this. To add your folder as a remote repository use the `git remote`command.
 
-## Cloning a Repository
-Cloning refers to creating a local copy of a repository from GitHub onto your own computer.
-When you clone a repository, you download all of its files, commit history, and branches to your local machine.
-Cloning allows you to work with the repository locally, make changes, and push those changes back to the original repository if you have write access.
-It is commonly used when you want to contribute to a project or work on it independently.
-To clone a repository, you need the repository's URL from GitHub, 
-You can find the repository's HHPS URL on the repository page, if you click on the green **code** button.
-Then use the terminal to navigate to the directory, to where you want to clone the repository.
-Then use the `git clone` command followed with the URL of the repository.
+```{bash}
+git remote add origin https://github.com/username/repository.git
+```
+
+Now you are able to push your files to the remote repo using `git push`.
+
+```{bash}
+git push -u origin main
+```
+
+## Forking a Repository  {{< fa code-fork >}}
+
+Forking refers to creating a personal copy of a repository within your GitHub account. When you fork a repository, it creates a separate copy of the entire project, including all files, commit history, and branches, under your GitHub account. Forking is typically used when you want to contribute to a project without directly modifying the original repository. It allows you to make changes to your forked repository independently, create new branches, and push your modifications to your own fork. You can also submit changes to the original repository by creating a pull request, which allows the repository owner to review and potentially merge your changes into the original project. To do thus, navigate to the repository on GitHub that you want to fork. On the repository page, click the "Fork" button located at the top-right corner of the page. This will create a copy of the repository under your GitHub account. Once the forking process is complete, you will be redirected to your own forked repository. This new repository is an exact copy of the original repository. Now, you have your own copy of the repository in your GitHub account. You can clone this repository to your local machine using the git clone command. Now, you have your own copy of the repository in your GitHub account. You can clone this repository to your local machine using the git clone command.
+
+## Cloning a Repository {{< fa clone >}}
+
+Cloning refers to creating a local copy of a repository from GitHub onto your own computer. When you clone a repository, you download all of its files, commit history, and branches to your local machine. Cloning allows you to work with the repository locally, make changes, and push those changes back to the original repository if you have write access. It is commonly used when you want to contribute to a project or work on it independently. To clone a repository, you need the repository's URL from GitHub, You can find the repository's HHPS URL on the repository page, if you click on the green **code** button. Then use the terminal to navigate to the directory, to where you want to clone the repository. Then use the `git clone` command followed with the URL of the repository.
 
 ```{bash}
 git clone https://github.com/username/repository.git
 ```
-Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified.
-ou have successfully cloned a Git repository. 
-You can now work with the files in the repository, make changes, and commit your modifications locally.
-Remember to use the appropriate Git commands like git add, git commit, and git push to manage your changes and synchronize them with the remote repository as needed.
 
+Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified. ou have successfully cloned a Git repository. You can now work with the files in the repository, make changes, and commit your modifications locally. Remember to use the appropriate Git commands like git add, git commit, and git push to manage your changes and synchronize them with the remote repository as needed.
 
+## Pulling {{< fa code-pull-request >}}
 
-## Pulling 
-The `git pull` command is used to fetch the latest changes from a remote repository and merge them into your local branch.
-You can test this function by editing a file in your repo on GitHub and then use `git pull` to update your local file with the change made on GitHub.
-To edit a file first click on it, in the repository.
-In the top-right corner of the file view, click on the pencil icon (Edit this file) to start editing.
-Make the necessary changes to the file in the in-browser editor.
-You can add, modify, or delete content as needed.
-As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as "changes not staged for commit".
-Provide a brief description of the changes in the "Commit changes" section at the bottom of the page.
+The `git pull` command is used to fetch the latest changes from a remote repository and merge them into your local branch. You can test this function by editing a file in your repo on GitHub and then use `git pull` to update your local file with the change made on GitHub. To edit a file first click on it, in the repository. In the top-right corner of the file view, click on the pencil icon (Edit this file) to start editing. Make the necessary changes to the file in the in-browser editor. You can add, modify, or delete content as needed. As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as "changes not staged for commit". Provide a brief description of the changes in the "Commit changes" section at the bottom of the page.
 
 In the relevant directory use the `git pull`command to update your local file with the change made on GitHub.
 
@@ -124,26 +105,20 @@ In the relevant directory use the `git pull`command to update your local file wi
 git pull
 ```
 
-## Pushing
-The`git push` command is used to upload your local commits to the remote repository. 
-When you run "git push", Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository.
-Git will verify if your local branch is up to date with the remote branch. 
-If there are new commits on the remote branch that you don't have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts.
-It's important to note that you need appropriate access and permissions to push to a remote repository. 
-If you don't have write access, you won't be able to push your changes.
-If you don`t specify a branch, Git will push the one you are on in the moment.
+## Pushing {{< fa code-pull-request >}}
+
+The`git push` command is used to upload your local commits to the remote repository. When you run "git push", Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository. Git will verify if your local branch is up to date with the remote branch. If there are new commits on the remote branch that you don't have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts. It's important to note that you need appropriate access and permissions to push to a remote repository. If you don't have write access, you won't be able to push your changes. If you don\`t specify a branch, Git will push the one you are on in the moment.
 
 ```{bash}
 git push origin main
 ```
 
-# Exercise
-1. Initialize your recipe folder as a Git Repository.
-2. Add a new recipe on Github, commit and pull the changes to your local folder.
-3. Add a recipe on your local file and push the changes to GitHub. 
+# Exercise {{< fa dumbbell >}}
 
+1.  Initialize your recipe folder as a Git Repository.
+2.  Add a new recipe on Github, commit and pull the changes to your local folder.
+3.  Add a recipe on your local file and push the changes to GitHub.
 
 # Sources
+
 https://the-turing-way.netlify.app/collaboration/github-novice/github-novice-features.html
-
-

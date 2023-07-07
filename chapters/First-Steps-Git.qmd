@@ -10,10 +10,10 @@ author: ""
 ::: callout-note
 ### Overview
 
-{{< fa clock >}} Duration: 30 min
+{{< fa clock >}} Duration:  min
 :::
 
-# Objectives
+# Learning objectives
 
 In this Chapter your will learn basic Git operations including:
 
@@ -24,9 +24,10 @@ In this Chapter your will learn basic Git operations including:
 
 # Initializing a Folder as a Git Repository {{< fa folder-closed >}}
 
-To create your first Git Repository you need a folder to initialize. In the chapter [Command Line Basics](command-line.qmd) you have learned how to create an empty folder using the command line. You can also just create one the regular way.
+To create your first Git Repository you need a folder to initialize. In the chapter [Command Line Basics](command-line.qmd) it is explained how to create an empty folder using the command line. You can also just create one the regular way.
 
-Now navigate to the directory or folder, using the Terminal, to where you want to create the Git repository. You can use the **cd** command to change directories. Once you are in the desired directory, run the **git init** command to initialize the folder as a Git repository. 
+Navigate, using the Terminal, to the folder which you want to initialze as a Git repository. 
+You can use the `cd` command to change directories. Once you are in the desired directory, run the `git init` command to initialize the folder as a Git repository. 
 
 ```{bash}
 git init
@@ -38,21 +39,18 @@ should get the following output.
 Initialized empty Git repository in /Users/.../
 ```
 
-Congratulations on successfully initializing your first Git repository! {{< fa champagne-glasses >}} Git is now able to track your changes in this Folder. You only need to do this once per folder. 
+Congratulations on successfully initializing your first Git repository! {{< fa champagne-glasses >}} 
 
-To be able to make changes you should create or move a file into your folder. On a Mac, you can do this using the terminal with the **touch** command.
+Git is now able to track your changes in this Folder. You only need to do this once per folder. 
 
-```{bash}
-touch example.txt
-```
 
 # Status, Staging and committing {{< fa file-export >}}
 
 ## Status
 
-Even though Git is now able to record the changes of your file, it will not do so automatically.
+After initializing Git is now able to record the changes of your file, but it will not do so automatically.
 
-Use **git status** to visualize this.
+You can use `git status` to visualize this.
 
 ```{bash}
 git status
@@ -80,7 +78,7 @@ You can use  **git add** to put files in the "staging area".
 git add example.txt
 ```
 
-If you use **git status** again, example.txt should now show up under "changes to be commited".
+If you use **git status** again, your file(s) should now show up under "changes to be commited".
 
 ```{bash}
 On branch main
@@ -100,8 +98,8 @@ Staging in Git is the process of selecting and preparing changes to be included 
 
 ## Committing
 
-Now that your changes are staged, you are ready to create a commit. To create a commit, use the **git commit** command followed by **-m** and a commit message **in qoutes** that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
-If you just use **git commit** without adding a commit massage, the editor of [your choosing](Setting up Git.qmd), opens up and lets you type in a commit message.
+Now that your changes are staged, you are ready to create a commit. To create a commit, use the `git commit` command followed by `-m` and a commit message **in qoutes** that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
+If you just use `git commit` without adding a commit massage, the editor of [your choosing](Setting up Git.qmd), opens up and lets you type in a commit message.
 
 ```{bash}
 git commit -m "Add example.txt file"
@@ -133,7 +131,10 @@ Date:   Thu Jun 29 12:23:53 2023 +0200
     adding txt file
 ```
 
-**git log** is useful because it provides a clear and organized view of a repository's commit history. It allows you to track the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps. The command can help identifying the source of bugs or issues by pinpointing the commit that introduced them. It can aid collaboration and code review by showing who made specific changes to the codebase.
+**git log** is useful because it provides a clear and organized view of a repository's commit history. 
+It allows you to track the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps. 
+The command can help identifying the source of bugs or issues by pinpointing the commit that introduced them. 
+It can aid collaboration and code review by showing who made specific changes to the codebase.
 
 
 ### Comparing Versions
