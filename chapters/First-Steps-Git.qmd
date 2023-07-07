@@ -41,7 +41,7 @@ Initialized empty Git repository in /Users/.../
 
 Congratulations on successfully initializing your first Git repository! {{< fa champagne-glasses >}} 
 
-Git is now able to track your changes in this Folder. You only need to do this once per folder. 
+Git is now able to track your changes in this Folder. You only need to user `git init` once per folder. 
 
 
 # Status, Staging and committing {{< fa file-export >}}
@@ -73,6 +73,10 @@ As you see Git is not yet tracking your file.
 
 ## Staging
 You can use  **git add** to put files in the "staging area".
+The staging area serves as a space where you can gather changes that you intend to commit soon.
+When working on a project, you might have made multiple changes for different purposes. 
+To organize and group these changes into meaningful commits, you can place the relevant files in the staging area. 
+The staging area acts as a bridge between your modified files and the next commit, allowing you to carefully select and include specific changes in your upcoming commit.
 
 ```{bash}
 git add example.txt
@@ -92,13 +96,12 @@ Changes to be committed:
 
 This means your change in this folder, in this case adding a file, is now **staged**.
 
-::: {.callout-tip title="Why Staging?" collapse="false"}
-Staging in Git is the process of selecting and preparing changes to be included in the next commit. It allows you to choose specific modifications from your working directory. By staging changes, you have control over which modifications to commit, enabling selective committing. Staging helps in reviewing and validating changes before committing them. It also allows logical grouping of related changes together.
-:::
+
 
 ## Committing
 
-Now that your changes are staged, you are ready to create a commit. To create a commit, use the `git commit` command followed by `-m` and a commit message **in qoutes** that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
+Now that your changes are staged, you are ready to create a commit. To create a commit, use the `git commit` command followed by the flag `-m` and a commit message **in qoutes** that describes the changes you made.
+The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
 If you just use `git commit` without adding a commit massage, the editor of [your choosing](Setting up Git.qmd), opens up and lets you type in a commit message.
 
 ```{bash}
@@ -111,7 +114,8 @@ git commit -m "Add example.txt file"
  create mode 100644 example.txt
 ```
 
-Congratulations! You have successfully created your first commit in the Git repository. Commits are the core elements of version control, they allow you to track the history of your project and easily revert changes if needed.
+Congratulations! You have successfully created your first commit in the Git repository. 
+Commits are the core elements of version control, they allow you to track the history of your project and easily revert changes if needed.
 
 You can use the same worklow of **git add** and **git commit** for every file you add or make changes in.
 
@@ -171,3 +175,4 @@ git diff
 https://happygitwithr.com/ 
 
 https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git.html
+https://milesmcbain.github.io/git_4_sci/using-a-git-repository.html
