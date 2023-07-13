@@ -6,8 +6,84 @@ execute:
   title-block-style: none
 author: ""
 ---
+::: callout-note
+### Overview
 
-# {{< fa code-branch >}} What are Branches?
-Git branches are independent lines of development within a Git repository.
-They allow you to work on different features, bug fixes, or experiments without affecting the main codebase.
+{{< fa clock >}} Duration:  min
+:::
+
+# Learning objectives
+
+# {{< fa code-branch >}} Branches
+
+Git branches are independent lines of development within a Git repository. 
+They allow you to work on different features, bug fixes, or experiments without affecting the main codebase. 
 Each branch has its own commit history, enabling parallel development and easy merging of changes between branches.
+
+![](../static/branches.svg)
+
+## Creating new branch
+By default your work is on the initial branch called **master** or **main**. 
+You can check which branch you are on using `git branch`.
+
+```{bash}
+git branch 
+```
+should get the following output:
+```{bash}
+* main
+```
+To create a new branch, use `git branch` followed by the wished branchname.
+```{bash}
+git branch feature
+```
+Now you can use git branch again to confirm the creation of the new branch.
+```{bash}
+git branch 
+```
+should get the following output:
+```{bash}
+  feature
+* main
+```
+
+## Switching branches
+To switch to the newly created branch, you can use `git checkout` or `git switch`.
+
+```{bash}
+git switch feature
+```
+Should receive an output similiar to this:
+
+```{bash}
+M	example.txt
+Switched to branch 'feature'
+```
+Now you can normally work on this branch using the staging/committing workflow. 
+
+:::{.callout-tip title="Git checkout vs git switch" collapse="true"}
+WIP
+:::
+## Merging branches
+After you worked on your new branch you might want to incooperate your work into the main branch. 
+You can do this using `git merge`command.
+Switch to your main branch and use:
+
+```{bash}
+git merge feature
+```
+If you have not yet done any changes you should get the following output:
+```{bash}
+Already up to date.
+```
+If you have changed the file(s) in your folder, you should get an output similiar to:
+```{bash}
+Updating 555ba0c..994bb8d
+Fast-forward
+ 
+ example.txt    |   4 ++++
+
+ 1 file changed
+```
+
+
