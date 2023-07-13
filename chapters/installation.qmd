@@ -1,0 +1,134 @@
+---
+title: "Installation "
+engine: knitr
+execute:
+  eval: false
+
+  title-block-style: none
+author: ""
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+::: callout-note
+### Overview
+
+{{< fa clock >}} Duration: min
+:::
+
+## Learning objectives
+
+The task here is to get you setup 3 main components:
+ 
+-   git - the version control software we will be studying
+
+-   GitHub Account - access to the famed online git hosting service.
+
+-   Text Editor - a text editor with good integration with the command line
+
+## {{< fa brands git-alt >}} Git
+
+### {{< fa brands apple >}} macOS
+
+#### Option 1
+
+::: {.callout-tip collapse="false"}
+### Question: Where is the Terminal?
+
+The Terminal can be found at `/Applications/Utilities/Terminal.app` or by searching the Spotlight for "Terminal".
+You may want to keep Terminal in your dock to find it more easily.
+:::
+
+Open the terminal and type:
+
+```{bash}
+git --version
+```
+
+If git is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools.
+You may be asked for your administrator password.
+
+#### Option 2
+
+Download and run the installer from: [https://git-scm.com/download/mac](https://git-scm.com/download/mac).
+Hit 'Continue' through the prompts without modifying the installation destination or other settings.
+You may be asked for your administrator password.
+
+### {{< fa brands linux >}} Linux
+
+Check if you have git installed by opening your terminal and running:
+
+```{bash}
+git --version
+```
+
+If git is not installed, install it using your package manager, e.g., by running the following command in the terminal:
+
+```{bash}
+ sudo apt-get install git 
+```
+
+### {{< fa brands windows >}} Windows
+
+Download the [Git for Windows installer](https://git-scm.com/download/win).
+Hit 'Next' through the prompts without modifying the installation destination or other settings
+Click [here](https://www.youtube.com/watch?v=-Bfx-v5mIDo) for a video tutorial.
+
+::: {.callout-tip collapse="true"}
+### If your "HOME" environment variable is not set (or you don't know what this is)
+
+Open command prompt (Open Start Menu then type cmd and press \[Enter\]) Type the following line into the command prompt window exactly as shown:
+
+```{bash}
+setx HOME "%USERPROFILE%"
+```
+
+Press \[Enter\], you should see SUCCESS: Specified value was saved.
+Quit command prompt by typing exit then pressing \[Enter\]
+:::
+
+## {{< fa brands github >}} GitHub
+
+1.  Open <https://github.com> in your browser
+2.  Click the `Sign up` button
+3.  Enter the required personal details for step 1
+4.  In step 2 select the free plan.
+
+::: {.callout-tip collapse="true"}
+### Choosing a Github Name
+
+Here are some tips for choosing a GitHub username:
+
+```         
+Incorporate your name.
+Adapt your username from other platforms.
+Choose a professional username for your future boss.
+Opt for a shorter username.
+Be unique and concise.
+Avoid references to specific institutions.
+Use all lowercase and hyphens for word separation.
+```
+:::
+
+## {{< fa align-left >}} Text Editor 
+
+Sometimes, Git might ask you to write a commit message, and it can be annoying if you end up in an editor you don't like or don't know how to use.
+The standard text editor is called **Vim**, which is widely known for being difficult to use. 
+Therefore, it might be a smart move to consider switching to a different text editor. You can find more information about the challenges of using Vim (and some funny memes) [here](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
+
+How to connect the text editor to git will be covered in a later chapter, but you can already download one.
+
+Our Recommendation is [Nano](https://www.nano-editor.org/docs.php), which runs in the Terminal and is fairly easy to use.
+However there are a lot of alternatives.
+
+## {{< fa planet ringed >}} JupyterHub
+
+In case the Installation process did not work on your device, you can access a remote environment using JupyterHub.
+
+https://code.min.uni-hamburg.de/
+
+## Sources 
+
+https://happygitwithr.com/ https://swcarpentry.github.io/git-novice/https://git-scm.com/book/en/v2/Getting-Started-Installing-Git https://www.youtube.com/watch?v
+=-Bfx-v5mIDo
