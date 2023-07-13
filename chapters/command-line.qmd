@@ -47,32 +47,23 @@ In this lesson, we will introduce the command line as a general concept and lear
 
 ## Acknowledgements
 
-@mcbain2019, @capes2023
-
-@millman2018 @milligan2014
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+bibtexkeys = c("mcbain2019", "capes2023", "millman2018", "milligan2014")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
 
 ## Cheatsheet
 
 ```{r}
 #| eval: true
 #| echo: false
-#| output: false
-library("here")
-library("magrittr")
-library("rjson")
-json_data <- rjson::fromJSON(file = here::here("cheatsheet.json"))
-cli_data <- json_data$cli
-df <- data.frame(Command = names(cli_data), Description = unlist(cli_data),
-                 stringsAsFactors = FALSE, row.names = NULL)
-df <- df %>%
-  transform(Command = sprintf("`%s`", Command))
-```
-
-```{r}
-#| eval: true
-#| echo: false
-#| output: asis
-knitr::kable(df, format = "markdown", escape = FALSE)
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "cli"), format = "markdown")
 ```
 
 ## Exercises
