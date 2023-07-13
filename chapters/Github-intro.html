@@ -8,7 +8,7 @@
 
 <meta name="author" content="">
 
-<title>Version Control of Code and Data for Scientists - 14&nbsp; Style Guide</title>
+<title>Version Control of Code and Data for Scientists - 8&nbsp; Github Intro</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,26 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +65,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/contributing.html" rel="prev">
+<link href="../chapters/rewriting-history.html" rel="next">
+<link href="../chapters/First-Steps-Git.html" rel="prev">
 <link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -95,6 +77,8 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -128,7 +112,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/contributing.html">Contributing to this book</a></li><li class="breadcrumb-item"><a href="../chapters/style-guide.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Style Guide</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/Github-intro.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Github Intro</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -240,7 +224,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/Github-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/Github-intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
   </div>
 </li>
@@ -285,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/style-guide.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/style-guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
   </div>
 </li>
@@ -301,82 +285,221 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">14.1</span> Summary</a></li>
-  <li><a href="#write-one-sentence-per-line" id="toc-write-one-sentence-per-line" class="nav-link" data-scroll-target="#write-one-sentence-per-line"><span class="header-section-number">14.2</span> Write one sentence per line</a></li>
-  <li><a href="#use-consistent-language" id="toc-use-consistent-language" class="nav-link" data-scroll-target="#use-consistent-language"><span class="header-section-number">14.3</span> Use consistent language</a></li>
-  <li><a href="#acknowledgements-attribution" id="toc-acknowledgements-attribution" class="nav-link" data-scroll-target="#acknowledgements-attribution"><span class="header-section-number">14.4</span> Acknowledgements &amp; Attribution</a></li>
+  <li><a href="#learning-objective" id="toc-learning-objective" class="nav-link active" data-scroll-target="#learning-objective"><span class="header-section-number">8.1</span> Learning objective</a></li>
+  <li><a href="#what-is-github-fa-brands-github" id="toc-what-is-github-fa-brands-github" class="nav-link" data-scroll-target="#what-is-github-fa-brands-github"><span class="header-section-number">9</span> What is GitHub? <i class="fa-brands fa-github" aria-label="github"></i></a></li>
+  <li><a href="#connecting-to-github-fa-brands-github" id="toc-connecting-to-github-fa-brands-github" class="nav-link" data-scroll-target="#connecting-to-github-fa-brands-github"><span class="header-section-number">10</span> Connecting to GitHub <i class="fa-brands fa-github" aria-label="github"></i></a>
+  <ul class="collapse">
+  <li><a href="#setting-account-details" id="toc-setting-account-details" class="nav-link" data-scroll-target="#setting-account-details"><span class="header-section-number">10.1</span> Setting Account details</a></li>
+  <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication"><span class="header-section-number">10.2</span> Authentication</a>
+  <ul class="collapse">
+  <li><a href="#https-personal-access-token" id="toc-https-personal-access-token" class="nav-link" data-scroll-target="#https-personal-access-token"><span class="header-section-number">10.2.1</span> HTTPS Personal Access Token</a></li>
+  <li><a href="#ssh-key" id="toc-ssh-key" class="nav-link" data-scroll-target="#ssh-key"><span class="header-section-number">10.2.2</span> SSH Key</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#github-repositories-fa-folder-closed" id="toc-github-repositories-fa-folder-closed" class="nav-link" data-scroll-target="#github-repositories-fa-folder-closed"><span class="header-section-number">11</span> GitHub Repositories <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i></a>
+  <ul class="collapse">
+  <li><a href="#creating-a-repository" id="toc-creating-a-repository" class="nav-link" data-scroll-target="#creating-a-repository"><span class="header-section-number">11.1</span> Creating a Repository</a>
+  <ul class="collapse">
+  <li><a href="#starting-from-scratch" id="toc-starting-from-scratch" class="nav-link" data-scroll-target="#starting-from-scratch"><span class="header-section-number">11.1.1</span> Starting from Scratch</a></li>
+  <li><a href="#uploading-an-existing-folder" id="toc-uploading-an-existing-folder" class="nav-link" data-scroll-target="#uploading-an-existing-folder"><span class="header-section-number">11.1.2</span> Uploading an existing folder</a></li>
+  </ul></li>
+  <li><a href="#forking-a-repository-fa-code-fork" id="toc-forking-a-repository-fa-code-fork" class="nav-link" data-scroll-target="#forking-a-repository-fa-code-fork"><span class="header-section-number">11.2</span> Forking a Repository <i class="fa-solid fa-code-fork" aria-label="code-fork"></i></a></li>
+  <li><a href="#cloning-a-repository-fa-clone" id="toc-cloning-a-repository-fa-clone" class="nav-link" data-scroll-target="#cloning-a-repository-fa-clone"><span class="header-section-number">11.3</span> Cloning a Repository <i class="fa-solid fa-clone" aria-label="clone"></i></a></li>
+  <li><a href="#pulling-fa-code-pull-request" id="toc-pulling-fa-code-pull-request" class="nav-link" data-scroll-target="#pulling-fa-code-pull-request"><span class="header-section-number">11.4</span> Pulling <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i></a></li>
+  <li><a href="#pushing-fa-code-pull-request" id="toc-pushing-fa-code-pull-request" class="nav-link" data-scroll-target="#pushing-fa-code-pull-request"><span class="header-section-number">11.5</span> Pushing <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i></a></li>
+  </ul></li>
+  <li><a href="#exercise-fa-dumbbell" id="toc-exercise-fa-dumbbell" class="nav-link" data-scroll-target="#exercise-fa-dumbbell"><span class="header-section-number">12</span> Exercise <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">13</span> Sources</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/style-guide.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/Github-intro.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header">
-<h1 class="title display-7"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Style Guide</span></h1>
-<p class="author"></p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Github Intro</span></h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
 
 </header>
 
-<p>We have compiled a set of guidelines to keep a consistent style across all chapters of the book.</p>
-<section id="summary" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">14.1</span> Summary</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Overview
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><i class="fa-solid fa-clock" aria-label="clock"></i> Duration: min</p>
+</div>
+</div>
+<section id="learning-objective" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="learning-objective"><span class="header-section-number">8.1</span> Learning objective</h2>
+<ul>
+<li>Connect Git and Github</li>
+<li>Set up a GitHub Repo in multiple ways</li>
+<li>Pull and push changes to/from Github repo</li>
+</ul>
+</section>
+<section id="what-is-github-fa-brands-github" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> What is GitHub? <i class="fa-brands fa-github" aria-label="github"></i></h1>
+<p>GitHub is a web-based platform that hosts Git repositories. You can use it in your browser without any downloads. It’s a collaborative environment for software development, allowing developers to work together, manage code, and track changes. You don’t have to be a coder to use it. GitHub also offers project management and code review tools, making it great for open-source development and team collaboration. It’s a popular hub for sharing and discovering code.</p>
+</section>
+<section id="connecting-to-github-fa-brands-github" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Connecting to GitHub <i class="fa-brands fa-github" aria-label="github"></i></h1>
+<section id="setting-account-details" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="setting-account-details"><span class="header-section-number">10.1</span> Setting Account details</h2>
+<p>To be able to integrate Github in your workflow, you´ll need to authenticate your GitHub account. In the the [setup chapter] it is explained how to set a Username and Email for Git to use on your Computer.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Example"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email beispiel@example.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the <a href="../chapters/installation.html">installation chapter</a> it is explained how to create an account on <a href="Github.com">Github.com.</a>. If you did not use your GitHub account details for the setup you should change that now.</p>
+</section>
+<section id="authentication" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="authentication"><span class="header-section-number">10.2</span> Authentication</h2>
+<p>There a different ways to authenticate yourself. Each way with different pros and cons that we will not look at in depth.</p>
+<section id="https-personal-access-token" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="https-personal-access-token"><span class="header-section-number">10.2.1</span> HTTPS Personal Access Token</h3>
+<p>TBA</p>
+</section>
+<section id="ssh-key" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="ssh-key"><span class="header-section-number">10.2.2</span> SSH Key</h3>
+<p>TBA</p>
+</section>
+</section>
+</section>
+<section id="github-repositories-fa-folder-closed" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> GitHub Repositories <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i></h1>
+<section id="creating-a-repository" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="creating-a-repository"><span class="header-section-number">11.1</span> Creating a Repository</h2>
+<section id="starting-from-scratch" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="starting-from-scratch"><span class="header-section-number">11.1.1</span> Starting from Scratch</h3>
+<p>Creating a new GitHub repository is a simple process. To create a new repository, click on the “+” sign in the top-right corner of the GitHub page. From the dropdown menu, select “New repository.” On the new repository page, enter a name for your repository and make sure the “Public” option is selected if you want it to be accessible to everyone. You should also choose to create a README file by checking the corresponding box. Finally, click the green “Create repository” button at the bottom of the page to complete the creation process. Once you have created the repository, you will find the README.md file in your repository. You can edit this file to provide information and details about your project. Whatever you write in the README.md file will be displayed on the front page of your project.</p>
+<p>To add more files to your repository, click on the “Add file” button and choose whether to upload existing files or create a new file directly on GitHub. Remember to provide a descriptive commit message each time you add a new file or make changes. The commit message helps you keep track of the changes you’ve made and serves as a brief summary of the modifications made to the repository.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Writing a README file">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Writing a README file
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Keep it simple! When you’re working in any field, whether it’s coding or studying stars, you’ll likely use specialized terms that might confuse others. So, use plain language and explain any unfamiliar words you use. Share your project! Describe what you’re doing now and what you plan to do in the future. This helps people understand your work and goals. Introduce yourself! Tell people who you are and how they can reach you. It’s great for networking and collaboration. If you’re not sure how to start, take a look at other people’s README.md files for inspiration.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="uploading-an-existing-folder" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="uploading-an-existing-folder"><span class="header-section-number">11.1.2</span> Uploading an existing folder</h3>
+<p>To initialize an existing folder as a GitHub repository, you first need to create a new repository, like explained above. You´ll then need to initialize the folder as a Git repository using <code>git init</code>.</p>
+<p>If you have already done this, you can of course skip this. To add your folder as a remote repository use the <code>git remote</code>command.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now you are able to push your files to the remote repo using <code>git push</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This pushes the local branch named “main” to a remote repository called “origin” while setting it as the upstream branch. <code>-u</code>is used to set the upstream branch. It tells Git to remember the remote branch to which your local branch should be pushed in the future.</p>
+</section>
+</section>
+<section id="forking-a-repository-fa-code-fork" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="forking-a-repository-fa-code-fork"><span class="header-section-number">11.2</span> Forking a Repository <i class="fa-solid fa-code-fork" aria-label="code-fork"></i></h2>
+<p>Forking a repository on GitHub allows you to create a personal copy of the project under your GitHub account. This separate copy includes all files, commit history, and branches. Forking is commonly used when you want to contribute to a project without directly modifying the original repository. It enables you to make changes independently, create new branches, and push modifications to your forked repository. You can also submit changes to the original repository through pull requests. By clicking the “Fork” button on the repository page, you create an identical copy in your GitHub account. Once the forking process is complete, you can clone the repository to your local machine using the git clone command.</p>
+</section>
+<section id="cloning-a-repository-fa-clone" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="cloning-a-repository-fa-clone"><span class="header-section-number">11.3</span> Cloning a Repository <i class="fa-solid fa-clone" aria-label="clone"></i></h2>
+<p>Cloning refers to creating a local copy of a repository from GitHub onto your own computer. When you clone a repository, you download all of its files, commit history, and branches to your local machine. Cloning allows you to work with the repository locally, make changes, and push those changes back to the original repository if you have write access. It is commonly used when you want to contribute to a project or work on it independently. To clone a repository, you need the repository’s URL from GitHub. You can find the repository’s HHPS URL on the repository page, if you click on the green <strong>code</strong> button. Then use the terminal to navigate to the directory, to where you want to clone the repository. Then use the <code>git clone</code> command followed with the URL of the repository.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified. You can now work with the files in the repository, make changes, and commit your modifications locally. Remember to use the appropriate Git commands like git add, git commit, and git push to manage your changes and synchronize them with the remote repository as needed.</p>
+</section>
+<section id="pulling-fa-code-pull-request" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="pulling-fa-code-pull-request"><span class="header-section-number">11.4</span> Pulling <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i></h2>
+<p>The <code>git pull</code> command is used to fetch the latest changes from a remote repository and merge them into your local branch. You can test this function by editing a file in your repo on GitHub and then use <code>git pull</code> to update your local file with the change made on GitHub. To edit a file first click on it, in the repository. In the top-right corner of the file view, click on the pencil icon (Edit this file) to start editing. Make the necessary changes to the file in the in-browser editor. You can add, modify, or delete content as needed. As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as “changes not staged for commit”. Provide a brief description of the changes in the “Commit changes” section at the bottom of the page.</p>
+<p>In the relevant directory use the <code>git pull</code>command to update your local file with the change made on GitHub.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="git pull command flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+git pull command flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>TBA</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pushing-fa-code-pull-request" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="pushing-fa-code-pull-request"><span class="header-section-number">11.5</span> Pushing <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i></h2>
+<p>The<code>git push</code> command is like a reversed <code>git pull</code>, it is used to upload your local commits to the remote repository. When you run “git push”, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository. Git will verify if your local branch is up to date with the remote branch. If there are new commits on the remote branch that you don’t have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts. It’s important to note that you need appropriate access and permissions to push to a remote repository. If you don’t have write access, you won’t be able to push your changes. If you don`t specify a branch, Git will push the one you are on in the moment.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="git push command flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+git push command flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>TBA</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="exercise-fa-dumbbell" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Exercise <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></h1>
 <ol type="1">
-<li><a href="#write-one-sentence-per-line">Write one sentence per line</a></li>
-<li><a href="#use-consistent-language">Use consistent language</a></li>
+<li>Initialize your recipe folder as a Git Repository.</li>
+<li>Add a new recipe on Github, commit and pull the changes to your local folder.</li>
+<li>Add a recipe on your local file and push the changes to GitHub.</li>
 </ol>
 </section>
-<section id="write-one-sentence-per-line" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="write-one-sentence-per-line"><span class="header-section-number">14.2</span> Write one sentence per line</h2>
-<p>Please write each sentence on a new line. Having each sentence on a new line will make no difference to how the text is displayed, there will still be paragraphs, but it will mean that any pull requests will be easier to check; the changes will be on a single line instead of somewhere in a paragraph. Consider the example below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Today you are you, that is truer than true. There is no one alive who is youer than you. - Dr Seuss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>A pull request on this correcting it to have a ‘.’ after Dr would show as a change to the whole paragraph. Contrast this with the next example which will be displayed online in the exact same way, but would see a change to a single line.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Today you are you, that is truer than true.</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>There is no one alive who is youer than you.</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dr Seuss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="use-consistent-language" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="use-consistent-language"><span class="header-section-number">14.3</span> Use consistent language</h2>
-<p>We try to use consistent language:</p>
-<div class="cell">
-
-</div>
-<div class="cell-output-display">
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">TRUE</th>
-<th style="text-align: left;">FALSE</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">don’t</td>
-<td style="text-align: left;">do not</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">folder</td>
-<td style="text-align: left;">directory</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">documentation</td>
-<td style="text-align: left;">docs</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="acknowledgements-attribution" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="acknowledgements-attribution"><span class="header-section-number">14.4</span> Acknowledgements &amp; Attribution</h2>
-<ul>
-<li><span class="citation" data-cites="community2022">The Turing Way Community (<a href="../references.html#ref-community2022" role="doc-biblioref">2022</a>)</span>: <a href="https://the-turing-way.netlify.app/community-handbook/style.html">Style Guide</a></li>
-</ul>
+<section id="sources" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Sources</h1>
+<p>https://the-turing-way.netlify.app/collaboration/github-novice/github-novice-features.html</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-community2022" class="csl-entry" role="listitem">
-The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: The process documents and data are made available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>. Software are made available under an <a href="https://opensource.org/license/mit/">MIT license</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -695,11 +818,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/contributing.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Contributing</span></span>
+      <a href="../chapters/First-Steps-Git.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../chapters/rewriting-history.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rewriting history</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
