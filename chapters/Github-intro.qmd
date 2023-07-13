@@ -12,8 +12,7 @@ author: ""
 {{< fa clock >}} Duration:  min
 :::
 
-## Learning objectives
-
+## Learning objective
 -   Connect Git and Github
 -   Set up a GitHub Repo in multiple ways
 -   Pull and push changes to/from Github repo
@@ -26,8 +25,6 @@ It's a collaborative environment for software development, allowing developers t
 You don't have to be a coder to use it.
 GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.
 It's a popular hub for sharing and discovering code.
-
-
 
 # Connecting to GitHub {{< fa brands github >}}
 
@@ -44,12 +41,12 @@ git config --global user.email beispiel@example.com
 ```
 
 In the [installation chapter](installation.qmd) it is explained how to create an account on [Github.com.](Github.com).
-
 If you did not use your GitHub account details for the setup you should change that now.
 
 ## Authentication
 
-There a different ways to authenticate yourself. Each way with different pros and cons that we will not look at in depth.
+There a different ways to authenticate yourself. 
+Each way with different pros and cons that we will not look at in depth.
 
 ### HTTPS Personal Access Token
 TBA
@@ -69,31 +66,33 @@ On the new repository page, enter a name for your repository and make sure the "
 You should also choose to create a README file by checking the corresponding box.
 Finally, click the green "Create repository" button at the bottom of the page to complete the creation process.
 Once you have created the repository, you will find the README.md file in your repository. 
- You can edit this file to provide information and details about your project. 
- Whatever you write in the README.md file will be displayed on the front page of your project.
+You can edit this file to provide information and details about your project. 
+Whatever you write in the README.md file will be displayed on the front page of your project.
  
 To add more files to your repository, click on the "Add file" button and choose whether to upload existing files or create a new file directly on GitHub. 
 Remember to provide a descriptive commit message each time you add a new file or make changes. 
 The commit message helps you keep track of the changes you've made and serves as a brief summary of the modifications made to the repository.
 
 ::: {.callout-tip title="Writing a README file" collapse="true"}
-Keep it simple! When you're working in any field, whether it's coding or studying stars, you'll likely use specialized terms that might confuse others.
+Keep it simple!
+When you're working in any field, whether it's coding or studying stars, you'll likely use specialized terms that might confuse others.
 So, use plain language and explain any unfamiliar words you use.
-
-Share your project! Describe what you're doing now and what you plan to do in the future. 
+Share your project! 
+Describe what you're doing now and what you plan to do in the future. 
 This helps people understand your work and goals.
-
-Introduce yourself! Tell people who you are and how they can reach you. 
+Introduce yourself! 
+Tell people who you are and how they can reach you. 
 It's great for networking and collaboration.
-
-Remember, if you're not sure how to start, take a look at other people's README.md files for inspiration.
+If you're not sure how to start, take a look at other people's README.md files for inspiration.
 :::
 
 ### Uploading an existing folder
 
-To initilize an existing folder as a GitHub repository, you first need to create a new repository, like explained above. You´ll then need to initialize the folder as a Git repository using `git init`.
+To initialize an existing folder as a GitHub repository, you first need to create a new repository, like explained above.
+You´ll then need to initialize the folder as a Git repository using `git init`.
 
-If you have already done this, you can of course skip this. To add your folder as a remote repository use the `git remote`command.
+If you have already done this, you can of course skip this.
+To add your folder as a remote repository use the `git remote`command.
 
 ```{bash}
 git remote add origin https://github.com/username/repository.git
@@ -109,7 +108,7 @@ git push -u origin main
 
 Forking a repository on GitHub allows you to create a personal copy of the project under your GitHub account. 
 This separate copy includes all files, commit history, and branches.
-Forking is commonly used when you want to contribute to a project without directly modifying the original repository. #
+Forking is commonly used when you want to contribute to a project without directly modifying the original repository. 
 It enables you to make changes independently, create new branches, and push modifications to your forked repository. 
 You can also submit changes to the original repository through pull requests. 
 By clicking the "Fork" button on the repository page, you create an identical copy in your GitHub account.
@@ -129,7 +128,8 @@ Then use the `git clone` command followed with the URL of the repository.
 git clone https://github.com/username/repository.git
 ```
 
-Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified. You have successfully cloned a Git repository. You can now work with the files in the repository, make changes, and commit your modifications locally.
+Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified.
+You can now work with the files in the repository, make changes, and commit your modifications locally.
 Remember to use the appropriate Git commands like git add, git commit, and git push to manage your changes and synchronize them with the remote repository as needed.
 
 ## Pulling {{< fa code-pull-request >}}
