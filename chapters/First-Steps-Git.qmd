@@ -48,7 +48,7 @@ Git is now able to track your changes in this Folder. You only need to user `git
 
 ## Status
 
-After initializing Git is now able to record the changes of your file, but it will not do so automatically.
+After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically.
 
 You can use `git status` to visualize this.
 
@@ -72,7 +72,7 @@ Untracked files:
 As you see Git is not yet tracking your file. 
 
 ## Staging
-You can use  **git add** to put files in the "staging area".
+You can use  **git add** to put new /changed files in the "staging area".
 The staging area serves as a space where you can gather changes that you intend to commit soon.
 When working on a project, you might have made multiple changes for different purposes. 
 To organize and group these changes into meaningful commits, you can place the relevant files in the staging area. 
@@ -82,7 +82,7 @@ The staging area acts as a bridge between your modified files and the next commi
 git add example.txt
 ```
 
-If you use **git status** again, your file(s) should now show up under "changes to be commited".
+If you use `git status` again, your file(s) should now show up under "changes to be commited".
 
 ```{bash}
 On branch main
@@ -168,7 +168,7 @@ git diff
 
 # Exercise {{< fa list-check >}} 
 - Stage and commit the change (added Text) with a meaningful commit message
-- look at your commit using the **git log** command
+- View your commit using the **git log** command
 
 
 # Sources 
