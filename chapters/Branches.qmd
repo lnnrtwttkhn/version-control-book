@@ -21,16 +21,18 @@ author: ""
 
 - Merging branches and resolving conflicts
 
-# {{< fa code-branch >}} What are branches?
+# {{< fa code-branch >}} Why branches?
+Git branches are like separate workspaces within a Git repository.
+They let you work on different stuff without messing up the main code.
+You can visualiuze it, like this:
 
 ![](../static/branches.svg)
 [Source](https://www.atlassian.com/git/tutorials/using-branches)
 
-Git branches are like separate workspaces within a Git repository.
-They let you work on different stuff without messing up the main code.
 Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you're ready.
-#It's great for trying out new features, fixing bugs, or experimenting without causing chaos in the main codebase.
-Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.
+It's great for trying out new features, fixing bugs, or experimenting without causing chaos in the main codebase.
+Git makes it easy to switch between branches and handle conflicts when merging.
+With branches, you can work independently and keep your code organized.
 
 ## Creating new branch
 
@@ -65,6 +67,10 @@ should get the following output:
 * main
 ```
 
+::: {.callout-tip collapse="true"}
+### Common git branch flags
+
+:::
 ## Switching branches
 
 To switch to the newly created branch, you can use `git checkout` or `git switch`.
@@ -113,8 +119,31 @@ Fast-forward
 
 
 ### Merge conflicts
+If the same part of file was edited on two branches before merging, a **merge conflict** arises, indicating conflicting changes that need to be resolved manually. 
+If you try to merge with conflicting changes in a file the output looks similiar to this:
+```{bash}
+Auto-merging example.txt
+CONFLICT (content): Merge conflict in example.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
 
-If a file was edited on two branches before merging, a **merge conflict** arises. 
+Git will highlight the conflicting parts in the affected file(s)e, and you must choose the desired changes or modify them to create a consistent version.
+To do this open up the file and edit it, then stage and commit your changes.
+Afterwards you can merge the branches.
+
+::: {.callout-tip collapse="true"}
+### Common git merge flags
+
+:::
+
+### Types of merges
+#### Standard merge
+
+#### Fast Forward Merge
+#### Squash and Merge
+#### Rebase and Merge
+
+
 
 ## Deleting Branches
 Once a branch has served its purpose and is no longer needed, it can be deleted.
