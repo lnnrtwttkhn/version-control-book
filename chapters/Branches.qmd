@@ -6,77 +6,102 @@ execute:
   title-block-style: none
 author: ""
 ---
+
 ::: callout-note
 ### Overview
 
-{{< fa clock >}} Duration:  min
+{{< fa clock >}} Duration: min
 :::
 
-# Learning objectives
+# {{< fa bullseye >}} Learning objectives
 
-# {{< fa code-branch >}} Branches
+- Purpose and benefits of using branches in Git
 
-Git branches are independent lines of development within a Git repository. 
-They allow you to work on different features, bug fixes, or experiments without affecting the main codebase. 
-Each branch has its own commit history, enabling parallel development and easy merging of changes between branches.
+- Creating and switching between branches
+
+- Merging branches and resolving conflicts
+
+# {{< fa code-branch >}} What are branches?
 
 ![](../static/branches.svg)
+[Source](https://www.atlassian.com/git/tutorials/using-branches)
+
+Git branches are like separate workspaces within a Git repository.
+They let you work on different stuff without messing up the main code.
+Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you're ready.
+#It's great for trying out new features, fixing bugs, or experimenting without causing chaos in the main codebase.
+Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.
 
 ## Creating new branch
-By default your work is on the initial branch called **master** or **main**. 
-You can check which branch you are on using `git branch`.
+
+By default your work is on the initial branch called **master** or **main**. You can check which branch you are on using `git branch`.
 
 ```{bash}
 git branch 
 ```
+
 should get the following output:
+
 ```{bash}
 * main
 ```
+
 To create a new branch, use `git branch` followed by the wished branchname.
+
 ```{bash}
 git branch feature
 ```
-Now you can use git branch again to confirm the creation of the new branch.
+
+Now you can use `git branch` again to confirm the creation of the new branch.
+
 ```{bash}
 git branch 
 ```
+
 should get the following output:
+
 ```{bash}
   feature
 * main
 ```
 
 ## Switching branches
+
 To switch to the newly created branch, you can use `git checkout` or `git switch`.
 
 ```{bash}
 git switch feature
 ```
+
 Should receive an output similiar to this:
 
 ```{bash}
 M	example.txt
 Switched to branch 'feature'
 ```
-Now you can normally work on this branch using the staging/committing workflow. 
 
-:::{.callout-tip title="Git checkout vs git switch" collapse="true"}
-WIP
+Now you can normally work on this branch using the staging/committing workflow.
+
+::: {.callout-tip title="Git checkout vs git switch" collapse="true"}
+Prior to Git version 2.23, the "git checkout" command was the primary way to switch branches. It allows you to move to a different branch and update your working directory to reflect the state of that branch. In Git 2.23 and later versions, the "git switch" command was introduced as a safer and more intuitive alternative to "git checkout". It simplifies the branch-switching process and provides clearer feedback in case of errors, making it the recommended command for branch manipulation.
 :::
+
 ## Merging branches
-After you worked on your new branch you might want to incooperate your work into the main branch. 
-You can do this using `git merge`command.
-Switch to your main branch and use:
+
+After you worked on your new branch you might want to incooperate your work into the main branch. You can do this using `git merge`command. Switch to your main branch and use:
 
 ```{bash}
 git merge feature
 ```
+
 If you have not yet done any changes you should get the following output:
+
 ```{bash}
 Already up to date.
 ```
+
 If you have changed the file(s) in your folder, you should get an output similiar to:
+
 ```{bash}
 Updating 555ba0c..994bb8d
 Fast-forward
@@ -87,3 +112,42 @@ Fast-forward
 ```
 
 
+### Merge conflicts
+
+If a file was edited on two branches before merging, a **merge conflict** arises. 
+
+## Deleting Branches
+Once a branch has served its purpose and is no longer needed, it can be deleted.
+Removing branches that are no longer active helps maintain a clean and manageable branch structure.
+To delete a branch you can use the `git branch`command, followed by a `-d` flag.
+```{bash}
+git branch -d feature
+```
+should get an output similiar to:
+```{bash}
+Deleted branch feature (was 3343f36).
+```
+You can only delete a branch, you are not currently on.
+
+## Branches best practices
+### Naming branches
+Adopt a consistent naming convention for branches that accurately reflects their purpose. 
+This can include prefixes like "feature/", "bug/", or "hotfix/" followed by a descriptive name. 
+Clear and standardized branch names make it easier to identify the purpose of each branch.
+
+## Branch Lifecycle
+Create branches with a specific goal or task in mind, and aim to keep them short-lived. 
+Long-lived branches can lead to conflicts and make it harder to merge changes. 
+Once the task is complete or the feature is integrated, consider deleting the branch.
+
+## Branch Protection
+When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your main/master branch.
+These rules provide an extra layer of control and enforce guidelines to maintain stability. 
+
+# Exercises
+- Create a new Branch called feature/newveganreceipe and work on it
+- Merge it with your main branch and delete it afterwards
+
+# References
+
+https://www.atlassian.com/git/tutorials/using-branches
