@@ -18,7 +18,7 @@ description: "Introduction to fundamental concepts of version control."
 #| message: false
 #| warning: false
 #| output: asis
-bibtexkeys = c("koziar2023")
+bibtexkeys = c("koziar2023", "bryan2018", "ram2013")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
 
@@ -96,12 +96,9 @@ Then you realize that you software has bugs and you can't figure out when this b
 Time has passed and you ask yourself: what is the latest version of my script and where is it? when did I incorporate that new featrure. who made that change and why? collaborator asks you to run version 2 of the script but you dont have it anymore.
 actually there are many more people involved and many more documents.
 
+## Versions in mulitple files
 
-## Implicit version control
-
-It is very likely that you are already engaged in some form of version control.
-
-### Versions in mulitple files
+It is quite likely that you are already engaged in some form of version control.
 
 One way to implement file versioning of files is by **appending versions or descriptive labels to the filenames**, or by **adding initials** at the end of the filename:
 
@@ -109,10 +106,12 @@ One way to implement file versioning of files is by **appending versions or desc
 - `draft.docx` to `draft_comments_LW_final_edited.docx`, etc.
 
 Every time you make a critical change to a file, you duplicate it, rename it according to your versioning scheme and continue working in the duplicated file.
-While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated @fig-phd-comic-final-doc.
+While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated in @fig-phd-comic-final-doc and @fig-xkcd-documents.
 In such cases, more advanced version control systems may be necessary.
 
 !["Piled Higher and Deeper" by Jorge Cham ([phdcomics.com](https://phdcomics.com/)). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. ([direct link](https://phdcomics.com/comics/archive.php?comicid=1531)).](../static/phd-comic-final-doc.gif){#fig-phd-comic-final-doc}
+
+!["Documents" by xkcd ([xkcd.com](https://xkcd.com/)). Used under a [Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence](https://creativecommons.org/licenses/by-nc/2.5/) ([direct link](https://xkcd.com/1459/)).](../static/xkcd-documents.png){#fig-xkcd-documents}
 
 ![This illustration is created by [Scriberia](https://www.scriberia.com/) with [The Turing Way](https://the-turing-way.netlify.app/) community. Used under a [CC-BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/). DOI: [10.5281/zenodo.3695300](https://doi.org/10.5281/zenodo.3695300) (Version 3, [direct download link](https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1)).](../static/project-history-turing-way.svg)
 
@@ -183,31 +182,34 @@ The system takes snapshots of your project, giving them unique codes that includ
 Instead of saving new files for each change, only the specific modifications made to the file are saved.
 This makes it easy to compare different versions, restore previous versions, and combine changes when needed.
 
-### Git as a distributed version control system
+## Git
+
+![Git Logo (full color Git logo for light backgrounds) by [Jason Long](https://twitter.com/jasonlong) is licensed under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/) ([link to download page](https://git-scm.com/downloads/logos)).](../static/git-logo-full-color.svg){#fig-git-logo-full-color}
 
 Among various version control systems, Git is the most widely used.
 It was created by the Linux development community in 2005.
 Git is a software primarily written in C, but you don't need to know C.
 
-Here are some key features of Git:
+### Key features of Git
 
-- Free, fast, and open source.
-- It is a distributed system, meaning everyone working on a project has a complete copy of it.
-- Most operations in Git can be performed using local files and resources, minimizing the need for external dependencies.
-- Git keeps a detailed history of changes, including what was changed, when it was changed, who made the change, and why it was made.
+- [Free](https://git-scm.com/downloads), fast, and [open source](https://github.com/git/git).
+- It is a **distributed** system, meaning everyone working on a project has a complete copy of it.
+- Most operations in Git can be performed using local files and resources, **minimizing the need for external dependencies**.
+- Git keeps a **detailed history of changes**, including what was changed, when it was changed, who made the change, and why it was made.
 - You can easily retrieve previous versions of your project, allowing you to see the progression of your work.
-- Git forms the foundation for collaboration tools like GitHub and GitLab.
+- Git forms the **foundation for collaboration tools** like GitHub and GitLab.
 
-When you use Git, it takes snapshots of your project whenever you choose. It then compares the current snapshot with the previous one and prompts you to provide a message explaining why you made the specific changes.
+When you use Git, it takes snapshots of your project whenever you choose.
+It then compares the current snapshot with the previous one and prompts you to provide a message explaining why you made the specific changes.
 
-### Why is git called git?
+::: {.callout-tip title="Why is Git called Git?" collapse="true"}
 
 The name "git" was given by the main developer Linus Torvalds when he created the software.
 Torvalds is well-known for his involvement in the development of the Linux kernel.
 
 > *"I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."* -- [Wikipedia: Git](https://en.wikipedia.org/wiki/Git)
 
-::: {.callout-tip title="For more insights and discussions about the name, you can refer to the [README.md file on GitHub](https://github.com/git/git)." collapse="true"}
+For more insights and discussions about the name, you can refer to the [README.md file on GitHub](https://github.com/git/git).
 
 The name "git" was given by Linus Torvalds when he wrote the very first version. He described the tool as "the stupid content tracker" and the name as (depending on your mood):
 
@@ -232,46 +234,57 @@ There are many options to interact with Git.
 
 ### Command line / terminal
 
-See chapter on command line.
+See chapter on [command line](command-line.qmd).
 
 ### Extensions to existing software
 
 Your text editor or analytical software is very likely to have a git extensions / plugin, often via a Graphical User Interface (GUI).
 
-### Git clients (applications with a GUI)
+- [RStudio Desktop](https://posit.co/download/rstudio-desktop/)
+- [Visual Studio Code](https://code.visualstudio.com/docs/sourcecontrol/overview)
 
-Examples: GitKraken, GitHub Desktop
+### Git Clients (applications with a GUI)
+
+Several software applications enable the use of Git on your local computer without the need for the command line.
+The following is a non-comprehensive list of such software.
+Please consult their respective documentation for further details.
+
+- [GitKraken](https://www.gitkraken.com/)
+- [GitHub Desktop](https://desktop.github.com/)
 
 ## Common misconceptions
 
-### git equals GitHub
+### Misconception: Git is the same as GitHub
 
+![Git Logo by [Jason Long](https://twitter.com/jasonlong) is licensed under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/). ([Link to download page](https://git-scm.com/downloads/logos)).](../static/git-icon.svg){#fig-git-logo fig-align="left"}
+
+![GITHUB®, the GITHUB® logo design, the INVERTOCAT logo design, OCTOCAT®, and the OCTOCAT® logo design are trademarks of GitHub, Inc., registered in the United States and other countries. The OCTOCAT design is the exclusive property of GitHub, Inc and has been federally registered with the United States Copyright Office. All rights reserved. ([Link to download page](https://github.com/logos)).](../static/github-logo.svg){#fig-github-logo fig-align="left"}
+
+One of the most widespread misconceptions is that Git and GitHub are the same thing.
 Git and GitHub are two distinct but related tools in the world of version control.
 
-Git is a version control system that allows you to track changes and manage the history of your files locally on your computer.
+**Git is a version control system** (software installed on your computer) that allows you to track changes and manage the history of your files locally on your computer.
 It provides features such as branching, merging, and reverting to previous versions.
 
-GitHub is a web-based platform that utilizes Git for version control.
-It offers a cloud-based hosting service for your Git repositories, allowing you to store and share your projects online.
+**GitHub is a web-based hosting service** for your Git repositories, allowing you to store and share your Git projects online.
 GitHub provides additional collaboration features such as issue tracking, pull requests, and project management tools.
 
 In summary, Git is the version control system itself, while GitHub is a hosting service built on top of Git.
 Git can be used independently without GitHub, but GitHub relies on Git for its functionality.
 
-### git is only for code
+### Misconception: Git is only for code and programmers
 
-Git is often associated with version control for code, and it is indeed highly valuable for managing code-related projects.
-However, Git is not limited to code and is not only for programmers.
-While it is widely utilized in software development, Git can be employed to track changes and oversee the history of any file type.
-It can be used by anyone who seeks to utilize version control for monitoring the progress of their work.
+While version control systems like Git are often associated with software development (and are indeed highly valuable for managing code-related projects), they are not limited to code and not exclusive to developers.
+Version control can be beneficial for anyone working with files that undergo changes over time, including writers, designers, and data analysts.
 
-### git is only for collaboration
+### Misconception: Git is only for collaboration
 
 Git offers remarkable benefits for collaboration, but its value extends beyond working with others.
 It enables you to collaborate effectively with your past and future self, fostering valuable skills and boosting your confidence when collaborating with others.
 Even if you currently don't have a specific reason to collaborate with others, trying git on your own can be highly beneficial and rewarding.
 
-### git auto-saves your changes
+### Misconception: Git auto-saves your changes
 
 Unlike automatic saving, where changes are continuously saved in the background, git requires manual intervention to capture snapshots.
-You have to explicitly inform the git when you want to take a snapshot, indicating that you want it to acknowledge your changes.
+You have to explicitly inform git when you want to take a snapshot, indicating that you want it to acknowledge your changes.
+While this may sound annoying at first, the benefits of having full control over your version history will become apparent in later chapters of this book.
