@@ -13,12 +13,13 @@ ref_table <- function(bibtexkeys) {
     # .[, AUTHOR := sapply(AUTHOR, "[[", 1)] %>%
     # .[num_authors > 1, AUTHOR := paste(AUTHOR, "et al.")] %>%
     .[, BIBTEXKEY := paste0("@", BIBTEXKEY)] %>%
-    .[, URL := sprintf("[{{< fa brands internet-explorer >}}](%s)", URL)] %>%
     .[, License := gsub("\\. Source: .*", "", NOTE)] %>%
     .[, License := gsub("License: \\\\href\\{([^}]+)\\}\\{([^}]+)\\}", "[\\2](\\1)", License)] %>%
     .[, Source := gsub(".*Source: (\\\\url\\{([^}]+)\\}).*", "\\2", NOTE)] %>%
-    .[, Source := sprintf("[{{< fa brands github >}}](%s)", Source)] %>%
-    setnames(., old = c("BIBTEXKEY", "TITLE", "URL"), new = c("Authors", "Title", "Website")) %>%
+    .[, Website := gsub(".*Website: (\\\\url\\{([^}]+)\\}).*", "\\2", NOTE)] %>%
+    .[!(is.na(Website)), Website := sprintf("[{{< fa brands internet-explorer >}}](%s)", Website)] %>%
+    .[!(is.na(Source)), Source := sprintf("[{{< fa brands github >}}](%s)", Source)] %>%
+    setnames(., old = c("BIBTEXKEY", "TITLE"), new = c("Authors", "Title")) %>%
     .[, c("Authors", "Title", "Website", "License", "Source")]
   return(df_bib_out)
 }
