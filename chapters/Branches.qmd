@@ -69,6 +69,21 @@ should get the following output:
 
 ::: {.callout-tip collapse="true"}
 ### Common git branch flags
+-a or --all: Lists both local and remote branches.
+
+-r or --remote: Lists only remote branches.
+
+-d or --delete: Deletes a specified branch. For example, git branch -d feature-branch.
+
+-D or --force: Force deletes a branch, even if it has unmerged changes.
+
+-m or --move: Renames a branch. For example, git branch -m old-branch new-branch.
+
+-c or --copy: Creates a new branch by copying an existing branch. For example, git branch -c existing-branch new-branch 
+
+-v or --verbose: Shows  more information when listing branches, including the last commit message.
+
+--contains: Filters branches that contain a specific commit.
 
 :::
 ## Switching branches
@@ -133,17 +148,78 @@ Afterwards you can merge the branches.
 
 ::: {.callout-tip collapse="true"}
 ### Common git merge flags
+--abort: Abort the current merge operation and reset the branch to its pre-merge state.
 
+--continue: Continue the merge process after resolving conflicts.
+
+--log: Include the log message from the commit(s) being merged in the new merge commit.
 :::
 
 ### Types of merges
+
+Git supports different types of merges to cater to various situations in software development. 
+Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.
+
 #### Standard merge
 
+In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original timestamps. 
+It creates a new "merge commit," a special record that marks when the merge happened, showing that the branches are now combined.
+
+```{bash}
+git merge 
+```
 #### Fast Forward Merge
+
+If  no new commits were made to the base branch since the feature was created, Git automatically does a  "Fast Forward Merge."
+It's like the standard merge, but no new merge commit is created. 
+It's as if you made the commits directly on the base branch. 
+Since the base branch remained unchanged, there's no need to mark a separate merge in the history.
+You can ensure a fastfoward merge by using the `--ff-only`flag.
+
+```{bash}
+git merge --ff-only
+```
+If you do not want a fastfoward merge, you can ensure a merge commit with the `--no-ff`flag.
+
+```{bash}
+git merge --no-ff
+```
+
 #### Squash and Merge
-#### Rebase and Merge
 
+When you squash a branch, Git combines all commits of the branch into a single commit.
+This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately.
+Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.
 
+```{bash}
+git merge --squash
+```
+
+#### Rebasing
+
+`git rebase` is a different way than a merge to integrate changes from one branch into another. 
+When you rebase the feature branch onto the main, branch you kind of "rearrange" the commits. 
+It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
+The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. 
+It's like picking up your changes and placing them on the latest code, resulting in a linear history. However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
+
+```{bash}
+git rebase
+```
+::: {.callout-tip collapse="true"}
+### Common git rebase flags
+--interactive or -i: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
+
+--continue: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
+
+--abort: Abort the current rebase operation and return the branch to its original state before the rebase.
+
+--skip: Skip the current commit during an interactive rebase.
+
+-p or --preserve-merges: Preserve merge commits during the rebase.
+
+--autosquash: Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
+:::
 
 ## Deleting Branches
 Once a branch has served its purpose and is no longer needed, it can be deleted.
@@ -173,11 +249,35 @@ Once the task is complete or the feature is integrated, consider deleting the br
 When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your main/master branch.
 These rules provide an extra layer of control and enforce guidelines to maintain stability. 
 
+## Using Gitignore
+.gitignore is a special file.
+It is used in Git to specify files and directories that should be ignored and not tracked.
+When you create a gitignore file and specify filenames inside it, Git will exclude these files and directories from being staged or committed.
+The gitignore file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
+To create a .gitignore file, navigate to your repo and use the `touch` command.
+
+```{bash}
+touch .gitignore
+```
+.gitgnore will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag.
+
+```{bash}
+ls -a
+```
+To open it, simply use the `open` command.
+```{bash}
+open .gitignore
+```
+Now you can write a filename inside it, to stop git from tracking it.
+ 
 # Exercises {{< fa dumbbell >}}
 - Create a new Branch called feature/newveganreceipe and work on it
 
 - Merge it with your main branch and delete it afterwards
 
+- Create a .gitignore file 
+
 # References
 
 https://www.atlassian.com/git/tutorials/using-branches
+https://lukemerrett.com/different-merge-types-in-git/
