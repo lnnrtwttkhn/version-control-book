@@ -17,14 +17,19 @@ author: ""
 -   Set up a GitHub Repo in multiple ways
 -   Pull and push changes to/from Github repo
 
+# Remote repositories
+
+Remote repositories are versions of your project hosted somewhere on the internet or a network. 
+You can set up multiple remote repositories, each usually either read-only or writable for you. 
+Collaborating with others requires managing these remote repositories and pushing and pulling data to and from the repositories to share your work.
+
+
 # What is GitHub? {{< fa brands github >}}
 
-GitHub is a web-based platform that hosts Git repositories.
+GitHub is a popular web-based platform that hosts remote Git repositories.
 You can use it in your browser without any downloads.
 It's a collaborative environment for software development, allowing developers to work together, manage code, and track changes.
-You don't have to be a coder to use it.
 GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.
-It's a popular hub for sharing and discovering code.
 
 # Connecting to GitHub {{< fa brands github >}}
 
@@ -172,12 +177,58 @@ TBA
 git push origin main
 ```
 
+## Pull requests
+Pull request serves as a request for code review and integration into a project's codebase, enabling collaboration and ensuring code quality before changes are merged.
+When dealing with pull requests, there are two primary workflows.
+
+**Pull Request from a Forked Repository:**
+
+To create a pull request after forking a repository and making changes follow these steps:
+
+1. Navigate to your forked repository on GitHub by visiting https://github.com/<your-username>/<repository-name>. 
+Make sure you are on the branch that contains the changes you want to propose.
+
+2. Click on Contribute and then "Open Pull Request".
+
+3. In the pull request interface, choose the branch you made changes to in your fork (the "compare" branch) and the original repository's branch where you want to propose your changes (the "base" branch).
+
+4. Review the Changes.
+
+5. Click on the "Create Pull Request" button.
+Give your pull request a meaningful title and provide a description explaining the changes you made.
+
+6. Submit the Pull Request.
+
+The owner of the original repository, can now approve the changes and thereby merge your branch into his.
+
+
+**Pull Request from a Branch within a Repository:**
+
+In this scenario, contributors work directly within the main repository, creating a new branch for their changes.
+After completing the changes in the branch, they create a pull request from that branch to the main repository's default branch (e.g., main/master). 
+The workflow for this, is the same as for opening a pull request for a forked repository,
+
+
+# Alternatives to GitHub
+
 # Exercise {{< fa dumbbell >}}
 
 1.  Initialize your recipe folder as a Git Repository.
 2.  Add a new recipe on Github, commit and pull the changes to your local folder.
 3.  Add a recipe on your local file and push the changes to GitHub.
 
+optional:
+1.  Fork the repository of this book from: https://github.com/lnnrtwttkhn/version-control-book
+2.  Clone the forked repository to your computer
+3.  Write your name below, stage and commit the change.
+4.  Open a pull request.
+
+Names:
+
+
 # Sources
+https://www.gitkraken.com/learn/git/tutorials/what-is-a-pull-request-in-git
 
 https://the-turing-way.netlify.app/collaboration/github-novice/github-novice-features.html
+
+https://git-scm.com/book/de/v2/Git-Grundlagen-Mit-Remotes-arbeiten
