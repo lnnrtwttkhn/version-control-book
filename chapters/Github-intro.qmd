@@ -155,8 +155,8 @@ In the relevant directory use the `git pull`command to update your local file wi
 ```{bash}
 git pull
 ```
-::: {.callout-tip title="git pull command flags" collapse="true"}
-TBA
+::: {.callout-tip title="Common git pull flags" collapse="true"}
+
 :::
 
 ## Pushing {{< fa code-pull-request >}}
@@ -169,8 +169,20 @@ It's important to note that you need appropriate access and permissions to push 
 If you don't have write access, you won't be able to push your changes.
 If you don`t specify a branch, Git will push the one you are on in the moment.
 
-::: {.callout-tip title="git push command flags" collapse="true"}
-TBA
+::: {.callout-tip title="Common git push flags" collapse="true"}
+-u or --set-upstream: This flag is used to set the upstream branch for the current branch. 
+It is typically used when pushing a branch for the first time to link the local branch with a remote branch.
+
+--force or -f: Force pushes the local main branch to the origin remote repository, overwriting any changes that may have been made to the main branch in the remote repository.
+
+--all: This flag pushes all branches to the remote repository.
+
+--dry-run: This flag simulates the push operation without actually pushing any data to the remote repository. 
+It's useful for checking what would be pushed.
+
+local_branch remote_branch: This syntax allows you to push a specific local branch to a specific remote branch.
+Example: git push origin my_local_branch:my_remote_branch
+
 :::
 
 ```{bash}
@@ -206,10 +218,19 @@ The owner of the original repository, can now approve the changes and thereby me
 
 In this scenario, contributors work directly within the main repository, creating a new branch for their changes.
 After completing the changes in the branch, they create a pull request from that branch to the main repository's default branch (e.g., main/master). 
-The workflow for this, is the same as for opening a pull request for a forked repository,
+The workflow for this, is the same as for opening a pull request for a forked repository.
+
+# Template repositories
+Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others.
+Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code.
+This simplifies the process of setting up new projects that share common characteristics or follow best practices.
+Using a GitHub repository template is as simple as clicking the "Use this template" button on the template repository page, providing a new repository name and description, and then creating the repository with your desired settings.
 
 
 # Alternatives to GitHub
+
+While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub.
+
 
 # Exercise {{< fa dumbbell >}}
 
