@@ -1,0 +1,299 @@
+---
+title: "Branches"
+engine: knitr
+execute:
+  eval: false
+  title-block-style: none
+author: ""
+---
+
+::: callout-note
+### Overview
+
+{{< fa clock >}} Duration: min
+:::
+
+# {{< fa bullseye >}} Learning objectives
+
+- Purpose and benefits of using branches in Git
+
+- Creating and switching between branches
+
+- Merging branches and resolving conflicts
+
+# {{< fa code-branch >}} Why branches?
+Git branches are like separate workspaces within a Git repository.
+They let you work on different stuff without messing up the main code.
+You can visualiuze it, like this:
+
+![](../static/branches.svg)
+[Source](https://www.atlassian.com/git/tutorials/using-branches)
+
+Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you're ready.
+It's great for trying out new features, fixing bugs, or experimenting without causing chaos in the main codebase.
+Git makes it easy to switch between branches and handle conflicts when merging.
+With branches, you can work independently and keep your code organized.
+
+## Creating new branch
+
+By default your work is on the initial branch called **master** or **main**. You can check which branch you are on using `git branch`.
+
+```{bash}
+git branch 
+```
+
+should get the following output:
+
+```{bash}
+* main
+```
+
+To create a new branch, use `git branch` followed by the wished branchname.
+
+```{bash}
+git branch feature
+```
+
+Now you can use `git branch` again to confirm the creation of the new branch.
+
+```{bash}
+git branch 
+```
+
+should get the following output:
+
+```{bash}
+  feature
+* main
+```
+
+::: {.callout-tip collapse="true"}
+### Common git branch flags
+-a or --all: Lists both local and remote branches.
+
+-r or --remote: Lists only remote branches.
+
+-d or --delete: Deletes a specified branch. For example, git branch -d feature-branch.
+
+-D or --force: Force deletes a branch, even if it has unmerged changes.
+
+-m or --move: Renames a branch. For example, git branch -m old-branch new-branch.
+
+-c or --copy: Creates a new branch by copying an existing branch. For example, git branch -c existing-branch new-branch 
+
+-v or --verbose: Shows  more information when listing branches, including the last commit message.
+
+--contains: Filters branches that contain a specific commit.
+
+:::
+## Switching branches
+
+To switch to the newly created branch, you can use `git checkout` or `git switch`.
+
+```{bash}
+git switch feature
+```
+
+Should receive an output similiar to this:
+
+```{bash}
+M	example.txt
+Switched to branch 'feature'
+```
+
+Now you can normally work on this branch using the staging/committing workflow.
+
+::: {.callout-tip title="Git checkout vs git switch" collapse="true"}
+Prior to Git version 2.23, the "git checkout" command was the primary way to switch branches. It allows you to move to a different branch and update your working directory to reflect the state of that branch. In Git 2.23 and later versions, the "git switch" command was introduced as a safer and more intuitive alternative to "git checkout". It simplifies the branch-switching process and provides clearer feedback in case of errors, making it the recommended command for branch manipulation.
+:::
+
+## Merging branches
+
+After you worked on your new branch you might want to incooperate your work into the main branch. You can do this using `git merge`command. Switch to your main branch and use:
+
+```{bash}
+git merge feature
+```
+
+If you have not yet done any changes you should get the following output:
+
+```{bash}
+Already up to date.
+```
+
+If you have changed the file(s) in your folder, you should get an output similiar to:
+
+```{bash}
+Updating 555ba0c..994bb8d
+Fast-forward
+ 
+ example.txt    |   4 ++++
+
+ 1 file changed
+```
+
+
+### Merge conflicts
+If the same part of file was edited on two branches before merging, a **merge conflict** arises, indicating conflicting changes that need to be resolved manually. 
+If you try to merge with conflicting changes in a file the output looks similiar to this:
+```{bash}
+Auto-merging example.txt
+CONFLICT (content): Merge conflict in example.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Git will highlight the conflicting parts in the affected file(s)e, and you must choose the desired changes or modify them to create a consistent version.
+To do this open up the file and edit it, then stage and commit your changes.
+Afterwards you can merge the branches.
+
+::: {.callout-tip collapse="true"}
+### Common git merge flags
+--abort: Abort the current merge operation and reset the branch to its pre-merge state.
+
+--continue: Continue the merge process after resolving conflicts.
+
+--log: Include the log message from the commit(s) being merged in the new merge commit.
+:::
+
+### Types of merges
+
+Git supports different types of merges to cater to various situations in software development. 
+Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.
+
+#### Standard merge
+
+In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original timestamps. 
+It creates a new "merge commit," a special record that marks when the merge happened, showing that the branches are now combined.
+
+```{bash}
+git merge 
+```
+#### Fast Forward Merge
+
+If  no new commits were made to the base branch since the feature was created, Git automatically does a  "Fast Forward Merge."
+It's like the standard merge, but no new merge commit is created. 
+It's as if you made the commits directly on the base branch. 
+Since the base branch remained unchanged, there's no need to mark a separate merge in the history.
+You can ensure a fastfoward merge by using the `--ff-only`flag.
+
+```{bash}
+git merge --ff-only
+```
+If you do not want a fastfoward merge, you can ensure a merge commit with the `--no-ff`flag.
+
+```{bash}
+git merge --no-ff
+```
+
+#### Squash and Merge
+
+When you squash a branch, Git combines all commits of the branch into a single commit.
+This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately.
+Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.
+
+```{bash}
+git merge --squash
+```
+
+#### Rebasing
+
+`git rebase` is a different way than a merge to integrate changes from one branch into another. 
+When you rebase the feature branch onto the main, branch you kind of "rearrange" the commits. 
+It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
+The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. 
+It's like picking up your changes and placing them on the latest code, resulting in a linear history. However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
+
+```{bash}
+git rebase
+```
+::: {.callout-tip collapse="true"}
+### Common git rebase flags
+--interactive or -i: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
+
+--continue: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
+
+--abort: Abort the current rebase operation and return the branch to its original state before the rebase.
+
+--skip: Skip the current commit during an interactive rebase.
+
+-p or --preserve-merges: Preserve merge commits during the rebase.
+
+--autosquash: Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
+:::
+
+## Deleting Branches
+Once a branch has served its purpose and is no longer needed, it can be deleted.
+Removing branches that are no longer active helps maintain a clean and manageable branch structure.
+To delete a branch you can use the `git branch`command, followed by a `-d` flag.
+```{bash}
+git branch -d feature
+```
+should get an output similiar to:
+```{bash}
+Deleted branch feature (was 3343f36).
+```
+You can only delete a branch, you are not currently on.
+
+## Branches best practices
+### Naming branches
+Adopt a consistent naming convention for branches that accurately reflects their purpose. 
+This can include prefixes like "feature/", "bug/", or "hotfix/" followed by a descriptive name. 
+Clear and standardized branch names make it easier to identify the purpose of each branch.
+
+## Branch Lifecycle
+Create branches with a specific goal or task in mind, and aim to keep them short-lived. 
+Long-lived branches can lead to conflicts and make it harder to merge changes. 
+Once the task is complete or the feature is integrated, consider deleting the branch.
+
+## Branch Protection
+When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your main/master branch.
+These rules provide an extra layer of control and enforce guidelines to maintain stability. 
+
+## Using Gitignore
+.gitignore is a special file.
+It is used in Git to specify files and directories that should be ignored and not tracked.
+When you create a gitignore file and specify filenames inside it, Git will exclude these files and directories from being staged or committed.
+The gitignore file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
+To create a .gitignore file, navigate to your repo and use the `touch` command.
+
+```{bash}
+touch .gitignore
+```
+.gitgnore will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag.
+
+```{bash}
+ls -a
+```
+To open it, simply use the `open` command.
+```{bash}
+open .gitignore
+```
+Now you can write a filename inside it, to stop git from tracking it.
+
+# Good commits
+Ideally, each commit contains an isolated, complete change. 
+This makes it easy to revert your changes if you decide to take a different approach. 
+For example, if you want to rename a variable and add some tests, put the variable rename in one commit and the tests in another commit. 
+Later, if you want to keep the tests but revert the variable rename, you can revert the specific commit that contained the variable rename. 
+If you put the variable rename and tests in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
+
+## Good commit messages
+You should aim to write clear and concise commit messages for effective collaboration and version control. 
+Start with an imperative verb to indicate the purpose of the commit, keeping the subject line around 50 characters. 
+Remember to address one logical change per commit to keep your changes well-organized.
+
+ 
+# Exercises {{< fa dumbbell >}}
+- Create a new Branch called feature/newveganreceipe and work on it
+
+- Merge it with your main branch and delete it afterwards
+
+- Create a .gitignore file 
+
+# References
+
+https://www.atlassian.com/git/tutorials/using-branches
+
+https://lukemerrett.com/different-merge-types-in-git/
+
+https://docs.github.com/en/enterprise-server@3.6/get-started/quickstart/github-flow
