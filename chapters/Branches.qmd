@@ -270,7 +270,18 @@ open .gitignore
 ```
 Now you can write a filename inside it, to stop git from tracking it.
 
-# Good commit messages
+# Good commits
+Ideally, each commit contains an isolated, complete change. 
+This makes it easy to revert your changes if you decide to take a different approach. 
+For example, if you want to rename a variable and add some tests, put the variable rename in one commit and the tests in another commit. 
+Later, if you want to keep the tests but revert the variable rename, you can revert the specific commit that contained the variable rename. 
+If you put the variable rename and tests in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
+
+## Good commit messages
+You should aim to write clear and concise commit messages for effective collaboration and version control. 
+Start with an imperative verb to indicate the purpose of the commit, keeping the subject line around 50 characters. 
+Remember to address one logical change per commit to keep your changes well-organized.
+
  
 # Exercises {{< fa dumbbell >}}
 - Create a new Branch called feature/newveganreceipe and work on it
@@ -282,4 +293,7 @@ Now you can write a filename inside it, to stop git from tracking it.
 # References
 
 https://www.atlassian.com/git/tutorials/using-branches
+
 https://lukemerrett.com/different-merge-types-in-git/
+
+https://docs.github.com/en/enterprise-server@3.6/get-started/quickstart/github-flow
