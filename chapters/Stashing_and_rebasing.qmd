@@ -1,0 +1,177 @@
+---
+title: "Stashing and rebasing"
+engine: knitr
+execute:
+  eval: false
+title-block-style: none
+author: ""
+---
+
+::: callout-note
+### Overview
+
+{{< fa clock >}} Duration: min
+:::
+
+# {{< fa bullseye >}} Learning objectives
+- Stashing changes for later use
+
+- Resolving conflicts with stashed changes
+
+- Cleaning your working directory
+
+- Introduction to rebasing
+
+# What is stashing?
+`Git stash` is a valuable command in Git that allows you to save your current changes temporarily without committing them.
+This is useful when you need to switch branches or work on something else without creating a commit for unfinished work.
+When you run git stash, Git stores the changes in your working directory and staged changes in a special stash commit.
+The working directory is then reverted to the last committed state, providing a clean slate for your next task
+
+## Git stash workflow
+
+## Stashing changes
+To demonstrate the usefulness of `git stash`, you can edit two files in your repo, stage one file and dont stage the other.
+Now use `git status` to look at your workING directory.
+
+```{bash}
+git staus
+```
+should get an output similiar to:
+
+```{bash}
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   example.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   example.txt   
+```
+
+```{bash}
+git stash
+````
+should get an output similiar to:
+
+```{bash}
+Saved working directory and index state WIP on main: 919e7fc commit message
+```
+You can now use `git status` to again look at your working directory and should see an output similiar to:
+```{bash}
+On branch main
+nothing to commit, working directory clean
+````
+Now you can switch branches and work elsewehere or stop working on the project altogether.
+
+## Retrieving changes
+If you want to reapply your changes, you can use `git stash apply`. 
+To look at your stored stashes, you can use `git stash list`.
+```{bash}
+git stash list
+````
+should get an output similiar to:
+```{bash}
+stash@{0}: WIP on main: 919e7fc commit message
+````
+All of your stored stashed should show up.
+
+`git stash apply` automatically applies your latest stash.
+You can also specify a stored stash, e.g. ` git stash apply stash@{2}``
+
+```{bash}
+git stash apply stash@{0}
+```
+should get an output similiar to:
+```{bash}
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   example.html
+	modified:   example.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+The changes made in your stored stashed are now applied again in your working directory.
+Notice that your already staged files, are not automatically staged again.
+For this you can use the`--index` flag.
+
+::: {.callout-tip collapse="true"}
+### Common git stash flags
+TBA
+:::
+
+# Removing changes
+## 
+## "Untracking" files
+Sometimes, you may have files in your Git repository that you no longer want to track or include in future commits. 
+You can use the `git rm` command to remove these files from the working directory and the staging area
+For example, to "untrack" a file named "example.txt," you would run:
+```{bash}
+git rm example.txt
+````
+After using git rm, the deletion will be staged automatically,  you need to commit the changes to permanently remove the files from Git's tracking.
+E.g.
+```{bash}
+git commit -m "Remove files from tracking"
+````
+::: {.callout-tip collapse="true"}
+### Common git rm flags
+-f or --force: This flag forces the removal of files, even if they are modified or have not been added to the staging area. 
+
+-r or --recursive: Use this flag to remove directories and their contents. 
+
+--cached: This flag removes files from the staging area (index) but preserves them in the working directory. 
+
+-n or --dry-run: With this flag, Git will only show you what would be removed but will not actually perform the deletion. 
+:::
+
+
+## Deleting untracked files
+If you have added files to your folder, but you do not want to keep them, you can use the `git clean` command.
+This command permanently removes untracked files from your working directory, without you having to commit this change.
+This makes it difficult or impossible to recover their content.
+For a safer alternative, consider using git stash --all. 
+You can also use the `-n`flag, to run a preview, without actually deleting files.
+
+::: {.callout-tip collapse="true
+### Common git clean flags
+-d: Removes untracked files and untracked directories
+-n: Dryrun (preview) without actually deleting anything.
+-f: Forced the removal of untracked files and directories without a confirmation prompt.
+:::
+
+# Git rebase
+`git rebase` is a different way than a merge to integrate changes from one branch into another. 
+When you rebase the feature branch onto the main, branch you kind of "rearrange" the commits. 
+It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
+The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. 
+It's like picking up your changes and placing them on the latest code, resulting in a linear history. However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
+
+```{bash}
+git rebase main
+```
+::: {.callout-tip collapse="true"}
+### Common git rebase flags
+--interactive or -i: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
+
+--continue: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
+
+--abort: Abort the current rebase operation and return the branch to its original state before the rebase.
+
+--skip: Skip the current commit during an interactive rebase.
+
+-p or --preserve-merges: Preserve merge commits during the rebase.
+
+--autosquash: Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
+:::
+
+References:
+
+https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning
