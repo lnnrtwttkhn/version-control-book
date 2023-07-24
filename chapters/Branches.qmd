@@ -22,32 +22,34 @@ author: ""
 - Merging branches and resolving conflicts
 
 # {{< fa code-branch >}} Why branches?
+
 Git branches are like separate workspaces within a Git repository.
 They let you work on different stuff without messing up the main code.
-You can visualiuze it, like this:
+You can visualize branches as shown in @fig-branches.
 
 ![Image from [Chapter "Git Branch"](https://www.atlassian.com/git/tutorials/using-branches) of the [Atlassian "Become a git guru" tutorials](https://www.atlassian.com/git/tutorials), used under a [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/) ([direct link](https://www.atlassian.com/git/tutorials/using-branches))](../static/branches.svg){#fig-branches}
 
 Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you're ready.
-It's great for trying out new features, fixing bugs, or experimenting without causing chaos in the main codebase.
+It's great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch.
 Git makes it easy to switch between branches and handle conflicts when merging.
 With branches, you can work independently and keep your code organized.
 
 ## Creating new branch
 
-By default your work is on the initial branch called **master** or **main**. You can check which branch you are on using `git branch`.
+By default your work is on the initial branch called **master** or **main**.
+You can check which branch you are on using `git branch`.
 
 ```{bash}
 git branch 
 ```
 
-should get the following output:
+should return the following output:
 
 ```{bash}
 * main
 ```
 
-To create a new branch, use `git branch` followed by the wished branchname.
+To create a new branch, use `git branch` followed by the wished branch name.
 
 ```{bash}
 git branch feature
@@ -59,15 +61,15 @@ Now you can use `git branch` again to confirm the creation of the new branch.
 git branch 
 ```
 
-should get the following output:
+should return the following output:
 
 ```{bash}
   feature
 * main
 ```
 
-::: {.callout-tip collapse="true"}
-### Common git branch flags
+::: {.callout-tip title="Common git branch flags" collapse="true"}
+
 -a or --all: Lists both local and remote branches.
 
 -r or --remote: Lists only remote branches.
@@ -85,9 +87,12 @@ should get the following output:
 --contains: Filters branches that contain a specific commit.
 
 :::
+
 ## Switching branches
 
 To switch to the newly created branch, you can use `git checkout` or `git switch`.
+
+For example, enter the following command to switch to the newly created `feature` branch:
 
 ```{bash}
 git switch feature
@@ -102,13 +107,18 @@ Switched to branch 'feature'
 
 Now you can normally work on this branch using the staging/committing workflow.
 
-::: {.callout-tip title="Git checkout vs git switch" collapse="true"}
-Prior to Git version 2.23, the "git checkout" command was the primary way to switch branches. It allows you to move to a different branch and update your working directory to reflect the state of that branch. In Git 2.23 and later versions, the "git switch" command was introduced as a safer and more intuitive alternative to "git checkout". It simplifies the branch-switching process and provides clearer feedback in case of errors, making it the recommended command for branch manipulation.
+::: {.callout-tip title="What is the difference between `git checkout` and `git switch`?" collapse="true"}
+Prior to Git version 2.23, the "git checkout" command was the primary way to switch branches.
+It allows you to move to a different branch and update your working directory to reflect the state of that branch.
+In Git 2.23 and later versions, the "git switch" command was introduced as a safer and more intuitive alternative to "git checkout".
+It simplifies the branch-switching process and provides clearer feedback in case of errors, making it the recommended command for branch manipulation.
 :::
 
 ## Merging branches
 
-After you worked on your new branch you might want to incooperate your work into the main branch. You can do this using `git merge`command. Switch to your main branch and use:
+After you worked on your new branch you might want to incorporate your work into the `main` branch.
+You can do this using `git merge`command.
+Switch to your main branch (using `git switch` or `git checkout`) and then use:
 
 ```{bash}
 git merge feature
@@ -131,10 +141,11 @@ Fast-forward
  1 file changed
 ```
 
-
 ### Merge conflicts
+
 If the same part of file was edited on two branches before merging, a **merge conflict** arises, indicating conflicting changes that need to be resolved manually. 
-If you try to merge with conflicting changes in a file the output looks similiar to this:
+If you try to merge with conflicting changes in a file the output looks similar to this:
+
 ```{bash}
 Auto-merging example.txt
 CONFLICT (content): Merge conflict in example.txt
@@ -145,8 +156,8 @@ Git will highlight the conflicting parts in the affected file(s)e, and you must 
 To do this open up the file and edit it, then stage and commit your changes.
 Afterwards you can merge the branches.
 
-::: {.callout-tip collapse="true"}
-### Common git merge flags
+::: {.callout-tip title="Common `git merge` flags" collapse="true"}
+
 --abort: Abort the current merge operation and reset the branch to its pre-merge state.
 
 --continue: Continue the merge process after resolving conflicts.
@@ -161,15 +172,16 @@ Each merge type has its purpose and advantages, allowing developers to choose th
 
 #### Standard merge
 
-In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original timestamps. 
-It creates a new "merge commit," a special record that marks when the merge happened, showing that the branches are now combined.
+In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original time stamps. 
+It creates a new "merge commit", a special record that marks when the merge happened, showing that the branches are now combined.
 
 ```{bash}
 git merge 
 ```
+
 #### Fast Forward Merge
 
-If  no new commits were made to the base branch since the feature was created, Git automatically does a  "Fast Forward Merge."
+If no new commits were made to the base branch since the feature was created, Git automatically does a  "Fast Forward Merge."
 It's like the standard merge, but no new merge commit is created. 
 It's as if you made the commits directly on the base branch. 
 Since the base branch remained unchanged, there's no need to mark a separate merge in the history.
@@ -178,7 +190,8 @@ You can ensure a fastfoward merge by using the `--ff-only`flag.
 ```{bash}
 git merge --ff-only
 ```
-If you do not want a fastfoward merge, you can ensure a merge commit with the `--no-ff`flag.
+
+If you do not want a fastfoward merge, you can ensure a merge commit with the `--no-ff` flag.
 
 ```{bash}
 git merge --no-ff
@@ -197,16 +210,18 @@ git merge --squash
 #### Rebasing
 
 `git rebase` is a different way than a merge to integrate changes from one branch into another. 
-When you rebase the feature branch onto the main, branch you kind of "rearrange" the commits. 
+When you rebase the `feature` branch onto the `main` branch you "rearrange" the commits. 
 It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
-The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. 
-It's like picking up your changes and placing them on the latest code, resulting in a linear history. However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
+The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the `main` branch. 
+It's like picking up your changes and placing them on the latest code, resulting in a linear history.
+However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
 
 ```{bash}
 git rebase
 ```
-::: {.callout-tip collapse="true"}
-### Common git rebase flags
+
+::: {.callout-tip title="Common git rebase flags" collapse="true"}
+
 --interactive or -i: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
 
 --continue: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
@@ -218,51 +233,66 @@ git rebase
 -p or --preserve-merges: Preserve merge commits during the rebase.
 
 --autosquash: Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
+
 :::
 
 ## Deleting Branches
+
 Once a branch has served its purpose and is no longer needed, it can be deleted.
 Removing branches that are no longer active helps maintain a clean and manageable branch structure.
-To delete a branch you can use the `git branch`command, followed by a `-d` flag.
+To delete a branch you can use the `git branch` command, followed by a `-d` flag.
+
 ```{bash}
 git branch -d feature
 ```
+
 should get an output similiar to:
+
 ```{bash}
 Deleted branch feature (was 3343f36).
 ```
+
 You can only delete a branch, you are not currently on.
 
 ## Branches best practices
+
 ### Naming branches
+
 Adopt a consistent naming convention for branches that accurately reflects their purpose. 
-This can include prefixes like "feature/", "bug/", or "hotfix/" followed by a descriptive name. 
+This can include prefixes like `feature/`, `bug/`, or `hotfix/` followed by a descriptive name. 
 Clear and standardized branch names make it easier to identify the purpose of each branch.
 
 ## Branch Lifecycle
+
 Create branches with a specific goal or task in mind, and aim to keep them short-lived. 
 Long-lived branches can lead to conflicts and make it harder to merge changes. 
 Once the task is complete or the feature is integrated, consider deleting the branch.
 
 ## Branch Protection
-When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your main/master branch.
+
+When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your `main` or `master` branch.
+
 These rules provide an extra layer of control and enforce guidelines to maintain stability. 
 
-## Using Gitignore
-.gitignore is a special file.
+## `.gitignore`
+
+`.gitignore` is a special file.
 It is used in Git to specify files and directories that should be ignored and not tracked.
-When you create a gitignore file and specify filenames inside it, Git will exclude these files and directories from being staged or committed.
-The gitignore file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
-To create a .gitignore file, navigate to your repo and use the `touch` command.
+When you create a `.gitignore` file and specify filenames inside it, Git will exclude these files and directories from being staged or committed.
+The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
+To create a `.gitignore` file, navigate to your repo and use the `touch` command.
+Alternatively, create the file in your favorite text editor.
 
 ```{bash}
 touch .gitignore
 ```
-.gitgnore will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag.
+
+`.gitignore` will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag in the `ls` command (for details on listing of files and folders, see the chapter on the [command line](command-line.qmd)).
 
 ```{bash}
 ls -a
 ```
+
 To open it, simply use the `open` command.
 ```{bash}
 open .gitignore
