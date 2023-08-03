@@ -1,0 +1,261 @@
+---
+title: "First Steps with Git"
+engine: knitr
+execute:
+  eval: false
+  title-block-style: none
+author: ""
+---
+
+::: callout-note
+### Overview
+
+{{< fa clock >}} Duration: min
+:::
+
+# {{< fa bullseye >}} Learning objectives
+
+In this Chapter your will learn basic Git operations for local version control including:
+
+-   Initializing a Git Repository
+-   Staging and Committing Changes
+-   Exploring the commit history
+-   Comparing Versions
+
+# {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
+
+To create your first Git repository, you need to initialize a folder.
+You can create an empty folder using the command line as explained in the chapter [Command Line Basics](command-line.qmd).
+Alternatively, you can create a folder in the usual way.
+Navigate, using the Terminal, to the folder which you want to initialze as a Git repository.
+You can use the `cd` command to change directories.
+Once you are in the desired directory, run the `git init` command to initialize the folder as a Git repository.
+
+```{bash}
+git init
+```
+
+You should see the following output:
+
+```{bash}
+Initialized empty Git repository in /Users/.../
+```
+
+Congratulations on successfully initializing your first Git repository! {{< fa champagne-glasses >}}
+
+Git is now able to track your changes in this Folder. You only need to use `git init` once per folder.
+
+# Status, Staging and committing {{< fa file-export >}}
+
+In Git, there are two important components: the staging area and commits. 
+The staging area is like a waiting area where you gather and prepare your changes before saving them. 
+You can choose which changes to include in the snapshot by adding them to the staging area using git `git add`. 
+Once you're satisfied with the changes in the staging area, you make a **commit**. 
+A commit is like taking a snapshot of your project at a specific moment. 
+It captures all the changes in the staging area and saves them as a new version. 
+Commits are like milestones that help you track the progress of your project and easily go back to a previous version if needed.
+
+## Status
+
+After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically.
+
+You can use `git status` to visualize the current status.
+
+```{bash}
+git status
+```
+
+You should see output similar to the following:
+
+```{bash}
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	example.txt
+```
+
+As you see Git is not yet tracking your file.
+
+::: {.callout-tip collapse="true"}
+## Common git status flags
+
+-s: Provides a more compact and simplified output, showing only the file status in a short format.
+
+-b: Includes information about the branch you are currently on along with the status.
+
+-u: Shows untracked files in the output.
+
+-uno: Suppresses the display of untracked files.
+
+-v: Provides more detailed information, including additional status information about ignored files.
+
+You can use these flags in combination.
+For example, git status -s -b will display a short and concise output along with the branch information.
+:::
+
+## Staging
+You can use `git add` to put new/changed files in the "staging area". 
+The staging area serves as a space where you can gather changes that you intend to commit soon.
+To organize and group these changes into meaningful commits, you can place the relevant files in the staging area. 
+The staging area acts as a bridge between your modified files and the next commit.
+
+```{bash}
+git add example.txt
+```
+
+If you use `git status` again, your file(s) should now show up under "changes to be commited".
+
+```{bash}
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   example.txt
+```
+q
+This means your change in this folder, in this case adding a file, is now **staged**.
+
+::: {.callout-tip collapse="true"}
+## Common git add flags
+
+
+-a: Adds all changes, including modifications, deletions, and new files, in the entire working tree.
+
+-u: Adds modifications and deletions, but not new files.
+
+<pathspec>: Specifies the specific files or directories to add. For example, git add myfile.txt adds a single file, while git 
+
+--ignore-errors: Ignores errors when adding files, allowing the command to continue even if some files cannot be added.
+:::
+
+## Committing
+
+Now that your changes are staged, you are ready to create a commit. 
+To create a commit, use the `git commit` command followed by the flag `-m` and a commit message **in qoutes** that describes the changes you made.
+The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
+If you just use `git commit` without adding a commit massage, the editor of [your choosing](installation-setup.qmd), opens up and lets you type in a commit message.
+
+```{bash}
+git commit -m "Add example.txt file"
+```
+
+You should see output similar to the following:
+
+```{bash}
+[main (root-commit) e9ea807] adding txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 example.txt
+```
+
+Congratulations! You have successfully created your first commit in the Git repository. 
+Commits are the core elements of version control, they allow you to track the history of your project and easily revert changes if needed.
+
+You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
+
+::: {.callout-tip collapse="true"}
+## Common git commit flags
+
+-m <message>: Specifies the commit message inline. For example, git commit -m "Fix typo" allows you to provide a short commit message directly in the command.
+
+-a or --all: Automatically stages all modified and deleted files before committing. This skips the separate git add step.
+
+-v or --verbose: Provides a detailed output, showing the diff of the changes being committed.
+
+-e or --edit: Opens the commit message editor, allowing you to edit the commit message before finalizing the commit.
+
+--amend: Modifies the previous commit. It allows you to add new changes to the previous commit or modify its commit message.
+:::
+
+### Logging Commits
+
+To look at your past commits you can use the `git log` command.
+
+```{bash}
+git log
+```
+
+You should see output similar to the following:
+
+```{bash}
+commit e9ea80781ceed7cc3d6bff0c7bfa71f320ec1f60 (HEAD -> main)
+Author: Example <beispiel@example.de>
+Date:   Thu Jun 29 12:23:53 2023 +0200
+
+    adding txt file
+```
+
+`git log` is useful because it provides a clear and organized view of a repository's commit history. 
+It allows you to track the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps. 
+The command can help identifying the source of bugs or issues by pinpointing the commit that introduced them.
+
+::: {.callout-tip collapse="true"}
+## Common git log flags
+--oneline: Provides a condensed output with each commit displayed on a single line, showing the abbreviated commit hash and commit message.
+
+-n <number> or --max-count=<number>: Limits the number of commits shown to the specified <number>. For example, git log -n 5 will display the latest 5 commits.
+
+--since=<date>: Shows commits made after the specified <date>. You can use various date formats, such as specific dates or relative expressions like "2 weeks ago" or "yesterday".
+
+--until=<date>: Shows commits made before the specified <date>.
+
+--author=<pattern>: Filters commits by the author's name or email using a specified <pattern>.
+:::
+
+### Comparing Versions
+
+Another very handy feature is the **git diff** command.
+It allows you to compare two different versions of your file.
+By default it shows you any uncommited changes since the last commit. You can explore this by pasting this text in your .txt file
+
+```         
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
+Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```
+
+You can then look at the changes using:
+
+```{bash}
+git diff
+```
+
+You should see output similar to the following:
+
+```{bash}
++++ b/example.txt
+@@ -0,0 +1 @@
++Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\ No newline at end of file
+```
+::: {.callout-tip collapse="true"}
+## Common git diff flags
+--cached or --staged: Shows the changes that are staged (added) but not yet committed.
+
+<commit>: Displays the difference between the current working directory and a specific commit. For example, git diff abc123 shows the changes compared to commit "abc123".
+
+<commit>..<commit>: Shows the difference between two specific commits. For example, git diff abc123..def456 displays the changes between commit "abc123" and commit "def456".
+
+--name-only: Outputs only the names of the files that have differences, without showing the actual changes.
+
+--name-status: Displays the names of files along with a status identifier that indicates if a file was added, modified, or deleted.
+
+--color-words: Highlights the differences at the word level, providing more granular detail.
+:::
+# Exercise {{< fa dumbbell >}}
+
+-   Create a folder called "recipes" and initialize it as a git repository.
+-   Add a favourite (or a crazy AI generated one) recipe of yours in a text file.
+- Stage and commit your file, write a commit message
+
+# Sources
+
+https://happygitwithr.com/
+
+https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git.html https://milesmcbain.github.io/git_4_sci/using-a-git-repository.html
