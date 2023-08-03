@@ -300,8 +300,25 @@ Once the task is complete or the feature is integrated, consider deleting the br
 ## Branch Protection
 
 When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your `main` or `master` branch.
+By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
 
-These rules provide an extra layer of control and enforce guidelines to maintain stability. 
+
+### How to protect the Main Branch on GitHub
+
+Go to your repository on GitHub and click on "Settings."
+In the left sidebar, select "Branches."
+Under "Branch protection rules," click on "Add rule."
+In the "Branch name pattern" field, enter the name of your main branch.
+Enable the options you want to enforce for the main branch.
+Common options include:
+
+**Require pull request reviews:**
+Require one or more approving reviews before changes can be merged.
+
+Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.
+
+Click "Create" to save the branch protection rule.
+
 
 ## `.gitignore`
 
