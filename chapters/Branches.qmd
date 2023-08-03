@@ -142,8 +142,22 @@ Fast-forward
 ```
 
 ### Merge conflicts
+Merge conflicts occur when Git is unable to automatically reconcile differences between two branches during a merge or pull operation. 
+This happens when both branches have made conflicting changes to the same part of a file. 
+Git can't determine which version of the code should take precedence, and as a result, it requests manual intervention from the developer. 
+It's like when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep.
+So, it raises its hand and asks you, the developer, to step in and help.
 
-If the same part of file was edited on two branches before merging, a **merge conflict** arises, indicating conflicting changes that need to be resolved manually. 
+#### Avoiding merge conflicts
+
+Merge conflicts can be a bit of a headache.
+While it may not be possible to entirely avoid merge conflicts, employing good development practices can minimize their occurrence. 
+Regularly pulling changes from the remote repository into your local branch (using git pull) and keeping your branch up-to-date can help identify and resolve conflicts early.
+
+#### Resolving merge conflicts
+When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. 
+Git is like the referee saying, "Hey, programmers, sort out your differences!" 
+
 If you try to merge with conflicting changes in a file the output looks similar to this:
 
 ```{bash}
@@ -153,8 +167,21 @@ Automatic merge failed; fix conflicts and then commit the result.
 ```
 
 Git will highlight the conflicting parts in the affected file(s)e, and you must choose the desired changes or modify them to create a consistent version.
-To do this open up the file and edit it, then stage and commit your changes.
-Afterwards you can merge the branches.
+To do this open up the file(s) with conflicts in a text editor, and you'll see the conflicting sections marked with <<<<<<<, =======, and >>>>>>>.
+Manually edit the conflicting sections to the desired state, removing the conflict markers. 
+Decide which changes to keep and which to discard.
+
+After editing the file, save it and use git add to stage the resolved changes:
+```{bash}
+git add example.txt
+```
+Once all conflicts are resolved, proceed with the commit e.g.:
+
+```{bash}
+git commit -m "Resolve merge conflict"
+```
+Your branches should now be merged and your conflict solved.
+
 
 ::: {.callout-tip title="Common `git merge` flags" collapse="true"}
 
