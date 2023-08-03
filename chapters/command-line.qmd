@@ -1,5 +1,36 @@
 ---
 title: "Command Line"
+image: ../static/terminal-computer.jpg
+image-alt: "https://commons.wikimedia.org/wiki/File:DEC_VT100_terminal.jpg"
+engine: knitr
+execute:
+  eval: false
+title-block-style: none
+author: ""
+categories: [beginner, basics, command line]
+description: |
+  In this session, we will explore the concept of the command line and discover some commands that work well alongside git.
+---
+
+::: {.callout-tip}
+
+In this lesson, we will introduce the command line as a general concept and learn a few commands that are complimentary to git
+
+{{< fa clock >}} Teaching: 30 min | Exercises: 15 min
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+{{< fa circle-question >}} Questions
+
+- What is the shell, command line, or terminal?
+- Why would I use the command line shell?
+- Why do I need to know the command line to use git?
+- How do I use the command line?
+- What commands do I need to know?
+
+
 title-block-style: none
 author: ""
 engine: knitr
@@ -22,11 +53,514 @@ and learn a few commands that are complimentary to git
 -   Why do I need to know the command line to use git?
 -   How do I use the command line?
 -   What commands do I need to know?
+
 :::
 
 ::: {.column width="50%"}
 {{< fa bullseye >}} Objectives
 
+- Explain how the shell relates to the keyboard, the screen, the operating system, and users’ programs.
+- Explain when and why command-line interfaces should be used instead of graphical interfaces.
+- Understand how to form file paths and navigate directories
+- Understand how arguments and flags are used to modify command line commands
+- Understand the concept of wild cards (`*`)
+
+:::
+
+::::
+
+## Acknowledgements
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("mcbain2019", "capes2023", "millman2018", "milligan2014")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "cli"), format = "markdown")
+```
+
+## Exercises
+
+- `cd` and `ls`
+  - Move to different directories on your computer and list the files and folder.
+- Hidden files:
+  - Are there more hidden files and folders than you expected?
+  - What did you notice about the names of the hidden files?
+  - Are there directories with more hidden folders than others?
+- Combining arguments and flags (In this exercise you will figure out how to use arguments and flags together)
+  - Using the flags you’ve seen so far, experiment to determine what order the flags have to be in.
+  - Create a command that lists all the contents of your ‘Documents’ folder in long format.
+- using flags:
+  - Obtain the usage information for ls. What is a flag that you can use to arrange the output according to date modified?
+  - By convention flags that are full words use a double dash -- and flags are a single letter have a singe dash. Why must this be the case?
+- Changing Challenges
+  - You should be in your Downloads folder. Change to your Documents folder in a single command incorporating the ~ in the path.
+  - Change to the root folder of the system and list its contents. Change to your home folder.
+- moving around
+  - Where does the following command place you on your system? How does it work? cd ~/../../..
+- Move ‘output.csv’ into the results folder of ‘eg_project’ using the mv command.
+- Complete the command below to rename the ‘paper.Rmd’ file to ‘methods.Rmd’ using mv: miles@pa00120549:~/eg_project$ mv src/paper.Rmd ...
+- Be sure to check your result using ls.
+- Move a group: Using a single mv command, move the csv files with ‘table’ in the name to the ‘data’ folder.
+- Wildcard extermination: Combine the rm command with two wildcards to remove all .csv files in our project with a single command. Hint: You can use a wildcard in the path for both the folder and file name portion.
+
+## Prerequisites
+
+If you have stored files on a computer and are familiar with terms such as "file," "directory," or "folder," you are adequately prepared for this lesson.
+    
+## Introduction
+
+This will only teach you enough to be able to use git from the command line.
+
+### Why using Git from the command line
+
+git is fundamentally a command line tool.
+This is why comfort with the command line is essential for learning git.
+
+#### General advantages of the command line
+
+1. **Longevity:** The command line has stood the test of time, remaining relevant and widely used even as new technologies emerge.
+1. **Power:** The command line is a robust and powerful tool, enabling users to accomplish intricate tasks efficiently.
+1. **Simplicity:** With just a few keystrokes or lines of code, the command line empowers users to execute complex tasks effortlessly.
+1. **Task Automation:** The shell allows users to automate repetitive tasks, saving time and effort in performing them manually.
+1. **Workflow Integration:** Users can seamlessly combine smaller tasks into larger, more potent workflows, enhancing productivity and efficiency.
+1. **Comprehensive Feature Set:** The command line interface provides access to the complete range of Git features, offering more extensive functionality compared to graphical user interfaces (GUIs).
+1. **Extensive Online Support:** When seeking help or troubleshooting Git-related issues online, you will often find valuable assistance in the form of command line instructions.
+Platforms like [Stack Overflow](https://stackoverflow.com/questions/tagged/git) frequently provide guidance and solutions based on command line usage.
+
+## Terminology
+
+The terms "shell", "command line", "command line interface (CLI)", and "Terminal" are used interchangeably and basically refer to the same thing: a simple window with a dark background and light text, showing a prompt and a blinking cursor.
+In movies, when people hack into computers, they often type rapidly in this window.
+
+The **"command line interface (CLI)"** is a text-based way to interact with computer programs.
+Most people primarily use a Graphical User Interface (GUI) to work with their programs, but historically, text-based interfaces were more common.
+Often, the GUI can only access a limited set of features available through the CLI and some programs don't even have a GUI and can only be used through the command line.
+
+**"Terminal"** is short for "terminal emulator", which is a program that mimics a physical device called a terminal.
+Terminals were used to connect to mainframe computers in the early days of computing.
+The terminal program creates the window with the dark background, light text, and cursor.
+
+A **"shell"** is a program that provides the command line to your operating system.
+It allows you to perform various tasks that your operating system offers, such as managing files, running and stopping programs, and changing system settings, all through text commands.
+When you "open a terminal", the program initially communicating with the terminal is a shell.
+There are multiple shell options available for different operating systems, with the most popular one being the "Bourne Again Shell" or "bash".
+
+## Find the command line
+
+::: {.panel-tabset}
+
+## {{< fa brands apple >}} MacOS
+
+On a Mac computer running macOS Mojave or earlier versions, the default Unix Shell is Bash.
+However, for a Mac computer operating on macOS Catalina or later releases, the default Unix Shell is Zsh.
+You can access your default shell through the Terminal program located within the Utilities folder.
+
+- In the Finder, go to `Applications` > `Utilities` > `Terminal.app`.
+- In the Finder, select the `Go` menu > `Utilities` > `Terminal.app`.
+- Activate the Mac `Spotlight` search function, type `Terminal` in the search bar, and press the `Return` key.
+
+To verify if your machine is configured to use a shell other than Bash, you can type "echo $SHELL" in your Terminal window.
+If your machine is configured to use a shell other than Bash, you can switch to Bash by opening a terminal and typing `bash`.
+
+## {{< fa brands microsoft >}} Windows
+
+By default, Windows operating systems do not come with a pre-installed Unix Shell program.
+In this lesson, we recommend using an emulator provided by [Git for Windows](https://gitforwindows.org/), which grants you access to both Bash shell commands and Git.
+
+Once you have installed Git for Windows, you can easily open a terminal by launching the program called Git Bash from the Windows start menu.
+
+## {{< fa brands linux >}} Linux
+
+Open a fresh Terminal.
+
+## {{< fa rocket >}} JupyterHub
+
+TBA
+
+:::
+
+## Open command line
+
+When you open the shell, you'll see a prompt that tells you the shell is ready for input.
+Your terminal interface will usually show a message similar to the following prompt:
+
+```{bash}
+$
+```
+
+In the shell, the prompt is usually represented by the symbol `$` but it can be different sometimes.
+In our lesson examples, we'll use `$` as the prompt.
+The important thing to remember is **not to type the prompt itself when entering commands**.
+Only type the command that comes after the prompt.
+For this reason, we remove the `$` prompt from all code examples.
+Also, remember to press the `Enter` key after typing a command to make it work.
+
+After the prompt, you'll see a text cursor that shows where you can type.
+The cursor can be a flashing or solid block, or it can be an underscore or a pipe symbol.
+You may have seen a similar cursor in a text editing program.
+
+Keep in mind that your prompt may look slightly different.
+Usually, in popular shell environments, your username and the host name appear before the `$` symbol.
+For example, your prompt might look like this:
+
+```{bash}
+wittkuhn@lip-osx-005509:~$
+```
+
+## Navigating the file system
+
+### Current working directory
+
+Enter the command `pwd` (short for "print working directory").
+This will display the current directory that the shell is currently focused on in your file system.
+
+```{bash}
+pwd
+```
+
+<details>
+<summary>Click here to see an example output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+pwd
+```
+</details>
+
+### Command not found
+
+If the shell cannot find the program you typed as a command, it will show an error message.
+This can happen if you made a mistake when typing the command or if the program for that command is not installed on your system.
+For example, if you made a mistake when typing the `pwd` command, and accidentally entered `pws`, the follwing error message might appear:
+
+```{bash}
+pws: command not found
+```
+
+### Moving between folders
+
+The `cd` command is used to change the current working directory (or "move" to a different directory).
+To use it, type `cd` followed by an argument, which is the path of the folder you want to navigate to. 
+The path can be either "absolute" or "relative".
+
+For example, if your current working directory is the user's home directory (`/home/wittkuhn`), you can switch to the `Downloads` folder by using either an absolute or relative path with the `cd` command:
+
+```{bash, filename="Absolute path"}
+wittkuhn@lip-osx-005509:~$ cd /home/wittkuhn/Downloads
+wittkuhn@lip-osx-005509:~/Downloads$ 
+```
+
+```{bash, filename="Relative path"}
+wittkuhn@lip-osx-005509:~$ cd Downloads
+wittkuhn@lip-osx-005509:~/Downloads$ 
+```
+
+You may notice that the prompt has been updated to show the new working directory.
+If a path starts with a forward slash (`/`), it is considered an absolute path.
+Paths that do not start with a forward slash are considered relative to the current working directory.
+
+### Taking shortcuts
+
+#### Tilde: `~`
+
+The tilde symbol (`~`) provides a convenient and abbreviated way to refer to the user's home directory, enabling us to easily construct paths relative to that directory.
+To quickly change the current working directory to our user's home directory anywhere on our file system, we can use `cd ~` which will transport us back to our user's home directory.
+
+```{bash}
+wittkuhn@lip-osx-005509:~/Downloads$ cd ~
+wittkuhn@lip-osx-005509:~$ 
+```
+
+#### Dot: `.`
+
+Another symbol with a special meaning in paths, aside from `~`, is the dot (`.`).
+It serves as a shorthand representation for the current working directory, and using it in a path means the reference remains within the same directory.
+
+```{bash}
+wittkuhn@lip-osx-005509:~$ cd .
+wittkuhn@lip-osx-005509:~$
+```
+
+In turn, the two commands are equivalent:
+
+```{bash}
+wittkuhn@lip-osx-005509:~$ cd ./Downloads
+```
+
+```{bash}
+wittkuhn@lip-osx-005509:~$ cd Downloads
+```
+
+#### Dot Dot: `..`
+
+The `..` symbol is a shorthand representation for the parent directory of the current working directory.
+It can be used repeatedly, allowing `cd ..` to move up one folder and ``cd ../..` to move up two folders.
+This is useful for creating relative paths to other branches within a directory tree.
+
+For instance, by executing the following sequence of commands, we will navigate horizontally (or sideways) to a folder located at the same hierarchical level as the current working directory:
+
+
+```{bash}
+wittkuhn@lip-osx-005509:~$ cd ~ # <1>
+wittkuhn@lip-osx-005509:~$ cd Downloads # <2>
+wittkuhn@lip-osx-005509:~/Downloads$ cd ../Documents # <3>
+wittkuhn@lip-osx-005509:~/Documents$ pwd # <4>
+/home/wittkuhn/Documents
+```
+1. Move to the user's home directory using the `~` shorthand.
+1. Move to the `Downloads` folder.
+1. Move sideways to the `Documents` folder.
+1. Display the current working directory.
+
+## List files and folders
+
+The `ls` command is used to list the files and folders in a specified directory or the current working directory.
+If you run this command, you will see the contents of your current working directory.
+
+```{bash}
+ls
+```
+
+For example, when the current working directory is the project directory of this book, `ls` will list the contents of the project directory.
+
+<details>
+<summary>Click here to view the output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls
+```
+</details>
+
+However, the `ls` command provides various options, such as flags and arguments, to enhance its functionality beyond simple file listing.
+To provide additional instructions to a command, we can pass flags and arguments by typing them after the command name.
+
+### List files in a specific directory
+
+For example, we can list the contents of the `/chapters` folder:
+
+```{bash}
+ls chapters
+```
+
+<details>
+<summary>Click here to view the output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls chapters
+```
+</details>
+
+In this case, `chapters` is an argument to the `ls` command.
+
+### List hidden files
+
+To list hidden files, we can use the `-a` (for "all") flag in the `ls` command.
+For example, we can list hidden files in the project directory:
+
+```{bash}
+ls -a
+```
+
+<details>
+<summary>Click here to view the output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls -a
+```
+</details>
+
+### Interlude: What is the difference between a flag and an argument?
+
+#### Overview
+
+The difference between a flag and an argument is that a **flag is used to modify the behavior** of a command, while an **argument provides additional input** or information to the command.
+
+#### What is a flag?
+
+A flag is typically a single character or a combination of characters preceded by a hyphen (`-`) or double hyphen (`--`).
+It is used to enable or disable specific options or features of a command.
+Flags are optional and are used to customize the behavior of the command.
+
+#### What is an argument?
+
+An argument is the actual input or information that is passed to a command to perform a specific action.
+It can be a value, a filename, a directory path, or any other data required by the command to complete its task.
+Arguments are often positioned after the command and any flags, and they can be mandatory or optional depending on the command's requirements.
+
+#### Multiple single-letter flags
+
+You can combine multiple single-letter flags by using a single dash.
+For example, to instruct the `ls` command to list *all* files (including hidden files) in a *long* format that is easy to read for *humans*, you can use the following combination of flags:
+
+```{bash}
+ls -alh
+```
+
+<details>
+<summary>Click here to view the output.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls -alh
+```
+</details>
+
+#### The `--help` flag
+
+If you want to know what flags and arguments a command supports, most commands provide usage information when you use the flag `--help`.
+In some cases, the flag `-h` can also be used to achieve the same result.
+
+## Manipulating the file system
+
+The command line offers commands for creating, moving, and deleting folders and files.
+
+### Creating a folder
+
+Let's use the command line to create a project folder as an example:
+To make a directory, we'll use the `mkdir` command.
+The path of the directory we want to create is given as an argument to the command.
+If we want to create a directory in the current folder, we just need to use its name, as the path is assumed to be relative.
+
+```{bash}
+mkdir my-project
+```
+
+Make sure the project folder is present by using the `ls` command, and then enter into it by using the `cd` command.
+
+```{bash}
+ls
+cd my-project
+```
+
+### Creating multiple folders
+
+Next, we will proceed to create multiple additional folders within the `my-project` project folder.
+The `mkdir` command allows us to create multiple directories simultaneously by providing multiple arguments, each representing a separate folder.
+For example, for a data analysis project we might create the following three folders:
+
+```{bash}
+mkdir data results scripts
+```
+
+### Creating files
+
+Let's create some files in the `my-project` project folder.
+To do this, you can use your favorite text editor or the command line.
+In the command line, you can use the `touch` command to create a new empty file.
+The file doesn't need to contain anything.
+For example, to create an empty file called `file.txt`, we can use the following command:
+
+```{bash}
+touch file.txt
+```
+
+### Moving folders and files
+
+Let's say we want to move the `file.txt` file to the `/scripts` folder.
+We can use the `mv` command to move files and folders.
+The `mv` command requires two arguments: the first is the files or folders to be moved, and the second is the path where they should be moved.
+To move the `file.txt` file, the command would look like this:
+
+```{bash}
+mv file.txt scripts
+```
+
+### Renaming files and folders
+
+Suppose we don't like the folder name `scripts` because `file.txt` is actually a documentation file, not a script.
+We can use the `mv` command to rename files and folders by moving them to a different location in the file system, for example `docs`, like this:
+
+```{bash}
+mv scripts docs
+```
+
+### Wildcards
+
+Now, let's learn how to use wildcards to perform actions on multiple files or folders at the same time.
+A wildcard is denoted by the symbol `*`, and it helps us select file system arguments that match certain patterns.
+For example, suppose we wish to display a list of all the data files in the current directory:
+
+```{bash}
+ls -alh *.yml
+```
+
+<details>
+<summary>Click here to see the output of this command executed in the project directory of this guide.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls -alh *.yml
+```
+</details>
+
+By using the wildcard `*`, we can generate a list of all files ending with `.yml`.
+
+Similarly, we can apply the wildcard at the end of a path to match items starting with a specific letter, such as folders beginning with `i`:
+
+```{bash}
+ls -alh i*
+```
+
+<details>
+<summary>Click here to see the output of this command executed in the project directory of this guide.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+ls -alh i*
+```
+</details>
+
+### Removing files and folders
+
+To delete files and folders, you can use the `rm` command.
+Provide the path of the files or folders that you want to delete as the argument.
+However, if you want to remove a folder, you need to include the `-r` (`--recursive`) flag.
+
+For example, to remove the `docs` folder, you would use the following command:
+
+```{bash}
+rm -r docs
+```
+
+## Summary
+
+In this lesson, we have achieved the following:
+
+1. Simplified and clarified some of the technical terms associated with the command line.
+1. Explored the components of command line commands: paths, arguments, and flags.
+1. Gained knowledge about relative and absolute paths, including convenient shortcuts like `~`, `.` and `..`.
+1. Witnessed the functionality of wildcards.
+1. Acquired familiarity with several essential shell commands.
+
+## Further reading
+
+It's important to note that what we covered here only scratches the surface of what can be accomplished using the shell.
+The primary aim was to provide useful concepts related to Git.
+If you're interested in delving deeper, you may find a more comprehensive introduction at the following resource: [http://swcarpentry.github.io/shell-novice/].
+=======
 -   Understand how to form file paths and navigate directories
 -   Understand how arguments and flags are used to modify command line
     commands
