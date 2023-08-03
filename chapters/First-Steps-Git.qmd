@@ -13,18 +13,23 @@ author: ""
 {{< fa clock >}} Duration: min
 :::
 
-# Learning objectives
+# {{< fa bullseye >}} Learning objectives
 
 In this Chapter your will learn basic Git operations for local version control including:
 
 -   Initializing a Git Repository
--   Staging and Commiting Changes
+-   Staging and Committing Changes
 -   Exploring the commit history
 -   Comparing Versions
 
-# Initializing a Folder as a Git Repository {{< fa folder-closed >}}
+# {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
 
-To create your first Git repository, you need to initialize a folder. You can create an empty folder using the command line as explained in the chapter [Command Line Basics](command-line.qmd). Alternatively, you can create a folder in the usual way. Navigate, using the Terminal, to the folder which you want to initialze as a Git repository. You can use the `cd` command to change directories. Once you are in the desired directory, run the `git init` command to initialize the folder as a Git repository.
+To create your first Git repository, you need to initialize a folder.
+You can create an empty folder using the command line as explained in the chapter [Command Line Basics](command-line.qmd).
+Alternatively, you can create a folder in the usual way.
+Navigate, using the Terminal, to the folder which you want to initialze as a Git repository.
+You can use the `cd` command to change directories.
+Once you are in the desired directory, run the `git init` command to initialize the folder as a Git repository.
 
 ```{bash}
 git init
@@ -86,7 +91,7 @@ As you see Git is not yet tracking your file.
 
 -uno: Suppresses the display of untracked files.
 
--v Provides more detailed information, including additional status information about ignored files.
+-v: Provides more detailed information, including additional status information about ignored files.
 
 You can use these flags in combination.
 For example, git status -s -b will display a short and concise output along with the branch information.
@@ -113,7 +118,7 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 	new file:   example.txt
 ```
-
+q
 This means your change in this folder, in this case adding a file, is now **staged**.
 
 ::: {.callout-tip collapse="true"}
@@ -134,7 +139,7 @@ This means your change in this folder, in this case adding a file, is now **stag
 Now that your changes are staged, you are ready to create a commit. 
 To create a commit, use the `git commit` command followed by the flag `-m` and a commit message **in qoutes** that describes the changes you made.
 The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
-If you just use `git commit` without adding a commit massage, the editor of [your choosing](Setting%20up%20Git.qmd), opens up and lets you type in a commit message.
+If you just use `git commit` without adding a commit massage, the editor of [your choosing](installation-setup.qmd), opens up and lets you type in a commit message.
 
 ```{bash}
 git commit -m "Add example.txt file"
