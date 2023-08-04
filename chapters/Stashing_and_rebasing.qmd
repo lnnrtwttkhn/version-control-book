@@ -22,13 +22,13 @@ author: ""
 
 - Introduction to rebasing
 
-# What is stashing?
+# Stashing things for later use
 `Git stash` is a valuable command in Git that allows you to save your current changes temporarily without committing them.
 This is useful when you need to switch branches or work on something else without creating a commit for unfinished work.
 When you run git stash, Git stores the changes in your working directory and staged changes in a special stash commit.
 The working directory is then reverted to the last committed state, providing a clean slate for your next task
 
-## Git stash workflow
+# Git stash workflow
 
 ## Stashing changes
 To demonstrate the usefulness of `git stash`, you can edit two files in your repo, stage one file and dont stage the other.
@@ -104,7 +104,28 @@ For this you can use the`--index` flag.
 
 ::: {.callout-tip collapse="true"}
 ### Common git stash flags
-TBA
+
+`git stash save "message"` or `git stash "message"`: 
+Save your changes in a stash with an  message.
+
+`git stash apply stash@{n}`: 
+Apply the changes from the specified stash (identified by its index n) to your working directory.
+
+`git stash pop stash@{n}`:
+Apply the changes from the specified stash (identified by its index n) to your working directory and remove the stash from the stash list.
+
+`git stash list`: 
+List all the stashes you have created, showing their reference numbers and stash messages.
+
+`git stash drop stash@{n}`: 
+Remove the specified stash (identified by its index n) from the stash list. 
+
+`git stash branch <branchname>`: 
+Create a new branch named <branchname> from the commit where you originally stashed your changes and apply the stash to the new branch.
+
+`git stash show stash@{n}`: 
+Show the diff of the changes stored in the specified stash (identified by its index n).
+
 :::
 
 # Removing changes
