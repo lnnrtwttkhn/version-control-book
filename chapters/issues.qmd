@@ -1,0 +1,217 @@
+---
+title: "Issues"
+image: ../static/version-control-turing-way.svg
+engine: knitr
+execute:
+  eval: false  
+title-block-style: none
+author: ""
+affiliations: ""
+categories: [project management, basics]
+description: "Learn how to discuss your ideas and plan your work next to issues."
+---
+
+## Introduction
+
+This guide shows you how to use GitHub Issues for organizing and following a task.
+It helps you make a task list, add extra info like labels and due dates, and involve others to work together.
+
+::: {.callout-tip title="Try it!"}
+Open a new Issue in the [repository]({{< var links.issues >}}) of this book (requires a GitHub account)
+:::
+
+## Benefits
+
+### Organized Research Tasks
+
+Issues help scientists keep track of their research tasks, experiments, and observations in an organized and structured manner.
+
+### Easier collaboration
+
+Issues facilitate seamless collaboration among scientists, allowing them to work together on experiments, data analysis, and research projects regardless of geographical locations.
+
+### Clear Communication
+
+Scientists can use issue descriptions and comments to communicate their findings, hypotheses, and insights, fostering a transparent and clear dialogue within their research teams.
+
+### Structured Problem Solving
+
+Issues enable scientists to break down complex research problems into smaller, manageable tasks, making it easier to solve challenges step by step.
+
+### Documentation and Records
+
+By creating issues, scientists create a comprehensive record of their research progress, methodologies, and results, providing valuable documentation for future reference and publication.
+
+### Task Prioritization
+
+Researchers can assign labels and milestones to issues, helping them prioritize tasks, experiments, and analyses based on urgency and importance.
+
+### Traceable Changes
+
+Scientists can track changes made to issues, allowing them to see the evolution of ideas, experiments, and conclusions over time.
+
+### Error Tracking and Resolution
+
+Issues are ideal for identifying, documenting, and resolving errors, ensuring accuracy and reliability in scientific experiments and data analysis.
+
+## Functions
+
+- You can [organize issues by labels](#adding-labels), for example `bug`.
+- You can [assign responsibility](#assigning-the-issue) for an issue to a team member.
+- You can [add the issue to a project milestone](#adding-milestones).
+
+### More functions of Issues (details [here](https://docs.gitlab.com/ee/user/project/issues/))
+
+- Issues can be combined in [Issue boards](https://docs.gitlab.com/ee/user/project/issue_board.html)
+- Issues can be [sorted](https://docs.gitlab.com/ee/user/project/issues/sorting_issue_lists.html) (by due date, label priority, etc.)
+- Issues can be [transferred between repositories](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#moving-issues)
+- Issues can be [crosslinked](https://docs.gitlab.com/ee/user/project/issues/crosslinking_issues.htm) e.g., in commit messages: `git commit -m "add missing data, close #37"`
+- Issues can send [automated email notifications](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#new-issue-via-email)
+- Issues can be [exported](https://docs.gitlab.com/ee/user/project/issues/csv_export.html) and archived
+{{content}}
+
+
+### Prerequisites
+
+To make an issue, you require a repository.
+You have the option to use a repository you already have permission to write in, or you can make a fresh repository.
+The repository must have issues enabled.
+If you want more guidance on making a repository, refer to the chapter called [First Stepss](first-steps-git.qmd)
+If you need help with turning on issues in case they're currently turned off in your repository, take a look at the section titled ["Disabling issues"](#disabling-issues).
+
+### Opening a blank issue
+
+First, create an issue.
+There are multiple ways to create an issue; you can choose the most convenient method for your workflow.
+This example will use the GitHub UI.
+For more information about other ways to create an issue, see "Creating an issue."
+
+1. On [GitHub](https://github.com/), navigate to the main page of the repository.
+For example, the main page of the GitHub repository of this guide can be found [here]({{< var links.github >}}).
+1. Under your repository name, click {{< fa circle-dot >}} **Issues** (see @fig-github-repo-tab-issues).
+1. Click **New issue**.
+1. Here, we'll begin with an empty issue.
+Your repository might have special forms and templates for issues, making it easier for people to share specific details.
+If your repository has these templates, just click on "Open a blank issue."
+
+!["Repo Tabs Issues" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-52119/mw-1440/images/help/repository/repo-tabs-issues.webp)).](../static/repo-tabs-issues.png){#fig-github-repo-tab-issues}
+
+### Filling in information
+
+1. Choose a descriptive **title** for your issue.
+The title should easily convey what the issue is about.
+1. Include a **description** that tells why you're creating this issue and any information that might help to solve it.
+For instance, if it's about a bug, explain how to reproduce the bug, what you expected to happen, and what actually happened.
+You have the option to use Markdown to add special formatting, links, emojis, and other things.
+
+!["Issue Title Body" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-66899/mw-1440/images/help/issues/issue-title-body.webp)).](../static/issue-title-body.png){#fig-github-issue-title-body}
+
+https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue
+https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart
+
+### Adding a task list
+
+https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists
+
+It can be helpful to break large issues into smaller tasks, or to track multiple related issues in a single larger issue.
+Add a task list to your issue by prefacing list items with `[ ]`.
+Reference existing issues by issue number or URL.
+You can use plain text to track tasks that don't have a corresponding issue and convert them to issues later.
+
+!["Issue Task List Raw" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-66899/mw-1440/images/help/issues/issue-task-list-raw.webp)).](../static/issue-task-list-raw.png){#fig-github-issue-task-list-raw}
+
+### Adding labels
+
+https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels
+
+Add a label to categorize your issue.
+For example, you might use a `bug` label and a `good first issue` label to indicate that an issue is a bug that a first-time contributor could pick up.
+Users can filter issues by label to find all issues that have a specific label.
+
+!["Issue With Label" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-120199/mw-1440/images/help/issues/issue-with-label.webp)).](../static/issue-with-label.png){#fig-github-issue-with-label}
+
+### Adding milestones
+
+You can add a milestone to track the issue as part of a higher-order project target.
+A milestone willshow the progress of the issues as the target date approaches. For more information, see "About milestones."
+
+https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones
+
+### Assigning the issue
+
+To communicate responsibility, you can assign the issue to a member of your organization.
+
+!["Issue Assignees" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-119863/mw-1440/images/help/issues/issue-assignees.webp).](../static/issue-assignees.png){#fig-github-issue-assignees}
+
+### Adding the issue to a project
+
+You can add the issue to an existing project and populate metadata for the project.
+
+!["Issue Project" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-120014/mw-1440/images/help/issues/issue-project.webp).](../static/issue-project.png){#fig-github-issue-project}
+
+https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
+
+### Confidential issues in GitLab
+
+- **Confidentiality**: Issue visible only for team members
+
+### Due dates in Gitlab
+
+- **Due date**: Set due dates for Issues
+
+### Submitting your issue
+
+Click **Submit new issue** to create your issue.
+You can edit any of the above fields after creating the issue.
+Your issue has a unique URL that you can share with team members, or reference in other issues or pull requests.
+
+### Communicating
+
+After your issue is created, continue the conversation by adding comments to the issue.
+You can @mention collaborators or teams to draw their attention to a comment.
+To link related issues in the same repository, you can type `#` followed by part of the issue title and then clicking the issue that you want to link.
+
+!["Issue Comment" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-24024/mw-1440/images/help/issues/issue-comment.webp).](../static/issue-comment.png){#fig-github-issue-comment}
+
+https://docs.github.com/en/get-started/writing-on-github
+
+### Linking to to an issue
+
+You can link a pull request, branch or commit to an issue to show that a fix is in progress and to automatically close the issue when the pull request, branch or commit is merged.
+
+The striking advantage is that this link provides 
+
+```{bash}
+git commit -m "Add a new file. close #7" # <1>
+```
+1. close issue number 7 (if committed to the default branch)
+
+#### Linking to an issue using a keyword
+
+You can link to an issue by using a supported keyword in the pull request's description or in a commit message.
+The pull request or commit must be on the [default](branches.qmd) branch.
+Possible keywords are:
+
+- `close`
+- `closes`
+- `closed`
+- `fix`
+- `fixes`
+- `fixed`
+- `resolve`
+- `resolves`
+- `resolved`
+
+For further information, see [this chapter](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) of the GitHub docs.
+
+### Issue templates
+
+TBA
+
+### Disabling issues
+
+TBA
+
+## Further Reading
+
+- [GitHub Docs: Tracking your work with issues](https://docs.github.com/en/issues/tracking-your-work-with-issues)
