@@ -235,18 +235,6 @@ Instead, the squashed commit represents the collective changes made in the branc
 git merge --squash
 ```
 
-### Rebasing
-
-`git rebase` is a different way than a merge to integrate changes from one branch into another
-. When you rebase the `feature` branch onto the `main` branch you "rearrange" the commits.
-It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line.
-The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the `main` branch.
-It's like picking up your changes and placing them on the latest code, resulting in a linear history. However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
-
-```{bash}
-git rebase
-```
-
 ::: {.callout-tip title="Common git rebase flags" collapse="true"}
 `--interactive` or `-i`: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
 
