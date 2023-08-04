@@ -8,7 +8,7 @@
 
 <meta name="author" content="">
 
-<title>Version Control of Code and Data for Scientists - 7&nbsp; First Steps with Git</title>
+<title>Version Control of Code and Data for Scientists - 5&nbsp; First Steps with Git</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/Github-intro.html" rel="next">
-<link href="../chapters/Setting Up Git.html" rel="prev">
+<link href="../chapters/branches.html" rel="next">
+<link href="../chapters/installation-setup.html" rel="prev">
 <link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/First-Steps-Git.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">First Steps with Git</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/first-steps-git.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -188,74 +188,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/intro-version-control.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intro-version-control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Version Control</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/command-line.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Command Line</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Command Line</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
+  <a href="../chapters/installation-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation and setup</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/Setting Up Git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Setting up Git</span></span></a>
+  <a href="../chapters/first-steps-git.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/First-Steps-Git.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span></a>
+  <a href="../chapters/branches.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/Github-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
+  <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/datalad-nextcloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Contributing to this book</span></a>
+ <span class="menu-text">Appendix</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -264,13 +258,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/style-guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
   </div>
 </li>
       </ul>
@@ -285,29 +279,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">8</span> Learning objectives</a></li>
-  <li><a href="#initializing-a-folder-as-a-git-repository-fa-folder-closed" id="toc-initializing-a-folder-as-a-git-repository-fa-folder-closed" class="nav-link" data-scroll-target="#initializing-a-folder-as-a-git-repository-fa-folder-closed"><span class="header-section-number">9</span> Initializing a Folder as a Git Repository <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i></a></li>
-  <li><a href="#status-staging-and-committing-fa-file-export" id="toc-status-staging-and-committing-fa-file-export" class="nav-link" data-scroll-target="#status-staging-and-committing-fa-file-export"><span class="header-section-number">10</span> Status, Staging and committing <i class="fa-solid fa-file-export" aria-label="file-export"></i></a>
+  <li><a href="#fa-bullseye-learning-objectives" id="toc-fa-bullseye-learning-objectives" class="nav-link active" data-scroll-target="#fa-bullseye-learning-objectives"><span class="header-section-number">6</span> <i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Learning objectives</a></li>
+  <li><a href="#fa-folder-closed-initializing-a-folder-as-a-git-repository" id="toc-fa-folder-closed-initializing-a-folder-as-a-git-repository" class="nav-link" data-scroll-target="#fa-folder-closed-initializing-a-folder-as-a-git-repository"><span class="header-section-number">7</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Initializing a Folder as a Git Repository</a></li>
+  <li><a href="#status-staging-and-committing-fa-file-export" id="toc-status-staging-and-committing-fa-file-export" class="nav-link" data-scroll-target="#status-staging-and-committing-fa-file-export"><span class="header-section-number">8</span> Status, Staging and committing <i class="fa-solid fa-file-export" aria-label="file-export"></i></a>
   <ul class="collapse">
-  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status"><span class="header-section-number">10.1</span> Status</a></li>
-  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging"><span class="header-section-number">10.2</span> Staging</a></li>
-  <li><a href="#committing" id="toc-committing" class="nav-link" data-scroll-target="#committing"><span class="header-section-number">10.3</span> Committing</a>
+  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status"><span class="header-section-number">8.1</span> Status</a></li>
+  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging"><span class="header-section-number">8.2</span> Staging</a></li>
+  <li><a href="#committing" id="toc-committing" class="nav-link" data-scroll-target="#committing"><span class="header-section-number">8.3</span> Committing</a>
   <ul class="collapse">
-  <li><a href="#logging-commits" id="toc-logging-commits" class="nav-link" data-scroll-target="#logging-commits"><span class="header-section-number">10.3.1</span> Logging Commits</a></li>
-  <li><a href="#comparing-versions" id="toc-comparing-versions" class="nav-link" data-scroll-target="#comparing-versions"><span class="header-section-number">10.3.2</span> Comparing Versions</a></li>
+  <li><a href="#logging-commits" id="toc-logging-commits" class="nav-link" data-scroll-target="#logging-commits"><span class="header-section-number">8.3.1</span> Logging Commits</a></li>
+  <li><a href="#comparing-versions" id="toc-comparing-versions" class="nav-link" data-scroll-target="#comparing-versions"><span class="header-section-number">8.3.2</span> Comparing Versions</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#exercise-fa-dumbbell" id="toc-exercise-fa-dumbbell" class="nav-link" data-scroll-target="#exercise-fa-dumbbell"><span class="header-section-number">11</span> Exercise <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></a></li>
-  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">12</span> Sources</a></li>
+  <li><a href="#exercise-fa-dumbbell" id="toc-exercise-fa-dumbbell" class="nav-link" data-scroll-target="#exercise-fa-dumbbell"><span class="header-section-number">9</span> Exercise <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">10</span> Sources</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/First-Steps-Git.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/first-steps-git.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">First Steps with Git</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></h1>
 </div>
 
 
@@ -340,18 +334,18 @@ Overview
 <p><i class="fa-solid fa-clock" aria-label="clock"></i> Duration: min</p>
 </div>
 </div>
-<section id="learning-objectives" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Learning objectives</h1>
+<section id="fa-bullseye-learning-objectives" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> <i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Learning objectives</h1>
 <p>In this Chapter your will learn basic Git operations for local version control including:</p>
 <ul>
 <li>Initializing a Git Repository</li>
-<li>Staging and Commiting Changes</li>
+<li>Staging and Committing Changes</li>
 <li>Exploring the commit history</li>
 <li>Comparing Versions</li>
 </ul>
 </section>
-<section id="initializing-a-folder-as-a-git-repository-fa-folder-closed" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Initializing a Folder as a Git Repository <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i></h1>
+<section id="fa-folder-closed-initializing-a-folder-as-a-git-repository" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Initializing a Folder as a Git Repository</h1>
 <p>To create your first Git repository, you need to initialize a folder. You can create an empty folder using the command line as explained in the chapter <a href="../chapters/command-line.html">Command Line Basics</a>. Alternatively, you can create a folder in the usual way. Navigate, using the Terminal, to the folder which you want to initialze as a Git repository. You can use the <code>cd</code> command to change directories. Once you are in the desired directory, run the <code>git init</code> command to initialize the folder as a Git repository.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -363,11 +357,11 @@ Overview
 <p>Congratulations on successfully initializing your first Git repository! <i class="fa-solid fa-champagne-glasses" aria-label="champagne-glasses"></i></p>
 <p>Git is now able to track your changes in this Folder. You only need to use <code>git init</code> once per folder.</p>
 </section>
-<section id="status-staging-and-committing-fa-file-export" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Status, Staging and committing <i class="fa-solid fa-file-export" aria-label="file-export"></i></h1>
+<section id="status-staging-and-committing-fa-file-export" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Status, Staging and committing <i class="fa-solid fa-file-export" aria-label="file-export"></i></h1>
 <p>In Git, there are two important components: the staging area and commits. The staging area is like a waiting area where you gather and prepare your changes before saving them. You can choose which changes to include in the snapshot by adding them to the staging area using git <code>git add</code>. Once you’re satisfied with the changes in the staging area, you make a <strong>commit</strong>. A commit is like taking a snapshot of your project at a specific moment. It captures all the changes in the staging area and saves them as a new version. Commits are like milestones that help you track the progress of your project and easily go back to a previous version if needed.</p>
-<section id="status" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="status"><span class="header-section-number">10.1</span> Status</h2>
+<section id="status" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="status"><span class="header-section-number">8.1</span> Status</h2>
 <p>After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically.</p>
 <p>You can use <code>git status</code> to visualize the current status.</p>
 <div class="cell">
@@ -401,14 +395,14 @@ Common git status flags
 <p>-b: Includes information about the branch you are currently on along with the status.</p>
 <p>-u: Shows untracked files in the output.</p>
 <p>-uno: Suppresses the display of untracked files.</p>
-<p>-v Provides more detailed information, including additional status information about ignored files.</p>
+<p>-v: Provides more detailed information, including additional status information about ignored files.</p>
 <p>You can use these flags in combination. For example, git status -s -b will display a short and concise output along with the branch information.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="staging" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="staging"><span class="header-section-number">10.2</span> Staging</h2>
+<section id="staging" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="staging"><span class="header-section-number">8.2</span> Staging</h2>
 <p>You can use <code>git add</code> to put new/changed files in the “staging area”. The staging area serves as a space where you can gather changes that you intend to commit soon. To organize and group these changes into meaningful commits, you can place the relevant files in the staging area. The staging area acts as a bridge between your modified files and the next commit.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -423,7 +417,7 @@ Common git status flags
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git rm --cached &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">new</span> file:   example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This means your change in this folder, in this case adding a file, is now <strong>staged</strong>.</p>
+<p>q This means your change in this folder, in this case adding a file, is now <strong>staged</strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -444,9 +438,9 @@ Common git add flags
 </div>
 </div>
 </section>
-<section id="committing" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="committing"><span class="header-section-number">10.3</span> Committing</h2>
-<p>Now that your changes are staged, you are ready to create a commit. To create a commit, use the <code>git commit</code> command followed by the flag <code>-m</code> and a commit message <strong>in qoutes</strong> that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. If you just use <code>git commit</code> without adding a commit massage, the editor of <a href="Setting up Git.qmd">your choosing</a>, opens up and lets you type in a commit message.</p>
+<section id="committing" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="committing"><span class="header-section-number">8.3</span> Committing</h2>
+<p>Now that your changes are staged, you are ready to create a commit. To create a commit, use the <code>git commit</code> command followed by the flag <code>-m</code> and a commit message <strong>in qoutes</strong> that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. If you just use <code>git commit</code> without adding a commit massage, the editor of <a href="../chapters/installation-setup.html">your choosing</a>, opens up and lets you type in a commit message.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add example.txt file"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -478,8 +472,8 @@ Common git commit flags
 </div>
 </div>
 </div>
-<section id="logging-commits" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="logging-commits"><span class="header-section-number">10.3.1</span> Logging Commits</h3>
+<section id="logging-commits" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="logging-commits"><span class="header-section-number">8.3.1</span> Logging Commits</h3>
 <p>To look at your past commits you can use the <code>git log</code> command.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -514,8 +508,8 @@ Common git log flags
 </div>
 </div>
 </section>
-<section id="comparing-versions" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="comparing-versions"><span class="header-section-number">10.3.2</span> Comparing Versions</h3>
+<section id="comparing-versions" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="comparing-versions"><span class="header-section-number">8.3.2</span> Comparing Versions</h3>
 <p>Another very handy feature is the <strong>git diff</strong> command. It allows you to compare two different versions of your file. By default it shows you any uncommited changes since the last commit. You can explore this by pasting this text in your .txt file</p>
 <pre><code>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
@@ -556,16 +550,16 @@ Common git diff flags
 </section>
 </section>
 </section>
-<section id="exercise-fa-dumbbell" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Exercise <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></h1>
+<section id="exercise-fa-dumbbell" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Exercise <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></h1>
 <ul>
 <li>Create a folder called “recipes” and initialize it as a git repository.</li>
 <li>Add a favourite (or a crazy AI generated one) recipe of yours in a text file.</li>
 <li>Stage and commit your file, write a commit message</li>
 </ul>
 </section>
-<section id="sources" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Sources</h1>
+<section id="sources" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Sources</h1>
 <p>https://happygitwithr.com/</p>
 <p>https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git.html https://milesmcbain.github.io/git_4_sci/using-a-git-repository.html</p>
 
@@ -888,13 +882,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/Setting Up Git.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Setting up Git</span></span>
+      <a href="../chapters/installation-setup.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation and setup</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/Github-intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Github Intro</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/branches.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

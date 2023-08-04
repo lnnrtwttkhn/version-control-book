@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
+<meta name="description" content="Introduction to fundamental concepts of version control.">
 
-<title>Version Control of Code and Data for Scientists - 3&nbsp; Introduction to Version Control</title>
+<title>Version Control of Code and Data for Scientists - 2&nbsp; Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,7 +52,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/command-line.html" rel="next">
-<link href="../chapters/intro.html" rel="prev">
+<link href="../contents.html" rel="prev">
 <link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -43,6 +63,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -67,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -76,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro-version-control.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Version Control</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro-version-control.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -152,74 +174,68 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/intro-version-control.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intro-version-control.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Version Control</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/command-line.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Command Line</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Command Line</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
+  <a href="../chapters/installation-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation and setup</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/Setting Up Git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Setting up Git</span></span></a>
+  <a href="../chapters/first-steps-git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/First-Steps-Git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span></a>
+  <a href="../chapters/branches.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/Github-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
+  <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/datalad-nextcloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Contributing to this book</span></a>
+ <span class="menu-text">Appendix</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -228,13 +244,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/style-guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
   </div>
 </li>
       </ul>
@@ -249,37 +265,383 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objetives" id="toc-learning-objetives" class="nav-link active" data-scroll-target="#learning-objetives"><span class="header-section-number">3.1</span> Learning Objetives</a></li>
-  <li><a href="#benefits-of-version-control" id="toc-benefits-of-version-control" class="nav-link" data-scroll-target="#benefits-of-version-control"><span class="header-section-number">3.2</span> Benefits of version control</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements"><span class="header-section-number">2.1</span> Acknowledgements</a></li>
+  <li><a href="#learning-objetives" id="toc-learning-objetives" class="nav-link" data-scroll-target="#learning-objetives"><span class="header-section-number">2.2</span> Learning Objetives</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.3</span> Exercises</a></li>
+  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control"><span class="header-section-number">2.4</span> What is version control?</a></li>
+  <li><a href="#benefits-of-version-control" id="toc-benefits-of-version-control" class="nav-link" data-scroll-target="#benefits-of-version-control"><span class="header-section-number">2.5</span> Benefits of version control</a></li>
+  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges"><span class="header-section-number">2.6</span> Challenges</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">2.6.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#versions-in-mulitple-files" id="toc-versions-in-mulitple-files" class="nav-link" data-scroll-target="#versions-in-mulitple-files"><span class="header-section-number">2.7</span> Versions in mulitple files</a>
+  <ul class="collapse">
+  <li><a href="#versions-in-a-single-file" id="toc-versions-in-a-single-file" class="nav-link" data-scroll-target="#versions-in-a-single-file"><span class="header-section-number">2.7.1</span> Versions in a single file</a></li>
+  <li><a href="#features-of-a-version-control-system" id="toc-features-of-a-version-control-system" class="nav-link" data-scroll-target="#features-of-a-version-control-system"><span class="header-section-number">2.7.2</span> Features of a version control system</a></li>
+  </ul></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git"><span class="header-section-number">2.8</span> Git</a>
+  <ul class="collapse">
+  <li><a href="#key-features-of-git" id="toc-key-features-of-git" class="nav-link" data-scroll-target="#key-features-of-git"><span class="header-section-number">2.8.1</span> Key features of Git</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.9</span> Summary</a></li>
+  <li><a href="#how-do-i-interact-with-git-on-my-computer" id="toc-how-do-i-interact-with-git-on-my-computer" class="nav-link" data-scroll-target="#how-do-i-interact-with-git-on-my-computer"><span class="header-section-number">2.10</span> How do I interact with git on my computer?</a>
+  <ul class="collapse">
+  <li><a href="#command-line-terminal" id="toc-command-line-terminal" class="nav-link" data-scroll-target="#command-line-terminal"><span class="header-section-number">2.10.1</span> Command line / terminal</a></li>
+  <li><a href="#extensions-to-existing-software" id="toc-extensions-to-existing-software" class="nav-link" data-scroll-target="#extensions-to-existing-software"><span class="header-section-number">2.10.2</span> Extensions to existing software</a></li>
+  <li><a href="#git-clients-applications-with-a-gui" id="toc-git-clients-applications-with-a-gui" class="nav-link" data-scroll-target="#git-clients-applications-with-a-gui"><span class="header-section-number">2.10.3</span> Git Clients (applications with a GUI)</a></li>
+  </ul></li>
+  <li><a href="#common-misconceptions" id="toc-common-misconceptions" class="nav-link" data-scroll-target="#common-misconceptions"><span class="header-section-number">2.11</span> Common misconceptions</a>
+  <ul class="collapse">
+  <li><a href="#misconception-git-is-the-same-as-github" id="toc-misconception-git-is-the-same-as-github" class="nav-link" data-scroll-target="#misconception-git-is-the-same-as-github"><span class="header-section-number">2.11.1</span> Misconception: Git is the same as GitHub</a></li>
+  <li><a href="#misconception-git-is-only-for-code-and-programmers" id="toc-misconception-git-is-only-for-code-and-programmers" class="nav-link" data-scroll-target="#misconception-git-is-only-for-code-and-programmers"><span class="header-section-number">2.11.2</span> Misconception: Git is only for code and programmers</a></li>
+  <li><a href="#misconception-git-is-only-for-collaboration" id="toc-misconception-git-is-only-for-collaboration" class="nav-link" data-scroll-target="#misconception-git-is-only-for-collaboration"><span class="header-section-number">2.11.3</span> Misconception: Git is only for collaboration</a></li>
+  <li><a href="#misconception-git-auto-saves-your-changes" id="toc-misconception-git-auto-saves-your-changes" class="nav-link" data-scroll-target="#misconception-git-auto-saves-your-changes"><span class="header-section-number">2.11.4</span> Misconception: Git auto-saves your changes</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/intro-version-control.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Version Control</span></h1>
+<h1 class="title display-7"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
 <p class="author"></p>
 
 </header>
 
-<section id="learning-objetives" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="learning-objetives"><span class="header-section-number">3.1</span> Learning Objetives</h2>
+<section id="acknowledgements" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">2.1</span> Acknowledgements</h2>
+<div class="cell-output-display">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="koziar2023">Koziar et al. (<a href="../references.html#ref-koziar2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">swcarpentry/git-novice: Software Carpentry: Version Control with Git 2023-05</td>
+<td style="text-align: left;"><a href="https://swcarpentry.github.io/git-novice/"><i class="fa-brands fa-internet-explorer" aria-label="internet-explorer"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/swcarpentry/git-novice"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="bryan2018">Bryan (<a href="../references.html#ref-bryan2018" role="doc-biblioref">2018</a>)</span></td>
+<td style="text-align: left;">Excuse Me, Do You Have a Moment to Talk About Version Control?</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1080/00031305.2017.1399928"><i class="fa-brands fa-internet-explorer" aria-label="internet-explorer"></i></a></td>
+<td style="text-align: left;">Website: .</td>
+<td style="text-align: left;"><a href="Website:%20\url%7Bhttps://doi.org/10.1080/00031305.2017.1399928%7D."><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="ram2013">Ram (<a href="../references.html#ref-ram2013" role="doc-biblioref">2013</a>)</span></td>
+<td style="text-align: left;">Git can facilitate greater reproducibility and increased transparency in science</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1186/1751-0473-8-7"><i class="fa-brands fa-internet-explorer" aria-label="internet-explorer"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/karthik/smb_git"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="perez-riverol2016">Perez-Riverol et al. (<a href="../references.html#ref-perez-riverol2016" role="doc-biblioref">2016</a>)</span></td>
+<td style="text-align: left;">Ten Simple Rules for Taking Advantage of Git and GitHub</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1371/journal.pcbi.1004947"><i class="fa-brands fa-internet-explorer" aria-label="internet-explorer"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/ypriverol/github-paper"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>https://github.com/aim-rsf/training/tree/main/version-control</li>
+<li>https://www.youtube.com/watch?v=z9-qAGq78qE</li>
+</ul>
+</section>
+<section id="learning-objetives" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="learning-objetives"><span class="header-section-number">2.2</span> Learning Objetives</h2>
 <ul class="task-list">
 <li><input type="checkbox" checked="">What is version control?</li>
-<li><input type="checkbox" checked="">Why is version control important for research?</li>
+<li><input type="checkbox" checked="">Why is version control useful (for research)?</li>
+<li><input type="checkbox" checked="">What are git and GitHub?</li>
 <li><input type="checkbox" checked="">What is the difference between git and GitHub?</li>
 </ul>
 </section>
-<section id="benefits-of-version-control" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="benefits-of-version-control"><span class="header-section-number">3.2</span> Benefits of version control</h2>
+<section id="exercises" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.3</span> Exercises</h2>
+<p>Ask these questions before students learn about version control:</p>
+<p>Imagine a scenario where you crafted a brilliant paragraph for your paper, but then accidentally ruined it. How would you retrieve the earlier brilliant version? Is it even possible?</p>
+<p>Solution:</p>
+<p>The possibility of retrieving the brilliant version exists only when you have made a copy of the previous paper version. The risk of losing valuable versions frequently results in “implicit” version control, where multiple versions of the same file are saved. This approach, however, is error-prone and can lead to additional confusion and frustration.</p>
+<p>Consider a situation where you are working with five co-authors on a paper. How do you handle the changes and comments they make to the document? If you’re using LibreOffice Writer or Microsoft Word and you accept changes made using the “Track Changes” option, what happens to the history of those modifications?</p>
+<p>Solution:</p>
+<p>Collaborative writing using traditional word processors presents challenges. Collaborators either need to work on the document sequentially, which slows down the writing process, or you have to send versions to each collaborator and manually merge their comments into the document. While the “track changes” option can highlight modifications and simplify merging, accepting changes erases their history, making it impossible to identify who suggested the change, the reason behind it, or when it was incorporated into the document. Even online word processors like Google Docs or Microsoft Office Online do not entirely resolve these issues.</p>
+</section>
+<section id="what-is-version-control" class="level2 page-columns page-full" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="what-is-version-control"><span class="header-section-number">2.4</span> What is version control?</h2>
+<blockquote class="blockquote">
+<p>“Version control is an approach to <strong>record changes</strong> made in a file or set of files <strong>over time</strong> so that you and your collaborators can track their history, review any changes, and revert or go back to earlier versions.” – <span class="citation" data-cites="community2022">The Turing Way Community (<a href="../references.html#ref-community2022" role="doc-biblioref">2022</a>)</span>, chapter on <a href="https://the-turing-way.netlify.app/reproducible-research/vcs.html">Version Control</a>.</p>
+</blockquote>
+<div id="fig-turing-way-version-control" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/version-control-turing-way.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;2.1: This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/">The Turing Way</a> community. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 licence</a>. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3695300</a> (Version 3, <a href="https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1">direct download link</a>).</figcaption>
+</figure>
+</div>
+</section>
+<section id="benefits-of-version-control" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="benefits-of-version-control"><span class="header-section-number">2.5</span> Benefits of version control</h2>
+<p>Version control offers numerous benefits. It allows to …</p>
 <ul>
-<li>Go back to previous versions</li>
-<li>Store history of changes</li>
-<li>Collaborate with others</li>
+<li>Track the history of changes in your files (it’s clear what you did &amp; you have the option to revert back)</li>
+<li>Work with the latest version of a file</li>
+<li>Backup previous versions of files</li>
+<li>Go back to previous versions of your files</li>
+<li>Test out new features without messing up your previous version</li>
+<li>Collaborate with others on the same files at the same time</li>
 </ul>
+<p>This makes version control a great data management and documentation tool.</p>
+</section>
+<section id="challenges" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="challenges"><span class="header-section-number">2.6</span> Challenges</h2>
+<section id="example" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">2.6.1</span> Example</h3>
+<p>You have a person 1 who is developing a script to analyze their data. You go through different versions, script-v1, script-v2, script-v3. Now you want to test out a new feature. It takes you a while to test this feature. It becomes unclear what you should call all these files. Then you realize that you need help with this. So then researcher 2 comes in and they help ypu implementing this feature. More files are created, but no ideas how to name them. Person 3 has a lot of ideas but is not editing the files directly. So script v-3 is created. One you realize that this is becoming complicated, you create a meta document that you want to use to keep track of the project progress. Then you realize that you software has bugs and you can’t figure out when this bug has occurred for the first time. Time has passed and you ask yourself: what is the latest version of my script and where is it? when did I incorporate that new featrure. who made that change and why? collaborator asks you to run version 2 of the script but you dont have it anymore. actually there are many more people involved and many more documents.</p>
+</section>
+</section>
+<section id="versions-in-mulitple-files" class="level2 page-columns page-full" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="versions-in-mulitple-files"><span class="header-section-number">2.7</span> Versions in mulitple files</h2>
+<p>It is quite likely that you are already engaged in some form of version control.</p>
+<p>One way to implement file versioning of files is by <strong>appending versions or descriptive labels to the filenames</strong>, or by <strong>adding initials</strong> at the end of the filename:</p>
+<ul>
+<li><code>file_v1.docx</code>, <code>file_v2.docx</code>, <code>file_v3.docx</code>, etc.</li>
+<li><code>draft.docx</code> to <code>draft_comments_LW_final_edited.docx</code>, etc.</li>
+</ul>
+<p>Every time you make a critical change to a file, you duplicate it, rename it according to your versioning scheme and continue working in the duplicated file. While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated in <a href="#fig-phd-comic-final-doc">Figure&nbsp;<span>2.2</span></a> and <a href="#fig-xkcd-documents">Figure&nbsp;<span>2.3</span></a>. In such cases, more advanced version control systems may be necessary.</p>
+<div id="fig-phd-comic-final-doc" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/phd-comic-final-doc.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;2.2: “Piled Higher and Deeper” by Jorge Cham (<a href="https://phdcomics.com/">phdcomics.com</a>). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. (<a href="https://phdcomics.com/comics/archive.php?comicid=1531">direct link</a>).</figcaption>
+</figure>
+</div>
+<div id="fig-xkcd-documents" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/xkcd-documents.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;2.3: “Documents” by xkcd (<a href="https://xkcd.com/">xkcd.com</a>). Used under a <a href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence</a> (<a href="https://xkcd.com/1459/">direct link</a>).</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/project-history-turing-way.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/">The Turing Way</a> community. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 licence</a>. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3695300</a> (Version 3, <a href="https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1">direct download link</a>).</figcaption>
+</figure>
+</div>
+<section id="versions-in-a-single-file" class="level3 page-columns page-full" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="versions-in-a-single-file"><span class="header-section-number">2.7.1</span> Versions in a single file</h3>
+<p>Some software can keep track of all the changes made to a file without making new copies of the file. This includes word processors like Microsoft Word’s <a href="https://support.microsoft.com/en-us/office/track-changes-in-word-197ba630-0f5f-4a8e-9a77-3712475e806a?ui=en-us&amp;rs=en-us&amp;ad=us">Track Changes</a>, Google Docs’ <a href="https://support.google.com/docs/answer/190843?hl=en">version history</a>, or LibreOffice’s <a href="https://help.libreoffice.org/latest/ro/text/shared/guide/redlining.html">Recording and Displaying Changes</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Disadvantages of version control using word processors compared to Git">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Disadvantages of version control using word processors compared to Git
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Limited Collaboration:</strong> Word processors’ track changes feature is primarily designed for collaboration within the application, making it difficult to collaborate with users who don’t have access to the same word processing software. In contrast, Git allows seamless collaboration across different platforms and tools.</li>
+<li><strong>Limited Review Features:</strong> Beyond comments in the text itself, word processors lack the advanced review features offered by Git, such as pull requests and code comments. These features facilitate the review processes, making it easier to provide feedback and discuss changes.</li>
+<li><strong>Non-Atomic Commits:</strong> In most word processors, tracking changes may lead to non-atomic commits, where multiple unrelated changes are combined into one. This can make it harder to understand the history and roll back specific changes when needed, compared to the precise commit system in Git.</li>
+<li><strong>Limited Branching and Merging:</strong> Git provides powerful branching and merging capabilities, allowing for the creation of multiple branches for different features or experiments. Word processors often lack this level of branching and merging, making it harder to manage complex development workflows.</li>
+<li><strong>No Version Tagging:</strong> Git allows tagging specific versions, marking them as milestones or releases. Word processors generally lack this feature, which can be essential for identifying important points in the development process.</li>
+<li><strong>Lack of File-Level Versioning:</strong> Word processors typically track changes at the document level, lacking the ability to track changes at the file level. Git, on the other hand, allows version control for individual files, enabling more granular control over the project’s components.</li>
+<li><strong>Limited Automation:</strong> Word processors may offer basic automation features, but they can’t match the automation capabilities provided by Git and GitHub, such as pre-commit hooks, continuous integration, and automated testing.</li>
+<li><strong>Difficulty in Managing Large Projects:</strong> Word processors’ track changes feature may become less efficient and manageable as the project grows in size and complexity. Git, as a dedicated version control system, is better suited for handling large-scale projects.</li>
+<li><strong>No Remote Repositories:</strong> Word processors do not have built-in support for remote repositories like Git does. Remote repositories in Git enable decentralized collaboration and backup, making it easier to work with distributed teams.</li>
+<li><strong>Dependency on Proprietary Software:</strong> Using word processors for tracking changes ties the version control process to specific software vendors, limiting the flexibility and interoperability that Git offers as an open-source, widely-used tool.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>This allows you to look at the file’s history and see how it has changed over time. Examples of such software include <a href="https://www.google.com/drive/">Google Drive</a>, <a href="https://www.dropbox.com/">Dropbox</a>, and <a href="https://www.overleaf.com/">Overleaf</a>. You may have noticed that these services automatically save different versions of your files and allow you to go back to previous versions if needed.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Disadvantages of Version Control using Dropbox and Google Drive compared to Git">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Disadvantages of Version Control using Dropbox and Google Drive compared to Git
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Lack of Fine-Grained Versioning:</strong> Both Dropbox and Google Drive offer basic versioning features, but they often lack the granularity provided by dedicated version control systems like Git. In version control systems, you can track changes at the file level, while Dropbox and Google Drive may only keep a limited history of entire documents.</li>
+<li><strong>No Code Collaboration Features:</strong> While Dropbox and Google Drive allow file sharing and real-time collaboration, they do not provide specialized features for collaboration, like pull requests, or conflict resolution, which are often essential in the development of research outputs.</li>
+<li><strong>Limited Branching and Merging:</strong> Dropbox and Google Drive do not support branching and merging, making it challenging to manage complex development workflows, especially in collaborative projects.</li>
+<li><strong>Dependency on Third-Party Servers:</strong> When using Dropbox and Google Drive, version control relies on their servers and infrastructure. This dependence may raise concerns about data security, privacy, and the availability of the service.</li>
+<li><strong>File Size and Storage Limits:</strong> Both services have limitations on file sizes and storage space. This can be problematic for larger projects with numerous files or when working with large binary files.</li>
+<li><strong>Limited Automation and Integration:</strong> Dropbox and Google Drive lack the extensive automation and integration options provided by Git. In Git, you can set up various automated workflows and integrate with continuous integration tools for smoother development processes.</li>
+<li><strong>Revision Conflicts:</strong> Version control in Dropbox and Google Drive may not handle revision conflicts as effectively as Git. Resolving conflicts manually can be time-consuming and may lead to data loss or discrepancies.</li>
+<li><strong>Limited Offline Capabilities:</strong> When working offline, accessing version history or performing version control tasks in Dropbox and Google Drive might not be as seamless as with Git, which is designed to work effectively in both online and offline environments.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="fig-versions-single-file" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/versions-single-file.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;2.4: Image from <a href="https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html">Chapter 3.1 on “Collaboration, Version Control, &amp; GitHub”</a> of the <a href="https://mozillascience.github.io/study-group-orientation/index.html">Mozilla Science Lab’s Study Group Orientation handbook</a>, used under a <a href="https://github.com/mozillascience/study-group-orientation/blob/master/LICENSE">Mozilla Public License Version 2.0</a> (<a href="https://github.com/mozillascience/study-group-orientation/blob/master/images/gh07.png">direct download link</a>)</figcaption>
+</figure>
+</div>
+<p><a href="#fig-versions-single-file">Figure&nbsp;<span>2.4</span></a> illustrates the concept of <strong>tracking versions within a single file</strong>. It illustrates a simplified linear project timeline (gray line). A version control system keeps track of the changes made to the file at specific time points (gray nodes in <a href="#fig-versions-single-file">Figure&nbsp;<span>2.4</span></a>). These nodes represent various actions such as additions (first node), deletions (second node), or edits to the content (third node). The blue arrows at the bottom indicate the ability to navigate along this linear timeline. By recording these changes, it becomes possible to access previous versions of the file. This means that you can go back and examine earlier versions or even revert the entire workflow back to a specific version, if needed. Rather than saving new files for each change, this system saves the changes within the same file, allowing for easier management and tracking of version history.</p>
+</section>
+<section id="features-of-a-version-control-system" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="features-of-a-version-control-system"><span class="header-section-number">2.7.2</span> Features of a version control system</h3>
+<ol type="1">
+<li><strong>What:</strong> It keeps track of the changes made to a file when you edit it.</li>
+<li><strong>When:</strong> It records the date and time when each change was made.</li>
+<li><strong>Who</strong> It keeps a record of who made each change.</li>
+<li><strong>Why:</strong> It allows you to add a note explaining why you made a particular change.</li>
+</ol>
+<p>The system takes snapshots of your project, giving them unique codes that include all these features. Instead of saving new files for each change, only the specific modifications made to the file are saved. This makes it easy to compare different versions, restore previous versions, and combine changes when needed.</p>
+</section>
+</section>
+<section id="git" class="level2 page-columns page-full" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="git"><span class="header-section-number">2.8</span> Git</h2>
+<div id="fig-git-logo-full-color" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/git-logo-full-color.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;2.5: Git Logo (full color Git logo for light backgrounds) by <a href="https://twitter.com/jasonlong">Jason Long</a> is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> (<a href="https://git-scm.com/downloads/logos">link to download page</a>).</figcaption>
+</figure>
+</div>
+<p>Among various version control systems, Git is the most widely used. It was created by the Linux development community in 2005. Git is a software primarily written in C, but you don’t need to know C.</p>
+<section id="key-features-of-git" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="key-features-of-git"><span class="header-section-number">2.8.1</span> Key features of Git</h3>
+<ul>
+<li><a href="https://git-scm.com/downloads">Free</a>, fast, and <a href="https://github.com/git/git">open source</a>.</li>
+<li>It is a <strong>distributed</strong> system, meaning everyone working on a project has a complete copy of it.</li>
+<li>Most operations in Git can be performed using local files and resources, <strong>minimizing the need for external dependencies</strong>.</li>
+<li>Git keeps a <strong>detailed history of changes</strong>, including what was changed, when it was changed, who made the change, and why it was made.</li>
+<li>You can easily retrieve previous versions of your project, allowing you to see the progression of your work.</li>
+<li>Git forms the <strong>foundation for collaboration tools</strong> like GitHub and GitLab.</li>
+</ul>
+<p>When you use Git, it takes snapshots of your project whenever you choose. It then compares the current snapshot with the previous one and prompts you to provide a message explaining why you made the specific changes.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Why is Git called Git?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why is Git called Git?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The name “git” was given by the main developer Linus Torvalds when he created the software. Torvalds is well-known for his involvement in the development of the Linux kernel.</p>
+<blockquote class="blockquote">
+<p><em>“I’m an egotistical bastard, and I name all my projects after myself. First ‘Linux’, now ‘git’.”</em> – <a href="https://en.wikipedia.org/wiki/Git">Wikipedia: Git</a></p>
+</blockquote>
+<p>For more insights and discussions about the name, you can refer to the <a href="https://github.com/git/git">README.md file on GitHub</a>.</p>
+<p>The name “git” was given by Linus Torvalds when he wrote the very first version. He described the tool as “the stupid content tracker” and the name as (depending on your mood):</p>
+<ul>
+<li>random three-letter combination that is pronounceable, and not actually used by any common UNIX command. The fact that it is a mispronunciation of “get” may or may not be relevant.</li>
+<li>stupid. contemptible and despicable. simple. Take your pick from the dictionary of slang.</li>
+<li>“global information tracker”: you’re in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.</li>
+<li>“goddamn idiotic truckload of sh*t”: when it breaks</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="summary" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.9</span> Summary</h2>
+<p>Git is a free <strong>version control system</strong> that helps you manage and track the history of your files, allowing you to retrieve previous changes. It is used <strong>locally</strong> on your computer.</p>
+<p>GitHub is a popular <strong>cloud-based</strong> hosting service for sharing projects tracked with Git. It offers <strong>collaboration</strong> features and serves as a reliable backup solution.</p>
+</section>
+<section id="how-do-i-interact-with-git-on-my-computer" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="how-do-i-interact-with-git-on-my-computer"><span class="header-section-number">2.10</span> How do I interact with git on my computer?</h2>
+<p>There are many options to interact with Git.</p>
+<section id="command-line-terminal" class="level3" data-number="2.10.1">
+<h3 data-number="2.10.1" class="anchored" data-anchor-id="command-line-terminal"><span class="header-section-number">2.10.1</span> Command line / terminal</h3>
+<p>See chapter on <a href="../chapters/command-line.html">command line</a>.</p>
+</section>
+<section id="extensions-to-existing-software" class="level3" data-number="2.10.2">
+<h3 data-number="2.10.2" class="anchored" data-anchor-id="extensions-to-existing-software"><span class="header-section-number">2.10.2</span> Extensions to existing software</h3>
+<p>Your text editor or analytical software is very likely to have a git extensions / plugin, often via a Graphical User Interface (GUI).</p>
+<ul>
+<li><a href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</a></li>
+<li><a href="https://code.visualstudio.com/docs/sourcecontrol/overview">Visual Studio Code</a></li>
+</ul>
+</section>
+<section id="git-clients-applications-with-a-gui" class="level3" data-number="2.10.3">
+<h3 data-number="2.10.3" class="anchored" data-anchor-id="git-clients-applications-with-a-gui"><span class="header-section-number">2.10.3</span> Git Clients (applications with a GUI)</h3>
+<p>Several software applications enable the use of Git on your local computer without the need for the command line. The following is a non-comprehensive list of such software. Please consult their respective documentation for further details.</p>
+<ul>
+<li><a href="https://www.gitkraken.com/">GitKraken</a></li>
+<li><a href="https://desktop.github.com/">GitHub Desktop</a></li>
+</ul>
+</section>
+</section>
+<section id="common-misconceptions" class="level2 page-columns page-full" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="common-misconceptions"><span class="header-section-number">2.11</span> Common misconceptions</h2>
+<section id="misconception-git-is-the-same-as-github" class="level3 page-columns page-full" data-number="2.11.1">
+<h3 data-number="2.11.1" class="anchored" data-anchor-id="misconception-git-is-the-same-as-github"><span class="header-section-number">2.11.1</span> Misconception: Git is the same as GitHub</h3>
+<div id="fig-git-logo" class="quarto-figure quarto-figure-left anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/git-icon.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;2.6: Git Logo by <a href="https://twitter.com/jasonlong">Jason Long</a> is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>. (<a href="https://git-scm.com/downloads/logos">Link to download page</a>).</figcaption>
+</figure>
+</div>
+<div id="fig-github-logo" class="quarto-figure quarto-figure-left anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/github-logo.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;2.7: GITHUB®, the GITHUB® logo design, the INVERTOCAT logo design, OCTOCAT®, and the OCTOCAT® logo design are trademarks of GitHub, Inc., registered in the United States and other countries. The OCTOCAT design is the exclusive property of GitHub, Inc and has been federally registered with the United States Copyright Office. All rights reserved. (<a href="https://github.com/logos">Link to download page</a>).</figcaption>
+</figure>
+</div>
+<p>One of the most widespread misconceptions is that Git and GitHub are the same thing. Git and GitHub are two distinct but related tools in the world of version control.</p>
+<p><strong>Git is a version control system</strong> (software installed on your computer) that allows you to track changes and manage the history of your files locally on your computer. It provides features such as branching, merging, and reverting to previous versions.</p>
+<p><strong>GitHub is a web-based hosting service</strong> for your Git repositories, allowing you to store and share your Git projects online. GitHub provides additional collaboration features such as issue tracking, pull requests, and project management tools.</p>
+<p>In summary, Git is the version control system itself, while GitHub is a hosting service built on top of Git. Git can be used independently without GitHub, but GitHub relies on Git for its functionality.</p>
+</section>
+<section id="misconception-git-is-only-for-code-and-programmers" class="level3" data-number="2.11.2">
+<h3 data-number="2.11.2" class="anchored" data-anchor-id="misconception-git-is-only-for-code-and-programmers"><span class="header-section-number">2.11.2</span> Misconception: Git is only for code and programmers</h3>
+<p>While version control systems like Git are often associated with software development (and are indeed highly valuable for managing code-related projects), they are not limited to code and not exclusive to developers. Version control can be beneficial for anyone working with files that undergo changes over time, including writers, designers, and data analysts.</p>
+</section>
+<section id="misconception-git-is-only-for-collaboration" class="level3" data-number="2.11.3">
+<h3 data-number="2.11.3" class="anchored" data-anchor-id="misconception-git-is-only-for-collaboration"><span class="header-section-number">2.11.3</span> Misconception: Git is only for collaboration</h3>
+<p>Git offers remarkable benefits for collaboration, but its value extends beyond working with others. It enables you to collaborate effectively with your past and future self, fostering valuable skills and boosting your confidence when collaborating with others. Even if you currently don’t have a specific reason to collaborate with others, trying git on your own can be highly beneficial and rewarding.</p>
+</section>
+<section id="misconception-git-auto-saves-your-changes" class="level3" data-number="2.11.4">
+<h3 data-number="2.11.4" class="anchored" data-anchor-id="misconception-git-auto-saves-your-changes"><span class="header-section-number">2.11.4</span> Misconception: Git auto-saves your changes</h3>
+<p>Unlike automatic saving, where changes are continuously saved in the background, git requires manual intervention to capture snapshots. You have to explicitly inform git when you want to take a snapshot, indicating that you want it to acknowledge your changes. While this may sound annoying at first, the benefits of having full control over your version history will become apparent in later chapters of this book.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bryan2018" class="csl-entry" role="listitem">
+Bryan, Jennifer. 2018. <span>“Excuse Me, Do You Have a Moment to Talk About Version Control?”</span> <em>The American Statistician</em> 72 (1): 20–27. <a href="https://doi.org/10.1080/00031305.2017.1399928">https://doi.org/10.1080/00031305.2017.1399928</a>. Website: <a href="https://doi.org/10.1080/00031305.2017.1399928" class="uri">https://doi.org/10.1080/00031305.2017.1399928</a>.
+</div>
+<div id="ref-koziar2023" class="csl-entry" role="listitem">
+Koziar, Katherine E., Madicken Munk, Andrew Greene, Annajiat Alim Rasel, Ed Bennett, Sarah LR Stevens, Ece Turnator, et al. 2023. <em>Swcarpentry/Git-Novice: Software Carpentry: Version Control with Git 2023-05</em>. Zenodo. <a href="https://doi.org/10.5281/ZENODO.7908089">https://doi.org/10.5281/ZENODO.7908089</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/swcarpentry/git-novice" class="uri">https://github.com/swcarpentry/git-novice</a>. Website: <a href="https://swcarpentry.github.io/git-novice/" class="uri">https://swcarpentry.github.io/git-novice/</a>.
+</div>
+<div id="ref-perez-riverol2016" class="csl-entry" role="listitem">
+Perez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016. <span>“Ten Simple Rules for Taking Advantage of Git and GitHub.”</span> Edited by Scott Markel. <em>PLOS Computational Biology</em> 12 (7): e1004947. <a href="https://doi.org/10.1371/journal.pcbi.1004947">https://doi.org/10.1371/journal.pcbi.1004947</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/ypriverol/github-paper" class="uri">https://github.com/ypriverol/github-paper</a>. Website: <a href="https://doi.org/10.1371/journal.pcbi.1004947" class="uri">https://doi.org/10.1371/journal.pcbi.1004947</a>.
+</div>
+<div id="ref-ram2013" class="csl-entry" role="listitem">
+Ram, Karthik. 2013. <span>“Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.”</span> <em>Source Code for Biology and Medicine</em> 8 (1). <a href="https://doi.org/10.1186/1751-0473-8-7">https://doi.org/10.1186/1751-0473-8-7</a>. License: <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Source: <a href="https://github.com/karthik/smb_git" class="uri">https://github.com/karthik/smb_git</a>. Website: <a href="https://doi.org/10.1186/1751-0473-8-7" class="uri">https://doi.org/10.1186/1751-0473-8-7</a>.
+</div>
+<div id="ref-community2022" class="csl-entry" role="listitem">
+The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: The process documents and data are made available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>. Software are made available under an <a href="https://opensource.org/license/mit/">MIT license</a>. Website: <a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -598,13 +960,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="../contents.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Contents</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/command-line.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Command Line</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Command Line</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

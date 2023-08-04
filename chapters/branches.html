@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="">
+
+<title>Version Control of Code and Data for Scientists - 6&nbsp; Branches</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/github-intro.html" rel="next">
+<link href="../chapters/first-steps-git.html" rel="prev">
+<link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/branches.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Version Control of Code and Data for Scientists</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data-for-Scientists.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data-for-Scientists.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Contents</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intro-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/command-line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Command Line</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/installation-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation and setup</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/first-steps-git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/branches.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/datalad-nextcloud.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/style-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#fa-bullseye-learning-objectives" id="toc-fa-bullseye-learning-objectives" class="nav-link active" data-scroll-target="#fa-bullseye-learning-objectives"><span class="header-section-number">7</span> <i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Learning objectives</a></li>
+  <li><a href="#fa-code-branch-why-branches" id="toc-fa-code-branch-why-branches" class="nav-link" data-scroll-target="#fa-code-branch-why-branches"><span class="header-section-number">8</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</a></li>
+  <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch"><span class="header-section-number">9</span> Creating a new branch</a></li>
+  <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches"><span class="header-section-number">10</span> Switching branches</a></li>
+  <li><a href="#merging-branches" id="toc-merging-branches" class="nav-link" data-scroll-target="#merging-branches"><span class="header-section-number">11</span> Merging branches</a></li>
+  <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts"><span class="header-section-number">12</span> Merge conflicts</a>
+  <ul class="collapse">
+  <li><a href="#avoiding-merge-conflicts" id="toc-avoiding-merge-conflicts" class="nav-link" data-scroll-target="#avoiding-merge-conflicts"><span class="header-section-number">12.1</span> Avoiding merge conflicts</a></li>
+  <li><a href="#resolving-merge-conflicts" id="toc-resolving-merge-conflicts" class="nav-link" data-scroll-target="#resolving-merge-conflicts"><span class="header-section-number">12.2</span> Resolving merge conflicts</a></li>
+  <li><a href="#types-of-merges" id="toc-types-of-merges" class="nav-link" data-scroll-target="#types-of-merges"><span class="header-section-number">12.3</span> Types of merges</a>
+  <ul class="collapse">
+  <li><a href="#standard-merge" id="toc-standard-merge" class="nav-link" data-scroll-target="#standard-merge"><span class="header-section-number">12.3.1</span> Standard merge</a></li>
+  <li><a href="#fast-forward-merge" id="toc-fast-forward-merge" class="nav-link" data-scroll-target="#fast-forward-merge"><span class="header-section-number">12.3.2</span> Fast Forward Merge</a></li>
+  <li><a href="#squash-and-merge" id="toc-squash-and-merge" class="nav-link" data-scroll-target="#squash-and-merge"><span class="header-section-number">12.3.3</span> Squash and Merge</a></li>
+  <li><a href="#rebasing" id="toc-rebasing" class="nav-link" data-scroll-target="#rebasing"><span class="header-section-number">12.3.4</span> Rebasing</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#deleting-branches" id="toc-deleting-branches" class="nav-link" data-scroll-target="#deleting-branches"><span class="header-section-number">13</span> Deleting Branches</a></li>
+  <li><a href="#branches-best-practices" id="toc-branches-best-practices" class="nav-link" data-scroll-target="#branches-best-practices"><span class="header-section-number">14</span> Branches best practices</a>
+  <ul class="collapse">
+  <li><a href="#naming-branches" id="toc-naming-branches" class="nav-link" data-scroll-target="#naming-branches"><span class="header-section-number">14.1</span> Naming branches</a></li>
+  <li><a href="#branch-lifecycle" id="toc-branch-lifecycle" class="nav-link" data-scroll-target="#branch-lifecycle"><span class="header-section-number">14.2</span> Branch Lifecycle</a></li>
+  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">14.3</span> Branch Protection</a>
+  <ul class="collapse">
+  <li><a href="#how-to-protect-the-main-branch-on-github" id="toc-how-to-protect-the-main-branch-on-github" class="nav-link" data-scroll-target="#how-to-protect-the-main-branch-on-github"><span class="header-section-number">14.3.1</span> How to protect the Main Branch on GitHub</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#gitignore" id="toc-gitignore" class="nav-link" data-scroll-target="#gitignore"><span class="header-section-number">15</span> <code>.gitignore</code></a>
+  <ul class="collapse">
+  <li><a href="#common-files-to-ignore-in-scientific-settings" id="toc-common-files-to-ignore-in-scientific-settings" class="nav-link" data-scroll-target="#common-files-to-ignore-in-scientific-settings"><span class="header-section-number">15.1</span> Common Files to Ignore in Scientific Settings:</a></li>
+  <li><a href="#wildcards-in-.gitignore-files" id="toc-wildcards-in-.gitignore-files" class="nav-link" data-scroll-target="#wildcards-in-.gitignore-files"><span class="header-section-number">15.2</span> Wildcards in .gitignore files</a></li>
+  <li><a href="#example-.gitignore-file-for-a-python-project" id="toc-example-.gitignore-file-for-a-python-project" class="nav-link" data-scroll-target="#example-.gitignore-file-for-a-python-project"><span class="header-section-number">15.3</span> Example .gitignore file for a Python project</a></li>
+  </ul></li>
+  <li><a href="#temporary-files" id="toc-temporary-files" class="nav-link" data-scroll-target="#temporary-files"><span class="header-section-number">16</span> Temporary files</a></li>
+  <li><a href="#rmarkdown-specific" id="toc-rmarkdown-specific" class="nav-link" data-scroll-target="#rmarkdown-specific"><span class="header-section-number">17</span> RMarkdown-specific</a></li>
+  <li><a href="#rstudio-project-files" id="toc-rstudio-project-files" class="nav-link" data-scroll-target="#rstudio-project-files"><span class="header-section-number">18</span> RStudio Project Files</a></li>
+  <li><a href="#r-environment-variables" id="toc-r-environment-variables" class="nav-link" data-scroll-target="#r-environment-variables"><span class="header-section-number">19</span> R Environment Variables</a></li>
+  <li><a href="#mac-specific" id="toc-mac-specific" class="nav-link" data-scroll-target="#mac-specific"><span class="header-section-number">20</span> Mac-specific</a></li>
+  <li><a href="#good-commits" id="toc-good-commits" class="nav-link" data-scroll-target="#good-commits"><span class="header-section-number">21</span> Good commits</a>
+  <ul class="collapse">
+  <li><a href="#good-commit-messages" id="toc-good-commit-messages" class="nav-link" data-scroll-target="#good-commit-messages"><span class="header-section-number">21.1</span> Good commit messages</a></li>
+  </ul></li>
+  <li><a href="#exercises-fa-dumbbell" id="toc-exercises-fa-dumbbell" class="nav-link" data-scroll-target="#exercises-fa-dumbbell"><span class="header-section-number">22</span> Exercises <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">23</span> References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches.qmd" class="toc-action">View source</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title display-7"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></h1>
+<p class="author"></p>
+
+</header>
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Overview
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><i class="fa-solid fa-clock" aria-label="clock"></i> Duration: min</p>
+</div>
+</div>
+<section id="fa-bullseye-learning-objectives" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> <i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Learning objectives</h1>
+<ul>
+<li><p>Purpose and benefits of using branches in Git</p></li>
+<li><p>Creating and switching between branches</p></li>
+<li><p>Merging branches and resolving conflicts</p></li>
+</ul>
+</section>
+<section id="fa-code-branch-why-branches" class="level1 page-columns page-full" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</h1>
+<p>Git branches are like separate workspaces within a Git repository. They let you work on different stuff without messing up the main code. You can visualize branches as shown in <a href="#fig-branches">Figure&nbsp;<span>8.1</span></a>.</p>
+<div id="fig-branches" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/branches.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;8.1: Image from <a href="https://www.atlassian.com/git/tutorials/using-branches">Chapter “Git Branch”</a> of the <a href="https://www.atlassian.com/git/tutorials">Atlassian “Become a git guru” tutorials</a>, used under a <a href="https://creativecommons.org/licenses/by/2.5/au/">Creative Commons Attribution 2.5 Australia License</a> (<a href="https://www.atlassian.com/git/tutorials/using-branches">direct link</a>)</figcaption>
+</figure>
+</div>
+<p>Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you’re ready. It’s great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis. Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.</p>
+</section>
+<section id="creating-a-new-branch" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Creating a new branch</h1>
+<p>By default your work is on the initial branch called <strong>master</strong> or <strong>main</strong>. We recommend changing your initial branch name to <strong>main</strong>, as discussed in the <a href="../chapters/installation-setup.html">installation and setup chapter</a>. You can check which branch you are on using <code>git branch</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>should return the following output:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To create a new branch, use <code>git branch</code> followed by the wished branch name.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now you can use <code>git branch</code> again to confirm the creation of the new branch.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>should return the following output:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">feature</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common git branch flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common git branch flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>-a</code> or <code>--all</code>: Lists both local and remote branches.</p>
+<p><code>-r or --remote</code>: Lists only remote branches.</p>
+<p><code>-d</code> or <code>--delete</code>: Deletes a specified branch. For example, git branch -d feature-branch.</p>
+<p><code>-D</code> or <code>--force</code>: Force deletes a branch, even if it has unmerged changes.</p>
+<p><code>-m</code> or <code>--move</code>: Renames a branch. For example, git branch -m old-branch new-branch.</p>
+<p><code>-c</code> or <code>--copy</code>: Creates a new branch by copying an existing branch. For example, git branch -c existing-branch new-branch</p>
+<p><code>-v</code> or <code>--verbose</code>: Shows more information when listing branches, including the last commit message.</p>
+<p><code>--contains</code>: Filters branches that contain a specific commit.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="switching-branches" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Switching branches</h1>
+<p>To switch to the newly created branch, you can use <code>git checkout</code> or <code>git switch</code>.</p>
+<p>For example, enter the following command to switch to the newly created <code>feature</code> branch:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Should receive an output similiar to this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">M</span>   example.txt</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Switched</span> to branch <span class="st">'feature'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now you can normally work on this branch using the staging/committing workflow.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="What is the difference between `git checkout` and `git switch`?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is the difference between <code>git checkout</code> and <code>git switch</code>?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Prior to Git version 2.23, the <code>git checkout</code> command was the primary way to switch branches. It allows you to move to a different branch and update your working directory to reflect the state of that branch. In Git 2.23 and later versions, the <code>git switch</code> command was introduced as a safer and more intuitive alternative to “git checkout”. It simplifies the branch-switching process and provides clearer feedback in case of errors, making it the recommended command for branch manipulation.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="merging-branches" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Merging branches</h1>
+<p>After you worked on your new branch you might want to incorporate your work into the <code>main</code> branch. You can do this using <code>git merge</code>command. Switch to your main branch (using <code>git switch</code> or <code>git checkout</code>) and then use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you have not yet done any changes you should get the following output:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Already</span> up to date.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you have changed the file(s) in your folder, you should get an output similiar to:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Updating</span> 555ba0c..994bb8d</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Fast-forward</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a> <span class="ex">example.txt</span>    <span class="kw">|</span>   <span class="ex">4</span> ++++</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a> <span class="ex">1</span> file changed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="merge-conflicts" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Merge conflicts</h1>
+<p>Merge conflicts occur when Git is unable to automatically reconcile differences between two branches during a merge or pull operation. This happens when both branches have made conflicting changes to the same part of a file. Git can’t determine which version of the code should take precedence, and as a result, it requests manual intervention from the developer. It’s like when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep. So, it raises its hand and asks you, the developer, to step in and help.</p>
+<section id="avoiding-merge-conflicts" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="avoiding-merge-conflicts"><span class="header-section-number">12.1</span> Avoiding merge conflicts</h2>
+<p>Merge conflicts can be a bit of a headache. While it may not be possible to entirely avoid merge conflicts, employing good development practices can minimize their occurrence. Regularly pulling changes from the remote repository into your local branch (using git pull) and keeping your branch up-to-date can help identify and resolve conflicts early.</p>
+</section>
+<section id="resolving-merge-conflicts" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="resolving-merge-conflicts"><span class="header-section-number">12.2</span> Resolving merge conflicts</h2>
+<p>When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. Git is like the referee saying, “Hey, programmers, sort out your differences!”</p>
+<p>If you try to merge with conflicting changes in a file the output looks similar to this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Auto-merging</span> example.txt</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">CONFLICT</span> <span class="er">(</span><span class="ex">content</span><span class="kw">)</span><span class="bu">:</span> Merge conflict in example.txt</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Automatic</span> merge failed<span class="kw">;</span> <span class="ex">fix</span> conflicts and then commit the result.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Git will highlight the conflicting parts in the affected file(s)e, and you must choose the desired changes or modify them to create a consistent version. To do this open up the file(s) with conflicts in a text editor, and you’ll see the conflicting sections marked with &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, and &gt;&gt;&gt;&gt;&gt;&gt;&gt;. Manually edit the conflicting sections to the desired state, removing the conflict markers. Decide which changes to keep and which to discard.</p>
+<p>After editing the file, save it and use git add to stage the resolved changes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once all conflicts are resolved, proceed with the commit e.g.:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Your branches should now be merged and your conflict solved.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common <code>git merge</code> flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>--abort</code>: Abort the current merge operation and reset the branch to its pre-merge state.</p>
+<p><code>--continue</code>: Continue the merge process after resolving conflicts.</p>
+<p><code>--log</code>: Include the log message from the commit(s) being merged in the new merge commit.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="types-of-merges" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="types-of-merges"><span class="header-section-number">12.3</span> Types of merges</h2>
+<p>Git supports different types of merges to cater to various situations in software development. Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.</p>
+<section id="standard-merge" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="standard-merge"><span class="header-section-number">12.3.1</span> Standard merge</h3>
+<p>In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original time stamps. It creates a new “merge commit”, a special record that marks when the merge happened, showing that the branches are now combined.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="fast-forward-merge" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="fast-forward-merge"><span class="header-section-number">12.3.2</span> Fast Forward Merge</h3>
+<p>If no new commits were made to the base branch since the feature was created, Git automatically does a “Fast Forward Merge.” It’s like the standard merge, but no new merge commit is created. It’s as if you made the commits directly on the base branch. Since the base branch remained unchanged, there’s no need to mark a separate merge in the history. You can ensure a fastfoward merge by using the <code>--ff-only</code>flag.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you do not want a fastfoward merge, you can ensure a merge commit with the <code>--no-ff</code> flag.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="squash-and-merge" class="level3" data-number="12.3.3">
+<h3 data-number="12.3.3" class="anchored" data-anchor-id="squash-and-merge"><span class="header-section-number">12.3.3</span> Squash and Merge</h3>
+<p>When you squash a branch, Git combines all commits of the branch into a single commit. This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately. Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--squash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rebasing" class="level3" data-number="12.3.4">
+<h3 data-number="12.3.4" class="anchored" data-anchor-id="rebasing"><span class="header-section-number">12.3.4</span> Rebasing</h3>
+<p><code>git rebase</code> is a different way than a merge to integrate changes from one branch into another. When you rebase the <code>feature</code> branch onto the <code>main</code> branch you “rearrange” the commits. It’s like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the <code>main</code> branch. It’s like picking up your changes and placing them on the latest code, resulting in a linear history. However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common git rebase flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common git rebase flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>--interactive</code> or <code>-i</code>: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.</p>
+<p><code>--continue</code>: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.</p>
+<p><code>--abort</code>: Abort the current rebase operation and return the branch to its original state before the rebase.</p>
+<p><code>--skip</code>: Skip the current commit during an interactive rebase.</p>
+<p><code>-p</code> or <code>--preserve-merges</code>: Preserve merge commits during the rebase.</p>
+<p><code>--autosquash</code>: Automatically squash commits marked with “squash” or “fixup” in their commit message during an interactive rebase.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="deleting-branches" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Deleting Branches</h1>
+<p>Once a branch has served its purpose and is no longer needed, it can be deleted. Removing branches that are no longer active helps maintain a clean and manageable branch structure. To delete a branch you can use the <code>git branch</code> command, followed by a <code>-d</code> flag.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>should get an output similiar to:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Deleted</span> branch feature <span class="er">(</span><span class="ex">was</span> 3343f36<span class="kw">)</span><span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can only delete a branch, you are not currently on.</p>
+</section>
+<section id="branches-best-practices" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Branches best practices</h1>
+<section id="naming-branches" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="naming-branches"><span class="header-section-number">14.1</span> Naming branches</h2>
+<p>Adopt a consistent naming convention for branches that accurately reflects their purpose. This can include prefixes like <code>feature/</code>, <code>bug/</code>, or <code>hotfix/</code> followed by a descriptive name. Clear and standardized branch names make it easier to identify the purpose of each branch.</p>
+</section>
+<section id="branch-lifecycle" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="branch-lifecycle"><span class="header-section-number">14.2</span> Branch Lifecycle</h2>
+<p>Create branches with a specific goal or task in mind, and aim to keep them short-lived. Long-lived branches can lead to conflicts and make it harder to merge changes. Once the task is complete or the feature is integrated, consider deleting the branch.</p>
+</section>
+<section id="branch-protection" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">14.3</span> Branch Protection</h2>
+<p>When using Git hosting platforms like GitHub or GitLab, it’s a good idea to enable branch protection rules for your critical branche(s), typically your <code>main</code> or <code>master</code> branch. By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.</p>
+<section id="how-to-protect-the-main-branch-on-github" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">14.3.1</span> How to protect the Main Branch on GitHub</h3>
+<p>Go to your repository on GitHub and click on “Settings.” In the left sidebar, select “Branches.” Under “Branch protection rules,” click on “Add rule.” In the “Branch name pattern” field, enter the name of your main branch. Enable the options you want to enforce for the main branch. Common options include:</p>
+<p><strong>Require pull request reviews:</strong> Require one or more approving reviews before changes can be merged.</p>
+<p>Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.</p>
+<p>Click “Create” to save the branch protection rule.</p>
+</section>
+</section>
+</section>
+<section id="gitignore" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> <code>.gitignore</code></h1>
+<p><code>.gitignore</code> is a special file. It is used in Git to specify files and directories that should be ignored and not tracked. When you create a <code>.gitignore</code> file and specify filenames inside it, Git will exclude these files and directories from being staged or committed. The <code>.gitignore</code> file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history. Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the codebase without distractions from unnecessary files. .gitignore can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches. It also makes sense to include large files or temporary outputs in your <code>.gitignore</code> file. To keep the repository size manageable, making it faster to clone, pull, and push changes.</p>
+<p>To create a <code>.gitignore</code> file, navigate to your repo and use the <code>touch</code> command. Alternatively, create the file in your favorite text editor.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>.gitignore</code> will be a hidden file, to make it show up in the terminal, you will have to use the <code>-a</code> flag in the <code>ls</code> command (for details on listing of files and folders, see the chapter on the <a href="../chapters/command-line.html">command line</a>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To open it, simply use the <code>open</code> command.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now you can write a filename or folder name inside it, to stop git from tracking it.</p>
+<section id="common-files-to-ignore-in-scientific-settings" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="common-files-to-ignore-in-scientific-settings"><span class="header-section-number">15.1</span> Common Files to Ignore in Scientific Settings:</h2>
+<p><strong>Temporary Files and Output:</strong> Ignore files generated during analysis, like log files, temporary CSVs, or intermediate data files that are not part of the final results.</p>
+<p><strong>Data Folders:</strong> Exclude large datasets or data stored locally.</p>
+<p><strong>Environment-specific files:</strong> Exclude environment-specific files like .env files or venv folders used for local development setups.</p>
+<p><strong>System-Specific Files:</strong> In macOS, ignore .DS_Store files, and in Windows, ignore Thumbs.db files.</p>
+<p><strong>R:</strong> Ignore .Rdata files and /Rplots.pdf generated by R for plotting.</p>
+<p><strong>Python:</strong> Ignore .pyc (Python compiled) files and <strong>pycache</strong>/ folders.</p>
+<p><strong>LaTeX:</strong> Ignore auxiliary files like .aux, .log, .bbl, and .blg files generated during LaTeX compilation.</p>
+</section>
+<section id="wildcards-in-.gitignore-files" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="wildcards-in-.gitignore-files"><span class="header-section-number">15.2</span> Wildcards in .gitignore files</h2>
+<p>As discussed in the <a href="../chapters/command-line.html">command line chapter</a> wildcards are special characters that represent patterns of filenames or directory names. They can be used to specify multiple files or directories that should be ignored by Git when tracking changes. Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common wildcards">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common wildcards
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>*</code>: Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.</p>
+<p><code>?</code>: Matches a single character within a filename. For example, image?.png will match files like image1.png or imageA.png.</p>
+<p><code>/</code>: Matches the root directory of the repository. For example, /config will match a directory named config only in the root of the repository.</p>
+<p><code>**</code> (Double Asterisk): Matches directories and subdirectories recursively. For example, logs/**/*.log will match all .log files in any subdirectory under the logs directory.</p>
+<p><code>[]</code> (Square Brackets): Matches any single character within the brackets. For example, file[123].txt will match file1.txt, file2.txt, or file3.txt.</p>
+<p><code>!</code>: Negates a pattern and includes files that would otherwise be ignored. For example, !important.txt will exclude important.txt from being ignored, even if there’s a wildcard pattern that matches it.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-.gitignore-file-for-a-python-project" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="example-.gitignore-file-for-a-python-project"><span class="header-section-number">15.3</span> Example .gitignore file for a Python project</h2>
+<p>```{bash} # R-specific <em>.Rproj.user/</em> .Rhistory .RData .Rproj</p>
+</section>
+</section>
+<section id="temporary-files" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Temporary files</h1>
+<p><em>.bak</em> .csv~ <em>.html</em> .pdf</p>
+</section>
+<section id="rmarkdown-specific" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> RMarkdown-specific</h1>
+<p><em>.knit.md</em> _cache/ *_files/</p>
+</section>
+<section id="rstudio-project-files" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> RStudio Project Files</h1>
+<p>*.Rproj</p>
+</section>
+<section id="r-environment-variables" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> R Environment Variables</h1>
+<p>.Renviron</p>
+</section>
+<section id="mac-specific" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Mac-specific</h1>
+<p>.DS_Store ````</p>
+</section>
+<section id="good-commits" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Good commits</h1>
+<p>Ideally, each commit contains an isolated, complete change. This makes it easy to revert your changes if you decide to take a different approach. For example, if you want to rename a variable and add some tests, put the variable rename in one commit and the tests in another commit. Later, if you want to keep the tests but revert the variable rename, you can revert the specific commit that contained the variable rename. If you put the variable rename and tests in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.</p>
+<section id="good-commit-messages" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="good-commit-messages"><span class="header-section-number">21.1</span> Good commit messages</h2>
+<p>You should aim to write clear and concise commit messages for effective collaboration and version control. Start with an imperative verb to indicate the purpose of the commit, keeping the subject line around 50 characters. Remember to address one logical change per commit to keep your changes well-organized.</p>
+</section>
+</section>
+<section id="exercises-fa-dumbbell" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> Exercises <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></h1>
+<ul>
+<li><p>Create a new Branch called feature/newveganreceipe and work on it</p></li>
+<li><p>Merge it with your main branch and delete it afterwards</p></li>
+<li><p>Create a .gitignore file</p></li>
+</ul>
+</section>
+<section id="references" class="level1" data-number="23">
+<h1 data-number="23"><span class="header-section-number">23</span> References</h1>
+<p>https://www.atlassian.com/git/tutorials/using-branches</p>
+<p>https://lukemerrett.com/different-merge-types-in-git/</p>
+<p>https://docs.github.com/en/enterprise-server@3.6/get-started/quickstart/github-flow</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script defer="" data-domain="lennartwittkuhn.com/version-control-book" src="https://plausible.io/js/script.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Handle positioning of the toggle
+      window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/first-steps-git.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/github-intro.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
