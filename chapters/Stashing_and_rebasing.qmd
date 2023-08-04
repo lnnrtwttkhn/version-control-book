@@ -149,18 +149,19 @@ This can be useful when you accidently staged files or want to reorganize your c
 git restore --staged <file>
 ```
 ## Deleting files
-If you have added files to your folder, but you do not want to keep them, you can use the `git clean` command.
-This command permanently removes untracked files from your working directory, 
+If you want to delete files from your working directory and your git repository, it makes sense to use the `git rm` command.
+This command  removes files from your working directory and automatially stages this change for your next commit.
 
-
-## "Untracking" files
-Sometimes, you may have files, in your Git repository that you no longer want to track or include in future commits, but want to keep in your local working director.
-It makes sense to include these files in your .gitignore file, as discussed in the [First steps chapter](First-Steps-Git.qmd)
-
+```{bash}
+git rm <file>
+```
+```{bash}
+git commit -m "deleted file XY"
+```
 ::: {.callout-tip collapse="true"}
 ### Common git rm flags
 `-f` or `--force`: 
-This flag forces the removal of files, even if they are modified or have not been added to the staging area. 
+This flag forces the removal of files, even if they are modified.
 
 `-r` or `--recursive`: 
 Use this flag to remove directories and their contents. 
@@ -172,6 +173,14 @@ This flag removes files from the staging area (index) but preserves them in the 
 With this flag, Git will only show you what would be removed but will not actually perform the deletion. 
 :::
 
+## "Untracking" files
+Sometimes, you may have files, in your Git repository that you no longer want to track or include in future commits, but want to keep in your local working director.
+It makes sense to include these files in your .gitignore file, as discussed in the [First steps chapter](First-Steps-Git.qmd)
+You could also use `git rm` with the `--cached`flag.
+
+```{bash}
+git rm --cached <file>
+```
 
 # Git rebase
 `git rebase` is a different way than a merge to integrate changes from one branch into another. 
@@ -179,6 +188,8 @@ When you rebase the feature branch onto the main, branch you kind of "rearrange"
 It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
 The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. 
 It's like picking up your changes and placing them on the latest code, resulting in a linear history.
+Like this..
+![](../static/rebasing.svg)
 However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
 
 ```{bash}
