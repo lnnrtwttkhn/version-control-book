@@ -125,13 +125,17 @@ git commit -m "Remove files from tracking"
 ````
 ::: {.callout-tip collapse="true"}
 ### Common git rm flags
--f or --force: This flag forces the removal of files, even if they are modified or have not been added to the staging area. 
+`-f` or `--force`: 
+This flag forces the removal of files, even if they are modified or have not been added to the staging area. 
 
--r or --recursive: Use this flag to remove directories and their contents. 
+`-r` or `--recursive`: 
+Use this flag to remove directories and their contents. 
 
---cached: This flag removes files from the staging area (index) but preserves them in the working directory. 
+`--cached`: 
+This flag removes files from the staging area (index) but preserves them in the working directory. 
 
--n or --dry-run: With this flag, Git will only show you what would be removed but will not actually perform the deletion. 
+`-n` or `--dry-run`: 
+With this flag, Git will only show you what would be removed but will not actually perform the deletion. 
 :::
 
 
@@ -144,9 +148,14 @@ You can also use the `-n`flag, to run a preview, without actually deleting files
 
 ::: {.callout-tip collapse="true
 ### Common git clean flags
--d: Removes untracked files and untracked directories
--n: Dryrun (preview) without actually deleting anything.
--f: Forced the removal of untracked files and directories without a confirmation prompt.
+`-d`: 
+Removes untracked files and untracked directories
+
+`-n`: 
+Dryrun (preview) without actually deleting anything.
+
+`-f`: 
+Forced the removal of untracked files and directories without a confirmation prompt.
 :::
 
 # Git rebase
@@ -161,17 +170,23 @@ git rebase main
 ```
 ::: {.callout-tip collapse="true"}
 ### Common git rebase flags
---interactive or -i: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
+`--interactive` or `-i`: 
+Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
 
---continue: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
+`--continue`: 
+Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
 
---abort: Abort the current rebase operation and return the branch to its original state before the rebase.
+`--abort`: 
+Abort the current rebase operation and return the branch to its original state before the rebase.
 
---skip: Skip the current commit during an interactive rebase.
+`--skip`: 
+Skip the current commit during an interactive rebase.
 
--p or --preserve-merges: Preserve merge commits during the rebase.
+`-p` or `--preserve-merges`: 
+Preserve merge commits during the rebase.
 
---autosquash: Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
+`--autosquash`: 
+Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
 :::
 
 References:
