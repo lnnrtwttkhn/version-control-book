@@ -83,15 +83,20 @@ As you see Git is not yet tracking your file.
 ::: {.callout-tip collapse="true"}
 ## Common git status flags
 
--s: Provides a more compact and simplified output, showing only the file status in a short format.
+`-s`: 
+Provides a more compact and simplified output, showing only the file status in a short format.
 
--b: Includes information about the branch you are currently on along with the status.
+`-b`: 
+Includes information about the branch you are currently on along with the status.
 
--u: Shows untracked files in the output.
+`-u`: 
+Shows untracked files in the output.
 
--uno: Suppresses the display of untracked files.
+`-uno`: 
+Suppresses the display of untracked files.
 
--v: Provides more detailed information, including additional status information about ignored files.
+`-v`: 
+Provides more detailed information, including additional status information about ignored files.
 
 You can use these flags in combination.
 For example, git status -s -b will display a short and concise output along with the branch information.
@@ -125,13 +130,17 @@ This means your change in this folder, in this case adding a file, is now **stag
 ## Common git add flags
 
 
--a: Adds all changes, including modifications, deletions, and new files, in the entire working tree.
+`-a`: 
+Adds all changes, including modifications, deletions, and new files, in the entire working tree.
 
--u: Adds modifications and deletions, but not new files.
+`-u`: 
+Adds modifications and deletions, but not new files.
 
-<pathspec>: Specifies the specific files or directories to add. For example, git add myfile.txt adds a single file, while git 
+<pathspec>:
+Specifies the specific files or directories to add. For example, git add myfile.txt adds a single file, while git 
 
---ignore-errors: Ignores errors when adding files, allowing the command to continue even if some files cannot be added.
+`--ignore-errors`: 
+Ignores errors when adding files, allowing the command to continue even if some files cannot be added.
 :::
 
 ## Committing
@@ -161,15 +170,20 @@ You can use the same workflow of `git add` and `git commit` for every file you a
 ::: {.callout-tip collapse="true"}
 ## Common git commit flags
 
--m <message>: Specifies the commit message inline. For example, git commit -m "Fix typo" allows you to provide a short commit message directly in the command.
+`-m` <message>: 
+Specifies the commit message inline. For example, git commit -m "Fix typo" allows you to provide a short commit message directly in the command.
 
--a or --all: Automatically stages all modified and deleted files before committing. This skips the separate git add step.
+`-a` or `--all`: 
+Automatically stages all modified and deleted files before committing. This skips the separate git add step.
 
--v or --verbose: Provides a detailed output, showing the diff of the changes being committed.
+`-v` or `--verbose`: 
+Provides a detailed output, showing the diff of the changes being committed.
 
--e or --edit: Opens the commit message editor, allowing you to edit the commit message before finalizing the commit.
+`-e` or `--edit`: 
+Opens the commit message editor, allowing you to edit the commit message before finalizing the commit.
 
---amend: Modifies the previous commit. It allows you to add new changes to the previous commit or modify its commit message.
+`--amend`: 
+Modifies the previous commit. It allows you to add new changes to the previous commit or modify its commit message.
 :::
 
 ### Logging Commits
@@ -196,15 +210,20 @@ The command can help identifying the source of bugs or issues by pinpointing the
 
 ::: {.callout-tip collapse="true"}
 ## Common git log flags
---oneline: Provides a condensed output with each commit displayed on a single line, showing the abbreviated commit hash and commit message.
+`--oneline`: 
+Provides a condensed output with each commit displayed on a single line, showing the abbreviated commit hash and commit message.
 
--n <number> or --max-count=<number>: Limits the number of commits shown to the specified <number>. For example, git log -n 5 will display the latest 5 commits.
+`-n` <number> or `--max-count=`<number>: 
+Limits the number of commits shown to the specified <number>. For example, git log -n 5 will display the latest 5 commits.
 
---since=<date>: Shows commits made after the specified <date>. You can use various date formats, such as specific dates or relative expressions like "2 weeks ago" or "yesterday".
+`--since=`<date>: 
+Shows commits made after the specified <date>. You can use various date formats, such as specific dates or relative expressions like "2 weeks ago" or "yesterday".
 
---until=<date>: Shows commits made before the specified <date>.
+`--until=`<date>:
+Shows commits made before the specified <date>.
 
---author=<pattern>: Filters commits by the author's name or email using a specified <pattern>.
+`--author=`<pattern>: 
+Filters commits by the author's name or email using a specified <pattern>.
 :::
 
 ### Comparing Versions
@@ -236,17 +255,21 @@ You should see output similar to the following:
 ```
 ::: {.callout-tip collapse="true"}
 ## Common git diff flags
---cached or --staged: Shows the changes that are staged (added) but not yet committed.
+`--cached` or `--staged`: 
+Shows the changes that are staged (added) but not yet committed.
 
 <commit>: Displays the difference between the current working directory and a specific commit. For example, git diff abc123 shows the changes compared to commit "abc123".
 
 <commit>..<commit>: Shows the difference between two specific commits. For example, git diff abc123..def456 displays the changes between commit "abc123" and commit "def456".
 
---name-only: Outputs only the names of the files that have differences, without showing the actual changes.
+`--name-only`: 
+Outputs only the names of the files that have differences, without showing the actual changes.
 
---name-status: Displays the names of files along with a status identifier that indicates if a file was added, modified, or deleted.
+`--name-status`: 
+Displays the names of files along with a status identifier that indicates if a file was added, modified, or deleted.
 
---color-words: Highlights the differences at the word level, providing more granular detail.
+`--color-words`: 
+Highlights the differences at the word level, providing more granular detail.
 :::
 
 # `.gitignore`
@@ -304,16 +327,20 @@ They can be used to specify multiple files or directories that should be ignored
 Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.
 
 ::: {.callout-tip title="Common wildcards" collapse="true"}
-`*`: Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.
+`*`: 
+Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.
 
-`?`: Matches a single character within a filename. For example, image?.png will match files like image1.png or imageA.png.
+`?`:
+Matches a single character within a filename. For example, image?.png will match files like image1.png or imageA.png.
 
-`/`: Matches the root directory of the repository. For example, /config will match a directory named config only in the root of the repository.
+`/`:
+Matches the root directory of the repository. For example, /config will match a directory named config only in the root of the repository.
 
-`[]` (Square Brackets): Matches any single character within the brackets. For example, file\[123\].txt will match file1.txt, file2.txt, or file3.txt.
+`[]` (Square Brackets):
+Matches any single character within the brackets. For example, file\[123\].txt will match file1.txt, file2.txt, or file3.txt.
 
-`!`: Negates a pattern and includes files that would otherwise be ignored. 
-For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
+`!`:
+Negates a pattern and includes files that would otherwise be ignored. For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
 :::
 
 ## Example .gitignore file for a R project
