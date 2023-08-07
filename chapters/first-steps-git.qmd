@@ -13,20 +13,44 @@ author: ""
 {{< fa clock >}} Duration: min
 :::
 
-# {{< fa bullseye >}} Learning objectives
 
-In this Chapter your will learn basic Git operations for local version control including:
+::: {.column width="50%"}
+{{< fa bullseye >}} Objectives
 
 -   Initializing a Git Repository
 -   Staging and Committing Changes
 -   Exploring the commit history
 -   Comparing Versions
 
-# {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
+:::
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
+```
+
+
+
+## {{< fa dumbbell >}} Exercises
+
+-   Create a folder called "recipes" and initialize it as a git repository.
+-   Create a textfile called "favouritereceipes.txt", in this folder.
+-Add a favourite (or a crazy AI generated one) recipe of yours in this file.
+- Stage and commit your changes to the file, write a commit message
+- Create a `.gitignore file, include Files in it, you don´t want to track
+
+
+## {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
 
 To create your first Git repository, you need to initialize a folder.
 You can create an empty folder using the command line as explained in the chapter [Command Line Basics](command-line.qmd).
 Alternatively, you can create a folder in the usual way.
+Create a Textfile in this folder.
 Navigate, using the Terminal, to the folder which you want to initialze as a Git repository.
 You can use the `cd` command to change directories.
 Once you are in the desired directory, run the `git init` command to initialize the folder as a Git repository.
@@ -43,23 +67,24 @@ Initialized empty Git repository in /Users/.../
 
 Congratulations on successfully initializing your first Git repository! {{< fa champagne-glasses >}}
 
-Git is now able to track your changes in this Folder. You only need to use `git init` once per folder.
 
-# Status, Staging and committing {{< fa file-export >}}
+Git is now able to track your file(s and the changes you make to them, in this Folder.
+You only need to use `git init` once per folder.
 
-In Git, there are two important components: the staging area and commits. 
+
+## {{< fa file-export >}} Status, Staging and committing 
+
+After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically.
+In Git, there are two steps for saving your changes: the staging area and the commits. 
 The staging area is like a waiting area where you gather and prepare your changes before saving them. 
 You can choose which changes to include in the snapshot by adding them to the staging area using git `git add`. 
-Once you're satisfied with the changes in the staging area, you make a **commit**. 
+Once you're satisfied with the changes in the staging area, you make a **commit**, using `git commit`. 
 A commit is like taking a snapshot of your project at a specific moment. 
 It captures all the changes in the staging area and saves them as a new version. 
 Commits are like milestones that help you track the progress of your project and easily go back to a previous version if needed.
 
-## Status
-
-After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically.
-
-You can use `git status` to visualize the current status.
+### Status
+After you initialized a folder, you can use `git status` to visualize the current file tracking status from Git.
 
 ```{bash}
 git status
@@ -78,10 +103,12 @@ Untracked files:
 	example.txt
 ```
 
-As you see Git is not yet tracking your file.
+As you can see `git status` gives you an overview, which files git is tracking for you. 
+If you have created a file in your initialized folder, it should show up under untracked files.
+`git status`  is  very useful for quickly identifying the current state of your Git repository, showing which files have been modified, staged, or are untracked.
 
 ::: {.callout-tip collapse="true"}
-## Common git status flags
+### Common git status flags
 
 `-s`: 
 Provides a more compact and simplified output, showing only the file status in a short format.
@@ -102,7 +129,7 @@ You can use these flags in combination.
 For example, git status -s -b will display a short and concise output along with the branch information.
 :::
 
-## Staging
+### Staging
 You can use `git add` to put new/changed files in the "staging area". 
 The staging area serves as a space where you can gather changes that you intend to commit soon.
 To organize and group these changes into meaningful commits, you can place the relevant files in the staging area. 
@@ -123,12 +150,11 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 	new file:   example.txt
 ```
-q
-This means your change in this folder, in this case adding a file, is now **staged**.
+Your change to the file, or the addition if it is now **staged**.
+You do not have to add every file one by one, you can also use the `-a` flag.
 
 ::: {.callout-tip collapse="true"}
 ## Common git add flags
-
 
 `-a`: 
 Adds all changes, including modifications, deletions, and new files, in the entire working tree.
@@ -143,7 +169,7 @@ Specifies the specific files or directories to add. For example, git add myfile.
 Ignores errors when adding files, allowing the command to continue even if some files cannot be added.
 :::
 
-## Committing
+### Committing
 
 Now that your changes are staged, you are ready to create a commit. 
 To create a commit, use the `git commit` command followed by the flag `-m` and a commit message **in qoutes** that describes the changes you made.
@@ -272,10 +298,10 @@ Displays the names of files along with a status identifier that indicates if a f
 Highlights the differences at the word level, providing more granular detail.
 :::
 
-# `.gitignore`
+## `.gitignore`
 
 `.gitignore` is a special file. It is used in Git to specify files and directories that should be ignored and not tracked.
-When you create a `.gitignore` file and specify filenames inside it, Git will exclude these files and directories from being staged or committed.
+When you create a `.gitignore` file and specify filenames inside it, Git will exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
 Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the codebase without distractions from unnecessary files.
 .gitignore can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
@@ -306,21 +332,28 @@ Now you can write a filename or folder name inside it, to stop git from tracking
 
 ## Common Files to Ignore in Scientific Settings:
 
-**Temporary Files and Output:** Ignore files generated during analysis, like log files, temporary CSVs, or intermediate data files that are not part of the final results.
+**Temporary Files and Output:** 
+Ignore files generated during analysis, like log files, temporary CSVs, or intermediate data files that are not part of the final results.
 
-**Data Folders:** Exclude large datasets or data stored locally.
+**Data Folders:** 
+Exclude large datasets or data stored locally.
 
-**Environment-specific files:** Exclude environment-specific files like .env files or venv folders used for local development setups.
+**Environment-specific files:** 
+Exclude environment-specific files like .env files or venv folders used for local development setups.
 
-**System-Specific Files:** In macOS, ignore .DS_Store files, and in Windows, ignore Thumbs.db files.
+**System-Specific Files:** 
+In macOS, ignore .DS_Store files, and in Windows, ignore Thumbs.db files.
 
-**R:** Ignore .Rdata files and /Rplots.pdf generated by R for plotting.
+**R:** 
+Ignore .Rdata files and /Rplots.pdf generated by R for plotting.
 
-**Python:** Ignore .pyc (Python compiled) files and **pycache**/ folders.
+**Python:** 
+Ignore .pyc (Python compiled) files and **pycache**/ folders.
 
-**LaTeX:** Ignore auxiliary files like .aux, .log, .bbl, and .blg files generated during LaTeX compilation.
+**LaTeX:** 
+Ignore auxiliary files like .aux, .log, .bbl, and .blg files generated during LaTeX compilation.
 
-## Wildcards in .gitignore files
+### Wildcards in .gitignore files
 
 As discussed in the [command line chapter](command-line.qmd) wildcards are special characters that represent patterns of filenames or directory names.
 They can be used to specify multiple files or directories that should be ignored by Git when tracking changes.
@@ -343,7 +376,7 @@ Matches any single character within the brackets. For example, file\[123\].txt w
 Negates a pattern and includes files that would otherwise be ignored. For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
 :::
 
-## Example .gitignore file for a R project
+### Example .gitignore file for a R project
 
 ```{bash} 
 
@@ -385,11 +418,6 @@ DESCRIPTION.meta
 .DS_Store
 
 ```
-# Exercise {{< fa dumbbell >}}
-
--   Create a folder called "recipes" and initialize it as a git repository.
--   Add a favourite (or a crazy AI generated one) recipe of yours in a text file.
-- Stage and commit your file, write a commit message
 
 # Sources
 

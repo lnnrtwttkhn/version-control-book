@@ -12,28 +12,53 @@ author: ""
 {{< fa clock >}} Duration:  min
 :::
 
-## Learning objective
--   Connect Git and Github
--   Set up a GitHub Repo in multiple ways
--   Pull and push changes to/from Github repo
+::: {.column width="50%"}
 
-# Remote repositories
+## {{< fa bullseye >}} Objectives
+In this Chapter we will introduce working with GitHub, this means:
+-   Connecting Git and Github
+
+-   Setting up a GitHub Repo 
+
+-   Pull and push changes to/from a Github repo
+
+:::
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "github"), format = "markdown")
+```
+
+## {{< fa dumbbell >}} Exercises 
+
+- Initialize your existing recipe folder as a Git Repository.
+
+- Add a new recipe on Github, commit and pull the changes to your local folder.
+
+- Add a recipe on your local file and push the changes to GitHub.
+
+# What are remote repositories
 
 Remote repositories are versions of your project hosted somewhere on the internet or a network. 
 You can set up multiple remote repositories, each usually either read-only or writable for you. 
 Collaborating with others requires managing these remote repositories and pushing and pulling data to and from the repositories to share your work.
 
 
-# What is GitHub? {{< fa brands github >}}
+## {{< fa brands github >}} What is GitHub? 
 
 GitHub is a popular web-based platform that hosts remote Git repositories.
 You can use it in your browser without any downloads.
 It's a collaborative environment for software development, allowing developers to work together, manage code, and track changes.
 GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.
 
-# Connecting to GitHub {{< fa brands github >}}
+## {{< fa brands github >}} Connecting to GitHub 
 
-## Setting Account details
+### Setting Account details
 
 To be able to integrate Github in your workflow, you´ll need to authenticate your GitHub account.
 
@@ -48,18 +73,18 @@ git config --global user.email beispiel@example.com
 In the [installation chapter](installation-setup.qmd) it is explained how to create an account on [Github.com.](https://www.Github.com).
 If you did not use your GitHub account details for the setup you should change that now.
 
-## Authentication
+### Authentication
 
 There a different ways to authenticate yourself. 
 Each way with different pros and cons that we will not look at in depth.
 
-### HTTPS Personal Access Token
+#### HTTPS Personal Access Token
 TBA
 
-### SSH Key
+#### SSH Key
 TBA
 
-# GitHub Repositories {{< fa folder-closed >}}
+# {{< fa folder-closed >}} GitHub Repositories 
 
 ## Creating a Repository
 
@@ -112,7 +137,7 @@ This pushes the local branch named "main" to a remote repository called "origin"
 `-u`is used to set the upstream branch. 
 It tells Git to remember the remote branch to which your local branch should be pushed in the future.
 
-## Forking a Repository  {{< fa code-fork >}}
+## {{< fa code-fork >}} Forking a Repository  
 
 Forking a repository on GitHub allows you to create a personal copy of the project under your GitHub account. 
 This separate copy includes all files, commit history, and branches.
@@ -122,7 +147,7 @@ You can also submit changes to the original repository through pull requests.
 By clicking the "Fork" button on the repository page, you create an identical copy in your GitHub account.
 Once the forking process is complete, you can clone the repository to your local machine using the git clone command.
 
-## Cloning a Repository {{< fa clone >}}
+## {< fa clone >}} Cloning a Repository {
 
 Cloning refers to creating a local copy of a repository from GitHub onto your own computer. 
 When you clone a repository, you download all of its files, commit history, and branches to your local machine. 
@@ -140,7 +165,7 @@ Once the cloning process is complete, you will have a local copy of the Git repo
 You can now work with the files in the repository, make changes, and commit your modifications locally.
 Remember to use the appropriate Git commands like git add, git commit, and git push to manage your changes and synchronize them with the remote repository as needed.
 
-## Pulling {{< fa code-pull-request >}}
+## {{< fa code-pull-request >}} Pulling 
 
 The `git pull` command is used to fetch the latest changes from a remote repository and merge them into your local branch. 
 You can test this function by editing a file in your repo on GitHub and then use `git pull` to update your local file with the change made on GitHub.
@@ -180,7 +205,7 @@ This is handy when you have changes in progress and want to pull in the latest c
 
 :::
 
-## Pushing {{< fa code-pull-request >}}
+## {{< fa code-pull-request >}} Pushing 
 
 The`git push` command is like a reversed `git pull`, it is used to upload your local commits to the remote repository.
 When you run "git push", Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository. 
@@ -241,34 +266,31 @@ In this scenario, contributors work directly within the main repository, creatin
 After completing the changes in the branch, they create a pull request from that branch to the main repository's default branch (e.g., main/master). 
 The workflow for this, is the same as for opening a pull request for a forked repository.
 
-# Template repositories
+## Template repositories
 Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others.
 Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code.
 This simplifies the process of setting up new projects that share common characteristics or follow best practices.
 Using a GitHub repository template is as simple as clicking the "Use this template" button on the template repository page, providing a new repository name and description, and then creating the repository with your desired settings.
 
 
-# Alternatives to GitHub
+## Alternatives to GitHub
 
 While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub.
 
 
-# Exercise {{< fa dumbbell >}}
-
-1.  Initialize your recipe folder as a Git Repository.
-2.  Add a new recipe on Github, commit and pull the changes to your local folder.
-3.  Add a recipe on your local file and push the changes to GitHub.
-
-optional:
+## Optional exercises:
 1.  Fork the repository of this book from: https://github.com/lnnrtwttkhn/version-control-book
+
 2.  Clone the forked repository to your computer
-3.  Write your name below, stage and commit the change.
+
+3.  Write your name below.
+
 4.  Open a pull request.
 
 Names:
 
 
-# Sources
+## References
 https://www.gitkraken.com/learn/git/tutorials/what-is-a-pull-request-in-git
 
 https://the-turing-way.netlify.app/collaboration/github-novice/github-novice-features.html

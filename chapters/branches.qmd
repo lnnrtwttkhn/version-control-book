@@ -13,15 +13,38 @@ author: ""
 {{< fa clock >}} Duration: min
 :::
 
-# {{< fa bullseye >}} Learning objectives
+::: {.column width="50%"}
+{{< fa bullseye >}} Objectives
 
+In this Chapter we will introduce Branches including:
 -   Purpose and benefits of using branches in Git
-
 -   Creating and switching between branches
-
 -   Merging branches and resolving conflicts
 
-# {{< fa code-branch >}} Why branches?
+
+:::
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "branches"), format = "markdown")
+```
+
+## Exercises {{< fa dumbbell >}}
+
+-   Create a new Branch called feature/newveganreceipe 
+
+-  Add a vegan recipe to your receipe text file
+
+-   Merge it with your main branch and delete it afterwards
+
+
+
+## {{< fa code-branch >}} Why branches?
 
 Git branches are like separate workspaces within a Git repository. 
 They let you work on different stuff without messing up the main code. 
@@ -35,7 +58,7 @@ Scientists might use branches to collaborate on research papers, exploring diffe
 Git makes it easy to switch between branches and handle conflicts when merging.
 With branches, you can work independently and keep your code organized.
 
-# Creating a new branch
+## Creating a new branch
 
 By default your work is on the initial branch called **master** or **main**. 
 We recommend changing your initial branch name to **main**, as discussed in the [installation and setup chapter](installation-setup.qmd).
@@ -88,7 +111,7 @@ should return the following output:
 `--contains`: Filters branches that contain a specific commit.
 :::
 
-# Switching branches
+## Switching branches
 
 To switch to the newly created branch, you can use `git checkout` or `git switch`.
 
@@ -114,7 +137,7 @@ In Git 2.23 and later versions, the `git switch` command was introduced as a saf
 It simplifies the branch-switching process and provides clearer feedback in case of errors.
 :::
 
-# Merging branches
+## Merging branches
 
 After you worked on your new branch you might want to incorporate your work into the `main` branch. 
 You can do this using `git merge`command. 
@@ -141,7 +164,7 @@ Fast-forward
  1 file changed
 ```
 
-# Merge conflicts
+## Merge conflicts
 
 Merge conflicts occur when Git is unable to automatically reconcile differences between two branches during a merge or pull operation. 
 This happens when both branches have made conflicting changes to the same part of a file. 
@@ -149,13 +172,13 @@ Git can't determine which version of the code should take precedence, and as a r
 It's like when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep. 
 So, it raises its hand and asks you, the developer, to step in and help.
 
-## Avoiding merge conflicts
+### Avoiding merge conflicts
 
 Merge conflicts can be a bit of a headache. 
 While it may not be possible to entirely avoid merge conflicts, employing good development practices can minimize their occurrence. 
 Regularly pulling changes from the remote repository into your local branch (using git pull) and keeping your branch up-to-date can help identify and resolve conflicts early.
 
-## Resolving merge conflicts
+### Resolving merge conflicts
 
 When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. 
 Git is like the referee saying, "Hey, programmers, sort out your differences!"
@@ -195,12 +218,12 @@ Your branches should now be merged and your conflict solved.
 `--log`: Include the log message from the commit(s) being merged in the new merge commit.
 :::
 
-## Types of merges
+### Types of merges
 
 Git supports different types of merges to cater to various situations in software development. 
 Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.
 
-### Standard merge
+#### Standard merge
 
 In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original time stamps. 
 It creates a new "merge commit", a special record that marks when the merge happened, showing that the branches are now combined.
@@ -209,7 +232,7 @@ It creates a new "merge commit", a special record that marks when the merge happ
 git merge 
 ```
 
-### Fast Forward Merge
+####Fast Forward Merge
 
 If no new commits were made to the base branch since the feature was created, Git automatically does a "Fast Forward Merge."
 It's like the standard merge, but no new merge commit is created. It's as if you made the commits directly on the base branch.
@@ -225,7 +248,7 @@ If you do not want a fastfoward merge, you can ensure a merge commit with the `-
 git merge --no-ff
 ```
 
-### Squash and Merge
+#### Squash and Merge
 
 When you squash a branch, Git combines all commits of the branch into a single commit.
 This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately.
@@ -233,18 +256,6 @@ Instead, the squashed commit represents the collective changes made in the branc
 
 ```{bash}
 git merge --squash
-```
-
-### Rebasing
-
-`git rebase` is a different way than a merge to integrate changes from one branch into another
-. When you rebase the `feature` branch onto the `main` branch you "rearrange" the commits.
-It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line.
-The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the `main` branch.
-It's like picking up your changes and placing them on the latest code, resulting in a linear history. However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
-
-```{bash}
-git rebase
 ```
 
 ::: {.callout-tip title="Common git rebase flags" collapse="true"}
@@ -261,7 +272,7 @@ git rebase
 `--autosquash`: Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
 :::
 
-# Deleting Branches
+## Deleting Branches
 
 Once a branch has served its purpose and is no longer needed, it can be deleted.
 Removing branches that are no longer active helps maintain a clean and manageable branch structure.
@@ -279,26 +290,26 @@ Deleted branch feature (was 3343f36).
 
 You can only delete a branch, you are not currently on.
 
-# Branches best practices
+## Branches best practices
 
-## Naming branches
+### Naming branches
 
 Adopt a consistent naming convention for branches that accurately reflects their purpose.
 This can include prefixes like `feature/`, `bug/`, or `hotfix/` followed by a descriptive name.
 Clear and standardized branch names make it easier to identify the purpose of each branch.
 
-## Branch Lifecycle
+### Branch Lifecycle
 
 Create branches with a specific goal or task in mind, and aim to keep them short-lived.
 Long-lived branches can lead to conflicts and make it harder to merge changes.
 Once the task is complete or the feature is integrated, consider deleting the branch.
 
-## Branch Protection
+### Branch Protection
 
 When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your `main` or `master` branch.
 By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
 
-### How to protect the Main Branch on GitHub
+#### How to protect the Main Branch on GitHub
 
 Go to your repository on GitHub and click on "Settings."
 In the left sidebar, select "Branches." Under "Branch protection rules," click on "Add rule."
@@ -311,136 +322,19 @@ Optionally, you can enable other protections, such as preventing force pushes or
 
 Click "Create" to save the branch protection rule.
 
-# `.gitignore`
-
-`.gitignore` is a special file. It is used in Git to specify files and directories that should be ignored and not tracked.
-When you create a `.gitignore` file and specify filenames inside it, Git will exclude these files and directories from being staged or committed.
-The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
-Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the codebase without distractions from unnecessary files.
-.gitignore can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
-It also makes sense to include large files or temporary outputs in your `.gitignore` file.
-To keep the repository size manageable, making it faster to clone, pull, and push changes.
-
-To create a `.gitignore` file, navigate to your repo and use the `touch` command.
-Alternatively, create the file in your favorite text editor.
-
-```{bash}
-touch .gitignore
-```
-
-`.gitignore` will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag in the `ls` command.
-(For details on listing of files and folders, see the chapter on the [command line](command-line.qmd).
-
-```{bash}
-ls -a
-```
-
-To open it, simply use the `open` command.
-
-```{bash}
-open .gitignore
-```
-
-Now you can write a filename or folder name inside it, to stop git from tracking it.
-
-## Common Files to Ignore in Scientific Settings:
-
-**Temporary Files and Output:** Ignore files generated during analysis, like log files, temporary CSVs, or intermediate data files that are not part of the final results.
-
-**Data Folders:** Exclude large datasets or data stored locally.
-
-**Environment-specific files:** Exclude environment-specific files like .env files or venv folders used for local development setups.
-
-**System-Specific Files:** In macOS, ignore .DS_Store files, and in Windows, ignore Thumbs.db files.
-
-**R:** Ignore .Rdata files and /Rplots.pdf generated by R for plotting.
-
-**Python:** Ignore .pyc (Python compiled) files and **pycache**/ folders.
-
-**LaTeX:** Ignore auxiliary files like .aux, .log, .bbl, and .blg files generated during LaTeX compilation.
-
-## Wildcards in .gitignore files
-
-As discussed in the [command line chapter](command-line.qmd) wildcards are special characters that represent patterns of filenames or directory names.
-They can be used to specify multiple files or directories that should be ignored by Git when tracking changes.
-Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.
-
-::: {.callout-tip title="Common wildcards" collapse="true"}
-`*`: Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.
-
-`?`: Matches a single character within a filename. For example, image?.png will match files like image1.png or imageA.png.
-
-`/`: Matches the root directory of the repository. For example, /config will match a directory named config only in the root of the repository.
-
-`[]` (Square Brackets): Matches any single character within the brackets. For example, file\[123\].txt will match file1.txt, file2.txt, or file3.txt.
-
-`!`: Negates a pattern and includes files that would otherwise be ignored. 
-For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
-:::
-
-## Example .gitignore file for a R project
-
-```{bash} 
-
-# R-specific
-*.Rproj.user/
-*.Rhistory
-.RData
-.Rproj
-
-# R package specific
-.Rcheck/
-man/*.Rd
-NAMESPACE
-
-# Temporary files
-*.bak
-*.csv~
-*.html
-*.pdf
-
-# RMarkdown-specific
-*.knit.md
-*_cache/
-*_files/
-
-# R Markdown Notebook
-*.nb.html
-
-# RStudio Project Files
-*.Rproj
-
-# R Environment Variables
-.Renviron
-
-# R dcf file
-DESCRIPTION.meta
-
-# Mac-specific
-.DS_Store
-
-```
-
-# Good commits
+## Good commits
 
 Ideally, each commit contains an isolated, complete change. This makes it easy to revert your changes if you decide to take a different approach. 
 For example, if you want to rename a variable and add some tests, put the variable rename in one commit and the tests in another commit.
 Later, if you want to keep the tests but revert the variable rename, you can revert the specific commit that contained the variable rename.
 If you put the variable rename and tests in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
 
-## Good commit messages
+### Good commit messages
 
 You should aim to write clear and concise commit messages for effective collaboration and version control. 
 Start with an imperative verb to indicate the purpose of the commit, keeping the subject line around 50 characters. 
 Remember to address one logical change per commit to keep your changes well-organized.
 
-# Exercises {{< fa dumbbell >}}
-
--   Create a new Branch called feature/newveganreceipe and work on it
-
--   Merge it with your main branch and delete it afterwards
-
--   Create a .gitignore file
 
 # References
 
