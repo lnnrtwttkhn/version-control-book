@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/rewriting-history.html" rel="next">
+<link href="../chapters/Stashing_and_rebasing.html" rel="next">
 <link href="../chapters/branches.html" rel="prev">
 <link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/installation-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation and setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation and Setup</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -224,26 +224,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/Stashing_and_rebasing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stashing and rebasing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/datalad-nextcloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -258,13 +264,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/style-guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
   </div>
 </li>
       </ul>
@@ -279,35 +285,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objective" id="toc-learning-objective" class="nav-link active" data-scroll-target="#learning-objective"><span class="header-section-number">7.1</span> Learning objective</a></li>
-  <li><a href="#remote-repositories" id="toc-remote-repositories" class="nav-link" data-scroll-target="#remote-repositories"><span class="header-section-number">8</span> Remote repositories</a></li>
-  <li><a href="#what-is-github-fa-brands-github" id="toc-what-is-github-fa-brands-github" class="nav-link" data-scroll-target="#what-is-github-fa-brands-github"><span class="header-section-number">9</span> What is GitHub? <i class="fa-brands fa-github" aria-label="github"></i></a></li>
-  <li><a href="#connecting-to-github-fa-brands-github" id="toc-connecting-to-github-fa-brands-github" class="nav-link" data-scroll-target="#connecting-to-github-fa-brands-github"><span class="header-section-number">10</span> Connecting to GitHub <i class="fa-brands fa-github" aria-label="github"></i></a>
+  <li><a href="#fa-bullseye-objectives" id="toc-fa-bullseye-objectives" class="nav-link active" data-scroll-target="#fa-bullseye-objectives"><span class="header-section-number">7.1</span> <i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Objectives</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">7.2</span> Cheatsheet</a></li>
+  <li><a href="#fa-dumbbell-exercises" id="toc-fa-dumbbell-exercises" class="nav-link" data-scroll-target="#fa-dumbbell-exercises"><span class="header-section-number">7.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</a></li>
+  <li><a href="#what-are-remote-repositories" id="toc-what-are-remote-repositories" class="nav-link" data-scroll-target="#what-are-remote-repositories"><span class="header-section-number">8</span> What are remote repositories</a>
   <ul class="collapse">
-  <li><a href="#setting-account-details" id="toc-setting-account-details" class="nav-link" data-scroll-target="#setting-account-details"><span class="header-section-number">10.1</span> Setting Account details</a></li>
-  <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication"><span class="header-section-number">10.2</span> Authentication</a>
+  <li><a href="#fa-brands-github-what-is-github" id="toc-fa-brands-github-what-is-github" class="nav-link" data-scroll-target="#fa-brands-github-what-is-github"><span class="header-section-number">8.1</span> <i class="fa-brands fa-github" aria-label="github"></i> What is GitHub?</a></li>
+  <li><a href="#fa-brands-github-connecting-to-github" id="toc-fa-brands-github-connecting-to-github" class="nav-link" data-scroll-target="#fa-brands-github-connecting-to-github"><span class="header-section-number">8.2</span> <i class="fa-brands fa-github" aria-label="github"></i> Connecting to GitHub</a>
   <ul class="collapse">
-  <li><a href="#https-personal-access-token" id="toc-https-personal-access-token" class="nav-link" data-scroll-target="#https-personal-access-token"><span class="header-section-number">10.2.1</span> HTTPS Personal Access Token</a></li>
-  <li><a href="#ssh-key" id="toc-ssh-key" class="nav-link" data-scroll-target="#ssh-key"><span class="header-section-number">10.2.2</span> SSH Key</a></li>
+  <li><a href="#setting-account-details" id="toc-setting-account-details" class="nav-link" data-scroll-target="#setting-account-details"><span class="header-section-number">8.2.1</span> Setting Account details</a></li>
+  <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication"><span class="header-section-number">8.2.2</span> Authentication</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#github-repositories-fa-folder-closed" id="toc-github-repositories-fa-folder-closed" class="nav-link" data-scroll-target="#github-repositories-fa-folder-closed"><span class="header-section-number">11</span> GitHub Repositories <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i></a>
+  <li><a href="#fa-folder-closed-github-repositories" id="toc-fa-folder-closed-github-repositories" class="nav-link" data-scroll-target="#fa-folder-closed-github-repositories"><span class="header-section-number">9</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> GitHub Repositories</a>
   <ul class="collapse">
-  <li><a href="#creating-a-repository" id="toc-creating-a-repository" class="nav-link" data-scroll-target="#creating-a-repository"><span class="header-section-number">11.1</span> Creating a Repository</a>
+  <li><a href="#creating-a-repository" id="toc-creating-a-repository" class="nav-link" data-scroll-target="#creating-a-repository"><span class="header-section-number">9.1</span> Creating a Repository</a>
   <ul class="collapse">
-  <li><a href="#starting-from-scratch" id="toc-starting-from-scratch" class="nav-link" data-scroll-target="#starting-from-scratch"><span class="header-section-number">11.1.1</span> Starting from Scratch</a></li>
-  <li><a href="#uploading-an-existing-folder" id="toc-uploading-an-existing-folder" class="nav-link" data-scroll-target="#uploading-an-existing-folder"><span class="header-section-number">11.1.2</span> Uploading an existing folder</a></li>
+  <li><a href="#starting-from-scratch" id="toc-starting-from-scratch" class="nav-link" data-scroll-target="#starting-from-scratch"><span class="header-section-number">9.1.1</span> Starting from Scratch</a></li>
+  <li><a href="#uploading-an-existing-folder" id="toc-uploading-an-existing-folder" class="nav-link" data-scroll-target="#uploading-an-existing-folder"><span class="header-section-number">9.1.2</span> Uploading an existing folder</a></li>
   </ul></li>
-  <li><a href="#forking-a-repository-fa-code-fork" id="toc-forking-a-repository-fa-code-fork" class="nav-link" data-scroll-target="#forking-a-repository-fa-code-fork"><span class="header-section-number">11.2</span> Forking a Repository <i class="fa-solid fa-code-fork" aria-label="code-fork"></i></a></li>
-  <li><a href="#cloning-a-repository-fa-clone" id="toc-cloning-a-repository-fa-clone" class="nav-link" data-scroll-target="#cloning-a-repository-fa-clone"><span class="header-section-number">11.3</span> Cloning a Repository <i class="fa-solid fa-clone" aria-label="clone"></i></a></li>
-  <li><a href="#pulling-fa-code-pull-request" id="toc-pulling-fa-code-pull-request" class="nav-link" data-scroll-target="#pulling-fa-code-pull-request"><span class="header-section-number">11.4</span> Pulling <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i></a></li>
-  <li><a href="#pushing-fa-code-pull-request" id="toc-pushing-fa-code-pull-request" class="nav-link" data-scroll-target="#pushing-fa-code-pull-request"><span class="header-section-number">11.5</span> Pushing <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i></a></li>
-  <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link" data-scroll-target="#pull-requests"><span class="header-section-number">11.6</span> Pull requests</a></li>
+  <li><a href="#fa-code-fork-forking-a-repository" id="toc-fa-code-fork-forking-a-repository" class="nav-link" data-scroll-target="#fa-code-fork-forking-a-repository"><span class="header-section-number">9.2</span> <i class="fa-solid fa-code-fork" aria-label="code-fork"></i> Forking a Repository</a></li>
+  <li><a href="#fa-clone-cloning-a-repository" id="toc-fa-clone-cloning-a-repository" class="nav-link" data-scroll-target="#fa-clone-cloning-a-repository"><span class="header-section-number">9.3</span> {&lt; fa clone &gt;}} Cloning a Repository {</a></li>
+  <li><a href="#fa-code-pull-request-pulling" id="toc-fa-code-pull-request-pulling" class="nav-link" data-scroll-target="#fa-code-pull-request-pulling"><span class="header-section-number">9.4</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pulling</a></li>
+  <li><a href="#fa-code-pull-request-pushing" id="toc-fa-code-pull-request-pushing" class="nav-link" data-scroll-target="#fa-code-pull-request-pushing"><span class="header-section-number">9.5</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pushing</a></li>
+  <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link" data-scroll-target="#pull-requests"><span class="header-section-number">9.6</span> Pull requests</a></li>
+  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">9.7</span> Template repositories</a></li>
+  <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">9.8</span> Alternatives to GitHub</a></li>
+  <li><a href="#optional-exercises" id="toc-optional-exercises" class="nav-link" data-scroll-target="#optional-exercises"><span class="header-section-number">9.9</span> Optional exercises:</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">9.10</span> References</a></li>
   </ul></li>
-  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">12</span> Template repositories</a></li>
-  <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">13</span> Alternatives to GitHub</a></li>
-  <li><a href="#exercise-fa-dumbbell" id="toc-exercise-fa-dumbbell" class="nav-link" data-scroll-target="#exercise-fa-dumbbell"><span class="header-section-number">14</span> Exercise <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></a></li>
-  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">15</span> Sources</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/github-intro.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -349,27 +355,74 @@ Overview
 <p><i class="fa-solid fa-clock" aria-label="clock"></i> Duration: min</p>
 </div>
 </div>
-<section id="learning-objective" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="learning-objective"><span class="header-section-number">7.1</span> Learning objective</h2>
+<div class="column" style="width:50%;">
+<section id="fa-bullseye-objectives" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="fa-bullseye-objectives"><span class="header-section-number">7.1</span> <i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Objectives</h2>
+<p>In this Chapter we will introduce working with GitHub, this means: - Connecting Git and Github</p>
 <ul>
-<li>Connect Git and Github</li>
-<li>Set up a GitHub Repo in multiple ways</li>
-<li>Pull and push changes to/from Github repo</li>
+<li><p>Setting up a GitHub Repo</p></li>
+<li><p>Pull and push changes to/from a Github repo</p></li>
 </ul>
 </section>
-<section id="remote-repositories" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Remote repositories</h1>
-<p>Remote repositories are versions of your project hosted somewhere on the internet or a network. You can set up multiple remote repositories, each usually either read-only or writable for you. Collaborating with others requires managing these remote repositories and pushing and pulling data to and from the repositories to share your work.</p>
+</div>
+<section id="cheatsheet" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">7.2</span> Cheatsheet</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 11%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">154</td>
+<td style="text-align: left;"><code>git clone</code></td>
+<td style="text-align: left;">Creates a local copy of a repository</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">155</td>
+<td style="text-align: left;"><code>git pull</code></td>
+<td style="text-align: left;">Fetches and merges the latest changes from a remote repository into your current branch</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">156</td>
+<td style="text-align: left;"><code>git push</code></td>
+<td style="text-align: left;">Upload your local commits to a remote repository</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
-<section id="what-is-github-fa-brands-github" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> What is GitHub? <i class="fa-brands fa-github" aria-label="github"></i></h1>
+<section id="fa-dumbbell-exercises" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="fa-dumbbell-exercises"><span class="header-section-number">7.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</h2>
+<ul>
+<li><p>Initialize your existing recipe folder as a Git Repository.</p></li>
+<li><p>Add a new recipe on Github, commit and pull the changes to your local folder.</p></li>
+<li><p>Add a recipe on your local file and push the changes to GitHub.</p></li>
+</ul>
+</section>
+<section id="what-are-remote-repositories" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> What are remote repositories</h1>
+<p>Remote repositories are versions of your project hosted somewhere on the internet or a network. You can set up multiple remote repositories, each usually either read-only or writable for you. Collaborating with others requires managing these remote repositories and pushing and pulling data to and from the repositories to share your work.</p>
+<section id="fa-brands-github-what-is-github" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="fa-brands-github-what-is-github"><span class="header-section-number">8.1</span> <i class="fa-brands fa-github" aria-label="github"></i> What is GitHub?</h2>
 <p>GitHub is a popular web-based platform that hosts remote Git repositories. You can use it in your browser without any downloads. It’s a collaborative environment for software development, allowing developers to work together, manage code, and track changes. GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.</p>
 </section>
-<section id="connecting-to-github-fa-brands-github" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Connecting to GitHub <i class="fa-brands fa-github" aria-label="github"></i></h1>
-<section id="setting-account-details" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="setting-account-details"><span class="header-section-number">10.1</span> Setting Account details</h2>
-<p>To be able to integrate Github in your workflow, you´ll need to authenticate your GitHub account. In the <a href="../chapters/installation-setup.html">setup chapter</a> it is explained how to set a Username and Email for Git to use on your Computer.</p>
+<section id="fa-brands-github-connecting-to-github" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="fa-brands-github-connecting-to-github"><span class="header-section-number">8.2</span> <i class="fa-brands fa-github" aria-label="github"></i> Connecting to GitHub</h2>
+<section id="setting-account-details" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="setting-account-details"><span class="header-section-number">8.2.1</span> Setting Account details</h3>
+<p>To be able to integrate Github in your workflow, you´ll need to authenticate your GitHub account.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Example"</span></span>
@@ -377,25 +430,26 @@ Overview
 </div>
 <p>In the <a href="../chapters/installation-setup.html">installation chapter</a> it is explained how to create an account on <a href="https://www.Github.com">Github.com.</a>. If you did not use your GitHub account details for the setup you should change that now.</p>
 </section>
-<section id="authentication" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="authentication"><span class="header-section-number">10.2</span> Authentication</h2>
+<section id="authentication" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="authentication"><span class="header-section-number">8.2.2</span> Authentication</h3>
 <p>There a different ways to authenticate yourself. Each way with different pros and cons that we will not look at in depth.</p>
-<section id="https-personal-access-token" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="https-personal-access-token"><span class="header-section-number">10.2.1</span> HTTPS Personal Access Token</h3>
+<section id="https-personal-access-token" class="level4" data-number="8.2.2.1">
+<h4 data-number="8.2.2.1" class="anchored" data-anchor-id="https-personal-access-token"><span class="header-section-number">8.2.2.1</span> HTTPS Personal Access Token</h4>
 <p>TBA</p>
 </section>
-<section id="ssh-key" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="ssh-key"><span class="header-section-number">10.2.2</span> SSH Key</h3>
+<section id="ssh-key" class="level4" data-number="8.2.2.2">
+<h4 data-number="8.2.2.2" class="anchored" data-anchor-id="ssh-key"><span class="header-section-number">8.2.2.2</span> SSH Key</h4>
 <p>TBA</p>
 </section>
 </section>
 </section>
-<section id="github-repositories-fa-folder-closed" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> GitHub Repositories <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i></h1>
-<section id="creating-a-repository" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="creating-a-repository"><span class="header-section-number">11.1</span> Creating a Repository</h2>
-<section id="starting-from-scratch" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="starting-from-scratch"><span class="header-section-number">11.1.1</span> Starting from Scratch</h3>
+</section>
+<section id="fa-folder-closed-github-repositories" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> GitHub Repositories</h1>
+<section id="creating-a-repository" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="creating-a-repository"><span class="header-section-number">9.1</span> Creating a Repository</h2>
+<section id="starting-from-scratch" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="starting-from-scratch"><span class="header-section-number">9.1.1</span> Starting from Scratch</h3>
 <p>Creating a new GitHub repository is a simple process. To create a new repository, click on the “+” sign in the top-right corner of the GitHub page. From the dropdown menu, select “New repository.” On the new repository page, enter a name for your repository and make sure the “Public” option is selected if you want it to be accessible to everyone. You should also choose to create a README file by checking the corresponding box. Finally, click the green “Create repository” button at the bottom of the page to complete the creation process. Once you have created the repository, you will find the README.md file in your repository. You can edit this file to provide information and details about your project. Whatever you write in the README.md file will be displayed on the front page of your project.</p>
 <p>To add more files to your repository, click on the “Add file” button and choose whether to upload existing files or create a new file directly on GitHub. Remember to provide a descriptive commit message each time you add a new file or make changes. The commit message helps you keep track of the changes you’ve made and serves as a brief summary of the modifications made to the repository.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Writing a README file">
@@ -415,8 +469,8 @@ Writing a README file
 </div>
 </div>
 </section>
-<section id="uploading-an-existing-folder" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="uploading-an-existing-folder"><span class="header-section-number">11.1.2</span> Uploading an existing folder</h3>
+<section id="uploading-an-existing-folder" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="uploading-an-existing-folder"><span class="header-section-number">9.1.2</span> Uploading an existing folder</h3>
 <p>To initialize an existing folder as a GitHub repository, you first need to create a new repository, like explained above. You´ll then need to initialize the folder as a Git repository using <code>git init</code>.</p>
 <p>If you have already done this, you can of course skip this. To add your folder as a remote repository use the <code>git remote</code>command.</p>
 <div class="cell">
@@ -429,20 +483,20 @@ Writing a README file
 <p>This pushes the local branch named “main” to a remote repository called “origin” while setting it as the upstream branch. <code>-u</code>is used to set the upstream branch. It tells Git to remember the remote branch to which your local branch should be pushed in the future.</p>
 </section>
 </section>
-<section id="forking-a-repository-fa-code-fork" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="forking-a-repository-fa-code-fork"><span class="header-section-number">11.2</span> Forking a Repository <i class="fa-solid fa-code-fork" aria-label="code-fork"></i></h2>
+<section id="fa-code-fork-forking-a-repository" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="fa-code-fork-forking-a-repository"><span class="header-section-number">9.2</span> <i class="fa-solid fa-code-fork" aria-label="code-fork"></i> Forking a Repository</h2>
 <p>Forking a repository on GitHub allows you to create a personal copy of the project under your GitHub account. This separate copy includes all files, commit history, and branches. Forking is commonly used when you want to contribute to a project without directly modifying the original repository. It enables you to make changes independently, create new branches, and push modifications to your forked repository. You can also submit changes to the original repository through pull requests. By clicking the “Fork” button on the repository page, you create an identical copy in your GitHub account. Once the forking process is complete, you can clone the repository to your local machine using the git clone command.</p>
 </section>
-<section id="cloning-a-repository-fa-clone" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="cloning-a-repository-fa-clone"><span class="header-section-number">11.3</span> Cloning a Repository <i class="fa-solid fa-clone" aria-label="clone"></i></h2>
+<section id="fa-clone-cloning-a-repository" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="fa-clone-cloning-a-repository"><span class="header-section-number">9.3</span> {&lt; fa clone &gt;}} Cloning a Repository {</h2>
 <p>Cloning refers to creating a local copy of a repository from GitHub onto your own computer. When you clone a repository, you download all of its files, commit history, and branches to your local machine. Cloning allows you to work with the repository locally, make changes, and push those changes back to the original repository if you have write access. It is commonly used when you want to contribute to a project or work on it independently. To clone a repository, you need the repository’s URL from GitHub. You can find the repository’s HHPS URL on the repository page, if you click on the green <strong>code</strong> button. Then use the terminal to navigate to the directory, to where you want to clone the repository. Then use the <code>git clone</code> command followed with the URL of the repository.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified. You can now work with the files in the repository, make changes, and commit your modifications locally. Remember to use the appropriate Git commands like git add, git commit, and git push to manage your changes and synchronize them with the remote repository as needed.</p>
 </section>
-<section id="pulling-fa-code-pull-request" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="pulling-fa-code-pull-request"><span class="header-section-number">11.4</span> Pulling <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i></h2>
+<section id="fa-code-pull-request-pulling" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="fa-code-pull-request-pulling"><span class="header-section-number">9.4</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pulling</h2>
 <p>The <code>git pull</code> command is used to fetch the latest changes from a remote repository and merge them into your local branch. You can test this function by editing a file in your repo on GitHub and then use <code>git pull</code> to update your local file with the change made on GitHub. To edit a file first click on it, in the repository. In the top-right corner of the file view, click on the pencil icon (Edit this file) to start editing. Make the necessary changes to the file in the in-browser editor. You can add, modify, or delete content as needed. As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as “changes not staged for commit”. Provide a brief description of the changes in the “Commit changes” section at the bottom of the page.</p>
 <p>In the relevant directory use the <code>git pull</code>command to update your local file with the change made on GitHub.</p>
 <div class="cell">
@@ -471,8 +525,8 @@ git pull command flags
 </div>
 </div>
 </section>
-<section id="pushing-fa-code-pull-request" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="pushing-fa-code-pull-request"><span class="header-section-number">11.5</span> Pushing <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i></h2>
+<section id="fa-code-pull-request-pushing" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="fa-code-pull-request-pushing"><span class="header-section-number">9.5</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pushing</h2>
 <p>The<code>git push</code> command is like a reversed <code>git pull</code>, it is used to upload your local commits to the remote repository. When you run “git push”, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository. Git will verify if your local branch is up to date with the remote branch. If there are new commits on the remote branch that you don’t have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts. It’s important to note that you need appropriate access and permissions to push to a remote repository. If you don’t have write access, you won’t be able to push your changes. If you don`t specify a branch, Git will push the one you are on in the moment.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common git push flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -498,8 +552,8 @@ Common git push flags
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="pull-requests" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="pull-requests"><span class="header-section-number">11.6</span> Pull requests</h2>
+<section id="pull-requests" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="pull-requests"><span class="header-section-number">9.6</span> Pull requests</h2>
 <p>Pull request serves as a request for code review and integration into a project’s codebase, enabling collaboration and ensuring code quality before changes are merged. When dealing with pull requests, there are two primary workflows.</p>
 <p><strong>Pull Request from a Forked Repository:</strong></p>
 <p>To create a pull request after forking a repository and making changes follow these steps:</p>
@@ -515,32 +569,32 @@ Common git push flags
 <p><strong>Pull Request from a Branch within a Repository:</strong></p>
 <p>In this scenario, contributors work directly within the main repository, creating a new branch for their changes. After completing the changes in the branch, they create a pull request from that branch to the main repository’s default branch (e.g., main/master). The workflow for this, is the same as for opening a pull request for a forked repository.</p>
 </section>
-</section>
-<section id="template-repositories" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Template repositories</h1>
+<section id="template-repositories" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="template-repositories"><span class="header-section-number">9.7</span> Template repositories</h2>
 <p>Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others. Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. This simplifies the process of setting up new projects that share common characteristics or follow best practices. Using a GitHub repository template is as simple as clicking the “Use this template” button on the template repository page, providing a new repository name and description, and then creating the repository with your desired settings.</p>
 </section>
-<section id="alternatives-to-github" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Alternatives to GitHub</h1>
+<section id="alternatives-to-github" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="alternatives-to-github"><span class="header-section-number">9.8</span> Alternatives to GitHub</h2>
 <p>While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub.</p>
 </section>
-<section id="exercise-fa-dumbbell" class="level1" data-number="14">
-<h1 data-number="14"><span class="header-section-number">14</span> Exercise <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></h1>
+<section id="optional-exercises" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="optional-exercises"><span class="header-section-number">9.9</span> Optional exercises:</h2>
 <ol type="1">
-<li>Initialize your recipe folder as a Git Repository.</li>
-<li>Add a new recipe on Github, commit and pull the changes to your local folder.</li>
-<li>Add a recipe on your local file and push the changes to GitHub.</li>
+<li><p>Fork the repository of this book from: https://github.com/lnnrtwttkhn/version-control-book</p></li>
+<li><p>Clone the forked repository to your computer</p></li>
+<li><p>Write your name below.</p></li>
+<li><p>Open a pull request.</p></li>
 </ol>
-<p>optional: 1. Fork the repository of this book from: https://github.com/lnnrtwttkhn/version-control-book 2. Clone the forked repository to your computer 3. Write your name below, stage and commit the change. 4. Open a pull request.</p>
 <p>Names:</p>
 </section>
-<section id="sources" class="level1" data-number="15">
-<h1 data-number="15"><span class="header-section-number">15</span> Sources</h1>
+<section id="references" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="references"><span class="header-section-number">9.10</span> References</h2>
 <p>https://www.gitkraken.com/learn/git/tutorials/what-is-a-pull-request-in-git</p>
 <p>https://the-turing-way.netlify.app/collaboration/github-novice/github-novice-features.html</p>
 <p>https://git-scm.com/book/de/v2/Git-Grundlagen-Mit-Remotes-arbeiten</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -864,8 +918,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/rewriting-history.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rewriting history</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/Stashing_and_rebasing.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stashing and rebasing</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
