@@ -1,23 +1,25 @@
 ---
-title: "Installation and setup"
+title: "Installation and Setup"
 engine: knitr
 execute:
   eval: false
 title-block-style: none
 author: ""
 ---
+
 ::: callout-note
 ### Overview
 
 {{< fa clock >}} Duration:  min
 :::
 
-## {{< fa bullseye >}} Objectives
-- Download and configure Git
+::: {.column width="50%"}
+{{< fa bullseye >}} Objectives
 
-- Create a Github account
+- Downloading and configuring Git
+- Creating a Github account
+:::
 
-- Download and setup a text editor
 
 ## Acknowledgements
 
@@ -34,26 +36,27 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ## Cheatsheet
 
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: false
 #| message: false
 #| warning: false
 knitr::kable(table_cheatsheet(name = "config"), format = "markdown")
 ```
 
-# {{< fa brands git-alt >}} Downloading Git
+## {{< fa brands git-alt >}} Downloading Git
 
-## {{< fa brands apple >}} macOS
+### {{< fa brands apple >}} macOS
 
-### Option 1: Terminal
+#### Option 1: Terminal
 
-::: {.callout-tip title="Where is the Terminal?" collapse="false"}
+::: {.callout-tip title="Where is the Terminal?" collapse="true"}
 
 The Terminal can be found at `/Applications/Utilities/Terminal.app` or by searching the Spotlight for "Terminal".
 
 You may want to keep Terminal in your [Dock](https://support.apple.com/guide/mac-help/open-apps-from-the-dock-mh35859/mac) to find it more easily.
 :::
 
+MacOS usually comes with a pre-installed version of Git that is accessible through the Xcode Command Line Tools.
 Open the Terminal and type:
 
 ```{bash}
@@ -63,13 +66,13 @@ git --version
 If git is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools.
 You may be asked for your administrator password.
 
-### Option 2: Binary installer
+#### Option 2: Binary installer
 
 Download and run the installer from: [https://git-scm.com/download/mac](https://git-scm.com/download/mac).
 Hit `Continue` through the prompts without modifying the installation destination or other settings.
 You may be asked for your administrator password.
 
-### {{< fa brands linux >}} Linux
+#### {{< fa brands linux >}} Linux
 
 Check if you have git installed by opening your terminal and running:
 
@@ -83,13 +86,17 @@ If git is not installed, install it using your package manager, e.g., by running
 sudo apt-get install git 
 ```
 
-## {{< fa brands windows >}} Windows
+### {{< fa brands windows >}} Windows
 
 Download the [Git for Windows installer](https://git-scm.com/download/win).
-Hit 'Next' through the prompts without modifying the installation destination or other settings
-Click [here](https://www.youtube.com/watch?v=-Bfx-v5mIDo) for a video tutorial.
+Hit 'Next' through the prompts without modifying the installation destination or other settings.
 
-# {{< fa brands github >}} Creating a GitHub account
+You can also click [here](https://www.youtube.com/watch?v=-Bfx-v5mIDo) for a video tutorial.
+
+## {{< fa brands github >}} Creating a GitHub account
+
+GitHub is a Git based website that helps developers work together on code, track changes, and share their software projects with others.
+This book will get into Github at a later point, but you can already create your account, if you dont already have one.
 
 1.  Open <https://github.com> in your browser
 2.  Click the `Sign up` button
@@ -110,13 +117,14 @@ Here are some tips for choosing a GitHub username:
 
 :::
 
-## GitHub Student Education Pack
+::: {.callout-tip title="GitHub student education pack" collapse="true"}
 
 The [GitHub Student Developer Pack](https://education.github.com/pack) is a program offered by GitHub to students, providing them with free access to a collection of valuable developer tools and services. 
 To benefit from the pack, visit the [GitHub Education website](https://www.education.github.com) and sign up with your student email to verify your academic status.
 Once verified, you gain access to various resources, including [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) with unlimited private repositories, free domain names, cloud credits, coding courses, and more.
+:::
 
-# {{< fa align-left >}} Downloading a Text Editor 
+## {{< fa align-left >}} Downloading a Text Editor 
 
 Sometimes, Git might ask you to write a commit message, and it can be annoying if you end up in an editor you don't like or don't know how to use.
 The standard text editor is called **Vim**, which is widely known for being difficult to use. 
@@ -126,8 +134,9 @@ You can find more information about the challenges of using Vim (and some funny 
 Our recommendation is [Nano](https://www.nano-editor.org/docs.php), which runs in the Terminal and is fairly easy to use.
 However there are a lot of alternatives.
 
-# Configuring Git
-
+## Configuring Git
+Once you installed Git, it is time to set it up.
+We will do this from the command line.
 The `git config` command  is used to get and set configuration. 
 It allows you to customize Git according to your preferences and requirements. 
 To look at all the different configuration commands you can use
@@ -153,7 +162,7 @@ The configuration values set at this level override values set at the system-lev
 By default, Git reads from and writes to this file when you use the `git config` command without any additional options.
 :::
 
-## Identify yourself {{< fa person >}}
+### {{< fa person >}} Identifying yourself 
 
 Before you start using Git, it's important to set your username and email address. 
 This information is crucial because Git uses it to identify the author of each change you make. 
@@ -172,7 +181,7 @@ It can be your **GitHub username**, your **real name**, or something informative
 This name will be attached to your commits, so **choose something that makes sense** to others and yourself in the future.
 :::
 
-## Set Git editor {{< fa pen >}}
+### {{< fa pen >}} Set your Text editor 
 
 As mentioned earlier, you may come across various scenarios where you need to interact with text-based files, such as commit messages or merge conflict resolutions. 
 Git relies on a text editor to allow you to make changes to these files within the Git workflow. 
@@ -185,7 +194,7 @@ git config --global core.editor "editor name"
 From now on, when Git requires you to interact with a text editor, it will use the one you have set.
 If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.
 
-## Configure the default name for an initial branch {{< fa code-branch >}}
+### {{< fa code-branch >}} Configure the default name for an initial branch 
 
 By default, Git uses the name "master" for the initial branch when creating a new repository.
 However, there has been a growing movement to transition to using "main" as the default branch name instead.
@@ -196,7 +205,7 @@ To configure the default branch name to "main" in Git, you can use the following
 git config --global init.defaultBranch main
 ```
 
-## Check your Settings {{< fa gear >}}
+## {{< fa gear >}} Check your Settings 
 
 You can check if your configurations worked using
 
@@ -215,7 +224,7 @@ core.editor=nano
 
 Now that your Git environment is customized to your preferences, you are ready to use Git.
 
-# Calling for Help {{< fa circle-question >}}
+## {{< fa circle-question >}} Calling for Help 
 
 The `--help` option in Git is a command that provides you with access to the built-in Git documentation and help resources.
 When you run a Git command followed by `--help`, Git displays information about that command, including its usage, available options, and a brief description of its functionality.
@@ -226,7 +235,7 @@ For example
 git config --help
 ```
 
-will open up a browser in the terminal containing information about the **config** command.
+will open up a browser in the terminal containing information about the `config`command.
 To quit the browser use `q`.
 
 While the command provides extensive documentation and information about Git commands, it is not the most beginner-friendly resource.
