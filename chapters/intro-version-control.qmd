@@ -1,0 +1,290 @@
+---
+title: "Introduction"
+image: ../static/version-control-turing-way.svg
+engine: knitr
+execute:
+  eval: false
+title-block-style: none
+author: ""
+categories: [beginner, basics]
+description: "Introduction to fundamental concepts of version control."
+---
+
+## Acknowledgements
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("koziar2023", "bryan2018", "ram2013", "perez-riverol2016")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+- https://github.com/aim-rsf/training/tree/main/version-control
+- https://www.youtube.com/watch?v=z9-qAGq78qE
+
+## Learning Objetives
+
+- [x] What is version control?
+- [x] Why is version control useful (for research)?
+- [x] What are git and GitHub?
+- [x] What is the difference between git and GitHub?
+
+## Exercises
+
+Ask these questions before students learn about version control:
+
+Imagine a scenario where you crafted a brilliant paragraph for your paper, but then accidentally ruined it.
+How would you retrieve the earlier brilliant version?
+Is it even possible?
+
+Solution:
+
+The possibility of retrieving the brilliant version exists only when you have made a copy of the previous paper version.
+The risk of losing valuable versions frequently results in "implicit" version control, where multiple versions of the same file are saved.
+This approach, however, is error-prone and can lead to additional confusion and frustration.
+
+Consider a situation where you are working with five co-authors on a paper.
+How do you handle the changes and comments they make to the document?
+If you're using LibreOffice Writer or Microsoft Word and you accept changes made using the "Track Changes" option, what happens to the history of those modifications?
+
+Solution:
+
+Collaborative writing using traditional word processors presents challenges.
+Collaborators either need to work on the document sequentially, which slows down the writing process, or you have to send versions to each collaborator and manually merge their comments into the document.
+While the "track changes" option can highlight modifications and simplify merging, accepting changes erases their history, making it impossible to identify who suggested the change, the reason behind it, or when it was incorporated into the document.
+Even online word processors like Google Docs or Microsoft Office Online do not entirely resolve these issues.
+
+## What is version control?
+
+> "Version control is an approach to **record changes** made in a file or set of files **over time** so that you and your collaborators can track their history, review any changes, and revert or go back to earlier versions." -- @community2022, chapter on [Version Control](https://the-turing-way.netlify.app/reproducible-research/vcs.html).
+
+![This illustration is created by [Scriberia](https://www.scriberia.com/) with [The Turing Way](https://the-turing-way.netlify.app/) community. Used under a [CC-BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/). DOI: [10.5281/zenodo.3695300](https://doi.org/10.5281/zenodo.3695300) (Version 3, [direct download link](https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1)).](../static/version-control-turing-way.svg){#fig-turing-way-version-control}
+
+## Benefits of version control
+
+Version control offers numerous benefits.
+It allows to ...
+
+- Track the history of changes in your files (it's clear what you did & you have the option to revert back)
+- Work with the latest version of a file
+- Backup previous versions of files
+- Go back to previous versions of your files
+- Test out new features without messing up your previous version
+- Collaborate with others on the same files at the same time
+
+This makes version control a great data management and documentation tool.
+
+## Challenges
+
+### Example
+
+You have a person 1 who is developing a script to analyze their data.
+You go through different versions, script-v1, script-v2, script-v3.
+Now you want to test out a new feature.
+It takes you a while to test this feature.
+It becomes unclear what you should call all these files.
+Then you realize that you need help with this.
+So then researcher 2 comes in and they help ypu implementing this feature.
+More files are created, but no ideas how to name them.
+Person 3 has a lot of ideas but is not editing the files directly.
+So script v-3 is created.
+One you realize that this is becoming complicated, you create a meta document that you want to use to keep track of the project progress.
+Then you realize that you software has bugs and you can't figure out when this bug has occurred for the first time.
+Time has passed and you ask yourself: what is the latest version of my script and where is it? when did I incorporate that new featrure. who made that change and why? collaborator asks you to run version 2 of the script but you dont have it anymore.
+actually there are many more people involved and many more documents.
+
+## Versions in mulitple files
+
+It is quite likely that you are already engaged in some form of version control.
+
+One way to implement file versioning of files is by **appending versions or descriptive labels to the filenames**, or by **adding initials** at the end of the filename:
+
+- `file_v1.docx`, `file_v2.docx`, `file_v3.docx`, etc.
+- `draft.docx` to `draft_comments_LW_final_edited.docx`, etc.
+
+Every time you make a critical change to a file, you duplicate it, rename it according to your versioning scheme and continue working in the duplicated file.
+While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated in @fig-phd-comic-final-doc and @fig-xkcd-documents.
+In such cases, more advanced version control systems may be necessary.
+
+!["Piled Higher and Deeper" by Jorge Cham ([phdcomics.com](https://phdcomics.com/)). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. ([direct link](https://phdcomics.com/comics/archive.php?comicid=1531)).](../static/phd-comic-final-doc.gif){#fig-phd-comic-final-doc}
+
+!["Documents" by xkcd ([xkcd.com](https://xkcd.com/)). Used under a [Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence](https://creativecommons.org/licenses/by-nc/2.5/) ([direct link](https://xkcd.com/1459/)).](../static/xkcd-documents.png){#fig-xkcd-documents}
+
+![This illustration is created by [Scriberia](https://www.scriberia.com/) with [The Turing Way](https://the-turing-way.netlify.app/) community. Used under a [CC BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/). DOI: [10.5281/zenodo.3695300](https://doi.org/10.5281/zenodo.3695300) (Version 3, [direct download link](https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1)).](../static/project-history-turing-way.svg)
+
+### Versions in a single file
+
+Some software can keep track of all the changes made to a file without making new copies of the file.
+This includes word processors like Microsoft Word's [Track Changes](https://support.microsoft.com/en-us/office/track-changes-in-word-197ba630-0f5f-4a8e-9a77-3712475e806a?ui=en-us&rs=en-us&ad=us), Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/latest/ro/text/shared/guide/redlining.html).
+
+::: {.callout-tip collapse="true" title="Disadvantages of version control using word processors compared to Git"}
+
+1. **Limited Collaboration:** Word processors' track changes feature is primarily designed for collaboration within the application, making it difficult to collaborate with users who don't have access to the same word processing software.
+In contrast, Git allows seamless collaboration across different platforms and tools.
+1. **Limited Review Features:** Beyond comments in the text itself, word processors lack the advanced review features offered by Git, such as pull requests and code comments.
+These features facilitate the review processes, making it easier to provide feedback and discuss changes.
+1. **Non-Atomic Commits:** In most word processors, tracking changes may lead to non-atomic commits, where multiple unrelated changes are combined into one.
+This can make it harder to understand the history and roll back specific changes when needed, compared to the precise commit system in Git.
+1. **Limited Branching and Merging:** Git provides powerful branching and merging capabilities, allowing for the creation of multiple branches for different features or experiments.
+Word processors often lack this level of branching and merging, making it harder to manage complex development workflows.
+1. **No Version Tagging:** Git allows tagging specific versions, marking them as milestones or releases.
+Word processors generally lack this feature, which can be essential for identifying important points in the development process.
+1. **Lack of File-Level Versioning:** Word processors typically track changes at the document level, lacking the ability to track changes at the file level. Git, on the other hand, allows version control for individual files, enabling more granular control over the project's components.
+1. **Limited Automation:** Word processors may offer basic automation features, but they can't match the automation capabilities provided by Git and GitHub, such as pre-commit hooks, continuous integration, and automated testing.
+1. **Difficulty in Managing Large Projects:** Word processors' track changes feature may become less efficient and manageable as the project grows in size and complexity. Git, as a dedicated version control system, is better suited for handling large-scale projects.
+1. **No Remote Repositories:** Word processors do not have built-in support for remote repositories like Git does. Remote repositories in Git enable decentralized collaboration and backup, making it easier to work with distributed teams.
+1. **Dependency on Proprietary Software:** Using word processors for tracking changes ties the version control process to specific software vendors, limiting the flexibility and interoperability that Git offers as an open-source, widely-used tool.
+
+:::
+
+This allows you to look at the file's history and see how it has changed over time.
+Examples of such software include [Google Drive](https://www.google.com/drive/), [Dropbox](https://www.dropbox.com/), and [Overleaf](https://www.overleaf.com/).
+You may have noticed that these services automatically save different versions of your files and allow you to go back to previous versions if needed.
+
+::: {.callout-tip collapse="true" title="Disadvantages of Version Control using Dropbox and Google Drive compared to Git"}
+
+1. **Lack of Fine-Grained Versioning:** Both Dropbox and Google Drive offer basic versioning features, but they often lack the granularity provided by dedicated version control systems like Git.
+In version control systems, you can track changes at the file level, while Dropbox and Google Drive may only keep a limited history of entire documents.
+1. **No Code Collaboration Features:** While Dropbox and Google Drive allow file sharing and real-time collaboration, they do not provide specialized features for collaboration, like pull requests, or conflict resolution, which are often essential in the development of research outputs.
+1. **Limited Branching and Merging:** Dropbox and Google Drive do not support branching and merging, making it challenging to manage complex development workflows, especially in collaborative projects.
+1. **Dependency on Third-Party Servers:** When using Dropbox and Google Drive, version control relies on their servers and infrastructure.
+This dependence may raise concerns about data security, privacy, and the availability of the service.
+1. **File Size and Storage Limits:** Both services have limitations on file sizes and storage space.
+This can be problematic for larger projects with numerous files or when working with large binary files.
+1. **Limited Automation and Integration:** Dropbox and Google Drive lack the extensive automation and integration options provided by Git. In Git, you can set up various automated workflows and integrate with continuous integration tools for smoother development processes.
+1. **Revision Conflicts:** Version control in Dropbox and Google Drive may not handle revision conflicts as effectively as Git.
+Resolving conflicts manually can be time-consuming and may lead to data loss or discrepancies.
+1. **Limited Offline Capabilities:** When working offline, accessing version history or performing version control tasks in Dropbox and Google Drive might not be as seamless as with Git, which is designed to work effectively in both online and offline environments.
+
+:::
+
+![Image from [Chapter 3.1 on "Collaboration, Version Control, & GitHub"](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) of the [Mozilla Science Lab's Study Group Orientation handbook](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://github.com/mozillascience/study-group-orientation/blob/master/LICENSE) ([direct download link](https://github.com/mozillascience/study-group-orientation/blob/master/images/gh07.png))](../static/versions-single-file.png){#fig-versions-single-file}
+
+@fig-versions-single-file illustrates the concept of **tracking versions within a single file**.
+It illustrates a simplified linear project timeline (gray line).
+A version control system keeps track of the changes made to the file at specific time points (gray nodes in @fig-versions-single-file). These nodes represent various actions such as additions (first node), deletions (second node), or edits to the content (third node).
+The blue arrows at the bottom indicate the ability to navigate along this linear timeline.
+By recording these changes, it becomes possible to access previous versions of the file.
+This means that you can go back and examine earlier versions or even revert the entire workflow back to a specific version, if needed.
+Rather than saving new files for each change, this system saves the changes within the same file, allowing for easier management and tracking of version history.
+
+### Features of a version control system
+
+1. **What:** It keeps track of the changes made to a file when you edit it.
+1. **When:** It records the date and time when each change was made.
+1. **Who** It keeps a record of who made each change.
+1. **Why:** It allows you to add a note explaining why you made a particular change.
+
+The system takes snapshots of your project, giving them unique codes that include all these features.
+Instead of saving new files for each change, only the specific modifications made to the file are saved.
+This makes it easy to compare different versions, restore previous versions, and combine changes when needed.
+
+## Git
+
+![Git Logo (full color Git logo for light backgrounds) by [Jason Long](https://twitter.com/jasonlong) is licensed under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/) ([link to download page](https://git-scm.com/downloads/logos)).](../static/git-logo-full-color.svg){#fig-git-logo-full-color}
+
+Among various version control systems, Git is the most widely used.
+It was created by the Linux development community in 2005.
+Git is a software primarily written in C, but you don't need to know C.
+
+### Key features of Git
+
+- [Free](https://git-scm.com/downloads), fast, and [open source](https://github.com/git/git).
+- It is a **distributed** system, meaning everyone working on a project has a complete copy of it.
+- Most operations in Git can be performed using local files and resources, **minimizing the need for external dependencies**.
+- Git keeps a **detailed history of changes**, including what was changed, when it was changed, who made the change, and why it was made.
+- You can easily retrieve previous versions of your project, allowing you to see the progression of your work.
+- Git forms the **foundation for collaboration tools** like GitHub and GitLab.
+
+When you use Git, it takes snapshots of your project whenever you choose.
+It then compares the current snapshot with the previous one and prompts you to provide a message explaining why you made the specific changes.
+
+::: {.callout-tip title="Why is Git called Git?" collapse="true"}
+
+The name "git" was given by the main developer Linus Torvalds when he created the software.
+Torvalds is well-known for his involvement in the development of the Linux kernel.
+
+> *"I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."* -- [Wikipedia: Git](https://en.wikipedia.org/wiki/Git)
+
+For more insights and discussions about the name, you can refer to the [README.md file on GitHub](https://github.com/git/git).
+
+The name "git" was given by Linus Torvalds when he wrote the very first version. He described the tool as "the stupid content tracker" and the name as (depending on your mood):
+
+- random three-letter combination that is pronounceable, and not actually used by any common UNIX command. The fact that it is a mispronunciation of "get" may or may not be relevant.
+- stupid. contemptible and despicable. simple. Take your pick from the dictionary of slang.
+- "global information tracker": you're in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.
+- "goddamn idiotic truckload of sh*t": when it breaks
+
+:::
+
+## Summary
+
+Git is a free **version control system** that helps you manage and track the history of your files, allowing you to retrieve previous changes.
+It is used **locally** on your computer.
+
+GitHub is a popular **cloud-based** hosting service for sharing projects tracked with Git.
+It offers **collaboration** features and serves as a reliable backup solution.
+
+## How do I interact with git on my computer?
+
+There are many options to interact with Git.
+
+### Command line / terminal
+
+See chapter on [command line](command-line.qmd).
+
+### Extensions to existing software
+
+Your text editor or analytical software is very likely to have a git extensions / plugin, often via a Graphical User Interface (GUI).
+
+- [RStudio Desktop](https://posit.co/download/rstudio-desktop/)
+- [Visual Studio Code](https://code.visualstudio.com/docs/sourcecontrol/overview)
+
+### Git Clients (applications with a GUI)
+
+Several software applications enable the use of Git on your local computer without the need for the command line.
+The following is a non-comprehensive list of such software.
+Please consult their respective documentation for further details.
+
+- [GitKraken](https://www.gitkraken.com/)
+- [GitHub Desktop](https://desktop.github.com/)
+
+## Common misconceptions
+
+### Misconception: Git is the same as GitHub
+
+![Git Logo by [Jason Long](https://twitter.com/jasonlong) is licensed under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/). ([Link to download page](https://git-scm.com/downloads/logos)).](../static/git-icon.svg){#fig-git-logo fig-align="left"}
+
+![GITHUB®, the GITHUB® logo design, the INVERTOCAT logo design, OCTOCAT®, and the OCTOCAT® logo design are trademarks of GitHub, Inc., registered in the United States and other countries. The OCTOCAT design is the exclusive property of GitHub, Inc and has been federally registered with the United States Copyright Office. All rights reserved. ([Link to download page](https://github.com/logos)).](../static/github-logo.svg){#fig-github-logo fig-align="left"}
+
+One of the most widespread misconceptions is that Git and GitHub are the same thing.
+Git and GitHub are two distinct but related tools in the world of version control.
+
+**Git is a version control system** (software installed on your computer) that allows you to track changes and manage the history of your files locally on your computer.
+It provides features such as branching, merging, and reverting to previous versions.
+
+**GitHub is a web-based hosting service** for your Git repositories, allowing you to store and share your Git projects online.
+GitHub provides additional collaboration features such as issue tracking, pull requests, and project management tools.
+
+In summary, Git is the version control system itself, while GitHub is a hosting service built on top of Git.
+Git can be used independently without GitHub, but GitHub relies on Git for its functionality.
+
+### Misconception: Git is only for code and programmers
+
+While version control systems like Git are often associated with software development (and are indeed highly valuable for managing code-related projects), they are not limited to code and not exclusive to developers.
+Version control can be beneficial for anyone working with files that undergo changes over time, including writers, designers, and data analysts.
+
+### Misconception: Git is only for collaboration
+
+Git offers remarkable benefits for collaboration, but its value extends beyond working with others.
+It enables you to collaborate effectively with your past and future self, fostering valuable skills and boosting your confidence when collaborating with others.
+Even if you currently don't have a specific reason to collaborate with others, trying git on your own can be highly beneficial and rewarding.
+
+### Misconception: Git auto-saves your changes
+
+Unlike automatic saving, where changes are continuously saved in the background, git requires manual intervention to capture snapshots.
+You have to explicitly inform git when you want to take a snapshot, indicating that you want it to acknowledge your changes.
+While this may sound annoying at first, the benefits of having full control over your version history will become apparent in later chapters of this book.

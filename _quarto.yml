@@ -26,21 +26,21 @@ book:
 #  date: "6/3/2023"
   chapters:
     - index.qmd
-    - chapters/intro.qmd
-    - part: Introduction
-    - part: Basics
-      chapters:
-        - chapters/committing.qmd
-        - chapters/branching.qmd
-        - chapters/rewriting-history.qmd
-    - part: Collaboration with Git
-      chapters:
-        - chapters/collaboration.qmd
-        - chapters/flows.qmd
+    - contents.qmd
+    - chapters/intro-version-control.qmd
+    - chapters/command-line.qmd
+    - chapters/installation-setup.qmd
+    - chapters/first-steps-git.qmd
+    - chapters/branches.qmd
+    - chapters/github-intro.qmd
+    - chapters/stashing-rebasing.qmd
+    - chapters/rewriting-history.qmd
+    - chapters/datalad-nextcloud.qmd
     - chapters/summary.qmd
-    - chapters/references.qmd
-    - part: chapters/contributing.qmd
+    - references.qmd
+    - part: Appendix
       chapters:
+        - chapters/contributing.qmd
         - chapters/style-guide.qmd
   page-navigation: true
 
@@ -53,7 +53,7 @@ format:
     toc: true
     toc-depth: 3
     toc-title: "On this page"
-    number-sections: false
+    number-sections: true
     anchor-sections: true
     # layout (https://quarto.org/docs/reference/formats/html.html#layout):
     fig-cap-location: margin
@@ -70,6 +70,7 @@ format:
     highlight-style: monokai
     # references:
     bibliography: references.bib
+    csl: chicago-author-date-note.csl
     citations-hover: true
     citation-location: document
     citeproc: true
