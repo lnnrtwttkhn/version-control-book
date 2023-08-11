@@ -13,17 +13,17 @@ project:
     navigate: true
 
 book:
-  title: "Version Control of Code and Data for Scientists"
+  title: "Version Control of Code and Data"
+  subtitle: "An Introduction for Scientists"
   search: true
   repo-url: https://github.com/lnnrtwttkhn/version-control-book/
   repo-branch: main
-  repo-actions: [issue, source]
+  repo-actions: [edit, issue, source]
   downloads: [pdf, epub]
   sharing: [twitter, facebook]
   favicon: static/git-icon.svg
   twitter-card: false
   site-url: https://lennartwittkuhn.com/version-control-book
-#  date: "6/3/2023"
   chapters:
     - index.qmd
     - contents.qmd
@@ -43,6 +43,8 @@ book:
         - chapters/contributing.qmd
         - chapters/style-guide.qmd
   page-navigation: true
+  back-to-top-navigation: true
+  # side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):
   sidebar:
     id: sidebar
     title: "Version Control of Code and Data"
@@ -86,7 +88,7 @@ format:
     # layout (https://quarto.org/docs/reference/formats/html.html#layout):
     fig-cap-location: margin
     page-layout: full
-    title-block-style: default
+    # title-block-style: default
     # code (https://quarto.org/docs/reference/formats/html.html#code):
     code-fold: false
     code-overflow: wrap
