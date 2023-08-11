@@ -13,17 +13,17 @@ project:
     navigate: true
 
 book:
-  title: "Version Control of Code and Data for Scientists"
+  title: "Version Control of Code and Data"
+  subtitle: "An Introduction for Scientists"
   search: true
   repo-url: https://github.com/lnnrtwttkhn/version-control-book/
   repo-branch: main
-  repo-actions: [issue, source]
+  repo-actions: [edit, issue, source]
   downloads: [pdf, epub]
   sharing: [twitter, facebook]
   favicon: static/git-icon.svg
   twitter-card: false
   site-url: https://lennartwittkuhn.com/version-control-book
-#  date: "6/3/2023"
   chapters:
     - index.qmd
     - contents.qmd
@@ -44,9 +44,40 @@ book:
     - references.qmd
     - part: Appendix
       chapters:
+        - acknowledgements.qmd
         - chapters/contributing.qmd
         - chapters/style-guide.qmd
   page-navigation: true
+  back-to-top-navigation: true
+  # side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):
+  sidebar:
+    id: sidebar
+    title: "Version Control of Code and Data"
+    subtitle: "An Introduction for Scientists"
+    logo: static/git-icon.svg
+    search: true
+    tools:
+      - icon: globe
+        href: https://lennartwittkuhn.com/version-control-book
+      - icon: bug
+        href: https://github.com/lnnrtwttkhn/version-control-book/issues
+    style: docked
+    type: light
+    background: light
+    border: false
+    alignment: center
+    collapse-level: 2
+    pinned: true
+  page-footer:
+    left: |
+      &copy; {{< var years >}} The Version Control Book Team
+    center:
+      - text: "Funded by the Digital and Data Literacy in Teaching Lab"
+        href: acknowledgements.qmd
+    right: |
+      License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Acknowledgements](acknowledgements.qmd)
+    border: false
+    background: light
 
 format:
   html:
@@ -62,7 +93,7 @@ format:
     # layout (https://quarto.org/docs/reference/formats/html.html#layout):
     fig-cap-location: margin
     page-layout: full
-    title-block-style: default
+    # title-block-style: default
     # code (https://quarto.org/docs/reference/formats/html.html#code):
     code-fold: false
     code-overflow: wrap
