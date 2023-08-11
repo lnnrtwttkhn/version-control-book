@@ -23,15 +23,115 @@ author: ""
 
 
 ## Introduction to Git GUIs
+Git GUIs offer a more user-friendly way to work with Git, using visuals instead of just text commands. 
+They show your project's history, branches, and changes in a more colorful and easy-to-understand manner. 
+If you're new to Git or prefer a simpler approach, these tools can be helpful.
+They make Git seem less scary and more accessible to everyone, helping you manage your code, without the hassle of remembering complex commands.
+While Git GUIs offer a user-friendly approach to version control, they come with a few limitations. 
+One notable drawback is their reduced flexibility compared to the command-line interface.
+GUIs are designed to simplify common tasks, but more advanced or customized operations may be challenging to perform within a graphical environment. 
+There's a learning curve, too; despite their user-friendly design, understanding the underlying Git concepts and the specific workflow of a GUI is still very important.
+
+As this book primarily emphasizes teaching Git through the command-line interface, it will not feature extensive tutorials for GUI tools. 
+
 
 ## Popular Git GUIs
- 
-### GitKraken
+There are many different Git GUIs, each of them offers its own set of features and benefits, catering to different preferences and workflows.
+We will only be looking at GitHub Desktop and GitKraken. 
+However there are way more, you can check out an incomplete overview at [the offical Git website](https://git-scm.com/downloads/guis/).
 
-### GitHub Desktop
+
+### {{< fa square-github >}} GitHub Desktop
+#### Download
+GitHub Desktop is a desktop application developed by GitHub.
+It is completely free to  download for MacOS and Windows on [the GitHub website](https://desktop.github.com).
+There is currently no official version available for Linux.
+
+#### Setup
+After you download and install the program, you will need to login using a Github account.
+You can then, choose a repository to work with:
+
+![](../static/Github-desktop-gettingstarted.png)
+
+After choosing a repository to work with, a visual representation of the repository's history is displayed, showing branches, commits, and tags on a chronological timeline.
+It allows you to access and manage various aspects of version control, such as branches, commits, changes, and pull requests.
+![](../static/GitHub-desktop-window.png)
+For an extensive tutorial for GitHub Desktop, you can check out the [GitHub documentation](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)
+
+In general, GitHub Desktop's primary advantage lies in its integration with GitHub.com.
+It´s interface is also pretty simple and user-friendly. 
+However, this simplicity can be a limitation for those seeking advanced features or desiring flexibility beyond GitHub's ecosystem.
+A significant drawback of relying on GitHub Desktop is its strong tie to the GitHub platform. 
+This dependency can be limiting if you're looking to work with repositories on alternative Git hosting services.
+
+### {{< fa-gitkraken >}} GitKraken
+#### Download
+GitKraken is a third-party program and another very popular git GUI client for Windows, Mac and Linux.
+You can download it [on the official website.](https://www.gitkraken.com)
+Normally GitKraken only offers a free seven day trial periode.
+However if you are a student, you can get it for free, through the [GitHub Student Developer Pack](https://www.gitkraken.com/github-student-developer-pack).
+
+##### Setup
+After downloading, you either begin to track a local repository or login to a hosting website like GitHub and work with your repositories from there.
+![](../static/GitKraken-gettingstarted.png)
+
+After choosing a repository to track, you willsee a visual representation of the commit history, branches, and commits. 
+![](../static/GitKraken-window.png)
+Just like with GitHub-desktop, your are able to manage your branches, push/pull to remote branches and commit changes through GitKraken.
+For an extensive tutorial, you can check out the [GitKraken Client Documentation](https://help.gitkraken.com/gitkraken-client/gitkraken-client-home/)
 
 ## Usecases for Git GUIs
 
+### Committing only parts of Code
+One useful feature of Git GUIs is the ability to easily commit only specific parts or "chunks" of code from within a file. 
+This is particularly handy when you've made changes to different sections of a file and want to commit them separately. 
+With a Git GUI, you can easily select the lines or blocks of code you want to include in a commit, stage them, and then commit just those changes. 
+
+To do this in GitKraken, change a file, then click on your last commit in the GitKraken GUI.
+You will see a list of unstaged files with changes.
+After you click on one, you will see your additions highlighted green and your deletions highlighted red.
+If you hover over the changed lines you will see the option to "Stage this Line".
+You can also stage the whole file or "hunk" and unstage specific changes.
+![](../static/GitKraken-staging)
+
+::: {.callout-tip title="What is a Hunk?" collapse="true"}
+WIP
+:::
+
+You can also create a partial commit in [GitHub Desktop.](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop#creating-a-partial-commit)
+
+### Conflict Resolution
+Git GUIs make resolving merge conflicts more intuitive. 
+When conflicts arise due to incompatible changes made in different branches, a GUI helps you identify conflicting lines side by side. You can then select which changes to keep, discard, or modify. 
+The graphical representation simplifies the process.
+
+To merge two branches in GitKraken, you can either drag and drop one branch onto another branch or use the right-click menu of the branch you want to merge in.
+If a merge conflict occurs you will see a list of conflicted files.
+When you click on a file, it will show you a side-by-side comparison of the conflicting changes, allowing you to choose which lines to keep. 
+After resolving all conflicts, you can continue the merge process by completing the merge commit.
+![](../static/GitKraken-mergeconflict.png)
+
+## Git Integration in RStudio
+Even though it is not GUI, RStudio, the most pupular environment for R programming, offers  Git integration to simplify version control within your projects. 
+
+When opening a new Rstudio project, you can choose to: "checkout a project from a version control project".
+Choosing this, you have the option to clone a git repository, e.g. from Github. 
+Rstudio will then download the files and you can start to edit them in Rstudio.
+![](../static/Rstudio-newproject.png)
+After cloning a repository, or just opening a local git-initialized folder, you do things like committing, pushing or switching branches using buttons in Rstudio, instead of using the terminal.
+The Git tab within the upper right panel enables you to stage, commit, push and pull changes.
+The Branches tab in the Git pane displays a list of available branches, making it straightforward to switch them.
+![](../static/Rstudio-panels.png)
+![](../static/Rstudio-gitpanel.png)
 
 
+Clicking "Commit" will open up a window, where you see your changes marked with colours. 
+You also easily write commit message and have the option to ammend your last command. 
+It is also possible to easily stage specific lines.
+
+![](../static/Rstudio-commit.png)
+For a more conclusive tutorial on using Git in Rstudio you can check out the ["Happy Git and GitHub for the useR" by Jenny Bryan](https://happygitwithr.com/rstudio-git-github.html)
+
+You should keep in mind that while the RStudio GUI simplifies many Git tasks, it lacks the flexibility and customizability of using the command line.
+But considering you can also open a Terminal tab in Rstudio, the GUI might be a help in your workflow, if you work on a R project and track it using Git.
 
