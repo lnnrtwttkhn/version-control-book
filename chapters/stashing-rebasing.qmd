@@ -31,6 +31,8 @@ knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
 
 - Introduction to rebasing
 
+## Acknowledgements
+
 ## Exercises
 ### Stashing Changes:
 
@@ -225,9 +227,11 @@ When you rebase the feature branch onto the main, branch you kind of "rearrange"
 It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
 The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. 
 It's like picking up your changes and placing them on the latest code, resulting in a linear history.
-Like this..
+Like this:
+
 ![](../static/rebasing.jpg)
-However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
+
+However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
 
 ```{bash}
 git rebase main

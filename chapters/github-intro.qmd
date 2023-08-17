@@ -12,10 +12,11 @@ author: ""
 {{< fa clock >}} Duration:  min
 :::
 
-::: {.column width="50%"}
+::: {.column width="100%"}
 
 ## {{< fa bullseye >}} Objectives
-In this Chapter we will introduce working with GitHub, this means:
+In this Chapter we will introduce working with GitHub, this includes:
+
 -   Connecting Git and Github
 
 -   Setting up a GitHub Repo 
@@ -60,26 +61,40 @@ GitHub also offers project management and code review tools, making it great for
 
 ### Setting Account details
 
-To be able to integrate Github in your workflow, you´ll need to authenticate your GitHub account.
-
+To be able to integrate Github in your workflow, you will need to to connect your account with your local Git.
 
 ```{bash}
-
 git config --global user.name "Example"
 git config --global user.email beispiel@example.com
-
 ```
 
 In the [installation chapter](installation-setup.qmd) it is explained how to create an account on [Github.com.](https://www.Github.com).
 If you did not use your GitHub account details for the setup you should change that now.
 
 ### Authentication
-
-There a different ways to authenticate yourself. 
-Each way with different pros and cons that we will not look at in depth.
+Various authentication methods offer different advantages and drawbacks. 
+In this section, we'll briefly introduce two common authentication methods: HTTPS Personal Access Tokens and SSH Keys.
 
 #### HTTPS Personal Access Token
-TBA
+Follow these steps to set it up:
+
+Log in to your GitHub account.
+
+Click on your profile picture in the top-right corner and select "Settings."
+
+In the left sidebar, select "Developer settings," then "Personal access tokens."
+
+Click "Generate new token."
+
+Give your token a name, choose the desired scopes (permissions), and set an expiration date if needed.
+
+Click "Generate token," and you'll be presented with your new token.
+
+Make sure to copy it as it won't be shown again.
+
+PICTURE
+
+The first time you try to interact with a remote repository, you will get asked for a password. Paste this key as a password into the terminal to proceed.
 
 #### SSH Key
 TBA
@@ -95,6 +110,9 @@ To create a new repository, click on the "+" sign in the top-right corner of the
 On the new repository page, enter a name for your repository and make sure the "Public" option is selected if you want it to be accessible to everyone. 
 You should also choose to create a README file by checking the corresponding box.
 Finally, click the green "Create repository" button at the bottom of the page to complete the creation process.
+
+![](../static/GitHub-newrepository.png)
+
 Once you have created the repository, you will find the README.md file in your repository. 
 You can edit this file to provide information and details about your project. 
 Whatever you write in the README.md file will be displayed on the front page of your project.
@@ -119,13 +137,14 @@ If you're not sure how to start, take a look at other people's README.md files f
 ### Uploading an existing folder
 
 To initialize an existing folder as a GitHub repository, you first need to create a new repository, like explained above.
-You´ll then need to initialize the folder as a Git repository using `git init`.
+You will then need to initialize the folder as a Git repository using `git init`.
 
 If you have already done this, you can of course skip this.
+
 To add your folder as a remote repository use the `git remote`command.
 
 ```{bash}
-git remote add origin https://github.com/username/repository.git
+git remote add origin https://github.com/yourusername/repositoryname.git
 ```
 
 Now you are able to push your files to the remote repo using `git push`.
@@ -144,10 +163,15 @@ This separate copy includes all files, commit history, and branches.
 Forking is commonly used when you want to contribute to a project without directly modifying the original repository. 
 It enables you to make changes independently, create new branches, and push modifications to your forked repository. 
 You can also submit changes to the original repository through pull requests. 
-By clicking the "Fork" button on the repository page, you create an identical copy in your GitHub account.
-Once the forking process is complete, you can clone the repository to your local machine using the git clone command.
 
-## {< fa clone >}} Cloning a Repository {
+By clicking the **Fork** button on a repository page, you create an identical copy in your GitHub account.
+
+![](../static/GitHub-forking.png)
+
+
+Once the forking process is complete, you can clone the repository to your local machine using the git clone command if you want to edit it.
+
+## {{< fa clone >}} Cloning a Repository
 
 Cloning refers to creating a local copy of a repository from GitHub onto your own computer. 
 When you clone a repository, you download all of its files, commit history, and branches to your local machine. 
@@ -270,15 +294,24 @@ The workflow for this, is the same as for opening a pull request for a forked re
 Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others.
 Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code.
 This simplifies the process of setting up new projects that share common characteristics or follow best practices.
-Using a GitHub repository template is as simple as clicking the "Use this template" button on the template repository page, providing a new repository name and description, and then creating the repository with your desired settings.
+Using a GitHub repository template is as simple as clicking the "Use this template" button on a  template repository page, providing a new repository name and description, and then creating the repository with your desired settings.
+
+![](../static/GitHub-template.png)
 
 
 ## Alternatives to GitHub
 
 While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub.
+Not only since it was bought by Microsoft in 2018, who subsequently [used public repositories to train their AI tool](https://www.vice.com/en/article/g5vmgw/github-users-want-to-sue-microsoft-for-training-an-ai-tool-with-their-code)
+
+Some prominent options include
+[GitLab](https://about.gitlab.com/de-de/), [Bitbucket](https://bitbucket.org), and [SourceForge](https://sourceforge.net).
+
+Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in.
+On the other hand there are also advanteges to GitHub like it`s relatively easy to use Interface, the rich ecosystem and it´s extensive integration to third party tools.
 
 
-## Optional exercises:
+## Optional exercise:
 1.  Fork the repository of this book from: https://github.com/lnnrtwttkhn/version-control-book
 
 2.  Clone the forked repository to your computer
