@@ -40,6 +40,15 @@ knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
 
 ## Acknowledgements
 
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("bryan2023", "community2022", "millman2018", "mcbain2019")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
 
 ## {{< fa dumbbell >}} Exercises
 
@@ -427,9 +436,3 @@ DESCRIPTION.meta
 .DS_Store
 
 ```
-
-# Sources
-
-https://happygitwithr.com/
-
-https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git.html https://milesmcbain.github.io/git_4_sci/using-a-git-repository.html
