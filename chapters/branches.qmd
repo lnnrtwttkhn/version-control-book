@@ -232,7 +232,7 @@ It creates a new "merge commit", a special record that marks when the merge happ
 git merge 
 ```
 
-####Fast Forward Merge
+####Fast forward merge
 
 If no new commits were made to the base branch since the feature was created, Git automatically does a "Fast Forward Merge."
 It's like the standard merge, but no new merge commit is created. It's as if you made the commits directly on the base branch.
@@ -248,7 +248,7 @@ If you do not want a fastfoward merge, you can ensure a merge commit with the `-
 git merge --no-ff
 ```
 
-#### Squash and Merge
+#### Squash and merge
 
 When you squash a branch, Git combines all commits of the branch into a single commit.
 This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately.
@@ -272,7 +272,7 @@ git merge --squash
 `--autosquash`: Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
 :::
 
-## Deleting Branches
+## Deleting branches
 
 Once a branch has served its purpose and is no longer needed, it can be deleted.
 Removing branches that are no longer active helps maintain a clean and manageable branch structure.
@@ -298,13 +298,13 @@ Adopt a consistent naming convention for branches that accurately reflects their
 This can include prefixes like `feature/`, `bug/`, or `hotfix/` followed by a descriptive name.
 Clear and standardized branch names make it easier to identify the purpose of each branch.
 
-### Branch Lifecycle
+### Branch lifecycle
 
 Create branches with a specific goal or task in mind, and aim to keep them short-lived.
 Long-lived branches can lead to conflicts and make it harder to merge changes.
 Once the task is complete or the feature is integrated, consider deleting the branch.
 
-### Branch Protection
+### Branch protection
 
 When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your `main` or `master` branch.
 By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
