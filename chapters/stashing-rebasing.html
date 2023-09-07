@@ -420,7 +420,7 @@ Overview
 </section>
 <section id="stashing-things-for-later-use" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="stashing-things-for-later-use"><span class="header-section-number">8.4</span> Stashing things for later use</h2>
-<p><code>Git stash</code> is a valuable command in Git that allows you to save your current changes temporarily without committing them. This is useful when you need to switch branches or work on something else without creating a commit for unfinished work. For example, when youre working on a feature and you need to switch to a different task quickly or your work gets interrupted unexpectedly, you may not want to commit your unfinished changes. When you run git stash, Git stores the changes in your working directory and staged changes in a special stash commit. The working directory is then reverted to the last committed state, providing a clean slate for your next task</p>
+<p><code>Git stash</code> is a valuable command in Git that allows you to save your current changes temporarily without committing them. This is useful when you need to switch branches or work on something else without creating a commit for unfinished work. For example, when you’re working on a feature and you need to switch to a different task quickly or your work gets interrupted unexpectedly, you may not want to commit your unfinished changes. When you run git stash, Git stores the changes in your working directory and staged changes in a special stash commit. The working directory is then reverted to the last committed state, providing a clean slate for your next task</p>
 </section>
 <section id="git-stash-workflow" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="git-stash-workflow"><span class="header-section-number">8.5</span> Git stash workflow</h2>
@@ -430,7 +430,7 @@ Overview
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>should get an output similiar to:</p>
+<p>should get an output similar to:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Changes</span> to be committed:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git reset HEAD &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
@@ -447,11 +447,11 @@ Overview
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash <span class="at">-m</span> <span class="st">"feature X WIP"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>should get an output similiar to:</p>
+<p>should get an output similar to:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Saved</span> working directory and index state On feature: <span class="st">"feature X WIP"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You can now use <code>git status</code> to again look at your working directory and should see an output similiar to:</p>
+<p>You can now use <code>git status</code> to again look at your working directory and should see an output similar to:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit, working directory clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -465,7 +465,7 @@ Overview
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>should get an output similiar to:</p>
+<p>should get an output similar to:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">stash@{0}:</span> On feature: feature X WIP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -474,7 +474,7 @@ Overview
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash apply stash@{0}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>should get an output similiar to:</p>
+<p>should get an output similar to:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Changes</span> not staged for commit:</span>
@@ -522,14 +522,14 @@ Common git stash flags
 </section>
 <section id="unstaging-files" class="level3" data-number="8.7.2">
 <h3 data-number="8.7.2" class="anchored" data-anchor-id="unstaging-files"><span class="header-section-number">8.7.2</span> Unstaging files</h3>
-<p>You can also use <code>git restore</code> with the <code>--staged</code> flag to unstage files, you have previously added to the staging area. This can be useful when you accidently staged files or want to reorganize your commit.</p>
+<p>You can also use <code>git restore</code> with the <code>--staged</code> flag to unstage files, you have previously added to the staging area. This can be useful when you accidentally staged files or want to reorganize your commit.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--staged</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="deleting-files" class="level3" data-number="8.7.3">
 <h3 data-number="8.7.3" class="anchored" data-anchor-id="deleting-files"><span class="header-section-number">8.7.3</span> Deleting files</h3>
-<p>If you want to delete files from your working directory and your git repository, it makes sense to use the <code>git rm</code> command. This command removes files from your working directory and automatially stages this change for your next commit.</p>
+<p>If you want to delete files from your working directory and your git repository, it makes sense to use the <code>git rm</code> command. This command removes files from your working directory and automatically stages this change for your next commit.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rm <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>

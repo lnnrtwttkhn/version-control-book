@@ -352,7 +352,7 @@ Details about the MoAEpilot dataset
 <p>This experiment was conducted by Geraint Rees under the direction of Karl Friston and the FIL methods group. The purpose was to explore equipment and techniques in the early days of our fMRI experience. As such it has not been formally written up, and is freely available for personal education and evaluation purposes.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>96 acquisitions were made (RT=7s), in blocks of 6, giving 16 42s blocks. The condition for successive blocks alternated between rest and auditory stimulation, starting with rest. Auditory stimulation was with bi-syllabic words presented binaurally at a rate of 60 per minute. The functional data starts at acquisiton 4, image fM00223_004. Due to T1 effects it is advisable to discard the first few scans (there were no “dummy” lead-in scans).</p>
+<p>96 acquisitions were made (RT=7s), in blocks of 6, giving 16 42s blocks. The condition for successive blocks alternated between rest and auditory stimulation, starting with rest. Auditory stimulation was with bi-syllabic words presented binaurally at a rate of 60 per minute. The functional data starts at acquisition 4, image fM00223_004. Due to T1 effects it is advisable to discard the first few scans (there were no “dummy” lead-in scans).</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>These whole brain BOLD/EPI images were acquired on a modified 2T Siemens MAGNETOM Vision system. Each acquisition consisted of 64 contiguous slices (64x64x64 3mm x 3mm x 3mm voxels). Acquisition took 6.05s, with the scan to scan repeat time (RT) set arbitrarily to 7s.</p>
@@ -374,31 +374,31 @@ Details about the MoAEpilot dataset
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-2" data-code-annotation="1">Create a new directory (<code>mkdir</code>) for the datatset called <code>mydataset</code></span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="1">Create a new directory (<code>mkdir</code>) for the dataset called <code>mydataset</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-2" data-code-annotation="2">Download the dataset using <code>wget</code> and save the <code>.zip</code> file</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="2" data-code-lines="2">Download the dataset using <code>wget</code> and save the <code>.zip</code> file</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-2" data-code-annotation="3">Unzip the dataset and extract the contents into the <code>mydataset</code> directory</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="3" data-code-lines="3">Unzip the dataset and extract the contents into the <code>mydataset</code> directory</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-2" data-code-annotation="4">Remove the <code>.zip</code> file</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="4" data-code-lines="4">Remove the <code>.zip</code> file</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-2" data-code-annotation="5"><code>cd</code> into the folder of the dataset</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="5" data-code-lines="5"><code>cd</code> into the folder of the dataset</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-2" data-code-annotation="6">Move (<code>mv</code>) the contents of the <code>MoAEpilot</code> into the root of the directory</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="6" data-code-lines="6">Move (<code>mv</code>) the contents of the <code>MoAEpilot</code> into the root of the directory</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-lines="7" data-code-cell="annotated-cell-2" data-code-annotation="7">Remove the (now empty) <code>MoAEpilot</code> folder</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="7" data-code-lines="7">Remove the (now empty) <code>MoAEpilot</code> folder</span>
 </dd>
 </dl>
 <p>Now we can view the directory tree to see the dataset content:</p>
@@ -536,7 +536,7 @@ Tip: Use a virtual environment to install DataLad Next
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="ex">publish</span> <span class="er">(</span><span class="ex">ok:</span> 2<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can now view the <a href="https://cloud.uni-hamburg.de/apps/files/">files on UHH-Cloud</a> and inspect them through the web browser.</p>
-<p><img src="../static/images/nextcloud_datalad_push.png" class="img-fluid"> Note that on the cloud storage portal, the dataset content looks like any other upload but it remains a complete datatset that can be cloned as if it would be hosted on GitLab or GitHub (for details, see the next chapter).</p>
+<p><img src="../static/images/nextcloud_datalad_push.png" class="img-fluid"> Note that on the cloud storage portal, the dataset content looks like any other upload but it remains a complete dataset that can be cloned as if it would be hosted on GitLab or GitHub (for details, see the next chapter).</p>
 </section>
 <section id="clone-dataset" class="level3" data-number="10.2.5">
 <h3 data-number="10.2.5" class="anchored" data-anchor-id="clone-dataset"><span class="header-section-number">10.2.5</span> Clone dataset</h3>
@@ -549,11 +549,11 @@ Tip: Use a virtual environment to install DataLad Next
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-13" data-code-annotation="1"><code>cd</code> out of the current dataset. You can also chose any other target directory on your system.</span>
+<span data-code-cell="annotated-cell-13" data-code-annotation="1" data-code-lines="1"><code>cd</code> out of the current dataset. You can also chose any other target directory on your system.</span>
 </dd>
 <dt data-target-cell="annotated-cell-13" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-13" data-code-annotation="2">Make sure to replace <code>https</code> with <code>webdavs</code>!</span>
+<span data-code-cell="annotated-cell-13" data-code-annotation="2" data-code-lines="4">Make sure to replace <code>https</code> with <code>webdavs</code>!</span>
 </dd>
 </dl>
 </div>
@@ -569,7 +569,7 @@ Tip: Use a virtual environment to install DataLad Next
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-14" data-code-annotation="1">Enter your app password user address (e.g., <code>BBC5706@uni-hamburg.de</code>)</span>
+<span data-code-cell="annotated-cell-14" data-code-annotation="1" data-code-lines="2">Enter your app password user address (e.g., <code>BBC5706@uni-hamburg.de</code>)</span>
 </dd>
 </dl>
 </div>
@@ -602,11 +602,11 @@ Tip: Use a virtual environment to install DataLad Next
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-18" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-18" data-code-annotation="1">Enter your app user address (e.g., <code>BBC5706@uni-hamburg.de</code>)</span>
+<span data-code-cell="annotated-cell-18" data-code-annotation="1" data-code-lines="1">Enter your app user address (e.g., <code>BBC5706@uni-hamburg.de</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-18" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-18" data-code-annotation="2">Enter your app user password (e.g., <code>gUdrc-ZX8sT-PqJLf-YRmS4-hKMPW</code>)</span>
+<span data-code-cell="annotated-cell-18" data-code-annotation="2" data-code-lines="2">Enter your app user password (e.g., <code>gUdrc-ZX8sT-PqJLf-YRmS4-hKMPW</code>)</span>
 </dd>
 </dl>
 </div>
@@ -697,15 +697,15 @@ Tip: Use a virtual environment to install DataLad Next
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-25" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-25" data-code-annotation="1">Enter the email address of your ownCloud account.</span>
+<span data-code-cell="annotated-cell-25" data-code-annotation="1" data-code-lines="1">Enter the email address of your ownCloud account.</span>
 </dd>
 <dt data-target-cell="annotated-cell-25" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-25" data-code-annotation="2">Enter the password of your ownCloud account.</span>
+<span data-code-cell="annotated-cell-25" data-code-annotation="2" data-code-lines="2">Enter the password of your ownCloud account.</span>
 </dd>
 <dt data-target-cell="annotated-cell-25" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-25" data-code-annotation="3">Repeat the password of your ownCloud account.</span>
+<span data-code-cell="annotated-cell-25" data-code-annotation="3" data-code-lines="3">Repeat the password of your ownCloud account.</span>
 </dd>
 </dl>
 </div>
@@ -723,7 +723,7 @@ Tip: Use a virtual environment to install DataLad Next
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-27" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-27" data-code-annotation="1">Use <code>datalad push</code> to push the dataset contents to ownCloud. For details on <code>datalad push</code>, see the <a href="http://docs.datalad.org/en/stable/generated/man/datalad-push.html">command line reference</a> and <a href="https://handbook.datalad.org/en/latest/basics/101-141-push.html">this chapter</a> in the DataLad Handbook.</span>
+<span data-code-cell="annotated-cell-27" data-code-annotation="1" data-code-lines="1">Use <code>datalad push</code> to push the dataset contents to ownCloud. For details on <code>datalad push</code>, see the <a href="http://docs.datalad.org/en/stable/generated/man/datalad-push.html">command line reference</a> and <a href="https://handbook.datalad.org/en/latest/basics/101-141-push.html">this chapter</a> in the DataLad Handbook.</span>
 </dd>
 </dl>
 </div>

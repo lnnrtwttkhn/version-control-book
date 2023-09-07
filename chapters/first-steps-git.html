@@ -422,7 +422,7 @@ Overview
 </section>
 <section id="fa-folder-closed-initializing-a-folder-as-a-git-repository" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="fa-folder-closed-initializing-a-folder-as-a-git-repository"><span class="header-section-number">5.3</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Initializing a Folder as a Git Repository</h2>
-<p>To create your first Git repository, you need to initialize a folder. You can create an empty folder using the command line as explained in the chapter <a href="../chapters/command-line.html">Command Line Basics</a>. Alternatively, you can create a folder in the usual way. Create a Textfile in this folder. Navigate, using the Terminal, to the folder which you want to initialze as a Git repository. You can use the <code>cd</code> command to change directories. Once you are in the desired directory, run the <code>git init</code> command to initialize the folder as a Git repository.</p>
+<p>To create your first Git repository, you need to initialize a folder. You can create an empty folder using the command line as explained in the chapter <a href="../chapters/command-line.html">Command Line Basics</a>. Alternatively, you can create a folder in the usual way. Create a Textfile in this folder. Navigate, using the Terminal, to the folder which you want to initialize as a Git repository. You can use the <code>cd</code> command to change directories. Once you are in the desired directory, run the <code>git init</code> command to initialize the folder as a Git repository.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -482,7 +482,7 @@ Common git status flags
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you use <code>git status</code> again, your file(s) should now show up under “changes to be commited”.</p>
+<p>If you use <code>git status</code> again, your file(s) should now show up under “changes to be committed”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -515,7 +515,7 @@ Common git add flags
 </section>
 <section id="committing" class="level3" data-number="5.4.3">
 <h3 data-number="5.4.3" class="anchored" data-anchor-id="committing"><span class="header-section-number">5.4.3</span> Committing</h3>
-<p>Now that your changes are staged, you are ready to create a commit. To create a commit, use the <code>git commit</code> command followed by the flag <code>-m</code> and a commit message <strong>in qoutes</strong> that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. If you just use <code>git commit</code> without adding a commit massage, the editor of <a href="../chapters/installation-setup.html">your choosing</a>, opens up and lets you type in a commit message.</p>
+<p>Now that your changes are staged, you are ready to create a commit. To create a commit, use the <code>git commit</code> command followed by the flag <code>-m</code> and a commit message <strong>in quotes</strong> that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. If you just use <code>git commit</code> without adding a commit massage, the editor of <a href="../chapters/installation-setup.html">your choosing</a>, opens up and lets you type in a commit message.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add example.txt file"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -586,7 +586,7 @@ Common git log flags
 </section>
 <section id="comparing-versions" class="level3" data-number="5.4.5">
 <h3 data-number="5.4.5" class="anchored" data-anchor-id="comparing-versions"><span class="header-section-number">5.4.5</span> Comparing Versions</h3>
-<p>Another very handy feature is the <strong>git diff</strong> command. It allows you to compare two different versions of your file. By default it shows you any uncommited changes since the last commit. You can explore this by pasting this text in your .txt file</p>
+<p>Another very handy feature is the <strong>git diff</strong> command. It allows you to compare two different versions of your file. By default it shows you any uncommitted changes since the last commit. You can explore this by pasting this text in your .txt file</p>
 <pre><code>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
 Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
