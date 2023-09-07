@@ -115,13 +115,14 @@ Issues are ideal for identifying, documenting, and resolving errors, ensuring ac
 - Issues can be [exported](https://docs.gitlab.com/ee/user/project/issues/csv_export.html) and archived
 {{content}}
 
+## Step-by-step
 
 ### Prerequisites
 
-To make an issue, you require a repository.
+To make an issue, **you need a repository**.
 You have the option to use a repository you already have permission to write in, or you can make a fresh repository.
 The repository must have issues enabled.
-If you want more guidance on making a repository, refer to the chapter called [First Stepss](first-steps-git.qmd)
+If you want more guidance on making a repository, refer to the chapter called [First Steps](first-steps-git.qmd)
 If you need help with turning on issues in case they're currently turned off in your repository, take a look at the section titled ["Disabling issues"](#disabling-issues).
 
 ### Opening a blank issue
@@ -130,7 +131,7 @@ First, create a new issue.
 There are multiple ways to create an issue.
 You can choose the most convenient method for your workflow.
 This example will create an issue from a repository on GitHub.
-For more information about other ways to create an issue, see the section ["Creating an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) in the GitHub documentation."
+For more information about other ways to create an issue, see the section ["Creating an issue"](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) in the GitHub documentation.
 
 1. On GitHub, navigate to the main page of the repository.
 For example, the main page of the GitHub repository of this guide can be found [here]({{< var links.github >}}).
@@ -158,6 +159,7 @@ You have the option to use Markdown to add special formatting, links, emojis, an
 For more information, see the section ["Writing on GitHub"](https://docs.github.com/en/get-started/writing-on-github) in the GitHub documentation.
 1. You can also attach **files** or **images** by dropping, selecting or pasting them into the issue.
 1. When you're done, click the green **Submit new issue** button.
+You can still edit any of the fields after creating the issue.
 
 On the right-hand side, you'll see options to [assign someone to the issue](#assign-the-issue), [add labels](#adding-labels), [add the issue to projects](#adding-projects), or [add the issue to milestones](#adding-milestones).
 We'll explore these features in more detail below.
@@ -165,9 +167,11 @@ You can also set all of these options after you submitted the issue.
 
 !["Issue Title Body" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-66899/mw-1440/images/help/issues/issue-title-body.webp)).](../static/issue-title-body.png){#fig-github-issue-title-body}
 
-After you click **Submit new issue**, your issue will be assigned a number.
-You can see this number next to the title.
-This number is also included in the URL of the page of the issue.
+### Submitting your issue
+
+Click **Submit new issue** to create your issue.
+You can edit any of the above fields after creating the issue.
+Your issue has a unique URL that you can share with team members, or reference in other issues or pull requests.
 
 ### Editing issues
 
@@ -251,14 +255,15 @@ Anyone with write access to a repository can **create a new label** or **customi
 
 ### Adding milestones
 
-You can add a milestone to track the issue as part of a higher-order project target.
-A milestone willshow the progress of the issues as the target date approaches. For more information, see "About milestones."
+You can add a milestone to **track the issue as part of a higher-order project target**.
+A milestone will show the progress of the issues as the target date approaches.
+For more information, see the section ["About milestones"](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) in the GitHub documentation.
 
-https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones
+!["Issue Milestone" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-120131/mw-1440/images/help/issues/issue-milestone.webp)).](../static/issue-milestone.png){#fig-github-issue-milestone}
 
 ### Assigning the issue
 
-To communicate responsibility, you can assign the issue to a member of your organization.
+To clearly communicate responsibility for an issue, you can assign the issue to a team member of your project or organization.
 
 !["Issue Assignees" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-119863/mw-1440/images/help/issues/issue-assignees.webp).](../static/issue-assignees.png){#fig-github-issue-assignees}
 
@@ -270,29 +275,13 @@ You can add the issue to an existing project and populate metadata for the proje
 
 https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
 
-### Confidential issues in GitLab
-
-- **Confidentiality**: Issue visible only for team members
-
-### Due dates in Gitlab
-
-- **Due date**: Set due dates for Issues
-
-### Submitting your issue
-
-Click **Submit new issue** to create your issue.
-You can edit any of the above fields after creating the issue.
-Your issue has a unique URL that you can share with team members, or reference in other issues or pull requests.
-
 ### Communicating
 
-After your issue is created, continue the conversation by adding comments to the issue.
-You can @mention collaborators or teams to draw their attention to a comment.
-To link related issues in the same repository, you can type `#` followed by part of the issue title and then clicking the issue that you want to link.
+After your issue is created, continue the conversation by adding comments to it.
+You can `@mention` collaborators or teams to draw their attention to a comment.
+To connect related issues in the same repository, you can type `#` followed by part of the issue title and then clicking the issue that you want to link.
 
 !["Issue Comment" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-24024/mw-1440/images/help/issues/issue-comment.webp).](../static/issue-comment.png){#fig-github-issue-comment}
-
-https://docs.github.com/en/get-started/writing-on-github
 
 ### Linking to to an issue
 
@@ -334,6 +323,25 @@ If your repository has these templates, just click on "Open a blank issue."
 
 TBA
 
+## Strategies for Issues
+
+Every repository om GitHub has Issues.
+But should you use Issues in every project?
+It's hlepful to think about why you're using them.
+
+### Issues for bug reporting and feature requests
+
+If you're using Issues for typical things like reporting and fixing problems in code or adding new features, it's a good idea to keep the project open to the public.
+You can have all the discussions related to that project inside it.
+
+### Issues for internal conversations
+
+If you're using Issues for internal conversations (for example, discussions within a research group), you might want to keep the repository private at first.
+But here's something to consider: Do you plan to make the project public when you're ready to share your research with the world?
+Changing a project from private to public (or the other way around, which you can do in the project's settings) not only makes the code and files public but also all the discussions in the Issues.
+That's okay, but it adds some things to think about in terms of what's being talked about in those discussions.
+
 ## Further Reading
 
 - [GitHub Docs: Tracking your work with issues](https://docs.github.com/en/issues/tracking-your-work-with-issues)
+- [GitHub for project management - openscapes](https://openscapes.github.io/series/core-lessons/github/github-issues.html)
