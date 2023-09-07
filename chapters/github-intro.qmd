@@ -289,6 +289,33 @@ Example: git push origin my_local_branch:my_remote_branch
 git push origin main
 ```
 
+## Git blame
+The command `git blame` is useful when you are working on a project with multiple collaborators.
+It it used to show when and by whom, each line in a specific file was last changed.
+You have to specify a file when using it, so e.g.
+
+```{bash}
+git blame receipes.txt
+```
+
+If you are working solo on a text file, the result should not be very interesting.
+However if you collaborate on code, this command can be very useful (for blame **or** praise!)
+
+::: {.callout-tip title="Common git blame flags" collapse="true"}
+`-L <start>,<end>`:
+Specifies a line range to blame. 
+For example, `git blame -L 10,20 file.txt` will blame lines 10 to 20 of the file.
+
+`-M`:
+Detects lines that were moved within the file and shows the original author's information. 
+
+`-e`:
+Shows the author's email address in addition to their name.
+
+`-t`:
+Shows the commit timestamp for each line.
+:::
+
 ## Pull requests
 
 Pull request serves as a request for code review and integration into a project's codebase, enabling collaboration and ensuring code quality before changes are merged.
