@@ -1,6 +1,7 @@
 # Version control of code and data using Git & DataLad
 
 [![All Contributors](https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&style=flat-square)](#contributors)
+[![Codespell](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)
 
 ## Contributors
 
