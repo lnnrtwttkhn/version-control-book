@@ -60,7 +60,7 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 
 - Stage and commit your changes to the file, write a commit message
 
-- Create a .gitignore file, include Files in it, you don`t want to track
+- Create a .gitignore file, include Files in it, you do not want to track
 
 
 ## {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
@@ -144,7 +144,7 @@ Suppresses the display of untracked files.
 Provides more detailed information, including additional status information about ignored files.
 
 You can use these flags in combination.
-For example, git status -s -b will display a short and concise output along with the branch information.
+For example, `git status -s -b` will display a short and concise output along with the branch information.
 :::
 
 ### Staging
@@ -169,7 +169,7 @@ Changes to be committed:
 	new file:   example.txt
 ```
 Your change to the file, or the addition if it is now **staged**.
-You do not have to add every file one by one, you can also use the `-a` flag.
+You do not have to add every file one by one, you can simply use the `-a` flag.
 
 ::: {.callout-tip collapse="true"}
 ## Common git add flags
@@ -179,9 +179,6 @@ Adds all changes, including modifications, deletions, and new files, in the enti
 
 `-u`: 
 Adds modifications and deletions, but not new files.
-
-<pathspec>:
-Specifies the specific files or directories to add. For example, git add myfile.txt adds a single file, while git 
 
 `--ignore-errors`: 
 Ignores errors when adding files, allowing the command to continue even if some files cannot be added.
