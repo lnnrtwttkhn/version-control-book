@@ -143,10 +143,9 @@ The commit message helps you keep track of the changes you've made and serves as
 Keep it simple!
 When you're working in any field, whether it's coding or studying stars, you'll likely use specialized terms that might confuse others.
 So, use plain language and explain any unfamiliar words you use.
-Share your project!
+
 Describe what you're doing now and what you plan to do in the future.
 This helps people understand your work and goals.
-Introduce yourself!
 Tell people who you are and how they can reach you.
 It's great for networking and collaboration.
 If you're not sure how to start, take a look at other people's README.md files for inspiration.
@@ -227,26 +226,25 @@ git pull
 ```
 
 ::: {.callout-tip title="git pull command flags" collapse="true"}
---rebase: Instead of the default "merge" strategy, use the "rebase" strategy to apply your local changes on top of the updated remote branch.
-This keeps a cleaner commit history by avoiding unnecessary merge commits.
 
---ff-only: Perform a fast-forward merge only.
+`--ff-only`: 
+Perform a fast-forward merge only.
 If the remote branch has new changes, Git will only update your local branch if a fast-forward merge is possible.
 Otherwise, it will abort the pull.
 
---no-rebase: The opposite of --rebase.
-This flag tells Git to use the default "merge" strategy, even if a rebase would be possible.
-
---no-commit: Perform the pull, but do not create an automatic commit after merging.
+`--no-commit`: Perform the pull, but do not create an automatic commit after merging.
 This allows you to review the changes before committing manually.
 
---verbose (-v): Provide more detailed output during the pull operation.
+`--verbose` or `-v`: 
+Provide more detailed output during the pull operation.
 This can be helpful for understanding the actions Git is performing.
 
---squash: Instead of a regular merge or rebase, squash all the changes into a single commit.
+`--squash`: 
+Instead of a regular merge or rebase, squash all the changes into a single commit.
 This can be useful for cleaning up the commit history or grouping related changes together.
 
---autostash: Automatically stash local changes before pulling, then apply them back after the pull is complete.
+`--autostash`:
+Automatically stash local changes before pulling, then apply them back after the pull is complete.
 This is handy when you have changes in progress and want to pull in the latest changes from the remote branch.
 :::
 
@@ -271,18 +269,23 @@ If you do not have write access, you won't be able to push your changes.
 If you do not specify a branch, Git will push the one you are on in the moment.
 
 ::: {.callout-tip title="Common git push flags" collapse="true"}
--u or --set-upstream: This flag is used to set the upstream branch for the current branch.
+`-u` or `--set-upstream`: 
+This flag is used to set the upstream branch for the current branch.
 It is typically used when pushing a branch for the first time to link the local branch with a remote branch.
 
---force or -f: Force pushes the local main branch to the origin remote repository, overwriting any changes that may have been made to the main branch in the remote repository.
+`--force` or `-f`: 
+Force pushes the local main branch to the origin remote repository, overwriting any changes that may have been made to the main branch in the remote repository.
 
---all: This flag pushes all branches to the remote repository.
+`--all`: 
+This flag pushes all branches to the remote repository.
 
---dry-run: This flag simulates the push operation without actually pushing any data to the remote repository.
+`--dry-run`: 
+This flag simulates the push operation without actually pushing any data to the remote repository.
 It's useful for checking what would be pushed.
 
-local_branch remote_branch: This syntax allows you to push a specific local branch to a specific remote branch.
-Example: git push origin my_local_branch:my_remote_branch
+local_branch:remote_branch: 
+This syntax allows you to push a specific local branch to a specific remote branch.
+Example: `git push origin my_local_branch:my_remote_branch`
 :::
 
 ```{bash}
