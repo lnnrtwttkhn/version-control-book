@@ -39,7 +39,7 @@ knitr::kable(table_cheatsheet(name = "branches"), format = "markdown")
 
 -   Create a new Branch called feature/newveganreceipe 
 
--  Add a vegan recipe to your receipe text file
+-  Add a vegan recipe to your recipe text file
 
 -   Merge it with your main branch and delete it afterwards
 
@@ -122,7 +122,7 @@ For example, enter the following command to switch to the newly created `feature
 git switch feature
 ```
 
-Should receive an output similiar to this:
+Should receive an output similar to this:
 
 ```{bash}
 M	example.txt
@@ -154,7 +154,7 @@ If you have not yet done any changes you should get the following output:
 Already up to date.
 ```
 
-If you have changed the file(s) in your folder, you should get an output similiar to:
+If you have changed the file(s) in your folder, you should get an output similar to:
 
 ```{bash}
 Updating 555ba0c..994bb8d
@@ -283,7 +283,7 @@ To delete a branch you can use the `git branch` command, followed by a `-d` flag
 git branch -d feature
 ```
 
-should get an output similiar to:
+should get an output similar to:
 
 ```{bash}
 Deleted branch feature (was 3343f36).
@@ -307,7 +307,7 @@ Once the task is complete or the feature is integrated, consider deleting the br
 
 ### Branch Protection
 
-When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branche(s), typically your `main` or `master` branch.
+When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
 By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
 
 #### How to protect the Main Branch on GitHub
