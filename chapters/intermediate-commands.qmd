@@ -45,14 +45,12 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
 ```
 
-## Exercises
+## {{< fa dumbbell >}} Exercises
 ### Stashing Changes:
 
 - Create a new branch called feature/stash-exercise.
 
 - Make changes to two different files in your project directory.
-
-- Run git status to see the changes and their status.
 
 - Stash your changes without adding a message.
 
@@ -60,7 +58,7 @@ knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
 
 - Apply the stash to your working directory and verify that your changes are restored.
 
-### Basic Rebasing:
+### Rebasing:
 
 - Create a new branch called feature/rebase-example.
 
@@ -157,6 +155,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 The changes made in your stored stashed are now applied again in your working directory.
 Notice that your already staged files, are not automatically staged again.
 
+
 ::: {.callout-tip collapse="true"}
 ### Common git stash flags
 
@@ -202,10 +201,12 @@ git restore --staged <file>
 ### Deleting files
 If you want to delete files from your working directory and your git repository, it makes sense to use the `git rm` command.
 This command  removes files from your working directory and automatically stages this change for your next commit.
+The workflow would go like this:
 
 ```{bash}
 git rm <file>
 ```
+
 ```{bash}
 git commit -m "deleted file XY"
 ```
@@ -232,6 +233,13 @@ You could also use `git rm` with the `--cached`flag.
 ```{bash}
 git rm --cached <file>
 ```
+
+## Git revert
+The `Git revert` command is used to create a new commit that undoes the changes made by a previous commit.
+It requires specifying the commit hash or reference you want to revert.
+
+If you have a specific commit that you want to revert, you would typically use a command like:
+
 
 ## Git rebase
 `git rebase` is a different way than a merge to integrate changes from one branch into another. 
