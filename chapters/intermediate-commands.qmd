@@ -234,7 +234,7 @@ You could also use `git rm` with the `--cached`flag.
 git rm --cached <file>
 ```
 
-## Git revert
+### Git revert
 The `Git revert` command is used to create a new commit that undoes the changes made by a previous commit.
 It's a way to safely reverse the effects of a specific commit without actually removing that commit from the commit history. 
 It requires specifying the commit hash you want to revert.
@@ -249,6 +249,8 @@ This will create a new commit that effectively undoes the changes made in the sp
 This new commit will have the opposite changes, effectively canceling out the changes from the original commit.
 You might need to resolve a merge conflict, if the changes you want to revert conflict with changes in subsequent commits.
 By default the commit message will be `revert <commit message of reverted commit>`. 
+However Git wil open an editor for you to change this message, if you don´t specify otherwise.
+
 ::: {.callout-tip collapse="true"}
 ### Common git revert flags
 `-n` or `--no commit`:
@@ -263,11 +265,37 @@ By default, Git uses the first parent (main branch), but you can specify another
 This flag prevents the text editor from opening for editing the commit message, making it useful when you want to keep the default commit message.
 :::
 
+## Git Cherry Pick
+`git cherry-pick` allows you to apply the changes from a specific commit from one branch to another. 
+This means, you can pick and apply specific commits to your current branch without merging the entire branch.
+This can be useful when you only want to bring in specific changes from another branch into your current branch.
+You will need the hash of the commit you want to "cherry-pick" and then use the syntax:
+
+```{bash}
+git cherry-pick <commithash>
+```
+Again, you might have to resolve merge conflicts.
+The default commit message will be: 
+`Cherry-pick commit <commit-hash> This commit was cherry-picked from <source-branch> at <source-commit-hash>.`
+
+
+::: {.callout-tip collapse="true"}
+### Common git cherry-pick flags
+`-n` or `--no commit`:
+Prevents Git from automatically creating a new commit after cherry-picking. 
+It stages the changes, allowing you to make additional modifications or review them before committing.
+
+`-e` or `--edit`: 
+Opens the default text editor to edit the commit message of the new cherry-picked commit.
+Useful when you want to provide a custom message for the cherry-picked commit.
+:::
+
+
 ## Git rebase
 `git rebase` is a different way than a merge to integrate changes from one branch into another. 
-When you rebase the feature branch onto the main, branch you kind of "rearrange" the commits. 
+When you rebase e.g. the feature branch onto the main branch you kind of "rearrange" the commits. 
 It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
-The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. 
+The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the main branch. 
 It's like picking up your changes and placing them on the latest code, resulting in a linear history.
 Like shown in @fig-rebasing.
 
