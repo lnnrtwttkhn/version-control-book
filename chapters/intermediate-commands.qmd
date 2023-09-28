@@ -248,6 +248,20 @@ git revert <commithash>
 This will create a new commit that effectively undoes the changes made in the specified commit.
 This new commit will have the opposite changes, effectively canceling out the changes from the original commit.
 You might need to resolve a merge conflict, if the changes you want to revert conflict with changes in subsequent commits.
+By default the commit message will be `revert <commit message of reverted commit>`. 
+::: {.callout-tip collapse="true"}
+### Common git revert flags
+`-n` or `--no commit`:
+Prevents Git from automatically creating a new commit after reverting changes. 
+It stages the changes, allowing you to make additional modifications or review them before committing.
+
+`-m <parent-number>`: 
+When dealing with a merge commit, this flag specifies which parent commit to use as the source for reverting. 
+By default, Git uses the first parent (main branch), but you can specify another parent by providing its number.
+
+`--no-edit`: 
+This flag prevents the text editor from opening for editing the commit message, making it useful when you want to keep the default commit message.
+:::
 
 ## Git rebase
 `git rebase` is a different way than a merge to integrate changes from one branch into another. 
