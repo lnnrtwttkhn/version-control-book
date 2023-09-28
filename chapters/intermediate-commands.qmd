@@ -15,11 +15,12 @@ author: ""
 
 ::: {.column width="100%"}
 {{< fa bullseye >}} Objectives
+
 In this chapter we will be looking at some more advanced essential commands like:
 
-- Stashing changes
-- Cleaning your working directory
-- Introduction to rebasing
+- Stashing and retrieving changes
+- Undoing changes/Removing files
+- Introduction to rebasing and cherry-picking
 
 :::
 
@@ -78,8 +79,6 @@ For example, when you're working on a feature and you need to switch to a differ
 When you run git stash, Git stores the changes in your working directory and staged changes in a special stash commit.
 The working directory is then reverted to the last committed state, providing a clean slate for your next task
 
-## Git stash workflow
-
 ### Stashing changes
 To demonstrate the usefulness of `git stash`, you can edit one or more files in your repo, stage or don´t stage yor changes, but don´t commit them.
 Now use `git status` to look at your working directory.
@@ -121,7 +120,7 @@ nothing to commit, working directory clean
 ````
 Now you can switch branches and work elsewhere or stop working on the project altogether.
 
-## Retrieving changes
+### Retrieving stashed changes
 If you want to reapply your changes, you can use `git stash apply`. 
 To look at all your stored stashes, you can use `git stash list`.
 ```{bash}
@@ -131,13 +130,13 @@ should get an output similar to:
 ```{bash}
 stash@{0}: On feature: feature X WIP
 ```
-All of your stored stashed should show up, with the most recent on top.
-
+All of your stored stashes should show up, with the most recent on top.
+Every stash should have a number, applied chronologically.
 `git stash apply` automatically applies your latest stash.
-You can also specify a stored stash, e.g. ` git stash apply stash@{0}``
+You can also specify a stored stash, e.g. ` git stash apply stash@{3}`
 
 ```{bash}
-git stash apply stash@{0}
+git stash apply stash@{3}
 ```
 should get an output similar to:
 ```{bash}
@@ -184,8 +183,8 @@ Show the diff of the changes stored in the specified stash (identified by its in
 
 ## Removing changes or files
 ### Discarding changes in the working directory: 
-Git makes it also possible to revert files back to the state of your last commit.
-This could e.g. be useful when you realizethat the recent changes you made to the script have introduced a bug 
+Sometimes you might want to revert files back to the state of your last commit.
+This could e.g. be useful when you realizet hat the recent changes you made to the script have introduced a bug 
 You can use `git restore` to discard changes in the working directory and revert the files to the state they were in when you last committed them.
 ```{bash}
 git restore <file>
@@ -199,7 +198,7 @@ This can be useful when you accidentally staged files or want to reorganize your
 git restore --staged <file>
 ```
 ### Deleting files
-If you want to delete files from your working directory and your git repository, it makes sense to use the `git rm` command.
+If you want to delete files from your filesystem and your git repository, it makes sense to use the `git rm` command.
 This command  removes files from your working directory and automatically stages this change for your next commit.
 The workflow would go like this:
 
@@ -219,14 +218,14 @@ This flag forces the removal of files, even if they are modified.
 Use this flag to remove directories and their contents. 
 
 `--cached`: 
-This flag removes files from the staging area (index) but preserves them in the working directory. 
+This flag removes files from the staging area but preserves them in the working directory. 
 
 `-n` or `--dry-run`: 
 With this flag, Git will only show you what would be removed but will not actually perform the deletion. 
 :::
 
 ### "Untracking" files
-Sometimes, you may have files, in your Git repository that you no longer want to track or include in future commits, but want to keep in your local working director.
+Sometimes, you may have files, in your Git repository that you no longer want to track or include in future commits, but want to keep in your local filesystem.
 It makes sense to include these files in your .gitignore file, as discussed in the [First steps chapter](First-Steps-Git.qmd)
 You could also use `git rm` with the `--cached`flag.
 
@@ -252,6 +251,12 @@ By default the commit message will be `revert <commit message of reverted commit
 However Git wil open an editor for you to change this message, if you don´t specify otherwise.
 
 ::: {.callout-tip collapse="true"}
+### What are hashes?
+In Git, a commit hash, also known as a commit ID or SHA-1 hash, is a unique identifier for a specific commit in a Git repository.
+It's a 40-character hexadecimal string that represents the contents and history of that commit. Each commit in a Git repository has a unique hash.
+:::
+
+::: {.callout-tip collapse="true"}
 ### Common git revert flags
 `-n` or `--no commit`:
 Prevents Git from automatically creating a new commit after reverting changes. 
@@ -265,7 +270,9 @@ By default, Git uses the first parent (main branch), but you can specify another
 This flag prevents the text editor from opening for editing the commit message, making it useful when you want to keep the default commit message.
 :::
 
-## Git Cherry Pick
+## Alternatives to standard merging
+
+### Git Cherry Pick
 `git cherry-pick` allows you to apply the changes from a specific commit from one branch to another. 
 This means, you can pick and apply specific commits to your current branch without merging the entire branch.
 This can be useful when you only want to bring in specific changes from another branch into your current branch.
@@ -291,7 +298,7 @@ Useful when you want to provide a custom message for the cherry-picked commit.
 :::
 
 
-## Git rebase
+### Git rebase
 `git rebase` is a different way than a merge to integrate changes from one branch into another. 
 When you rebase e.g. the feature branch onto the main branch you kind of "rearrange" the commits. 
 It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
