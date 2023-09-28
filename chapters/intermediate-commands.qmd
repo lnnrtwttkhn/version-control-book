@@ -47,7 +47,7 @@ knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
 ```
 
 ## {{< fa dumbbell >}} Exercises
-### Stashing Changes:
+#### Stashing Changes:
 
 - Create a new branch called feature/stash-exercise.
 
@@ -59,7 +59,14 @@ knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
 
 - Apply the stash to your working directory and verify that your changes are restored.
 
-### Rebasing:
+#### Git revert
+- Create a new branch called feature/revert-exercise.
+
+- Make changes and commit these to your file.
+
+- Use git revert to revert the most recent commit, specifying its hash.
+
+#### Rebasing:
 
 - Create a new branch called feature/rebase-example.
 
@@ -275,7 +282,7 @@ This flag prevents the text editor from opening for editing the commit message, 
 ### Git Cherry Pick
 `git cherry-pick` allows you to apply the changes from a specific commit from one branch to another. 
 This means, you can pick and apply specific commits to your current branch without merging the entire branch.
-This can be useful when you only want to bring in specific changes from another branch into your current branch.
+This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in @fig-cherry-pick.
 You will need the hash of the commit you want to "cherry-pick" and then use the syntax:
 
 ```{bash}
@@ -283,8 +290,12 @@ git cherry-pick <commithash>
 ```
 Again, you might have to resolve merge conflicts.
 The default commit message will be: 
-`Cherry-pick commit <commit-hash> This commit was cherry-picked from <source-branch> at <source-commit-hash>.`
+```{bash}
+Cherry-pick commit <commit-hash>
+This commit was cherry-picked from <source-branch> at <source-commit-hash>
+```
 
+![Image from [Blogpost "What IS git cherry-pick? "](https://dev.to/0xkoji/what-is-git-cherry-pick-3fka) of the [0xkoji](https://dev.to/_mohanmurali), used under a [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/) ([direct link](https://res.cloudinary.com/practicaldev/image/fetch/s--4F3hItHc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hkftpmgzz7ixtqaxldsw.jpg))](../static/cherry-pick.png){#fig-cherry-pick}
 
 ::: {.callout-tip collapse="true"}
 ### Common git cherry-pick flags
@@ -333,5 +344,3 @@ Preserve merge commits during the rebase.
 `--autosquash`: 
 Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
 :::
-
-
