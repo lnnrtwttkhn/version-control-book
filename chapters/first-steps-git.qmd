@@ -5,6 +5,9 @@ execute:
   eval: false
   title-block-style: none
 author: ""
+categories: [beginner, basics]
+description: |
+  Exploring the most important basic commands you will need. 
 ---
 
 ::: callout-note
@@ -14,13 +17,14 @@ author: ""
 :::
 
 
-::: {.column width="50%"}
+::: {.column width="100%"}
 {{< fa bullseye >}} Objectives
 
 -   Initializing a Git Repository
 -   Staging and Committing Changes
 -   Exploring the commit history
 -   Comparing Versions
+-  Creating a .gitignore file
 
 :::
 
@@ -34,15 +38,29 @@ author: ""
 knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
 ```
 
+## Acknowledgements
 
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("bryan2023", "community2022", "millman2018", "mcbain2019")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
 
 ## {{< fa dumbbell >}} Exercises
 
 -   Create a folder called "recipes" and initialize it as a git repository.
+
 -   Create a textfile called "favouritereceipes.txt", in this folder.
--Add a favourite (or a crazy AI generated one) recipe of yours in this file.
+
+- Add a favourite (or a crazy AI generated one) recipe of yours in this file.
+
 - Stage and commit your changes to the file, write a commit message
-- Create a `.gitignore file, include Files in it, you don´t want to track
+
+- Create a .gitignore file, include Files in it, you do not want to track
 
 
 ## {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
@@ -126,7 +144,7 @@ Suppresses the display of untracked files.
 Provides more detailed information, including additional status information about ignored files.
 
 You can use these flags in combination.
-For example, git status -s -b will display a short and concise output along with the branch information.
+For example, `git status -s -b` will display a short and concise output along with the branch information.
 :::
 
 ### Staging
@@ -151,7 +169,7 @@ Changes to be committed:
 	new file:   example.txt
 ```
 Your change to the file, or the addition if it is now **staged**.
-You do not have to add every file one by one, you can also use the `-a` flag.
+You do not have to add every file one by one, you can simply use the `-a` flag.
 
 ::: {.callout-tip collapse="true"}
 ## Common git add flags
@@ -161,9 +179,6 @@ Adds all changes, including modifications, deletions, and new files, in the enti
 
 `-u`: 
 Adds modifications and deletions, but not new files.
-
-<pathspec>:
-Specifies the specific files or directories to add. For example, git add myfile.txt adds a single file, while git 
 
 `--ignore-errors`: 
 Ignores errors when adding files, allowing the command to continue even if some files cannot be added.
@@ -298,6 +313,22 @@ Displays the names of files along with a status identifier that indicates if a f
 Highlights the differences at the word level, providing more granular detail.
 :::
 
+## Good commits
+
+Ideally, each commit contains an isolated, complete change.
+For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
+Later, if you want to keep the tests but revert the enhancement, you can revert the specific commit that contained the variable rename.
+If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
+
+### Commit messages etiquette
+
+Git allows for a title with a 72 character limit and a description without such a limit.
+In general you should aim to write clear and concise commit messages.
+There are different conventions across projects/persons but also some general guidelines, you can stick to. 
+
+It is standard to start the title with an imperative verb to indicate the purpose of the commit. 
+It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary.
+
 ## `.gitignore`
 
 `.gitignore` is a special file. It is used in Git to specify files and directories that should be ignored and not tracked.
@@ -418,9 +449,3 @@ DESCRIPTION.meta
 .DS_Store
 
 ```
-
-# Sources
-
-https://happygitwithr.com/
-
-https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git.html https://milesmcbain.github.io/git_4_sci/using-a-git-repository.html

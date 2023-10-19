@@ -5,6 +5,9 @@ execute:
   eval: false
 title-block-style: none
 author: ""
+categories: [beginner, basics]
+description: |
+  Downloading and configuring Git, to get you started!
 ---
 
 ::: callout-note
@@ -13,7 +16,7 @@ author: ""
 {{< fa clock >}} Duration:  min
 :::
 
-::: {.column width="50%"}
+::: {.column width="100%"}
 {{< fa bullseye >}} Objectives
 
 - Downloading and configuring Git
@@ -24,12 +27,12 @@ author: ""
 ## Acknowledgements
 
 ```{r}
-#| eval: false
+#| eval: true
 #| echo: false
 #| message: false
 #| warning: false
 #| output: asis
-bibtexkeys = c("koziar2023", "bryan2023")
+bibtexkeys = c("bryan2023", "capes2023", "chacon2014", "koziar2023")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
 
@@ -63,8 +66,13 @@ Open the Terminal and type:
 git --version
 ```
 
+If git is installed, you should receive an output similar to:
+
+```{bash}
+git version 2.39.2 (Apple Git-143)
+```
 If git is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools.
-You may be asked for your administrator password.
+You also may be asked for your administrator password.
 
 #### Option 2: Binary installer
 
@@ -90,8 +98,6 @@ sudo apt-get install git
 
 Download the [Git for Windows installer](https://git-scm.com/download/win).
 Hit 'Next' through the prompts without modifying the installation destination or other settings.
-
-You can also click [here](https://www.youtube.com/watch?v=-Bfx-v5mIDo) for a video tutorial.
 
 ## {{< fa brands github >}} Creating a GitHub account
 
@@ -124,8 +130,7 @@ To benefit from the pack, visit the [GitHub Education website](https://www.educa
 Once verified, you gain access to various resources, including [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) with unlimited private repositories, free domain names, cloud credits, coding courses, and more.
 :::
 
-## {{< fa align-left >}} Downloading a Text Editor 
-
+## {{< fa align-left >}} Downloading a Text Editor (Optional)
 Sometimes, Git might ask you to write a commit message, and it can be annoying if you end up in an editor you don't like or don't know how to use.
 The standard text editor is called **Vim**, which is widely known for being difficult to use. 
 Therefore, it might be a smart move to consider switching to a different text editor.
@@ -182,6 +187,7 @@ This name will be attached to your commits, so **choose something that makes sen
 :::
 
 ### {{< fa pen >}} Set your Text editor 
+If you have decided to use a different text editor:
 
 As mentioned earlier, you may come across various scenarios where you need to interact with text-based files, such as commit messages or merge conflict resolutions. 
 Git relies on a text editor to allow you to make changes to these files within the Git workflow. 
@@ -239,14 +245,4 @@ will open up a browser in the terminal containing information about the `config`
 To quit the browser use `q`.
 
 While the command provides extensive documentation and information about Git commands, it is not the most beginner-friendly resource.
-
-# References 
-
-https://happygitwithr.com/ 
-
-https://swcarpentry.github.io/git-novice
-
-/https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-
-https://www.youtube.com/watch?v=-Bfx-v5mIDo
 

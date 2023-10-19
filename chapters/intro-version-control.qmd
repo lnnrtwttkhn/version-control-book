@@ -12,50 +12,25 @@ description: "Introduction to fundamental concepts of version control."
 
 ## Acknowledgements
 
+We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
+We recommend these references for further reading:
+
 ```{r}
 #| eval: true
 #| echo: false
 #| message: false
 #| warning: false
 #| output: asis
-bibtexkeys = c("koziar2023", "bryan2018", "ram2013", "perez-riverol2016")
+bibtexkeys = c("koziar2023", "bryan2018", "ram2013", "perez-riverol2016", "aimrsf2023")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
-
-- https://github.com/aim-rsf/training/tree/main/version-control
-- https://www.youtube.com/watch?v=z9-qAGq78qE
 
 ## Learning Objectives
 
 - [x] What is version control?
 - [x] Why is version control useful (for research)?
-- [x] What are git and GitHub?
-- [x] What is the difference between git and GitHub?
-
-## Exercises
-
-Ask these questions before students learn about version control:
-
-Imagine a scenario where you crafted a brilliant paragraph for your paper, but then accidentally ruined it.
-How would you retrieve the earlier brilliant version?
-Is it even possible?
-
-Solution:
-
-The possibility of retrieving the brilliant version exists only when you have made a copy of the previous paper version.
-The risk of losing valuable versions frequently results in "implicit" version control, where multiple versions of the same file are saved.
-This approach, however, is error-prone and can lead to additional confusion and frustration.
-
-Consider a situation where you are working with five co-authors on a paper.
-How do you handle the changes and comments they make to the document?
-If you're using LibreOffice Writer or Microsoft Word and you accept changes made using the "Track Changes" option, what happens to the history of those modifications?
-
-Solution:
-
-Collaborative writing using traditional word processors presents challenges.
-Collaborators either need to work on the document sequentially, which slows down the writing process, or you have to send versions to each collaborator and manually merge their comments into the document.
-While the "track changes" option can highlight modifications and simplify merging, accepting changes erases their history, making it impossible to identify who suggested the change, the reason behind it, or when it was incorporated into the document.
-Even online word processors like Google Docs or Microsoft Office Online do not entirely resolve these issues.
+- [x] What are Git and GitHub?
+- [x] What is the difference between Git and GitHub?
 
 ## What is version control?
 
@@ -87,40 +62,64 @@ Now you want to test out a new feature.
 It takes you a while to test this feature.
 It becomes unclear what you should call all these files.
 Then you realize that you need help with this.
-So then researcher 2 comes in and they help ypu implementing this feature.
+So then researcher 2 comes in and they help you implementing this feature.
 More files are created, but no ideas how to name them.
 Person 3 has a lot of ideas but is not editing the files directly.
 So script v-3 is created.
 One you realize that this is becoming complicated, you create a meta document that you want to use to keep track of the project progress.
 Then you realize that you software has bugs and you can't figure out when this bug has occurred for the first time.
-Time has passed and you ask yourself: what is the latest version of my script and where is it? when did I incorporate that new featrure. who made that change and why? collaborator asks you to run version 2 of the script but you dont have it anymore.
-actually there are many more people involved and many more documents.
+Time has passed and you ask yourself: what is the latest version of my script and where is it? 
+When did I incorporate that new feature. who made that change and why? 
+Your collaborator asks you to run version 2 of the script but you dont have it anymore.
+In a real-life situation, there might be many more people involved and many more documents.
 
 ## Versions in multiple files
 
-It is quite likely that you are already engaged in some form of version control.
+If you are a student or researcher you might be familiar with the situation illustrated in @fig-phd-comic-final-doc:
+You are writing a paper and you are really excited because you finally have a full draft.
+To mark this, you call the file `FINAL.docx` and send it off to your advisor.
+Your advisor has a few comments, so you integrate those changes into a new version that you call `FINAL_rev2.doc`.
+You show your draft to your advisor again and again they have even more comments.
+So as there are more and more rounds of feedback your file naming system an get out of hand very easily.
 
-One way to implement file versioning of files is by **appending versions or descriptive labels to the filenames**, or by **adding initials** at the end of the filename:
+!["notFinal.doc" - originally published 10/12/2012. "Piled Higher and Deeper" by Jorge Cham ([phdcomics.com](https://phdcomics.com/)). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. ([direct link](https://phdcomics.com/comics/archive.php?comicid=1531)).](../static/phd-comic-final-doc.gif){#fig-phd-comic-final-doc}
+
+Apart from the issues with file naming, a deeper point of this illustration with respect to research is, that there is rarely a point in scientific work where we are really confident that something is indeed the "final" {{< fa trademark >}} version.
+
+If you can relate to the poor student @fig-phd-comic-final-doc, it is quite likely that you have also already engaged in this form of version control.
+
+More generally, this common way of implementing file versioning of files works by **appending versions or descriptive labels to the filenames**, or by **adding initials** at the end of the filename:
 
 - `file_v1.docx`, `file_v2.docx`, `file_v3.docx`, etc.
 - `draft.docx` to `draft_comments_LW_final_edited.docx`, etc.
 
 Every time you make a critical change to a file, you duplicate it, rename it according to your versioning scheme and continue working in the duplicated file.
-While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated in @fig-phd-comic-final-doc and @fig-xkcd-documents.
+While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated in @fig-phd-comic-final-doc, @fig-xkcd-documents and @fig-phd-comic-story-told-in-file-names.
 In such cases, more advanced version control systems may be necessary.
-
-!["Piled Higher and Deeper" by Jorge Cham ([phdcomics.com](https://phdcomics.com/)). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. ([direct link](https://phdcomics.com/comics/archive.php?comicid=1531)).](../static/phd-comic-final-doc.gif){#fig-phd-comic-final-doc}
 
 !["Documents" by xkcd ([xkcd.com](https://xkcd.com/)). Used under a [Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence](https://creativecommons.org/licenses/by-nc/2.5/) ([direct link](https://xkcd.com/1459/)).](../static/xkcd-documents.png){#fig-xkcd-documents}
 
 ![This illustration is created by [Scriberia](https://www.scriberia.com/) with [The Turing Way](https://the-turing-way.netlify.app/) community. Used under a [CC BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/). DOI: [10.5281/zenodo.3695300](https://doi.org/10.5281/zenodo.3695300) (Version 3, [direct download link](https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1)).](../static/project-history-turing-way.svg)
+
+!["A story told in file names", originally published 5/28/2010. "Piled Higher and Deeper" by Jorge Cham ([phdcomics.com](https://phdcomics.com/)). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. ([direct link](https://phdcomics.com/comics/archive.php?comicid=1323)).](../static/phd-comic-story-told-in-file-names.gif){#fig-phd-comic-story-told-in-file-names}
+
+> Your number one collaborator is yourself from six months ago and she doesn't answer emails.
+
+If you mostly work on your own or with a very small team, you might think that you will not encounter such situations.
+However, remember that your number one collaborator is yourself from six months ago and you will often find yourself in situations trying to remember what happened six months ago.
+
+Imagine you were on a very long vacation (who would not like to imagine that!) and you would come back to a project folder as illustrated in @fig-phd-comic-story-told-in-file-names.
+Would you know which file to continue working with?
+Would you know how the different files related to each other?
+How could someone else start working with this project or how would you start working with this if you would get such a project folder from someone else?
+It is very difficult to understand how to work with this project and you will likely spend a lot of time figuring out what all the different files are, what they mean and why they are titled in such a way.
 
 ### Versions in a single file
 
 Some software can keep track of all the changes made to a file without making new copies of the file.
 This includes word processors like Microsoft Word's [Track Changes](https://support.microsoft.com/en-us/office/track-changes-in-word-197ba630-0f5f-4a8e-9a77-3712475e806a?ui=en-us&rs=en-us&ad=us), Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/latest/ro/text/shared/guide/redlining.html).
 
-::: {.callout-tip collapse="true" title="Disadvantages of version control using word processors compared to Git"}
+::: {.callout-tip collapse="true" title="Disadvantages of version control using Word processors compared to Git"}
 
 1. **Limited Collaboration:** Word processors' track changes feature is primarily designed for collaboration within the application, making it difficult to collaborate with users who don't have access to the same word processing software.
 In contrast, Git allows seamless collaboration across different platforms and tools.
@@ -238,7 +237,7 @@ See chapter on [command line](command-line.qmd).
 
 ### Extensions to existing software
 
-Your text editor or analytical software is very likely to have a git extensions / plugin, often via a Graphical User Interface (GUI).
+Your text editor or analytical software is very likely to have a Git extensions / plugin, often via a Graphical User Interface (GUI).
 
 - [RStudio Desktop](https://posit.co/download/rstudio-desktop/)
 - [Visual Studio Code](https://code.visualstudio.com/docs/sourcecontrol/overview)
@@ -255,10 +254,6 @@ Please consult their respective documentation for further details.
 ## Common misconceptions
 
 ### Misconception: Git is the same as GitHub
-
-![Git Logo by [Jason Long](https://twitter.com/jasonlong) is licensed under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/). ([Link to download page](https://git-scm.com/downloads/logos)).](../static/git-icon.svg){#fig-git-logo fig-align="left"}
-
-![GITHUB®, the GITHUB® logo design, the INVERTOCAT logo design, OCTOCAT®, and the OCTOCAT® logo design are trademarks of GitHub, Inc., registered in the United States and other countries. The OCTOCAT design is the exclusive property of GitHub, Inc and has been federally registered with the United States Copyright Office. All rights reserved. ([Link to download page](https://github.com/logos)).](../static/github-logo.svg){#fig-github-logo fig-align="left"}
 
 One of the most widespread misconceptions is that Git and GitHub are the same thing.
 Git and GitHub are two distinct but related tools in the world of version control.
@@ -281,10 +276,10 @@ Version control can be beneficial for anyone working with files that undergo cha
 
 Git offers remarkable benefits for collaboration, but its value extends beyond working with others.
 It enables you to collaborate effectively with your past and future self, fostering valuable skills and boosting your confidence when collaborating with others.
-Even if you currently don't have a specific reason to collaborate with others, trying git on your own can be highly beneficial and rewarding.
+Even if you currently don't have a specific reason to collaborate with others, trying Git on your own can be highly beneficial and rewarding.
 
 ### Misconception: Git auto-saves your changes
 
-Unlike automatic saving, where changes are continuously saved in the background, git requires manual intervention to capture snapshots.
-You have to explicitly inform git when you want to take a snapshot, indicating that you want it to acknowledge your changes.
+Unlike automatic saving, where changes are continuously saved in the background, Git requires manual intervention to capture snapshots.
+You have to explicitly inform Git when you want to take a snapshot, indicating that you want it to acknowledge your changes.
 While this may sound annoying at first, the benefits of having full control over your version history will become apparent in later chapters of this book.
