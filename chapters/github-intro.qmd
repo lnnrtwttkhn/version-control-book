@@ -250,12 +250,12 @@ This is handy when you have changes in progress and want to pull in the latest c
 
 ### Fetching
 The command `git fetch` is used to keep up-to-date with changes in the remote repository, without merging them into your local branch.
-Instead Git will update all your local tracking branches to the remote branche.
+Instead Git will update all your local tracking branches to the remote branch.
 To view your remote tracking branches, you can use `git branch -r`
 After fetching, you can use `git switch` to review the changes on these branches.
 If you want to integrate the changes into you local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
 
-`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository wirhout making any changes to your local working directory and staging area.
+`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 
 
 ## {{< fa code-pull-request >}} Pushing
@@ -298,7 +298,7 @@ It it used to show when and by whom, each line in a specific file was last chang
 You have to specify a file when using it, so e.g.
 
 ```{bash}
-git blame receipes.txt
+git blame recipes.txt
 ```
 
 If you are working solo on a text file, the result should not be very interesting.
