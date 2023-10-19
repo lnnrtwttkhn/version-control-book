@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
+<meta name="description" content="Exploring the most important basic commands you will need.">
 
 <title>Version Control of Code and Data - 5&nbsp; First Steps with Git</title>
 <style>
@@ -55,7 +56,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -223,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -296,23 +316,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link active" data-scroll-target="#cheatsheet"><span class="header-section-number">5.1</span> Cheatsheet</a></li>
-  <li><a href="#fa-dumbbell-exercises" id="toc-fa-dumbbell-exercises" class="nav-link" data-scroll-target="#fa-dumbbell-exercises"><span class="header-section-number">5.2</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</a></li>
-  <li><a href="#fa-folder-closed-initializing-a-folder-as-a-git-repository" id="toc-fa-folder-closed-initializing-a-folder-as-a-git-repository" class="nav-link" data-scroll-target="#fa-folder-closed-initializing-a-folder-as-a-git-repository"><span class="header-section-number">5.3</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Initializing a Folder as a Git Repository</a></li>
-  <li><a href="#fa-file-export-status-staging-and-committing" id="toc-fa-file-export-status-staging-and-committing" class="nav-link" data-scroll-target="#fa-file-export-status-staging-and-committing"><span class="header-section-number">5.4</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, Staging and committing</a>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">5.2</span> Acknowledgements</a></li>
+  <li><a href="#fa-dumbbell-exercises" id="toc-fa-dumbbell-exercises" class="nav-link" data-scroll-target="#fa-dumbbell-exercises"><span class="header-section-number">5.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</a></li>
+  <li><a href="#fa-folder-closed-initializing-a-folder-as-a-git-repository" id="toc-fa-folder-closed-initializing-a-folder-as-a-git-repository" class="nav-link" data-scroll-target="#fa-folder-closed-initializing-a-folder-as-a-git-repository"><span class="header-section-number">5.4</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Initializing a Folder as a Git Repository</a></li>
+  <li><a href="#fa-file-export-status-staging-and-committing" id="toc-fa-file-export-status-staging-and-committing" class="nav-link" data-scroll-target="#fa-file-export-status-staging-and-committing"><span class="header-section-number">5.5</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, Staging and committing</a>
   <ul class="collapse">
-  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status"><span class="header-section-number">5.4.1</span> Status</a></li>
-  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging"><span class="header-section-number">5.4.2</span> Staging</a></li>
-  <li><a href="#committing" id="toc-committing" class="nav-link" data-scroll-target="#committing"><span class="header-section-number">5.4.3</span> Committing</a></li>
-  <li><a href="#logging-commits" id="toc-logging-commits" class="nav-link" data-scroll-target="#logging-commits"><span class="header-section-number">5.4.4</span> Logging Commits</a></li>
-  <li><a href="#comparing-versions" id="toc-comparing-versions" class="nav-link" data-scroll-target="#comparing-versions"><span class="header-section-number">5.4.5</span> Comparing Versions</a></li>
+  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status"><span class="header-section-number">5.5.1</span> Status</a></li>
+  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging"><span class="header-section-number">5.5.2</span> Staging</a></li>
+  <li><a href="#committing" id="toc-committing" class="nav-link" data-scroll-target="#committing"><span class="header-section-number">5.5.3</span> Committing</a></li>
+  <li><a href="#logging-commits" id="toc-logging-commits" class="nav-link" data-scroll-target="#logging-commits"><span class="header-section-number">5.5.4</span> Logging Commits</a></li>
+  <li><a href="#comparing-versions" id="toc-comparing-versions" class="nav-link" data-scroll-target="#comparing-versions"><span class="header-section-number">5.5.5</span> Comparing Versions</a></li>
   </ul></li>
-  <li><a href="#gitignore" id="toc-gitignore" class="nav-link" data-scroll-target="#gitignore"><span class="header-section-number">5.5</span> <code>.gitignore</code></a></li>
-  <li><a href="#common-files-to-ignore-in-scientific-settings" id="toc-common-files-to-ignore-in-scientific-settings" class="nav-link" data-scroll-target="#common-files-to-ignore-in-scientific-settings"><span class="header-section-number">5.6</span> Common Files to Ignore in Scientific Settings:</a>
+  <li><a href="#good-commits" id="toc-good-commits" class="nav-link" data-scroll-target="#good-commits"><span class="header-section-number">5.6</span> Good commits</a>
   <ul class="collapse">
-  <li><a href="#wildcards-in-.gitignore-files" id="toc-wildcards-in-.gitignore-files" class="nav-link" data-scroll-target="#wildcards-in-.gitignore-files"><span class="header-section-number">5.6.1</span> Wildcards in .gitignore files</a></li>
-  <li><a href="#example-.gitignore-file-for-a-r-project" id="toc-example-.gitignore-file-for-a-r-project" class="nav-link" data-scroll-target="#example-.gitignore-file-for-a-r-project"><span class="header-section-number">5.6.2</span> Example .gitignore file for a R project</a></li>
+  <li><a href="#commit-messages-etiquette" id="toc-commit-messages-etiquette" class="nav-link" data-scroll-target="#commit-messages-etiquette"><span class="header-section-number">5.6.1</span> Commit messages etiquette</a></li>
   </ul></li>
-  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">6</span> Sources</a></li>
+  <li><a href="#gitignore" id="toc-gitignore" class="nav-link" data-scroll-target="#gitignore"><span class="header-section-number">5.7</span> <code>.gitignore</code></a></li>
+  <li><a href="#common-files-to-ignore-in-scientific-settings" id="toc-common-files-to-ignore-in-scientific-settings" class="nav-link" data-scroll-target="#common-files-to-ignore-in-scientific-settings"><span class="header-section-number">5.8</span> Common Files to Ignore in Scientific Settings:</a>
+  <ul class="collapse">
+  <li><a href="#wildcards-in-.gitignore-files" id="toc-wildcards-in-.gitignore-files" class="nav-link" data-scroll-target="#wildcards-in-.gitignore-files"><span class="header-section-number">5.8.1</span> Wildcards in .gitignore files</a></li>
+  <li><a href="#example-.gitignore-file-for-a-r-project" id="toc-example-.gitignore-file-for-a-r-project" class="nav-link" data-scroll-target="#example-.gitignore-file-for-a-r-project"><span class="header-section-number">5.8.2</span> Example .gitignore file for a R project</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/first-steps-git.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/first-steps-git.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -322,7 +346,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">beginner</div>
+    <div class="quarto-category">basics</div>
+  </div>
+  </div>
 
 
 <div class="quarto-title-meta-author">
@@ -354,13 +382,14 @@ Overview
 <p><i class="fa-solid fa-clock" aria-label="clock"></i> Duration: min</p>
 </div>
 </div>
-<div class="column" style="width:50%;">
+<div class="column" style="width:100%;">
 <p><i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Objectives</p>
 <ul>
 <li>Initializing a Git Repository</li>
 <li>Staging and Committing Changes</li>
 <li>Exploring the commit history</li>
 <li>Comparing Versions</li>
+<li>Creating a .gitignore file</li>
 </ul>
 </div>
 <section id="cheatsheet" class="level2" data-number="5.1">
@@ -377,32 +406,32 @@ Overview
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">107</td>
+<td style="text-align: left;">111</td>
 <td style="text-align: left;"><code>git init</code></td>
 <td style="text-align: left;">Initialize folder as Git Repository</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">108</td>
+<td style="text-align: left;">112</td>
 <td style="text-align: left;"><code>git status</code></td>
 <td style="text-align: left;">View Git tracking status of files in Repository</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">109</td>
+<td style="text-align: left;">113</td>
 <td style="text-align: left;"><code>git add</code></td>
 <td style="text-align: left;">Add file to staging area</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">110</td>
+<td style="text-align: left;">114</td>
 <td style="text-align: left;"><code>git commit</code></td>
 <td style="text-align: left;">Commit staged files</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">111</td>
+<td style="text-align: left;">115</td>
 <td style="text-align: left;"><code>git log</code></td>
 <td style="text-align: left;">View past commits</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">112</td>
+<td style="text-align: left;">116</td>
 <td style="text-align: left;"><code>git diff</code></td>
 <td style="text-align: left;">View made changes compared to the last commit</td>
 </tr>
@@ -411,17 +440,64 @@ Overview
 </div>
 </div>
 </section>
-<section id="fa-dumbbell-exercises" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="fa-dumbbell-exercises"><span class="header-section-number">5.2</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</h2>
+<section id="acknowledgements" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">5.2</span> Acknowledgements</h2>
+<div class="cell-output-display">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="community2022">The Turing Way Community (<a href="../references.html#ref-community2022" role="doc-biblioref">2022</a>)</span></td>
+<td style="text-align: left;">The Turing Way: A handbook for reproducible, ethical and collaborative research</td>
+<td style="text-align: left;"><a href="https://the-turing-way.netlify.app/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;">License: The process documents and data are made available under a . Software are made available under an . Website: </td>
+<td style="text-align: left;"><a href="License:%20The%20process%20documents%20and%20data%20are%20made%20available%20under%20a%20\href%7Bhttps://creativecommons.org/licenses/by/4.0/%7D%7BCC%20BY%204.0%20license%7D.%20Software%20are%20made%20available%20under%20an%20\href%7Bhttps://opensource.org/license/mit/%7D%7BMIT%20license%7D.%20Website:%20\url%7Bhttps://the-turing-way.netlify.app/%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="millman2018">Millman et al. (<a href="../references.html#ref-millman2018" role="doc-biblioref">2018</a>)</span></td>
+<td style="text-align: left;">Teaching Computational Reproducibility for Neuroimaging</td>
+<td style="text-align: left;"><a href="http://dx.doi.org/10.3389/fnins.2018.00727"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Website: </td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by/4.0/%7D%7BCC%20BY%204.0%7D.%20Website:%20\url%7Bhttp://dx.doi.org/10.3389/fnins.2018.00727%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="mcbain2019">McBain (<a href="../references.html#ref-mcbain2019" role="doc-biblioref">2019</a>)</span></td>
+<td style="text-align: left;">Git for Scientists</td>
+<td style="text-align: left;"><a href="https://milesmcbain.github.io/git_4_sci/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/MilesMcBain/git_4_sci/"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="bryan2023">Bryan (<a href="../references.html#ref-bryan2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">Happy Git and GitHub for the useR</td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://github.com/jennybc/happy-git-with-r%7D%7Bhttps://happygitwithr.com/%7D"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://github.com/jennybc/happy-git-with-r%7D%7Bhttps://happygitwithr.com/%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fa-dumbbell-exercises" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="fa-dumbbell-exercises"><span class="header-section-number">5.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</h2>
 <ul>
-<li>Create a folder called “recipes” and initialize it as a git repository.</li>
-<li>Create a textfile called “favouritereceipes.txt”, in this folder. -Add a favourite (or a crazy AI generated one) recipe of yours in this file.</li>
-<li>Stage and commit your changes to the file, write a commit message</li>
-<li>Create a `.gitignore file, include Files in it, you don´t want to track</li>
+<li><p>Create a folder called “recipes” and initialize it as a git repository.</p></li>
+<li><p>Create a textfile called “favouritereceipes.txt”, in this folder.</p></li>
+<li><p>Add a favourite (or a crazy AI generated one) recipe of yours in this file.</p></li>
+<li><p>Stage and commit your changes to the file, write a commit message</p></li>
+<li><p>Create a .gitignore file, include Files in it, you do not want to track</p></li>
 </ul>
 </section>
-<section id="fa-folder-closed-initializing-a-folder-as-a-git-repository" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="fa-folder-closed-initializing-a-folder-as-a-git-repository"><span class="header-section-number">5.3</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Initializing a Folder as a Git Repository</h2>
+<section id="fa-folder-closed-initializing-a-folder-as-a-git-repository" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="fa-folder-closed-initializing-a-folder-as-a-git-repository"><span class="header-section-number">5.4</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Initializing a Folder as a Git Repository</h2>
 <p>To create your first Git repository, you need to initialize a folder. You can create an empty folder using the command line as explained in the chapter <a href="../chapters/command-line.html">Command Line Basics</a>. Alternatively, you can create a folder in the usual way. Create a Textfile in this folder. Navigate, using the Terminal, to the folder which you want to initialize as a Git repository. You can use the <code>cd</code> command to change directories. Once you are in the desired directory, run the <code>git init</code> command to initialize the folder as a Git repository.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -433,11 +509,11 @@ Overview
 <p>Congratulations on successfully initializing your first Git repository! <i class="fa-solid fa-champagne-glasses" aria-label="champagne-glasses"></i></p>
 <p>Git is now able to track your file(s and the changes you make to them, in this Folder. You only need to use <code>git init</code> once per folder.</p>
 </section>
-<section id="fa-file-export-status-staging-and-committing" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="fa-file-export-status-staging-and-committing"><span class="header-section-number">5.4</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, Staging and committing</h2>
+<section id="fa-file-export-status-staging-and-committing" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="fa-file-export-status-staging-and-committing"><span class="header-section-number">5.5</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, Staging and committing</h2>
 <p>After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically. In Git, there are two steps for saving your changes: the staging area and the commits. The staging area is like a waiting area where you gather and prepare your changes before saving them. You can choose which changes to include in the snapshot by adding them to the staging area using git <code>git add</code>. Once you’re satisfied with the changes in the staging area, you make a <strong>commit</strong>, using <code>git commit</code>. A commit is like taking a snapshot of your project at a specific moment. It captures all the changes in the staging area and saves them as a new version. Commits are like milestones that help you track the progress of your project and easily go back to a previous version if needed.</p>
-<section id="status" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="status"><span class="header-section-number">5.4.1</span> Status</h3>
+<section id="status" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="status"><span class="header-section-number">5.5.1</span> Status</h3>
 <p>After you initialized a folder, you can use <code>git status</code> to visualize the current file tracking status from Git.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -471,13 +547,13 @@ Common git status flags
 <p><code>-u</code>: Shows untracked files in the output.</p>
 <p><code>-uno</code>: Suppresses the display of untracked files.</p>
 <p><code>-v</code>: Provides more detailed information, including additional status information about ignored files.</p>
-<p>You can use these flags in combination. For example, git status -s -b will display a short and concise output along with the branch information.</p>
+<p>You can use these flags in combination. For example, <code>git status -s -b</code> will display a short and concise output along with the branch information.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="staging" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="staging"><span class="header-section-number">5.4.2</span> Staging</h3>
+<section id="staging" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="staging"><span class="header-section-number">5.5.2</span> Staging</h3>
 <p>You can use <code>git add</code> to put new/changed files in the “staging area”. The staging area serves as a space where you can gather changes that you intend to commit soon. To organize and group these changes into meaningful commits, you can place the relevant files in the staging area. The staging area acts as a bridge between your modified files and the next commit.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -492,7 +568,7 @@ Common git status flags
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git rm --cached &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">new</span> file:   example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Your change to the file, or the addition if it is now <strong>staged</strong>. You do not have to add every file one by one, you can also use the <code>-a</code> flag.</p>
+<p>Your change to the file, or the addition if it is now <strong>staged</strong>. You do not have to add every file one by one, you can simply use the <code>-a</code> flag.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -507,14 +583,13 @@ Common git add flags
 <div class="callout-body-container callout-body">
 <p><code>-a</code>: Adds all changes, including modifications, deletions, and new files, in the entire working tree.</p>
 <p><code>-u</code>: Adds modifications and deletions, but not new files.</p>
-<p><pathspec>: Specifies the specific files or directories to add. For example, git add myfile.txt adds a single file, while git</pathspec></p>
 <p><code>--ignore-errors</code>: Ignores errors when adding files, allowing the command to continue even if some files cannot be added.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="committing" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="committing"><span class="header-section-number">5.4.3</span> Committing</h3>
+<section id="committing" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="committing"><span class="header-section-number">5.5.3</span> Committing</h3>
 <p>Now that your changes are staged, you are ready to create a commit. To create a commit, use the <code>git commit</code> command followed by the flag <code>-m</code> and a commit message <strong>in quotes</strong> that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. If you just use <code>git commit</code> without adding a commit massage, the editor of <a href="../chapters/installation-setup.html">your choosing</a>, opens up and lets you type in a commit message.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add example.txt file"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -548,8 +623,8 @@ Common git commit flags
 </div>
 </div>
 </section>
-<section id="logging-commits" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="logging-commits"><span class="header-section-number">5.4.4</span> Logging Commits</h3>
+<section id="logging-commits" class="level3" data-number="5.5.4">
+<h3 data-number="5.5.4" class="anchored" data-anchor-id="logging-commits"><span class="header-section-number">5.5.4</span> Logging Commits</h3>
 <p>To look at your past commits you can use the <code>git log</code> command.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -584,8 +659,8 @@ Common git log flags
 </div>
 </div>
 </section>
-<section id="comparing-versions" class="level3" data-number="5.4.5">
-<h3 data-number="5.4.5" class="anchored" data-anchor-id="comparing-versions"><span class="header-section-number">5.4.5</span> Comparing Versions</h3>
+<section id="comparing-versions" class="level3" data-number="5.5.5">
+<h3 data-number="5.5.5" class="anchored" data-anchor-id="comparing-versions"><span class="header-section-number">5.5.5</span> Comparing Versions</h3>
 <p>Another very handy feature is the <strong>git diff</strong> command. It allows you to compare two different versions of your file. By default it shows you any uncommitted changes since the last commit. You can explore this by pasting this text in your .txt file</p>
 <pre><code>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
@@ -625,8 +700,17 @@ Common git diff flags
 </div>
 </section>
 </section>
-<section id="gitignore" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="gitignore"><span class="header-section-number">5.5</span> <code>.gitignore</code></h2>
+<section id="good-commits" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="good-commits"><span class="header-section-number">5.6</span> Good commits</h2>
+<p>Ideally, each commit contains an isolated, complete change. For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit. Later, if you want to keep the tests but revert the enhancement, you can revert the specific commit that contained the variable rename. If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.</p>
+<section id="commit-messages-etiquette" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="commit-messages-etiquette"><span class="header-section-number">5.6.1</span> Commit messages etiquette</h3>
+<p>Git allows for a title with a 72 character limit and a description without such a limit. In general you should aim to write clear and concise commit messages. There are different conventions across projects/persons but also some general guidelines, you can stick to.</p>
+<p>It is standard to start the title with an imperative verb to indicate the purpose of the commit. It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary.</p>
+</section>
+</section>
+<section id="gitignore" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="gitignore"><span class="header-section-number">5.7</span> <code>.gitignore</code></h2>
 <p><code>.gitignore</code> is a special file. It is used in Git to specify files and directories that should be ignored and not tracked. When you create a <code>.gitignore</code> file and specify filenames inside it, Git will exclude these files and directories from being staged or committed, e.g.&nbsp;when using <code>git add -a</code>. which normally stages all your files. The <code>.gitignore</code> file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history. Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the codebase without distractions from unnecessary files. .gitignore can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches. It also makes sense to include large files or temporary outputs in your <code>.gitignore</code> file. To keep the repository size manageable, making it faster to clone, pull, and push changes.</p>
 <p>To create a <code>.gitignore</code> file, navigate to your repo and use the <code>touch</code> command. Alternatively, create the file in your favorite text editor.</p>
 <div class="cell">
@@ -642,8 +726,8 @@ Common git diff flags
 </div>
 <p>Now you can write a filename or folder name inside it, to stop git from tracking it.</p>
 </section>
-<section id="common-files-to-ignore-in-scientific-settings" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="common-files-to-ignore-in-scientific-settings"><span class="header-section-number">5.6</span> Common Files to Ignore in Scientific Settings:</h2>
+<section id="common-files-to-ignore-in-scientific-settings" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="common-files-to-ignore-in-scientific-settings"><span class="header-section-number">5.8</span> Common Files to Ignore in Scientific Settings:</h2>
 <p><strong>Temporary Files and Output:</strong> Ignore files generated during analysis, like log files, temporary CSVs, or intermediate data files that are not part of the final results.</p>
 <p><strong>Data Folders:</strong> Exclude large datasets or data stored locally.</p>
 <p><strong>Environment-specific files:</strong> Exclude environment-specific files like .env files or venv folders used for local development setups.</p>
@@ -651,8 +735,8 @@ Common git diff flags
 <p><strong>R:</strong> Ignore .Rdata files and /Rplots.pdf generated by R for plotting.</p>
 <p><strong>Python:</strong> Ignore .pyc (Python compiled) files and <strong>pycache</strong>/ folders.</p>
 <p><strong>LaTeX:</strong> Ignore auxiliary files like .aux, .log, .bbl, and .blg files generated during LaTeX compilation.</p>
-<section id="wildcards-in-.gitignore-files" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="wildcards-in-.gitignore-files"><span class="header-section-number">5.6.1</span> Wildcards in .gitignore files</h3>
+<section id="wildcards-in-.gitignore-files" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="wildcards-in-.gitignore-files"><span class="header-section-number">5.8.1</span> Wildcards in .gitignore files</h3>
 <p>As discussed in the <a href="../chapters/command-line.html">command line chapter</a> wildcards are special characters that represent patterns of filenames or directory names. They can be used to specify multiple files or directories that should be ignored by Git when tracking changes. Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common wildcards">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -675,8 +759,8 @@ Common wildcards
 </div>
 </div>
 </section>
-<section id="example-.gitignore-file-for-a-r-project" class="level3" data-number="5.6.2">
-<h3 data-number="5.6.2" class="anchored" data-anchor-id="example-.gitignore-file-for-a-r-project"><span class="header-section-number">5.6.2</span> Example .gitignore file for a R project</h3>
+<section id="example-.gitignore-file-for-a-r-project" class="level3" data-number="5.8.2">
+<h3 data-number="5.8.2" class="anchored" data-anchor-id="example-.gitignore-file-for-a-r-project"><span class="header-section-number">5.8.2</span> Example .gitignore file for a R project</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># R-specific</span></span>
@@ -716,14 +800,23 @@ Common wildcards
 <span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Mac-specific</span></span>
 <span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="sources" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Sources</h1>
-<p>https://happygitwithr.com/</p>
-<p>https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-git.html https://milesmcbain.github.io/git_4_sci/using-a-git-repository.html</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bryan2023" class="csl-entry" role="listitem">
+Bryan, Jenny. 2023. <em>Happy Git and GitHub for the useR</em>. Jenny Bryan. <a href="https://happygitwithr.com">https://happygitwithr.com</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://github.com/jennybc/happy-git-with-r">https://happygitwithr.com/</a>.
+</div>
+<div id="ref-mcbain2019" class="csl-entry" role="listitem">
+McBain, Miles. 2019. <span>“Git for Scientists.”</span> <a href="https://milesmcbain.github.io/git_4_sci/">https://milesmcbain.github.io/git_4_sci/</a>. License: <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source: <a href="https://github.com/MilesMcBain/git_4_sci/" class="uri">https://github.com/MilesMcBain/git_4_sci/</a>. Website: <a href="https://milesmcbain.github.io/git_4_sci/" class="uri">https://milesmcbain.github.io/git_4_sci/</a>.
+</div>
+<div id="ref-millman2018" class="csl-entry" role="listitem">
+Millman, K. Jarrod, Matthew Brett, Ross Barnowski, and Jean-Baptiste Poline. 2018. <span>“Teaching Computational Reproducibility for Neuroimaging.”</span> <em>Frontiers in Neuroscience</em> 12 (October). <a href="https://doi.org/10.3389/fnins.2018.00727">https://doi.org/10.3389/fnins.2018.00727</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Website: <a href="http://dx.doi.org/10.3389/fnins.2018.00727" class="uri">http://dx.doi.org/10.3389/fnins.2018.00727</a>.
+</div>
+<div id="ref-community2022" class="csl-entry" role="listitem">
+The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: The process documents and data are made available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>. Software are made available under an <a href="https://opensource.org/license/mit/">MIT license</a>. Website: <a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

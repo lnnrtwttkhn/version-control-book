@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
+<meta name="description" content="In this chapter you will learn about the power of branches. Create, manage and merge branches like a pro!">
 
 <title>Version Control of Code and Data - 6&nbsp; Branches</title>
 <style>
@@ -55,7 +56,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -223,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -295,30 +315,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link active" data-scroll-target="#cheatsheet"><span class="header-section-number">6.1</span> Cheatsheet</a></li>
-  <li><a href="#exercises-fa-dumbbell" id="toc-exercises-fa-dumbbell" class="nav-link" data-scroll-target="#exercises-fa-dumbbell"><span class="header-section-number">6.2</span> Exercises <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></a></li>
-  <li><a href="#fa-code-branch-why-branches" id="toc-fa-code-branch-why-branches" class="nav-link" data-scroll-target="#fa-code-branch-why-branches"><span class="header-section-number">6.3</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</a></li>
-  <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch"><span class="header-section-number">6.4</span> Creating a new branch</a></li>
-  <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches"><span class="header-section-number">6.5</span> Switching branches</a></li>
-  <li><a href="#merging-branches" id="toc-merging-branches" class="nav-link" data-scroll-target="#merging-branches"><span class="header-section-number">6.6</span> Merging branches</a></li>
-  <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts"><span class="header-section-number">6.7</span> Merge conflicts</a>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements"><span class="header-section-number">6.1</span> Acknowledgements</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.2</span> Cheatsheet</a></li>
+  <li><a href="#fa-dumbbell-exercises" id="toc-fa-dumbbell-exercises" class="nav-link" data-scroll-target="#fa-dumbbell-exercises"><span class="header-section-number">6.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</a></li>
+  <li><a href="#fa-code-branch-why-branches" id="toc-fa-code-branch-why-branches" class="nav-link" data-scroll-target="#fa-code-branch-why-branches"><span class="header-section-number">6.4</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</a></li>
+  <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch"><span class="header-section-number">6.5</span> Creating a new branch</a></li>
+  <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches"><span class="header-section-number">6.6</span> Switching branches</a></li>
+  <li><a href="#merging-branches" id="toc-merging-branches" class="nav-link" data-scroll-target="#merging-branches"><span class="header-section-number">6.7</span> Merging branches</a></li>
+  <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts"><span class="header-section-number">6.8</span> Merge conflicts</a>
   <ul class="collapse">
-  <li><a href="#avoiding-merge-conflicts" id="toc-avoiding-merge-conflicts" class="nav-link" data-scroll-target="#avoiding-merge-conflicts"><span class="header-section-number">6.7.1</span> Avoiding merge conflicts</a></li>
-  <li><a href="#resolving-merge-conflicts" id="toc-resolving-merge-conflicts" class="nav-link" data-scroll-target="#resolving-merge-conflicts"><span class="header-section-number">6.7.2</span> Resolving merge conflicts</a></li>
-  <li><a href="#types-of-merges" id="toc-types-of-merges" class="nav-link" data-scroll-target="#types-of-merges"><span class="header-section-number">6.7.3</span> Types of merges</a></li>
+  <li><a href="#avoiding-merge-conflicts" id="toc-avoiding-merge-conflicts" class="nav-link" data-scroll-target="#avoiding-merge-conflicts"><span class="header-section-number">6.8.1</span> Avoiding merge conflicts</a></li>
+  <li><a href="#resolving-merge-conflicts" id="toc-resolving-merge-conflicts" class="nav-link" data-scroll-target="#resolving-merge-conflicts"><span class="header-section-number">6.8.2</span> Resolving merge conflicts</a></li>
+  <li><a href="#types-of-merges" id="toc-types-of-merges" class="nav-link" data-scroll-target="#types-of-merges"><span class="header-section-number">6.8.3</span> Types of merges</a></li>
   </ul></li>
-  <li><a href="#deleting-branches" id="toc-deleting-branches" class="nav-link" data-scroll-target="#deleting-branches"><span class="header-section-number">6.8</span> Deleting Branches</a></li>
-  <li><a href="#branches-best-practices" id="toc-branches-best-practices" class="nav-link" data-scroll-target="#branches-best-practices"><span class="header-section-number">6.9</span> Branches best practices</a>
+  <li><a href="#deleting-branches" id="toc-deleting-branches" class="nav-link" data-scroll-target="#deleting-branches"><span class="header-section-number">6.9</span> Deleting Branches</a></li>
+  <li><a href="#branches-best-practices" id="toc-branches-best-practices" class="nav-link" data-scroll-target="#branches-best-practices"><span class="header-section-number">6.10</span> Branches best practices</a>
   <ul class="collapse">
-  <li><a href="#naming-branches" id="toc-naming-branches" class="nav-link" data-scroll-target="#naming-branches"><span class="header-section-number">6.9.1</span> Naming branches</a></li>
-  <li><a href="#branch-lifecycle" id="toc-branch-lifecycle" class="nav-link" data-scroll-target="#branch-lifecycle"><span class="header-section-number">6.9.2</span> Branch Lifecycle</a></li>
-  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">6.9.3</span> Branch Protection</a></li>
+  <li><a href="#naming-branches" id="toc-naming-branches" class="nav-link" data-scroll-target="#naming-branches"><span class="header-section-number">6.10.1</span> Naming branches</a></li>
+  <li><a href="#branch-lifecycle" id="toc-branch-lifecycle" class="nav-link" data-scroll-target="#branch-lifecycle"><span class="header-section-number">6.10.2</span> Branch Lifecycle</a></li>
+  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">6.10.3</span> Branch Protection</a></li>
   </ul></li>
-  <li><a href="#good-commits" id="toc-good-commits" class="nav-link" data-scroll-target="#good-commits"><span class="header-section-number">6.10</span> Good commits</a>
-  <ul class="collapse">
-  <li><a href="#good-commit-messages" id="toc-good-commit-messages" class="nav-link" data-scroll-target="#good-commit-messages"><span class="header-section-number">6.10.1</span> Good commit messages</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/branches.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -344,12 +360,48 @@ Overview
 <p><i class="fa-solid fa-clock" aria-label="clock"></i> Duration: min</p>
 </div>
 </div>
-<div class="column" style="width:50%;">
+<div class="column" style="width:100%;">
 <p><i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Objectives</p>
-<p>In this Chapter we will introduce Branches including: - Purpose and benefits of using branches in Git - Creating and switching between branches - Merging branches and resolving conflicts</p>
+<ul>
+<li>Knowing purpose and benefits of using branches in Git</li>
+<li>Creating and switching between branches</li>
+<li>Merging branches and resolving conflicts</li>
+</ul>
 </div>
-<section id="cheatsheet" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.1</span> Cheatsheet</h2>
+<section id="acknowledgements" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">6.1</span> Acknowledgements</h2>
+<div class="cell-output-display">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="chacon2014">Chacon and Straub (<a href="../references.html#ref-chacon2014" role="doc-biblioref">2014</a>)</span></td>
+<td style="text-align: left;">Pro Git</td>
+<td style="text-align: left;"><a href="https://git-scm.com/book/en/v2"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a></td>
+<td style="text-align: left;"><a href="https://github.com/progit/progit2"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="GitHub2023">GitHub (<a href="../references.html#ref-GitHub2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">GitHub Docs</td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="cheatsheet" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.2</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -367,27 +419,27 @@ Overview
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">198</td>
+<td style="text-align: left;">208</td>
 <td style="text-align: left;"><code>git branch</code></td>
 <td style="text-align: left;">Listing/creating/deleting branches</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">199</td>
+<td style="text-align: left;">209</td>
 <td style="text-align: left;"><code>git switch</code></td>
 <td style="text-align: left;">Switching branches</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">200</td>
+<td style="text-align: left;">210</td>
 <td style="text-align: left;"><code>git checkout</code></td>
 <td style="text-align: left;">Switching branches</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">201</td>
+<td style="text-align: left;">211</td>
 <td style="text-align: left;"><code>git merge</code></td>
 <td style="text-align: left;">Merging branches</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">202</td>
+<td style="text-align: left;">212</td>
 <td style="text-align: left;"><code>git rebase</code></td>
 <td style="text-align: left;">A different way of integrating changes from two branches</td>
 </tr>
@@ -396,16 +448,16 @@ Overview
 </div>
 </div>
 </section>
-<section id="exercises-fa-dumbbell" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="exercises-fa-dumbbell"><span class="header-section-number">6.2</span> Exercises <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i></h2>
+<section id="fa-dumbbell-exercises" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="fa-dumbbell-exercises"><span class="header-section-number">6.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</h2>
 <ul>
 <li><p>Create a new Branch called feature/newveganreceipe</p></li>
 <li><p>Add a vegan recipe to your recipe text file</p></li>
 <li><p>Merge it with your main branch and delete it afterwards</p></li>
 </ul>
 </section>
-<section id="fa-code-branch-why-branches" class="level2 page-columns page-full" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="fa-code-branch-why-branches"><span class="header-section-number">6.3</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</h2>
+<section id="fa-code-branch-why-branches" class="level2 page-columns page-full" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="fa-code-branch-why-branches"><span class="header-section-number">6.4</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</h2>
 <p>Git branches are like separate workspaces within a Git repository. They let you work on different stuff without messing up the main code. You can visualize branches as shown in <a href="#fig-branches">Figure&nbsp;<span>6.1</span></a>.</p>
 <div id="fig-branches" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -415,8 +467,8 @@ Overview
 </div>
 <p>Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you’re ready. It’s great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis. Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.</p>
 </section>
-<section id="creating-a-new-branch" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="creating-a-new-branch"><span class="header-section-number">6.4</span> Creating a new branch</h2>
+<section id="creating-a-new-branch" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="creating-a-new-branch"><span class="header-section-number">6.5</span> Creating a new branch</h2>
 <p>By default your work is on the initial branch called <strong>master</strong> or <strong>main</strong>. We recommend changing your initial branch name to <strong>main</strong>, as discussed in the <a href="../chapters/installation-setup.html">installation and setup chapter</a>. You can check which branch you are on using <code>git branch</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -462,8 +514,8 @@ Common git branch flags
 </div>
 </div>
 </section>
-<section id="switching-branches" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="switching-branches"><span class="header-section-number">6.5</span> Switching branches</h2>
+<section id="switching-branches" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="switching-branches"><span class="header-section-number">6.6</span> Switching branches</h2>
 <p>To switch to the newly created branch, you can use <code>git checkout</code> or <code>git switch</code>.</p>
 <p>For example, enter the following command to switch to the newly created <code>feature</code> branch:</p>
 <div class="cell">
@@ -492,8 +544,8 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 </div>
 </div>
 </section>
-<section id="merging-branches" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="merging-branches"><span class="header-section-number">6.6</span> Merging branches</h2>
+<section id="merging-branches" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="merging-branches"><span class="header-section-number">6.7</span> Merging branches</h2>
 <p>After you worked on your new branch you might want to incorporate your work into the <code>main</code> branch. You can do this using <code>git merge</code>command. Switch to your main branch (using <code>git switch</code> or <code>git checkout</code>) and then use:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -512,15 +564,15 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a> <span class="ex">1</span> file changed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="merge-conflicts" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="merge-conflicts"><span class="header-section-number">6.7</span> Merge conflicts</h2>
+<section id="merge-conflicts" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="merge-conflicts"><span class="header-section-number">6.8</span> Merge conflicts</h2>
 <p>Merge conflicts occur when Git is unable to automatically reconcile differences between two branches during a merge or pull operation. This happens when both branches have made conflicting changes to the same part of a file. Git can’t determine which version of the code should take precedence, and as a result, it requests manual intervention from the developer. It’s like when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep. So, it raises its hand and asks you, the developer, to step in and help.</p>
-<section id="avoiding-merge-conflicts" class="level3" data-number="6.7.1">
-<h3 data-number="6.7.1" class="anchored" data-anchor-id="avoiding-merge-conflicts"><span class="header-section-number">6.7.1</span> Avoiding merge conflicts</h3>
+<section id="avoiding-merge-conflicts" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="avoiding-merge-conflicts"><span class="header-section-number">6.8.1</span> Avoiding merge conflicts</h3>
 <p>Merge conflicts can be a bit of a headache. While it may not be possible to entirely avoid merge conflicts, employing good development practices can minimize their occurrence. Regularly pulling changes from the remote repository into your local branch (using git pull) and keeping your branch up-to-date can help identify and resolve conflicts early.</p>
 </section>
-<section id="resolving-merge-conflicts" class="level3" data-number="6.7.2">
-<h3 data-number="6.7.2" class="anchored" data-anchor-id="resolving-merge-conflicts"><span class="header-section-number">6.7.2</span> Resolving merge conflicts</h3>
+<section id="resolving-merge-conflicts" class="level3" data-number="6.8.2">
+<h3 data-number="6.8.2" class="anchored" data-anchor-id="resolving-merge-conflicts"><span class="header-section-number">6.8.2</span> Resolving merge conflicts</h3>
 <p>When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. Git is like the referee saying, “Hey, programmers, sort out your differences!”</p>
 <p>If you try to merge with conflicting changes in a file the output looks similar to this:</p>
 <div class="cell">
@@ -557,16 +609,18 @@ Common <code>git merge</code> flags
 </div>
 </div>
 </section>
-<section id="types-of-merges" class="level3" data-number="6.7.3">
-<h3 data-number="6.7.3" class="anchored" data-anchor-id="types-of-merges"><span class="header-section-number">6.7.3</span> Types of merges</h3>
+<section id="types-of-merges" class="level3" data-number="6.8.3">
+<h3 data-number="6.8.3" class="anchored" data-anchor-id="types-of-merges"><span class="header-section-number">6.8.3</span> Types of merges</h3>
 <p>Git supports different types of merges to cater to various situations in software development. Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.</p>
-<section id="standard-merge" class="level4" data-number="6.7.3.1">
-<h4 data-number="6.7.3.1" class="anchored" data-anchor-id="standard-merge"><span class="header-section-number">6.7.3.1</span> Standard merge</h4>
+<section id="standard-merge" class="level4" data-number="6.8.3.1">
+<h4 data-number="6.8.3.1" class="anchored" data-anchor-id="standard-merge"><span class="header-section-number">6.8.3.1</span> Standard merge</h4>
 <p>In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original time stamps. It creates a new “merge commit”, a special record that marks when the merge happened, showing that the branches are now combined.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>####Fast Forward Merge</p>
+</section>
+<section id="fast-forward-merge" class="level4" data-number="6.8.3.2">
+<h4 data-number="6.8.3.2" class="anchored" data-anchor-id="fast-forward-merge"><span class="header-section-number">6.8.3.2</span> Fast Forward Merge</h4>
 <p>If no new commits were made to the base branch since the feature was created, Git automatically does a “Fast Forward Merge.” It’s like the standard merge, but no new merge commit is created. It’s as if you made the commits directly on the base branch. Since the base branch remained unchanged, there’s no need to mark a separate merge in the history. You can ensure a fastfoward merge by using the <code>--ff-only</code>flag.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -576,8 +630,8 @@ Common <code>git merge</code> flags
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="squash-and-merge" class="level4" data-number="6.7.3.2">
-<h4 data-number="6.7.3.2" class="anchored" data-anchor-id="squash-and-merge"><span class="header-section-number">6.7.3.2</span> Squash and Merge</h4>
+<section id="squash-and-merge" class="level4" data-number="6.8.3.3">
+<h4 data-number="6.8.3.3" class="anchored" data-anchor-id="squash-and-merge"><span class="header-section-number">6.8.3.3</span> Squash and Merge</h4>
 <p>When you squash a branch, Git combines all commits of the branch into a single commit. This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately. Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--squash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -606,8 +660,8 @@ Common git rebase flags
 </section>
 </section>
 </section>
-<section id="deleting-branches" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="deleting-branches"><span class="header-section-number">6.8</span> Deleting Branches</h2>
+<section id="deleting-branches" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="deleting-branches"><span class="header-section-number">6.9</span> Deleting Branches</h2>
 <p>Once a branch has served its purpose and is no longer needed, it can be deleted. Removing branches that are no longer active helps maintain a clean and manageable branch structure. To delete a branch you can use the <code>git branch</code> command, followed by a <code>-d</code> flag.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -618,43 +672,37 @@ Common git rebase flags
 </div>
 <p>You can only delete a branch, you are not currently on.</p>
 </section>
-<section id="branches-best-practices" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="branches-best-practices"><span class="header-section-number">6.9</span> Branches best practices</h2>
-<section id="naming-branches" class="level3" data-number="6.9.1">
-<h3 data-number="6.9.1" class="anchored" data-anchor-id="naming-branches"><span class="header-section-number">6.9.1</span> Naming branches</h3>
+<section id="branches-best-practices" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="branches-best-practices"><span class="header-section-number">6.10</span> Branches best practices</h2>
+<section id="naming-branches" class="level3" data-number="6.10.1">
+<h3 data-number="6.10.1" class="anchored" data-anchor-id="naming-branches"><span class="header-section-number">6.10.1</span> Naming branches</h3>
 <p>Adopt a consistent naming convention for branches that accurately reflects their purpose. This can include prefixes like <code>feature/</code>, <code>bug/</code>, or <code>hotfix/</code> followed by a descriptive name. Clear and standardized branch names make it easier to identify the purpose of each branch.</p>
 </section>
-<section id="branch-lifecycle" class="level3" data-number="6.9.2">
-<h3 data-number="6.9.2" class="anchored" data-anchor-id="branch-lifecycle"><span class="header-section-number">6.9.2</span> Branch Lifecycle</h3>
+<section id="branch-lifecycle" class="level3" data-number="6.10.2">
+<h3 data-number="6.10.2" class="anchored" data-anchor-id="branch-lifecycle"><span class="header-section-number">6.10.2</span> Branch Lifecycle</h3>
 <p>Create branches with a specific goal or task in mind, and aim to keep them short-lived. Long-lived branches can lead to conflicts and make it harder to merge changes. Once the task is complete or the feature is integrated, consider deleting the branch.</p>
 </section>
-<section id="branch-protection" class="level3" data-number="6.9.3">
-<h3 data-number="6.9.3" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">6.9.3</span> Branch Protection</h3>
+<section id="branch-protection" class="level3" data-number="6.10.3">
+<h3 data-number="6.10.3" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">6.10.3</span> Branch Protection</h3>
 <p>When using Git hosting platforms like GitHub or GitLab, it’s a good idea to enable branch protection rules for your critical branch(es), typically your <code>main</code> or <code>master</code> branch. By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.</p>
-<section id="how-to-protect-the-main-branch-on-github" class="level4" data-number="6.9.3.1">
-<h4 data-number="6.9.3.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">6.9.3.1</span> How to protect the Main Branch on GitHub</h4>
+<section id="how-to-protect-the-main-branch-on-github" class="level4" data-number="6.10.3.1">
+<h4 data-number="6.10.3.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">6.10.3.1</span> How to protect the Main Branch on GitHub</h4>
 <p>Go to your repository on GitHub and click on “Settings.” In the left sidebar, select “Branches.” Under “Branch protection rules,” click on “Add rule.” In the “Branch name pattern” field, enter the name of your main branch. Enable the options you want to enforce for the main branch. Common options include:</p>
 <p><strong>Require pull request reviews:</strong> Require one or more approving reviews before changes can be merged.</p>
 <p>Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.</p>
 <p>Click “Create” to save the branch protection rule.</p>
-</section>
-</section>
-</section>
-<section id="good-commits" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="good-commits"><span class="header-section-number">6.10</span> Good commits</h2>
-<p>Ideally, each commit contains an isolated, complete change. This makes it easy to revert your changes if you decide to take a different approach. For example, if you want to rename a variable and add some tests, put the variable rename in one commit and the tests in another commit. Later, if you want to keep the tests but revert the variable rename, you can revert the specific commit that contained the variable rename. If you put the variable rename and tests in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.</p>
-<section id="good-commit-messages" class="level3" data-number="6.10.1">
-<h3 data-number="6.10.1" class="anchored" data-anchor-id="good-commit-messages"><span class="header-section-number">6.10.1</span> Good commit messages</h3>
-<p>You should aim to write clear and concise commit messages for effective collaboration and version control. Start with an imperative verb to indicate the purpose of the commit, keeping the subject line around 50 characters. Remember to address one logical change per commit to keep your changes well-organized.</p>
-</section>
-</section>
-<section id="references" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> References</h1>
-<p>https://www.atlassian.com/git/tutorials/using-branches</p>
-<p>https://lukemerrett.com/different-merge-types-in-git/</p>
-<p>https://docs.github.com/en/enterprise-server@3.6/get-started/quickstart/github-flow</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-chacon2014" class="csl-entry" role="listitem">
+Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
+</div>
+<div id="ref-GitHub2023" class="csl-entry" role="listitem">
+GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en">https://docs.github.com/en</a>.
+</div>
+</div>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -979,7 +1027,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/github-intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

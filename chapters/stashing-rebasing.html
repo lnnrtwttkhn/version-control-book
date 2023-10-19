@@ -55,7 +55,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -102,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -223,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -295,8 +314,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link active" data-scroll-target="#cheatsheet"><span class="header-section-number">8.1</span> Cheatsheet</a></li>
-  <li><a href="#fa-bullseye-objectives" id="toc-fa-bullseye-objectives" class="nav-link" data-scroll-target="#fa-bullseye-objectives"><span class="header-section-number">8.2</span> <i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Objectives</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements"><span class="header-section-number">8.1</span> Acknowledgements</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">8.2</span> Cheatsheet</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">8.3</span> Exercises</a>
   <ul class="collapse">
   <li><a href="#stashing-changes" id="toc-stashing-changes" class="nav-link" data-scroll-target="#stashing-changes"><span class="header-section-number">8.3.1</span> Stashing Changes:</a></li>
@@ -316,12 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#untracking-files" id="toc-untracking-files" class="nav-link" data-scroll-target="#untracking-files"><span class="header-section-number">8.7.4</span> “Untracking” files</a></li>
   </ul></li>
   <li><a href="#git-rebase" id="toc-git-rebase" class="nav-link" data-scroll-target="#git-rebase"><span class="header-section-number">8.8</span> Git rebase</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8.9</span> References:</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/stashing-rebasing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/stashing-rebasing.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header">
 <h1 class="title display-7"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stashing and rebasing</span></h1>
@@ -342,8 +360,41 @@ Overview
 <p><i class="fa-solid fa-clock" aria-label="clock"></i> Duration: min</p>
 </div>
 </div>
-<section id="cheatsheet" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">8.1</span> Cheatsheet</h2>
+<div class="column" style="width:100%;">
+<p><i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Objectives</p>
+<ul>
+<li>Resolving conflicts with stashed changes</li>
+<li>Cleaning your working directory</li>
+<li>Introduction to rebasing</li>
+</ul>
+</div>
+<section id="acknowledgements" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">8.1</span> Acknowledgements</h2>
+<div class="cell-output-display">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="chacon2014">Chacon and Straub (<a href="../references.html#ref-chacon2014" role="doc-biblioref">2014</a>)</span></td>
+<td style="text-align: left;">Pro Git</td>
+<td style="text-align: left;"><a href="https://git-scm.com/book/en/v2"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a></td>
+<td style="text-align: left;"><a href="https://github.com/progit/progit2"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="cheatsheet" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">8.2</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -361,22 +412,22 @@ Overview
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">243</td>
+<td style="text-align: left;">255</td>
 <td style="text-align: left;"><code>git rebase</code></td>
 <td style="text-align: left;">Different way of integrating changes from two branches</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">244</td>
+<td style="text-align: left;">256</td>
 <td style="text-align: left;"><code>git stash</code></td>
 <td style="text-align: left;">Stores made changes for later use</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">245</td>
+<td style="text-align: left;">257</td>
 <td style="text-align: left;"><code>git rm</code></td>
 <td style="text-align: left;">Removes tracked files from your directory</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">246</td>
+<td style="text-align: left;">258</td>
 <td style="text-align: left;"><code>git clean</code></td>
 <td style="text-align: left;">Deletes untracked files from your directory</td>
 </tr>
@@ -384,15 +435,6 @@ Overview
 </table>
 </div>
 </div>
-</section>
-<section id="fa-bullseye-objectives" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="fa-bullseye-objectives"><span class="header-section-number">8.2</span> <i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Objectives</h2>
-<ul>
-<li><p>Stashing changes for later use</p></li>
-<li><p>Resolving conflicts with stashed changes</p></li>
-<li><p>Cleaning your working directory</p></li>
-<li><p>Introduction to rebasing</p></li>
-</ul>
 </section>
 <section id="exercises" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">8.3</span> Exercises</h2>
@@ -564,9 +606,16 @@ Common git rm flags
 </div>
 </section>
 </section>
-<section id="git-rebase" class="level2" data-number="8.8">
+<section id="git-rebase" class="level2 page-columns page-full" data-number="8.8">
 <h2 data-number="8.8" class="anchored" data-anchor-id="git-rebase"><span class="header-section-number">8.8</span> Git rebase</h2>
-<p><code>git rebase</code> is a different way than a merge to integrate changes from one branch into another. When you rebase the feature branch onto the main, branch you kind of “rearrange” the commits. It’s like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. It’s like picking up your changes and placing them on the latest code, resulting in a linear history. Like this.. <img src="../static/rebasing.jpg" class="img-fluid"> However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.</p>
+<p><code>git rebase</code> is a different way than a merge to integrate changes from one branch into another. When you rebase the feature branch onto the main, branch you kind of “rearrange” the commits. It’s like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. It’s like picking up your changes and placing them on the latest code, resulting in a linear history. Like shown in <a href="#fig-rebasing">Figure&nbsp;<span>8.1</span></a>.</p>
+<div id="fig-rebasing" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/rebasing.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;8.1: Image from <a href="https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05">Blogpost “Deep dive into Git Rebase”</a> of the <a href="https://dev.to/_mohanmurali">Mohan Murali Blog</a>, used under a <a href="https://creativecommons.org/licenses/by/2.5/au/">Creative Commons Attribution 2.5 Australia License</a> (<a href="https://res.cloudinary.com/practicaldev/image/fetch/s--4F3hItHc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hkftpmgzz7ixtqaxldsw.jpg">direct link</a>)</figcaption>
+</figure>
+</div>
+<p>However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -591,13 +640,13 @@ Common git rebase flags
 </div>
 </div>
 </div>
-</section>
-<section id="references" class="level2" data-number="8.9">
-<h2 data-number="8.9" class="anchored" data-anchor-id="references"><span class="header-section-number">8.9</span> References:</h2>
-<p>https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning</p>
-<p>https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-chacon2014" class="csl-entry" role="listitem">
+Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -917,7 +966,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/github-intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Github Intro</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
