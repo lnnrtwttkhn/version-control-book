@@ -244,7 +244,7 @@ git rm --cached <file>
 The `Git revert` command is used to create a new commit that undoes the changes made by a previous commit.
 It's a way to safely reverse the effects of a specific commit without actually removing that commit from the commit history. 
 It requires specifying the commit hash you want to revert.
-To look at the hashes of your commmits, you can use the `git log` command.
+To look at the hashes of your commits, you can use the `git log` command.
 If you have a specific commit that you want to revert, you would use a command like:
 
 ```{bash}
@@ -255,7 +255,7 @@ This will create a new commit that effectively undoes the changes made in the sp
 This new commit will have the opposite changes, effectively canceling out the changes from the original commit.
 You might need to resolve a merge conflict, if the changes you want to revert conflict with changes in subsequent commits.
 By default the commit message will be `revert <commit message of reverted commit>`. 
-However Git wil open an editor for you to change this message, if you don´t specify otherwise.
+However Git will open an editor for you to change this message, if you don´t specify otherwise.
 
 ::: {.callout-tip collapse="true"}
 ### What are hashes?
