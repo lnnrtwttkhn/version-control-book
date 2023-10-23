@@ -110,7 +110,7 @@ However, for a Mac computer operating on macOS Catalina or later releases, the d
 Bash and Zsh are both programs, which are command-line interfaces for interacting with an operating system.
 Zsh is often considered better than Bash for its more advanced features and improved scripting capabilities.
 It also has extensive community-contributed plugins and themes.
-However, the change to Zsh was not a drastic shift for most users.
+However, the change to Zsh was not a drastic shift for most users, since there a few practical differences.
 You can access your default shell through the Terminal program located within the Utilities folder:
 
 - In the Finder, go to `Applications` > `Utilities` > `Terminal.app`.
@@ -118,6 +118,13 @@ You can access your default shell through the Terminal program located within th
 - Activate the Mac `Spotlight` search function, type `Terminal` in the search bar, and press the `Return` key.
 
 To verify if your machine is configured to use a shell other than Bash, you can type `echo $SHELL` in your Terminal window.
+If the output is `/bin/bash` or a similar path, it means your default shell is set to Bash. 
+This is the most common shell on Unix-based systems, including macOS.
+
+If the output is `/bin/zsh` or a similar path, it means your default shell is set to Zsh. This indicates that you are using Zsh as your shell.
+
+If the output is a different path, it indicates that your shell is configured to use a different shell program.
+
 If your machine is configured to use a shell other than Bash, you can switch to Bash by opening a terminal and typing `bash`.
 
 ::: {.callout-tip collapse="true"}
