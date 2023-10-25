@@ -130,7 +130,7 @@ If your machine is configured to use a shell other than Bash, you can switch to 
 ::: {.callout-tip collapse="true"}
 ### Which MacOS version do I have installed?
 
-**Finding macOS Version:**
+**Finding your macOS Version:**
 
 Click on the Apple Menu: I
 n the upper-left corner of your screen, click on the Apple logo.
@@ -163,12 +163,13 @@ You can access a remote environment, using your Universität Hamburg login crede
 Simply click on the link and log in.
 
 Once you are logged in, you should be able to view the remote environment and create files using different programs like R, Python or Java.
-If you scroll down in the "launcher" window, there should be the option to access a terminal.
 
-![Screenshot](../static/cli_jupyter.png){#fig-jupyter}
+![Screenshot of JupyterHub, showing the start screen.](../static/cli_jupyter.png){#fig-jupyter}
+
+If you scroll down in the "launcher" window, there should be the option to open a terminal window.
 Your remote environment will be mostly empty, but you can move around and manage files just like you could on your own computer.
 
-![Screenshot](../static/cli_jupyter_2.png){#fig-jupyter_2}
+![Screenshot of JupyterHub, showing the terminal.](../static/cli_jupyter_2.png){#fig-jupyter_2}
 :::
 
 
@@ -212,7 +213,8 @@ Instead of relying on graphical elements, you use text-based commands to perform
 
 
 Enter the command `pwd` (short for "print working directory").
-This will display the current directory that the shell is currently focused on in your file system.
+The working directory is the location within your file system where an user or an application is presently performing file operations or running commands.
+`pwd` will display the current directory that the shell is currently focused on in your file system.
 
 ```{bash}
 pwd
