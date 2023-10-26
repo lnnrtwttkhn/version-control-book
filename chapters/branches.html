@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.449">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -104,7 +105,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -131,9 +138,9 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/branches.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/branches.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -151,9 +158,9 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control of Code and Data</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://lennartwittkuhn.com/version-control-book" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://lennartwittkuhn.com/version-control-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -317,8 +324,8 @@ div.csl-indent {
   <ul>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements"><span class="header-section-number">6.1</span> Acknowledgements</a></li>
   <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.2</span> Cheatsheet</a></li>
-  <li><a href="#fa-dumbbell-exercises" id="toc-fa-dumbbell-exercises" class="nav-link" data-scroll-target="#fa-dumbbell-exercises"><span class="header-section-number">6.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</a></li>
-  <li><a href="#fa-code-branch-why-branches" id="toc-fa-code-branch-why-branches" class="nav-link" data-scroll-target="#fa-code-branch-why-branches"><span class="header-section-number">6.4</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</a></li>
+  <li><a href="#why-branches" id="toc-why-branches" class="nav-link" data-scroll-target="#why-branches"><span class="header-section-number">6.4</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</a></li>
   <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch"><span class="header-section-number">6.5</span> Creating a new branch</a></li>
   <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches"><span class="header-section-number">6.6</span> Switching branches</a></li>
   <li><a href="#merging-branches" id="toc-merging-branches" class="nav-link" data-scroll-target="#merging-branches"><span class="header-section-number">6.7</span> Merging branches</a></li>
@@ -336,7 +343,7 @@ div.csl-indent {
   <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">6.10.3</span> Branch Protection</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/branches.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/branches.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
@@ -346,6 +353,7 @@ div.csl-indent {
 <p class="author"></p>
 
 </header>
+
 
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -448,21 +456,25 @@ Overview
 </div>
 </div>
 </section>
-<section id="fa-dumbbell-exercises" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="fa-dumbbell-exercises"><span class="header-section-number">6.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</h2>
+<section id="exercises" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</h2>
 <ul>
 <li><p>Create a new Branch called feature/newveganreceipe</p></li>
 <li><p>Add a vegan recipe to your recipe text file</p></li>
 <li><p>Merge it with your main branch and delete it afterwards</p></li>
 </ul>
 </section>
-<section id="fa-code-branch-why-branches" class="level2 page-columns page-full" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="fa-code-branch-why-branches"><span class="header-section-number">6.4</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</h2>
-<p>Git branches are like separate workspaces within a Git repository. They let you work on different stuff without messing up the main code. You can visualize branches as shown in <a href="#fig-branches">Figure&nbsp;<span>6.1</span></a>.</p>
+<section id="why-branches" class="level2 page-columns page-full" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="why-branches"><span class="header-section-number">6.4</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Why branches?</h2>
+<p>Git branches are like separate workspaces within a Git repository. They let you work on different stuff without messing up the main code. You can visualize branches as shown in <a href="#fig-branches" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>.</p>
 <div id="fig-branches" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/branches.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;6.1: Image from <a href="https://www.atlassian.com/git/tutorials/using-branches">Chapter “Git Branch”</a> of the <a href="https://www.atlassian.com/git/tutorials">Atlassian “Become a git guru” tutorials</a>, used under a <a href="https://creativecommons.org/licenses/by/2.5/au/">Creative Commons Attribution 2.5 Australia License</a> (<a href="https://www.atlassian.com/git/tutorials/using-branches">direct link</a>)</figcaption>
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/branches.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig margin-caption" id="fig-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Image from <a href="https://www.atlassian.com/git/tutorials/using-branches">Chapter “Git Branch”</a> of the <a href="https://www.atlassian.com/git/tutorials">Atlassian “Become a git guru” tutorials</a>, used under a <a href="https://creativecommons.org/licenses/by/2.5/au/">Creative Commons Attribution 2.5 Australia License</a> (<a href="https://www.atlassian.com/git/tutorials/using-branches">direct link</a>)
+</figcaption>
 </figure>
 </div>
 <p>Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you’re ready. It’s great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis. Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.</p>
@@ -693,7 +705,7 @@ Common git rebase flags
 <p>Click “Create” to save the branch protection rule.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-chacon2014" class="csl-entry" role="listitem">
 Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
 </div>
@@ -786,10 +798,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -799,8 +810,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -813,6 +833,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -856,6 +998,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -881,8 +1024,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -890,23 +1033,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -1004,29 +1147,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
 });
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/first-steps-git.html" class="pagination-link">
+      <a href="../chapters/first-steps-git.html" class="pagination-link  aria-label=" <span="">5&nbsp; <span class="chapter-title">First Steps with Git</span>"&gt;
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/github-intro.html" class="pagination-link">
+      <a href="../chapters/github-intro.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>GitHub Intro</span>">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1034,17 +1181,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2023 – 2024 The Version Control Book Team</div>   
+    <div class="nav-footer-left">
+<p>© 2023 – 2024 The Version Control Book Team</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../acknowledgements.html" aria-current="page">Funded by the Digital and Data Literacy in Teaching Lab</a>
+    <a class="nav-link active" href="../acknowledgements.html" aria-current="page">
+<p>Funded by the Digital and Data Literacy in Teaching Lab</p>
+</a>
   </li>  
 </ul>
     </div>
-    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | <a href="acknowledgements.qmd">Acknowledgements</a></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | <a href="acknowledgements.qmd">Acknowledgements</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

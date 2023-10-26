@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.449">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -103,7 +104,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -130,9 +137,9 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/github-intro.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/github-intro.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -150,9 +157,9 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control of Code and Data</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://lennartwittkuhn.com/version-control-book" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://lennartwittkuhn.com/version-control-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -316,32 +323,32 @@ div.csl-indent {
   <ul>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements"><span class="header-section-number">7.1</span> Acknowledgements</a></li>
   <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">7.2</span> Cheatsheet</a></li>
-  <li><a href="#fa-dumbbell-exercises" id="toc-fa-dumbbell-exercises" class="nav-link" data-scroll-target="#fa-dumbbell-exercises"><span class="header-section-number">7.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</a></li>
   <li><a href="#what-are-remote-repositories" id="toc-what-are-remote-repositories" class="nav-link" data-scroll-target="#what-are-remote-repositories"><span class="header-section-number">7.4</span> What are remote repositories</a></li>
-  <li><a href="#fa-brands-github-what-is-github" id="toc-fa-brands-github-what-is-github" class="nav-link" data-scroll-target="#fa-brands-github-what-is-github"><span class="header-section-number">7.5</span> <i class="fa-brands fa-github" aria-label="github"></i> What is GitHub?</a></li>
-  <li><a href="#fa-brands-github-connecting-to-github" id="toc-fa-brands-github-connecting-to-github" class="nav-link" data-scroll-target="#fa-brands-github-connecting-to-github"><span class="header-section-number">7.6</span> <i class="fa-brands fa-github" aria-label="github"></i> Connecting to GitHub</a>
+  <li><a href="#what-is-github" id="toc-what-is-github" class="nav-link" data-scroll-target="#what-is-github"><span class="header-section-number">7.5</span> <i class="fa-brands fa-github" aria-label="github"></i> What is GitHub?</a></li>
+  <li><a href="#connecting-to-github" id="toc-connecting-to-github" class="nav-link" data-scroll-target="#connecting-to-github"><span class="header-section-number">7.6</span> <i class="fa-brands fa-github" aria-label="github"></i> Connecting to GitHub</a>
   <ul class="collapse">
   <li><a href="#setting-account-details" id="toc-setting-account-details" class="nav-link" data-scroll-target="#setting-account-details"><span class="header-section-number">7.6.1</span> Setting Account details</a></li>
   <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication"><span class="header-section-number">7.6.2</span> Authentication</a></li>
   </ul></li>
-  <li><a href="#fa-folder-closed-github-repositories" id="toc-fa-folder-closed-github-repositories" class="nav-link" data-scroll-target="#fa-folder-closed-github-repositories"><span class="header-section-number">7.7</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> GitHub Repositories</a>
+  <li><a href="#github-repositories" id="toc-github-repositories" class="nav-link" data-scroll-target="#github-repositories"><span class="header-section-number">7.7</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> GitHub Repositories</a>
   <ul class="collapse">
   <li><a href="#creating-a-repository" id="toc-creating-a-repository" class="nav-link" data-scroll-target="#creating-a-repository"><span class="header-section-number">7.7.1</span> Creating a Repository</a></li>
   </ul></li>
-  <li><a href="#fa-code-fork-forking-a-repository" id="toc-fa-code-fork-forking-a-repository" class="nav-link" data-scroll-target="#fa-code-fork-forking-a-repository"><span class="header-section-number">7.8</span> <i class="fa-solid fa-code-fork" aria-label="code-fork"></i> Forking a Repository</a></li>
-  <li><a href="#fa-clone-cloning-a-repository" id="toc-fa-clone-cloning-a-repository" class="nav-link" data-scroll-target="#fa-clone-cloning-a-repository"><span class="header-section-number">7.9</span> <i class="fa-solid fa-clone" aria-label="clone"></i> Cloning a Repository</a></li>
-  <li><a href="#fa-code-pull-request-pulling" id="toc-fa-code-pull-request-pulling" class="nav-link" data-scroll-target="#fa-code-pull-request-pulling"><span class="header-section-number">7.10</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pulling</a>
+  <li><a href="#forking-a-repository" id="toc-forking-a-repository" class="nav-link" data-scroll-target="#forking-a-repository"><span class="header-section-number">7.8</span> <i class="fa-solid fa-code-fork" aria-label="code-fork"></i> Forking a Repository</a></li>
+  <li><a href="#cloning-a-repository" id="toc-cloning-a-repository" class="nav-link" data-scroll-target="#cloning-a-repository"><span class="header-section-number">7.9</span> <i class="fa-solid fa-clone" aria-label="clone"></i> Cloning a Repository</a></li>
+  <li><a href="#pulling" id="toc-pulling" class="nav-link" data-scroll-target="#pulling"><span class="header-section-number">7.10</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pulling</a>
   <ul class="collapse">
   <li><a href="#fetching" id="toc-fetching" class="nav-link" data-scroll-target="#fetching"><span class="header-section-number">7.10.1</span> Fetching</a></li>
   </ul></li>
-  <li><a href="#fa-code-pull-request-pushing" id="toc-fa-code-pull-request-pushing" class="nav-link" data-scroll-target="#fa-code-pull-request-pushing"><span class="header-section-number">7.11</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pushing</a></li>
+  <li><a href="#pushing" id="toc-pushing" class="nav-link" data-scroll-target="#pushing"><span class="header-section-number">7.11</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pushing</a></li>
   <li><a href="#git-blame" id="toc-git-blame" class="nav-link" data-scroll-target="#git-blame"><span class="header-section-number">7.12</span> Git blame</a></li>
   <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link" data-scroll-target="#pull-requests"><span class="header-section-number">7.13</span> Pull requests</a></li>
   <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">7.14</span> Template repositories</a></li>
   <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">7.15</span> Alternatives to GitHub</a></li>
   <li><a href="#optional-exercise" id="toc-optional-exercise" class="nav-link" data-scroll-target="#optional-exercise"><span class="header-section-number">7.16</span> Optional exercise:</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/github-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/github-intro.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/github-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/github-intro.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
@@ -351,6 +358,7 @@ div.csl-indent {
 <p class="author"></p>
 
 </header>
+
 
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -460,8 +468,8 @@ Overview
 </div>
 </div>
 </section>
-<section id="fa-dumbbell-exercises" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="fa-dumbbell-exercises"><span class="header-section-number">7.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</h2>
+<section id="exercises" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">7.3</span> <i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> Exercises</h2>
 <ul>
 <li><p>Initialize your existing recipe folder as a Git Repository.</p></li>
 <li><p>Add a new recipe on Github, commit and pull the changes to your local folder.</p></li>
@@ -472,12 +480,12 @@ Overview
 <h2 data-number="7.4" class="anchored" data-anchor-id="what-are-remote-repositories"><span class="header-section-number">7.4</span> What are remote repositories</h2>
 <p>Remote repositories are versions of your project hosted somewhere on the internet or a network. You can set up multiple remote repositories, each usually either read-only or writable for you. Collaborating with others requires managing these remote repositories and pushing and pulling data to and from the repositories to share your work.</p>
 </section>
-<section id="fa-brands-github-what-is-github" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="fa-brands-github-what-is-github"><span class="header-section-number">7.5</span> <i class="fa-brands fa-github" aria-label="github"></i> What is GitHub?</h2>
+<section id="what-is-github" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="what-is-github"><span class="header-section-number">7.5</span> <i class="fa-brands fa-github" aria-label="github"></i> What is GitHub?</h2>
 <p>GitHub is a popular web-based platform that hosts remote Git repositories. You can use it in your browser without any downloads. It’s a collaborative environment for software development, allowing developers to work together, manage code, and track changes. GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.</p>
 </section>
-<section id="fa-brands-github-connecting-to-github" class="level2 page-columns page-full" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="fa-brands-github-connecting-to-github"><span class="header-section-number">7.6</span> <i class="fa-brands fa-github" aria-label="github"></i> Connecting to GitHub</h2>
+<section id="connecting-to-github" class="level2 page-columns page-full" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="connecting-to-github"><span class="header-section-number">7.6</span> <i class="fa-brands fa-github" aria-label="github"></i> Connecting to GitHub</h2>
 <section id="setting-account-details" class="level3" data-number="7.6.1">
 <h3 data-number="7.6.1" class="anchored" data-anchor-id="setting-account-details"><span class="header-section-number">7.6.1</span> Setting Account details</h3>
 <p>To be able to integrate Github in your workflow, you will need to to connect your account with your local Git.</p>
@@ -501,9 +509,13 @@ Overview
 <li><p>Give your token a name, choose the desired scopes (permissions), and set an expiration date if needed. For a normal usecase, you should enable the scopes repo, adimin:org and delete_repo for a full access.</p></li>
 </ol>
 <div id="fig-PAT" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/GitHub-PAT.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;7.1: .</figcaption>
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-PAT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/GitHub-PAT.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig margin-caption" id="fig-PAT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: .
+</figcaption>
 </figure>
 </div>
 <p>Click “Generate token,” and you’ll be presented with your new token.</p>
@@ -516,18 +528,22 @@ Overview
 </section>
 </section>
 </section>
-<section id="fa-folder-closed-github-repositories" class="level2 page-columns page-full" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="fa-folder-closed-github-repositories"><span class="header-section-number">7.7</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> GitHub Repositories</h2>
+<section id="github-repositories" class="level2 page-columns page-full" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="github-repositories"><span class="header-section-number">7.7</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> GitHub Repositories</h2>
 <section id="creating-a-repository" class="level3 page-columns page-full" data-number="7.7.1">
 <h3 data-number="7.7.1" class="anchored" data-anchor-id="creating-a-repository"><span class="header-section-number">7.7.1</span> Creating a Repository</h3>
 <section id="starting-from-scratch" class="level4 page-columns page-full" data-number="7.7.1.1">
 <h4 data-number="7.7.1.1" class="anchored" data-anchor-id="starting-from-scratch"><span class="header-section-number">7.7.1.1</span> Starting from Scratch</h4>
 <p>Creating a new GitHub repository is a simple process.</p>
-<p>To create a new repository, click on the “+” sign in the top-right corner of the GitHub page. From the dropdown menu, select “New repository.” On the new repository page, as shown in <a href="#fig-newrepo">Figure&nbsp;<span>7.2</span></a>, enter a name for your repository and make sure the “Public” option is selected if you want it to be accessible to everyone. You should also choose to create a README file by checking the corresponding box. Finally, click the green “Create repository” button at the bottom of the page to complete the creation process.</p>
+<p>To create a new repository, click on the “+” sign in the top-right corner of the GitHub page. From the dropdown menu, select “New repository.” On the new repository page, as shown in <a href="#fig-newrepo" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>, enter a name for your repository and make sure the “Public” option is selected if you want it to be accessible to everyone. You should also choose to create a README file by checking the corresponding box. Finally, click the green “Create repository” button at the bottom of the page to complete the creation process.</p>
 <div id="fig-newrepo" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/GitHub-newrepository.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;7.2: .</figcaption>
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-newrepo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/GitHub-newrepository.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig margin-caption" id="fig-newrepo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: .
+</figcaption>
 </figure>
 </div>
 <p>Once you have created the repository, you will find the README.md file in your repository. You can edit this file to provide information and details about your project. Whatever you write in the README.md file will be displayed on the front page of your project.</p>
@@ -566,29 +582,33 @@ Writing a README file
 </section>
 </section>
 </section>
-<section id="fa-code-fork-forking-a-repository" class="level2 page-columns page-full" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="fa-code-fork-forking-a-repository"><span class="header-section-number">7.8</span> <i class="fa-solid fa-code-fork" aria-label="code-fork"></i> Forking a Repository</h2>
+<section id="forking-a-repository" class="level2 page-columns page-full" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="forking-a-repository"><span class="header-section-number">7.8</span> <i class="fa-solid fa-code-fork" aria-label="code-fork"></i> Forking a Repository</h2>
 <p>Forking a repository on GitHub allows you to create a personal copy of the project under your GitHub account.</p>
 <p>This separate copy includes all files, commit history, and branches. Forking is commonly used when you want to contribute to a project without directly modifying the original repository. It enables you to make changes independently, create new branches, and push modifications to your forked repository. You can also submit changes to the original repository through pull requests.</p>
-<p>By clicking the <strong>Fork</strong> button on a repository page, shown in <a href="#fig-forking">Figure&nbsp;<span>7.3</span></a>, you create an identical copy in your GitHub account.</p>
+<p>By clicking the <strong>Fork</strong> button on a repository page, shown in <a href="#fig-forking" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>, you create an identical copy in your GitHub account.</p>
 <div id="fig-forking" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/GitHub-forking.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;7.3: .</figcaption>
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-forking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/GitHub-forking.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig margin-caption" id="fig-forking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: .
+</figcaption>
 </figure>
 </div>
 <p>Once the forking process is complete, you can clone the repository to your local machine using the git clone command if you want to edit it.</p>
 </section>
-<section id="fa-clone-cloning-a-repository" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="fa-clone-cloning-a-repository"><span class="header-section-number">7.9</span> <i class="fa-solid fa-clone" aria-label="clone"></i> Cloning a Repository</h2>
+<section id="cloning-a-repository" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="cloning-a-repository"><span class="header-section-number">7.9</span> <i class="fa-solid fa-clone" aria-label="clone"></i> Cloning a Repository</h2>
 <p>Cloning refers to creating a local copy of a repository from GitHub onto your own computer. When you clone a repository, you download all of its files, commit history, and branches to your local machine. Cloning allows you to work with the repository locally, make changes, and push those changes back to the original repository if you have write access. It is commonly used when you want to contribute to a project or work on it independently. To clone a repository, you need the repository’s URL from GitHub. You can find the repository’s HHPS URL on the repository page, if you click on the green <strong>code</strong> button. Then use the terminal to navigate to the directory, to where you want to clone the repository. Then use the <code>git clone</code> command followed with the URL of the repository.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified. You can now work with the files in the repository, make changes, and commit your modifications locally. Remember to use the appropriate Git commands like git add, git commit, and git push to manage your changes and synchronize them with the remote repository as needed.</p>
 </section>
-<section id="fa-code-pull-request-pulling" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="fa-code-pull-request-pulling"><span class="header-section-number">7.10</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pulling</h2>
+<section id="pulling" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="pulling"><span class="header-section-number">7.10</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pulling</h2>
 <p>The <code>git pull</code> command is used to fetch the latest changes from a remote repository and merge them into your local branch. You can test this function by editing a file in your repo on GitHub and then use <code>git pull</code> to update your local file with the change made on GitHub. To edit a file first click on it, in the repository. In the top-right corner of the file view, click on the pencil icon (Edit this file) to start editing. Make the necessary changes to the file in the in-browser editor. You can add, modify, or delete content as needed. As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as “changes not staged for commit”. Provide a brief description of the changes in the “Commit changes” section at the bottom of the page.</p>
 <p>Now you can open up your terminal once again, and in the relevant directory use the <code>git pull</code>command to update your local file with the change made on GitHub.</p>
 <div class="cell">
@@ -620,8 +640,8 @@ git pull command flags
 <p><code>git fetch</code> is the safer option compared to <code>git pull</code> since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.</p>
 </section>
 </section>
-<section id="fa-code-pull-request-pushing" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="fa-code-pull-request-pushing"><span class="header-section-number">7.11</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pushing</h2>
+<section id="pushing" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="pushing"><span class="header-section-number">7.11</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pushing</h2>
 <p>The<code>git push</code> command is like a reversed <code>git pull</code>, it is used to upload your local commits to the remote repository. When you run “git push”, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository. Git will verify if your local branch is up to date with the remote branch. If there are new commits on the remote branch that you don’t have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts. It’s important to note that you need appropriate access and permissions to push to a remote repository. If you do not have write access, you won’t be able to push your changes. If you do not specify a branch, Git will push the one you are on in the moment.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common git push flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -693,11 +713,15 @@ Common git blame flags
 </section>
 <section id="template-repositories" class="level2 page-columns page-full" data-number="7.14">
 <h2 data-number="7.14" class="anchored" data-anchor-id="template-repositories"><span class="header-section-number">7.14</span> Template repositories</h2>
-<p>Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others. Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. This simplifies the process of setting up new projects that share common characteristics or follow best practices. Template repositories have a “Use this template” button on a template repository page, as shown in <a href="#fig-template">Figure&nbsp;<span>7.4</span></a>. Click it to provide a new, repository name and description, and then create the repository with your desired settings.</p>
+<p>Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others. Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. This simplifies the process of setting up new projects that share common characteristics or follow best practices. Template repositories have a “Use this template” button on a template repository page, as shown in <a href="#fig-template" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>. Click it to provide a new, repository name and description, and then create the repository with your desired settings.</p>
 <div id="fig-template" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/GitHub-template.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;7.4: .</figcaption>
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-template-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/GitHub-template.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig margin-caption" id="fig-template-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: .
+</figcaption>
 </figure>
 </div>
 </section>
@@ -718,7 +742,7 @@ Common git blame flags
 <p>Names:</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-chacon2014" class="csl-entry" role="listitem">
 Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
 </div>
@@ -812,10 +836,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -825,8 +848,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -839,6 +871,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -882,6 +1036,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -907,8 +1062,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -916,23 +1071,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -1030,29 +1185,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
 });
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/branches.html" class="pagination-link">
+      <a href="../chapters/branches.html" class="pagination-link  aria-label=" <span="">6&nbsp; <span class="chapter-title">Branches</span>"&gt;
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/stashing-rebasing.html" class="pagination-link">
+      <a href="../chapters/stashing-rebasing.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Stashing and rebasing</span>">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stashing and rebasing</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1060,17 +1219,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2023 – 2024 The Version Control Book Team</div>   
+    <div class="nav-footer-left">
+<p>© 2023 – 2024 The Version Control Book Team</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../acknowledgements.html" aria-current="page">Funded by the Digital and Data Literacy in Teaching Lab</a>
+    <a class="nav-link active" href="../acknowledgements.html" aria-current="page">
+<p>Funded by the Digital and Data Literacy in Teaching Lab</p>
+</a>
   </li>  
 </ul>
     </div>
-    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | <a href="acknowledgements.qmd">Acknowledgements</a></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | <a href="acknowledgements.qmd">Acknowledgements</a></p>
+</div>
   </div>
 </footer>
+
 
 
 
