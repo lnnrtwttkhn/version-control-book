@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - lightbox
 
 jobs:
   build-deploy:
@@ -16,6 +17,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.4.449
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
