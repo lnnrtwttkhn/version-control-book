@@ -22,85 +22,6 @@ We recommend to read the ["Command Line"](command-line.qmd) chapter.
 - You need to have Git installed on your Computer.
 If you need help, check out the ["Installation"](installation.qmd) chapter.
 
-## {{< fa brands git-alt >}} Downloading Git
-
-### {{< fa brands apple >}} macOS
-
-#### Option 1: Terminal
-
-::: {.callout-tip title="Where is the Terminal?" collapse="true"}
-The Terminal can be found at `/Applications/Utilities/Terminal.app` or by searching the Spotlight for "Terminal".
-
-If you are unsure where to find the terminal, we recommend to read the ["Command Line"](command-line.qmd) chapter beforehand.
-:::
-
-MacOS usually comes with a pre-installed version of Git that is accessible through the Xcode Command Line Tools.
-Open the Terminal and type:
-
-```{bash}
-git --version
-```
-
-If Git is installed, you should receive an output similar to:
-
-```{bash}
-git version 2.39.2 (Apple Git-143)
-```
-
-If Fit is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools.
-You also may be asked for your administrator password.
-
-#### Option 2: Binary installer
-
-Download and run the installer from: <https://git-scm.com/download/mac>. Hit `Continue` through the prompts without modifying the installation destination or other settings. You may be asked for your administrator password.
-
-### {{< fa brands windows >}} Windows
-
-To use Git on a Windows computer, we recommend the installation of "[Git for Windows](https://gitforwindows.org/)", which includes both the Bash shell and Git.
-You can download this program at [gitforwindows.org](https://gitforwindows.org/).
-
-[![Screenshot of gitforwindows.org](../static/git_bash_website.png){#fig-git_bash_website width="500"}](https://gitforwindows.org)
-
-On the homepage, you should see a prominent download link.
-
-Click on it to start downloading the installer.
-Once the installer is downloaded, double-click it to run the installation.
-During the installation process, you'll be presented with various options and settings.
-We recommend to leave all settings to their standard configuration, unless you have a specific need to e.g. change the installation destination.
-
-![](../static/git_bash_inst_2.png){width="200"} ![](../static/git_bash_inst_3.png){width="200"}![](../static/git_bash_inst_4.png){width="200"} ![](../static/git_bash_inst_5.png){width="200"} ![](../static/git_bash_inst_6.png){width="200"} ![](../static/git_bash_inst_7.png){width="200"} ![](../static/git_bash_inst_8.png){width="200"} ![](../static/git_bash_inst_9.png){width="200"} ![](../static/git_bash_inst_10.png){width="200"} ![](../static/git_bash_inst_11.png){width="200"} ![](../static/git_bash_inst_12.png){width="200"} ![](../static/git_bash_inst_13.png){width="200"}
-
-Once you have finished selecting your preference, click the install button to begin the installation process.
-
-The installer will copy the necessary files and set up Git and Git Bash on your system.
-Once the installation is complete, you'll see a "Finish" button and the option to directly launch a Bash window.
-
-![](../static/git_bash_inst_14.png){width="300"} ![](../static/git_bash_inst_15.png){width="300"}
-
-Now a Bash window opens up and you should be able to use the command line and Git!
-
-[![Screenshot of "Git Bash"](../static/git_bash_window.png){#fig-git_bash_window width="500"}](https://gitforwindows.org)
-
-### {{< fa brands linux >}} Linux
-
-Check if you have git installed by opening your terminal and running:
-
-```{bash}
-git --version
-```
-
-If git is not installed, install it using your package manager, e.g., by running the following command in the terminal:
-
-```{bash}
-sudo apt-get install git 
-```
-
-## {{< fa align-left >}} Downloading a Text Editor (Optional)
-
-Sometimes, Git might ask you to write a commit message, and it can be annoying if you end up in an editor you don't like or don't know how to use. The standard text editor is called **Vim**, which is widely known for being difficult to use. Therefore, it might be a smart move to consider switching to a different text editor. You can find more information about the challenges of using Vim (and some funny memes) [here](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
-
-Our recommendation is [Nano](https://www.nano-editor.org/docs.php), which runs in the Terminal and is fairly easy to use. However there are a lot of alternatives.
-
 ## Configuring Git
 
 Once you installed Git, it is time to set it up. We will do this from the command line. The `git config` command is used to get and set configuration. It allows you to customize Git according to your preferences and requirements. To look at all the different configuration commands you can use
@@ -135,18 +56,6 @@ git config --global user.email jane@example.com
 ::: {.callout-tip title="What name should you use for Git?" collapse="true"}
 It can be your **GitHub username**, your **real name**, or something informative about you. This name will be attached to your commits, so **choose something that makes sense** to others and yourself in the future.
 :::
-
-### {{< fa pen >}} Set your Text editor
-
-If you have decided to use a different text editor:
-
-As mentioned earlier, you may come across various scenarios where you need to interact with text-based files, such as commit messages or merge conflict resolutions. Git relies on a text editor to allow you to make changes to these files within the Git workflow. To set your preferred text editor in Git, you can use the `git config` command:
-
-```{bash}
-git config --global core.editor "editor name"
-```
-
-From now on, when Git requires you to interact with a text editor, it will use the one you have set. If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.
 
 ### {{< fa code-branch >}} Configure the default name for an initial branch
 
@@ -188,6 +97,42 @@ git config --help
 will open up a browser in the terminal containing information about the `config`command. To quit the browser use `q`.
 
 While the command provides extensive documentation and information about Git commands, it is not the most beginner-friendly resource.
+
+## {{< fa pen >}} Setting your Text editor
+
+Sometimes, Git might open up a text editor, and it can be annoying if you end up in an editor you don't like or don't know how to use. 
+The standard text editor on Mac and when using **"Git for Windows"**is called **Vim**, which is widely known for being difficult to use. 
+You can find more information about the challenges of using Vim (and some funny memes) [here](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
+To check out which text editor Git is using, you can use:
+
+```{bash}
+git config --get core.editor
+```
+
+If it is indeed **Vim**, do not despair!
+You can either pick up on the basics of Vim or simply change the texteditor.
+
+*Also note that you will typically not have to use the text editor a lot*
+
+### Vim Basics
+To start Vim, open your terminal and type vim followed by the filename you want to edit.
+In Vim, you have two main modes: "Insert" mode for typing and "Normal" mode for navigation and command execution.
+To switch from "Normal" mode to "Insert" mode, press i for inserting text.
+To save your changes and exit Vim, press Esc to enter "Normal" mode, then type :w to save, and :q to quit.
+Vim's strength lies in its powerful commands for text manipulation, such as copying, pasting, and searching, which are executed in "Normal" mode. 
+Practice is key to mastering Vim.
+
+### Changing your text editor
+
+If you want to change the standard text editor, to one you are more comfortable with, there a lot of alternatives like [Nano](https://www.nano-editor.org/docs.php), [VS Code](https://code.visualstudio.com) or [Notepad++](https://notepad-plus-plus.org/downloads/).
+
+If you have decided to use a different text editor you use:
+
+```{bash}
+git config --global core.editor editor-name
+```
+
+From now on, when Git requires you to interact with a text editor, it will use the one you have set. If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.
 
 ## Acknowledgements and further reading
 
