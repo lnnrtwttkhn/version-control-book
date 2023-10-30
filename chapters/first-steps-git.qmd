@@ -35,7 +35,6 @@ Learning basic Git operations including:
 -   Comparing Versions
 
 -   (Creating a .gitignore file)
-:::
 
 ### Exercise
 
@@ -50,12 +49,18 @@ For our purpose we will start off small and text based:
 
 -   Stage and commit your changes to the file, write a commit message
 
+This book will continue to work with this project.
+
 ## {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
 
 To create your first Git repository, you need to initialize a folder.
-You can create an empty folder using the command line as explained in the chapter [Command Line Basics](command-line.qmd).
+You can create an empty folder using the command line like this:
+
+```{bash}
+mkdir foldername
+```
+
 Alternatively, you can create a folder in the usual way.
-In the next step, please create an empty text file within this folder, either using the `touch` command or  your preferred method for creating files.
 
 Navigate, using the Terminal, to the folder which you want to initialize as a Git repository.
 You can use the `cd` command to change directories.
@@ -73,17 +78,35 @@ Initialized empty Git repository in /Users/.../
 
 Congratulations on successfully initializing your first Git repository! {{< fa champagne-glasses >}}
 
-
 Git is now able to track your file(s and the changes you make to them, in this Folder.
 You only need to use `git init` once per folder.
 
+::: {.callout-tip collapse="true"}
+## .Git file
+
+If you want "proof" that Git is tracking your folder, you can look for the .git file.
+To do this navigate to the right folder and use `ls -a` to show hidden files.
+You should see a file called .git.
+You probably should not manually modify this file, since doing so can corrupt your repository.
+:::
+
+
+In the next step, please create an empty text file within this folder, either using the `touch` command:
+
+```{bash}
+touch filename.txt
+```
+
+or a different preferred method for creating files.
 
 ## {{< fa file-export >}} Status, Staging and committing 
 
+### Introduction
 After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically.
 In Git, there are two steps for saving your changes: the staging area and the commits. 
 The staging area is like a waiting area where you gather and prepare your changes before saving them. 
-You can choose which changes to include in the snapshot by adding them to the staging area using git `git add`. 
+Check out this [Youtube video](https://youtu.be/HMqUFlu0gFc?t=228) for a detailed explanation of the staging area using a metaphor.
+You can choose which changes to include in the snapshot by adding them to the staging area using `git add`. 
 Once you're satisfied with the changes in the staging area, you make a **commit**, using `git commit`. 
 A commit is like taking a snapshot of your project at a specific moment. 
 It captures all the changes in the staging area and saves them as a new version. 
@@ -320,7 +343,7 @@ It is also recommended to only write 50 characters for the title and up to 72 fo
 ## `.gitignore`
 
 `.gitignore` is a special file. It is used in Git to specify files and directories that should be ignored and not tracked.
-When you create a `.gitignore` file and specify filenames inside it, Git will exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
+When you create a `.gitignore` file, place it inside your Git repository and specify filenames inside it, Git will exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
 Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the codebase without distractions from unnecessary files.
 .gitignore can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
@@ -348,6 +371,18 @@ open .gitignore
 ```
 
 Now you can write a filename or folder name inside it, to stop git from tracking it.
+
+### Global `.gitignore` file
+
+Instead of specifying files you want Git to ignore for each folder, you can also create global .gitignore file.
+To do this, you create a file named .gitignore_global (or any name you prefer) in your home directory (located at /Users/yourusername). 
+Then, you configure Git to use this global file by running:
+
+```{bash}
+git config --global core.excludesfile ~/.gitignore_global
+```
+After this setup, you can add common files to this list, that you want to ignore.
+These rules wil apply across all your Git repositories.
 
 ## Common Files to Ignore in Scientific Settings:
 
