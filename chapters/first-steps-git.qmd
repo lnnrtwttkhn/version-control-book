@@ -3,64 +3,39 @@ title: "First Steps with Git"
 engine: knitr
 execute:
   eval: false
-  title-block-style: none
+title-block-style: none
 author: ""
 categories: [beginner, basics]
-description: |
+abstract: |
   Exploring the most important basic commands you will need. 
+abstract-title: "Overview"
 ---
 
-::: callout-note
-### Overview
+## Introduction
 
-{{< fa clock >}} Duration: min
-:::
+### Prerequisites
+To follow this chapter, you should have:
 
+- [Familiarity with the command line](comman-line.qmd)
 
-::: {.column width="100%"}
-{{< fa bullseye >}} Objectives
+- [Installed Git](installation.qmd)
+
+- [Set up Git](setup.qmd)
+
+### Learning Objectives
+
+Learning basic Git operations including:
 
 -   Initializing a Git Repository
+
 -   Staging and Committing Changes
+
 -   Exploring the commit history
+
 -   Comparing Versions
--  Creating a .gitignore file
 
+-   (Creating a .gitignore file)
 :::
-
-## Cheatsheet
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
-```
-
-## Acknowledgements
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| output: asis
-bibtexkeys = c("bryan2023", "community2022", "millman2018", "mcbain2019")
-knitr::kable(ref_table(bibtexkeys), format = "markdown")
-```
-
-## {{< fa dumbbell >}} Exercises
-
--   Create a folder called "recipes" and initialize it as a git repository.
-
--   Create a textfile called "favouritereceipes.txt", in this folder.
-
-- Add a favourite (or a crazy AI generated one) recipe of yours in this file.
-
-- Stage and commit your changes to the file, write a commit message
-
-- Create a .gitignore file, include Files in it, you do not want to track
 
 
 ## {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
@@ -448,4 +423,24 @@ DESCRIPTION.meta
 # Mac-specific
 .DS_Store
 
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
+```
+
+## Acknowledgements
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("bryan2023", "community2022", "millman2018", "mcbain2019")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
