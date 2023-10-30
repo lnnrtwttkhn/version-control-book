@@ -1,0 +1,109 @@
+---
+title: "Installation"
+engine: knitr
+execute:
+  eval: false
+title-block-style: none
+author: ""
+categories: [beginner, basics]
+abstract: |
+  All beginnings are difficult: This chapter is about downloading and installing Git.
+abstract-title: "Overview"
+---
+
+## Learning Objectives
+
+- Downloading and installing Git
+
+## Prerequisites
+
+- Basic familiarity with the command line.
+We recommend to read the ["Command Line"](command-line.qmd) chapter.
+
+## {{< fa brands git-alt >}} Downloading Git
+
+### {{< fa brands apple >}} macOS
+
+#### Option 1: Terminal
+
+::: {.callout-tip title="Where is the Terminal?" collapse="true"}
+The Terminal can be found at `/Applications/Utilities/Terminal.app` or by searching the Spotlight for "Terminal".
+
+If you are unsure where to find the terminal, we recommend to read the ["Command Line"](command-line.qmd) chapter beforehand.
+:::
+
+MacOS usually comes with a pre-installed version of Git that is accessible through the Xcode Command Line Tools.
+Open the Terminal and type:
+
+```{bash}
+git --version
+```
+
+If Git is installed, you should receive an output similar to:
+
+```{bash}
+git version 2.39.2 (Apple Git-143)
+```
+
+If Fit is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools.
+You also may be asked for your administrator password.
+
+#### Option 2: Binary installer
+
+Download and run the installer from: <https://git-scm.com/download/mac>. Hit `Continue` through the prompts without modifying the installation destination or other settings. You may be asked for your administrator password.
+
+### {{< fa brands windows >}} Windows
+
+To use Git on a Windows computer, we recommend the installation of "[Git for Windows](https://gitforwindows.org/)", which includes both the Bash shell and Git.
+You can download this program at [gitforwindows.org](https://gitforwindows.org/).
+
+[![Screenshot of gitforwindows.org](../static/git_bash_website.png){#fig-git_bash_website width="500"}](https://gitforwindows.org)
+
+On the homepage, you should see a prominent download link.
+
+Click on it to start downloading the installer.
+Once the installer is downloaded, double-click it to run the installation.
+During the installation process, you'll be presented with various options and settings.
+We recommend to leave all settings to their standard configuration, unless you have a specific need to e.g. change the installation destination.
+
+![](../static/git_bash_inst_2.png){width="200"} ![](../static/git_bash_inst_3.png){width="200"}![](../static/git_bash_inst_4.png){width="200"} ![](../static/git_bash_inst_5.png){width="200"} ![](../static/git_bash_inst_6.png){width="200"} ![](../static/git_bash_inst_7.png){width="200"} ![](../static/git_bash_inst_8.png){width="200"} ![](../static/git_bash_inst_9.png){width="200"} ![](../static/git_bash_inst_10.png){width="200"} ![](../static/git_bash_inst_11.png){width="200"} ![](../static/git_bash_inst_12.png){width="200"} ![](../static/git_bash_inst_13.png){width="200"}
+
+Once you have finished selecting your preference, click the install button to begin the installation process.
+
+The installer will copy the necessary files and set up Git and Git Bash on your system.
+Once the installation is complete, you'll see a "Finish" button and the option to directly launch a Bash window.
+
+![](../static/git_bash_inst_14.png){width="300"} ![](../static/git_bash_inst_15.png){width="300"}
+
+Now a Bash window opens up and you should be able to use the command line and Git!
+
+[![Screenshot of "Git Bash"](../static/git_bash_window.png){#fig-git_bash_window width="500"}](https://gitforwindows.org)
+
+### {{< fa brands linux >}} Linux
+
+Check if you have git installed by opening your terminal and running:
+
+```{bash}
+git --version
+```
+
+If git is not installed, install it using your package manager, e.g., by running the following command in the terminal:
+
+```{bash}
+sudo apt-get install git 
+```
+
+## Acknowledgements and further reading
+
+We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
+We recommend these references for further reading:
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("bryan2023", "capes2023", "chacon2014", "koziar2023")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
