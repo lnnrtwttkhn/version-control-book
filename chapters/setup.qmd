@@ -82,7 +82,11 @@ This name will be attached to the changes you track with Git, so **choose someth
 
 ### {{< fa code-branch >}} Configure the default name of the initial branch
 
-On several installations of Git, by default, the name "master" for the initial branch is used when creating a new repository.
+
+Git uses a concept called "branches" to enable working on different versions of the same project. 
+(More on this will be explained later in the book.)
+
+On most installations of Git, by default, the name "master" for the initial branch is used when creating a new repository.
 However, there has been a growing movement to transition to using "main" as the default branch name instead.
 One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons [here](https://sfconservancy.org/news/2020/jun/23/gitbranchname/) or  [here](https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/)). 
 To configure the default branch name to "main" in Git, you can use the following command
@@ -133,8 +137,18 @@ To check out which text editor Git is using, you can use:
 git config --get core.editor
 ```
 
-If it is indeed **Vim**, do not despair!
-You can either pick up on the basics of Vim (see below) or simply change the text editor.
+If you have not changed your text editor yet, the output should be empty.
+This means that Git is using the command line´s default editor, which should be **Vim** if you are using a Mac or Git for Windows. 
+To make sure, you can use:
+
+```{bash}
+git var GIT_EDITOR
+```
+
+If the output is: `vim` or `vi`, your systems default editor is indeed Vim/Vi.
+(Vim is an improved version of Vi, but there are virtually no differences between them for our usecase.)
+
+In this situation, you can either pick up on the basics of Vim (see below) or simply change the text editor.
 Also note that you will typically not have to use the text editor in the command line a lot.
 
 ### Vim Basics
@@ -144,6 +158,8 @@ In Vim, you have two main modes: "Insert" mode for typing and "Normal" mode for 
 Inside Vimn to switch from "Normal" mode to "Insert" mode, press `i` for inserting text.
 To save your changes and exit Vim, press `Esc` to enter "Normal" mode, then type `:w` to save, and `:q` to quit.
 Vim's strength lies in its powerful commands for text manipulation, such as copying, pasting, and searching, which are executed in "Normal" mode.
+
+For a more detailed and interactive tutorial, you can check out [openvim.com](https://www.openvim.com).
 
 ### Changing your text editor
 
