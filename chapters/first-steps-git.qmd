@@ -93,6 +93,11 @@ git init /Users/yourusername/Desktop/foldername
 
 Git will create an already initialized folder at the path and with the name you use.
 
+### Adding files into Git repository
+Git can now track every file you move or create in this folder.
+You can use this folder, like any other normal folder on you computer.
+The only difference is the tiny but powerful file called `.git` within it.
+
 ::: {.callout-tip collapse="true"}
 ## .Git file
 
@@ -101,7 +106,6 @@ To do this navigate to the right folder and use `ls -a` to show hidden files.
 You should see a file called .git.
 You probably should not manually modify this file, since doing so can corrupt your repository.
 :::
-
 
 In the next step, please create an empty text file within your repository, either using the `touch` command:
 
@@ -112,17 +116,6 @@ touch filename.txt
 or a different preferred method for creating files.
 
 ## {{< fa file-export >}} Status, Staging and committing 
-
-### Introduction
-After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically.
-In Git, there are two steps for saving your changes: the staging area and the commits. 
-The staging area is like a waiting area where you gather and prepare your changes before saving them. 
-Check out this [Youtube video](https://youtu.be/HMqUFlu0gFc?t=228) for a detailed explanation of the staging area using a metaphor.
-You can choose which changes to include in the snapshot by adding them to the staging area using `git add`. 
-Once you're satisfied with the changes in the staging area, you make a **commit**, using `git commit`. 
-A commit is like taking a snapshot of your project at a specific moment. 
-It captures all the changes in the staging area and saves them as a new version. 
-Commits are like milestones that help you track the progress of your project and easily go back to a previous version if needed.
 
 ### Status
 After you initialized a folder, you can use `git status` to visualize the current file tracking status from Git.
@@ -170,11 +163,21 @@ You can use these flags in combination.
 For example, `git status -s -b` will display a short and concise output along with the branch information.
 :::
 
+### Introduction to staging and committing
+After initializing a folder with Git, it's capable of recording changes in your files, but it won't do so automatically. 
+In Git, the process of saving changes involves two steps: the staging area and commits.
+The staging area is like a preparation area where you gather and organize your changes before saving them. You can choose which changes to include in a snapshot by adding them to the staging area using git add.
+Once you are content with the changes in the staging area, you create a commit with git commit. 
+A commit is like taking a snapshot of your project at a specific moment, capturing all changes in the staging area and saving them as a new version. 
+Commits serve as milestones to track your project's progress and allow you to revert to previous versions if needed.
+As further introduction to the workflow of Git you can check out the last two minutes of the Youtube video: [Version control for reproducible research](https://www.youtube.com/watch?v=HMqUFlu0gFc&t=228s) from [BERD Academy](https://www.berd-nfdi.de/berd-academy/), which explains the process very vividly.
+
 ### Staging
-You can use `git add` to put new/changed files in the "staging area". 
-The staging area serves as a space where you can gather changes that you intend to commit soon.
-To organize and group these changes into meaningful commits, you can place the relevant files in the staging area. 
-The staging area acts as a bridge between your modified files and the next commit.
+You can use Git add to place new or modified files in the staging area. 
+The staging area acts as a space for gathering changes you plan to commit shortly. 
+It bridges your modified files and the next commit.
+
+For example, you can stage a specific file like this:
 
 ```{bash}
 git add example.txt
@@ -191,8 +194,14 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 	new file:   example.txt
 ```
+
 Your change to the file, or the addition if it is now **staged**.
 You do not have to add every file one by one, you can simply use the `-a` flag.
+This means if you want to stage every file in your project for preperation of your next commit, you can use:
+
+```{bash}
+git add -a
+```
 
 ::: {.callout-tip collapse="true"}
 ## Common git add flags
@@ -209,7 +218,7 @@ Ignores errors when adding files, allowing the command to continue even if some 
 
 ### Committing
 
-Now that your changes are staged, you are ready to create a commit. 
+Now that your changes to your file(s) are staged, you are ready to create a commit. 
 To create a commit, use the `git commit` command followed by the flag `-m` and a commit message **in quotes** that describes the changes you made.
 The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
 If you just use `git commit` without adding a commit massage, the editor of [your choosing](installation-setup.qmd), opens up and lets you type in a commit message.
@@ -340,7 +349,7 @@ Highlights the differences at the word level, providing more granular detail.
 
 Ideally, each commit contains an isolated, complete change.
 For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
-Later, if you want to keep the tests but revert the enhancement, you can revert the specific commit that contained the variable rename.
+This is so that later, if you want to keep the tests but revert the enhancement, you can revert the specific commit that contained the variable rename.
 If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
 
 ### Commit messages etiquette
@@ -351,6 +360,18 @@ There are different conventions across projects/persons but also some general gu
 
 It is standard to start the title with an imperative verb to indicate the purpose of the commit. 
 It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary.
+
+::: {.callout-tip title="Commit messages examples" collapse="true"}
+Some examples for commit messages, which stick to the etiquette:
+
+- Add 'favourites.txt' to the project
+- Fix typo in first receipe
+
+- Improve code comments for clarity
+- Fix critical security vulnerability (CVE-2022-1234)
+- Refactor database query functions for efficiency
+- Update installation instructions in README
+:::
 
 ## `.gitignore`
 
@@ -396,7 +417,28 @@ git config --global core.excludesfile ~/.gitignore_global
 After this setup, you can add common files to this list, that you want to ignore.
 These rules will apply across all your Git repositories.
 
-## Common Files to Ignore in Scientific Settings:
+::: {.callout-tip title="Common wildcards" collapse="true"}
+As discussed in the [command line chapter](command-line.qmd) wildcards are special characters that represent patterns of filenames or directory names.
+They can be used to specify multiple files or directories that should be ignored by Git when tracking changes.
+Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.
+
+`*`: 
+Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.
+
+`?`:
+Matches a single character within a filename. For example, image?.png will match files like image1.png or imageA.png.
+
+`/`:
+Matches the root directory of the repository. For example, /config will match a directory named config only in the root of the repository.
+
+`[]` (Square Brackets):
+Matches any single character within the brackets. For example, file\[123\].txt will match file1.txt, file2.txt, or file3.txt.
+
+`!`:
+Negates a pattern and includes files that would otherwise be ignored. For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
+:::
+
+::: {.callout-tip title="Common files to ignore in scientific settings" collapse="true"}
 
 **Temporary Files and Output:** 
 Ignore files generated during analysis, like log files, temporary CSVs, or intermediate data files that are not part of the final results.
@@ -418,31 +460,10 @@ Ignore .pyc (Python compiled) files and **pycache**/ folders.
 
 **LaTeX:** 
 Ignore auxiliary files like .aux, .log, .bbl, and .blg files generated during LaTeX compilation.
-
-### Wildcards in .gitignore files
-
-As discussed in the [command line chapter](command-line.qmd) wildcards are special characters that represent patterns of filenames or directory names.
-They can be used to specify multiple files or directories that should be ignored by Git when tracking changes.
-Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.
-
-::: {.callout-tip title="Common wildcards" collapse="true"}
-`*`: 
-Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.
-
-`?`:
-Matches a single character within a filename. For example, image?.png will match files like image1.png or imageA.png.
-
-`/`:
-Matches the root directory of the repository. For example, /config will match a directory named config only in the root of the repository.
-
-`[]` (Square Brackets):
-Matches any single character within the brackets. For example, file\[123\].txt will match file1.txt, file2.txt, or file3.txt.
-
-`!`:
-Negates a pattern and includes files that would otherwise be ignored. For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
 :::
 
-### Example .gitignore file for a R project
+
+::: {.callout-tip title="Example .gitignore file for a R project" collapse="true"}
 
 ```{bash} 
 
@@ -484,6 +505,8 @@ DESCRIPTION.meta
 .DS_Store
 
 ```
+:::
+
 
 ```{r}
 #| eval: true
