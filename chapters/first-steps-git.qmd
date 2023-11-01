@@ -3,72 +3,65 @@ title: "First Steps with Git"
 engine: knitr
 execute:
   eval: false
-  title-block-style: none
+title-block-style: none
 author: ""
 categories: [beginner, basics]
-description: |
+abstract: |
   Exploring the most important basic commands you will need. 
+abstract-title: "Overview"
 ---
 
-::: callout-note
-### Overview
+## Introduction
 
-{{< fa clock >}} Duration: min
-:::
+### Prerequisites
+To follow this chapter, you should have:
 
+- [Familiarity with the command line](command-line.qmd)
 
-::: {.column width="100%"}
-{{< fa bullseye >}} Objectives
+- [Installed Git](installation.qmd)
+
+- [Set up Git](setup.qmd)
+
+### Learning Objectives
+
+Learning basic Git operations including:
 
 -   Initializing a Git Repository
+
 -   Staging and Committing Changes
+
 -   Exploring the commit history
+
 -   Comparing Versions
--  Creating a .gitignore file
 
-:::
+-   (Creating a .gitignore file)
 
-## Cheatsheet
+### Exercise
 
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
-```
-
-## Acknowledgements
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| output: asis
-bibtexkeys = c("bryan2023", "community2022", "millman2018", "mcbain2019")
-knitr::kable(ref_table(bibtexkeys), format = "markdown")
-```
-
-## {{< fa dumbbell >}} Exercises
+To learn Git effectively, it makes sense to practice version control on your own small project.
+For our purpose we will start off small and text based:
 
 -   Create a folder called "recipes" and initialize it as a git repository.
 
--   Create a textfile called "favouritereceipes.txt", in this folder.
+-   Create a textfile called "favourites.txt", in this folder.
 
-- Add a favourite (or a crazy AI generated one) recipe of yours in this file.
+-   Add a favourite (or a crazy AI generated one) recipe of yours in this file.
 
-- Stage and commit your changes to the file, write a commit message
+-   Stage and commit your changes to the file, write a commit message
 
-- Create a .gitignore file, include Files in it, you do not want to track
-
+This book will continue to work with this project.
 
 ## {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
 
 To create your first Git repository, you need to initialize a folder.
-You can create an empty folder using the command line as explained in the chapter [Command Line Basics](command-line.qmd).
+You can create an empty folder using the command line like this:
+
+```{bash}
+mkdir foldername
+```
+
 Alternatively, you can create a folder in the usual way.
-Create a Textfile in this folder.
+
 Navigate, using the Terminal, to the folder which you want to initialize as a Git repository.
 You can use the `cd` command to change directories.
 Once you are in the desired directory, run the `git init` command to initialize the folder as a Git repository.
@@ -85,17 +78,35 @@ Initialized empty Git repository in /Users/.../
 
 Congratulations on successfully initializing your first Git repository! {{< fa champagne-glasses >}}
 
-
 Git is now able to track your file(s and the changes you make to them, in this Folder.
 You only need to use `git init` once per folder.
 
+::: {.callout-tip collapse="true"}
+## .Git file
+
+If you want "proof" that Git is tracking your folder, you can look for the .git file.
+To do this navigate to the right folder and use `ls -a` to show hidden files.
+You should see a file called .git.
+You probably should not manually modify this file, since doing so can corrupt your repository.
+:::
+
+
+In the next step, please create an empty text file within this folder, either using the `touch` command:
+
+```{bash}
+touch filename.txt
+```
+
+or a different preferred method for creating files.
 
 ## {{< fa file-export >}} Status, Staging and committing 
 
+### Introduction
 After initializing a folder, Git is now able to record the changes of your file, but it will not do so automatically.
 In Git, there are two steps for saving your changes: the staging area and the commits. 
 The staging area is like a waiting area where you gather and prepare your changes before saving them. 
-You can choose which changes to include in the snapshot by adding them to the staging area using git `git add`. 
+Check out this [Youtube video](https://youtu.be/HMqUFlu0gFc?t=228) for a detailed explanation of the staging area using a metaphor.
+You can choose which changes to include in the snapshot by adding them to the staging area using `git add`. 
 Once you're satisfied with the changes in the staging area, you make a **commit**, using `git commit`. 
 A commit is like taking a snapshot of your project at a specific moment. 
 It captures all the changes in the staging area and saves them as a new version. 
@@ -332,7 +343,7 @@ It is also recommended to only write 50 characters for the title and up to 72 fo
 ## `.gitignore`
 
 `.gitignore` is a special file. It is used in Git to specify files and directories that should be ignored and not tracked.
-When you create a `.gitignore` file and specify filenames inside it, Git will exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
+When you create a `.gitignore` file, place it inside your Git repository and specify filenames inside it, Git will exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
 Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the codebase without distractions from unnecessary files.
 .gitignore can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
@@ -360,6 +371,18 @@ open .gitignore
 ```
 
 Now you can write a filename or folder name inside it, to stop git from tracking it.
+
+### Global `.gitignore` file
+
+Instead of specifying files you want Git to ignore for each folder, you can also create global .gitignore file.
+To do this, you create a file named .gitignore_global (or any name you prefer) in your home directory (located at /Users/yourusername). 
+Then, you configure Git to use this global file by running:
+
+```{bash}
+git config --global core.excludesfile ~/.gitignore_global
+```
+After this setup, you can add common files to this list, that you want to ignore.
+These rules will apply across all your Git repositories.
 
 ## Common Files to Ignore in Scientific Settings:
 
@@ -449,3 +472,24 @@ DESCRIPTION.meta
 .DS_Store
 
 ```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
+```
+
+## Acknowledgements
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("bryan2023", "community2022", "millman2018", "mcbain2019")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
