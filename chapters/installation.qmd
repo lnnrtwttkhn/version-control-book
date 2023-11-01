@@ -48,6 +48,25 @@ git version 2.39.2 (Apple Git-143)
 If Fit is not installed you will get a prompt asking you if you wish to install it along with Xcode command line tools.
 You also may be asked for your administrator password.
 
+::: {.callout-caution title="Error message: `xcrun: error`" collapse="true"}
+**Problem**
+
+Did you receive the following error message when entering a `git` command into the Terminal?
+
+```{bash}
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+```
+
+**Solution**
+
+```{bash}
+xcode-select --install
+```
+
+This will open a dialogue box.
+Select "Install", and it will download and install the [Command Line Tools](https://developer.apple.com/library/archive/technotes/tn2339/_index.html) package and fix the problem.
+:::
+
 #### Option 2: Binary installer
 
 Download and run the installer from: <https://git-scm.com/download/mac>. Hit `Continue` through the prompts without modifying the installation destination or other settings. You may be asked for your administrator password.
