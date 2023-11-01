@@ -39,7 +39,8 @@ Learning basic Git operations including:
 ### Exercise
 
 To learn Git effectively, it makes sense to practice version control on your own small project.
-For our purpose we will start off small and text based:
+For our purpose we will start off small and text based. 
+So while reading this chapter and using the commands along, your task is to:
 
 -   Create a folder called "recipes" and initialize it as a git repository.
 
@@ -49,12 +50,13 @@ For our purpose we will start off small and text based:
 
 -   Stage and commit your changes to the file, write a commit message
 
-This book will continue to work with this project.
+This book will continue to work with your receipe project.
 
 ## {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
 
-To create your first Git repository, you need to initialize a folder.
-You can create an empty folder using the command line like this:
+To create your first Git repository, you need to initialize a folder as a Git repository.
+
+First, create an empty folder, either using the command line like this:
 
 ```{bash}
 mkdir foldername
@@ -62,7 +64,7 @@ mkdir foldername
 
 Alternatively, you can create a folder in the usual way.
 
-Navigate, using the Terminal, to the folder which you want to initialize as a Git repository.
+Then, navigate, using the Terminal, to the folder which you want to initialize as a Git repository.
 You can use the `cd` command to change directories.
 Once you are in the desired directory, run the `git init` command to initialize the folder as a Git repository.
 
@@ -70,16 +72,26 @@ Once you are in the desired directory, run the `git init` command to initialize 
 git init
 ```
 
-You should see the following output:
+You should see an output similiar to:
 
 ```{bash}
-Initialized empty Git repository in /Users/.../
+Initialized empty Git repository in /Users/.../.../.git/
 ```
 
 Congratulations on successfully initializing your first Git repository! {{< fa champagne-glasses >}}
 
-Git is now able to track your file(s and the changes you make to them, in this Folder.
+Git is now able to track your file(s and the changes you make to them in this folder.
 You only need to use `git init` once per folder.
+
+
+You can also skip creating a folder manually and only use the `git init` command.
+To do this use e.g.:
+
+```{bash}
+git init /Users/yourusername/Desktop/foldername
+```
+
+Git will create an already initialized folder at the path and with the name you use.
 
 ::: {.callout-tip collapse="true"}
 ## .Git file
@@ -91,7 +103,7 @@ You probably should not manually modify this file, since doing so can corrupt yo
 :::
 
 
-In the next step, please create an empty text file within this folder, either using the `touch` command:
+In the next step, please create an empty text file within your repository, either using the `touch` command:
 
 ```{bash}
 touch filename.txt
