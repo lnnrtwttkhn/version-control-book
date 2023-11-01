@@ -42,7 +42,7 @@ To learn Git effectively, it makes sense to practice version control on your own
 For our purpose we will start off small and text based. 
 So while reading this chapter and using the commands along, your task is to:
 
--   Create a folder called "recipes" and initialize it as a git repository.
+-   Create a folder called "recipes" and initialize it as a Git repository.
 
 -   Create a textfile called "favourites.txt", in this folder.
 
@@ -50,7 +50,7 @@ So while reading this chapter and using the commands along, your task is to:
 
 -   Stage and commit your changes to the file, write a commit message
 
-This book will continue to work with your receipe project.
+This book will continue to work with your recipe project.
 
 ## {{< fa folder-closed >}} Initializing a Folder as a Git Repository 
 
@@ -72,7 +72,7 @@ Once you are in the desired directory, run the `git init` command to initialize 
 git init
 ```
 
-You should see an output similiar to:
+You should see an output similar to:
 
 ```{bash}
 Initialized empty Git repository in /Users/.../.../.git/
@@ -96,15 +96,15 @@ Git will create an already initialized folder at the path and with the name you 
 ### Adding files into Git repository
 Git can now track every file you move or create in this folder.
 You can use this folder, like any other normal folder on you computer.
-The only difference is the tiny but powerful file called `.git` within it.
+The only difference is the tiny but powerful file called `.git` within it, which stores metadata and object database for your Git project, thereby enabling the tracking of you project.
 
 ::: {.callout-tip collapse="true"}
-## .Git file
+## .Git folder
 
-If you want "proof" that Git is tracking your folder, you can look for the .git file.
+If you want "proof" that Git is tracking your folder, you can look for the .git folder.
 To do this navigate to the right folder and use `ls -a` to show hidden files.
-You should see a file called .git.
-You probably should not manually modify this file, since doing so can corrupt your repository.
+You should see a folder called .git.
+You probably should not manually modify this folder, since doing so can corrupt your repository.
 :::
 
 In the next step, please create an empty text file within your repository, either using the `touch` command:
@@ -197,7 +197,7 @@ Changes to be committed:
 
 Your change to the file, or the addition if it is now **staged**.
 You do not have to add every file one by one, you can simply use the `-a` flag.
-This means if you want to stage every file in your project for preperation of your next commit, you can use:
+This means if you want to stage every file in your project for preparation of your next commit, you can use:
 
 ```{bash}
 git add -a
@@ -365,7 +365,7 @@ It is also recommended to only write 50 characters for the title and up to 72 fo
 Some examples for commit messages, which stick to the etiquette:
 
 - Add 'favourites.txt' to the project
-- Fix typo in first receipe
+- Fix typo in first recipe
 
 - Improve code comments for clarity
 - Fix critical security vulnerability (CVE-2022-1234)
