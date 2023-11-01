@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.449">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -59,7 +59,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -84,7 +83,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/installation-setup.html" rel="next">
+<link href="../chapters/installation.html" rel="next">
 <link href="../chapters/intro-version-control.html" rel="prev">
 <link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -104,13 +103,7 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -137,9 +130,9 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/command-line.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Command Line</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/command-line.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Command Line</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -157,9 +150,9 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control of Code and Data</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://lennartwittkuhn.com/version-control-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://lennartwittkuhn.com/version-control-book" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -230,56 +223,62 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/installation-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation and Setup</span></span></a>
+  <a href="../chapters/installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Setup</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/first-steps-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">First Steps with Git</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/branches.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub Intro</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">GitHub Intro</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/stashing-rebasing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stashing and rebasing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Stashing and rebasing</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/datalad-nextcloud.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">DataLad Nextcloud</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -300,13 +299,13 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Contributing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/style-guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Style Guide</span></span></a>
   </div>
 </li>
       </ul>
@@ -360,7 +359,7 @@ div.csl-indent {
   <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">3.9</span> Acknowledgements &amp; further reading</a></li>
   <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">3.10</span> Cheatsheet</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/command-line.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/command-line.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/command-line.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/command-line.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
@@ -374,7 +373,6 @@ div.csl-indent {
 <p>In this session, we will explore the concept of the command line and discover some commands that work well alongside Git.</p>
 </div>
 </header>
-
 
 <section id="introduction" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> Introduction</h2>
@@ -470,7 +468,7 @@ Which macOS version do I have installed?
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>By default, Windows operating systems do not come with a pre-installed Unix Shell program. In this guide, we recommend using an emulator provided by <a href="https://gitforwindows.org/">Git for Windows</a>, which grants you access to both Bash shell commands and Git.</p>
-<p>For an installation guide, you can check out the chapter on <a href="../chapters/installation-setup.html">installation and setup</a>. Once you have installed Git for Windows, you can easily open a terminal by launching the program called Git Bash from the Windows start menu.</p>
+<p>For an installation guide, you can check out the chapter on <a href="installation-setup.qmd">installation and setup</a>. Once you have installed Git for Windows, you can easily open a terminal by launching the program called Git Bash from the Windows start menu.</p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>Open a fresh Terminal.</p>
@@ -480,24 +478,16 @@ Which macOS version do I have installed?
 <p>You can access a remote environment, using your Universität Hamburg login credentials <a href="https://code.min.uni-hamburg.de">here</a>. Simply click on the link and log in.</p>
 <p>Once you are logged in, you should be able to view the remote environment and create files using different programs like <i class="fa-brands fa-r-project" aria-label="r-project"></i>, Python <i class="fa-brands fa-python" aria-label="python"></i> or Java <i class="fa-brands fa-java" aria-label="java"></i>.</p>
 <div id="fig-jupyter" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-jupyter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/cli_jupyter.png" class="img-fluid figure-img">
-</div>
-<figcaption class="figure quarto-float-caption quarto-float-fig margin-caption" id="fig-jupyter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Screenshot of JupyterHub, showing the start screen.
-</figcaption>
+<figure class="figure page-columns page-full">
+<p><img src="../static/cli_jupyter.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;3.1: Screenshot of JupyterHub, showing the start screen.</figcaption>
 </figure>
 </div>
 <p>If you scroll down in the “launcher” window, there should be the option to open a terminal window. Your remote environment will be mostly empty, but you can move around and manage files just like you could on your own computer.</p>
 <div id="fig-jupyter_2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-jupyter_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/cli_jupyter_2.png" class="img-fluid figure-img">
-</div>
-<figcaption class="figure quarto-float-caption quarto-float-fig margin-caption" id="fig-jupyter_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.2: Screenshot of JupyterHub, showing the terminal.
-</figcaption>
+<figure class="figure page-columns page-full">
+<p><img src="../static/cli_jupyter_2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;3.2: Screenshot of JupyterHub, showing the terminal.</figcaption>
 </figure>
 </div>
 </div>
@@ -613,19 +603,19 @@ Figure&nbsp;3.2: Screenshot of JupyterHub, showing the terminal.
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="1" data-code-annotation="1">Move to the user’s home directory using the <code>~</code> shorthand.</span>
+<span data-code-cell="annotated-cell-11" data-code-annotation="1" data-code-lines="1">Move to the user’s home directory using the <code>~</code> shorthand.</span>
 </dd>
 <dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="2" data-code-annotation="2">Move to the <code>Downloads</code> folder.</span>
+<span data-code-cell="annotated-cell-11" data-code-annotation="2" data-code-lines="2">Move to the <code>Downloads</code> folder.</span>
 </dd>
 <dt data-target-cell="annotated-cell-11" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="3" data-code-annotation="3">Move sideways to the <code>Documents</code> folder.</span>
+<span data-code-cell="annotated-cell-11" data-code-annotation="3" data-code-lines="3">Move sideways to the <code>Documents</code> folder.</span>
 </dd>
 <dt data-target-cell="annotated-cell-11" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="4" data-code-annotation="4">Display the current working directory.</span>
+<span data-code-cell="annotated-cell-11" data-code-annotation="4" data-code-lines="4">Display the current working directory.</span>
 </dd>
 </dl>
 </div>
@@ -739,13 +729,14 @@ What are “parent” and “child” directories?
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad-nextcloud.qmd</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="ex">first-steps-git.qmd</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="ex">github-intro.qmd</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="ex">installation-setup.qmd</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="ex">installation.qmd</span></span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="ex">intro-version-control.html</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="ex">intro-version-control.qmd</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="ex">rewriting-history.qmd</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="ex">stashing-rebasing.qmd</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="ex">style-guide.qmd</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="ex">summary.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="ex">setup.qmd</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="ex">stashing-rebasing.qmd</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="ex">style-guide.qmd</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="ex">summary.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -830,44 +821,44 @@ What are “parent” and “child” directories?
 </summary>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 288K</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 11 runner docker 4.0K Oct 26 19:39 .</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 26 19:26 ..</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Oct 26 19:27 .Renviron</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Oct 26 19:27 .Rprofile</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.6K Oct 26 19:27 .all-contributorsrc</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Oct 26 19:27 .codespellrc</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Oct 26 19:39 .git</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 26 19:27 .github</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   67 Oct 26 19:27 .gitignore</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Oct 26 19:39 .quarto</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Oct 26 19:27 LICENSE</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  582 Oct 26 19:27 Makefile</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 4.1K Oct 26 19:27 README.md</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.1K Oct 26 19:27 _affiliations.yml</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.1K Oct 26 19:27 _authors.yml</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 26 19:39 _book</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 26 19:27 _extensions</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.3K Oct 26 19:27 _quarto.yml</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  591 Oct 26 19:27 _variables.yml</span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.5K Oct 26 19:27 acknowledgements.qmd</span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 26 19:39 chapters</span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.7K Oct 26 19:27 cheatsheet.json</span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Oct 26 19:27 chicago-author-date-note.csl</span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  493 Oct 26 19:39 contents-listing.json</span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  49K Oct 26 19:39 contents.html</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  774 Oct 26 19:27 contents.qmd</span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.8K Oct 26 19:27 functions.R</span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  34K Oct 26 19:39 index.html</span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  194 Oct 26 19:27 index.qmd</span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Oct 26 19:27 plausible.html</span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  11K Oct 26 19:27 references.bib</span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  116 Oct 26 19:27 references.qmd</span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Oct 26 19:28 renv</span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  16K Oct 26 19:27 renv.lock</span>
-<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Oct 26 19:39 site_libs</span>
-<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 26 19:39 static</span>
-<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Oct 26 19:27 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 276K</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 11 runner docker 4.0K Nov  1 11:40 .</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Nov  1 11:30 ..</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Nov  1 11:31 .Renviron</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Nov  1 11:31 .Rprofile</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.6K Nov  1 11:31 .all-contributorsrc</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Nov  1 11:31 .codespellrc</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Nov  1 11:40 .git</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Nov  1 11:31 .github</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   67 Nov  1 11:31 .gitignore</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Nov  1 11:40 .quarto</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Nov  1 11:31 LICENSE</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  582 Nov  1 11:31 Makefile</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 4.1K Nov  1 11:31 README.md</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.1K Nov  1 11:31 _affiliations.yml</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.1K Nov  1 11:31 _authors.yml</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Nov  1 11:40 _book</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Nov  1 11:31 _extensions</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.3K Nov  1 11:31 _quarto.yml</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  591 Nov  1 11:31 _variables.yml</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.5K Nov  1 11:31 acknowledgements.qmd</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Nov  1 11:40 chapters</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.7K Nov  1 11:31 cheatsheet.json</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Nov  1 11:31 chicago-author-date-note.csl</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  515 Nov  1 11:40 contents-listing.json</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  42K Nov  1 11:40 contents.html</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  774 Nov  1 11:31 contents.qmd</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.8K Nov  1 11:31 functions.R</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  29K Nov  1 11:40 index.html</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  194 Nov  1 11:31 index.qmd</span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Nov  1 11:31 plausible.html</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  11K Nov  1 11:31 references.bib</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  116 Nov  1 11:31 references.qmd</span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Nov  1 11:32 renv</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  16K Nov  1 11:31 renv.lock</span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Nov  1 11:40 site_libs</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Nov  1 11:40 static</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Nov  1 11:31 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -935,10 +926,10 @@ What are “parent” and “child” directories?
 </summary>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.1K Oct 26 19:27 _affiliations.yml</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 1.1K Oct 26 19:27 _authors.yml</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.3K Oct 26 19:27 _quarto.yml</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  591 Oct 26 19:27 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.1K Nov  1 11:31 _affiliations.yml</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 1.1K Nov  1 11:31 _authors.yml</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.3K Nov  1 11:31 _quarto.yml</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  591 Nov  1 11:31 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -952,8 +943,8 @@ What are “parent” and “child” directories?
 </summary>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 34K Oct 26 19:39 index.html</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 194 Oct 26 19:27 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 29K Nov  1 11:40 index.html</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 194 Nov  1 11:31 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -980,13 +971,9 @@ What are “parent” and “child” directories?
 </ol>
 <p>It’s important to note that what we covered here only scratches the surface of what can be accomplished using the shell. The primary aim was to provide useful concepts that help when learning Git. If you’re interested in delving deeper, you may find a more comprehensive introduction at one of the following resource.</p>
 <div id="fig-meme" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-meme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/cli_meme.jpg" class="img-fluid figure-img">
-</div>
-<figcaption class="figure quarto-float-caption quarto-float-fig margin-caption" id="fig-meme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.3: “Hackerman” meme found on <a href="https://www.reddit.com/r/meme/comments/fu9f3b/command_prompt/">Reddit.com</a>
-</figcaption>
+<figure class="figure page-columns page-full">
+<p><img src="../static/cli_meme.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;3.3: “Hackerman” meme found on <a href="https://www.reddit.com/r/meme/comments/fu9f3b/command_prompt/">Reddit.com</a></figcaption>
 </figure>
 </div>
 </section>
@@ -1123,7 +1110,7 @@ Figure&nbsp;3.3: “Hackerman” meme found on <a href="https://www.reddit.com/r
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-capes2023" class="csl-entry" role="listitem">
 Capes, Gerard, Bkmgit, Jacob Deppen, G. A. Devenyi, Alexander James Ball, Piper Fowler-Wright, Alessia Visconti, et al. 2023. <em>Swcarpentry/Shell-Novice: Software Carpentry: The UNIX Shell</em>. Zenodo. <a href="https://doi.org/10.5281/ZENODO.595899">https://doi.org/10.5281/ZENODO.595899</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/swcarpentry/shell-novice" class="uri">https://github.com/swcarpentry/shell-novice</a>. Website: <a href="https://swcarpentry.github.io/shell-novice/" class="uri">https://swcarpentry.github.io/shell-novice/</a>.
 </div>
@@ -1220,9 +1207,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1232,17 +1220,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1255,128 +1234,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
-        }
-        typesetMath(container);
-        return container.innerHTML
-      } else {
-        typesetMath(note);
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      typesetMath(note);
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1420,7 +1277,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1446,8 +1302,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
+      // Handle positioning of the toggle
+      window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -1455,23 +1311,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
               fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -1569,58 +1425,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
       }
     }
 });
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/intro-version-control.html" class="pagination-link  aria-label=" <span="">2&nbsp; <span class="chapter-title">Introduction</span>"&gt;
+      <a href="../chapters/intro-version-control.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/installation-setup.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Installation and Setup</span>">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation and Setup</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/installation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>© 2023 – 2024 The Version Control Book Team</p>
-</div>   
+    <div class="nav-footer-left">© 2023 – 2024 The Version Control Book Team</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../acknowledgements.html">
-<p>Funded by the Digital and Data Literacy in Teaching Lab</p>
-</a>
+    <a class="nav-link" href="../acknowledgements.html">Funded by the Digital and Data Literacy in Teaching Lab</a>
   </li>  
 </ul>
     </div>
-    <div class="nav-footer-right">
-<p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | <a href="acknowledgements.qmd">Acknowledgements</a></p>
-</div>
+    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | <a href="acknowledgements.qmd">Acknowledgements</a></div>
   </div>
 </footer>
-
 
 
 
