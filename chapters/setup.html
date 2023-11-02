@@ -399,7 +399,8 @@ FAQ: Which name should I use for Git?
 </section>
 <section id="fa-code-branch-configure-the-default-name-of-the-initial-branch" class="level3" data-number="4.3.2">
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="fa-code-branch-configure-the-default-name-of-the-initial-branch"><span class="header-section-number">4.3.2</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Configure the default name of the initial branch</h3>
-<p>On several installations of Git, by default, the name “master” for the initial branch is used when creating a new repository. However, there has been a growing movement to transition to using “main” as the default branch name instead. One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">here</a> or <a href="https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/">here</a>). To configure the default branch name to “main” in Git, you can use the following command</p>
+<p>Git uses a concept called “branches” to enable working on different versions of the same project. (More on this will be explained later in the book.)</p>
+<p>On most installations of Git, by default, the name “master” for the initial branch is used when creating a new repository. However, there has been a growing movement to transition to using “main” as the default branch name instead. One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">here</a> or <a href="https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/">here</a>). To configure the default branch name to “main” in Git, you can use the following command</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -434,16 +435,22 @@ FAQ: Which name should I use for Git?
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--get</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If it is indeed <strong>Vim</strong>, do not despair! You can either pick up on the basics of Vim (see below) or simply change the text editor. Also note that you will typically not have to use the text editor in the command line a lot.</p>
+<p>If you have not changed your text editor yet, the output should be empty. This means that Git is using the command line´s default editor, which should be <strong>Vim</strong> if you are using a Mac or Git for Windows. To make sure, you can use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> var GIT_EDITOR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If the output is: <code>vim</code> or <code>vi</code>, your systems default editor is indeed Vim/Vi. (Vim is an improved version of Vi, but there are virtually no differences between them for our usecase.)</p>
+<p>In this situation, you can either pick up on the basics of Vim (see below) or simply change the text editor. Also note that you will typically not have to use the text editor in the command line a lot.</p>
 <section id="vim-basics" class="level3" data-number="4.6.1">
 <h3 data-number="4.6.1" class="anchored" data-anchor-id="vim-basics"><span class="header-section-number">4.6.1</span> Vim Basics</h3>
 <p>To start <a href="https://www.vim.org/">Vim</a>, open the command line and type <code>vim</code> followed by the filename of the file that you want to edit (for example, <code>vim file.txt</code>). In Vim, you have two main modes: “Insert” mode for typing and “Normal” mode for navigation and command execution. Inside Vimn to switch from “Normal” mode to “Insert” mode, press <code>i</code> for inserting text. To save your changes and exit Vim, press <code>Esc</code> to enter “Normal” mode, then type <code>:w</code> to save, and <code>:q</code> to quit. Vim’s strength lies in its powerful commands for text manipulation, such as copying, pasting, and searching, which are executed in “Normal” mode.</p>
+<p>For a more detailed and interactive tutorial, you can check out <a href="https://www.openvim.com">openvim.com</a>.</p>
 </section>
 <section id="changing-your-text-editor" class="level3" data-number="4.6.2">
 <h3 data-number="4.6.2" class="anchored" data-anchor-id="changing-your-text-editor"><span class="header-section-number">4.6.2</span> Changing your text editor</h3>
 <p>If you want to change the standard text editor, to one you are more comfortable with, there a lot of alternatives like <a href="https://www.nano-editor.org/docs.php">Nano</a>, <a href="https://code.visualstudio.com">Visual Studio Code</a> or <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>. If you have decided to use a different text editor you can use the following command (replace <code>editor-name</code> with the name of your preferred text editor):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor editor-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor editor-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>From now on, when Git requires you to interact with a text editor, it will use the one you have set. If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.</p>
 </section>
@@ -452,7 +459,7 @@ FAQ: Which name should I use for Git?
 <h2 data-number="4.7" class="anchored" data-anchor-id="unsetting-configuration"><span class="header-section-number">4.7</span> Unsetting configuration</h2>
 <p>If you want to undo a configuration setting, you can use the <code>--unset</code> in the <code>git config</code> command. For example, to unset the global configuration of your preferred text editor (<code>core.editor</code>) you can use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset</span> core.editor </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset</span> core.editor </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="acknowledgements-and-further-reading" class="level2" data-number="4.8">
