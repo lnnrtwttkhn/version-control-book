@@ -46,6 +46,9 @@ This can be the recipe for your favorite dish or an [unusual AI-generated recipe
 Please **keep this project directory**!
 This guide will continue to use your recipe project as an example in following chapters.
 
+Exercises - Part 2:
+(For the session 4 of the version control course at UHH)
+
 There are several terms in these instructions that might be unfamiliar to you, for example "repository", "stage" or "commit".
 Don't worry, you will learn about what these terms mean in this chapter.
 Let's *git* started!
@@ -399,18 +402,22 @@ Highlights the differences at the word level, providing more granular detail.
 
 ### Good commits
 
-Ideally, each commit contains an isolated, complete change.
+You should not consider a commit as a save-button, where you put in all your recent work.
+Instead, each commit should ideally contain one isolated and complete change.
 For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
-This is so that later, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
+
+This approach to commits, helps you down the line. 
+e.g. if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
 If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
 
 ### Commit messages etiquette
 
 Git allows for a title with a 72 character limit and a description without such a limit.
-In general you should aim to write clear and concise commit messages.
+In general you should aim to write clear and short commit messages.
 There are different conventions across projects/persons but also some general guidelines, you can stick to. 
 
 It is standard to start the title with an imperative verb to indicate the purpose of the commit. 
+e.g: add, fix or improve.
 It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary).
 
 ::: {.callout-tip title="Commit messages examples" collapse="true"}
@@ -425,20 +432,62 @@ Some examples for commit messages, which stick to the etiquette:
 
 :::
 
-### `git commit --amend``
-The `git commit --amend` command is used to make changes to (or *amend*) the most recent Git commit in your repository.
+### `git commit --amend`
+
+The `git commit --amend` command is used to mmodify (or *amend*) your most recent Git commit in your repository.
 It allows you to edit the commit message, add more changes to the commit, or simply adjust the last commit without creating a new commit.
-The git commit --amend command is useful in several scenarios:
- E.g., It could make sense to use it if you work on an issue and want to save your changes, but continue to work on that same issue.
- 
+This flag can be useful if you forgot to include something in your last commit, made a typo or want to change your commit message.
+You can also combine `--amend` with other flags.
+To change the commit message of your last commit (without opening an editor) try:
+
+```{bash}
+git commit --amend -m "changed commit message"
+```
+
+If you want to to keep your commit message but include new changes to your file(s) in you last commit, you can use:
+
+```{bash}
+git commit --amend --no-edit
+```
+
+The `--no-edit` flag, lets you keep the commit message of your most recent commit.
+
+#### `--amend` workflow
+
+The "Repeated Amend" is a Git workflow where you avoid cluttering your history with numerous tiny commits.
+Instead, you gradually build up a "good" commit by amending it repeatedly. 
+Continue making small changes and amending the existing commit, refining it over time.
+This method keeps your Git history useful and looking good, making sure your commits tell a straightforward story of how your project evolved.
+
+This workflow can be ueful when you're working on a new feature or a significant change and you might make several small adjustments to get it right. 
+Instead of cluttering your history with numerous tiny commits for each tweak, you can use "Repeated Amend" to gradually build up a well-polished commit that includes the entire feature.
+
 ## What files can/should I track with Git?
 
-### Plain textfiles
+### {{< fa code >}}  Code files
+Tracking code files is the most common and original use case for version control with Git.
+Git is well-suited for tracking changes in source code, and it's widely used by developers and teams for this purpose.
+Whether it's a single developer maintaining a personal project or a large team collaborating on a complex software system, Git excels at tracking code files throughout the development lifecycle.
 
-### Code files
+### {{< fa file-lines >}} Plain textfiles
+Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup consisting of emails or shared Dropbox folders. 
+However, to really be able to use the full set of features of Git, you should use plain textfile.
+This is because `docx` files are saved as binary files, which makes meaningfull outputs of the text inside it impossible for Git.
+"Plain textfiles" does not mean you have to use `.txt` files.
+Instead you can use formattable Markdown (`.md`) files.
 
-### Word/Microsoft office files
+### {{< fa brands windows >}} Microsoft office files
+As said earlier, it is not recommend to track Microsoft office files using Git, since Git treats e.g. `.docx` files as binary files.
+Binary files lack the inherent structure that allows Git to capture and display changes effectively.
+Git relies on understanding the differences between versions of files. With binary files, you won't benefit from the ability to view detailed textual differences (`git diff`) or effectively use [branches](branches.qmd)
+Collaborative work on binary files, such as simultaneous editing of a Word document, may result in complex [merge conflicts](branches.qmd) that are challenging to resolve.
 
+That being said it is certainly possible to track `.doxc` files with Git.
+
+If you ever choose to do that, you need to know about temporary word files. 
+For it´s own version control system, Word creates temporary files in the folder of your word file.
+You should not track these files using Git, since Word creates a lot of them. (And since Git should be doing your version control)
+To not stage or commit these file on accident, you can use the `.gitignore` file.
 
 ## Ignoring files and folders: `.gitignore`
 
