@@ -495,7 +495,7 @@ Instead, you gradually build up a "good" commit by amending it repeatedly.
 Continue making small changes and amending the existing commit, refining it over time.
 This method keeps your Git history useful and looking good, making sure your commits tell a straightforward story of how your project evolved.
 
-This workflow can be ueful when you're working on a new feature or a significant change and you might make several small adjustments to get it right. 
+This workflow can be useful when you're working on a new feature or a significant change and you might make several small adjustments to get it right. 
 Instead of cluttering your history with numerous tiny commits for each tweak, you can use "Repeated Amend" to gradually build up a well-polished commit that includes the entire feature.
 
 ## What files can/should I track with Git?
@@ -508,7 +508,7 @@ Whether it's a single developer maintaining a personal project or a large team c
 ### {{< fa file-lines >}} Plain textfiles
 Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup consisting of emails or shared Dropbox folders. 
 However, to really be able to use the full set of features of Git, you should use plain textfile.
-This is because `docx` files are saved as binary files, which makes meaningfull outputs of the text inside it impossible for Git.
+This is because `docx` files are saved as binary files, which makes meaningful outputs of the text inside it impossible for Git.
 "Plain textfiles" does not mean you have to use `.txt` files.
 Instead you can use formattable Markdown (`.md`) files.
 Markdown (`.md`) files are plain text files that contain formatting elements, making them more versatile than plain .txt files.
@@ -537,11 +537,11 @@ When you create a `.gitignore` file, place it inside your Git repository and spe
 Git will then exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
 
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
-Files that can recreated from the code, like e,g. `.png` plots from R code, shoul also be included in your projects `.gitignore` file.
+Files that can recreated from the code, like e,g. `.png` plots from R code, should also be included in your projects `.gitignore` file.
 Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project fules without distractions from unnecessary files.
 `.gitignore` can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
 Huge files, like big data files should also not be committed, since they can slow down working with your repository.
-(To version control files with a big size [DataLad](https://www.datalad.org) is more appropiate.)
+(To version control files with a big size [DataLad](https://www.datalad.org) is more appropriate.)
 
 To create a `.gitignore` file from the command line, navigate to your repository and use the `touch` command.
 Alternatively, create the file in your favorite text editor.
@@ -659,7 +659,7 @@ DESCRIPTION.meta
 ## Bonus Exercises 
 Besides generally playing around with staging, committing `git log` and `git diff`, you can also do these tasks:
 
-- Add a receipe to your project using the `--ammend` workflow
+- Add a recipe to your project using the `--ammend` workflow
 
 - Initialize a new Git repository and create a `doxc` file in it. 
 Check out the results of `git diff` after writing in the file.
