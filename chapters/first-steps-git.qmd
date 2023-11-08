@@ -46,9 +46,6 @@ This can be the recipe for your favorite dish or an [unusual AI-generated recipe
 Please **keep this project directory**!
 This guide will continue to use your recipe project as an example in following chapters.
 
-Exercises - Part 2:
-(For the session 4 of the version control course at UHH)
-
 There are several terms in these instructions that might be unfamiliar to you, for example "repository", "stage" or "commit".
 Don't worry, you will learn about what these terms mean in this chapter.
 Let's *git* started!
@@ -355,9 +352,9 @@ Filters commits by the author's name or email using a specified <pattern>.
 ### Comparing versions
 
 Another very handy feature is the `git diff` command.
-It allows you to compare two different versions of your file.
+It allows you to **compare two different versions of your file(s)**.
 By default it shows you any uncommitted changes since the last commit.
-You can explore this by pasting this text in your `.txt` file:
+You can explore this by pasting text in your `.txt` file. e.g:
 
 ```{latex}
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
@@ -379,6 +376,36 @@ You should see output similar to the following:
 @@ -0,0 +1 @@
 +Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \ No newline at end of file
+```
+
+The output of git diff includes several pieces of information:
++++ and --- indicate the paths to the files being compared.
+@@ -0,0 +1 @@ is a unified diff header. 
+It shows where the changes occurred, but this line can appear differently depending on the context.
++ indicates added lines, and - indicates removed lines.
+Lines that are identical between the two versions are not explicitly shown.
+
+You can also use `git diff` to **compare two specific commits**. 
+For example, if you want to compare the current state of your file with a commit from a few commits ago:
+
+```{bash}
+git diff <commit-A> <commit-B>
+```
+
+Instead <commit-A> <commit-B>, you use the commit hashes, that you can see using `git log`.
+
+
+If you've staged some changes using git add, you can **compare the staged changes to your last commit**.
+
+```{bash}
+git diff --staged
+```
+
+If you only want to look at the changes of a specific file, you can specify that file.
+This can also be combined with other flags and options.
+
+```{bash}
+git diff <filename>
 ```
 
 ::: {.callout-tip title="Common `git diff` flags" collapse="true"}
@@ -416,9 +443,18 @@ Git allows for a title with a 72 character limit and a description without such 
 In general you should aim to write clear and short commit messages.
 There are different conventions across projects/persons but also some general guidelines, you can stick to. 
 
-It is standard to start the title with an imperative verb to indicate the purpose of the commit. 
+It is standard to start the title with an **imperative verb** to indicate the purpose of the commit. 
 e.g: add, fix or improve.
 It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary).
+e.g:
+
+```{bash}
+git commit -m "Implement user registration feature
+
+This commit adds the user registration functionality to the application. It includes the following changes:
+- Created a new 'register' route and view for user registration.
+- Added form validation for user input.
+```
 
 ::: {.callout-tip title="Commit messages examples" collapse="true"}
 Some examples for commit messages, which stick to the etiquette:
@@ -475,16 +511,20 @@ However, to really be able to use the full set of features of Git, you should us
 This is because `docx` files are saved as binary files, which makes meaningfull outputs of the text inside it impossible for Git.
 "Plain textfiles" does not mean you have to use `.txt` files.
 Instead you can use formattable Markdown (`.md`) files.
+Markdown (`.md`) files are plain text files that contain formatting elements, making them more versatile than plain .txt files.
+Markdown allows you to add simple formatting like headings, lists, links, and images.
 
 ### {{< fa brands windows >}} Microsoft office files
-As said earlier, it is not recommend to track Microsoft office files using Git, since Git treats e.g. `.docx` files as binary files.
+As said earlier, it is not recommended to track Microsoft office files using Git, since Git treats e.g. `.docx` files as binary files.
 Binary files lack the inherent structure that allows Git to capture and display changes effectively.
-Git relies on understanding the differences between versions of files. With binary files, you won't benefit from the ability to view detailed textual differences (`git diff`) or effectively use [branches](branches.qmd)
+Git relies on understanding the differences between versions of files.
+With binary files, you won't benefit from the ability to view detailed textual differences (`git diff`) or effectively use [branches](branches.qmd)
 Collaborative work on binary files, such as simultaneous editing of a Word document, may result in complex [merge conflicts](branches.qmd) that are challenging to resolve.
 
-That being said it is certainly possible to track `.doxc` files with Git.
+So while possible to track `.doxc` files with Git, you will not be able to use the many features of Git, which rely on Git being able to display the file, since Git can only output the "zeros and ones" and not the text inside the `.doxc`files.
 
-If you ever choose to do that, you need to know about temporary word files. 
+If you ever choose to track them regardless, you should use detailed commit messages, since you will not be able to easily look at the text content of past versions.
+You will also need to know about temporary word files. 
 For it´s own version control system, Word creates temporary files in the folder of your word file.
 You should not track these files using Git, since Word creates a lot of them. (And since Git should be doing your version control)
 To not stage or commit these file on accident, you can use the `.gitignore` file.
@@ -497,11 +537,13 @@ When you create a `.gitignore` file, place it inside your Git repository and spe
 Git will then exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
 
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
+Files that can recreated from the code, like e,g. `.png` plots from R code, shoul also be included in your projects `.gitignore` file.
 Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project fules without distractions from unnecessary files.
 `.gitignore` can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
-It also makes sense to include large files or temporary outputs in your `.gitignore` file.
+Huge files, like big data files should also not be committed, since they can slow down working with your repository.
+(To version control files with a big size [DataLad](https://www.datalad.org) is more appropiate.)
 
-To create a `.gitignore` file from the command line, navigate to your repo and use the `touch` command.
+To create a `.gitignore` file from the command line, navigate to your repository and use the `touch` command.
 Alternatively, create the file in your favorite text editor.
 
 ```{bash}
@@ -614,6 +656,18 @@ DESCRIPTION.meta
 ```
 :::
 
+## Bonus Exercises 
+Besides generally playing around with staging, committing `git log` and `git diff`, you can also do these tasks:
+
+- Add a receipe to your project using the `--ammend` workflow
+
+- Initialize a new Git repository and create a `doxc` file in it. 
+Check out the results of `git diff` after writing in the file.
+
+- Use `ls -a` to see the temporary files.
+Create a `.gitignore` file, where you put all temporary files Word creates. 
+
+
 ## Cheatsheet
 
 ```{r}
@@ -635,4 +689,3 @@ knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
 bibtexkeys = c("bryan2023", "community2022", "millman2018", "mcbain2019")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
-
