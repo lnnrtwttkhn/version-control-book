@@ -173,21 +173,21 @@ Here's a step-by-step guide:
 1.  Go to the main page of your GitHub repository.
 
 2.  Click on "Create a new release" under "Releases" tab located on the right side of your repository page.
-
+    You should see a page, similar to @fig-GH_releases.
+    
 3.  Choose an existing Git tag or create a new one.
+    If you have created and pushed a Tag, it should show up here.
     Enter the tag version in the "Tag version" field.
     Enter a meaningful title for your release.
-    This title will be displayed on the GitHub Releases page.
     In the "Describe this release" field, provide release notes.
     This can include details about new features, bug fixes, and any other relevant information.
-    If you have binary files, installers, or other assets related to the release, you can attach them by clicking on "Attach binaries by dropping them here or selecting them."
+    If you have binary files, installers, or other assets related to the release, you can attach them by        clicking on "Attach binaries by dropping them here or selecting them."
 
 4.  If you're creating a draft release, you can save it as a draft by clicking on the "Save draft" button.
     Draft releases are not visible to the public.
     If you're ready to make the release public, click on the "Publish release" button.
     
-    
-
+![Screenshot of GitHub.](../static/github-releases.png){#fig-GH_releases}
 
 That's it!
 You've successfully created a GitHub release for your project.
@@ -204,6 +204,29 @@ Zenodo can be integrated with version control systems like Git and platforms lik
 This integration allows for automated archiving of specific releases or tags from Git repositories.
 Zenodo assigns a Digital Object Identifier (DOI) to each record, including those linked to GitHub repositories, providing a permanent link for citation.
 By linking your GitHub repository, you also ensure that your work is archived and accessible beyond the lifespan of GitHub.
+When you publish a research paper, journals increasingly require or encourage the deposition of associated data in a public repository. 
+Uploading your GitHub repository to Zenodo ensures that your data is openly accessible and can be cited.
 
-For a pictured guide on how to upload a GitHub repository to Zenodo, you check out [this presentation](https://www.lib.uiowa.edu/data/files/2022/10/Share_and_Preserve_Your_Code_20220728.pdf) from the University of Iowa.
-If you are just testing, you should use the [Zenodo sandbox](https://sandbox.zenodo.org), to not create an unnecessary real DOI which is hard to delete.
+### Uploading your GitHub repository
+
+#### Creating a Zenodo account
+
+To upload a Git repository to Zenodo, you first a Zenodo account.
+On the Zenodo [start page](https://zenodo.org), you can click on "Sign Up" in the top right corner.
+Here you either can directly use your GitHub account to sign up, or sign up using your email (or other accounts) and link your GitHub account later on.
+
+To Link your GitHub account, you can click on the arrow, next to your email, on the start page and select "GitHub".
+
+#### Uploading a repository
+
+If you are just testing, how to upload, you should use the [Zenodo sandbox](https://sandbox.zenodo.org), to not create an unnecessary real DOI which is hard to delete.
+Your Zenodo account should work perfectly fine in the sandbo
+Please note that you will have to create a new release on GitHub, after linking your Zenodo account and syncing your repository,
+To upload an older release, you have to download your repository as a `.zip` file from GitHub and uploading it manually at [https://sandbox.zenodo.org/uploads/new](https://sandbox.zenodo.org/uploads/new)
+
+To upload a new release, visit [https://sandbox.zenodo.org/account/settings/github/](https://sandbox.zenodo.org/account/settings/github/).
+Here you should see all your uploaded repositories, with the option to sync them by selecting "on".
+If you now create a release, as discussed earlier, it will show up and be associated with a DOI.
+
+For a pictured guide on how to upload a GitHub repository to Zenodo, you check out [this guide](https://coderefinery.github.io/github-without-command-line/doi/) from the [Code Refinery](https://coderefinery.org).
+
