@@ -94,7 +94,7 @@ git tag -a v1.0 -m "Release version 1.0"
 ```
 
 Annotated tags are larger in size compared to lightweight tags due to the additional metadata.
-Creating annotated tags is a common practice for versioning releases in software projects, as the associated metadata helps provide a clear and detailed history of the project at specific points in time.
+Creating annotated tags is a common practice for versioning releases, as the associated metadata helps provide a clear and detailed history of the project at specific points in time.
 
 ::: {.callout-tip collapse="true"}
 ### Common `git tag` flags
@@ -229,4 +229,31 @@ Here you should see all your uploaded repositories, with the option to sync them
 If you now create a release, as discussed earlier, it will show up and be associated with a DOI.
 
 For a pictured guide on how to upload a GitHub repository to Zenodo, you check out [this guide](https://coderefinery.github.io/github-without-command-line/doi/) from the [Code Refinery](https://coderefinery.org).
+
+
+
+## Acknowledgements and further reading
+
+We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
+We recommend these references for further reading:
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("chacon2014", "coderefinery2023")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "Tags and Releases"), format = "markdown")
+```
 
