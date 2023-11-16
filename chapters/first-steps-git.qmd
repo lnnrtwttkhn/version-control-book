@@ -290,6 +290,17 @@ They allow you to track the history of your project and easily revert changes if
 
 You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
 
+#### Commit description
+
+Though it's not required, it can be a good idea to add a more thorough description to the commit, in addition to the (shorter) commit message.
+While the commit message is usually a single short (less than 50 character) line summarizing the change, a more through description can be used to add more background information or helpful links that may help to understand the changes of the commit.
+
+To add an additional description directly in the command line, add an extra `-m` after the commit message, followed by the description in quotes:
+
+```{bash}
+git commit -m "Title" -m "Description"
+```
+
 ::: {.callout-tip title="Common `git commit` flags" collapse="true"}
 `-m` <message>: 
 Specifies the commit message inline.
