@@ -14,7 +14,6 @@ abstract: |
 
 -   Understand why Git tags matter in version control and project management
 -   Learn when to use lightweight or annotated tags and how to apply them
--   Manage project versions effectively using tags for smooth releases
 -   Get the hang of pushing and pulling tags in Git for seamless teamwork.
 -   Explore how GitHub releases complement Git tags
 -   Discover using Zenodo to make your repository citable.
@@ -94,7 +93,6 @@ git tag -a v1.0 -m "Release version 1.0"
 ```
 
 Annotated tags are larger in size compared to lightweight tags due to the additional metadata.
-Creating annotated tags is a common practice for versioning releases, as the associated metadata helps provide a clear and detailed history of the project at specific points in time.
 
 ::: {.callout-tip collapse="true"}
 ### Common `git tag` flags
@@ -127,6 +125,11 @@ In general, it's not advisable to make changes directly after switching to a tag
 When you switch to a tag in Git, you enter a "detached HEAD" state, meaning that you're not on any branch.
 In this state, any new commits you make won't belong to any branch, and you might lose those changes if you switch away from the tag.
 If you need to make changes based on a specific tag, it's often better to create a new branch from the tag and then make your changes on that branch.
+
+A recommended practice is to treat annotated tags as suitable for public releases and Lightweight tags as more appropriate for private use. 
+Annotated tags include additional metadata such as the tagger's name, email, and date, making them valuable for public releases where comprehensive information is beneficial.
+On the other hand, Lightweight tags act as simple 'bookmarks' to a commit, serving as efficient pointers without the extra metadata. 
+They are particularly useful for creating quick links to relevant commits in a more private or internal context.
 
 ### Pushing and pulling Tags
 
