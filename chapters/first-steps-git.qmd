@@ -231,11 +231,11 @@ Changes to be committed:
 ```
 
 Your change to the file (or the addition of it to the project directory) is now **staged**.
-You do not have to add every file one by one, you can simply use the `-a` flag.
+You do not have to add every file one by one, you can simply use the `-A` flag.
 This means if you want to stage every file in your project for preparation of your next commit, you can use:
 
 ```{bash}
-git add -a
+git add -A
 ```
 
 ::: {.callout-warning title="Be careful when staging *all* files!" collapse="true"}
@@ -245,7 +245,7 @@ We recommend to use `git status` frequently to check which files are in the stag
 :::
 
 ::: {.callout-tip title="Common `git add` flags" collapse="true"}
-`-a`: 
+`-A`: 
 Adds all changes, including modifications, deletions, and new files, in the entire working tree.
 
 `-u`: 
@@ -556,7 +556,7 @@ To not stage or commit these files by accident, you can use the `.gitignore` fil
 `.gitignore` is a special file.
 It is used in Git to specify files and directories that should be ignored and not tracked.
 When you create a `.gitignore` file, place it inside your Git repository and specify filenames inside it.
-Git will then exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
+Git will then exclude these files and directories from being staged or committed, e.g. when using `git add -A`. which normally stages all your files.
 
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
 Files that can recreated from the code, like for example `.png` plots from R code, should also be included in your project's `.gitignore` file.
