@@ -360,6 +360,24 @@ Click it to provide a new, repository name and description, and then create the 
 
 ![Sreenshot of a template repository](../static/GitHub-template.png){#fig-template}
 
+## Branch Protection
+
+When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
+By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
+
+#### How to protect the Main Branch on GitHub
+
+Go to your repository on GitHub and click on "Settings."
+In the left sidebar, select "Branches." Under "Branch protection rules," click on "Add rule."
+In the "Branch name pattern" field, enter the name of your main branch.
+Enable the options you want to enforce for the main branch. Common options include:
+
+**Require pull request reviews:** Require one or more approving reviews before changes can be merged.
+
+Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.
+
+Click "Create" to save the branch protection rule.
+
 ## Alternatives to GitHub
 
 While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub. Not only since it was bought by Microsoft in 2018, who subsequently [used public repositories to train their AI tool](https://www.vice.com/en/article/g5vmgw/github-users-want-to-sue-microsoft-for-training-an-ai-tool-with-their-code)

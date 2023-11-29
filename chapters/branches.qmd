@@ -310,21 +310,3 @@ Clear and standardized branch names make it easier to identify the purpose of ea
 Create branches with a specific goal or task in mind, and aim to keep them short-lived.
 Long-lived branches can lead to conflicts and make it harder to merge changes.
 Once the task is complete or the feature is integrated, consider deleting the branch.
-
-### Branch Protection
-
-When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
-By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
-
-#### How to protect the Main Branch on GitHub
-
-Go to your repository on GitHub and click on "Settings."
-In the left sidebar, select "Branches." Under "Branch protection rules," click on "Add rule."
-In the "Branch name pattern" field, enter the name of your main branch.
-Enable the options you want to enforce for the main branch. Common options include:
-
-**Require pull request reviews:** Require one or more approving reviews before changes can be merged.
-
-Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.
-
-Click "Create" to save the branch protection rule.
