@@ -1,52 +1,24 @@
 ---
-title: "Intermediate Commands"
+abstract: |
+  In this chapter, we will look at this chapter we will be looking at some more advanced essential commands like: git stash
+author: ""
+categories: [intermediate]
 engine: knitr
 execute:
   eval: false
-title-block-style: none
-author: ""
 ---
 
-::: callout-note
-### Overview
+# Stashing and co.
 
-{{< fa clock >}} Duration: min
-:::
+## Logistics
 
-::: {.column width="100%"}
-{{< fa bullseye >}} Objectives
-
-In this chapter we will be looking at some more advanced essential commands like:
-
+### Objectives
 - Stashing and retrieving changes
 - Undoing changes/Removing files
 - Introduction to rebasing and cherry-picking
 
-:::
+## Exercises
 
-## Acknowledgements
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| output: asis
-bibtexkeys = c("chacon2014")
-knitr::kable(ref_table(bibtexkeys), format = "markdown")
-```
-
-## Cheatsheet
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
-```
-
-## {{< fa dumbbell >}} Exercises
 #### Stashing Changes:
 
 - Create a new branch called feature/stash-exercise.
@@ -124,7 +96,7 @@ You can now use `git status` to again look at your working directory and should 
 ```{bash}
 On branch main
 nothing to commit, working directory clean
-````
+```
 Now you can switch branches and work elsewhere or stop working on the project altogether.
 
 ### Retrieving stashed changes
@@ -344,3 +316,25 @@ Preserve merge commits during the rebase.
 `--autosquash`: 
 Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
 :::
+
+## Acknowledgements
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("chacon2014")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
+```
