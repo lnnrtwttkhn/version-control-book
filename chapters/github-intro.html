@@ -335,7 +335,10 @@ div.csl-indent {
   <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link" data-scroll-target="#pull-requests"><span class="header-section-number">7.14</span> Pull requests</a></li>
   <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">7.15</span> Template repositories</a></li>
   <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">7.16</span> Alternatives to GitHub</a></li>
-  <li><a href="#optional-exercise" id="toc-optional-exercise" class="nav-link" data-scroll-target="#optional-exercise"><span class="header-section-number">7.17</span> Optional exercise:</a></li>
+  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">7.17</span> Branch Protection</a>
+  <ul class="collapse">
+  <li><a href="#how-to-protect-the-main-branch-on-github" id="toc-how-to-protect-the-main-branch-on-github" class="nav-link" data-scroll-target="#how-to-protect-the-main-branch-on-github"><span class="header-section-number">7.17.1</span> How to protect the Main Branch on GitHub</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/github-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/github-intro.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -747,15 +750,15 @@ Common git blame flags
 <p>Some prominent options include <a href="https://about.gitlab.com/de-de/">GitLab</a>, <a href="https://bitbucket.org">Bitbucket</a>, and <a href="https://sourceforge.net">SourceForge</a>.</p>
 <p>Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in. On the other hand there are also advanteges to GitHub like it`s relatively easy to use Interface, the rich ecosystem and it´s extensive integration to third party tools.</p>
 </section>
-<section id="optional-exercise" class="level2" data-number="7.17">
-<h2 data-number="7.17" class="anchored" data-anchor-id="optional-exercise"><span class="header-section-number">7.17</span> Optional exercise:</h2>
-<ol type="1">
-<li><p>Fork the repository of this book from: https://github.com/lnnrtwttkhn/version-control-book</p></li>
-<li><p>Clone the forked repository to your computer</p></li>
-<li><p>Write your name below.</p></li>
-<li><p>Open a pull request.</p></li>
-</ol>
-<p>Names:</p>
+<section id="branch-protection" class="level2" data-number="7.17">
+<h2 data-number="7.17" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">7.17</span> Branch Protection</h2>
+<p>When using Git hosting platforms like GitHub or GitLab, it’s a good idea to enable branch protection rules for your critical branch(es), typically your <code>main</code> or <code>master</code> branch. By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.</p>
+<section id="how-to-protect-the-main-branch-on-github" class="level3" data-number="7.17.1">
+<h3 data-number="7.17.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">7.17.1</span> How to protect the Main Branch on GitHub</h3>
+<p>Go to your repository on GitHub and click on “Settings.” In the left sidebar, select “Branches.” Under “Branch protection rules,” click on “Add rule.” In the “Branch name pattern” field, enter the name of your main branch. Enable the options you want to enforce for the main branch. Common options include:</p>
+<p><strong>Require pull request reviews:</strong> Require one or more approving reviews before changes can be merged.</p>
+<p>Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.</p>
+<p>Click “Create” to save the branch protection rule.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -769,6 +772,7 @@ GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en"
 The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: The process documents and data are made available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>. Software are made available under an <a href="https://opensource.org/license/mit/">MIT license</a>. Website: <a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
