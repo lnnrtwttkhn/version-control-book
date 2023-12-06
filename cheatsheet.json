@@ -49,7 +49,20 @@
   },
   "stashing": {
     "git stash": "Stores made changes for later use",
-    "git rm": "Removes tracked files from your directory",
+    "git stash -m stashing message": "Stashes your changes and includes a message",
+    "git stash list":"Shows all of your stored stashes", 
+    "git stash apply": "Applies your latest stash",
+    "git stash apply stash@{n}": "Applies a specific stash",
+    "git stash pop": "Applies your latest stash and removes it from stash list",
+    "git stash pop stash@{n}": "Applies a specific stash and removes it from stash list",
+    "git restore <file>": "Reverts <file> back to the state of your last commit",
+    "git restore .": "Reverts all files in your repository back to the state of your last commit",
+    "git restore --staged <file>": "Removes <file> from your staging area",
+    "git restore --staged .": "Removes all files in your repository from your staging area",
+    "git rm <file>": "Deletes <file> from your repository",
+    "git rm --cached <file>": "Removes <file> from your repository but keeps  <file> on your system",
+    "git revert <commithash>": "Creates a new commit which reverts your repository back to <commithash>",
+    "git cherry-pick <commithash>": "Applies changes from <commithash>",
     "git clean": "Deletes untracked files from your directory",
     "git rebase": "Different way of integrating changes from two branches"
   }
