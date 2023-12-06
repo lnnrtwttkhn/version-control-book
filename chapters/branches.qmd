@@ -227,10 +227,86 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 Git will highlight the conflicting parts in the affected file(s), and you must choose the desired changes or modify them to create a consistent version. 
 To do this, open up the file(s) with conflicts in a text editor, and you'll see the conflicting sections marked with `<<<<<<<`, `=======`, and `>>>>>>>`.
-Manually edit the conflicting sections to the desired state, removing the conflict markers. 
-Decide which changes to keep and which to discard.
 
-After editing the file, save it and use `git add` to stage the resolved changes:
+This might look something like this:
+
+```
+<<<<<<< HEAD
+# Recipe: Chocolate Cake
+
+Ingredients:
+- 2 cups all-purpose flour
+- 1 3/4 cups granulated sugar
+- 3/4 cup unsweetened cocoa powder
+- ...
+
+Instructions:
+1. Preheat the oven to 350°F (175°C).
+2. In a large bowl, whisk together dry ingredients.
+3. Add eggs, milk, oil, and vanilla. Beat well.
+4. Stir in boiling water.
+5. Pour into prepared pans.
+=======
+# Recipe: Chocolate Brownies
+
+Ingredients:
+- 1 cup unsalted butter
+- 2 cups granulated sugar
+- 4 large eggs
+- ...
+
+Instructions:
+1. Preheat the oven to 350°F (175°C).
+2. Melt butter, then stir in sugar, eggs, and vanilla.
+3. Combine dry ingredients and gradually add to the butter mixture.
+4. If desired, fold in chopped nuts.
+5. Spread the batter evenly into the prepared pan.
+>>>>>>> 
+```
+The lines between `<<<<<<< HEAD` and `=======` represent the changes that were made in your current branch.
+he section between `=======` and `>>>>>>>` represents the changes from the branch you are trying to merge into your current branch.
+
+Manually edit the conflicting sections to the desired state, removing the conflict markers. 
+You might want to keep some changes from your current branch, some from the incoming branch, or make entirely new changes.
+
+After editing the file it might look something like this:
+
+```
+# Recipe: Chocolate Cake
+
+Ingredients:
+- 2 cups all-purpose flour
+- 1 3/4 cups granulated sugar
+- 3/4 cup unsweetened cocoa powder
+- ...
+
+Instructions:
+1. Preheat the oven to 350°F (175°C).
+2. In a large bowl, whisk together dry ingredients.
+3. Add eggs, milk, oil, and vanilla. Beat well.
+4. Stir in boiling water.
+5. Pour into prepared pans.
+
+# Recipe: Chocolate Brownies
+
+Ingredients:
+- 1 cup unsalted butter
+- 2 cups granulated sugar
+- 4 large eggs
+- ...
+
+Instructions:
+1. Preheat the oven to 350°F (175°C).
+2. Melt butter, then stir in sugar, eggs, and vanilla.
+3. Combine dry ingredients and gradually add to the butter mixture.
+4. If desired, fold in chopped nuts.
+5. Spread the batter evenly into the prepared pan.
+
+```
+In this example, the conflict has been resolved by keeping both sets of changes. 
+The sections for "Chocolate Cake" and "Chocolate Brownies" are now both present in the file.
+
+If you are done, save the file and use `git add` to stage the resolved changes:
 
 ```{bash}
 git add example.txt
