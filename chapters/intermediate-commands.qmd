@@ -184,6 +184,12 @@ git restore <file>
 
 Please note that it may not be possible to undo the restore, since Git does not keep track of the state before the restore operation.
 
+It is also possible to revert all files in your repository to the state of your last commit using:
+
+```{bash}
+git restore .
+```
+
 ### Unstaging files
 
 You can also use `git restore` with the `--staged` flag to unstage files, you have previously added to the staging area.
@@ -192,6 +198,12 @@ This can be useful when you accidentally staged files or want to reorganize your
 ```{bash}
 git restore --staged <file>
 ```
+
+Or:
+```{bash}
+git restore --staged .
+```
+
 
 ### Deleting files
 
