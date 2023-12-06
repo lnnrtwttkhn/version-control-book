@@ -1,6 +1,6 @@
 ---
 abstract: |
-  In this chapter, we will look at this chapter we will be looking at some more advanced essential commands like: git stash
+  In this chapter, we will look at some more advanced essential commands, including stashing, reverting and rebasing
 author: ""
 categories: [intermediate]
 engine: knitr
@@ -8,64 +8,60 @@ execute:
   eval: false
 ---
 
-# Stashing and co.
+# Stashing and Co.
 
 ## Logistics
 
-### Objectives
-- Stashing and retrieving changes
-- Undoing changes/Removing files
-- Introduction to rebasing and cherry-picking
+### Learning objectives
 
-## Exercises
+In this chapter, you will learn more advanced operations in Git including:
 
-#### Stashing Changes:
+:bulb: Stashing and retrieving changes<br>
+:bulb: Undoing changes and removing files<br>
+:bulb: Rebasing and cherry-picking
 
-- Create a new branch called feature/stash-exercise.
+### Exercises
 
-- Make changes to two different files in your project directory.
+#### Stashing
 
-- Stash your changes without adding a message.
+1.    Create a new branch called `feature/stash-exercise`.
+1.    Make changes to two different files in your project directory.
+1.    Stash your changes without adding a message.
+1.    Use `git status` to verify that your working directory is clean.
+1.    Apply the stash to your working directory and verify that your changes are restored.
 
-- Use git status again to check that your working directory is clean.
+#### Reverting
 
-- Apply the stash to your working directory and verify that your changes are restored.
+1.    Create a new branch called `feature/revert-exercise`.
+1.    Make changes and commit these to your file.
+1.    Use `git revert` to revert the most recent commit, specifying its hash.
 
-#### Git revert
-- Create a new branch called feature/revert-exercise.
+#### Rebasing
 
-- Make changes and commit these to your file.
+1.    Create a new branch called `feature/rebase-exercise`.
+1.    Make three commits with minor changes on the `feature/rebase-exercise` branch.
+1.    Switch to the `main` branch and make additional changes.
+1.    Rebase the `feature/rebase-example` branch onto the `main` branch using `git rebase main`.
+1.    Check the commit history with `git log` to see the updated order of commits.
 
-- Use git revert to revert the most recent commit, specifying its hash.
+## Stashing changes for later use
 
-#### Rebasing:
-
-- Create a new branch called feature/rebase-example.
-
-- Make a three commits with minor changes on the feature/rebase-example branch.
-
-- Switch to the main branch and make additional changes.
-
-- Rebase feature/rebase-example onto main using `git rebase main`.
-
-- Check the commit history with git log to see the updated order of commits.
-
-
-## Stashing things for later use
-`Git stash` is a valuable command in Git that allows you to save your current changes temporarily without committing them.
+`git stash` is a valuable command in Git that allows you to save your current changes temporarily without committing them.
 This is useful when you need to switch branches or work on something else without creating a commit for unfinished work.
 For example, when you're working on a feature and you need to switch to a different task quickly or your work gets interrupted unexpectedly, you may not want to commit your unfinished changes.
-When you run git stash, Git stores the changes in your working directory and staged changes in a special stash commit.
-The working directory is then reverted to the last committed state, providing a clean slate for your next task
+When you run `git stash`, Git stores the changes in your working directory and staged changes in a special stash commit.
+The working directory is then reverted to the last committed state, providing a clean slate for your next task.
 
 ### Stashing changes
-To demonstrate the usefulness of `git stash`, you can edit one or more files in your repo, stage or don´t stage yor changes, but don´t commit them.
+
+To demonstrate the usefulness of `git stash`, you can edit one or more files in your repository, stage or don't stage your changes, but don't commit them.
 Now use `git status` to look at your working directory.
 
 ```{bash}
 git status
 ```
-should get an output similar to:
+
+Yo should get an output similar to:
 
 ```{bash}
 Changes to be committed:
@@ -80,44 +76,55 @@ Changes not staged for commit:
 	modified:   example.txt   
 ```
 
-In this example, there are changes on two tracked files, one staged ,one unstaged that we want to stash.
-Just like when committing, it is possible to add a message when stash using the `-m` flag.
+In this example, there are changes on two tracked files, one staged and one not staged, that we want to stash.
+Just like when committing, it is possible to add a message when stashing using the `-m` flag.
 It makes sense to add a message because it serves as a reminder of what changes were stashed, making it easier to identify the purpose of the stash when you later list or apply stashes.
 
 ```{bash}
 git stash -m "feature X WIP"
 ```
-should get an output similar to:
+
+You should get an output similar to:
 
 ```{bash}
 Saved working directory and index state On feature: "feature X WIP"
 ```
-You can now use `git status` to again look at your working directory and should see an output similar to:
+
+You can now use `git status` to look at your working directory again and should see an output similar to:
+
 ```{bash}
 On branch main
 nothing to commit, working directory clean
 ```
-Now you can switch branches and work elsewhere or stop working on the project altogether.
+
+Now you can switch branches and work on something else or stop working on the project altogether.
 
 ### Retrieving stashed changes
+
 If you want to reapply your changes, you can use `git stash apply`. 
 To look at all your stored stashes, you can use `git stash list`.
+
 ```{bash}
 git stash list
 ```
-should get an output similar to:
+
+You should get an output similar to:
+
 ```{bash}
 stash@{0}: On feature: feature X WIP
 ```
+
 All of your stored stashes should show up, with the most recent on top.
 Every stash should have a number, applied chronologically.
 `git stash apply` automatically applies your latest stash.
-You can also specify a stored stash, e.g. ` git stash apply stash@{3}`
+You can also specify a stored stash, for example `git stash apply stash@{3}`
 
 ```{bash}
 git stash apply stash@{3}
 ```
-should get an output similar to:
+
+You should get an output similar to:
+
 ```{bash}
 On branch main
 Changes not staged for commit:
@@ -131,89 +138,104 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 The changes made in your stored stashed are now applied again in your working directory.
-Notice that your already staged files, are not automatically staged again.
+Note that already staged files are not automatically staged again.
 
+::: {.callout-tip title="Common `git stash` flags" collapse="true"}
+`git stash -m "message"`:
+Save your changes in a stash with a message.
 
-::: {.callout-tip collapse="true"}
-### Common git stash flags
-
-`git stash -m "message"`: 
-Save your changes in a stash with an  message.
-
-`git stash apply stash@{n}`: 
-Apply the changes from the specified stash (identified by its index n) to your working directory.
+`git stash apply stash@{n}`:
+Apply the changes from the specified stash (identified by its index `n`) to your working directory.
 
 `git stash pop stash@{n}`:
-Apply the changes from the specified stash (identified by its index n) to your working directory and remove the stash from the stash list.
+Apply the changes from the specified stash (identified by its index `n`) to your working directory and remove the stash from the stash list.
 
-`git stash list`: 
+`git stash list`:
 List all the stashes you have created, showing their reference numbers and stash messages.
 
-`git stash drop stash@{n}`: 
-Remove the specified stash (identified by its index n) from the stash list. 
+`git stash drop stash@{n}`:
+Remove the specified stash (identified by its index `n`) from the stash list. 
 
-`git stash branch <branchname>`: 
-Create a new branch named <branchname> from the commit where you originally stashed your changes and apply the stash to the new branch.
+`git stash branch <branchname>`:
+Create a new branch named `<branchname>` from the commit where you originally stashed your changes and apply the stash to the new branch.
 
 `git stash show stash@{n}`: 
-Show the diff of the changes stored in the specified stash (identified by its index n).
+Show the diff of the changes stored in the specified stash (identified by its index `n`).
 
 :::
 
 ## Removing changes or files
-### Discarding changes in the working directory: 
+
+::: {.callout-warning title="Be careful about data loss!"}
+This section introduces Git commands that may delete changes in your repository beyond recovery.
+Especially if you apply them for the first time, take your time and only execute a command if you are certain about its consequences.
+Better yet, experiment with these commands in a separate test repository, not in a repository where you keep your most important work.
+:::
+
+### Discarding changes in the working directory
+
 Sometimes you might want to revert files back to the state of your last commit.
-This could e.g. be useful when you realizet hat the recent changes you made to the script have introduced a bug 
+For example, this can be useful when you realize that the recent changes you made to a file have introduced an error.
 You can use `git restore` to discard changes in the working directory and revert the files to the state they were in when you last committed them.
+
 ```{bash}
 git restore <file>
 ```
+
 Please note that it may not be possible to undo the restore, since Git does not keep track of the state before the restore operation.
 
 ### Unstaging files
+
 You can also use `git restore` with the `--staged` flag to unstage files, you have previously added to the staging area.
 This can be useful when you accidentally staged files or want to reorganize your commit.
+
 ```{bash}
 git restore --staged <file>
 ```
+
 ### Deleting files
-If you want to delete files from your filesystem and your git repository, it makes sense to use the `git rm` command.
-This command  removes files from your working directory and automatically stages this change for your next commit.
+
+If you want to delete files from your computer and your Git repository, you can use the `git rm` command.
+This command removes files from your working directory and automatically stages this change for your next commit.
 The workflow would go like this:
 
 ```{bash}
-git rm <file>
+git rm <FILE>
 ```
 
 ```{bash}
-git commit -m "deleted file XY"
+git commit -m "Delete file <FILE>"
 ```
-::: {.callout-tip collapse="true"}
-### Common git rm flags
-`-f` or `--force`: 
+
+::: {.callout-tip title="Common `git rm` flags" collapse="true"}
+
+`-f` or `--force`:
 This flag forces the removal of files, even if they are modified.
 
-`-r` or `--recursive`: 
+`-r` or `--recursive`:
 Use this flag to remove directories and their contents. 
 
-`--cached`: 
+`--cached`:
 This flag removes files from the staging area but preserves them in the working directory. 
 
-`-n` or `--dry-run`: 
+`-n` or `--dry-run`:
 With this flag, Git will only show you what would be removed but will not actually perform the deletion. 
+
 :::
 
 ### "Untracking" files
+
 Sometimes, you may have files, in your Git repository that you no longer want to track or include in future commits, but want to keep in your local filesystem.
-It makes sense to include these files in your .gitignore file, as discussed in the [First steps chapter](First-Steps-Git.qmd)
-You could also use `git rm` with the `--cached`flag.
+It makes sense to include these files in a `.gitignore` file, as discussed in the chapter on [first steps with Git](first-steps-git.qmd).
+You could also use `git rm` in combination with the `--cached` flag.
 
 ```{bash}
 git rm --cached <file>
 ```
 
-### Git revert
-The `Git revert` command is used to create a new commit that undoes the changes made by a previous commit.
+### Reverting commits
+
+The `git revert` command is used to create a **new commit that undoes the changes made in a previous commit**.
 It's a way to safely reverse the effects of a specific commit without actually removing that commit from the commit history. 
 It requires specifying the commit hash you want to revert.
 To look at the hashes of your commits, you can use the `git log` command.
@@ -227,52 +249,56 @@ This will create a new commit that effectively undoes the changes made in the sp
 This new commit will have the opposite changes, effectively canceling out the changes from the original commit.
 You might need to resolve a merge conflict, if the changes you want to revert conflict with changes in subsequent commits.
 By default the commit message will be `revert <commit message of reverted commit>`. 
-However Git will open an editor for you to change this message, if you don´t specify otherwise.
+However, Git will open an editor for you to change this message, if you don't specify it otherwise.
 
 ::: {.callout-tip collapse="true"}
 ### What are hashes?
 In Git, a commit hash, also known as a commit ID or SHA-1 hash, is a unique identifier for a specific commit in a Git repository.
-It's a 40-character hexadecimal string that represents the contents and history of that commit. Each commit in a Git repository has a unique hash.
+It's a 40-character hexadecimal string that represents the contents and history of that commit.
+Each commit in a Git repository has a unique hash.
 :::
 
-::: {.callout-tip collapse="true"}
-### Common git revert flags
+::: {.callout-tip title="Common `git revert` flags" collapse="true"}
+
 `-n` or `--no commit`:
 Prevents Git from automatically creating a new commit after reverting changes. 
 It stages the changes, allowing you to make additional modifications or review them before committing.
 
-`-m <parent-number>`: 
+`-m <parent-number>`:
 When dealing with a merge commit, this flag specifies which parent commit to use as the source for reverting. 
 By default, Git uses the first parent (main branch), but you can specify another parent by providing its number.
 
-`--no-edit`: 
+`--no-edit`:
 This flag prevents the text editor from opening for editing the commit message, making it useful when you want to keep the default commit message.
 :::
 
 ## Alternatives to standard merging
 
-### Git Cherry Pick
+### Cherrypicking
+
 `git cherry-pick` allows you to apply the changes from a specific commit from one branch to another. 
 This means, you can pick and apply specific commits to your current branch without merging the entire branch.
 This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in @fig-cherry-pick.
-You will need the hash of the commit you want to "cherry-pick" and then use the syntax:
+You will need the hash of the commit you want to "cherry-pick" and then use the command:
 
 ```{bash}
 git cherry-pick <commithash>
 ```
+
 Again, you might have to resolve merge conflicts.
 The default commit message will be: 
+
 ```{bash}
 Cherry-pick commit <commit-hash>
 This commit was cherry-picked from <source-branch> at <source-commit-hash>
 ```
 
-![Image from [Blogpost "What IS git cherry-pick? "](https://dev.to/0xkoji/what-is-git-cherry-pick-3fka) of the [0xkoji](https://dev.to/_mohanmurali), used under a [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/) ([direct link](https://res.cloudinary.com/practicaldev/image/fetch/s--4F3hItHc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hkftpmgzz7ixtqaxldsw.jpg))](../static/cherry-pick.png){#fig-cherry-pick}
+![Image from [blogpost "What IS git cherry-pick? "](https://dev.to/0xkoji/what-is-git-cherry-pick-3fka) by [0xkoji](https://dev.to/0xkoji), used under a [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/) ([direct link](https://res.cloudinary.com/practicaldev/image/fetch/s--4F3hItHc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hkftpmgzz7ixtqaxldsw.jpg))](../static/cherry-pick.png){#fig-cherry-pick}
 
-::: {.callout-tip collapse="true"}
-### Common git cherry-pick flags
+::: {.callout-tip title="Common `git cherry-pick` flags" collapse="true"}
+
 `-n` or `--no commit`:
-Prevents Git from automatically creating a new commit after cherry-picking. 
+Prevents Git from automatically creating a new commit after cherry-picking.
 It stages the changes, allowing you to make additional modifications or review them before committing.
 
 `-e` or `--edit`: 
@@ -280,44 +306,48 @@ Opens the default text editor to edit the commit message of the new cherry-picke
 Useful when you want to provide a custom message for the cherry-picked commit.
 :::
 
+### Rebasing
 
-### Git rebase
-`git rebase` is a different way than a merge to integrate changes from one branch into another. 
-When you rebase e.g. the feature branch onto the main branch you kind of "rearrange" the commits. 
-It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
+`git rebase` is a different way compared to a standard merge to integrate changes from one branch into another. 
+For example, when you rebase the `feature` branch onto the `main` branch you "rearrange" the commits. 
+It's like taking your changes, applying them on top of the latest `main` branch, and making it all look like a smooth line. 
 The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the main branch. 
 It's like picking up your changes and placing them on the latest code, resulting in a linear history.
-Like shown in @fig-rebasing.
-
-![Image from [Blogpost "Deep dive into Git Rebase"](https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05) of the [Mohan Murali Blog](https://dev.to/_mohanmurali), used under a [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/) ([direct link](https://res.cloudinary.com/practicaldev/image/fetch/s--4F3hItHc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hkftpmgzz7ixtqaxldsw.jpg))](../static/rebasing.jpg){#fig-rebasing}
-
-However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
+For an illustration, see @fig-rebasing.
 
 ```{bash}
 git rebase main
 ```
-::: {.callout-tip collapse="true"}
-### Common git rebase flags
-`--interactive` or `-i`: 
+
+However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for team members.
+
+![Image from [Blogpost "Deep dive into Git Rebase"](https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05) by [Mohan Murali](https://dev.to/_mohanmurali), used under a [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/) ([direct link](https://res.cloudinary.com/practicaldev/image/fetch/s--4F3hItHc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hkftpmgzz7ixtqaxldsw.jpg))](../static/rebasing.jpg){#fig-rebasing}
+
+::: {.callout-tip title="Common `git rebase` flags" collapse="true"}
+
+`--interactive` or `-i`:
 Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
 
-`--continue`: 
+`--continue`:
 Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
 
-`--abort`: 
+`--abort`:
 Abort the current rebase operation and return the branch to its original state before the rebase.
 
-`--skip`: 
+`--skip`:
 Skip the current commit during an interactive rebase.
 
-`-p` or `--preserve-merges`: 
+`-p` or `--preserve-merges`:
 Preserve merge commits during the rebase.
 
 `--autosquash`: 
 Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
 :::
 
-## Acknowledgements
+## Acknowledgements & further reading
+
+We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
+We recommend these references for further reading:
 
 ```{r}
 #| eval: true
@@ -336,5 +366,5 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 #| echo: false
 #| message: false
 #| warning: false
-knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
+knitr::kable(table_cheatsheet(name = "stashing"), format = "markdown", row.names = FALSE)
 ```
