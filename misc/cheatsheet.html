@@ -198,8 +198,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/stashing-rebasing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stashing and rebasing</span></span></a>
+  <a href="../chapters/intermediate-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -473,10 +473,75 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">stashing</td>
-<td style="text-align: left;"><code>git rm</code></td>
-<td style="text-align: left;">Removes tracked files from your directory</td>
+<td style="text-align: left;"><code>git stash -m stashing message</code></td>
+<td style="text-align: left;">Stashes your changes and includes a message</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git stash list</code></td>
+<td style="text-align: left;">Shows all of your stored stashes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git stash apply</code></td>
+<td style="text-align: left;">Applies your latest stash</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git stash apply stash@{n}</code></td>
+<td style="text-align: left;">Applies a specific stash</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git stash pop</code></td>
+<td style="text-align: left;">Applies your latest stash and removes it from stash list</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git stash pop stash@{n}</code></td>
+<td style="text-align: left;">Applies a specific stash and removes it from stash list</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git restore &lt;file&gt;</code></td>
+<td style="text-align: left;">Reverts <file> back to the state of your last commit</file></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git restore .</code></td>
+<td style="text-align: left;">Reverts all files in your repository back to the state of your last commit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git restore --staged &lt;file&gt;</code></td>
+<td style="text-align: left;">Removes <file> from your staging area</file></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git restore --staged .</code></td>
+<td style="text-align: left;">Removes all files in your repository from your staging area</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git rm &lt;file&gt;</code></td>
+<td style="text-align: left;">Deletes <file> from your repository</file></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git rm --cached &lt;file&gt;</code></td>
+<td style="text-align: left;">Removes <file> from your repository but keeps <file> on your system</file></file></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git revert &lt;commithash&gt;</code></td>
+<td style="text-align: left;">Creates a new commit which reverts your repository back to <commithash></commithash></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git cherry-pick &lt;commithash&gt;</code></td>
+<td style="text-align: left;">Applies changes from <commithash></commithash></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git clean</code></td>
 <td style="text-align: left;">Deletes untracked files from your directory</td>
