@@ -1,14 +1,9 @@
 ---
-title: "GitHub Intro"
-engine: knitr
-execute:
-  eval: false
-title-block-style: none
 author: ""
-editor: 
-  markdown: 
-    wrap: sentence
+categories: [intermediate, github, remote]
 ---
+
+# GitHub
 
 ::: callout-note
 ### Overview
@@ -43,7 +38,7 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 #| echo: false
 #| message: false
 #| warning: false
-knitr::kable(table_cheatsheet(name = "github"), format = "markdown")
+knitr::kable(table_cheatsheet(name = "github"), format = "markdown", row.names = FALSE)
 ```
 
 ## {{< fa dumbbell >}} Exercises
@@ -67,6 +62,31 @@ You can use it in your browser without any downloads.
 It's a collaborative environment for software development, allowing developers to work together, manage code, and track changes.
 GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.
 
+## {{< fa brands github >}} Creating a GitHub account
+
+GitHub is a Git based website that helps developers work together on code, track changes, and share their software projects with others. This book will get into Github at a later point, but you can already create your account, if you dont already have one.
+
+1.  Open <https://github.com> in your browser
+2.  Click the `Sign up` button
+3.  Enter the required personal details
+4.  In step 2 select the free plan.
+
+::: {.callout-tip title="Choosing a Github Name" collapse="true"}
+Here are some tips for choosing a GitHub username:
+
+-   Incorporate your name.
+-   Adapt your username from other platforms.
+-   Choose a professional username for your future boss.
+-   Opt for a shorter username.
+-   Be unique and concise.
+-   Avoid references to specific institutions.
+-   Use all lowercase and hyphens for word separation.
+:::
+
+::: {.callout-tip title="GitHub student education pack" collapse="true"}
+The [GitHub Student Developer Pack](https://education.github.com/pack) is a program offered by GitHub to students, providing them with free access to a collection of valuable developer tools and services. To benefit from the pack, visit the [GitHub Education website](https://www.education.github.com) and sign up with your student email to verify your academic status. Once verified, you gain access to various resources, including [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) with unlimited private repositories, free domain names, cloud credits, coding courses, and more.
+:::
+
 ## {{< fa brands github >}} Connecting to GitHub
 
 ### Setting Account details
@@ -78,7 +98,7 @@ git config --global user.name "Example"
 git config --global user.email beispiel@example.com
 ```
 
-In the [installation chapter](installation-setup.qmd) it is explained how to create an account on [Github.com.](https://www.Github.com).
+In the [installation](installation.qmd) chapter it is explained how to create an account on [Github.com.](https://www.Github.com).
 If you did not use your GitHub account details for the setup you should change that now.
 
 ### Authentication
@@ -255,7 +275,7 @@ To view your remote tracking branches, you can use `git branch -r`
 After fetching, you can use `git switch` to review the changes on these branches.
 If you want to integrate the changes into you local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
 
-`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository wirhout making any changes to your local working directory and staging area.
+`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 
 
 ## {{< fa code-pull-request >}} Pushing
@@ -298,7 +318,7 @@ It it used to show when and by whom, each line in a specific file was last chang
 You have to specify a file when using it, so e.g.
 
 ```{bash}
-git blame receipes.txt
+git blame recipes.txt
 ```
 
 If you are working solo on a text file, the result should not be very interesting.
@@ -370,15 +390,20 @@ Some prominent options include [GitLab](https://about.gitlab.com/de-de/), [Bitbu
 Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in.
 On the other hand there are also advanteges to GitHub like it\`s relatively easy to use Interface, the rich ecosystem and it´s extensive integration to third party tools.
 
-## Optional exercise:
+## Branch Protection
 
-1.  Fork the repository of this book from: https://github.com/lnnrtwttkhn/version-control-book
+When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
+By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
 
-2.  Clone the forked repository to your computer
+### How to protect the Main Branch on GitHub
 
-3.  Write your name below.
+Go to your repository on GitHub and click on "Settings."
+In the left sidebar, select "Branches." Under "Branch protection rules," click on "Add rule."
+In the "Branch name pattern" field, enter the name of your main branch.
+Enable the options you want to enforce for the main branch. Common options include:
 
-4.  Open a pull request.
+**Require pull request reviews:** Require one or more approving reviews before changes can be merged.
 
-Names:
+Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.
 
+Click "Create" to save the branch protection rule.
