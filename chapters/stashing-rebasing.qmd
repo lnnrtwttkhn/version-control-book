@@ -12,6 +12,28 @@ author: ""
 
 {{< fa clock >}} Duration: min
 :::
+
+::: {.column width="100%"}
+{{< fa bullseye >}} Objectives
+
+- Resolving conflicts with stashed changes
+- Cleaning your working directory
+- Introduction to rebasing
+
+:::
+
+## Acknowledgements
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("chacon2014")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
 ## Cheatsheet
 
 ```{r}
@@ -19,17 +41,8 @@ author: ""
 #| echo: false
 #| message: false
 #| warning: false
-knitr::kable(table_cheatsheet(name = "Stashing and co"), format = "markdown")
+knitr::kable(table_cheatsheet(name = "stashing"), format = "markdown", row.names = FALSE)
 ```
-
-## {{< fa bullseye >}} Objectives
-- Stashing changes for later use
-
-- Resolving conflicts with stashed changes
-
-- Cleaning your working directory
-
-- Introduction to rebasing
 
 ## Exercises
 ### Stashing Changes:
@@ -114,7 +127,7 @@ If you want to reapply your changes, you can use `git stash apply`.
 To look at all your stored stashes, you can use `git stash list`.
 ```{bash}
 git stash list
-````
+```
 should get an output similar to:
 ```{bash}
 stash@{0}: On feature: feature X WIP
@@ -225,9 +238,11 @@ When you rebase the feature branch onto the main, branch you kind of "rearrange"
 It's like taking your changes, applying them on top of the latest main branch, and making it all look like a smooth line. 
 The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the master. 
 It's like picking up your changes and placing them on the latest code, resulting in a linear history.
-Like this..
-![](../static/rebasing.jpg)
-However, use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
+Like shown in @fig-rebasing.
+
+![Image from [Blogpost "Deep dive into Git Rebase"](https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05) of the [Mohan Murali Blog](https://dev.to/_mohanmurali), used under a [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/) ([direct link](https://res.cloudinary.com/practicaldev/image/fetch/s--4F3hItHc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hkftpmgzz7ixtqaxldsw.jpg))](../static/rebasing.jpg){#fig-rebasing}
+
+However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for teammates.
 
 ```{bash}
 git rebase main
@@ -253,8 +268,4 @@ Preserve merge commits during the rebase.
 Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
 :::
 
-## References:
 
-https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning
-
-https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05
