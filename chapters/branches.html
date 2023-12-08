@@ -364,7 +364,7 @@ div.csl-indent {
 <ul>
 <li>Create a new branch called <code>feature/newrecipe</code></li>
 <li>Add a new recipe to your recipe text file</li>
-<li>Merge this branch with your main branch and delete the feature branch afterwards</li>
+<li>Merge this branch with your <code>main</code> branch and delete the <code>feature</code> branch afterwards</li>
 </ul>
 </section>
 </section>
@@ -471,7 +471,7 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Aborting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The message specifies the file with modifications, and indicates an aborted branch switch due to uncommitted changes.</p>
-<p>If you want to keep your changes you should save them using the <a href="../chapters/first-steps-git.html">stage and commit workflow</a> It is also possible to temporarily stash your changes using <code>git stash</code> or delete your changes using <code>git reset</code> which will both be covered in later chapters.</p>
+<p>If you want to keep your changes you should save them using the <a href="../chapters/first-steps-git.html">stage and commit workflow</a> It is also possible to temporarily stash your changes using <code>git stash</code> or delete your changes using <code>git reset</code> which is covered in the <a href="../chapters/intermediate-commands.html">Stashing and co.</a> chapter.</p>
 </section>
 </section>
 <section id="merging-branches" class="level2" data-number="6.6">
@@ -514,14 +514,80 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">CONFLICT</span> <span class="er">(</span><span class="ex">content</span><span class="kw">)</span><span class="bu">:</span> Merge conflict in example.txt</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Automatic</span> merge failed<span class="kw">;</span> <span class="ex">fix</span> conflicts and then commit the result.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Git will highlight the conflicting parts in the affected file(s), and you must choose the desired changes or modify them to create a consistent version. To do this, open up the file(s) with conflicts in a text editor, and you’ll see the conflicting sections marked with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. Manually edit the conflicting sections to the desired state, removing the conflict markers. Decide which changes to keep and which to discard.</p>
-<p>After editing the file, save it and use <code>git add</code> to stage the resolved changes:</p>
+<p>Git will highlight the conflicting parts in the affected file(s), and you must choose the desired changes or modify them to create a consistent version. To do this, open up the file(s) with conflicts in a text editor, and you’ll see the conflicting sections marked with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
+<p>This might look something like this:</p>
+<pre><code>\&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+# Recipe: Chocolate Cake
+
+Ingredients:
+- 2 cups all-purpose flour
+- 1 3/4 cups granulated sugar
+- 3/4 cup unsweetened cocoa powder
+- ...
+
+Instructions:
+1. Preheat the oven to 350°F (175°C).
+2. In a large bowl, whisk together dry ingredients.
+3. Add eggs, milk, oil, and vanilla. Beat well.
+4. Stir in boiling water.
+5. Pour into prepared pans.
+\=======
+# Recipe: Chocolate Brownies
+
+Ingredients:
+- 1 cup unsalted butter
+- 2 cups granulated sugar
+- 4 large eggs
+- ...
+
+Instructions:
+1. Preheat the oven to 350°F (175°C).
+2. Melt butter, then stir in sugar, eggs, and vanilla.
+3. Combine dry ingredients and gradually add to the butter mixture.
+4. If desired, fold in chopped nuts.
+5. Spread the batter evenly into the prepared pan.
+\&gt;&gt;&gt;&gt;&gt;&gt;&gt; </code></pre>
+<p>The lines between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> represent the changes that were made in your current branch. The section between <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> represents the changes from the branch you are trying to merge into your current branch.</p>
+<p>Manually edit the conflicting sections to the desired state, removing the conflict markers. You might want to keep some changes from your current branch, some from the incoming branch, or make entirely new changes.</p>
+<p>After editing the file it might look something like this:</p>
+<pre><code># Recipe: Chocolate Cake
+
+Ingredients:
+- 2 cups all-purpose flour
+- 1 3/4 cups granulated sugar
+- 3/4 cup unsweetened cocoa powder
+- ...
+
+Instructions:
+1. Preheat the oven to 350°F (175°C).
+2. In a large bowl, whisk together dry ingredients.
+3. Add eggs, milk, oil, and vanilla. Beat well.
+4. Stir in boiling water.
+5. Pour into prepared pans.
+
+# Recipe: Chocolate Brownies
+
+Ingredients:
+- 1 cup unsalted butter
+- 2 cups granulated sugar
+- 4 large eggs
+- ...
+
+Instructions:
+1. Preheat the oven to 350°F (175°C).
+2. Melt butter, then stir in sugar, eggs, and vanilla.
+3. Combine dry ingredients and gradually add to the butter mixture.
+4. If desired, fold in chopped nuts.
+5. Spread the batter evenly into the prepared pan.
+</code></pre>
+<p>In this example, the conflict has been resolved by keeping both sets of changes. The sections for “Chocolate Cake” and “Chocolate Brownies” are now both present in the file.</p>
+<p>If you are done, save the file and use <code>git add</code> to stage the resolved changes:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once all conflicts are resolved, proceed with the commit, for example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Your branches should now be merged and your conflict resolved.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
@@ -550,25 +616,25 @@ Common <code>git merge</code> flags
 <h4 data-number="6.7.3.1" class="anchored" data-anchor-id="standard-merge"><span class="header-section-number">6.7.3.1</span> Standard merge</h4>
 <p>In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original time stamps. It creates a new “merge commit”, a special record that marks when the merge happened, showing that the branches are now combined. To perform a standard merge, use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="fast-forward-merge" class="level4" data-number="6.7.3.2">
 <h4 data-number="6.7.3.2" class="anchored" data-anchor-id="fast-forward-merge"><span class="header-section-number">6.7.3.2</span> Fast Forward Merge</h4>
 <p>If no new commits were made to the base branch since the feature was created, Git automatically does a “Fast Forward Merge”. It’s like the standard merge, but no new merge commit is created. It’s as if you made the commits directly on the base branch. Since the base branch remained unchanged, there’s no need to mark a separate merge in the history. You can ensure a fast-forward merge by using the <code>--ff-only</code> flag:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you do not want a fast-forward merge, you can ensure a merge commit with the <code>--no-ff</code> flag.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="squash-and-merge" class="level4" data-number="6.7.3.3">
 <h4 data-number="6.7.3.3" class="anchored" data-anchor-id="squash-and-merge"><span class="header-section-number">6.7.3.3</span> Squash and Merge</h4>
 <p>When you squash a branch, Git combines all commits of the branch into a single commit. This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately. Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--squash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--squash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -598,11 +664,11 @@ Common <code>git merge</code> flags
 <h2 data-number="6.8" class="anchored" data-anchor-id="deleting-branches"><span class="header-section-number">6.8</span> Deleting Branches</h2>
 <p>Once a branch has served its purpose and is no longer needed, it can be deleted. Removing branches that are no longer active helps maintain a clean and manageable branch structure. To delete a branch you can use the <code>git branch</code> command, followed by a <code>-d</code> flag.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This should yield an output similar to:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Deleted</span> branch feature <span class="er">(</span><span class="ex">was</span> 3343f36<span class="kw">)</span><span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Deleted</span> branch feature <span class="er">(</span><span class="ex">was</span> 3343f36<span class="kw">)</span><span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can only delete a branch, you are not currently on.</p>
 </section>
