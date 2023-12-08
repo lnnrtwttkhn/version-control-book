@@ -17,12 +17,11 @@ abstract: |
 :bulb: Creating and switching between branches<br>
 :bulb: Merging branches and resolving conflicts
 
-
 ### Exercises 
 
 -   Create a new branch called `feature/newrecipe` 
 -   Add a new recipe to your recipe text file
--   Merge this branch with your main branch and delete the feature branch afterwards
+-   Merge this branch with your `main` branch and delete the `feature` branch afterwards
 
 ## Why branches?
 
@@ -231,7 +230,7 @@ To do this, open up the file(s) with conflicts in a text editor, and you'll see 
 This might look something like this:
 
 ```
-<<<<<<< HEAD
+\<<<<<<< HEAD
 # Recipe: Chocolate Cake
 
 Ingredients:
@@ -246,7 +245,7 @@ Instructions:
 3. Add eggs, milk, oil, and vanilla. Beat well.
 4. Stir in boiling water.
 5. Pour into prepared pans.
-=======
+\=======
 # Recipe: Chocolate Brownies
 
 Ingredients:
@@ -261,10 +260,11 @@ Instructions:
 3. Combine dry ingredients and gradually add to the butter mixture.
 4. If desired, fold in chopped nuts.
 5. Spread the batter evenly into the prepared pan.
->>>>>>> 
+\>>>>>>> 
 ```
+
 The lines between `<<<<<<< HEAD` and `=======` represent the changes that were made in your current branch.
-he section between `=======` and `>>>>>>>` represents the changes from the branch you are trying to merge into your current branch.
+The section between `=======` and `>>>>>>>` represents the changes from the branch you are trying to merge into your current branch.
 
 Manually edit the conflicting sections to the desired state, removing the conflict markers. 
 You might want to keep some changes from your current branch, some from the incoming branch, or make entirely new changes.
