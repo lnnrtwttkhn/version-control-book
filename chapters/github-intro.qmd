@@ -126,11 +126,9 @@ Make sure to copy it as it won't be shown again.
 The first time you try to interact with a remote repository, you will get asked for a password. 
 **Paste this key as a password into the terminal to proceed.**
 
-## {{< fa folder-closed >}} GitHub Repositories
+## {{< fa folder-closed >}} Creating a GitHub repository
 
-### Creating a Repository
-
-#### Starting from Scratch
+### Starting from Scratch
 
 Creating a new GitHub repository is a simple process.
 
@@ -162,7 +160,7 @@ It's great for networking and collaboration.
 If you're not sure how to start, take a look at other people's README.md files for inspiration.
 :::
 
-#### Uploading an existing folder
+### Uploading an existing folder
 
 To initialize an existing folder as a GitHub repository, you first need to create a new repository, like explained above.
 You will then need to initialize the folder as a Git repository using `git init`.
@@ -199,21 +197,7 @@ It tells Git to remember the remote branch to which your local branch should be 
 `git remote rename <old-name> <new-name>:` Renames a remote repository from old-name to new-name.
 :::
 
-## {{< fa code-fork >}} Forking a Repository
-
-Forking a repository on GitHub allows you to create a personal copy of the project under your GitHub account.
-
-This separate copy includes all files, commit history, and branches.
-Forking is commonly used when you want to contribute to a project without directly modifying the original repository. 
-It enables you to make changes independently, create new branches, and push modifications to your forked repository. You can also submit changes to the original repository through pull requests.
-
-By clicking the **Fork** button on a repository page, shown in @fig-forking, you create an identical copy in your GitHub account.
-
-![Screenshot of a repository with fork button](../static/GitHub-forking.png){#fig-forking}
-
-Once the forking process is complete, you can clone the repository to your local machine using the git clone command if you want to edit it.
-
-## {{< fa clone >}} Cloning a Repository
+### {{< fa clone >}} Cloning a Repository
 
 Cloning refers to creating a local copy of a repository from GitHub onto your own computer.
 When you clone a repository, you download all of its files, commit history, and branches to your local machine.
@@ -347,33 +331,6 @@ This syntax allows you to push a specific local branch to a specific remote bran
 Example: `git push origin my_local_branch:my_remote_branch`
 :::
 
-## Git blame
-
-The command `git blame` is useful when you are working on a project with multiple collaborators. 
-It it used to show when and by whom, each line in a specific file was last changed.
-You have to specify a file when using it, so e.g.
-
-```{bash}
-git blame recipes.txt
-```
-
-If you are working solo on a text file, the result should not be very interesting.
-However if you collaborate on code, this command can be very useful (for blame **or** praise!)
-
-::: {.callout-tip title="Common git blame flags" collapse="true"}
-`-L <start>,<end>`:
-Specifies a line range to blame. For example, `git blame -L 10,20 file.txt` will blame lines 10 to 20 of the file.
-
-`-M`:
-Detects lines that were moved within the file and shows the original author's information.
-
-`-e`:
-Shows the author's email address in addition to their name.
-
-`-t`: 
-Shows the commit timestamp for each line.
-:::
-
 ## Pull requests
 
 Pull request serves as a request for code review and integration into a project's codebase, enabling collaboration and ensuring code quality before changes are merged. 
@@ -405,7 +362,51 @@ In this scenario, contributors work directly within the main repository, creatin
 After completing the changes in the branch, they create a pull request from that branch to the main repository's default branch (e.g., main/master). 
 The workflow for this, is the same as for opening a pull request for a forked repository.
 
-## Template repositories
+## Extra Features
+
+### Forking a Repository
+
+Forking a repository on GitHub allows you to create a personal copy of the project under your GitHub account.
+
+This separate copy includes all files, commit history, and branches.
+Forking is commonly used when you want to contribute to a project without directly modifying the original repository. 
+It enables you to make changes independently, create new branches, and push modifications to your forked repository. You can also submit changes to the original repository through pull requests.
+
+By clicking the **Fork** button on a repository page, shown in @fig-forking, you create an identical copy in your GitHub account.
+
+![Screenshot of a repository with fork button](../static/GitHub-forking.png){#fig-forking}
+
+Once the forking process is complete, you can clone the repository to your local machine using the git clone command if you want to edit it.
+
+
+### Git blame
+
+The command `git blame` is useful when you are working on a project with multiple collaborators. 
+It it used to show when and by whom, each line in a specific file was last changed.
+You have to specify a file when using it, so e.g.
+
+```{bash}
+git blame recipes.txt
+```
+
+If you are working solo on a text file, the result should not be very interesting.
+However if you collaborate on code, this command can be very useful (for blame **or** praise!)
+
+::: {.callout-tip title="Common git blame flags" collapse="true"}
+`-L <start>,<end>`:
+Specifies a line range to blame. For example, `git blame -L 10,20 file.txt` will blame lines 10 to 20 of the file.
+
+`-M`:
+Detects lines that were moved within the file and shows the original author's information.
+
+`-e`:
+Shows the author's email address in addition to their name.
+
+`-t`: 
+Shows the commit timestamp for each line.
+:::
+
+### Template repositories
 
 Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others. 
 Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. 
@@ -415,7 +416,7 @@ Click it to provide a new, repository name and description, and then create the 
 
 ![Screenshot of a template repository](../static/GitHub-template.png){#fig-template}
 
-## Branch Protection
+### Branch Protection
 
 When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
 By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
@@ -433,7 +434,7 @@ Optionally, you can enable other protections, such as preventing force pushes or
 
 Click "Create" to save the branch protection rule.
 
-## Alternatives to GitHub
+### Alternatives to GitHub
 
 While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub. Not only since it was bought by Microsoft in 2018, who subsequently [used public repositories to train their AI tool](https://www.vice.com/en/article/g5vmgw/github-users-want-to-sue-microsoft-for-training-an-ai-tool-with-their-code)
 
