@@ -18,9 +18,17 @@ abstract: |
 
 ### Exercises
 
--   Upload your recipe repository to GitHub
--   Add a new recipe on Github, commit and pull the changes to your local folder.
--   Add a recipe on your local file and push the changes to GitHub.
+#### Upload your recipe repository to GitHub
+
+- Create a new repository on GitHub.
+- Set the remote URL to your GitHub repository.
+- Push your changes to GitHub.
+
+#### Clone your repository; push and pull
+
+- Clone your uploaded  repository to a different path on your machine.
+- Make changes and push them to GitHub.
+- Pull the changes into your original repository.
 
 ## What are remote repositories
 
@@ -126,11 +134,9 @@ Make sure to copy it as it won't be shown again.
 The first time you try to interact with a remote repository, you will get asked for a password. 
 **Paste this key as a password into the terminal to proceed.**
 
-## {{< fa folder-closed >}} Creating a GitHub repository
+## {{< fa folder-closed >}} GitHub repositories
 
-### Starting from Scratch
-
-Creating a new GitHub repository is a simple process.
+### Creating a GitHub repository
 
 To create a new repository, click on the "**+**" sign in the top-right corner of the GitHub page.
 From the dropdown menu, select **New repository**."
@@ -160,7 +166,7 @@ It's great for networking and collaboration.
 If you're not sure how to start, take a look at other people's README.md files for inspiration.
 :::
 
-### Uploading an existing folder
+### Uploading your repository
 
 To initialize an existing folder as a GitHub repository, you first need to create a new repository, like explained above.
 You will then need to initialize the folder as a Git repository using `git init`.
@@ -171,6 +177,7 @@ To add your folder as a remote repository, navigate to your folder using the com
 ```{bash}
 git remote add origin https://github.com/yourusername/repositoryname.git
 ```
+
 This command is essentially saying: "Add a remote repository named 'origin,' and the location (URL) of that remote repository is 'https://github.com/yourusername/repositoryname.git'." After running this command, your local Git repository will be aware of the remote repository, and you can push and pull changes between your local repository and the one on GitHub.
 
 The term "origin" is a conventionally used name for the default remote repository. It's a standard name, but you could technically choose another name if you prefer. 
