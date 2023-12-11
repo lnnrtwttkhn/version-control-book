@@ -224,6 +224,16 @@ You can now work with the files in the repository, make changes, and commit your
 Remember to use the appropriate Git commands like git add, git commit, and git push to manage your changes and synchronize them with the remote repository as needed.
 By default, `git clone` will create a reference to the remote repository called origin, so you do not have to use `git remote` to create a remote repository.
 
+### Repository settings
+
+To access the settings of a GitHub repository, go to the main page of the GitHub repository you want to configure and look for the "Settings" tab, usually located towards the right side of the repository's navigation bar.
+Once you're on the repository settings page, you'll find various sections on the left sidebar that allow you to configure different aspects of the repository, such as "General," "Branches," or "Collaborators".
+
+In the "General" section you can e.g. easily rename your repository or defaul branch, change the repositories visibility or delete your repository.
+
+In the "Collaborators" tab, it is possible to add accounts which can view or change your repository, even if it is private. 
+For a detailed guide on the repository settings, you can check out the [GitHub documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features).
+
 ## {{< fa code-pull-request >}} Pulling
 
 The `git pull` command is used to fetch the latest changes from a remote repository and merge them into your local branch.
@@ -425,7 +435,7 @@ Click it to provide a new, repository name and description, and then create the 
 
 ### Branch Protection
 
-When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
+When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` branch.
 By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.
 
 #### How to protect the Main Branch on GitHub
