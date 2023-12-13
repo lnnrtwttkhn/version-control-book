@@ -92,18 +92,26 @@ Once verified, you gain access to various resources, including [GitHub Pro](http
 ### Setting account details
 
 To be able to integrate Github in your workflow, you will need to to connect your account with your local Git.
-As discussed in the [setup chapter](setup.qmd), you can set an username and an email for Git using:
+
+Your Git username doesn't have to be the same as your GitHub username, but it's a good idea to keep them alike. This helps when checking who did what in the repository history or pull requests on GitHub.
+
+As for your email, it also doesn't have to match the one you used for GitHub, but it's practical to use the same email to track contributions better.
+
+To set things up:
+Use this command to set your Git username:
 
 ```{bash}
-git config --global user.name "Jane Doe"
-git config --global user.email jane.doe@example.com
+git config --global user.name "YourGitHubUsername"
 ```
 
-Your Git username does not have to match your GitHub username, but it does make a lot of sense to set your Git username as your GitHub username.
-This is so it is clear who made which contributions when viewing the repository's history or pull requests on GitHub.
+Use this command to set your Git email:
 
-Your email has to match you used to create your GitHub account, so you can login and authenticate yourself to GitHub. 
-If you did not set the email you used to create your GitHub account for the setup you should change that now.
+```{bash}
+git config --global user.email "you@example.com"
+```
+
+Replace "you@example.com" with the email you used for GitHub.
+Doing this makes it clearer who contributed what and helps link your Git commits to your GitHub profile."
 
 ### Authentication
 
