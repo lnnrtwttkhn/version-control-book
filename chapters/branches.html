@@ -55,26 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -95,8 +76,6 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -333,10 +312,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#naming-branches" id="toc-naming-branches" class="nav-link" data-scroll-target="#naming-branches"><span class="header-section-number">6.9.1</span> Naming branches</a></li>
   <li><a href="#branch-lifecycle" id="toc-branch-lifecycle" class="nav-link" data-scroll-target="#branch-lifecycle"><span class="header-section-number">6.9.2</span> Branch Lifecycle</a></li>
-  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">6.9.3</span> Branch Protection</a></li>
   </ul></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">6.10</span> Acknowledgements</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.11</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/branches.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -681,105 +657,9 @@ Common <code>git merge</code> flags
 <section id="branch-lifecycle" class="level3" data-number="6.9.2">
 <h3 data-number="6.9.2" class="anchored" data-anchor-id="branch-lifecycle"><span class="header-section-number">6.9.2</span> Branch Lifecycle</h3>
 <p>Create branches with a <strong>specific goal or task</strong> in mind, and aim to <strong>keep them short-lived</strong>. Long-lived branches can lead to conflicts and make it harder to merge changes. Once the task is complete or the feature is integrated, consider deleting the branch.</p>
-</section>
-<section id="branch-protection" class="level3" data-number="6.9.3">
-<h3 data-number="6.9.3" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">6.9.3</span> Branch Protection</h3>
-<p>When using a Git hosting platforms like GitHub or GitLab, it’s a good idea to enable branch protection rules for your critical branch(es), typically your <code>main</code> or <code>master</code> branch. By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch, it also prevents accidental or unauthorized changes from being merged directly.</p>
-<section id="how-to-protect-the-main-branch-on-github" class="level4" data-number="6.9.3.1">
-<h4 data-number="6.9.3.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">6.9.3.1</span> How to protect the <code>main</code> branch on GitHub</h4>
-<p>Go to your repository on GitHub and click on “Settings.” In the left sidebar, select “Branches.” Under “Branch protection rules,” click on “Add rule.” In the “Branch name pattern” field, enter the name of your main branch. Enable the options you want to enforce for the main branch. One common option requires pull request reviews. This requires one or more approving reviews before changes can be merged. Optionally, you can enable other protections, such as preventing force pushes or deleting the branch. Finally, click “Create” to save the branch protection rule.</p>
-</section>
-</section>
-</section>
-<section id="acknowledgements" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">6.10</span> Acknowledgements</h2>
-<div class="cell-output-display">
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Authors</th>
-<th style="text-align: left;">Title</th>
-<th style="text-align: left;">Website</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Source</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><span class="citation" data-cites="chacon2014">Chacon and Straub (<a href="../misc/references.html#ref-chacon2014" role="doc-biblioref">2014</a>)</span></td>
-<td style="text-align: left;">Pro Git</td>
-<td style="text-align: left;"><a href="https://git-scm.com/book/en/v2"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
-<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a></td>
-<td style="text-align: left;"><a href="https://github.com/progit/progit2"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="citation" data-cites="GitHub2023">GitHub (<a href="../misc/references.html#ref-GitHub2023" role="doc-biblioref">2023</a>)</span></td>
-<td style="text-align: left;">GitHub Docs</td>
-<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
-<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
-<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="cheatsheet" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.11</span> Cheatsheet</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 19%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: left;">Command</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">250</td>
-<td style="text-align: left;"><code>git branch</code></td>
-<td style="text-align: left;">Listing/creating/deleting branches</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">251</td>
-<td style="text-align: left;"><code>git switch</code></td>
-<td style="text-align: left;">Switching branches</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">252</td>
-<td style="text-align: left;"><code>git checkout</code></td>
-<td style="text-align: left;">Switching branches</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">253</td>
-<td style="text-align: left;"><code>git merge</code></td>
-<td style="text-align: left;">Merging branches</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">254</td>
-<td style="text-align: left;"><code>git rebase</code></td>
-<td style="text-align: left;">A different way of integrating changes from two branches</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-chacon2014" class="csl-entry" role="listitem">
-Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
-</div>
-<div id="ref-GitHub2023" class="csl-entry" role="listitem">
-GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en">https://docs.github.com/en</a>.
-</div>
-</div>
+</section>
 </section>
 
 </main> <!-- /main -->
