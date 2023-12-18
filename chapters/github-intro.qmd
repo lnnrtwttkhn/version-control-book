@@ -124,6 +124,43 @@ Make sure to copy it as it won't be shown again.
 The first time you try to interact with a remote repository, you will get asked for a password. 
 **Paste this key as a password into the terminal to proceed.**
 
+If you use Git Bash on Winndows, your terminal will open a window where you can choose to authenticate yourself with a PAT.
+
+::: {.callout-tip title="PAT Settings " collapse="true}
+**Expiration Date:**
+
+When you create a Personal Access Token, you can specify its expiration date. The expiration date is the date and time when the token becomes invalid and cannot be used for authentication anymore. Setting an expiration date is a security measure to limit the time during which the token can be misused if it falls into the wrong hands.
+Creating an expiration date for a GitHub Personal Access Token (PAT) is not strictly necessary, but it is considered a good security practice. 
+
+**Scopes:**
+
+When you create a PAT, you can choose the scopes to define what actions the token is allowed to perform. 
+These scopes determine the level of access the token has to different parts of your GitHub account or repositories.
+
+Here are some common scopes you might encounter when creating a GitHub PAT:
+
+`repo`: 
+This scope provides full control of private and public repositories, including the ability to read, write, and delete code.
+
+`repo:status`: 
+Grants access to commit statuses, allowing the token to read and set commit status for a repository.
+
+`repo_deployment`: 
+Enables the token to access deployment-related events and perform actions related to repository deployments.
+
+`read:org`: 
+Allows the token to read organization membership, teams, and repositories within an organization.
+
+`user`: 
+Grants access to user-related data, including user profile information.
+
+`delete_repo`: 
+Provides permission to delete repositories.
+
+`admin:org`: 
+Offers administrative access to the entire organization, including managing teams and repositories.
+:::
+
 ## {{< fa folder-closed >}} GitHub repositories
 
 ### Creating a GitHub repository
