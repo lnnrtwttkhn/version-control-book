@@ -283,6 +283,65 @@ By default, Git uses the first parent (main branch), but you can specify another
 This flag prevents the text editor from opening for editing the commit message, making it useful when you want to keep the default commit message.
 :::
 
+### Resetting to a commit
+
+If you want to reset your repository to a commit you have done in the past, you can use the powerful `git reset` command.
+
+To get an overview of your past commits you can either use `git log` or `git reflog`.
+Both commands should get you an overview of your past commits. 
+
+E.g.:
+
+```{bash}
+git log --oneline
+```
+
+will give you an output like:
+
+```{bash}
+25a51e8 Update README.md
+b7f3a12 Add new feature X
+8d76a45 Merge branch 'feature-branch'
+2f0e73b Implement new functionality
+```
+
+Using `git reset <commit>` will undo all changes you made after the specific commit you picked.
+Your "branch pointer" will move to the specified commit, and changes after that commit will be uncommitted and moved back to the working directory.
+
+E.g.:
+```{bash}
+git reset 8d76a45
+```
+
+However, these changes are still present in your working directory, so if you want to discard them completely, you can use the --hard option:
+
+```{bash}
+git reset --hard <commit>
+```
+
+This will not only reset your branch pointer but also discard all changes in your working directory and staging area since the specified commit. 
+It effectively resets your working directory to the state of the chosen commit.
+
+::: {.callout-tip title="Common `git reset` flags" collapse="true"}
+`--soft`: 
+Resets the branch pointer to the specified commit but keeps changes staged. This allows you to rework the changes and create a new commit.
+
+`--mixed` (default): 
+Resets the branch pointer to the specified commit and unstages changes. Changes are kept in your working directory, allowing you to modify them before committing.
+
+`--hard`: 
+Resets the branch pointer to the specified commit, unstages changes, and discards changes in your working directory. Use with caution, as it can lead to data loss.
+
+`--merge`:
+Resets the branch pointer and the index to the specified commit, but keeps changes in your working directory. This is useful in aborting a merge.
+
+`--keep`: 
+Resets the branch pointer and index to the specified commit but refuses to do so if there are uncommitted changes in the working directory.
+
+`--patch` or `-p`: 
+Allows you to interactively choose changes to reset, similar to the `git add -p` command for staging changes.
+:::
+
 ## Partial Commits
 Git allows you to make partial commits by staging only specific parts of your file before committing. 
 This can be achieved using `git add`  with the `-p` or `--patch` option, which allows you to interactively choose which changes to stage. 
