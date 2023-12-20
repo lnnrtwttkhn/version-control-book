@@ -309,6 +309,7 @@ Using `git reset <commit>` will undo all changes you made after the specific com
 Your "branch pointer" will move to the specified commit, and changes after that commit will be uncommitted and moved back to the working directory.
 
 E.g.:
+
 ```{bash}
 git reset 8d76a45
 ```
@@ -319,8 +320,13 @@ However, these changes are still present in your working directory, so if you wa
 git reset --hard <commit>
 ```
 
-This will not only reset your branch pointer but also discard all changes in your working directory and staging area since the specified commit. 
+This will not only reset your "branch pointer" but also discard all changes in your working directory and staging area since the specified commit. 
 It effectively resets your working directory to the state of the chosen commit.
+
+::: {.callout-tip title="Common `git reflog vs git log` flags" collapse="true"}
+`git log` shows the commit history, while `git reflog` shows a log of all changes to branches, including resets and other adjustments. 
+Think of `git log` as a timeline of commits, and `git reflog` as a detailed diary of all recent changes, even those that alter commit history, providing a safety net for recovery.
+:::
 
 ::: {.callout-tip title="Common `git reset` flags" collapse="true"}
 `--soft`: 
