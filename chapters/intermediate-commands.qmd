@@ -283,6 +283,56 @@ By default, Git uses the first parent (main branch), but you can specify another
 This flag prevents the text editor from opening for editing the commit message, making it useful when you want to keep the default commit message.
 :::
 
+## Partial Commits
+Git allows you to make partial commits by staging only specific parts of your file before committing. 
+This can be achieved using `git add`  with the `-p` or `--patch` option, which allows you to interactively choose which changes to stage. 
+
+To try this make some changes to your file(s) and use:
+
+```{bash}
+git add -p
+```
+
+This will prompt you with each change, giving you options to stage, skip, or split the changes.
+You'll see a series of prompts like this:
+
+```{bash}
++Example text.....
++
++
++
+(1/x) Stage this hunk [y,n,q,a,d,e,?]?
+```
+
+These respectively stand for:
+`y`: Stage this hunk.
+
+`n`: Do not stage this hunk.
+
+`q`: Quit; do not stage this hunk or any remaining hunks.
+
+`a`: Stage this hunk and all later hunks in the file.
+
+`d`: Do not stage this hunk or any later hunks in the file.
+
+`/`: Search for a hunk matching the given regex.
+
+`e`: Manually edit the current hunk.
+
+`?`: Print help.
+
+Simply type one of the symbols in the terminal to proceed in the wished matter.
+
+::: {.callout-tip title="What is a hunk?" collapse="true"}
+In Git, a "hunk" refers to a distinct block of code changes within a file.
+It represents a cohesive set of added, modified, or deleted lines in a specific location.
+Git automatically divides changes into hunks to facilitate easier review, selective staging, and conflict resolution during version control operations.
+:::
+
+Using partial commits on the command line is a bit of a hassle.
+This would be a good usecase for GUI. 
+To checkout how to do portial commit using [GitKraken](https://www.gitkraken.com) checkout the [GUI chapter](gui.qmd) of this book.
+
 ## Alternatives to standard merging
 
 ### Cherrypicking
