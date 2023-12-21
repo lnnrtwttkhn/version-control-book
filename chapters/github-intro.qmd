@@ -107,14 +107,22 @@ Follow these steps to set it up:
 
 1.  Log in to your GitHub account on [GitHub.com](https://github.com/)
 
-2.  Click on your profile picture in the top-right corner and select "**Settings**."
+1.  Click on your profile picture in the top-right corner and select "**Settings**".
 
-3.  In the left sidebar, select "**Developer settings**," then "**Personal access tokens (classic)**."
+1.  In the left sidebar, select "**Developer settings**", then "**Personal access tokens (classic)**".
 
-4.  Click "**Generate new token**."
+1.  Click "**Generate new token**".
 
-5.  Give your token a name, choose the desired scopes (permissions), and set an expiration date if needed.
+1.  Give your token a **name**.
+The name should help you to later identify in which context you used the token.
+For example, you could add a short description of the machine that you generated the token for.
+
+1. Choose the desired **scopes**.
+The scopes define the permissions of the token, or "what it is allowed to do" with your GitHub account and repositories.
 For a normal usecase, you should enable the scopes: **repo**, **admin:org** and **delete_repo** for a full access.
+
+1. Set an expiration date if needed.
+You can also choose "No expiration".
 
 ![Screenshot of the personal access token settings](../static/github-pat.png){#fig-PAT}
 
@@ -126,10 +134,12 @@ The first time you try to interact with a remote repository, you will get asked 
 
 If you use Git Bash on Windows, your terminal will open a window where you can choose to authenticate yourself with a PAT.
 
-::: {.callout-tip title="PAT Settings " collapse="true}
+::: {.callout-tip title="More about PAT settings" collapse="true"}
 **Expiration Date:**
 
-When you create a Personal Access Token, you can specify its expiration date. The expiration date is the date and time when the token becomes invalid and cannot be used for authentication anymore. Setting an expiration date is a security measure to limit the time during which the token can be misused if it falls into the wrong hands.
+When you create a Personal Access Token, you can specify its expiration date.
+The expiration date is the date and time when the token becomes invalid and cannot be used for authentication anymore.
+Setting an expiration date is a security measure to limit the time during which the token can be misused if it falls into the wrong hands.
 Creating an expiration date for a GitHub Personal Access Token (PAT) is not strictly necessary, but it is considered a good security practice. 
 
 **Scopes:**
