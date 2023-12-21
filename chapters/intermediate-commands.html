@@ -326,14 +326,16 @@ div.csl-indent {
   <li><a href="#deleting-files" id="toc-deleting-files" class="nav-link" data-scroll-target="#deleting-files"><span class="header-section-number">9.3.3</span> Deleting files</a></li>
   <li><a href="#untracking-files" id="toc-untracking-files" class="nav-link" data-scroll-target="#untracking-files"><span class="header-section-number">9.3.4</span> “Untracking” files</a></li>
   <li><a href="#reverting-commits" id="toc-reverting-commits" class="nav-link" data-scroll-target="#reverting-commits"><span class="header-section-number">9.3.5</span> Reverting commits</a></li>
+  <li><a href="#resetting-to-a-commit" id="toc-resetting-to-a-commit" class="nav-link" data-scroll-target="#resetting-to-a-commit"><span class="header-section-number">9.3.6</span> Resetting to a commit</a></li>
   </ul></li>
-  <li><a href="#alternatives-to-standard-merging" id="toc-alternatives-to-standard-merging" class="nav-link" data-scroll-target="#alternatives-to-standard-merging"><span class="header-section-number">9.4</span> Alternatives to standard merging</a>
+  <li><a href="#partial-commits" id="toc-partial-commits" class="nav-link" data-scroll-target="#partial-commits"><span class="header-section-number">9.4</span> Partial commits</a></li>
+  <li><a href="#alternatives-to-standard-merging" id="toc-alternatives-to-standard-merging" class="nav-link" data-scroll-target="#alternatives-to-standard-merging"><span class="header-section-number">9.5</span> Alternatives to standard merging</a>
   <ul class="collapse">
-  <li><a href="#cherrypicking" id="toc-cherrypicking" class="nav-link" data-scroll-target="#cherrypicking"><span class="header-section-number">9.4.1</span> Cherrypicking</a></li>
-  <li><a href="#rebasing-1" id="toc-rebasing-1" class="nav-link" data-scroll-target="#rebasing-1"><span class="header-section-number">9.4.2</span> Rebasing</a></li>
+  <li><a href="#cherrypicking" id="toc-cherrypicking" class="nav-link" data-scroll-target="#cherrypicking"><span class="header-section-number">9.5.1</span> Cherrypicking</a></li>
+  <li><a href="#rebasing-1" id="toc-rebasing-1" class="nav-link" data-scroll-target="#rebasing-1"><span class="header-section-number">9.5.2</span> Rebasing</a></li>
   </ul></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">9.5</span> Acknowledgements &amp; further reading</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">9.6</span> Cheatsheet</a></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">9.6</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">9.7</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/intermediate-commands.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/intermediate-commands.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -494,12 +496,24 @@ Be careful about data loss!
 </div>
 <section id="discarding-changes-in-the-working-directory" class="level3" data-number="9.3.1">
 <h3 data-number="9.3.1" class="anchored" data-anchor-id="discarding-changes-in-the-working-directory"><span class="header-section-number">9.3.1</span> Discarding changes in the working directory</h3>
-<p>Sometimes you might want to revert files back to the state of your last commit. For example, this can be useful when you realize that the recent changes you made to a file have introduced an error. You can use <code>git restore</code> to discard changes in the working directory and revert the files to the state they were in when you last committed them.</p>
+<p>Sometimes you might want to revert files back to the state of your last commit. For example, this can be useful when you realize that the recent changes you made to a file have introduced an error. You can use <code>git restore</code> to <strong>discard changes in the working directory</strong> and revert the files to the state they were in when you last committed them.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Please note that it may not be possible to undo the restore, since Git does not keep track of the state before the restore operation.</p>
-<p>It is also possible to revert all files in your repository to the state of your last commit using:</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Be careful about data loss!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Be careful about data loss!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note that it may not be possible to undo the restore, since Git does not keep track of the state before the restore operation!</p>
+</div>
+</div>
+<p>It is also possible to <strong>revert all files in your repository</strong> to the state of your last commit using:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -525,7 +539,7 @@ Be careful about data loss!
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Delete file &lt;FILE&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git rm` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -534,7 +548,7 @@ Common <code>git rm</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-f</code> or <code>--force</code>: This flag forces the removal of files, even if they are modified.</p>
 <p><code>-r</code> or <code>--recursive</code>: Use this flag to remove directories and their contents.</p>
@@ -559,7 +573,7 @@ Common <code>git rm</code> flags
 </div>
 <p>This will create a new commit that effectively undoes the changes made in the specified commit. This new commit will have the opposite changes, effectively canceling out the changes from the original commit. You might need to resolve a merge conflict, if the changes you want to revert conflict with changes in subsequent commits. By default the commit message will be <code>revert &lt;commit message of reverted commit&gt;</code>. However, Git will open an editor for you to change this message, if you don’t specify it otherwise.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="What are hashes?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -568,14 +582,14 @@ What are hashes?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In Git, a commit hash, also known as a commit ID or SHA-1 hash, is a unique identifier for a specific commit in a Git repository. It’s a 40-character hexadecimal string that represents the contents and history of that commit. Each commit in a Git repository has a unique hash.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git revert` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -584,7 +598,7 @@ Common <code>git revert</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-n</code> or <code>--no commit</code>: Prevents Git from automatically creating a new commit after reverting changes. It stages the changes, allowing you to make additional modifications or review them before committing.</p>
 <p><code>-m &lt;parent-number&gt;</code>: When dealing with a merge commit, this flag specifies which parent commit to use as the source for reverting. By default, Git uses the first parent (main branch), but you can specify another parent by providing its number.</p>
@@ -593,19 +607,153 @@ Common <code>git revert</code> flags
 </div>
 </div>
 </section>
+<section id="resetting-to-a-commit" class="level3" data-number="9.3.6">
+<h3 data-number="9.3.6" class="anchored" data-anchor-id="resetting-to-a-commit"><span class="header-section-number">9.3.6</span> Resetting to a commit</h3>
+<p>If you want to reset your repository to a commit that was made in the past, you can use the <code>git reset</code> command.</p>
+<p>To get an overview of your past commits you can either use <code>git log</code> or <code>git reflog</code>. Both commands should get you an overview of your past commits. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>will give you an output like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">25a51e8</span> Update README.md</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">b7f3a12</span> Add new feature X</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">8d76a45</span> Merge branch <span class="st">'feature-branch'</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">2f0e73b</span> Implement new functionality</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using <code>git reset &lt;commit&gt;</code> will <strong>undo all the changes you made after the specific commit</strong> you picked. Your “branch pointer” will move to the specified commit, and changes after that commit will be uncommitted and moved back to the working directory. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset 8d76a45</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>However, these changes are still present in your working directory, so if you want to discard them completely, you can use add the <code>--hard</code> flag:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="op">&lt;</span>commit<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will not only reset your “branch pointer” but also discard all changes in your working directory and staging area since the specified commit. It effectively resets your working directory to the state of the chosen commit.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Be careful about data loss!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Be careful about data loss!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please be careful when using the <code>git reset --hard</code> command! This command reset your working directory to the state of the chosen previous commit. This will delete changes beyond recovery, unless you can retrieve these changes from another location, for example a remote repository like GitHub.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="`git reflog` vs. `git log`">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>git reflog</code> vs.&nbsp;<code>git log</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>git log</code> shows the commit history, while <code>git reflog</code> shows a log of all changes to branches, including resets and other adjustments. Think of <code>git log</code> as a timeline of commits, and <code>git reflog</code> as a detailed diary of all recent changes, even those that alter commit history, providing a safety net for recovery.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git reset` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common <code>git reset</code> flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>--soft</code>: Resets the branch pointer to the specified commit but keeps changes staged. This allows you to rework the changes and create a new commit.</p>
+<p><code>--mixed</code> (default): Resets the branch pointer to the specified commit and unstages changes. Changes are kept in your working directory, allowing you to modify them before committing.</p>
+<p><code>--hard</code>: Resets the branch pointer to the specified commit, unstages changes, and discards changes in your working directory. Use with caution, as it can lead to data loss.</p>
+<p><code>--merge</code>: Resets the branch pointer and the index to the specified commit, but keeps changes in your working directory. This is useful in aborting a merge.</p>
+<p><code>--keep</code>: Resets the branch pointer and index to the specified commit but refuses to do so if there are uncommitted changes in the working directory.</p>
+<p><code>--patch</code> or <code>-p</code>: Allows you to interactively choose changes to reset, similar to the <code>git add -p</code> command for staging changes.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="alternatives-to-standard-merging" class="level2 page-columns page-full" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="alternatives-to-standard-merging"><span class="header-section-number">9.4</span> Alternatives to standard merging</h2>
-<section id="cherrypicking" class="level3 page-columns page-full" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="cherrypicking"><span class="header-section-number">9.4.1</span> Cherrypicking</h3>
+</section>
+<section id="partial-commits" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="partial-commits"><span class="header-section-number">9.4</span> Partial commits</h2>
+<p>Git allows you to make partial commits by staging only specific parts of your file before committing. This can be achieved using <code>git add</code> with the <code>-p</code> or <code>--patch</code> option, which allows you to interactively choose which changes to stage.</p>
+<p>To try this make some changes to your file(s) and use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will prompt you with each change, giving you options to stage, skip, or split the changes. You’ll see a series of prompts like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span> Example text ...</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">1/x</span><span class="kw">)</span> <span class="ex">Stage</span> this hunk <span class="pp">[</span><span class="ss">y,n,q,a,d,e,?</span><span class="pp">]?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>These prompt option respectively stand for:</p>
+<ul>
+<li><code>y</code>: Stage this hunk.</li>
+<li><code>n</code>: Do not stage this hunk.</li>
+<li><code>q</code>: Quit. Do not stage this hunk or any remaining hunks.</li>
+<li><code>a</code>: Stage this hunk and all later hunks in the file.</li>
+<li><code>d</code>: Do not stage this hunk or any later hunks in the file.</li>
+<li><code>/</code>: Search for a hunk matching the given regex.</li>
+<li><code>e</code>: Manually edit the current hunk.</li>
+<li><code>?</code>: Print help.</li>
+</ul>
+<p>Type one of the symbols in the command line to proceed in the desired manner.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="What is a &quot;hunk&quot;?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is a “hunk”?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In Git, a “hunk” refers to a distinct block of code changes within a file. It represents a cohesive set of added, modified, or deleted lines in a specific location. Git automatically divides changes into hunks to facilitate easier review, selective staging, and conflict resolution during version control operations.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Our recommendation: Use a GUI for partial commits">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Our recommendation: Use a GUI for partial commits
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In our opinion, using partial commits on the command line is a bit of a hassle. This would be a good usecase for a Git GUI. To checkout how to do partial commit using <a href="https://www.gitkraken.com">GitKraken</a> checkout the <a href="../chapters/gui.html">GUI chapter</a> in this book.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="alternatives-to-standard-merging" class="level2 page-columns page-full" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="alternatives-to-standard-merging"><span class="header-section-number">9.5</span> Alternatives to standard merging</h2>
+<section id="cherrypicking" class="level3 page-columns page-full" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="cherrypicking"><span class="header-section-number">9.5.1</span> Cherrypicking</h3>
 <p><code>git cherry-pick</code> allows you to apply the changes from a specific commit from one branch to another. This means, you can pick and apply specific commits to your current branch without merging the entire branch. This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in <a href="#fig-cherry-pick">Figure&nbsp;<span>9.1</span></a>. You will need the hash of the commit you want to “cherry-pick” and then use the command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="op">&lt;</span>commithash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="op">&lt;</span>commithash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Again, you might have to resolve merge conflicts. The default commit message will be:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Cherry-pick</span> commit <span class="op">&lt;</span>commit-hash<span class="op">&gt;</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> commit was cherry-picked from <span class="op">&lt;</span>source-branch<span class="op">&gt;</span> at <span class="op">&lt;</span>source-commit-hash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Cherry-pick</span> commit <span class="op">&lt;</span>commit-hash<span class="op">&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> commit was cherry-picked from <span class="op">&lt;</span>source-branch<span class="op">&gt;</span> at <span class="op">&lt;</span>source-commit-hash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-cherry-pick" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -614,7 +762,7 @@ Common <code>git revert</code> flags
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git cherry-pick` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -623,7 +771,7 @@ Common <code>git cherry-pick</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-n</code> or <code>--no commit</code>: Prevents Git from automatically creating a new commit after cherry-picking. It stages the changes, allowing you to make additional modifications or review them before committing.</p>
 <p><code>-e</code> or <code>--edit</code>: Opens the default text editor to edit the commit message of the new cherry-picked commit. Useful when you want to provide a custom message for the cherry-picked commit.</p>
@@ -631,11 +779,11 @@ Common <code>git cherry-pick</code> flags
 </div>
 </div>
 </section>
-<section id="rebasing-1" class="level3 page-columns page-full" data-number="9.4.2">
-<h3 data-number="9.4.2" class="anchored" data-anchor-id="rebasing-1"><span class="header-section-number">9.4.2</span> Rebasing</h3>
+<section id="rebasing-1" class="level3 page-columns page-full" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="rebasing-1"><span class="header-section-number">9.5.2</span> Rebasing</h3>
 <p><code>git rebase</code> is a different way compared to a standard merge to integrate changes from one branch into another. For example, when you rebase the <code>feature</code> branch onto the <code>main</code> branch you “rearrange” the commits. It’s like taking your changes, applying them on top of the latest <code>main</code> branch, and making it all look like a smooth line. The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the main branch. It’s like picking up your changes and placing them on the latest code, resulting in a linear history. For an illustration, see <a href="#fig-rebasing">Figure&nbsp;<span>9.2</span></a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for team members.</p>
 <div id="fig-rebasing" class="quarto-figure quarto-figure-center anchored page-columns page-full">
@@ -645,7 +793,7 @@ Common <code>git cherry-pick</code> flags
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git rebase` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -654,7 +802,7 @@ Common <code>git rebase</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--interactive</code> or <code>-i</code>: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.</p>
 <p><code>--continue</code>: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.</p>
@@ -667,8 +815,8 @@ Common <code>git rebase</code> flags
 </div>
 </section>
 </section>
-<section id="acknowledgements-further-reading" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">9.5</span> Acknowledgements &amp; further reading</h2>
+<section id="acknowledgements-further-reading" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">9.6</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <div class="cell-output-display">
 <table class="table">
@@ -693,14 +841,14 @@ Common <code>git rebase</code> flags
 </table>
 </div>
 </section>
-<section id="cheatsheet" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">9.6</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">9.7</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 29%">
-<col style="width: 70%">
+<col style="width: 28%">
+<col style="width: 71%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -770,10 +918,22 @@ Common <code>git rebase</code> flags
 <td style="text-align: left;">Creates a new commit which reverts your repository back to <commithash></commithash></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;"><code>git reflog</code></td>
+<td style="text-align: left;">Logs recent branch changes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git reset &lt;commithash&gt;</code></td>
+<td style="text-align: left;">Resets the branch to a specified commit, keeping changes in the working directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git reset --hard &lt;commithash&gt;</code></td>
+<td style="text-align: left;">Resets the branch to a specified commit</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;"><code>git cherry-pick &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Applies changes from <commithash></commithash></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>git clean</code></td>
 <td style="text-align: left;">Deletes untracked files from your directory</td>
 </tr>
