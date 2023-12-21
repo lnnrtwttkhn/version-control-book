@@ -327,15 +327,14 @@ div.csl-indent {
   <li><a href="#fa-folder-closed-github-repositories" id="toc-fa-folder-closed-github-repositories" class="nav-link" data-scroll-target="#fa-folder-closed-github-repositories"><span class="header-section-number">7.6</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> GitHub repositories</a>
   <ul class="collapse">
   <li><a href="#creating-a-github-repository" id="toc-creating-a-github-repository" class="nav-link" data-scroll-target="#creating-a-github-repository"><span class="header-section-number">7.6.1</span> Creating a GitHub repository</a></li>
-  <li><a href="#uploading-your-repository" id="toc-uploading-your-repository" class="nav-link" data-scroll-target="#uploading-your-repository"><span class="header-section-number">7.6.2</span> Uploading your repository</a></li>
-  <li><a href="#fa-clone-cloning-a-repository" id="toc-fa-clone-cloning-a-repository" class="nav-link" data-scroll-target="#fa-clone-cloning-a-repository"><span class="header-section-number">7.6.3</span> <i class="fa-solid fa-clone" aria-label="clone"></i> Cloning a Repository</a></li>
-  <li><a href="#repository-settings" id="toc-repository-settings" class="nav-link" data-scroll-target="#repository-settings"><span class="header-section-number">7.6.4</span> Repository settings</a></li>
+  <li><a href="#committing-changes-on-github-directly" id="toc-committing-changes-on-github-directly" class="nav-link" data-scroll-target="#committing-changes-on-github-directly"><span class="header-section-number">7.6.2</span> Committing changes on GitHub directly</a></li>
+  <li><a href="#uploading-your-repository" id="toc-uploading-your-repository" class="nav-link" data-scroll-target="#uploading-your-repository"><span class="header-section-number">7.6.3</span> Uploading your repository</a></li>
+  <li><a href="#fa-clone-cloning-a-repository" id="toc-fa-clone-cloning-a-repository" class="nav-link" data-scroll-target="#fa-clone-cloning-a-repository"><span class="header-section-number">7.6.4</span> <i class="fa-solid fa-clone" aria-label="clone"></i> Cloning a Repository</a></li>
+  <li><a href="#repository-settings" id="toc-repository-settings" class="nav-link" data-scroll-target="#repository-settings"><span class="header-section-number">7.6.5</span> Repository settings</a></li>
+  <li><a href="#fetching" id="toc-fetching" class="nav-link" data-scroll-target="#fetching"><span class="header-section-number">7.6.6</span> Fetching</a></li>
   </ul></li>
-  <li><a href="#fa-code-pull-request-pulling" id="toc-fa-code-pull-request-pulling" class="nav-link" data-scroll-target="#fa-code-pull-request-pulling"><span class="header-section-number">7.7</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pulling</a>
-  <ul class="collapse">
-  <li><a href="#fetching" id="toc-fetching" class="nav-link" data-scroll-target="#fetching"><span class="header-section-number">7.7.1</span> Fetching</a></li>
-  </ul></li>
-  <li><a href="#fa-code-pull-request-pushing" id="toc-fa-code-pull-request-pushing" class="nav-link" data-scroll-target="#fa-code-pull-request-pushing"><span class="header-section-number">7.8</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pushing</a></li>
+  <li><a href="#fa-download-pulling" id="toc-fa-download-pulling" class="nav-link" data-scroll-target="#fa-download-pulling"><span class="header-section-number">7.7</span> <i class="fa-solid fa-download" aria-label="download"></i> Pulling</a></li>
+  <li><a href="#fa-upload-pushing" id="toc-fa-upload-pushing" class="nav-link" data-scroll-target="#fa-upload-pushing"><span class="header-section-number">7.8</span> <i class="fa-solid fa-upload" aria-label="upload"></i> Pushing</a></li>
   <li><a href="#extra-features" id="toc-extra-features" class="nav-link" data-scroll-target="#extra-features"><span class="header-section-number">7.9</span> Extra features</a>
   <ul class="collapse">
   <li><a href="#forking-a-repository" id="toc-forking-a-repository" class="nav-link" data-scroll-target="#forking-a-repository"><span class="header-section-number">7.9.1</span> Forking a repository</a></li>
@@ -473,10 +472,12 @@ GitHub student education pack
 <p>Follow these steps to set it up:</p>
 <ol type="1">
 <li><p>Log in to your GitHub account on <a href="https://github.com/">GitHub.com</a></p></li>
-<li><p>Click on your profile picture in the top-right corner and select “<strong>Settings</strong>.”</p></li>
-<li><p>In the left sidebar, select “<strong>Developer settings</strong>,” then “<strong>Personal access tokens (classic)</strong>.”</p></li>
-<li><p>Click “<strong>Generate new token</strong>.”</p></li>
-<li><p>Give your token a name, choose the desired scopes (permissions), and set an expiration date if needed. For a normal usecase, you should enable the scopes: <strong>repo</strong>, <strong>admin:org</strong> and <strong>delete_repo</strong> for a full access.</p></li>
+<li><p>Click on your profile picture in the top-right corner and select “<strong>Settings</strong>”.</p></li>
+<li><p>In the left sidebar, select “<strong>Developer settings</strong>”, then “<strong>Personal access tokens (classic)</strong>”.</p></li>
+<li><p>Click “<strong>Generate new token</strong>”.</p></li>
+<li><p>Give your token a <strong>name</strong>. The name should help you to later identify in which context you used the token. For example, you could add a short description of the machine that you generated the token for.</p></li>
+<li><p>Choose the desired <strong>scopes</strong>. The scopes define the permissions of the token, or “what it is allowed to do” with your GitHub account and repositories. For a normal usecase, you should enable the scopes: <strong>repo</strong>, <strong>admin:org</strong> and <strong>delete_repo</strong> for a full access.</p></li>
+<li><p>Set an expiration date if needed. You can also choose “No expiration”.</p></li>
 </ol>
 <div id="fig-PAT" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -486,6 +487,34 @@ GitHub student education pack
 </div>
 <p>Click “<strong>Generate token</strong>,” and you’ll be presented with your new token.</p>
 <p>Make sure to copy it as it won’t be shown again. The first time you try to interact with a remote repository, you will get asked for a password. <strong>Paste this key as a password into the terminal to proceed.</strong></p>
+<p>If you use Git Bash on Windows, your terminal will open a window where you can choose to authenticate yourself with a PAT.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="More about PAT settings">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More about PAT settings
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Expiration Date:</strong></p>
+<p>When you create a Personal Access Token, you can specify its expiration date. The expiration date is the date and time when the token becomes invalid and cannot be used for authentication anymore. Setting an expiration date is a security measure to limit the time during which the token can be misused if it falls into the wrong hands. Creating an expiration date for a GitHub Personal Access Token (PAT) is not strictly necessary, but it is considered a good security practice.</p>
+<p><strong>Scopes:</strong></p>
+<p>When you create a PAT, you can choose the scopes to define what actions the token is allowed to perform. These scopes determine the level of access the token has to different parts of your GitHub account or repositories.</p>
+<p>Here are some common scopes you might encounter when creating a GitHub PAT:</p>
+<p><code>repo</code>: This scope provides full control of private and public repositories, including the ability to read, write, and delete code.</p>
+<p><code>repo:status</code>: Grants access to commit statuses, allowing the token to read and set commit status for a repository.</p>
+<p><code>repo_deployment</code>: Enables the token to access deployment-related events and perform actions related to repository deployments.</p>
+<p><code>read:org</code>: Allows the token to read organization membership, teams, and repositories within an organization.</p>
+<p><code>user</code>: Grants access to user-related data, including user profile information.</p>
+<p><code>delete_repo</code>: Provides permission to delete repositories.</p>
+<p><code>admin:org</code>: Offers administrative access to the entire organization, including managing teams and repositories.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -493,17 +522,38 @@ GitHub student education pack
 <h2 data-number="7.6" class="anchored" data-anchor-id="fa-folder-closed-github-repositories"><span class="header-section-number">7.6</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> GitHub repositories</h2>
 <section id="creating-a-github-repository" class="level3 page-columns page-full" data-number="7.6.1">
 <h3 data-number="7.6.1" class="anchored" data-anchor-id="creating-a-github-repository"><span class="header-section-number">7.6.1</span> Creating a GitHub repository</h3>
-<p>To create a new repository, click on the “<strong>+</strong>” sign in the top-right corner of the GitHub page. From the dropdown menu, select <strong>New repository</strong>.” On the new repository page, as shown in <a href="#fig-newrepo">Figure&nbsp;<span>7.2</span></a>, enter a name for your repository and make sure the “<strong>Public</strong>” option is selected if you want it to be accessible to everyone. You can also choose to create a README file by checking the corresponding box. Finally, click the green <strong>“Create repository”</strong> button at the bottom of the page to complete the creation process.</p>
+<p>To create a new repository, click on the “<strong>+</strong>” sign in the top-right corner of the GitHub page. From the dropdown menu, select <strong>New repository</strong>.” On the new repository page, as shown in <a href="#fig-newrepo">Figure&nbsp;<span>7.2</span></a>, enter a name for your repository and make sure the “<strong>Public</strong>” option is selected if you want it to be accessible to everyone. You can also choose to create a README file by checking the corresponding box. If you want to upload an existing repository, you should not create a README, since your GitHub repository needs to be completely empty. Finally, click the green <strong>“Create repository”</strong> button at the bottom of the page to complete the creation process.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Public or private?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Public or private?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When you create a new repository on GitHub, you can control who can see it by choosing if it’s public or private.</p>
+<p>If it’s public, anyone on the internet can access it. If it’s private, only you, the people you specifically allow, and, for organization repositories, certain members can access it. For further details, see the <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility">chapter “About repository visibility”</a> in the GitHub documentation.</p>
+<p>If you have admin permissions for a repository, you can change its visibility. This means you can later still make a public repository private and vice verca, if needed.</p>
+</div>
+</div>
+</div>
 <div id="fig-newrepo" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="../static/github-newrepository.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption margin-caption">Figure&nbsp;7.2: Screenshot of creating a new repository</figcaption>
 </figure>
 </div>
-<p>Once you have created the repository, you will find the <code>README.md</code> file in your repository. You can edit this file to provide information and details about your project. Whatever you write in the <code>README.md</code> file will be displayed on the front page of your project.</p>
+</section>
+<section id="committing-changes-on-github-directly" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="committing-changes-on-github-directly"><span class="header-section-number">7.6.2</span> Committing changes on GitHub directly</h3>
+<p>Once you have created the repository and initialized it with a <code>README.md</code> file, you will find the <code>README.md</code> file in your repository. You can edit this file to provide information and details about your project. Whatever you write in the <code>README.md</code> file will be displayed on the front page of your project.</p>
 <p>To add more files to your repository, click on the “<strong>Add file</strong>” button and choose whether to upload existing files or create a new file directly on GitHub. Remember to provide a descriptive commit message each time you add a new file or make changes. The commit message helps you keep track of the changes you’ve made and serves as a brief summary of the modifications made to the repository.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Writing a `README` file">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -512,7 +562,7 @@ Writing a <code>README</code> file
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Keep it simple! When you’re working in any field, whether it’s coding or studying stars, you’ll likely use specialized terms that might confuse others. So, use plain language and explain any unfamiliar words you use.</p>
 <p>Describe what you’re doing now and what you plan to do in the future. This helps people understand your work and goals. Tell people who you are and how they can reach you. It’s great for networking and collaboration. If you’re not sure how to start, take a look at other people’s README.md files for inspiration.</p>
@@ -520,8 +570,8 @@ Writing a <code>README</code> file
 </div>
 </div>
 </section>
-<section id="uploading-your-repository" class="level3" data-number="7.6.2">
-<h3 data-number="7.6.2" class="anchored" data-anchor-id="uploading-your-repository"><span class="header-section-number">7.6.2</span> Uploading your repository</h3>
+<section id="uploading-your-repository" class="level3" data-number="7.6.3">
+<h3 data-number="7.6.3" class="anchored" data-anchor-id="uploading-your-repository"><span class="header-section-number">7.6.3</span> Uploading your repository</h3>
 <p>To initialize an existing folder as a GitHub repository, you first need to create a new repository, like explained above. You will then need to initialize the folder as a Git repository using <code>git init</code>. If you have already done this, you can of course skip this.</p>
 <p>To add your folder as a remote repository, navigate to your folder using the command line and use the <code>git remote</code> command.</p>
 <div class="cell">
@@ -534,7 +584,7 @@ Writing a <code>README</code> file
 </div>
 <p>This pushes the local branch named “main” to a remote repository called “origin” while setting it as the upstream branch. <code>-u</code> is used to set the upstream branch. It tells Git to remember the remote branch to which your local branch should be pushed in the future.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="common git remote commands">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -543,7 +593,7 @@ common git remote commands
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>git remote</code>: Lists all remote repositories associated with the current local repository.</p>
 <p><code>git remote -v</code>: Lists remote repositories along with their URLs.</p>
@@ -554,24 +604,29 @@ common git remote commands
 </div>
 </div>
 </section>
-<section id="fa-clone-cloning-a-repository" class="level3" data-number="7.6.3">
-<h3 data-number="7.6.3" class="anchored" data-anchor-id="fa-clone-cloning-a-repository"><span class="header-section-number">7.6.3</span> <i class="fa-solid fa-clone" aria-label="clone"></i> Cloning a Repository</h3>
+<section id="fa-clone-cloning-a-repository" class="level3" data-number="7.6.4">
+<h3 data-number="7.6.4" class="anchored" data-anchor-id="fa-clone-cloning-a-repository"><span class="header-section-number">7.6.4</span> <i class="fa-solid fa-clone" aria-label="clone"></i> Cloning a Repository</h3>
 <p>Cloning refers to creating a local copy of a repository from GitHub on your computer. When you clone a repository, you download all of its files, commit history, and branches to your local machine. Cloning allows you to work with the repository locally, make changes, and push those changes back to the original repository if you have write access. It is commonly used when you want to contribute to a project or work on it independently. To clone a repository, you need the repository’s URL from GitHub. You can find the repository’s HTTPS URL on the repository page, if you click on the green <strong>Code</strong> button. Then use the terminal to navigate to the directory where you want to clone the repository. Then use the <code>git clone</code> command followed byh the URL of the remote repository.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified. You can now work with the files in the repository, make changes, and commit your modifications locally. Remember to use the appropriate Git commands like <code>git add</code>, <code>git commit</code>, and <code>git push</code> to manage your changes and synchronize them with the remote repository as needed. By default, <code>git clone</code> will create a reference to the remote repository called “origin”, so you do not have to use <code>git remote</code> to create a remote repository.</p>
 </section>
-<section id="repository-settings" class="level3" data-number="7.6.4">
-<h3 data-number="7.6.4" class="anchored" data-anchor-id="repository-settings"><span class="header-section-number">7.6.4</span> Repository settings</h3>
+<section id="repository-settings" class="level3" data-number="7.6.5">
+<h3 data-number="7.6.5" class="anchored" data-anchor-id="repository-settings"><span class="header-section-number">7.6.5</span> Repository settings</h3>
 <p>To access the settings of a GitHub repository, go to the main page of the GitHub repository you want to configure and look for the “Settings” tab, usually located towards the right side of the repository’s navigation bar. Once you’re on the repository settings page, you’ll find various sections on the left sidebar that allow you to configure different aspects of the repository, such as “General,” “Branches,” or “Collaborators”.</p>
 <p>In the “General” section you can, for example, rename your repository or default branch, change the repositories visibility or delete your repository.</p>
 <p>In the “Collaborators” tab, it is possible to add accounts which can view or change your repository, even if it is private. For a detailed guide on the repository settings, you can check out the <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features">GitHub documentation</a>.</p>
 </section>
+<section id="fetching" class="level3" data-number="7.6.6">
+<h3 data-number="7.6.6" class="anchored" data-anchor-id="fetching"><span class="header-section-number">7.6.6</span> Fetching</h3>
+<p>The command <code>git fetch</code> is used to keep up-to-date with changes in the remote repository, <em>without</em> merging them into your local branch. Instead Git will update all your local tracking branches to the remote branch. To view your remote tracking branches, you can use <code>git branch -r</code>. After fetching, you can use <code>git switch</code> to review the changes on these branches. If you want to integrate the changes into you local branch, you can either now use <code>git pull</code> to directly update your local branch, or use <code>git merge origin/branchname</code> when you are on your local branch that you want to update.</p>
+<p><code>git fetch</code> is the safer option compared to <code>git pull</code> since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.</p>
 </section>
-<section id="fa-code-pull-request-pulling" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="fa-code-pull-request-pulling"><span class="header-section-number">7.7</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pulling</h2>
-<p>The <code>git pull</code> command is used to retrieve the latest changes from a remote repository and merge them into your local branch. You can test this function by editing a file in your repository on GitHub and then use <code>git pull</code> to update your local file with the change made on GitHub. To edit a file, first click on it, in the repository. In the top-right corner of the file view, click on the pencil icon (“Edit this file”) to start editing. Make the necessary changes to the file in the in-browser editor. You can add, modify, or delete content as needed. As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as “changes not staged for commit”. Provide a brief description of the changes in the “Commit changes” section at the bottom of the page.</p>
+</section>
+<section id="fa-download-pulling" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="fa-download-pulling"><span class="header-section-number">7.7</span> <i class="fa-solid fa-download" aria-label="download"></i> Pulling</h2>
+<p>The <code>git pull</code> command is used to retrieve the latest changes from a remote repository <strong>and</strong> merge them into your local branch. Effectively <code>git pull</code> first runs <code>git fetch</code> (see above) to fetch the latest changes from the remote repository and then integrates these changes into the local branch, either using <code>git merge</code> (for details, see the <a href="../chapters/branches.html">branches</a> chapter) or <code>git rebase</code> (for details, see the section on <a href="../chapters/intermediate-commands.html">rebasing</a>), depending on the configuration. In other words, <code>git pull</code> is a <code>git fetch</code> followed by a <code>git merge</code>. You can test this function by editing a file in your repository on GitHub and then use <code>git pull</code> to update your local file with the change made on GitHub. To edit a file, first click on it, in the repository. In the top-right corner of the file view, click on the pencil icon (“Edit this file”) to start editing. Make the necessary changes to the file in the in-browser editor. You can add, modify, or delete content as needed. As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as “changes not staged for commit”. Provide a brief description of the changes in the “Commit changes” section at the bottom of the page.</p>
 <p>Now you can open up your terminal once again, and in the relevant directory use the <code>git pull</code> command to update your local file with the change made on GitHub.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -583,17 +638,33 @@ common git remote commands
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">1</span> insertion<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 1 deletion<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The first part of the message indicates the range of commits that were fetched and merged. In this example, it suggests that Git is updating from commit <code>abc123</code> to commit <code>def456</code>. The “Fast-forward” message indicates that the local branch could be updated by moving the branch pointer forward, incorporating the new commits from the remote branch. This is possible when the local branch has not diverged from the remote branch, and there are no local commits that the remote branch does not have. The next line shows changes in the file <code>file.txt</code>. The <code>2 +-</code> indicates that two lines were changed with one insertion and one deletion. The <code>+</code> represents an addition, and the <code>-</code> represents a deletion. The last line of the message provides a summary of the changes. It states that one file was changed, with one line inserted and one line deleted.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="git pull command flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-warning callout-titled" title="Be aware which branch you are pulling!">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-git pull command flags
+Be aware which branch you are pulling!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A regular <code>git pull</code> incorporates changes from a remote repository into the <strong>current</strong> branch. You can use the <code>git branch</code> command to verify which branch you are currently on (for details, see the <a href="../chapters/branches.html">branches</a> chapter). If the current branch is behind the remote, then by default it will fast-forward the current branch to match the remote. If the current branch and the remote have diverged, the user needs to specify how to reconcile the divergent branches.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git pull` command flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common <code>git pull</code> command flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--ff-only</code>: Perform a fast-forward merge only. If the remote branch has new changes, Git will only update your local branch if a fast-forward merge is possible. Otherwise, it will abort the pull.</p>
 <p><code>--no-commit</code>: Perform the pull, but do not create an automatic commit after merging. This allows you to review the changes before committing manually.</p>
@@ -603,15 +674,10 @@ git pull command flags
 </div>
 </div>
 </div>
-<section id="fetching" class="level3" data-number="7.7.1">
-<h3 data-number="7.7.1" class="anchored" data-anchor-id="fetching"><span class="header-section-number">7.7.1</span> Fetching</h3>
-<p>The command <code>git fetch</code> is used to keep up-to-date with changes in the remote repository, without merging them into your local branch. Instead Git will update all your local tracking branches to the remote branch. To view your remote tracking branches, you can use <code>git branch -r</code>. After fetching, you can use <code>git switch</code> to review the changes on these branches. If you want to integrate the changes into you local branch, you can either now use <code>git pull</code> to directly update your local branch, or use <code>git merge origin/branchname</code> when you are on your local branch that you want to update.</p>
-<p><code>git fetch</code> is the safer option compared to <code>git pull</code> since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.</p>
 </section>
-</section>
-<section id="fa-code-pull-request-pushing" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="fa-code-pull-request-pushing"><span class="header-section-number">7.8</span> <i class="fa-solid fa-code-pull-request" aria-label="code-pull-request"></i> Pushing</h2>
-<p>The<code>git push</code> command is like a reversed <code>git pull</code>, it is used to upload your local commits to the remote repository. When you run <code>git push</code>, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository. Git will verify if your local branch is up to date with the remote branch. If there are new commits on the remote branch that you don’t have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts. It’s important to note that you need appropriate access and permissions to push to a remote repository. If you do not have write access, you won’t be able to push your changes. If you do not specify a branch, Git will push the one you are on in the moment.</p>
+<section id="fa-upload-pushing" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="fa-upload-pushing"><span class="header-section-number">7.8</span> <i class="fa-solid fa-upload" aria-label="upload"></i> Pushing</h2>
+<p>The<code>git push</code> command is like a reversed <code>git pull</code>. It is used to upload your local commits to the remote repository. When you run <code>git push</code>, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository. Git will verify if your local branch is up to date with the remote branch. If there are new commits on the remote branch that you don’t have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts. It’s important to note that you need appropriate access and permissions to push to a remote repository. If you do not have write access, you won’t be able to push your changes. If you do not specify a branch, Git will push the one you are on in the moment.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -628,17 +694,17 @@ git pull command flags
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>   <span class="ex">fb3efef..8f50685</span>  main <span class="at">-</span><span class="op">&gt;</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>git push</code> operation involves enumerating, compressing, and writing objects to the remote repository. The output indicates the progress of these steps, including delta compression, and concludes with a summary of the pushed branch and commit range. In this specific example, changes from the local main branch (commit <code>fb3efef</code>) were pushed to the remote main branch (commit <code>8f50685</code>).</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Common git push flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git push` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Common git push flags
+Common <code>git push</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-u</code> or <code>--set-upstream</code>: This flag is used to set the upstream branch for the current branch. It is typically used when pushing a branch for the first time to link the local branch with a remote branch.</p>
 <p><code>--force</code> or <code>-f</code>: Force pushes the local main branch to the origin remote repository, overwriting any changes that may have been made to the main branch in the remote repository.</p>
@@ -692,17 +758,17 @@ Common git push flags
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> blame recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you are working solo on a text file, the result should not be very interesting. However if you collaborate on code, this command can be very useful (for blame <strong>or</strong> praise!)</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Common git blame flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git blame` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Common git blame flags
+Common <code>git blame</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-L &lt;start&gt;,&lt;end&gt;</code>: Specifies a line range to blame. For example, <code>git blame -L 10,20 file.txt</code> will blame lines 10 to 20 of the file.</p>
 <p><code>-M</code>: Detects lines that were moved within the file and shows the original author’s information.</p>
