@@ -285,9 +285,21 @@ In the "General" section you can, for example, rename your repository or default
 In the "Collaborators" tab, it is possible to add accounts which can view or change your repository, even if it is private. 
 For a detailed guide on the repository settings, you can check out the [GitHub documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features).
 
-## {{< fa code-pull-request >}} Pulling
+### Fetching
 
-The `git pull` command is used to retrieve the latest changes from a remote repository and merge them into your local branch.
+The command `git fetch` is used to keep up-to-date with changes in the remote repository, *without* merging them into your local branch.
+Instead Git will update all your local tracking branches to the remote branch.
+To view your remote tracking branches, you can use `git branch -r`.
+After fetching, you can use `git switch` to review the changes on these branches.
+If you want to integrate the changes into you local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
+
+`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
+
+## {{< fa download >}} Pulling
+
+The `git pull` command is used to retrieve the latest changes from a remote repository **and** merge them into your local branch.
+Effectively `git pull` first runs `git fetch` (see above) to fetch the latest changes from the remote repository and then integrates these changes into the local branch, either using `git merge` (for details, see the [branches](branches.qmd) chapter) or `git rebase` (for details, see the section on [rebasing](intermediate-commands.qmd)), depending on the configuration.
+In other words, `git pull` is a `git fetch` followed by a `git merge`.
 You can test this function by editing a file in your repository on GitHub and then use `git pull` to update your local file with the change made on GitHub.
 To edit a file, first click on it, in the repository.
 In the top-right corner of the file view, click on the pencil icon ("Edit this file") to start editing.
@@ -318,7 +330,14 @@ The next line shows changes in the file `file.txt`. The `2 +-` indicates that tw
 The last line of the message provides a summary of the changes.
 It states that one file was changed, with one line inserted and one line deleted.
 
-::: {.callout-tip title="git pull command flags" collapse="true"}
+::: {.callout-warning title="Be aware which branch you are pulling!" collapse="true"}
+A regular `git pull` incorporates changes from a remote repository into the **current** branch.
+You can use the `git branch` command to verify which branch you are currently on (for details, see the [branches](branches.qmd) chapter).
+If the current branch is behind the remote, then by default it will fast-forward the current branch to match the remote.
+If the current branch and the remote have diverged, the user needs to specify how to reconcile the divergent branches.
+:::
+
+::: {.callout-tip title="Common `git pull` command flags" collapse="true"}
 `--ff-only`:
 Perform a fast-forward merge only.
 If the remote branch has new changes, Git will only update your local branch if a fast-forward merge is possible.
@@ -341,19 +360,10 @@ Automatically stash local changes before pulling, then apply them back after the
 This is handy when you have changes in progress and want to pull in the latest changes from the remote branch.
 :::
 
-### Fetching
+## {{< fa upload >}} Pushing
 
-The command `git fetch` is used to keep up-to-date with changes in the remote repository, without merging them into your local branch.
-Instead Git will update all your local tracking branches to the remote branch.
-To view your remote tracking branches, you can use `git branch -r`.
-After fetching, you can use `git switch` to review the changes on these branches.
-If you want to integrate the changes into you local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
-
-`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
-
-## {{< fa code-pull-request >}} Pushing
-
-The`git push` command is like a reversed `git pull`, it is used to upload your local commits to the remote repository.
+The`git push` command is like a reversed `git pull`.
+It is used to upload your local commits to the remote repository.
 When you run `git push`, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository.
 Git will verify if your local branch is up to date with the remote branch. 
 If there are new commits on the remote branch that you don't have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts.
@@ -384,7 +394,7 @@ The `git push` operation involves enumerating, compressing, and writing objects 
 The output indicates the progress of these steps, including delta compression, and concludes with a summary of the pushed branch and commit range.
 In this specific example, changes from the local main branch (commit `fb3efef`) were pushed to the remote main branch (commit `8f50685`).
 
-::: {.callout-tip title="Common git push flags" collapse="true"}
+::: {.callout-tip title="Common `git push` flags" collapse="true"}
 `-u` or `--set-upstream`:
 This flag is used to set the upstream branch for the current branch. 
 It is typically used when pushing a branch for the first time to link the local branch with a remote branch.
@@ -465,7 +475,7 @@ git blame recipes.txt
 If you are working solo on a text file, the result should not be very interesting.
 However if you collaborate on code, this command can be very useful (for blame **or** praise!)
 
-::: {.callout-tip title="Common git blame flags" collapse="true"}
+::: {.callout-tip title="Common `git blame` flags" collapse="true"}
 `-L <start>,<end>`:
 Specifies a line range to blame. For example, `git blame -L 10,20 file.txt` will blame lines 10 to 20 of the file.
 
