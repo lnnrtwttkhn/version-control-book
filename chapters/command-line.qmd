@@ -349,7 +349,7 @@ In this case for example:
 $ cd Documents/
 ```
 
-If there are multiple possibilities, pressing "Tab" again will cycle through the available options.
+If there are multiple possibilities, pressing `Tab` again will cycle through the available options.
 Autocomplete also works for system commands. 
 For example, typing `ls` and pressing `Tab` might complete it to `ls -l` or `ls -a`.
 Autocomplete also works for Git commands, that will be introduced later in this book.
@@ -538,6 +538,50 @@ For example, to create an empty file called `file.txt`, we can use the following
 ```{bash}
 touch file.txt
 ```
+
+### Opening files
+
+To view and/or edit files, you can use your preferred text editor or also use the command line. 
+On the command line, you can use the `open` command on macOS or the `start´ command on Windows using Gitbash. 
+For example:
+
+**macOS**:
+
+```{bash}
+open file.txt
+```
+
+**Windows (Git Bash)**:
+
+```{bash}
+start file.txt
+```
+
+These commands will open the specified file in the default associated application.
+
+### Editing files
+
+The `echo` command can be used to write text to a file, directly from the command line.
+Using `echo` in combination with ``>>`´ adds content to an existing file. 
+For instance, to add text to the file.txt file:
+
+```{bash}
+echo "This is a project for demonstration purposes." >> file.txt 
+```
+
+This adds the provided text to the existing content of file.txt.
+
+### Viewing File content
+
+If you want to view the content of a file without opening it, you can do so in the command line using the `cat` command.
+To display the content of a file, simply use `cat` followed by the file name. 
+For example:
+
+```{bash}
+cat file.txt 
+```
+
+This command will output the entire content of thefile.txt file to the terminal.
 
 ### Moving folders and files
 
