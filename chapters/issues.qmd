@@ -42,68 +42,69 @@ GitHub makes this easy with its feature called [GitHub Issues](https://github.co
 This chapter shows you how to use GitHub Issues for organizing and following a task.
 
 
-GitHub issues are another powerful feature of the platform. Recall that we are repurposing Git, a tool that facilitates software development. Think of the issues for a project as its bug tracker. For projects that are not pure software development, we co-opt this machinery to organize our to-do list more generally. The basic unit is an issue and you can interact with one in two ways.
+GitHub issues are a powerful and often used feature of the platform. 
+Recall that we are repurposing Git, a tool that facilitates software development. 
+Think of the issues for a project as its bug tracker. 
+For projects that are not pure software development, we can co-opt this machinery to organize our to-do list more generally. 
+The basic unit is an issue and you can interact with one in two ways.
 
-First, issues are integrated into the project's web interface on GitHub, with a rich set of options for linking to project files and incremental changes. Second, issues and their associated comment threads appear in your email, just like regular messages (this can, of course, be configured). The result is that all correspondence about a project comes through your normal channels, but is also tracked inside the project itself, with excellent navigability and search capabilities. For software, issues are used to track bugs and feature requests. In a data analysis project, you might open an issue to flesh out a specific sub-analysis or to develop a complicated figure. In a course, we use them to manage homework submission, marking, and peer review.
+First, issues are integrated into the project's web interface on GitHub, with a set of options for linking to project files and incremental changes. 
+Second, issues and their associated comment threads appear in your email, just like regular messages (this can, of course, be configured). 
+The result is that all correspondence about a project comes through your normal channels, but is also tracked inside the project itself, with good navigability and search capabilities. 
+For software, issues are used to track bugs and feature requests. 
+In a data analysis project, you might open an issue to flesh out a specific sub-analysis or to develop a complicated figure. 
+In a course, we could use them to manage homework submission, marking, and peer review.
 
-Issues can be assigned to specific people and they can be labeled, for example, “bug,” “simulation-study,” or “final-exam.” Coupled with the ability to cross-link issues and the project files or file changes, you have the power to document why things have happened in the past and to organize what needs to happen in the future.
+Issues can be assigned to specific people and they can be labeled, for example, `bug`, `simulation-study`, or `final-exam`. 
+Coupled with the ability to cross-link issues and the project files or file changes, you have the power to document why things have happened in the past and to organize what needs to happen in the future.
 
-> Issues "track ideas, feedback, tasks, or bugs for work"
+## Benefits - Overview
 
-
-
-
-
-
-## Benefits
-
-### Organized Research Tasks
+- **Organized Research Tasks**
 
 Issues help scientists keep track of their research tasks, experiments, and observations in an organized and structured manner.
 
-### Easier collaboration
+- **Easier collaboration**
 
 Issues facilitate seamless collaboration among scientists, allowing them to work together on experiments, data analysis, and research projects regardless of geographical locations.
 
-### Clear Communication
+- **Clear Communication**
 
 Scientists can use issue descriptions and comments to communicate their findings, hypotheses, and insights, fostering a transparent and clear dialogue within their research teams.
 
-### Structured Problem Solving
+- **Structured Problem Solving**
 
 Issues enable scientists to break down complex research problems into smaller, manageable tasks, making it easier to solve challenges step by step.
 
-### Documentation and Records
+- **Documentation and Records**
 
 By creating issues, scientists create a comprehensive record of their research progress, methodologies, and results, providing valuable documentation for future reference and publication.
 
-### Task Prioritization
+- **Task Prioritization**
 
 Researchers can assign labels and milestones to issues, helping them prioritize tasks, experiments, and analyses based on urgency and importance.
 
-### Traceable Changes
+- **Traceable Changes**
 
 Scientists can track changes made to issues, allowing them to see the evolution of ideas, experiments, and conclusions over time.
 
-### Error Tracking and Resolution
+- **Error Tracking and Resolution**
 
 Issues are ideal for identifying, documenting, and resolving errors, ensuring accuracy and reliability in scientific experiments and data analysis.
 
-## Functions
+## Features - Overview
 
 - You can [organize issues by labels](#adding-labels), for example `bug`.
 - You can [assign responsibility](#assigning-the-issue) for an issue to a team member.
 - You can [add the issue to a project milestone](#adding-milestones).
-
-### More functions of Issues (details [here](https://docs.gitlab.com/ee/user/project/issues/))
-
 - Issues can be combined in [Issue boards](https://docs.gitlab.com/ee/user/project/issue_board.html)
 - Issues can be [sorted](https://docs.gitlab.com/ee/user/project/issues/sorting_issue_lists.html) (by due date, label priority, etc.)
 - Issues can be [transferred between repositories](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#moving-issues)
 - Issues can be [crosslinked](https://docs.gitlab.com/ee/user/project/issues/crosslinking_issues.htm) e.g., in commit messages: `git commit -m "add missing data, close #37"`
 - Issues can send [automated email notifications](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#new-issue-via-email)
 - Issues can be [exported](https://docs.gitlab.com/ee/user/project/issues/csv_export.html) and archived
-{{content}}
+
+(more details [here](https://docs.gitlab.com/ee/user/project/issues/))
 
 ## Step-by-step
 
@@ -163,6 +164,8 @@ Click **Submit new issue** to create your issue.
 You can edit any of the above fields after creating the issue.
 Your issue has a unique URL that you can share with team members, or reference in other issues or pull requests.
 
+## Features
+
 ### Editing issues
 
 You can always edit the title and description of your issue after you submitted the issue.
@@ -193,6 +196,11 @@ Anyone who is part of the repository will automatically receive email notificati
 Tagging specific users with the `@` symbol will also send them an email, making it a useful way to involve individuals who might not already be closely following the entire repository.
 In a public repository, you can tag any GitHub user, while in a private repository, they need to have appropriate permissions.
 
+To connect related issues in the same repository, you can type `#` followed by part of the issue title and then clicking the issue that you want to link.
+
+!["Issue Comment" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-24024/mw-1440/images/help/issues/issue-comment.webp).](../static/issue-comment.png){#fig-github-issue-comment}
+
+
 #### Timeliness of issues
 
 Whenever a new comment is added to the issue thread, a new date will be displayed in the blue bar at the top of the issue.
@@ -205,10 +213,17 @@ This updated URL lets you link directly to a particular comment in the issue thr
 This is very handy when you want to share a specific comment with someone, saving them the trouble of scrolling.
 Alternatively you can also you can also click on the three dots on the right of the blue comment header (({{< fa ellipsis >}})) and select the option to copy the link for that specific comment).
 
-TODO: Add note about Markdown here.
+#### Using Markdown syntax 
+
+GitHub allows you to use Markdown syntax in your issue comments, which provides an easy way of formatting text
+
+E.g.: 
+Create headers using the # symbol. For example, `# Header 1`, `## Header 2`, and so on.
+For a complete overview of markdown syntax, you cn check out this [GitHub documentation](https://docs.github.com/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 ### Adding a task list
 
+One way of using Markdown syntax in GitHub issues, is creating a task list.
 It can be helpful to divide big problems into smaller tasks or group related issues together.
 A task list is a set of tasks that each appear on a separate line with a clickable checkbox.
 You can select or deselect the checkboxes to mark the tasks as complete or incomplete.
@@ -263,26 +278,39 @@ You can add the issue to an existing project and populate metadata for the proje
 
 !["Issue Project" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-120014/mw-1440/images/help/issues/issue-project.webp).](../static/issue-project.png){#fig-github-issue-project}
 
-https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
 
-### Communicating
+Learn more about [projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
 
-After your issue is created, continue the conversation by adding comments to it.
-You can `@mention` collaborators or teams to draw their attention to a comment.
-To connect related issues in the same repository, you can type `#` followed by part of the issue title and then clicking the issue that you want to link.
+### Issue templates
 
-!["Issue Comment" taken from the GitHub Docs ([docs.github.com](https://docs.github.com/)). The GitHub product documentation in the assets, content, and data folders are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/) ([direct link](https://docs.github.com/assets/cb-24024/mw-1440/images/help/issues/issue-comment.webp).](../static/issue-comment.png){#fig-github-issue-comment}
+GitHub issue templates are predefined formats for creating new issues in a repository. 
+They help with the process of opening new issues by providing a structure for the information that contributors should include when reporting a bug, requesting a feature, or any other type of issue. 
+You can create multiple templates for different types of issues, such as bug reports, feature requests, or general inquiries
+Each template is a Markdown file (.md) with predefined sections, such as description, steps to reproduce, expected behavior, actual behavior, etc.
+
+When a user opens a new issue, GitHub automatically displays the template content in the issue description field.
+Users can then fill in the required information based on the template.
+
+To create a new template follow these steps:
+
+1. Navigate to the repository on GitHub.
+1. Click on the **Settings** tab.
+1. Under the General tab, in the **Features** section, find the Button labeled: **Set up templates**
+
+Here you will find predefined templates by GitHub, but also the option to create a new issue template from scratch.
 
 ### Linking to to an issue
 
+You can link to an issue directly from the command line!
 You can link a pull request, branch or commit to an issue to show that a fix is in progress and to automatically close the issue when the pull request, branch or commit is merged.
 
-The striking advantage is that this link provides 
+E.g.:
 
 ```{bash}
-git commit -m "Add a new file. close #7" # <1>
+git commit -m "Add a new file. close #7" 
 ```
-1. close issue number 7 (if committed to the default branch)
+
+This closes issue number 7 of your repository. (if committed to the default branch)
 
 #### Linking to an issue using a keyword
 
@@ -302,22 +330,20 @@ Possible keywords are:
 
 For further information, see [this chapter](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) of the GitHub docs.
 
-### Issue templates
-
-1. Here, we'll begin with an empty issue.
-Your repository might have special forms and templates for issues, making it easier for people to share specific details.
-If your repository has these templates, just click on "Open a blank issue."
-
-
 ### Disabling issues
 
-TBA
+If you want to disable issues for your repository, you can easily do this in your repository`s settings.
+
+1. Navigate to the repository on GitHub.
+1. Click on the **Settings** tab.
+1. Under the General tab, in the **Features** section, find the **checkbox** related to issues.
+1. **Uncheck** or disable the issues feature.
 
 ## Strategies for Issues
 
 Every repository om GitHub has Issues.
 But should you use Issues in every project?
-It's hlepful to think about why you're using them.
+It's helpful to think about why you're using them.
 
 ### Issues for bug reporting and feature requests
 
