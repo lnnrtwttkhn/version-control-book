@@ -198,6 +198,33 @@ You might be familiar with using your mouse to click through folders, or perhaps
 The command line offers a different, perhaps less intuitive, but very efficient and precise way to interact with your computer's file system. 
 Instead of relying on graphical elements, you use text-based commands to perform tasks like exploring directories, creating and deleting files, and moving between folders. 
 
+### Directory and file structure
+
+In a file system, directories (or folders) and files are organized hierarchically to enable the storage and retrieval of data.
+Each level in the hierarchy is called a "level" or "depth."
+Parent directories contain child directories, creating a parent-child relationship.
+The **root directory** is the highest level in the hierarchy.
+On Unix-like systems (including macOS), the root directory is denoted by `/`.
+On Windows, it is typically denoted by a drive letter followed by `\` (e.g., `C:\)`.
+While the fundamental concepts of directories and files are consistent across operating systems, there are some differences in folder structures between macOS (Unix-based) and Windows:
+
+#### Windows
+
+Each drive (e.g., `C:`, `D:`) has its own root directory, and it is denoted by the drive letter followed by `\` (e.g., `C:\`).
+Windows uses `\` as the directory separator.
+The home directory is often `C:\Users\username\`
+An example path on Windows might be:
+
+`C:\Users\username\Documents\file.txt` 
+
+#### Mac OS
+
+On Mac OS the root directory is denoted by `/`, which is also used as the directory separator.
+The home directory for a user is typically `/Users/username/`.
+An example path on Mac OS could be:
+
+`/Users/username/Documents/file.txt`
+
 ### Current working directory
 
 Enter the command `pwd` (short for "print working directory").
