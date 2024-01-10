@@ -279,6 +279,16 @@ You may notice that the prompt has been updated to show the new working director
 If a path starts with a forward slash (`/`), it is considered an *absolute* path.
 Paths that do not start with a forward slash are considered *relative* to the current working directory.
 
+Note that if a path of yours contains a space, e.g.: `/Users/Your User/Downloads/Directory with Space/` it needs to be enclosed in qoutes, to be recognized by the command line.
+If you attempt to use this path in a command without quotes, the command interpreter would see it as three separate arguments
+
+Since in command-line interfaces, spaces are typically used to separate different arguments or parameters.
+Navigating to this absolute path, which contains spaces would look like this:
+
+```{bash}
+cd '/Users/Your User/Downloads/Directory with Space/'
+```
+
 ### Taking shortcuts
 
 #### Tilde: `~`
