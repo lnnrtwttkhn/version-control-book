@@ -623,6 +623,22 @@ ls -alh *.yml
 ```
 </details>
 
+
+::: {.callout-tip title="What does this output mean?" collapse="true"}
+The first column (`-rw-r--r--, -rw-r--r--@`) represents the file permissions. In Unix-like systems, it shows who can read, write, or execute the file. In this case, the files are readable and writable by the owner (`rw-`), readable by the group (`r--`), and readable by others (`r-`).
+
+The second column (`1`) indicates the number of hard links to the file.
+
+The third column (`konradpagenstedt`) is the username of the file's owner.
+
+The fourth column (`staff`) is the group associated with the file.
+
+The next columns (`Aug 11 13:10, Jan 3 11:29, Jan 5 13:34`) display the date and time when the file was last modified.
+
+The last column (`_affiliations.yml, _authors.yml, _metadata.yml, _quarto.yml, _variables.yml`) is the name of each file.
+:::
+
+
 By using the wildcard `*`, we can generate a list of all files ending with `.yml`.
 Similarly, we can apply the wildcard at the end of a path to match items starting with a specific letter, such as folders beginning with `i`:
 
