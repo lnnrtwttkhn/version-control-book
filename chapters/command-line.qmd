@@ -744,6 +744,20 @@ If you're interested in delving deeper, you may find a more comprehensive introd
 
 !["Hackerman" meme found on [Reddit.com](https://www.reddit.com/r/meme/comments/fu9f3b/command_prompt/)](../static/cli_meme.jpg){#fig-meme}
 
+### Combining commands 
+
+Combining commands in the command-line using semicolons `;` is a way to execute multiple commands sequentially on a single line. 
+Each command is separated by a semicolon, and they are executed one after the other, regardless of the success or failure of the previous command
+
+Let's say you want to create a new directory, move into that directory, and then list the files in that directory, all in one go. 
+You can use semicolons to combine these commands like this:
+
+```{bash}
+mkdir new_directory ; cd new_directory ; ls
+```
+
+This will: Create a new directory called `new_directory`,  Change the current working directory to `new_directory` and list the files in the new directory. 
+
 ## Acknowledgements & further reading
 
 We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
