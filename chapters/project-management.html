@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
+<meta name="description" content="Introduction to fundamental concepts of version control.">
 
-<title>Version Control of Code and Data - References</title>
+<title>Version Control of Code and Data - 8&nbsp; Project Management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +22,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +31,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../misc/acknowledgements.html" rel="next">
-<link href="../misc/cheatsheet.html" rel="prev">
+<link href="../chapters/issues.html" rel="next">
+<link href="../chapters/github-intro.html" rel="prev">
 <link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +67,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,7 +76,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../misc/references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/project-management.html">Project Management</a></li><li class="breadcrumb-item"><a href="../chapters/project-management.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Project Management</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -226,7 +208,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/project-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/project-management.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Project Management</span></span></a>
   </div>
 </li>
@@ -264,7 +246,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../misc/references.html" class="sidebar-item-text sidebar-link active">
+  <a href="../misc/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -291,126 +273,47 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#communication" id="toc-communication" class="nav-link active" data-scroll-target="#communication"><span class="header-section-number">8.1</span> Communication</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">8.2</span> Overview</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/project-management.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/project-management.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7">References</h1>
+<h1 class="title display-7"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Project Management</span></h1>
 <p class="author"></p>
 
 </header>
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-aimrsf2023" class="csl-entry" role="listitem">
-AI for Multiple Long-term Conditions Research Support Facility. 2023.
-<span>“Introduction to Version Control with Git.”</span> June 2023. <a href="https://www.youtube.com/watch?v=z9-qAGq78qE">https://www.youtube.com/watch?v=z9-qAGq78qE</a>.
-License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-4.0</a>. Source: <a href="https://github.com/aim-rsf/training/tree/main/version-control" class="uri">https://github.com/aim-rsf/training/tree/main/version-control</a>.
+<section id="communication" class="level2 page-columns page-full" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="communication"><span class="header-section-number">8.1</span> Communication</h2>
+<p>Communication in science often happens across a diversity of communication channels, including email, messenger apps like Slack, Mattermost or Discord and Project Management Software like Trello. As illustrated in <a href="#fig-xkcd-chat-systems">Figure&nbsp;<span>8.1</span></a> this can often lead to uncertainty about how to communicate about a project most effectively with whom.</p>
+<div id="fig-xkcd-chat-systems" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../static/xkcd-chat-systems.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;8.1: “Chat Systems” by xkcd (<a href="https://xkcd.com/">xkcd.com</a>). Used under a <a href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence</a> (<a href="https://xkcd.com/1810/">direct link</a>).</figcaption>
+</figure>
 </div>
-<div id="ref-allaire2022" class="csl-entry" role="listitem">
-Allaire, J. J., Charles Teague, Yihui Xie, and Christophe Dervieux.
-2022. <span>“Quarto.”</span> <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
-License: <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU GPL
-v2</a>. <a href="https://github.com/quarto-dev/quarto-web" class="uri">https://github.com/quarto-dev/quarto-web</a>. Website: <a href="https://quarto.org/" class="uri">https://quarto.org/</a>.
-</div>
-<div id="ref-blischak2016" class="csl-entry" role="listitem">
-Blischak, John D., Emily R. Davenport, and Greg Wilson. 2016. <span>“A
-Quick Introduction to Version Control with Git and GitHub.”</span>
-Edited by Francis Ouellette. <em>PLOS Computational Biology</em> 12 (1):
-e1004668. <a href="https://doi.org/10.1371/journal.pcbi.1004668">https://doi.org/10.1371/journal.pcbi.1004668</a>.
-License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-4.0</a>. Source: <a href="https://doi.org/10.1371/journal.pcbi.1004668">https://doi.org/10.1371/journal.pcbi.1004668</a>.
-</div>
-<div id="ref-bryan2018" class="csl-entry" role="listitem">
-Bryan, Jennifer. 2018. <span>“Excuse Me, Do You Have a Moment to Talk
-About Version Control?”</span> <em>The American Statistician</em> 72
-(1): 20–27. <a href="https://doi.org/10.1080/00031305.2017.1399928">https://doi.org/10.1080/00031305.2017.1399928</a>.
-Website: <a href="https://doi.org/10.1080/00031305.2017.1399928" class="uri">https://doi.org/10.1080/00031305.2017.1399928</a>.
-</div>
-<div id="ref-bryan2023" class="csl-entry" role="listitem">
-Bryan, Jenny. 2023. <em>Happy Git and GitHub for the useR</em>. Jenny
-Bryan. <a href="https://happygitwithr.com">https://happygitwithr.com</a>. License:
-<a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC
-4.0</a>. Source: <a href="https://github.com/jennybc/happy-git-with-r" class="uri">https://github.com/jennybc/happy-git-with-r</a>. Website: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a>.
-</div>
-<div id="ref-capes2023" class="csl-entry" role="listitem">
-Capes, Gerard, Bkmgit, Jacob Deppen, G. A. Devenyi, Alexander James
-Ball, Piper Fowler-Wright, Alessia Visconti, et al. 2023.
-<em>Swcarpentry/Shell-Novice: Software Carpentry: The UNIX Shell</em>.
-Zenodo. <a href="https://doi.org/10.5281/ZENODO.595899">https://doi.org/10.5281/ZENODO.595899</a>.
-License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-4.0</a>. Source: <a href="https://github.com/swcarpentry/shell-novice" class="uri">https://github.com/swcarpentry/shell-novice</a>. Website: <a href="https://swcarpentry.github.io/shell-novice/" class="uri">https://swcarpentry.github.io/shell-novice/</a>.
-</div>
-<div id="ref-chacon2014" class="csl-entry" role="listitem">
-Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>.
-License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC
-BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
-</div>
-<div id="ref-GitHub2023" class="csl-entry" role="listitem">
-GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>.
-License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC
-BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en">https://docs.github.com/en</a>.
-</div>
-<div id="ref-koziar2023" class="csl-entry" role="listitem">
-Koziar, Katherine E., Madicken Munk, Andrew Greene, Annajiat Alim Rasel,
-Ed Bennett, Sarah LR Stevens, Ece Turnator, et al. 2023.
-<em>Swcarpentry/Git-Novice: Software Carpentry: Version Control with Git
-2023-05</em>. Zenodo. <a href="https://doi.org/10.5281/ZENODO.7908089">https://doi.org/10.5281/ZENODO.7908089</a>.
-License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-4.0</a>. Source: <a href="https://github.com/swcarpentry/git-novice" class="uri">https://github.com/swcarpentry/git-novice</a>. Website: <a href="https://swcarpentry.github.io/git-novice/" class="uri">https://swcarpentry.github.io/git-novice/</a>.
-</div>
-<div id="ref-lowndes2022" class="csl-entry" role="listitem">
-Lowndes, Julia Stewart, and Erin Robinson. 2022. <span>“Openscapes
-Champions Lesson Series,”</span> December. <a href="https://doi.org/10.5281/ZENODO.7407247">https://doi.org/10.5281/ZENODO.7407247</a>.
-License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-4.0</a>. Source: <a href="https://github.com/Openscapes/series" class="uri">https://github.com/Openscapes/series</a>. Website: <a href="https://openscapes.github.io/series/" class="uri">https://openscapes.github.io/series/</a>.
-</div>
-<div id="ref-mcbain2019" class="csl-entry" role="listitem">
-McBain, Miles. 2019. <span>“Git for Scientists.”</span> <a href="https://milesmcbain.github.io/git_4_sci/">https://milesmcbain.github.io/git_4_sci/</a>.
-License: <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC
-BY-SA 4.0</a>. Source: <a href="https://github.com/MilesMcBain/git_4_sci/" class="uri">https://github.com/MilesMcBain/git_4_sci/</a>. Website: <a href="https://milesmcbain.github.io/git_4_sci/" class="uri">https://milesmcbain.github.io/git_4_sci/</a>.
-</div>
-<div id="ref-milligan2014" class="csl-entry" role="listitem">
-Milligan, Ian, and James Baker. 2014. <span>“Introduction to the Bash
-Command Line.”</span> Edited by Adam Crymble. <em>Programming
-Historian</em>, no. 3 (September). <a href="https://doi.org/10.46430/phen0037">https://doi.org/10.46430/phen0037</a>.
-</div>
-<div id="ref-millman2018" class="csl-entry" role="listitem">
-Millman, K. Jarrod, Matthew Brett, Ross Barnowski, and Jean-Baptiste
-Poline. 2018. <span>“Teaching Computational Reproducibility for
-Neuroimaging.”</span> <em>Frontiers in Neuroscience</em> 12 (October).
-<a href="https://doi.org/10.3389/fnins.2018.00727">https://doi.org/10.3389/fnins.2018.00727</a>.
-License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-4.0</a>. Website: <a href="http://dx.doi.org/10.3389/fnins.2018.00727" class="uri">http://dx.doi.org/10.3389/fnins.2018.00727</a>.
-</div>
-<div id="ref-perez-riverol2016" class="csl-entry" role="listitem">
-Perez-Riverol, Yasset, Laurent Gatto, Rui Wang, Timo Sachsenberg, Julian
-Uszkoreit, Felipe da Veiga Leprevost, Christian Fufezan, et al. 2016.
-<span>“Ten Simple Rules for Taking Advantage of Git and GitHub.”</span>
-Edited by Scott Markel. <em>PLOS Computational Biology</em> 12 (7):
-e1004947. <a href="https://doi.org/10.1371/journal.pcbi.1004947">https://doi.org/10.1371/journal.pcbi.1004947</a>.
-License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY
-4.0</a>. Source: <a href="https://github.com/ypriverol/github-paper" class="uri">https://github.com/ypriverol/github-paper</a>. Website: <a href="https://doi.org/10.1371/journal.pcbi.1004947" class="uri">https://doi.org/10.1371/journal.pcbi.1004947</a>.
-</div>
-<div id="ref-ram2013" class="csl-entry" role="listitem">
-Ram, Karthik. 2013. <span>“Git Can Facilitate Greater Reproducibility
-and Increased Transparency in Science.”</span> <em>Source Code for
-Biology and Medicine</em> 8 (1). <a href="https://doi.org/10.1186/1751-0473-8-7">https://doi.org/10.1186/1751-0473-8-7</a>.
-License: <a href="https://creativecommons.org/licenses/by/2.0/">CC BY
-2.0</a>. Source: <a href="https://github.com/karthik/smb_git" class="uri">https://github.com/karthik/smb_git</a>. Website: <a href="https://doi.org/10.1186/1751-0473-8-7" class="uri">https://doi.org/10.1186/1751-0473-8-7</a>.
-</div>
-<div id="ref-community2022" class="csl-entry" role="listitem">
-The Turing Way Community. 2022. <em>The Turing Way: A Handbook for
-Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>.
-License: The process documents and data are made available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0
-license</a>. Software are made available under an <a href="https://opensource.org/license/mit/">MIT license</a>. Website: <a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a>.
-</div>
-</div>
+</section>
+<section id="overview" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="overview"><span class="header-section-number">8.2</span> Overview</h2>
+<p>The basic idea is to manage your project next to your work (your code, your data) via a repository hosting service, in this case <a href="https://github.com">GitHub</a>.</p>
+<ul>
+<li>Discuss and plan your work in <a href="https://github.com/features/issues">Issues</a></li>
+<li>Propose changes to code or data using <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">pull requests</a></li>
+<li>Manage access to your code and data with detailed <a href="https://docs.github.com/en/get-started/learning-about-github/access-permissions-on-github">permissions and roles</a></li>
+<li>Add documentation to your repository or in a separate <a href="https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis">wiki</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script defer="" data-domain="lennartwittkuhn.com/version-control-book" src="https://plausible.io/js/script.js"></script>
@@ -726,15 +629,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../misc/cheatsheet.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cheatsheet</span>
+      <a href="../chapters/github-intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../misc/acknowledgements.html" class="pagination-link">
-        <span class="nav-page-text">Acknowledgements</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/issues.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Issues</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -748,7 +651,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <a class="nav-link active" href="../misc/acknowledgements.html" aria-current="page">Funded by the Digital and Data Literacy in Teaching Lab</a>
   </li>  
 </ul>
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/references.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/references.qmd" class="toc-action">View source</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
   </div>
 </footer>
