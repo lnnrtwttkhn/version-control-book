@@ -176,15 +176,17 @@ Better yet, experiment with these commands in a separate test repository, not in
 
 Sometimes you might want to revert files back to the state of your last commit.
 For example, this can be useful when you realize that the recent changes you made to a file have introduced an error.
-You can use `git restore` to discard changes in the working directory and revert the files to the state they were in when you last committed them.
+You can use `git restore` to **discard changes in the working directory** and revert the files to the state they were in when you last committed them.
 
 ```{bash}
 git restore <file>
 ```
 
-Please note that it may not be possible to undo the restore, since Git does not keep track of the state before the restore operation.
+::: {.callout-warning title="Be careful about data loss!"}
+Please note that it may not be possible to undo the restore, since Git does not keep track of the state before the restore operation!
+:::
 
-It is also possible to revert all files in your repository to the state of your last commit using:
+It is also possible to **revert all files in your repository** to the state of your last commit using:
 
 ```{bash}
 git restore .
@@ -281,6 +283,121 @@ By default, Git uses the first parent (main branch), but you can specify another
 
 `--no-edit`:
 This flag prevents the text editor from opening for editing the commit message, making it useful when you want to keep the default commit message.
+:::
+
+### Resetting to a commit
+
+If you want to reset your repository to a commit that was made in the past, you can use the `git reset` command.
+
+To get an overview of your past commits you can either use `git log` or `git reflog`.
+Both commands should get you an overview of your past commits. 
+For example:
+
+```{bash}
+git log --oneline
+```
+
+will give you an output like:
+
+```{bash}
+25a51e8 Update README.md
+b7f3a12 Add new feature X
+8d76a45 Merge branch 'feature-branch'
+2f0e73b Implement new functionality
+```
+
+Using `git reset <commit>` will **undo all the changes you made after the specific commit** you picked.
+Your "branch pointer" will move to the specified commit, and changes after that commit will be uncommitted and moved back to the working directory. For example:
+
+```{bash}
+git reset 8d76a45
+```
+
+However, these changes are still present in your working directory, so if you want to discard them completely, you can use add the `--hard` flag:
+
+```{bash}
+git reset --hard <commit>
+```
+
+This will not only reset your "branch pointer" but also discard all changes in your working directory and staging area since the specified commit. 
+It effectively resets your working directory to the state of the chosen commit.
+
+::: {.callout-warning title="Be careful about data loss!"}
+Please be careful when using the `git reset --hard` command!
+This command reset your working directory to the state of the chosen previous commit.
+This will delete changes beyond recovery, unless you can retrieve these changes from another location, for example a remote repository like GitHub.
+:::
+
+::: {.callout-tip title="`git reflog` vs. `git log`" collapse="true"}
+`git log` shows the commit history, while `git reflog` shows a log of all changes to branches, including resets and other adjustments. 
+Think of `git log` as a timeline of commits, and `git reflog` as a detailed diary of all recent changes, even those that alter commit history, providing a safety net for recovery.
+:::
+
+::: {.callout-tip title="Common `git reset` flags" collapse="true"}
+`--soft`: 
+Resets the branch pointer to the specified commit but keeps changes staged. This allows you to rework the changes and create a new commit.
+
+`--mixed` (default): 
+Resets the branch pointer to the specified commit and unstages changes. Changes are kept in your working directory, allowing you to modify them before committing.
+
+`--hard`: 
+Resets the branch pointer to the specified commit, unstages changes, and discards changes in your working directory. Use with caution, as it can lead to data loss.
+
+`--merge`:
+Resets the branch pointer and the index to the specified commit, but keeps changes in your working directory. This is useful in aborting a merge.
+
+`--keep`: 
+Resets the branch pointer and index to the specified commit but refuses to do so if there are uncommitted changes in the working directory.
+
+`--patch` or `-p`: 
+Allows you to interactively choose changes to reset, similar to the `git add -p` command for staging changes.
+:::
+
+## Partial commits
+
+Git allows you to make partial commits by staging only specific parts of your file before committing. 
+This can be achieved using `git add`  with the `-p` or `--patch` option, which allows you to interactively choose which changes to stage. 
+
+To try this make some changes to your file(s) and use:
+
+```{bash}
+git add -p
+```
+
+This will prompt you with each change, giving you options to stage, skip, or split the changes.
+You'll see a series of prompts like this:
+
+```{bash}
++ Example text ...
++
++
++
+(1/x) Stage this hunk [y,n,q,a,d,e,?]?
+```
+
+These prompt option respectively stand for:
+
+-   `y`: Stage this hunk.
+-   `n`: Do not stage this hunk.
+-   `q`: Quit. Do not stage this hunk or any remaining hunks.
+-   `a`: Stage this hunk and all later hunks in the file.
+-   `d`: Do not stage this hunk or any later hunks in the file.
+-   `/`: Search for a hunk matching the given regex.
+-   `e`: Manually edit the current hunk.
+-   `?`: Print help.
+
+Type one of the symbols in the command line to proceed in the desired manner.
+
+::: {.callout-tip title='What is a "hunk"?' collapse="true"}
+In Git, a "hunk" refers to a distinct block of code changes within a file.
+It represents a cohesive set of added, modified, or deleted lines in a specific location.
+Git automatically divides changes into hunks to facilitate easier review, selective staging, and conflict resolution during version control operations.
+:::
+
+::: {.callout-tip title="Our recommendation: Use a GUI for partial commits" collapse="false"}
+In our opinion, using partial commits on the command line is a bit of a hassle.
+This would be a good usecase for a Git GUI. 
+To checkout how to do partial commit using [GitKraken](https://www.gitkraken.com) checkout the [GUI chapter](gui.qmd) in this book.
 :::
 
 ## Alternatives to standard merging
