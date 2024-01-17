@@ -231,11 +231,11 @@ Changes to be committed:
 ```
 
 Your change to the file (or the addition of it to the project directory) is now **staged**.
-You do not have to add every file one by one, you can simply use the `-a` flag.
+You do not have to add every file one by one, you can simply use the `-A` flag.
 This means if you want to stage every file in your project for preparation of your next commit, you can use:
 
 ```{bash}
-git add -a
+git add -A
 ```
 
 ::: {.callout-warning title="Be careful when staging *all* files!" collapse="true"}
@@ -245,7 +245,7 @@ We recommend to use `git status` frequently to check which files are in the stag
 :::
 
 ::: {.callout-tip title="Common `git add` flags" collapse="true"}
-`-a`: 
+`-A`: 
 Adds all changes, including modifications, deletions, and new files, in the entire working tree.
 
 `-u`: 
@@ -285,10 +285,21 @@ You should see output similar to the following:
 
 Congratulations!
 You have successfully created your first commit in the Git repository. :tada:
-Commits are the core elements of version control.
+Commits are the core elements of version control and the "commit history" of your Git repository.
 They allow you to track the history of your project and easily revert changes if needed.
 
 You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
+
+#### Commit description
+
+Though it's not required, it can be a good idea to add a more thorough description to the commit, in addition to the (shorter) commit message.
+While the commit message is usually a single short (less than 50 character) line summarizing the change, a more through description can be used to add more background information or helpful links that may help to understand the changes of the commit.
+
+To add an additional description directly in the command line, add an extra `-m` after the commit message, followed by the description in quotes:
+
+```{bash}
+git commit -m "Title" -m "Description"
+```
 
 ::: {.callout-tip title="Common `git commit` flags" collapse="true"}
 `-m` <message>: 
@@ -352,11 +363,11 @@ Filters commits by the author's name or email using a specified <pattern>.
 ### Comparing versions
 
 Another very handy feature is the `git diff` command.
-It allows you to compare two different versions of your file.
+It allows you to **compare two different versions of your file(s)**.
 By default it shows you any uncommitted changes since the last commit.
-You can explore this by pasting this text in your `.txt` file:
+You can explore this by pasting text in your `.txt` file, for example:
 
-```{latex}
+```{tex}
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
 Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -378,66 +389,183 @@ You should see output similar to the following:
 \ No newline at end of file
 ```
 
+The output of `git diff` includes several pieces of information:
+
+- `+++` and `---` indicate the paths to the files being compared.
+- `@@ -0,0 +1 @@` is a unified diff header.
+It shows where the changes occurred.
+Note, that this line will look different for each change or commit.
+- `+` indicates added lines and `-` indicates removed lines.
+Lines that are identical between the two versions are not explicitly shown.
+
+You can also use `git diff` to **compare two specific commits**. 
+For example, if you want to compare the current state of your file with a commit from a few commits ago:
+
+```{bash}
+git diff <commit-A> <commit-B>
+```
+
+Instead of `<commit-A>` and `<commit-B>`, you use the commit hashes, that you can see when using `git log`.
+
+If you've staged some changes using `git add`, you can **compare the staged changes to your last commit**.
+
+```{bash}
+git diff --staged
+```
+
+If you only want to look at the changes of a specific file, you can specify that file.
+
+```{bash}
+git diff <filename>
+```
+
+This command can also be combined with additional flags and options.
+
 ::: {.callout-tip title="Common `git diff` flags" collapse="true"}
 
 `--cached` or `--staged`: 
 Shows the changes that are staged (added) but not yet committed.
 
-<commit>: Displays the difference between the current working directory and a specific commit. For example, git diff abc123 shows the changes compared to commit "abc123".
+`<commit>`:
+Displays the difference between the current working directory and a specific commit.
+For example, `git diff abc123` shows the changes compared to commit `abc123`.
 
-<commit>..<commit>: Shows the difference between two specific commits. For example, git diff abc123..def456 displays the changes between commit "abc123" and commit "def456".
+`<commit> .. <commit>`:
+Shows the difference between two specific commits.
+For example, `git diff abc123 def456` displays the changes between commit `abc123` and commit `def456`.
 
-`--name-only`: 
+`--name-only`:
 Outputs only the names of the files that have differences, without showing the actual changes.
 
-`--name-status`: 
+`--name-status`:
 Displays the names of files along with a status identifier that indicates if a file was added, modified, or deleted.
 
-`--color-words`: 
+`--color-words`:
 Highlights the differences at the word level, providing more granular detail.
 :::
 
 ### Good commits
 
-Ideally, each commit contains an isolated, complete change.
+You should not consider a commit as a general `Save` button, that you use to save all your recent changes in one go.
+Instead, each commit should ideally contain one isolated and complete change.
 For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
-This is so that later, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
+
+This approach to commits, helps you down the line. 
+For example, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
 If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
 
 ### Commit messages etiquette
 
-Git allows for a title with a 72 character limit and a description without such a limit.
-In general you should aim to write clear and concise commit messages.
+Git allows for a title or commit message with a 72 character limit and a description without such a limit.
+In general you should aim to write clear and short commit messages.
 There are different conventions across projects/persons but also some general guidelines, you can stick to. 
 
-It is standard to start the title with an imperative verb to indicate the purpose of the commit. 
+It is standard to start the title with an **imperative verb** to indicate the purpose of the commit, for examople, "add", "fix" or "improve".
 It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary).
+Here is an example:
+
+```{bash}
+git commit -m "Implement user registration feature
+
+This commit adds the user registration functionality to the application. It includes the following changes:
+- Created a new 'register' route and view for user registration.
+- Added form validation for user input."
+```
 
 ::: {.callout-tip title="Commit messages examples" collapse="true"}
 Some examples for commit messages, which stick to the etiquette:
 
-- Add 'favourites.txt' to the project
-- Fix typo in first recipe
-- Improve code comments for clarity
-- Fix critical security vulnerability (CVE-2022-1234)
-- Refactor database query functions for efficiency
-- Update installation instructions in README
+- `"Add 'favourites.txt' to the project"`
+- `"Fix typo in first recipe"`
+- `"Improve code comments for clarity"`
+- `"Fix critical security vulnerability (CVE-2022-1234)"`
+- `"Refactor database query functions for efficiency"`
+- `"Update installation instructions in README"`
 
 :::
+
+### Amending a commit
+
+The `git commit --amend` command is used to modify (or "amend") your most recent Git commit in your repository.
+It allows you to edit the commit message, add more changes to the commit, or simply adjust the last commit without creating a new commit.
+This flag can be useful if you forgot to include something in your last commit, made a typo or want to change your commit message.
+You can also combine `--amend` with other flags.
+To change the commit message of your last commit (without opening an editor) try:
+
+```{bash}
+git commit --amend -m "changed commit message"
+```
+
+Replace `"changed commit message"` with your actual improved commit message.
+
+If you want to to keep your commit message but include new changes to your file(s) in you last commit, you can use:
+
+```{bash}
+git commit --amend --no-edit
+```
+
+The `--no-edit` flag, lets you keep the commit message of your most recent commit.
+
+#### The repeated `--amend` workflow
+
+The "repeated amend" is a Git workflow where you avoid cluttering your history with numerous tiny commits.
+Instead, you gradually build up a "good" commit by amending it repeatedly. 
+Continue making small changes and amending the existing commit, refining it over time.
+This method keeps your Git history useful and looking good, making sure your commits tell a straightforward story of how your project evolved.
+
+This workflow can be useful when you're working on a new feature or a significant change and you might make several small adjustments to get it right. Instead of cluttering your history with numerous tiny commits for each tweak, you can use the "repeated amend" to gradually build up a well-polished commit that includes the entire feature.
+
+## What files can/should I track with Git?
+
+In principle, any file can be tracked with Git.
+However, to make use of the full potential of Git, it is recommended to mainly track plain text files with Git.
+
+### {{< fa code >}} Code files
+
+Tracking code files is the most common and original use case for version control with Git.
+Git is well-suited for tracking changes in source code, and it's widely used by developers and teams for this purpose.
+Whether it's a single developer maintaining a personal project or a large team collaborating on a complex software system, Git excels at tracking code files throughout the development lifecycle.
+
+### {{< fa file-lines >}} Plain textfiles
+
+Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup that uses emails or shared Dropbox folders for "version control" (see the [introduction](introduction.qmd) chapter). 
+However, to really be able to use the full set of features of Git, you should rely on plain text files for your project.
+This is because `.docx` files are saved as binary files, which makes meaningful outputs of the text inside it impossible for Git.
+"Plain textfiles" does not mean you have to use `.txt` files.
+Instead you can use formattable Markdown (`.md`) files.
+Markdown (`.md`) files are plain text files that contain formatting elements, making them more versatile than plain .txt files.
+Markdown allows you to add simple formatting like headings, lists, links, and images.
+
+### {{< fa brands windows >}} Microsoft office files
+As said earlier, it is not recommended to track Microsoft office files using Git, since Git treats `.docx` files as binary files.
+Binary files lack the inherent structure that allows Git to capture and display changes effectively.
+Git relies on understanding the differences between versions of files.
+With binary files, you won't benefit from the ability to view detailed textual differences (`git diff`) or effectively use [branches](branches.qmd).
+Collaborative work on binary files, such as simultaneous editing of a Word document, may result in complex [merge conflicts](branches.qmd) that are challenging to resolve.
+
+So while it is possible to track `.docx` files with Git, you will not be able to use the many features of Git, which rely on Git being able to display the file, since Git can only output the "zeros and ones" and not the text inside the `.docx` files.
+
+If you ever choose to track them regardless, you should use detailed commit messages, since you will not be able to easily look at the text content of past versions.
+You will also need to know about temporary word files. 
+For it's own version control system, Word creates temporary files in the folder of your word file.
+You should not track these files using Git, since Word creates a lot of them.
+To not stage or commit these files by accident, you can use the `.gitignore` file.
 
 ## Ignoring files and folders: `.gitignore`
 
 `.gitignore` is a special file.
 It is used in Git to specify files and directories that should be ignored and not tracked.
 When you create a `.gitignore` file, place it inside your Git repository and specify filenames inside it.
-Git will then exclude these files and directories from being staged or committed, e.g. when using `git add -a`. which normally stages all your files.
+Git will then exclude these files and directories from being staged or committed, e.g. when using `git add -A`. which normally stages all your files.
 
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
+Files that can recreated from the code, like for example `.png` plots from R code, should also be included in your project's `.gitignore` file.
 Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project fules without distractions from unnecessary files.
 `.gitignore` can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
-It also makes sense to include large files or temporary outputs in your `.gitignore` file.
+Huge files, like big data files should also not be committed, since they can slow down working with your repository.
+To version control files with a big size, toolsl like [DataLad](https://www.datalad.org) are more appropriate.
 
-To create a `.gitignore` file from the command line, navigate to your repo and use the `touch` command.
+To create a `.gitignore` file from the command line, navigate to your repository and use the `touch` command.
 Alternatively, create the file in your favorite text editor.
 
 ```{bash}
@@ -550,6 +678,16 @@ DESCRIPTION.meta
 ```
 :::
 
+## Bonus exercises
+
+Besides generally playing around with staging, committing, `git log` and `git diff`, you can also do these tasks:
+
+- Add a recipe to your project using the repeated `--amend` workflow
+- Initialize a new Git repository and create a `.docx` file in it. 
+Check out the results of `git diff` after writing in the file.
+- Use `ls -a` to see the temporary files.
+- Create a `.gitignore` file, where you put all temporary files Word creates. 
+
 ## Cheatsheet
 
 ```{r}
@@ -557,10 +695,13 @@ DESCRIPTION.meta
 #| echo: false
 #| message: false
 #| warning: false
-knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
+knitr::kable(table_cheatsheet(name = "basic"), format = "markdown", row.names = FALSE)
 ```
 
-## Acknowledgements
+## Acknowledgements & further reading
+
+We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
+We recommend these references for further reading:
 
 ```{r}
 #| eval: true
@@ -571,4 +712,3 @@ knitr::kable(table_cheatsheet(name = "basic"), format = "markdown")
 bibtexkeys = c("bryan2023", "community2022", "millman2018", "mcbain2019")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
-
