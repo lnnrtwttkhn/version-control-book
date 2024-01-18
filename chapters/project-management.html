@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <meta name="description" content="Introduction to fundamental concepts of version control.">
 
-<title>Version Control of Code and Data - 8&nbsp; Project Management</title>
+<title>Version Control of Code and Data - 9&nbsp; Project Management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/issues.html" rel="next">
-<link href="../chapters/github-intro.html" rel="prev">
+<link href="../chapters/tags-and-releases.html" rel="prev">
 <link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/project-management.html">Project Management</a></li><li class="breadcrumb-item"><a href="../chapters/project-management.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Project Management</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/project-management.html">Project Management</a></li><li class="breadcrumb-item"><a href="../chapters/project-management.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Project Management</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -197,6 +197,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/tags-and-releases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -209,13 +215,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/project-management.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Project Management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Project Management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
   </div>
 </li>
       </ul>
@@ -223,19 +229,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/intermediate-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -278,8 +284,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#communication" id="toc-communication" class="nav-link active" data-scroll-target="#communication"><span class="header-section-number">8.1</span> Communication</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">8.2</span> Overview</a></li>
+  <li><a href="#communication" id="toc-communication" class="nav-link active" data-scroll-target="#communication"><span class="header-section-number">9.1</span> Communication</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">9.2</span> Overview</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/project-management.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/project-management.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -287,23 +293,23 @@ ul.task-list li input[type="checkbox"] {
 <main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Project Management</span></h1>
+<h1 class="title display-7"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Project Management</span></h1>
 <p class="author"></p>
 
 </header>
 
-<section id="communication" class="level2 page-columns page-full" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="communication"><span class="header-section-number">8.1</span> Communication</h2>
-<p>Communication in science often happens across a diversity of communication channels, including email, messenger apps like Slack, Mattermost or Discord and Project Management Software like Trello. As illustrated in <a href="#fig-xkcd-chat-systems">Figure&nbsp;<span>8.1</span></a> this can often lead to uncertainty about how to communicate about a project most effectively with whom.</p>
+<section id="communication" class="level2 page-columns page-full" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="communication"><span class="header-section-number">9.1</span> Communication</h2>
+<p>Communication in science often happens across a diversity of communication channels, including email, messenger apps like Slack, Mattermost or Discord and Project Management Software like Trello. As illustrated in <a href="#fig-xkcd-chat-systems">Figure&nbsp;<span>9.1</span></a> this can often lead to uncertainty about how to communicate about a project most effectively with whom.</p>
 <div id="fig-xkcd-chat-systems" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="../static/xkcd-chat-systems.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;8.1: “Chat Systems” by xkcd (<a href="https://xkcd.com/">xkcd.com</a>). Used under a <a href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence</a> (<a href="https://xkcd.com/1810/">direct link</a>).</figcaption>
+<figcaption class="figure-caption margin-caption">Figure&nbsp;9.1: “Chat Systems” by xkcd (<a href="https://xkcd.com/">xkcd.com</a>). Used under a <a href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence</a> (<a href="https://xkcd.com/1810/">direct link</a>).</figcaption>
 </figure>
 </div>
 </section>
-<section id="overview" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="overview"><span class="header-section-number">8.2</span> Overview</h2>
+<section id="overview" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="overview"><span class="header-section-number">9.2</span> Overview</h2>
 <p>The basic idea is to manage your project next to your work (your code, your data) via a repository hosting service, in this case <a href="https://github.com">GitHub</a>.</p>
 <ul>
 <li>Discuss and plan your work in <a href="https://github.com/features/issues">Issues</a></li>
@@ -631,13 +637,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/github-intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub</span></span>
+      <a href="../chapters/tags-and-releases.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/issues.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Issues</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Issues</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
