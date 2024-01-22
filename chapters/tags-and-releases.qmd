@@ -1,0 +1,282 @@
+---
+author: ""
+categories: [intermediate, GitHub, remote]
+image: ../static/github-edit-release-pencil.png
+abstract: |
+  Let's dive into the world of Git tags and releases! 
+  We'll cover everything from creating tags to managing versions, sharing tips for smooth collaboration and integration with Zenodo.
+---
+
+# Tags and Releases
+
+## Logistics
+
+### Learning Objectives
+
+-   Understand why Git tags matter in version control and project management
+-   Learn when to use lightweight or annotated tags and how to apply them
+-   Get the hang of pushing and pulling tags in Git for seamless teamwork
+-   Explore how GitHub releases complement Git tags
+-   Discover how to use Zenodo to make your repository citable
+
+### Exercises
+
+-   Create a Lightweight Tag
+-   Create an Annotated Tag
+-   Switch to a Tag
+-   Delete a Tag
+-   Push a Tag to remote
+-   Create a GitHub release
+-   Link a Zenodo record
+
+## Tags
+
+### Importance of Tags
+
+At its core, a tag in version control systems like Git is a reference or a label associated with a **specific commit**.
+Tags are used to mark particular points in a project's history, usually to signify important **milestones** or **releases**.
+It acts as a human-readable reference to a particular state of the repository.
+
+Once created, a tag is generally immutable
+It doesn't move or change its associated commit.
+Tags don't store changes themselves.
+They merely point to an existing commit.
+Tags should be named in a way that is meaningful and easy to understand.
+Commonly used names include version numbers (for example, `v1.0`, a practice known as [semantic versioning](https://semver.org/)), release names, or other identifiers that convey the purpose of the tag.
+
+Tags can also be beneficial for collaboration within a development team, as they provide a **common reference point** for discussing and working on specific versions of the project.
+Unlike branches, which represent separate lines of development, tags are typically independent of branches.
+They can be created on any commit, regardless of the branch.
+Tags are stable references that don't change even if new commits are added to the repository.
+
+There are two types of tags:
+Lightweight and Annotated tags.
+
+### Lightweight Tags
+
+Lightweight tags in Git are simple pointers to specific commits in the version control history.
+Unlike annotated tags, they carry **minimal metadata**, consisting only of the tag name and the hash of the associated commit.
+Lightweight tags are created using `git tag`, followed by the tag name:
+
+```{bash}
+git tag v1.0 # <1>
+```
+1. `v1.0` is only an example. You can choose any other tag name.
+
+This creates a lightweight tag named `v1.0` that points to the current commit at the time of creating the tag.
+If you create a lightweight tag in this way (without specifying another commit), it is created at the current commit (`HEAD`) in your working directory.
+If you want to tag another specific commit, you include the commit hash when creating the tag:
+
+```{bash}
+git tag v1.1 <commit-hash>
+```
+
+Replace `commit-hash` with the actual hash of the commit that you want to tag.
+
+You can verify that the tag has been created by listing all the tags.
+To do this, use:
+
+```{bash}
+git tag 
+```
+
+### Annotated Tags
+
+Annotated tags in Git are tags that include **additional metadata** beyond a reference to a specific commit.
+When you create an annotated tag, Git stores information such as the tagger's **name**, **email**, the **date** the tag was created, and a **tagging message**.
+This additional information provides context and details about the tag, making annotated tags more informative compared to lightweight tags.
+To create an annotated tag, you use `git tag` with the `-a` flag.
+To include a tagging message, the `-m` flag is used
+If you do not use the `-m` flag, your text editor of choice will open up.
+The tagging message can be a detailed description of the tag, such as release notes or significant changes.
+For example:
+
+```{bash}
+git tag -a v1.0 -m "Release version 1.0"
+```
+
+Annotated tags are larger in size compared to lightweight tags due to the additional metadata.
+
+::: {.callout-tip title="Common `git tag` flags" collapse="true"}
+`-a` or `--annotate`: Creates an annotated tag, which includes additional metadata like tagger information and a tagging message.
+
+`-m` or `--message`: Specifies the tagging message directly in the command.
+Useful when creating an annotated tag without opening an editor.
+
+`-l` or `--list`: Lists existing tags.
+
+`-d` or `--delete`: Deletes a tag.
+
+`-f` or `--force`: git tag -f v1.0
+:::
+
+### Tags workflow
+
+Once you created a lightweight or annotated tag, it will show up if you use `git tag` or `git tag -l`.
+To switch to a tag, you can use `git checkout` followed by the name of the tag:
+
+```{bash}
+git checkout v1.0
+```
+
+Now you are "on the tag" and your working directory reflects the state of the code of the commit the tag is pointing to.
+
+In general, it's not advisable to make changes directly after switching to a tag.
+When you switch to a tag in Git, you enter a "detached `HEAD`" state, meaning that you're not on any branch.
+In this state, any new commits you make won't belong to any branch, and you might lose those changes if you switch away from the tag.
+If you need to make changes based on a specific tag, it's often better to create a new branch from the tag and then make your changes on that branch.
+
+A recommended practice is to treat **annotated tags as suitable for public releases** and **lightweight tags as more appropriate for private use**. 
+Annotated tags include additional metadata such as the tagger's name, email, and date, making them valuable for public releases where comprehensive information is beneficial.
+On the other hand, lightweight tags act as simple "bookmarks" to a commit, serving as efficient pointers without the extra metadata. 
+They are particularly useful for creating quick links to relevant commits in a more private or internal context.
+
+### Pushing and pulling tags
+
+Pushing and pulling tags in Git involves syncing tags between your local repository and a remote repository, such as GitHub, as discussed in the [GitHub chapter](github-intro.qmd).
+To push a specific tag to the remote repository, use:
+
+```{bash}
+git push origin <tag-name>
+```
+
+Replace `<tag-name>` with the name of the tag you want to push.
+
+To push all tags to the remote repository, use:
+
+```{bash}
+git push origin --tags
+```
+
+To fetch all tags from the remote repository (without merging), use:
+
+```{bash}
+git fetch --tags
+```
+
+Alternatively, you can combine fetching and merging using:
+
+```{bash}
+git pull --tags
+```
+
+When you pull or fetch tags, Git fetches tag references, but it does not automatically switch to the state of a specific tag.
+If you want to work on a specific tag after pulling, use `git checkout` to switch to that tag.
+
+## GitHub Releases
+
+Releases represent specific versions of your repository, that you can package and share with a broader audience for download and usage.
+These releases are tied to specific Git tags, which act as markers for specific points in your repository's history.
+
+Here's a step-by-step guide:
+
+1.  Go to the **main page** of your GitHub **repository**.
+
+2.  Click on "**Create a new release**" under "**Releases**" tab located on the right side of your repository page.
+Now, you should see a page, similar to @fig-gh_releases.
+    
+3.  Choose an **existing Git tag** or **create a new one**.
+    If you have created and pushed a Tag, it should show up here.
+    Enter the **tag version** in the "Tag version" field.
+    Enter a **meaningful title** for your release.
+    In the "**Describe this release**" field, provide **release notes**.
+    This can include details about new features, bug fixes, and any other relevant information.
+    If you have binary files, installers, or other assets related to the release, you can attach them by clicking on "Attach binaries by dropping them here or selecting them".
+
+4.  If you're creating a draft release, you can save it as a draft by clicking on the "Save draft" button.
+    Draft releases are not visible to the public.
+    If you're ready to make the release public, click on the "**Publish release**" button.
+    
+![Screenshot of GitHub when creating a new release](../static/github-releases.png){#fig-gh_releases}
+
+That's it!
+You've successfully created a GitHub release for your project! :rocket:
+
+After publishing the release, you and others can view it on the **Releases page**.
+It will include the release notes, associated Git tag, and any attached assets.
+
+## Zenodo
+
+[Zenodo](https://zenodo.org) is an open-access digital repository platform designed to **preserve and share research outputs**.
+It is operated by CERN (European Organization for Nuclear Research) and supported by the European Commission.
+Zenodo provides a platform for researchers across various disciplines to deposit, share, and archive their scholarly works, datasets, code, and other research outputs.
+
+Zenodo can be integrated with version control systems like Git and platforms like GitHub.
+This integration allows for **automated archiving of specific releases or tags** from Git repositories.
+Zenodo assigns a **Digital Object Identifier (DOI)** to each record, including those linked to GitHub repositories, providing a permanent link for citation.
+
+By linking your GitHub repository, you also ensure that your work is archived and accessible beyond the lifespan of GitHub.
+When you publish a research paper, journals increasingly require or encourage the deposition of associated data in a public repository. 
+Uploading the contents of your GitHub repository to Zenodo ensures that your work is openly accessible and can be cited.
+
+::: {.callout-tip title="What is a Digital Object Identifier (DOI)?" collapse="true"}
+
+A Digital Object Identifier (DOI) is a unique alphanumeric string assigned to a digital document or resource to provide a permanent and stable link to it.
+DOIs are commonly used to identify and provide a persistent link to scholarly articles, research papers, books, datasets, and other types of digital content.
+The purpose of a DOI is to ensure that the content can be reliably located and accessed over time, even if the web address (URL) of the resource changes.
+
+Key features of DOIs include:
+
+1. **Uniqueness:** Each DOI is unique to a particular resource, ensuring that no two resources have the same identifier.
+
+2. **Persistence:** DOIs are designed to remain unchanged, providing a persistent link to the resource even if it is moved or the URL changes.
+
+3. **Interoperability:** DOIs are widely used in scholarly publishing and other sectors, making them interoperable across different systems and platforms.
+
+4. **Accessibility:** DOIs are often associated with metadata that provides information about the resource, such as author, title, publisher, publication date, and more.
+
+5. **Citations:** DOIs are commonly used in academic and scientific citations to provide a standardized and reliable reference to a specific resource.
+
+DOIs are typically assigned and managed by registration agencies, such as CrossRef for scholarly content or DataCite for research data. Organizations and publishers assign DOIs to their digital content to enhance discoverability, citation tracking, and long-term accessibility.
+
+:::
+
+### Creating a Zenodo account
+
+To upload a Git repository to Zenodo, you first create a Zenodo account.
+On the Zenodo [start page](https://zenodo.org), you can click on "**Sign Up**" in the top right corner.
+Here you either can directly use your **GitHub account** to sign up, or sign up using **your email** (or other accounts) and link your GitHub account later on.
+To **link your GitHub account**, you can click on the arrow, next to your email, on the start page and select "GitHub".
+
+### Uploading a Git repository
+
+If you are just trying out how to upload a Git repository, we recommend to use the [Zenodo sandbox](https://sandbox.zenodo.org), to not create an unnecessary real DOI which is hard to delete.
+Your Zenodo account should work perfectly fine in the sandbox.
+
+::: {.callout-important appearance="simple"}
+**Note that you have to link your Zenodo account and sync your repository *before* you create a new release on GitHub!**
+:::
+
+To upload an older release, you have to download your repository as a `.zip` file from GitHub and uploading it manually at [https://sandbox.zenodo.org/uploads/new](https://sandbox.zenodo.org/uploads/new)
+
+To upload a new release, visit the [Zenodo GitHub settings](https://sandbox.zenodo.org/account/settings/github/).
+Here you should see all your uploaded repositories, with the option to sync them by selecting the "on" button.
+If you now create a release, as discussed earlier, it will show up and be associated with a DOI.
+
+For a pictured guide on how to upload a GitHub repository to Zenodo, you check out [this guide](https://coderefinery.github.io/github-without-command-line/doi/) from the [Code Refinery](https://coderefinery.org).
+
+## Acknowledgements and further reading
+
+We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
+We recommend these references for further reading:
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("chacon2014", "coderefinery2023")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "Tags and Releases"), format = "markdown", row.names = FALSE)
+```
+
