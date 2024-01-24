@@ -1,8 +1,30 @@
 # Version control of code and data using Git & DataLad
 
-[![Quarto Publish](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml)
-[![All Contributors](https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&style=flat-square)](#contributors)
-[![Codespell](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)
+## Description
+
+Welcome to the [Version Control Book](https://lennartwittkuhn.com/version-control-book/), a resource created in the context of a [version control course](https://lennartwittkuhn.com/version-control-course-uhh-ws23/) at [Universität Hamburg](https://www.uni-hamburg.de) for the academic year 2023/2024.
+The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course.
+
+The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git/GitHub
+
+## Contributing
+
+We invite students, developers, and data scientists, as well as anybody else, to contribute to this collaborative effort.
+Before contributing, please read the CONTRIBUTING.md file for guidelines on how to get involved.
+The project utilizes [Quarto](https://quarto.org) as the foundation for the book. 
+
+To maintain consistency and readability, we follow a [style guide](https://lennartwittkuhn.com/version-control-book/misc/style-guide.html). 
+Please refer to the Style Guide for details on formatting, coding standards, and other conventions.
+
+We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control.
+
+## Usage
+
+To render and preview, execute:
+
+```bash
+quarto preview
+```
 
 ## Contributors
 
@@ -23,3 +45,8 @@
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+[![Quarto Publish](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml)
+[![All Contributors](https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&style=flat-square)](#contributors)
+[![Codespell](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)
+
