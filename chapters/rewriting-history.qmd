@@ -1,11 +1,19 @@
 ---
-title: "Rewriting history"
-engine: knitr
-execute:
-  eval: false
-title-block-style: none
 author: ""
+categories: [intermediate]
+abstract: |
+  Dive into Git's history-rewriting features for cleaner commits and efficient collaboration. 
 ---
+
+# Rewriting History
+
+## Logistics
+
+### Learning Objectives
+
+- Understanding the Risks of Sensitive Data in Git History
+- Mastering Tools for History Rewriting
+- Ensuring Collaborative Clean-Up
 
 ## How to avoid accidental commits
 
@@ -240,6 +248,27 @@ $ git gc --prune=now
 
 Note: You can also achieve this by pushing your filtered history to a new or empty repository and then making a fresh clone from GitHub.
 
-## References
+## Acknowledgements & further reading
 
-- https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
+We recommend these references for further reading:
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("GitHub2023")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "rewriting_history"), format = "markdown", row.names = FALSE)
+```
