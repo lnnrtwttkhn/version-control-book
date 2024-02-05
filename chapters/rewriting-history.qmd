@@ -135,6 +135,11 @@ The tool is especially usefull if you need to remove very large files from your 
 If you are happy with the state of your repository, force-push your local changes to overwrite your repository to [GitHub](https://github.com), as well as all the branches you've pushed up.
 A force push is required to remove sensitive data from your commit history.
 
+When you perform a force push, you are essentially overwriting the existing commit history on the remote branch with the new commit history from your local branch.
+So instead of adding changes to your commit history, like with a normal push,a force push changes or discards the existing commit history on that branch.
+To do a force push, you use `git push` together with the `--force` flag.
+The `--all` flag is used to push all branches that have corresponding branches on the remote repository, that way you are updating multiple branches at once.
+
 ```{bash}
 git push origin --force --all
 ```
@@ -200,9 +205,20 @@ To https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
  + 48dc599...051452f main -> main (forced update)
 ```
 
+
+:::: {.callout-tip title="Dangers of force pushing" collapse="true"}
+As stated in this example, force pushing can be very useful if you e.g. commmited and pushed data you want to take down again.
+However force pushing comes with potential drawbacks and should mostly be used as a last resort.
+Especially if you collaborate with others on your repository. 
+
+Force pushing can lead to the **loss of commit history** on the remote branch, which may cause confusion or conflicts for collaborators who have based their work on the previous history.
+Force pushing to a shared branch can **cause conflicts for collaborators** who have already cloned the repository and pulled changes.
+Once a force push is executed, the old **commit history may become difficult to recover.**
+::::
+
 ## Fully removing the data from GitHub
 
-If you you committd **reall** sensitive data and want to make **completely** sure it is deleted, you will have to follow additional steps.
+If you you committd **real** sensitive data and want to make **completely** sure it is deleted, you will have to follow additional steps.
 After using either the BFG tool or git filter-repo to remove the sensitive data and pushing your changes to GitHub, you must take a few more steps to fully remove the data from GitHub.
 
 1. Contact [GitHub Support](https://support.github.com/contact?tags=docs-generic), asking them to remove cached views and references to the sensitive data in pull requests on GitHub. Please provide the name of the repository and/or a link to the commit you need removed.
