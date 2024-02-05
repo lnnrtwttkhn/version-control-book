@@ -17,7 +17,7 @@ abstract: |
 
 ## How to avoid accidental commits
 
-Of course you will only have to rewrite your Git history, if you "commited wrong" in the first step.
+Of course you will only have to rewrite your Git history, if you "committed wrong" in the first place.
 
 There are a few simple tricks to avoid committing things you don't want committed:
 
@@ -57,6 +57,9 @@ brew install git-filter-repo
 For more information, see [INSTALL.md](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md) in the [newren/git-filter-repo]((https://github.com/newren/git-filter-repo) repository).
 
 #### Running `git filter-repo` command
+
+Lets´s say you accidentally commited (and pushed) a file you dont´t actually want to share because it contains sensitive data.
+After you installed the `git filter-repo` tool, you can use it to exlude a specific file ftom you commit history.
 
 Run the following command, replacing `PATH-TO-FILE-YOU-WANT-TO-REMOVE` with the path to the file you want to remove, not just its file name.
 These arguments will:
