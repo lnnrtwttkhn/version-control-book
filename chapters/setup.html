@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -103,7 +104,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -112,6 +119,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -121,18 +129,18 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/setup.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/setup.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -142,51 +150,17 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../static/git-icon.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control of Code and Data</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://lennartwittkuhn.com/version-control-book" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
-    <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
-            Facebook
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="https://lennartwittkuhn.com/version-control-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -331,23 +305,23 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">4.1</span> Learning Objectives</a></li>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">4.2</span> Prerequisites</a></li>
   <li><a href="#configuring-git" id="toc-configuring-git" class="nav-link" data-scroll-target="#configuring-git"><span class="header-section-number">4.3</span> Configuring Git</a>
   <ul class="collapse">
-  <li><a href="#fa-person-identifying-yourself" id="toc-fa-person-identifying-yourself" class="nav-link" data-scroll-target="#fa-person-identifying-yourself"><span class="header-section-number">4.3.1</span> <i class="fa-solid fa-person" aria-label="person"></i> Identifying yourself</a></li>
-  <li><a href="#fa-code-branch-configure-the-default-name-of-the-initial-branch" id="toc-fa-code-branch-configure-the-default-name-of-the-initial-branch" class="nav-link" data-scroll-target="#fa-code-branch-configure-the-default-name-of-the-initial-branch"><span class="header-section-number">4.3.2</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Configure the default name of the initial branch</a></li>
+  <li><a href="#identifying-yourself" id="toc-identifying-yourself" class="nav-link" data-scroll-target="#identifying-yourself"><span class="header-section-number">4.3.1</span> <i class="fa-solid fa-person" aria-label="person"></i> Identifying yourself</a></li>
+  <li><a href="#configure-the-default-name-of-the-initial-branch" id="toc-configure-the-default-name-of-the-initial-branch" class="nav-link" data-scroll-target="#configure-the-default-name-of-the-initial-branch"><span class="header-section-number">4.3.2</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Configure the default name of the initial branch</a></li>
   </ul></li>
-  <li><a href="#fa-gear-check-your-settings" id="toc-fa-gear-check-your-settings" class="nav-link" data-scroll-target="#fa-gear-check-your-settings"><span class="header-section-number">4.4</span> <i class="fa-solid fa-gear" aria-label="gear"></i> Check your settings</a></li>
-  <li><a href="#fa-circle-question-calling-for-help" id="toc-fa-circle-question-calling-for-help" class="nav-link" data-scroll-target="#fa-circle-question-calling-for-help"><span class="header-section-number">4.5</span> <i class="fa-solid fa-circle-question" aria-label="circle-question"></i> Calling for Help</a></li>
-  <li><a href="#fa-pen-text-editor" id="toc-fa-pen-text-editor" class="nav-link" data-scroll-target="#fa-pen-text-editor"><span class="header-section-number">4.6</span> <i class="fa-solid fa-pen" aria-label="pen"></i> Text editor</a>
+  <li><a href="#check-your-settings" id="toc-check-your-settings" class="nav-link" data-scroll-target="#check-your-settings"><span class="header-section-number">4.4</span> <i class="fa-solid fa-gear" aria-label="gear"></i> Check your settings</a></li>
+  <li><a href="#calling-for-help" id="toc-calling-for-help" class="nav-link" data-scroll-target="#calling-for-help"><span class="header-section-number">4.5</span> <i class="fa-solid fa-circle-question" aria-label="circle-question"></i> Calling for Help</a></li>
+  <li><a href="#text-editor" id="toc-text-editor" class="nav-link" data-scroll-target="#text-editor"><span class="header-section-number">4.6</span> <i class="fa-solid fa-pen" aria-label="pen"></i> Text editor</a>
   <ul class="collapse">
   <li><a href="#vim-basics" id="toc-vim-basics" class="nav-link" data-scroll-target="#vim-basics"><span class="header-section-number">4.6.1</span> Vim Basics</a></li>
   <li><a href="#changing-your-text-editor" id="toc-changing-your-text-editor" class="nav-link" data-scroll-target="#changing-your-text-editor"><span class="header-section-number">4.6.2</span> Changing your text editor</a></li>
@@ -356,7 +330,7 @@ div.csl-indent {
   <li><a href="#acknowledgements-and-further-reading" id="toc-acknowledgements-and-further-reading" class="nav-link" data-scroll-target="#acknowledgements-and-further-reading"><span class="header-section-number">4.8</span> Acknowledgements and further reading</a></li>
   <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">4.9</span> Cheatsheet</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/setup.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/setup.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -370,6 +344,7 @@ div.csl-indent {
 <p>In this chapter, we will configure Git!</p>
 </div>
 </header>
+
 
 <section id="learning-objectives" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">4.1</span> Learning Objectives</h2>
@@ -406,8 +381,8 @@ What are the different configuration levels?
 </div>
 </div>
 </div>
-<section id="fa-person-identifying-yourself" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="fa-person-identifying-yourself"><span class="header-section-number">4.3.1</span> <i class="fa-solid fa-person" aria-label="person"></i> Identifying yourself</h3>
+<section id="identifying-yourself" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="identifying-yourself"><span class="header-section-number">4.3.1</span> <i class="fa-solid fa-person" aria-label="person"></i> Identifying yourself</h3>
 <p>Before you start using Git, it’s important to set your username and email address. This information is crucial because Git uses it to identify the author of each change you track with Git. By associating your changes with your username and email, it allows others (including future you) to see who made the changes which facilitates transparency and collaboration within a project. You will be able connect Git to remote repositories like GitHub, using this email address. So it makes sense to set your email address to the one you use (or will use) to create a GitHub account.</p>
 <p>Setting your username and email address is a one-time setup process, but you can always update them later, if needed. To perform this configuration, you can use the command line:</p>
 <div class="cell">
@@ -432,8 +407,8 @@ FAQ: Which name should I use for Git?
 </div>
 </div>
 </section>
-<section id="fa-code-branch-configure-the-default-name-of-the-initial-branch" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="fa-code-branch-configure-the-default-name-of-the-initial-branch"><span class="header-section-number">4.3.2</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Configure the default name of the initial branch</h3>
+<section id="configure-the-default-name-of-the-initial-branch" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="configure-the-default-name-of-the-initial-branch"><span class="header-section-number">4.3.2</span> <i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Configure the default name of the initial branch</h3>
 <p>Git uses a concept called “branches” to enable working on different versions of the same project. (More on this will be explained later in the book.)</p>
 <p>On most installations of Git, by default, the name “master” for the initial branch is used when creating a new repository. However, there has been a growing movement to transition to using “main” as the default branch name instead. One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">here</a> or <a href="https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/">here</a>). To configure the default branch name to “main” in Git, you can use the following command</p>
 <div class="cell">
@@ -441,8 +416,8 @@ FAQ: Which name should I use for Git?
 </div>
 </section>
 </section>
-<section id="fa-gear-check-your-settings" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="fa-gear-check-your-settings"><span class="header-section-number">4.4</span> <i class="fa-solid fa-gear" aria-label="gear"></i> Check your settings</h2>
+<section id="check-your-settings" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="check-your-settings"><span class="header-section-number">4.4</span> <i class="fa-solid fa-gear" aria-label="gear"></i> Check your settings</h2>
 <p>You can verify if your configurations were set correctly using the following command:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -454,8 +429,8 @@ FAQ: Which name should I use for Git?
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">init.defaultbranch=main</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="fa-circle-question-calling-for-help" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="fa-circle-question-calling-for-help"><span class="header-section-number">4.5</span> <i class="fa-solid fa-circle-question" aria-label="circle-question"></i> Calling for Help</h2>
+<section id="calling-for-help" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="calling-for-help"><span class="header-section-number">4.5</span> <i class="fa-solid fa-circle-question" aria-label="circle-question"></i> Calling for Help</h2>
 <p>The <code>--help</code> option in Git is a command that provides you with access to the built-in Git documentation and help resources. When you run a Git command followed by <code>--help</code>, Git displays information about that command, including its usage, available options, and a brief description of its functionality.</p>
 <p>For example, the following command will open up a browser in the command line containing information about the <code>git config</code> command.</p>
 <div class="cell">
@@ -464,8 +439,8 @@ FAQ: Which name should I use for Git?
 <p>To quit the browser use <code>q</code>.</p>
 <p>While the command provides extensive documentation and information about Git commands, it is arguably not the most beginner-friendly resource.</p>
 </section>
-<section id="fa-pen-text-editor" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="fa-pen-text-editor"><span class="header-section-number">4.6</span> <i class="fa-solid fa-pen" aria-label="pen"></i> Text editor</h2>
+<section id="text-editor" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="text-editor"><span class="header-section-number">4.6</span> <i class="fa-solid fa-pen" aria-label="pen"></i> Text editor</h2>
 <p>Sometimes, Git might open up a text editor inside the command line, and it can be annoying if you end up in an editor you don’t like or don’t know how to use. The standard text editor on macOS and when using “Git for Windows” is called <a href="https://www.vim.org/">Vim</a>, which is widely known for being difficult to use. You can find more information about the challenges of using Vim (and some funny memes) <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">here</a>. To check out which text editor Git is using, you can use:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--get</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -500,7 +475,6 @@ FAQ: Which name should I use for Git?
 <section id="acknowledgements-and-further-reading" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="acknowledgements-and-further-reading"><span class="header-section-number">4.8</span> Acknowledgements and further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
-<div class="cell-output-display">
 <table class="table">
 <thead>
 <tr class="header">
@@ -542,7 +516,6 @@ FAQ: Which name should I use for Git?
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="cheatsheet" class="level2" data-number="4.9">
 <h2 data-number="4.9" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">4.9</span> Cheatsheet</h2>
@@ -590,7 +563,7 @@ FAQ: Which name should I use for Git?
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bryan2023" class="csl-entry" role="listitem">
 Bryan, Jenny. 2023. <em>Happy Git and GitHub for the useR</em>. Jenny Bryan. <a href="https://happygitwithr.com">https://happygitwithr.com</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://github.com/jennybc/happy-git-with-r" class="uri">https://github.com/jennybc/happy-git-with-r</a>. Website: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a>.
 </div>
@@ -687,10 +660,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -700,8 +690,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -714,6 +713,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -757,6 +875,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -782,8 +901,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -791,23 +910,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -852,7 +971,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               options: {
                 flipVariations: false, // true by default
                 allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
               },
             },
             {
@@ -904,30 +1023,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/installation.html" class="pagination-link">
+      <a href="../chapters/installation.html" class="pagination-link" aria-label="Installation">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/first-steps-git.html" class="pagination-link">
+      <a href="../chapters/first-steps-git.html" class="pagination-link" aria-label="First steps with Git">
         <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First steps with Git</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -935,17 +1040,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2023 – 2024 The Version Control Book Team</div>   
+    <div class="nav-footer-left">
+<p>© 2023 – 2024 The Version Control Book Team</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../misc/acknowledgements.html" aria-current="page">Funded by the Digital and Data Literacy in Teaching Lab</a>
+    <a class="nav-link active" href="../misc/acknowledgements.html" aria-current="page">
+<p>Funded by the Digital and Data Literacy in Teaching Lab</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

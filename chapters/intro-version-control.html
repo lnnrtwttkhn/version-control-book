@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -69,7 +70,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -78,6 +85,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -87,18 +95,18 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar docked slimcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro-version-control.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro-version-control.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -108,51 +116,17 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../static/git-icon.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control of Code and Data</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://lennartwittkuhn.com/version-control-book" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
-    <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
-            Facebook
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="https://lennartwittkuhn.com/version-control-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -297,11 +271,11 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements"><span class="header-section-number">1.1</span> Acknowledgements</a></li>
@@ -336,10 +310,10 @@ div.csl-indent {
   <li><a href="#misconception-git-auto-saves-your-changes" id="toc-misconception-git-auto-saves-your-changes" class="nav-link" data-scroll-target="#misconception-git-auto-saves-your-changes"><span class="header-section-number">1.10.4</span> Misconception: Git auto-saves your changes</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/intro-version-control.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/intro-version-control.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/intro-version-control.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/intro-version-control.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header">
 <h1 class="title display-7"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
@@ -351,10 +325,10 @@ Introduction to fundamental concepts of version control.
 </div>
 </header>
 
+
 <section id="acknowledgements" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">1.1</span> Acknowledgements</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
-<div class="cell-output-display">
 <table class="table">
 <thead>
 <tr class="header">
@@ -403,26 +377,29 @@ Introduction to fundamental concepts of version control.
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="learning-objectives" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.2</span> Learning Objectives</h2>
 <ul class="task-list">
-<li><input type="checkbox" checked="">What is version control?</li>
-<li><input type="checkbox" checked="">Why is version control useful (for research)?</li>
-<li><input type="checkbox" checked="">What are Git and GitHub?</li>
-<li><input type="checkbox" checked="">What is the difference between Git and GitHub?</li>
+<li><label><input type="checkbox" checked="">What is version control?</label></li>
+<li><label><input type="checkbox" checked="">Why is version control useful (for research)?</label></li>
+<li><label><input type="checkbox" checked="">What are Git and GitHub?</label></li>
+<li><label><input type="checkbox" checked="">What is the difference between Git and GitHub?</label></li>
 </ul>
 </section>
-<section id="what-is-version-control" class="level2 page-columns page-full" data-number="1.3">
+<section id="what-is-version-control" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="what-is-version-control"><span class="header-section-number">1.3</span> What is version control?</h2>
 <blockquote class="blockquote">
 <p>“Version control is an approach to <strong>record changes</strong> made in a file or set of files <strong>over time</strong> so that you and your collaborators can track their history, review any changes, and revert or go back to earlier versions.” – <span class="citation" data-cites="community2022">The Turing Way Community (<a href="../misc/references.html#ref-community2022" role="doc-biblioref">2022</a>)</span>, chapter on <a href="https://the-turing-way.netlify.app/reproducible-research/vcs.html">Version Control</a>.</p>
 </blockquote>
-<div id="fig-turing-way-version-control" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/version-control-turing-way.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;1.1: This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/">The Turing Way</a> community. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 licence</a>. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3695300</a> (Version 3, <a href="https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1">direct download link</a>).</figcaption>
+<div id="fig-turing-way-version-control" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-turing-way-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/version-control-turing-way.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-turing-way-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/">The Turing Way</a> community. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 licence</a>. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3695300</a> (Version 3, <a href="https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1">direct download link</a>).
+</figcaption>
 </figure>
 </div>
 </section>
@@ -446,47 +423,59 @@ Introduction to fundamental concepts of version control.
 <p>You have a person 1 who is developing a script to analyze their data. You go through different versions, script-v1, script-v2, script-v3. Now you want to test out a new feature. It takes you a while to test this feature. It becomes unclear what you should call all these files. Then you realize that you need help with this. So then researcher 2 comes in and they help you implementing this feature. More files are created, but no ideas how to name them. Person 3 has a lot of ideas but is not editing the files directly. So script v-3 is created. One you realize that this is becoming complicated, you create a meta document that you want to use to keep track of the project progress. Then you realize that you software has bugs and you can’t figure out when this bug has occurred for the first time. Time has passed and you ask yourself: what is the latest version of my script and where is it? When did I incorporate that new feature. who made that change and why? Your collaborator asks you to run version 2 of the script but you dont have it anymore. In a real-life situation, there might be many more people involved and many more documents.</p>
 </section>
 </section>
-<section id="versions-in-multiple-files" class="level2 page-columns page-full" data-number="1.6">
+<section id="versions-in-multiple-files" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="versions-in-multiple-files"><span class="header-section-number">1.6</span> Versions in multiple files</h2>
-<p>If you are a student or researcher you might be familiar with the situation illustrated in <a href="#fig-phd-comic-final-doc">Figure&nbsp;<span>1.2</span></a>: You are writing a paper and you are really excited because you finally have a full draft. To mark this, you call the file <code>FINAL.docx</code> and send it off to your advisor. Your advisor has a few comments, so you integrate those changes into a new version that you call <code>FINAL_rev2.doc</code>. You show your draft to your advisor again and again they have even more comments. So as there are more and more rounds of feedback your file naming system an get out of hand very easily.</p>
-<div id="fig-phd-comic-final-doc" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/phd-comic-final-doc.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;1.2: “notFinal.doc” - originally published 10/12/2012. “Piled Higher and Deeper” by Jorge Cham (<a href="https://phdcomics.com/">phdcomics.com</a>). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. (<a href="https://phdcomics.com/comics/archive.php?comicid=1531">direct link</a>).</figcaption>
+<p>If you are a student or researcher you might be familiar with the situation illustrated in <a href="#fig-phd-comic-final-doc" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>: You are writing a paper and you are really excited because you finally have a full draft. To mark this, you call the file <code>FINAL.docx</code> and send it off to your advisor. Your advisor has a few comments, so you integrate those changes into a new version that you call <code>FINAL_rev2.doc</code>. You show your draft to your advisor again and again they have even more comments. So as there are more and more rounds of feedback your file naming system an get out of hand very easily.</p>
+<div id="fig-phd-comic-final-doc" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-phd-comic-final-doc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/phd-comic-final-doc.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-phd-comic-final-doc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: “notFinal.doc” - originally published 10/12/2012. “Piled Higher and Deeper” by Jorge Cham (<a href="https://phdcomics.com/">phdcomics.com</a>). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. (<a href="https://phdcomics.com/comics/archive.php?comicid=1531">direct link</a>).
+</figcaption>
 </figure>
 </div>
 <p>Apart from the issues with file naming, a deeper point of this illustration with respect to research is, that there is rarely a point in scientific work where we are really confident that something is indeed the “final” <i class="fa-solid fa-trademark" aria-label="trademark"></i> version.</p>
-<p>If you can relate to the poor student <a href="#fig-phd-comic-final-doc">Figure&nbsp;<span>1.2</span></a>, it is quite likely that you have also already engaged in this form of version control.</p>
+<p>If you can relate to the poor student <a href="#fig-phd-comic-final-doc" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>, it is quite likely that you have also already engaged in this form of version control.</p>
 <p>More generally, this common way of implementing file versioning of files works by <strong>appending versions or descriptive labels to the filenames</strong>, or by <strong>adding initials</strong> at the end of the filename:</p>
 <ul>
 <li><code>file_v1.docx</code>, <code>file_v2.docx</code>, <code>file_v3.docx</code>, etc.</li>
 <li><code>draft.docx</code> to <code>draft_comments_LW_final_edited.docx</code>, etc.</li>
 </ul>
-<p>Every time you make a critical change to a file, you duplicate it, rename it according to your versioning scheme and continue working in the duplicated file. While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated in <a href="#fig-phd-comic-final-doc">Figure&nbsp;<span>1.2</span></a>, <a href="#fig-xkcd-documents">Figure&nbsp;<span>1.3</span></a> and <a href="#fig-phd-comic-story-told-in-file-names">Figure&nbsp;<span>1.4</span></a>. In such cases, more advanced version control systems may be necessary.</p>
-<div id="fig-xkcd-documents" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/xkcd-documents.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;1.3: “Documents” by xkcd (<a href="https://xkcd.com/">xkcd.com</a>). Used under a <a href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence</a> (<a href="https://xkcd.com/1459/">direct link</a>).</figcaption>
+<p>Every time you make a critical change to a file, you duplicate it, rename it according to your versioning scheme and continue working in the duplicated file. While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated in <a href="#fig-phd-comic-final-doc" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>, <a href="#fig-xkcd-documents" class="quarto-xref">Figure&nbsp;<span>1.3</span></a> and <a href="#fig-phd-comic-story-told-in-file-names" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>. In such cases, more advanced version control systems may be necessary.</p>
+<div id="fig-xkcd-documents" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-xkcd-documents-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/xkcd-documents.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-xkcd-documents-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: “Documents” by xkcd (<a href="https://xkcd.com/">xkcd.com</a>). Used under a <a href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence</a> (<a href="https://xkcd.com/1459/">direct link</a>).
+</figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="../static/project-history-turing-way.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/">The Turing Way</a> community. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 licence</a>. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3695300</a> (Version 3, <a href="https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1">direct download link</a>).</figcaption>
+<figcaption>This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/">The Turing Way</a> community. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 licence</a>. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3695300</a> (Version 3, <a href="https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1">direct download link</a>).</figcaption>
 </figure>
 </div>
-<div id="fig-phd-comic-story-told-in-file-names" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/phd-comic-story-told-in-file-names.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;1.4: “A story told in file names”, originally published 5/28/2010. “Piled Higher and Deeper” by Jorge Cham (<a href="https://phdcomics.com/">phdcomics.com</a>). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. (<a href="https://phdcomics.com/comics/archive.php?comicid=1323">direct link</a>).</figcaption>
+<div id="fig-phd-comic-story-told-in-file-names" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-phd-comic-story-told-in-file-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/phd-comic-story-told-in-file-names.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-phd-comic-story-told-in-file-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: “A story told in file names”, originally published 5/28/2010. “Piled Higher and Deeper” by Jorge Cham (<a href="https://phdcomics.com/">phdcomics.com</a>). All content copyright 1997-2023 Piled Higher and Deeper Publishing, LLC. (<a href="https://phdcomics.com/comics/archive.php?comicid=1323">direct link</a>).
+</figcaption>
 </figure>
 </div>
 <blockquote class="blockquote">
 <p>Your number one collaborator is yourself from six months ago and she doesn’t answer emails.</p>
 </blockquote>
 <p>If you mostly work on your own or with a very small team, you might think that you will not encounter such situations. However, remember that your number one collaborator is yourself from six months ago and you will often find yourself in situations trying to remember what happened six months ago.</p>
-<p>Imagine you were on a very long vacation (who would not like to imagine that!) and you would come back to a project folder as illustrated in <a href="#fig-phd-comic-story-told-in-file-names">Figure&nbsp;<span>1.4</span></a>. Would you know which file to continue working with? Would you know how the different files related to each other? How could someone else start working with this project or how would you start working with this if you would get such a project folder from someone else? It is very difficult to understand how to work with this project and you will likely spend a lot of time figuring out what all the different files are, what they mean and why they are titled in such a way.</p>
-<section id="versions-in-a-single-file" class="level3 page-columns page-full" data-number="1.6.1">
+<p>Imagine you were on a very long vacation (who would not like to imagine that!) and you would come back to a project folder as illustrated in <a href="#fig-phd-comic-story-told-in-file-names" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>. Would you know which file to continue working with? Would you know how the different files related to each other? How could someone else start working with this project or how would you start working with this if you would get such a project folder from someone else? It is very difficult to understand how to work with this project and you will likely spend a lot of time figuring out what all the different files are, what they mean and why they are titled in such a way.</p>
+<section id="versions-in-a-single-file" class="level3" data-number="1.6.1">
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="versions-in-a-single-file"><span class="header-section-number">1.6.1</span> Versions in a single file</h3>
 <p>Some software can keep track of all the changes made to a file without making new copies of the file. This includes word processors like Microsoft Word’s <a href="https://support.microsoft.com/en-us/office/track-changes-in-word-197ba630-0f5f-4a8e-9a77-3712475e806a?ui=en-us&amp;rs=en-us&amp;ad=us">Track Changes</a>, Google Docs’ <a href="https://support.google.com/docs/answer/190843?hl=en">version history</a>, or LibreOffice’s <a href="https://help.libreoffice.org/latest/ro/text/shared/guide/redlining.html">Recording and Displaying Changes</a>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Disadvantages of version control using Word processors compared to Git">
@@ -542,13 +531,17 @@ Disadvantages of Version Control using Dropbox and Google Drive compared to Git
 </div>
 </div>
 </div>
-<div id="fig-versions-single-file" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/versions-single-file.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;1.5: Image from <a href="https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html">Chapter 3.1 on “Collaboration, Version Control, &amp; GitHub”</a> of the <a href="https://mozillascience.github.io/study-group-orientation/index.html">Mozilla Science Lab’s Study Group Orientation handbook</a>, used under a <a href="https://github.com/mozillascience/study-group-orientation/blob/master/LICENSE">Mozilla Public License Version 2.0</a> (<a href="https://github.com/mozillascience/study-group-orientation/blob/master/images/gh07.png">direct download link</a>)</figcaption>
+<div id="fig-versions-single-file" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-versions-single-file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/versions-single-file.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-versions-single-file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: Image from <a href="https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html">Chapter 3.1 on “Collaboration, Version Control, &amp; GitHub”</a> of the <a href="https://mozillascience.github.io/study-group-orientation/index.html">Mozilla Science Lab’s Study Group Orientation handbook</a>, used under a <a href="https://github.com/mozillascience/study-group-orientation/blob/master/LICENSE">Mozilla Public License Version 2.0</a> (<a href="https://github.com/mozillascience/study-group-orientation/blob/master/images/gh07.png">direct download link</a>)
+</figcaption>
 </figure>
 </div>
-<p><a href="#fig-versions-single-file">Figure&nbsp;<span>1.5</span></a> illustrates the concept of <strong>tracking versions within a single file</strong>. It illustrates a simplified linear project timeline (gray line). A version control system keeps track of the changes made to the file at specific time points (gray nodes in <a href="#fig-versions-single-file">Figure&nbsp;<span>1.5</span></a>). These nodes represent various actions such as additions (first node), deletions (second node), or edits to the content (third node). The blue arrows at the bottom indicate the ability to navigate along this linear timeline. By recording these changes, it becomes possible to access previous versions of the file. This means that you can go back and examine earlier versions or even revert the entire workflow back to a specific version, if needed. Rather than saving new files for each change, this system saves the changes within the same file, allowing for easier management and tracking of version history.</p>
+<p><a href="#fig-versions-single-file" class="quarto-xref">Figure&nbsp;<span>1.5</span></a> illustrates the concept of <strong>tracking versions within a single file</strong>. It illustrates a simplified linear project timeline (gray line). A version control system keeps track of the changes made to the file at specific time points (gray nodes in <a href="#fig-versions-single-file" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>). These nodes represent various actions such as additions (first node), deletions (second node), or edits to the content (third node). The blue arrows at the bottom indicate the ability to navigate along this linear timeline. By recording these changes, it becomes possible to access previous versions of the file. This means that you can go back and examine earlier versions or even revert the entire workflow back to a specific version, if needed. Rather than saving new files for each change, this system saves the changes within the same file, allowing for easier management and tracking of version history.</p>
 </section>
 <section id="features-of-a-version-control-system" class="level3" data-number="1.6.2">
 <h3 data-number="1.6.2" class="anchored" data-anchor-id="features-of-a-version-control-system"><span class="header-section-number">1.6.2</span> Features of a version control system</h3>
@@ -561,12 +554,16 @@ Disadvantages of Version Control using Dropbox and Google Drive compared to Git
 <p>The system takes snapshots of your project, giving them unique codes that include all these features. Instead of saving new files for each change, only the specific modifications made to the file are saved. This makes it easy to compare different versions, restore previous versions, and combine changes when needed.</p>
 </section>
 </section>
-<section id="git" class="level2 page-columns page-full" data-number="1.7">
+<section id="git" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="git"><span class="header-section-number">1.7</span> Git</h2>
-<div id="fig-git-logo-full-color" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../static/git-logo-full-color.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Figure&nbsp;1.6: Git Logo (full color Git logo for light backgrounds) by <a href="https://twitter.com/jasonlong">Jason Long</a> is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> (<a href="https://git-scm.com/downloads/logos">link to download page</a>).</figcaption>
+<div id="fig-git-logo-full-color" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-git-logo-full-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/git-logo-full-color.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-logo-full-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.6: Git Logo (full color Git logo for light backgrounds) by <a href="https://twitter.com/jasonlong">Jason Long</a> is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> (<a href="https://git-scm.com/downloads/logos">link to download page</a>).
+</figcaption>
 </figure>
 </div>
 <p>Among various version control systems, Git is the most widely used. It was created by the Linux development community in 2005. Git is a software primarily written in C, but you don’t need to know C.</p>
@@ -661,7 +658,7 @@ Why is Git called Git?
 <p>Unlike automatic saving, where changes are continuously saved in the background, Git requires manual intervention to capture snapshots. You have to explicitly inform Git when you want to take a snapshot, indicating that you want it to acknowledge your changes. While this may sound annoying at first, the benefits of having full control over your version history will become apparent in later chapters of this book.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-aimrsf2023" class="csl-entry" role="listitem">
 AI for Multiple Long-term Conditions Research Support Facility. 2023. <span>“Introduction to Version Control with Git.”</span> June 2023. <a href="https://www.youtube.com/watch?v=z9-qAGq78qE">https://www.youtube.com/watch?v=z9-qAGq78qE</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/aim-rsf/training/tree/main/version-control" class="uri">https://github.com/aim-rsf/training/tree/main/version-control</a>.
 </div>
@@ -765,10 +762,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -778,8 +792,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -792,6 +815,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -835,6 +977,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -860,8 +1003,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -869,23 +1012,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -930,7 +1073,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               options: {
                 flipVariations: false, // true by default
                 allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
               },
             },
             {
@@ -982,30 +1125,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../contents.html" class="pagination-link">
+      <a href="../contents.html" class="pagination-link" aria-label="Contents">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Contents</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/command-line.html" class="pagination-link">
+      <a href="../chapters/command-line.html" class="pagination-link" aria-label="Command Line">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Command Line</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1013,17 +1142,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2023 – 2024 The Version Control Book Team</div>   
+    <div class="nav-footer-left">
+<p>© 2023 – 2024 The Version Control Book Team</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../misc/acknowledgements.html" aria-current="page">Funded by the Digital and Data Literacy in Teaching Lab</a>
+    <a class="nav-link active" href="../misc/acknowledgements.html" aria-current="page">
+<p>Funded by the Digital and Data Literacy in Teaching Lab</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/intro-version-control.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/intro-version-control.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

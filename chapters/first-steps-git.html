@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -103,7 +104,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -112,6 +119,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -121,18 +129,18 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/first-steps-git.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First steps with Git</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/first-steps-git.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First steps with Git</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -142,51 +150,17 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../static/git-icon.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control of Code and Data</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://lennartwittkuhn.com/version-control-book" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
-    <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
-            Facebook
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="https://lennartwittkuhn.com/version-control-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -331,11 +305,11 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
   <li><a href="#logistics" id="toc-logistics" class="nav-link active" data-scroll-target="#logistics"><span class="header-section-number">5.1</span> Logistics</a>
@@ -344,12 +318,12 @@ div.csl-indent {
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">5.1.2</span> Prerequisites</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.1.3</span> Exercises</a></li>
   </ul></li>
-  <li><a href="#fa-folder-closed-creating-a-git-repository" id="toc-fa-folder-closed-creating-a-git-repository" class="nav-link" data-scroll-target="#fa-folder-closed-creating-a-git-repository"><span class="header-section-number">5.2</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Creating a Git repository</a>
+  <li><a href="#creating-a-git-repository" id="toc-creating-a-git-repository" class="nav-link" data-scroll-target="#creating-a-git-repository"><span class="header-section-number">5.2</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Creating a Git repository</a>
   <ul class="collapse">
   <li><a href="#checking-the-status-of-the-git-repository" id="toc-checking-the-status-of-the-git-repository" class="nav-link" data-scroll-target="#checking-the-status-of-the-git-repository"><span class="header-section-number">5.2.1</span> Checking the status of the Git repository</a></li>
   <li><a href="#adding-files-to-the-git-repository" id="toc-adding-files-to-the-git-repository" class="nav-link" data-scroll-target="#adding-files-to-the-git-repository"><span class="header-section-number">5.2.2</span> Adding files to the Git repository</a></li>
   </ul></li>
-  <li><a href="#fa-file-export-status-staging-and-committing" id="toc-fa-file-export-status-staging-and-committing" class="nav-link" data-scroll-target="#fa-file-export-status-staging-and-committing"><span class="header-section-number">5.3</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, staging and committing</a>
+  <li><a href="#status-staging-and-committing" id="toc-status-staging-and-committing" class="nav-link" data-scroll-target="#status-staging-and-committing"><span class="header-section-number">5.3</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, staging and committing</a>
   <ul class="collapse">
   <li><a href="#checking-the-status-of-your-git-repository-again" id="toc-checking-the-status-of-your-git-repository-again" class="nav-link" data-scroll-target="#checking-the-status-of-your-git-repository-again"><span class="header-section-number">5.3.1</span> Checking the status of your Git repository again</a></li>
   <li><a href="#introduction-to-staging-and-committing" id="toc-introduction-to-staging-and-committing" class="nav-link" data-scroll-target="#introduction-to-staging-and-committing"><span class="header-section-number">5.3.2</span> Introduction to staging and committing</a></li>
@@ -363,9 +337,9 @@ div.csl-indent {
   </ul></li>
   <li><a href="#what-files-canshould-i-track-with-git" id="toc-what-files-canshould-i-track-with-git" class="nav-link" data-scroll-target="#what-files-canshould-i-track-with-git"><span class="header-section-number">5.4</span> What files can/should I track with Git?</a>
   <ul class="collapse">
-  <li><a href="#fa-code-code-files" id="toc-fa-code-code-files" class="nav-link" data-scroll-target="#fa-code-code-files"><span class="header-section-number">5.4.1</span> <i class="fa-solid fa-code" aria-label="code"></i> Code files</a></li>
-  <li><a href="#fa-file-lines-plain-textfiles" id="toc-fa-file-lines-plain-textfiles" class="nav-link" data-scroll-target="#fa-file-lines-plain-textfiles"><span class="header-section-number">5.4.2</span> <i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Plain textfiles</a></li>
-  <li><a href="#fa-brands-windows-microsoft-office-files" id="toc-fa-brands-windows-microsoft-office-files" class="nav-link" data-scroll-target="#fa-brands-windows-microsoft-office-files"><span class="header-section-number">5.4.3</span> <i class="fa-brands fa-windows" aria-label="windows"></i> Microsoft office files</a></li>
+  <li><a href="#code-files" id="toc-code-files" class="nav-link" data-scroll-target="#code-files"><span class="header-section-number">5.4.1</span> <i class="fa-solid fa-code" aria-label="code"></i> Code files</a></li>
+  <li><a href="#plain-textfiles" id="toc-plain-textfiles" class="nav-link" data-scroll-target="#plain-textfiles"><span class="header-section-number">5.4.2</span> <i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Plain textfiles</a></li>
+  <li><a href="#microsoft-office-files" id="toc-microsoft-office-files" class="nav-link" data-scroll-target="#microsoft-office-files"><span class="header-section-number">5.4.3</span> <i class="fa-brands fa-windows" aria-label="windows"></i> Microsoft office files</a></li>
   </ul></li>
   <li><a href="#ignoring-files-and-folders-.gitignore" id="toc-ignoring-files-and-folders-.gitignore" class="nav-link" data-scroll-target="#ignoring-files-and-folders-.gitignore"><span class="header-section-number">5.5</span> Ignoring files and folders: <code>.gitignore</code></a>
   <ul class="collapse">
@@ -375,7 +349,7 @@ div.csl-indent {
   <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">5.7</span> Cheatsheet</a></li>
   <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">5.8</span> Acknowledgements &amp; further reading</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/first-steps-git.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/first-steps-git.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/first-steps-git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/first-steps-git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -389,6 +363,7 @@ div.csl-indent {
 <p>Exploring the most important basic commands you will need.</p>
 </div>
 </header>
+
 
 <section id="logistics" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="logistics"><span class="header-section-number">5.1</span> Logistics</h2>
@@ -419,8 +394,8 @@ div.csl-indent {
 <p>There are several terms in these instructions that might be unfamiliar to you, for example “repository”, “stage” or “commit”. Don’t worry, you will learn about what these terms mean in this chapter. Let’s <em>git</em> started!</p>
 </section>
 </section>
-<section id="fa-folder-closed-creating-a-git-repository" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="fa-folder-closed-creating-a-git-repository"><span class="header-section-number">5.2</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Creating a Git repository</h2>
+<section id="creating-a-git-repository" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="creating-a-git-repository"><span class="header-section-number">5.2</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Creating a Git repository</h2>
 <p>First, we will create a so-called “repository” (or “repo”, for short). A repository is a regular folder on your computer that is tracked by Git. The full history of commits of a project and information about who changed what, when is also stored by Git in this folder.</p>
 <p>To create your first Git repository, you need to initialize a folder as a Git repository.</p>
 <p>First, create an empty folder, for example using the <a href="../chapters/command-line.html">command line</a>:</p>
@@ -528,8 +503,8 @@ Common <code>git status</code> flags
 <p>You can also use any other method or application for creating files.</p>
 </section>
 </section>
-<section id="fa-file-export-status-staging-and-committing" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="fa-file-export-status-staging-and-committing"><span class="header-section-number">5.3</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, staging and committing</h2>
+<section id="status-staging-and-committing" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="status-staging-and-committing"><span class="header-section-number">5.3</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, staging and committing</h2>
 <section id="checking-the-status-of-your-git-repository-again" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="checking-the-status-of-your-git-repository-again"><span class="header-section-number">5.3.1</span> Checking the status of your Git repository again</h3>
 <p>After you initialized a Git repository and added a file, you can use <code>git status</code> to receive the current file tracking status from Git again. This time, you should see output similar to the following:</p>
@@ -812,16 +787,16 @@ Commit messages examples
 <section id="what-files-canshould-i-track-with-git" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="what-files-canshould-i-track-with-git"><span class="header-section-number">5.4</span> What files can/should I track with Git?</h2>
 <p>In principle, any file can be tracked with Git. However, to make use of the full potential of Git, it is recommended to mainly track plain text files with Git.</p>
-<section id="fa-code-code-files" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="fa-code-code-files"><span class="header-section-number">5.4.1</span> <i class="fa-solid fa-code" aria-label="code"></i> Code files</h3>
+<section id="code-files" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="code-files"><span class="header-section-number">5.4.1</span> <i class="fa-solid fa-code" aria-label="code"></i> Code files</h3>
 <p>Tracking code files is the most common and original use case for version control with Git. Git is well-suited for tracking changes in source code, and it’s widely used by developers and teams for this purpose. Whether it’s a single developer maintaining a personal project or a large team collaborating on a complex software system, Git excels at tracking code files throughout the development lifecycle.</p>
 </section>
-<section id="fa-file-lines-plain-textfiles" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="fa-file-lines-plain-textfiles"><span class="header-section-number">5.4.2</span> <i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Plain textfiles</h3>
+<section id="plain-textfiles" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="plain-textfiles"><span class="header-section-number">5.4.2</span> <i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Plain textfiles</h3>
 <p>Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup that uses emails or shared Dropbox folders for “version control” (see the <a href="introduction.qmd">introduction</a> chapter). However, to really be able to use the full set of features of Git, you should rely on plain text files for your project. This is because <code>.docx</code> files are saved as binary files, which makes meaningful outputs of the text inside it impossible for Git. “Plain textfiles” does not mean you have to use <code>.txt</code> files. Instead you can use formattable Markdown (<code>.md</code>) files. Markdown (<code>.md</code>) files are plain text files that contain formatting elements, making them more versatile than plain .txt files. Markdown allows you to add simple formatting like headings, lists, links, and images.</p>
 </section>
-<section id="fa-brands-windows-microsoft-office-files" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="fa-brands-windows-microsoft-office-files"><span class="header-section-number">5.4.3</span> <i class="fa-brands fa-windows" aria-label="windows"></i> Microsoft office files</h3>
+<section id="microsoft-office-files" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="microsoft-office-files"><span class="header-section-number">5.4.3</span> <i class="fa-brands fa-windows" aria-label="windows"></i> Microsoft office files</h3>
 <p>As said earlier, it is not recommended to track Microsoft office files using Git, since Git treats <code>.docx</code> files as binary files. Binary files lack the inherent structure that allows Git to capture and display changes effectively. Git relies on understanding the differences between versions of files. With binary files, you won’t benefit from the ability to view detailed textual differences (<code>git diff</code>) or effectively use <a href="../chapters/branches.html">branches</a>. Collaborative work on binary files, such as simultaneous editing of a Word document, may result in complex <a href="../chapters/branches.html">merge conflicts</a> that are challenging to resolve.</p>
 <p>So while it is possible to track <code>.docx</code> files with Git, you will not be able to use the many features of Git, which rely on Git being able to display the file, since Git can only output the “zeros and ones” and not the text inside the <code>.docx</code> files.</p>
 <p>If you ever choose to track them regardless, you should use detailed commit messages, since you will not be able to easily look at the text content of past versions. You will also need to know about temporary word files. For it’s own version control system, Word creates temporary files in the folder of your word file. You should not track these files using Git, since Word creates a lot of them. To not stage or commit these files by accident, you can use the <code>.gitignore</code> file.</p>
@@ -1002,7 +977,6 @@ Example <code>.gitignore</code> file for an R project
 <section id="acknowledgements-further-reading" class="level2" data-number="5.8">
 <h2 data-number="5.8" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">5.8</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
-<div class="cell-output-display">
 <table class="table">
 <thead>
 <tr class="header">
@@ -1044,10 +1018,9 @@ Example <code>.gitignore</code> file for an R project
 </tr>
 </tbody>
 </table>
-</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bryan2023" class="csl-entry" role="listitem">
 Bryan, Jenny. 2023. <em>Happy Git and GitHub for the useR</em>. Jenny Bryan. <a href="https://happygitwithr.com">https://happygitwithr.com</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://github.com/jennybc/happy-git-with-r" class="uri">https://github.com/jennybc/happy-git-with-r</a>. Website: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a>.
 </div>
@@ -1144,10 +1117,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1157,8 +1147,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1171,6 +1170,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1214,6 +1332,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1239,8 +1358,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -1248,23 +1367,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -1309,7 +1428,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               options: {
                 flipVariations: false, // true by default
                 allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
               },
             },
             {
@@ -1361,30 +1480,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/setup.html" class="pagination-link">
+      <a href="../chapters/setup.html" class="pagination-link" aria-label="Setup">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/branches.html" class="pagination-link">
+      <a href="../chapters/branches.html" class="pagination-link" aria-label="Branches">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1392,17 +1497,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2023 – 2024 The Version Control Book Team</div>   
+    <div class="nav-footer-left">
+<p>© 2023 – 2024 The Version Control Book Team</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../misc/acknowledgements.html" aria-current="page">Funded by the Digital and Data Literacy in Teaching Lab</a>
+    <a class="nav-link active" href="../misc/acknowledgements.html" aria-current="page">
+<p>Funded by the Digital and Data Literacy in Teaching Lab</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/first-steps-git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/first-steps-git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

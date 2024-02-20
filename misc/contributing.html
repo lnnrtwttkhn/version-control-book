@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -103,7 +104,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -112,6 +119,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -121,18 +129,18 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../misc/contributing.html">Contributing</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../misc/contributing.html">Contributing</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -142,51 +150,17 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../static/git-icon.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control of Code and Data</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://lennartwittkuhn.com/version-control-book" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
-    <a href="https://github.com/lnnrtwttkhn/version-control-book/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../Version-Control-of-Code-and-Data.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
-    <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
-            Facebook
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="https://lennartwittkuhn.com/version-control-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -331,11 +305,11 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
@@ -376,7 +350,7 @@ div.csl-indent {
   <li><a href="#sec-icons" id="toc-sec-icons" class="nav-link" data-scroll-target="#sec-icons">Fontawesome Icons</a></li>
   <li><a href="#sec-acknowledgements" id="toc-sec-acknowledgements" class="nav-link" data-scroll-target="#sec-acknowledgements">Acknowledgements &amp; Attribution</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/contributing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/contributing.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/contributing.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -387,16 +361,17 @@ div.csl-indent {
 
 </header>
 
+
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p><a href="#sec-rstudio-project"><span>Section&nbsp;2</span></a>: This section explains how to <strong>use RStudio Project</strong> to work on this project.</p>
-<p><a href="#sec-quarto"><span>Section&nbsp;3</span></a>: This section explains how to <strong>use Quarto</strong> to work on this project.</p>
-<p><a href="#sec-dependency-management"><span>Section&nbsp;4</span></a>: This section explains how this project <strong>manages package dependencies</strong> using <code>renv</code>.</p>
-<p><a href="#sec-code"><span>Section&nbsp;6</span></a>: This section explains how to <strong>add code snippets</strong>.</p>
-<p><a href="#sec-images"><span>Section&nbsp;7</span></a>: This section explains how to <strong>add images</strong>.</p>
-<p><a href="#sec-references"><span>Section&nbsp;5</span></a>: This section explains how to <strong>add references</strong>.</p>
-<p><a href="#sec-variables"><span>Section&nbsp;8</span></a>: This section explains how to <strong>use variables</strong>.</p>
-<p><a href="#sec-icons"><span>Section&nbsp;9</span></a>: This section explains how to <strong>add icons</strong>.</p>
+<p><a href="#sec-rstudio-project" class="quarto-xref"><span>RStudio Project</span></a>: This section explains how to <strong>use RStudio Project</strong> to work on this project.</p>
+<p><a href="#sec-quarto" class="quarto-xref"><span>Quarto</span></a>: This section explains how to <strong>use Quarto</strong> to work on this project.</p>
+<p><a href="#sec-dependency-management" class="quarto-xref"><span>Dependency Management</span></a>: This section explains how this project <strong>manages package dependencies</strong> using <code>renv</code>.</p>
+<p><a href="#sec-code" class="quarto-xref"><span>Code</span></a>: This section explains how to <strong>add code snippets</strong>.</p>
+<p><a href="#sec-images" class="quarto-xref"><span>Images</span></a>: This section explains how to <strong>add images</strong>.</p>
+<p><a href="#sec-references" class="quarto-xref"><span>References</span></a>: This section explains how to <strong>add references</strong>.</p>
+<p><a href="#sec-variables" class="quarto-xref"><span>Variables</span></a>: This section explains how to <strong>use variables</strong>.</p>
+<p><a href="#sec-icons" class="quarto-xref"><span>Fontawesome Icons</span></a>: This section explains how to <strong>add icons</strong>.</p>
 </section>
 <section id="sec-rstudio-project" class="level2">
 <h2 class="anchored" data-anchor-id="sec-rstudio-project">RStudio Project</h2>
@@ -425,7 +400,7 @@ div.csl-indent {
 <summary>
 Click here to view the full <code>version-control-book.Rproj</code> file of this project.
 </summary>
-<div class="cell" data-file="version-control-book.Rproj">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>version-control-book.Rproj</strong></pre>
@@ -494,7 +469,7 @@ Click here to view the full <code>version-control-book.Rproj</code> file of this
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="3" data-code-cell="annotated-cell-3">Replace <code>YOUR-NEW-CHAPTER</code> with a concise filename.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Replace <code>YOUR-NEW-CHAPTER</code> with a concise filename.</span>
 </dd>
 </dl>
 </div>
@@ -503,7 +478,7 @@ Click here to view the full <code>version-control-book.Rproj</code> file of this
 <summary>
 Click here to view the full <code>_quarto.yml</code> file of this project.
 </summary>
-<div class="cell" data-file="_quarto.yml">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
@@ -524,111 +499,107 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <span id="cb4-14"><a href="#cb4-14"></a></span>
 <span id="cb4-15"><a href="#cb4-15"></a><span class="ex">book:</span></span>
 <span id="cb4-16"><a href="#cb4-16"></a>  <span class="ex">title:</span> <span class="st">"Version Control of Code and Data"</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a>  <span class="ex">subtitle:</span> <span class="st">"An Introduction for Scientists"</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>  <span class="ex">subtitle:</span> <span class="st">"An introduction to Git for research"</span></span>
 <span id="cb4-18"><a href="#cb4-18"></a>  <span class="ex">search:</span> true</span>
 <span id="cb4-19"><a href="#cb4-19"></a>  <span class="ex">repo-url:</span> https://github.com/lnnrtwttkhn/version-control-book/</span>
 <span id="cb4-20"><a href="#cb4-20"></a>  <span class="ex">repo-branch:</span> main</span>
 <span id="cb4-21"><a href="#cb4-21"></a>  <span class="ex">repo-actions:</span> [edit, issue, source]</span>
-<span id="cb4-22"><a href="#cb4-22"></a>  <span class="ex">downloads:</span> [pdf, epub]</span>
-<span id="cb4-23"><a href="#cb4-23"></a>  <span class="ex">sharing:</span> [twitter, facebook]</span>
-<span id="cb4-24"><a href="#cb4-24"></a>  <span class="ex">favicon:</span> static/git-icon.svg</span>
-<span id="cb4-25"><a href="#cb4-25"></a>  <span class="ex">twitter-card:</span> false</span>
-<span id="cb4-26"><a href="#cb4-26"></a>  <span class="ex">site-url:</span> https://lennartwittkuhn.com/version-control-book</span>
-<span id="cb4-27"><a href="#cb4-27"></a>  <span class="ex">chapters:</span></span>
-<span id="cb4-28"><a href="#cb4-28"></a>    <span class="ex">-</span> index.qmd</span>
-<span id="cb4-29"><a href="#cb4-29"></a>    <span class="ex">-</span> contents.qmd</span>
-<span id="cb4-30"><a href="#cb4-30"></a>    <span class="ex">-</span> chapters/intro-version-control.qmd</span>
-<span id="cb4-31"><a href="#cb4-31"></a>    <span class="ex">-</span> chapters/command-line.qmd</span>
-<span id="cb4-32"><a href="#cb4-32"></a>    <span class="ex">-</span> chapters/installation.qmd</span>
-<span id="cb4-33"><a href="#cb4-33"></a>    <span class="ex">-</span> chapters/setup.qmd</span>
-<span id="cb4-34"><a href="#cb4-34"></a>    <span class="ex">-</span> chapters/first-steps-git.qmd</span>
-<span id="cb4-35"><a href="#cb4-35"></a>    <span class="ex">-</span> chapters/branches.qmd</span>
-<span id="cb4-36"><a href="#cb4-36"></a>    <span class="ex">-</span> chapters/github-intro.qmd</span>
-<span id="cb4-37"><a href="#cb4-37"></a>    <span class="ex">-</span> chapters/tags-and-releases.qmd</span>
-<span id="cb4-38"><a href="#cb4-38"></a>    <span class="ex">-</span> part: Project Management</span>
-<span id="cb4-39"><a href="#cb4-39"></a>      <span class="ex">chapters:</span></span>
-<span id="cb4-40"><a href="#cb4-40"></a>        <span class="ex">-</span> chapters/project-management.qmd</span>
-<span id="cb4-41"><a href="#cb4-41"></a>        <span class="ex">-</span> chapters/issues.qmd</span>
-<span id="cb4-42"><a href="#cb4-42"></a>    <span class="ex">-</span> chapters/gui.qmd</span>
-<span id="cb4-43"><a href="#cb4-43"></a>    <span class="ex">-</span> chapters/intermediate-commands.qmd</span>
-<span id="cb4-44"><a href="#cb4-44"></a>    <span class="ex">-</span> chapters/rewriting-history.qmd</span>
-<span id="cb4-45"><a href="#cb4-45"></a>    <span class="ex">-</span> misc/cheatsheet.qmd</span>
-<span id="cb4-46"><a href="#cb4-46"></a>    <span class="ex">-</span> misc/references.qmd</span>
-<span id="cb4-47"><a href="#cb4-47"></a>    <span class="ex">-</span> misc/acknowledgements.qmd</span>
-<span id="cb4-48"><a href="#cb4-48"></a>    <span class="ex">-</span> misc/contributing.qmd</span>
-<span id="cb4-49"><a href="#cb4-49"></a>    <span class="ex">-</span> misc/style-guide.qmd</span>
-<span id="cb4-50"><a href="#cb4-50"></a>  <span class="ex">page-navigation:</span> true</span>
-<span id="cb4-51"><a href="#cb4-51"></a>  <span class="ex">back-to-top-navigation:</span> true</span>
-<span id="cb4-52"><a href="#cb4-52"></a>  <span class="co"># side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):</span></span>
-<span id="cb4-53"><a href="#cb4-53"></a>  <span class="ex">sidebar:</span></span>
-<span id="cb4-54"><a href="#cb4-54"></a>    <span class="ex">id:</span> sidebar</span>
-<span id="cb4-55"><a href="#cb4-55"></a>    <span class="ex">title:</span> <span class="st">"Version Control of Code and Data"</span></span>
-<span id="cb4-56"><a href="#cb4-56"></a>    <span class="ex">subtitle:</span> <span class="st">"An Introduction for Scientists"</span></span>
-<span id="cb4-57"><a href="#cb4-57"></a>    <span class="ex">logo:</span> static/git-icon.svg</span>
-<span id="cb4-58"><a href="#cb4-58"></a>    <span class="ex">search:</span> true</span>
-<span id="cb4-59"><a href="#cb4-59"></a>    <span class="ex">tools:</span></span>
-<span id="cb4-60"><a href="#cb4-60"></a>      <span class="ex">-</span> icon: globe</span>
-<span id="cb4-61"><a href="#cb4-61"></a>        <span class="ex">href:</span> https://lennartwittkuhn.com/version-control-book</span>
-<span id="cb4-62"><a href="#cb4-62"></a>      <span class="ex">-</span> icon: bug</span>
-<span id="cb4-63"><a href="#cb4-63"></a>        <span class="ex">href:</span> https://github.com/lnnrtwttkhn/version-control-book/issues</span>
-<span id="cb4-64"><a href="#cb4-64"></a>    <span class="ex">style:</span> docked</span>
-<span id="cb4-65"><a href="#cb4-65"></a>    <span class="ex">type:</span> light</span>
-<span id="cb4-66"><a href="#cb4-66"></a>    <span class="ex">background:</span> light</span>
-<span id="cb4-67"><a href="#cb4-67"></a>    <span class="ex">border:</span> false</span>
-<span id="cb4-68"><a href="#cb4-68"></a>    <span class="ex">alignment:</span> center</span>
-<span id="cb4-69"><a href="#cb4-69"></a>    <span class="ex">collapse-level:</span> 2</span>
-<span id="cb4-70"><a href="#cb4-70"></a>    <span class="ex">pinned:</span> true</span>
-<span id="cb4-71"><a href="#cb4-71"></a>  <span class="ex">page-footer:</span></span>
-<span id="cb4-72"><a href="#cb4-72"></a>    <span class="ex">left:</span> <span class="kw">|</span></span>
-<span id="cb4-73"><a href="#cb4-73"></a>      <span class="kw">&amp;</span><span class="ex">copy</span><span class="kw">;</span> <span class="ex">{{</span><span class="op">&lt;</span> var <span class="ex">years</span> <span class="op">&gt;</span>}} The Version Control Book Team</span>
-<span id="cb4-74"><a href="#cb4-74"></a>    <span class="ex">center:</span></span>
-<span id="cb4-75"><a href="#cb4-75"></a>      <span class="ex">-</span> text: <span class="st">"Funded by the Digital and Data Literacy in Teaching Lab"</span></span>
-<span id="cb4-76"><a href="#cb4-76"></a>        <span class="ex">href:</span> misc/acknowledgements.qmd</span>
-<span id="cb4-77"><a href="#cb4-77"></a>    <span class="ex">right:</span> <span class="kw">|</span></span>
-<span id="cb4-78"><a href="#cb4-78"></a>      <span class="ex">License:</span> [CC BY-SA 4.0]<span class="er">(</span><span class="ex">https://creativecommons.org/licenses/by-sa/4.0/</span><span class="kw">)</span></span>
-<span id="cb4-79"><a href="#cb4-79"></a>    <span class="ex">border:</span> false</span>
-<span id="cb4-80"><a href="#cb4-80"></a>    <span class="ex">background:</span> light</span>
-<span id="cb4-81"><a href="#cb4-81"></a></span>
-<span id="cb4-82"><a href="#cb4-82"></a><span class="ex">format:</span></span>
-<span id="cb4-83"><a href="#cb4-83"></a>  <span class="ex">html:</span></span>
-<span id="cb4-84"><a href="#cb4-84"></a>    <span class="ex">theme:</span> cosmo</span>
-<span id="cb4-85"><a href="#cb4-85"></a>    <span class="ex">from:</span> markdown+emoji</span>
-<span id="cb4-86"><a href="#cb4-86"></a>    <span class="co"># fontcolor: black</span></span>
-<span id="cb4-87"><a href="#cb4-87"></a>    <span class="co"># linkcolor: black</span></span>
-<span id="cb4-88"><a href="#cb4-88"></a>    <span class="ex">link-external-newwindow:</span> true</span>
-<span id="cb4-89"><a href="#cb4-89"></a>    <span class="ex">toc:</span> true</span>
-<span id="cb4-90"><a href="#cb4-90"></a>    <span class="ex">toc-depth:</span> 3</span>
-<span id="cb4-91"><a href="#cb4-91"></a>    <span class="ex">toc-title:</span> <span class="st">"On this page"</span></span>
-<span id="cb4-92"><a href="#cb4-92"></a>    <span class="ex">number-sections:</span> true</span>
-<span id="cb4-93"><a href="#cb4-93"></a>    <span class="ex">anchor-sections:</span> true</span>
-<span id="cb4-94"><a href="#cb4-94"></a>    <span class="co"># layout (https://quarto.org/docs/reference/formats/html.html#layout):</span></span>
-<span id="cb4-95"><a href="#cb4-95"></a>    <span class="ex">fig-cap-location:</span> margin</span>
-<span id="cb4-96"><a href="#cb4-96"></a>    <span class="ex">page-layout:</span> full</span>
-<span id="cb4-97"><a href="#cb4-97"></a>    <span class="co"># title-block-style: default</span></span>
-<span id="cb4-98"><a href="#cb4-98"></a>    <span class="co"># code (https://quarto.org/docs/reference/formats/html.html#code):</span></span>
-<span id="cb4-99"><a href="#cb4-99"></a>    <span class="ex">code-fold:</span> false</span>
-<span id="cb4-100"><a href="#cb4-100"></a>    <span class="ex">code-overflow:</span> wrap</span>
-<span id="cb4-101"><a href="#cb4-101"></a>    <span class="ex">code-line-numbers:</span> false</span>
-<span id="cb4-102"><a href="#cb4-102"></a>    <span class="ex">code-copy:</span> true</span>
-<span id="cb4-103"><a href="#cb4-103"></a>    <span class="ex">code-link:</span> false</span>
-<span id="cb4-104"><a href="#cb4-104"></a>    <span class="ex">code-annotations:</span> hover</span>
-<span id="cb4-105"><a href="#cb4-105"></a>    <span class="ex">code-tools:</span> false</span>
-<span id="cb4-106"><a href="#cb4-106"></a>    <span class="ex">highlight-style:</span> monokai</span>
-<span id="cb4-107"><a href="#cb4-107"></a>    <span class="co"># references:</span></span>
-<span id="cb4-108"><a href="#cb4-108"></a>    <span class="ex">bibliography:</span> references.bib</span>
-<span id="cb4-109"><a href="#cb4-109"></a>    <span class="ex">csl:</span> chicago-author-date-note.csl</span>
-<span id="cb4-110"><a href="#cb4-110"></a>    <span class="ex">citations-hover:</span> true</span>
-<span id="cb4-111"><a href="#cb4-111"></a>    <span class="ex">citation-location:</span> document</span>
-<span id="cb4-112"><a href="#cb4-112"></a>    <span class="ex">citeproc:</span> true</span>
-<span id="cb4-113"><a href="#cb4-113"></a>    <span class="co"># footnotes:</span></span>
-<span id="cb4-114"><a href="#cb4-114"></a>    <span class="ex">footnotes-hover:</span> true</span>
-<span id="cb4-115"><a href="#cb4-115"></a>    <span class="co"># includes:</span></span>
-<span id="cb4-116"><a href="#cb4-116"></a>    <span class="ex">include-after-body:</span> plausible.html</span>
-<span id="cb4-117"><a href="#cb4-117"></a></span>
-<span id="cb4-118"><a href="#cb4-118"></a><span class="ex">metadata-files:</span></span>
-<span id="cb4-119"><a href="#cb4-119"></a>  <span class="ex">-</span> _authors.yml</span>
-<span id="cb4-120"><a href="#cb4-120"></a>  <span class="ex">-</span> _affiliations.yml</span>
-<span id="cb4-121"><a href="#cb4-121"></a>  <span class="ex">-</span> _metadata.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-22"><a href="#cb4-22"></a>  <span class="co"># downloads: [pdf, epub]</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a>  <span class="ex">favicon:</span> static/git-icon.svg</span>
+<span id="cb4-24"><a href="#cb4-24"></a>  <span class="ex">twitter-card:</span> false</span>
+<span id="cb4-25"><a href="#cb4-25"></a>  <span class="ex">site-url:</span> https://lennartwittkuhn.com/version-control-book</span>
+<span id="cb4-26"><a href="#cb4-26"></a>  <span class="ex">chapters:</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>    <span class="ex">-</span> index.qmd</span>
+<span id="cb4-28"><a href="#cb4-28"></a>    <span class="ex">-</span> contents.qmd</span>
+<span id="cb4-29"><a href="#cb4-29"></a>    <span class="ex">-</span> chapters/intro-version-control.qmd</span>
+<span id="cb4-30"><a href="#cb4-30"></a>    <span class="ex">-</span> chapters/command-line.qmd</span>
+<span id="cb4-31"><a href="#cb4-31"></a>    <span class="ex">-</span> chapters/installation.qmd</span>
+<span id="cb4-32"><a href="#cb4-32"></a>    <span class="ex">-</span> chapters/setup.qmd</span>
+<span id="cb4-33"><a href="#cb4-33"></a>    <span class="ex">-</span> chapters/first-steps-git.qmd</span>
+<span id="cb4-34"><a href="#cb4-34"></a>    <span class="ex">-</span> chapters/branches.qmd</span>
+<span id="cb4-35"><a href="#cb4-35"></a>    <span class="ex">-</span> chapters/github-intro.qmd</span>
+<span id="cb4-36"><a href="#cb4-36"></a>    <span class="ex">-</span> chapters/tags-and-releases.qmd</span>
+<span id="cb4-37"><a href="#cb4-37"></a>    <span class="ex">-</span> part: Project Management</span>
+<span id="cb4-38"><a href="#cb4-38"></a>      <span class="ex">chapters:</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a>        <span class="ex">-</span> chapters/project-management.qmd</span>
+<span id="cb4-40"><a href="#cb4-40"></a>        <span class="ex">-</span> chapters/issues.qmd</span>
+<span id="cb4-41"><a href="#cb4-41"></a>    <span class="ex">-</span> chapters/gui.qmd</span>
+<span id="cb4-42"><a href="#cb4-42"></a>    <span class="ex">-</span> chapters/intermediate-commands.qmd</span>
+<span id="cb4-43"><a href="#cb4-43"></a>    <span class="ex">-</span> chapters/rewriting-history.qmd</span>
+<span id="cb4-44"><a href="#cb4-44"></a>    <span class="ex">-</span> misc/cheatsheet.qmd</span>
+<span id="cb4-45"><a href="#cb4-45"></a>    <span class="ex">-</span> misc/references.qmd</span>
+<span id="cb4-46"><a href="#cb4-46"></a>    <span class="ex">-</span> misc/acknowledgements.qmd</span>
+<span id="cb4-47"><a href="#cb4-47"></a>    <span class="ex">-</span> misc/contributing.qmd</span>
+<span id="cb4-48"><a href="#cb4-48"></a>    <span class="ex">-</span> misc/style-guide.qmd</span>
+<span id="cb4-49"><a href="#cb4-49"></a>  <span class="ex">page-navigation:</span> true</span>
+<span id="cb4-50"><a href="#cb4-50"></a>  <span class="ex">back-to-top-navigation:</span> true</span>
+<span id="cb4-51"><a href="#cb4-51"></a>  <span class="co"># side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a>  <span class="ex">sidebar:</span></span>
+<span id="cb4-53"><a href="#cb4-53"></a>    <span class="ex">id:</span> sidebar</span>
+<span id="cb4-54"><a href="#cb4-54"></a>    <span class="ex">title:</span> <span class="st">"Version Control of Code and Data"</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a>    <span class="ex">subtitle:</span> <span class="st">"An introduction to Git for research"</span></span>
+<span id="cb4-56"><a href="#cb4-56"></a>    <span class="ex">logo:</span> static/git-icon.svg</span>
+<span id="cb4-57"><a href="#cb4-57"></a>    <span class="ex">search:</span> true</span>
+<span id="cb4-58"><a href="#cb4-58"></a>    <span class="ex">tools:</span></span>
+<span id="cb4-59"><a href="#cb4-59"></a>      <span class="ex">-</span> icon: globe</span>
+<span id="cb4-60"><a href="#cb4-60"></a>        <span class="ex">href:</span> https://lennartwittkuhn.com/version-control-book</span>
+<span id="cb4-61"><a href="#cb4-61"></a>      <span class="ex">-</span> icon: bug</span>
+<span id="cb4-62"><a href="#cb4-62"></a>        <span class="ex">href:</span> https://github.com/lnnrtwttkhn/version-control-book/issues</span>
+<span id="cb4-63"><a href="#cb4-63"></a>    <span class="ex">style:</span> floating</span>
+<span id="cb4-64"><a href="#cb4-64"></a>    <span class="ex">type:</span> light</span>
+<span id="cb4-65"><a href="#cb4-65"></a>    <span class="ex">border:</span> false</span>
+<span id="cb4-66"><a href="#cb4-66"></a>    <span class="ex">alignment:</span> center</span>
+<span id="cb4-67"><a href="#cb4-67"></a>    <span class="ex">collapse-level:</span> 2</span>
+<span id="cb4-68"><a href="#cb4-68"></a>    <span class="ex">pinned:</span> true</span>
+<span id="cb4-69"><a href="#cb4-69"></a>  <span class="ex">page-footer:</span></span>
+<span id="cb4-70"><a href="#cb4-70"></a>    <span class="ex">left:</span> <span class="kw">|</span></span>
+<span id="cb4-71"><a href="#cb4-71"></a>      <span class="kw">&amp;</span><span class="ex">copy</span><span class="kw">;</span> <span class="ex">{{</span><span class="op">&lt;</span> var <span class="ex">years</span> <span class="op">&gt;</span>}} The Version Control Book Team</span>
+<span id="cb4-72"><a href="#cb4-72"></a>    <span class="ex">center:</span></span>
+<span id="cb4-73"><a href="#cb4-73"></a>      <span class="ex">-</span> text: <span class="st">"Funded by the Digital and Data Literacy in Teaching Lab"</span></span>
+<span id="cb4-74"><a href="#cb4-74"></a>        <span class="ex">href:</span> misc/acknowledgements.qmd</span>
+<span id="cb4-75"><a href="#cb4-75"></a>    <span class="ex">right:</span> <span class="kw">|</span></span>
+<span id="cb4-76"><a href="#cb4-76"></a>      <span class="ex">License:</span> [CC BY-SA 4.0]<span class="er">(</span><span class="ex">https://creativecommons.org/licenses/by-sa/4.0/</span><span class="kw">)</span></span>
+<span id="cb4-77"><a href="#cb4-77"></a>    <span class="ex">border:</span> false</span>
+<span id="cb4-78"><a href="#cb4-78"></a>    <span class="ex">background:</span> light</span>
+<span id="cb4-79"><a href="#cb4-79"></a></span>
+<span id="cb4-80"><a href="#cb4-80"></a><span class="ex">format:</span></span>
+<span id="cb4-81"><a href="#cb4-81"></a>  <span class="ex">html:</span></span>
+<span id="cb4-82"><a href="#cb4-82"></a>    <span class="ex">theme:</span> default</span>
+<span id="cb4-83"><a href="#cb4-83"></a>    <span class="ex">from:</span> markdown+emoji</span>
+<span id="cb4-84"><a href="#cb4-84"></a>    <span class="ex">link-external-newwindow:</span> true</span>
+<span id="cb4-85"><a href="#cb4-85"></a>    <span class="ex">toc:</span> true</span>
+<span id="cb4-86"><a href="#cb4-86"></a>    <span class="ex">toc-depth:</span> 3</span>
+<span id="cb4-87"><a href="#cb4-87"></a>    <span class="ex">toc-title:</span> <span class="st">"Contents"</span></span>
+<span id="cb4-88"><a href="#cb4-88"></a>    <span class="ex">number-sections:</span> true</span>
+<span id="cb4-89"><a href="#cb4-89"></a>    <span class="ex">anchor-sections:</span> true</span>
+<span id="cb4-90"><a href="#cb4-90"></a>    <span class="co"># layout (https://quarto.org/docs/reference/formats/html.html#layout):</span></span>
+<span id="cb4-91"><a href="#cb4-91"></a>    <span class="ex">fig-cap-location:</span> bottom</span>
+<span id="cb4-92"><a href="#cb4-92"></a>    <span class="ex">page-layout:</span> full</span>
+<span id="cb4-93"><a href="#cb4-93"></a>    <span class="co"># title-block-style: default</span></span>
+<span id="cb4-94"><a href="#cb4-94"></a>    <span class="co"># code (https://quarto.org/docs/reference/formats/html.html#code):</span></span>
+<span id="cb4-95"><a href="#cb4-95"></a>    <span class="ex">code-fold:</span> false</span>
+<span id="cb4-96"><a href="#cb4-96"></a>    <span class="ex">code-overflow:</span> wrap</span>
+<span id="cb4-97"><a href="#cb4-97"></a>    <span class="ex">code-line-numbers:</span> false</span>
+<span id="cb4-98"><a href="#cb4-98"></a>    <span class="ex">code-copy:</span> true</span>
+<span id="cb4-99"><a href="#cb4-99"></a>    <span class="ex">code-link:</span> false</span>
+<span id="cb4-100"><a href="#cb4-100"></a>    <span class="ex">code-annotations:</span> hover</span>
+<span id="cb4-101"><a href="#cb4-101"></a>    <span class="ex">code-tools:</span> false</span>
+<span id="cb4-102"><a href="#cb4-102"></a>    <span class="ex">highlight-style:</span> monokai</span>
+<span id="cb4-103"><a href="#cb4-103"></a>    <span class="co"># references:</span></span>
+<span id="cb4-104"><a href="#cb4-104"></a>    <span class="ex">bibliography:</span> references.bib</span>
+<span id="cb4-105"><a href="#cb4-105"></a>    <span class="ex">csl:</span> chicago-author-date-note.csl</span>
+<span id="cb4-106"><a href="#cb4-106"></a>    <span class="ex">citations-hover:</span> true</span>
+<span id="cb4-107"><a href="#cb4-107"></a>    <span class="ex">citation-location:</span> document</span>
+<span id="cb4-108"><a href="#cb4-108"></a>    <span class="ex">citeproc:</span> true</span>
+<span id="cb4-109"><a href="#cb4-109"></a>    <span class="co"># footnotes:</span></span>
+<span id="cb4-110"><a href="#cb4-110"></a>    <span class="ex">footnotes-hover:</span> true</span>
+<span id="cb4-111"><a href="#cb4-111"></a>    <span class="co"># includes:</span></span>
+<span id="cb4-112"><a href="#cb4-112"></a>    <span class="ex">include-after-body:</span> plausible.html</span>
+<span id="cb4-113"><a href="#cb4-113"></a></span>
+<span id="cb4-114"><a href="#cb4-114"></a><span class="ex">metadata-files:</span></span>
+<span id="cb4-115"><a href="#cb4-115"></a>  <span class="ex">-</span> _authors.yml</span>
+<span id="cb4-116"><a href="#cb4-116"></a>  <span class="ex">-</span> _affiliations.yml</span>
+<span id="cb4-117"><a href="#cb4-117"></a>  <span class="ex">-</span> _metadata.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -655,7 +626,7 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <summary>
 Click here to view the full <code>renv.lock</code> file of this project.
 </summary>
-<div class="cell" data-file="renv.lock">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>renv.lock</strong></pre>
@@ -1430,11 +1401,11 @@ Click here to view an example output of the <code>renv::restore()</code> command
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="1" data-code-cell="annotated-cell-10">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to install.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="1" data-code-annotation="1">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to install.</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="2" data-code-cell="annotated-cell-10">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to install.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="2" data-code-annotation="2">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to install.</span>
 </dd>
 </dl>
 </div>
@@ -1447,11 +1418,11 @@ Click here to view an example output of the <code>renv::restore()</code> command
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="1" data-code-cell="annotated-cell-11">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to remove.</span>
+<span data-code-cell="annotated-cell-11" data-code-lines="1" data-code-annotation="1">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to remove.</span>
 </dd>
 <dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="2" data-code-cell="annotated-cell-11">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to remove.</span>
+<span data-code-cell="annotated-cell-11" data-code-lines="2" data-code-annotation="2">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you want to remove.</span>
 </dd>
 </dl>
 </div>
@@ -1471,7 +1442,7 @@ Click here to view an example output of the <code>renv::restore()</code> command
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-13">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you installed. Adapt the commit message as needed.</span>
+<span data-code-cell="annotated-cell-13" data-code-lines="2" data-code-annotation="1">Replace <code>PACKAGE_NAME</code> with the actual name of the package that you installed. Adapt the commit message as needed.</span>
 </dd>
 </dl>
 </div>
@@ -1491,7 +1462,7 @@ Click here to view an example output of the <code>renv::restore()</code> command
 <summary>
 Click here to view the full <code>references.bib</code> file of this project.
 </summary>
-<div class="cell" data-file="references.bib">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>references.bib</strong></pre>
@@ -1760,7 +1731,7 @@ Click here to view the full <code>references.bib</code> file of this project.
 <h3 class="anchored" data-anchor-id="add-code-snippets">Add code snippets</h3>
 <p>Add code snippets to a Quarto document like this:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="in">git status</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-warning callout-titled" title="Disable code execution in all Quarto documents by default!">
 <div class="callout-header d-flex align-content-center">
@@ -1782,16 +1753,17 @@ Disable code execution in all Quarto documents by default!
 <summary>
 Example: Click here for the YAML header of the current document.
 </summary>
-<div class="cell" data-file="misc/contributing.qmd">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>misc/contributing.qmd</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1"></a><span class="pp">---</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="pp">---</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="co"># Contributing {.unnumbered}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">title-block-style</span><span class="kw">:</span><span class="at"> none</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="pp">---</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="co"># Contributing {.unnumbered}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1809,10 +1781,6 @@ The YAML header in a Quarto document is used to specify important metadata and s
 <section id="reference-external-code" class="level3">
 <h3 class="anchored" data-anchor-id="reference-external-code">Reference external code</h3>
 <p>You can reference external code. For example, the following code block will:</p>
-<div class="cell">
-
-</div>
-<div class="cell-output-display">
 <table class="table">
 <colgroup>
 <col style="width: 4%">
@@ -1849,16 +1817,15 @@ The YAML header in a Quarto document is used to specify important metadata and s
 </tr>
 </tbody>
 </table>
-</div>
 <div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash, filename="_quarto.yml", echo=c(1:5)}</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| file: _quarto.yml</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-line-numbers: true</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| file: _quarto.yml</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-line-numbers: true</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <details>
 <summary>
 Click here for the output of this example.
 </summary>
-<div class="cell" data-file="_quarto.yml">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
@@ -1881,10 +1848,10 @@ Click here for the output of this example.
 <p>Code blocks and executable code cells in Quarto can include line-based annotations. Line-based annotations provide a way to attach explanation to lines of code much like footnotes.</p>
 </blockquote>
 <p>For example, this is a code annotation for the <code>git status</code> command:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status <span class="co"># &lt;1&gt;</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`git status`</span> displays the state of the working directory and the staging area.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-20"><pre class="sourceCode markdown code-annotation-code code-with-copy"><code class="sourceCode markdown"><span id="annotated-cell-20-1"><a href="#annotated-cell-20-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{bash}</span></span>
+<span id="annotated-cell-20-2"><a href="#annotated-cell-20-2" aria-hidden="true" tabindex="-1"></a><span class="in">git status</span></span>
+<span id="annotated-cell-20-3"><a href="#annotated-cell-20-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="annotated-cell-20-4"><a href="#annotated-cell-20-4" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`git status`</span> displays the state of the working directory and the staging area.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="sec-images" class="level2">
@@ -1908,17 +1875,17 @@ Click here for the output of this example.
 <li><strong>Prerequisite:</strong> Install <a href="https://brew.sh/">Homebrew</a></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>After you installed Homebrew, install <a href="https://www.gnu.org/software/wget/">GNU Wget</a></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install wget</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install wget</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="https://www.gnu.org/software/make/">GNU Make</a> should already be installed. Try by entering the following command into the Terminal:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
@@ -1934,7 +1901,7 @@ Click here for the output of this example.
 <h3 class="anchored" data-anchor-id="retrieve-images">Retrieve images</h3>
 <p>After you installed all the required software, run this command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> download-images</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> download-images</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What's a Makefile and what does it do?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -1948,30 +1915,30 @@ What’s a Makefile and what does it do?
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="cell" data-file="Makefile">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># define URL to Nextcloud where static files are stored:</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="co"># define a name for the .zip-archive with the cloud contents:</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="va">IMAGES_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
-<span id="cb24-5"><a href="#cb24-5"></a><span class="co"># define the name of the local folder:</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a><span class="va">IMAGES_DIR</span><span class="op">=</span>static/</span>
-<span id="cb24-7"><a href="#cb24-7"></a></span>
-<span id="cb24-8"><a href="#cb24-8"></a><span class="co"># define the default targets of the make command</span></span>
-<span id="cb24-9"><a href="#cb24-9"></a><span class="ex">all:</span> download-images</span>
-<span id="cb24-10"><a href="#cb24-10"></a></span>
-<span id="cb24-11"><a href="#cb24-11"></a><span class="co"># download and extract images:</span></span>
-<span id="cb24-12"><a href="#cb24-12"></a><span class="ex">download-images:</span></span>
-<span id="cb24-13"><a href="#cb24-13"></a>    <span class="fu">wget</span> <span class="va">$(</span><span class="ex">IMAGES_URL</span><span class="va">)</span> <span class="at">-O</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
-<span id="cb24-14"><a href="#cb24-14"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span></span>
-<span id="cb24-15"><a href="#cb24-15"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
-<span id="cb24-16"><a href="#cb24-16"></a></span>
-<span id="cb24-17"><a href="#cb24-17"></a><span class="co"># clean downloaded images folder:</span></span>
-<span id="cb24-18"><a href="#cb24-18"></a><span class="ex">clean:</span></span>
-<span id="cb24-19"><a href="#cb24-19"></a>    <span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span><span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># define URL to Nextcloud where static files are stored:</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="co"># define a name for the .zip-archive with the cloud contents:</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="va">IMAGES_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="co"># define the name of the local folder:</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="va">IMAGES_DIR</span><span class="op">=</span>static/</span>
+<span id="cb23-7"><a href="#cb23-7"></a></span>
+<span id="cb23-8"><a href="#cb23-8"></a><span class="co"># define the default targets of the make command</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="ex">all:</span> download-images</span>
+<span id="cb23-10"><a href="#cb23-10"></a></span>
+<span id="cb23-11"><a href="#cb23-11"></a><span class="co"># download and extract images:</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a><span class="ex">download-images:</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a>    <span class="fu">wget</span> <span class="va">$(</span><span class="ex">IMAGES_URL</span><span class="va">)</span> <span class="at">-O</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb23-14"><a href="#cb23-14"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span></span>
+<span id="cb23-15"><a href="#cb23-15"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb23-16"><a href="#cb23-16"></a></span>
+<span id="cb23-17"><a href="#cb23-17"></a><span class="co"># clean downloaded images folder:</span></span>
+<span id="cb23-18"><a href="#cb23-18"></a><span class="ex">clean:</span></span>
+<span id="cb23-19"><a href="#cb23-19"></a>    <span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span><span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1987,7 +1954,7 @@ What’s a Makefile and what does it do?
 <li>Reference the image in the Quarto document relative to the root of the project directory:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](static/NEW-IMAGE.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](static/NEW-IMAGE.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="download-images-in-pre-render-command" class="level3">
@@ -2002,44 +1969,44 @@ What’s a Makefile and what does it do?
 </ul>
 <p>Quarto offers a number of ways to <strong>include dynamic variables within documents</strong>. Dynamic variables are useful for externalizing content that varies depending on context, or as an alternative to repeating a value in multiple places.</p>
 <p>In this project, we use a project-level <code>_variables.yml</code> file to define variables. Variables can be either simple values or can include arbitrary Markdown content.</p>
-<div class="cell" data-file="_variables.yml">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>_variables.yml (excerpt)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="ex">links:</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>  <span class="ex">email:</span> mailto:lennart.wittkuhn@uni-hamburg.de</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="ex">links:</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="ex">email:</span> mailto:lennart.wittkuhn@uni-hamburg.de</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <details>
 <summary>
 Click here to view the full <code>_variables.yml</code> file of this project.
 </summary>
-<div class="cell" data-file="_variables.yml">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>_variables.yml</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># https://quarto.org/docs/authoring/variables.html</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="ex">links:</span></span>
-<span id="cb27-3"><a href="#cb27-3"></a>  <span class="ex">email:</span> mailto:lennart.wittkuhn@uni-hamburg.de</span>
-<span id="cb27-4"><a href="#cb27-4"></a>  <span class="ex">github:</span> https://github.com/lnnrtwttkhn/version-control-book</span>
-<span id="cb27-5"><a href="#cb27-5"></a>  <span class="ex">issues:</span> https://github.com/lnnrtwttkhn/version-control-book/issues</span>
-<span id="cb27-6"><a href="#cb27-6"></a>  <span class="ex">site:</span> https://lennartwittkuhn.com/version-control-book</span>
-<span id="cb27-7"><a href="#cb27-7"></a>  <span class="ex">proposal:</span> https://lennartwittkuhn.com/ddlitlab-proposal</span>
-<span id="cb27-8"><a href="#cb27-8"></a>  <span class="ex">nextcloud:</span> https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT</span>
-<span id="cb27-9"><a href="#cb27-9"></a>  <span class="ex">new_issues:</span> https://github.com/lnnrtwttkhn/version-control-book/issues/new</span>
-<span id="cb27-10"><a href="#cb27-10"></a><span class="ex">years:</span> <span class="st">"2023 -- 2024"</span></span>
-<span id="cb27-11"><a href="#cb27-11"></a><span class="ex">language:</span></span>
-<span id="cb27-12"><a href="#cb27-12"></a>  <span class="ex">dont:</span></span>
-<span id="cb27-13"><a href="#cb27-13"></a>    <span class="ex">yes:</span> <span class="st">"don't"</span></span>
-<span id="cb27-14"><a href="#cb27-14"></a>    <span class="ex">no:</span> <span class="st">"do not"</span></span>
-<span id="cb27-15"><a href="#cb27-15"></a>  <span class="ex">folder:</span></span>
-<span id="cb27-16"><a href="#cb27-16"></a>    <span class="ex">yes:</span> <span class="st">"folder"</span></span>
-<span id="cb27-17"><a href="#cb27-17"></a>    <span class="ex">no:</span> <span class="st">"directory"</span></span>
-<span id="cb27-18"><a href="#cb27-18"></a>  <span class="ex">documentation:</span></span>
-<span id="cb27-19"><a href="#cb27-19"></a>    <span class="ex">yes:</span> <span class="st">"documentation"</span></span>
-<span id="cb27-20"><a href="#cb27-20"></a>    <span class="ex">no:</span> <span class="st">"docs"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># https://quarto.org/docs/authoring/variables.html</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="ex">links:</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="ex">email:</span> mailto:lennart.wittkuhn@uni-hamburg.de</span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="ex">github:</span> https://github.com/lnnrtwttkhn/version-control-book</span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="ex">issues:</span> https://github.com/lnnrtwttkhn/version-control-book/issues</span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="ex">site:</span> https://lennartwittkuhn.com/version-control-book</span>
+<span id="cb26-7"><a href="#cb26-7"></a>  <span class="ex">proposal:</span> https://lennartwittkuhn.com/ddlitlab-proposal</span>
+<span id="cb26-8"><a href="#cb26-8"></a>  <span class="ex">nextcloud:</span> https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT</span>
+<span id="cb26-9"><a href="#cb26-9"></a>  <span class="ex">new_issues:</span> https://github.com/lnnrtwttkhn/version-control-book/issues/new</span>
+<span id="cb26-10"><a href="#cb26-10"></a><span class="ex">years:</span> <span class="st">"2023 -- 2024"</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a><span class="ex">language:</span></span>
+<span id="cb26-12"><a href="#cb26-12"></a>  <span class="ex">dont:</span></span>
+<span id="cb26-13"><a href="#cb26-13"></a>    <span class="ex">yes:</span> <span class="st">"don't"</span></span>
+<span id="cb26-14"><a href="#cb26-14"></a>    <span class="ex">no:</span> <span class="st">"do not"</span></span>
+<span id="cb26-15"><a href="#cb26-15"></a>  <span class="ex">folder:</span></span>
+<span id="cb26-16"><a href="#cb26-16"></a>    <span class="ex">yes:</span> <span class="st">"folder"</span></span>
+<span id="cb26-17"><a href="#cb26-17"></a>    <span class="ex">no:</span> <span class="st">"directory"</span></span>
+<span id="cb26-18"><a href="#cb26-18"></a>  <span class="ex">documentation:</span></span>
+<span id="cb26-19"><a href="#cb26-19"></a>    <span class="ex">yes:</span> <span class="st">"documentation"</span></span>
+<span id="cb26-20"><a href="#cb26-20"></a>    <span class="ex">no:</span> <span class="st">"docs"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -2068,7 +2035,7 @@ Click here to view the full <code>_variables.yml</code> file of this project.
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-allaire2022" class="csl-entry" role="listitem">
 Allaire, J. J., Charles Teague, Yihui Xie, and Christophe Dervieux. 2022. <span>“Quarto.”</span> <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>. License: <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU GPL v2</a>. <a href="https://github.com/quarto-dev/quarto-web" class="uri">https://github.com/quarto-dev/quarto-web</a>. Website: <a href="https://quarto.org/" class="uri">https://quarto.org/</a>.
 </div>
@@ -2162,10 +2129,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2175,8 +2159,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2189,6 +2182,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2232,6 +2344,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2257,8 +2370,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -2266,23 +2379,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -2327,7 +2440,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               options: {
                 flipVariations: false, // true by default
                 allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
               },
             },
             {
@@ -2379,30 +2492,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../misc/acknowledgements.html" class="pagination-link">
+      <a href="../misc/acknowledgements.html" class="pagination-link" aria-label="Acknowledgements">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Acknowledgements</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../misc/style-guide.html" class="pagination-link">
+      <a href="../misc/style-guide.html" class="pagination-link" aria-label="Style Guide">
         <span class="nav-page-text">Style Guide</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -2410,17 +2509,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2023 – 2024 The Version Control Book Team</div>   
+    <div class="nav-footer-left">
+<p>© 2023 – 2024 The Version Control Book Team</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../misc/acknowledgements.html">Funded by the Digital and Data Literacy in Teaching Lab</a>
+    <a class="nav-link" href="../misc/acknowledgements.html">
+<p>Funded by the Digital and Data Literacy in Teaching Lab</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/contributing.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>
   </div>
 </footer>
+
 
 
 
