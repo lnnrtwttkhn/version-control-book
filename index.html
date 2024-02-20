@@ -254,7 +254,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul class="collapse">
+  <li><a href="#who-is-this-book-for" id="toc-who-is-this-book-for" class="nav-link" data-scroll-target="#who-is-this-book-for">Who is this book for?</a></li>
+  <li><a href="#what-is-the-purpose-of-this-book" id="toc-what-is-the-purpose-of-this-book" class="nav-link" data-scroll-target="#what-is-the-purpose-of-this-book">What is the purpose of this book?</a></li>
+  <li><a href="#how-to-use-this-book" id="toc-how-to-use-this-book" class="nav-link" data-scroll-target="#how-to-use-this-book">How to use this book?</a></li>
+  <li><a href="#how-can-i-contribute" id="toc-how-can-i-contribute" class="nav-link" data-scroll-target="#how-can-i-contribute">How can I contribute?</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -308,8 +314,37 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
+<div id="fig-turing-way-welcome" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-turing-way-welcome-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="static/welcome.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-turing-way-welcome-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/">The Turing Way</a> community. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> licence. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3695300</a> (Version 3, <a href="https://zenodo.org/records/3695300/files/BannerWelcome.jpg?download=1">direct download link</a>).
+</figcaption>
+</figure>
+</div>
+<p>Welcome to the world of version control! The purpose of this book is to empower scientists, researchers, and students with the knowledge and skills needed to use <a href="https://git-scm.com/">Git</a> for version control of code and data.</p>
+<section id="who-is-this-book-for" class="level2">
+<h2 class="anchored" data-anchor-id="who-is-this-book-for">Who is this book for?</h2>
+<p>This is <em>not</em> a guide to version control for software developers and computer scientists, who may have more advanced needs. It is meant to be a gentle introduction to version control for (aspiring) scientists, who are seeking to become more effective in managing the evolution of digital objects on their computers. Whether you’re conducting experiments, writing code, collaborating with scientific peers, or managing complex data sets, Git provides a robust framework to enhance the efficiency, reproducibility, and collaboration of your work. While this book was developed with scientists in mind, it’s of course open to anyone who wants to learn more about Git. We try to avoid technical jargon as much as we can. When we discuss best practices in using Git commands, we try to offer multiple alternatives but also give opinionated recommendations as guidance to new users.</p>
+</section>
+<section id="what-is-the-purpose-of-this-book" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-purpose-of-this-book">What is the purpose of this book?</h2>
+<p>Version control can be a real game-changer for your scientific projects. By adopting Git, you gain the ability to trace the evolution of your work, experiment with new ideas without fear of irreversible consequences, and collaborate with a global community of researchers. Of course using Git also adds some layer of complexity to your workflow, especially in the beginning. We aim to simplify and demystify this complex tool for you. Whether you’re new to version control or have dabbled in it before, this book aims to be add something for all levels of expertise.</p>
+</section>
+<section id="how-to-use-this-book" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-this-book">How to use this book?</h2>
+<p>This book takes a “command line first” approach. Git is fundamentally a command-line tool which means you typically interact with it by typing text-based commands into a small command-line window rather than clicking on buttons in a graphical user interface (GUI). While the command line is arguably the rockier road to learning Git, we believe that it provides more long-term benefits and allows to make use of the full potential of Git. This book therefore covers <a href="./chapters/command-line.html">basics of the command line</a> to teach you just enough to interact with Git via the command line effectively. That being said, if you prefer to interact with Git via a graphical user interface, you can still learn about the fundamental concepts of Git in this book and then implement them in your preferred GUI.</p>
+<p>We also believe in learning by doing and focus on implementation. Every concept introduced in this book is accompanied by practical examples, hands-on exercises and quizzes. Feel free to follow the exercises to gain the necessary “muscle-memory” to start using Git in your day-to-day work. Try out the commands in each chapter, play around with them or apply them to a project of yours!</p>
+<p>This book was initially created for the full-semester course “<a href="https://lennartwittkuhn.com/version-control-course-uhh-ws23/">Effective Progress Tracking and Collaboration: An Introduction to Version Control of Code and Data</a>” at <a href="https://www.uni-hamburg.de">Universität Hamburg</a>, Germany. The book is therefore structured for a course that is spread out across multiple sessions. Each chapter and the accompanying quizzes and exercises should roughly fill 90 minutes of class time during a course.</p>
+</section>
+<section id="how-can-i-contribute" class="level2">
+<h2 class="anchored" data-anchor-id="how-can-i-contribute">How can I contribute?</h2>
+<p>This book is constantly evolving and meant as a living resource, and your input can make it even better! If you spot typos, have suggestions for improvement, or want to contribute new content, we welcome your involvement! If you find a typo, an unclear explanation, have an idea for a new chapter or want to see a specific topic covered you are more than welcome to open an issue or submit a pull request in the <a href="https://github.com/lnnrtwttkhn/version-control-book">GitHub repository</a> of this book.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
