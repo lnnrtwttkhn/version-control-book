@@ -15,14 +15,13 @@ The rendered version is at <https://lennartwittkuhn.com/version-control-book/> a
 
 ## Contributing
 
-We invite students, developers, and data scientists, as well as anybody else, to contribute to this collaborative effort.
-Before contributing, please read the CONTRIBUTING.md file for guidelines on how to get involved.
-The project utilizes [Quarto](https://quarto.org) as the foundation for the book. 
-
+Contributions in any form - pull requests, issues, content requests, ideas, etc. - are always welcome.
+If you are using the book and find that something does not work, please [let us know](https://github.com/lnnrtwttkhn/version-control-book/issues).
+You can find out more on how to contribute [here](https://lennartwittkuhn.com/version-control-book/misc/contributing.html), and a list of all contributors so far [below](#contributors).
+Before contributing, please read the [guidelines for contributions](https://lennartwittkuhn.com/version-control-book/misc/contributing.html) on how to get involved.
 To maintain consistency and readability, we follow a [style guide](https://lennartwittkuhn.com/version-control-book/misc/style-guide.html). 
 Please refer to the Style Guide for details on formatting, coding standards, and other conventions.
-
-We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control.
+We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control!
 
 ## Usage
 
