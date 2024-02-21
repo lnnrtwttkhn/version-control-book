@@ -1,0 +1,126 @@
+---
+author: ""
+title-block-style: none
+engine: knitr
+execute:
+  eval: false
+---
+
+# Quizzes {.unnumbered}
+
+<div class="iframe-container">
+  <iframe id="external-website" src="https://version-control-versioncontrol.formr.org" width="600" height="750"></iframe>
+</div>
+<div id="quiz-display"></div>
+<button class="prev-iframe" onclick="prevIframe()">Previous Quiz</button>
+<button class="next-iframe" onclick="nextIframe()">Next Quiz</button>
+<button class="book-chapter" onclick="openBookChapter()">Book Chapter</button>
+<button class="quiz-link" onclick="openQuizLink()">Quiz Link</button>
+
+<script>
+  var websites = [
+    "https://version-control-versioncontrol.formr.org",
+    "https://version-control-cli.formr.org",
+    "https://version-control-basics.formr.org",
+    "https://version-control-branches.formr.org",
+    "https://version-control-github.formr.org"
+  ];
+  var bookChapters = [
+    "https://example.com/book-chapter1",
+    "https://example.com/book-chapter2",
+    "https://example.com/book-chapter3",
+    "https://example.com/book-chapter4",
+    "https://example.com/book-chapter5"
+  ];
+  var currentIndex = 0;
+  var iframe = document.getElementById('external-website');
+  var quizDisplay = document.getElementById('quiz-display');
+
+  function updateQuizDisplay() {
+    var quizNames = [
+        "Intro to Version Control",
+        "Command Line",
+        "First Steps with Git",
+        "Branches",
+        "GitHub"
+    ];
+
+    quizDisplay.textContent = "Currently Displaying: " + quizNames[currentIndex];
+  }
+
+  function nextIframe() {
+    currentIndex = (currentIndex + 1) % websites.length;
+    iframe.src = websites[currentIndex];
+    updateQuizDisplay();
+  }
+
+  function prevIframe() {
+    currentIndex = (currentIndex - 1 + websites.length) % websites.length;
+    iframe.src = websites[currentIndex];
+    updateQuizDisplay();
+  }
+
+  function openBookChapter() {
+    // Open the corresponding book chapter URL for the currently displayed quiz
+    var bookChapterUrl = bookChapters[currentIndex];
+    window.open(bookChapterUrl, "_blank");
+  }
+
+  function openQuizLink() {
+    // Open the quiz link in a new tab
+    window.open(websites[currentIndex], "_blank");
+  }
+
+  // Initial display
+  updateQuizDisplay();
+</script>
+
+<style>
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  #quiz-display {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+.prev-iframe,
+.next-iframe,
+.book-chapter,
+.quiz-link {
+    position: absolute;
+    bottom: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 5px; /* Add space between buttons */
+}
+
+.prev-iframe {
+    left: 10px;
+}
+
+.next-iframe {
+    left: 140px; /* Adjust spacing as needed */
+}
+
+.book-chapter {
+    right: 140px; /* Adjust spacing as needed */
+}
+
+.quiz-link {
+    right: 10px;
+}
+
+</style>
