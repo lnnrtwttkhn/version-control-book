@@ -33,8 +33,6 @@ quarto preview
 
 ## License
 
-## License
-
 [CC-BY-SA](LICENSE)
 
 You are free to
