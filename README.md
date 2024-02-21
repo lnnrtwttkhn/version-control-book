@@ -6,10 +6,12 @@
 
 ## Description
 
-Welcome to the [Version Control Book](https://lennartwittkuhn.com/version-control-book/), a resource created in the context of a [version control course](https://lennartwittkuhn.com/version-control-course-uhh-ws23/) at [Universität Hamburg](https://www.uni-hamburg.de) for the academic year 2023/2024.
-The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course.
+Welcome to the [Version Control Book](https://lennartwittkuhn.com/version-control-book/), a resource initially created in the context of a [course on version control](https://lennartwittkuhn.com/version-control-course-uhh-ws23/) at [Universität Hamburg](https://www.uni-hamburg.de) in 2023/2024.
 
-The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git/GitHub
+The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course.
+The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git and GitHub.
+This is a living resource on why and - more importantly - how to use DataLad.
+The rendered version is at <https://lennartwittkuhn.com/version-control-book/> and is under constant development.
 
 ## Contributing
 
