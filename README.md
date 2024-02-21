@@ -1,5 +1,9 @@
 # Version control of code and data using Git & DataLad
 
+[![Quarto Publish](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml)
+[![All Contributors](https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&style=flat-square)](#contributors)
+[![Codespell](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)
+
 ## Description
 
 Welcome to the [Version Control Book](https://lennartwittkuhn.com/version-control-book/), a resource created in the context of a [version control course](https://lennartwittkuhn.com/version-control-course-uhh-ws23/) at [Universität Hamburg](https://www.uni-hamburg.de) for the academic year 2023/2024.
@@ -65,8 +69,3 @@ under the following terms:
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-[![Quarto Publish](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml)
-[![All Contributors](https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&style=flat-square)](#contributors)
-[![Codespell](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)
-
