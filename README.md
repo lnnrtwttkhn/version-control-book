@@ -10,7 +10,7 @@ Welcome to the [Version Control Book](https://lennartwittkuhn.com/version-contro
 
 The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course.
 The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git and GitHub.
-This is a living resource on why and - more importantly - how to use DataLad.
+This is a living resource on why and - more importantly - how to use Git.
 The rendered version is at <https://lennartwittkuhn.com/version-control-book/> and is under constant development.
 
 ## Contributing
