@@ -1,8 +1,53 @@
-# Version control of code and data using Git & DataLad
+# Version Control Book
 
 [![Quarto Publish](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml)
 [![All Contributors](https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&style=flat-square)](#contributors)
 [![Codespell](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)
+
+## Description
+
+Welcome to the [Version Control Book](https://lennartwittkuhn.com/version-control-book/), a resource initially created in the context of a [course on version control](https://lennartwittkuhn.com/version-control-course-uhh-ws23/) at [Universität Hamburg](https://www.uni-hamburg.de) in 2023/2024.
+
+The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course.
+The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git and GitHub.
+This is a living resource on why and - more importantly - how to use Git.
+The rendered version is at <https://lennartwittkuhn.com/version-control-book/> and is under constant development.
+
+## Contributing
+
+Contributions in any form - pull requests, issues, content requests, ideas, etc. - are always welcome.
+If you are using the book and find that something does not work, please [let us know](https://github.com/lnnrtwttkhn/version-control-book/issues).
+You can find out more on how to contribute [here](https://lennartwittkuhn.com/version-control-book/misc/contributing.html), and a list of all contributors so far [below](#contributors).
+Before contributing, please read the [guidelines for contributions](https://lennartwittkuhn.com/version-control-book/misc/contributing.html) on how to get involved.
+To maintain consistency and readability, we follow a [style guide](https://lennartwittkuhn.com/version-control-book/misc/style-guide.html). 
+Please refer to the Style Guide for details on formatting, coding standards, and other conventions.
+We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control!
+
+## Usage
+
+To render and preview, execute:
+
+```bash
+quarto preview
+```
+
+## License
+
+[CC-BY-SA](LICENSE)
+
+You are free to
+
+- **share** - copy and redistribute the material in any medium or format
+- **adapt** - remix, transform, and build upon the material for any purpose, even commercially
+
+under the following terms:
+
+1) **Attribution** — You must give appropriate credit, provide a link to the license, and indicate
+ if changes were made. You may do so in any reasonable manner, but not in any way that suggests
+ the licensor endorses you or your use.
+
+2) **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your
+ contributions under the same license as the original.
 
 ## Contributors
 

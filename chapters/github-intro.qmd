@@ -192,20 +192,8 @@ You can edit this file to provide information and details about your project.
 Whatever you write in the `README.md` file will be displayed on the front page of your project.
 
 To add more files to your repository, click on the "**Add file**" button and choose whether to upload existing files or create a new file directly on GitHub.
-Remember to provide a descriptive commit message each time you add a new file or make changes.
+You can edit and commit changes to every file in your repository. 
 The commit message helps you keep track of the changes you've made and serves as a brief summary of the modifications made to the repository.
-
-::: {.callout-tip title="Writing a `README` file" collapse="true"}
-Keep it simple!
-When you're working in any field, whether it's coding or studying stars, you'll likely use specialized terms that might confuse others.
-So, use plain language and explain any unfamiliar words you use.
-
-Describe what you're doing now and what you plan to do in the future.
-This helps people understand your work and goals.
-Tell people who you are and how they can reach you.
-It's great for networking and collaboration.
-If you're not sure how to start, take a look at other people's README.md files for inspiration.
-:::
 
 ### Uploading your repository
 
@@ -451,6 +439,61 @@ The owner of the original repository can now approve the changes and thereby mer
 In this scenario, contributors work directly within the main repository, creating a new branch for their changes. 
 After completing the changes in the branch, they create a pull request from that branch to the main repository's default branch (typically `main` or `master`). 
 The workflow for this is the same as for opening a pull request for a forked repository.
+
+### `README` file 
+
+As mentioned earlier, the `README` file can be created together with your repository or can be added later. 
+The `README` file should contain "a description of your repository" but what does that entail?
+
+The exact content depends on your repository, but some general things that you might want to include are:
+
+- **Project description**:
+What function does this repository serve, what are it's key features?
+
+- **Installation instructions** (if applicable): Explain how to install and set up your project, including any dependencies or prerequisites.
+Provide clear instructions to help users or contributors get started with your project  quickly.
+
+- **Usage** (if applicable):
+Provide examples or code snippets demonstrating how to use your project.
+
+- **Contributing**:
+If you welcome contributions, specify how others can contribute to your project.
+Here, you can also include guidelines for submitting bug reports, feature requests, or pull requests.
+
+::: {.callout-tip title="Adding a `CONTRIBUTING.md` file to a repository" collapse="true" appearance="simple"}
+For larger or more complex projects where contributions may involve setting up a specific development environment or adhering to specific workflows, it is standard practice to create a file called `CONTRIBUTING.md`.
+GitHub recognizes the presence of a `CONTRIBUTING.md` file in a repository and, for example, automatically includes a link to the `CONTRIBUTING.md` file when users open a new issue or pull request.
+:::
+
+- **Acknowledgments**:
+Give credit to any third-party libraries, tools, or individuals that contributed to your project.
+
+- **License**:
+Choose a license that aligns with your project's goals. 
+Common options include GPL, allowing modifications and commercial use. 
+You can use [choosealicense.com](https://choosealicense.com) for guidance. 
+The chosen license influences contributions to your project.
+
+::: {.callout-tip title="{{< fa eye >}} View the `README.md` file of this project." collapse="true" appearance="simple" icon=false}
+{{< include ../README.md >}}
+:::
+
+::: {.callout-tip title="{{< fa code >}} View the code for the `README.md` file of this project." collapse="true" appearance="simple" icon=false}
+
+This code can also be found [on GitHub]({{< var links.github >}}/blob/main/README.md?plain=1).
+
+```{yaml, filename="README.md"}
+#| file: README.md
+#| code-line-numbers: true
+#| code-overflow: scroll
+```
+:::
+
+#### Markdown syntax {.unnumbered}
+
+A `README` is typically a Markdown (`.md`) file, which means you can use [Markdown]({{< var links.markdown >}}) syntax in it.
+Markdown allows you to easily format text, create lists, include links, and embed images.
+For an introduction, you can check out the [Quarto workshop slides]({{< var links.quarto-workshop >}}) by the creators of this book.
 
 ### Git blame
 
