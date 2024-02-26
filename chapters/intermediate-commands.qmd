@@ -11,39 +11,15 @@ execute:
 
 # Stashing and Co.
 
-## Logistics
+::: {.callout-tip appearance="minimal"}
+<h5>Learning Objectives</h5>
+{{< include ../objectives/_objectives-stashing.qmd >}}
+:::
 
-### Learning objectives
-
-In this chapter, you will learn more advanced operations in Git including:
-
-:bulb: Stashing and retrieving changes<br>
-:bulb: Undoing changes and removing files<br>
-:bulb: Rebasing and cherry-picking
-
-### Exercises
-
-#### Stashing
-
-1.    Create a new branch called `feature/stash-exercise`.
-1.    Make changes to two different files in your project directory.
-1.    Stash your changes without adding a message.
-1.    Use `git status` to verify that your working directory is clean.
-1.    Apply the stash to your working directory and verify that your changes are restored.
-
-#### Reverting
-
-1.    Create a new branch called `feature/revert-exercise`.
-1.    Make changes and commit these to your file.
-1.    Use `git revert` to revert the most recent commit, specifying its hash.
-
-#### Rebasing
-
-1.    Create a new branch called `feature/rebase-exercise`.
-1.    Make three commits with minor changes on the `feature/rebase-exercise` branch.
-1.    Switch to the `main` branch and make additional changes.
-1.    Rebase the `feature/rebase-example` branch onto the `main` branch using `git rebase main`.
-1.    Check the commit history with `git log` to see the updated order of commits.
+::: {.callout-note appearance="minimal"}
+<h5>Exercises</h5>
+{{< include ../exercises/_exercises-stashing.qmd >}}
+:::
 
 ## Stashing changes for later use
 
