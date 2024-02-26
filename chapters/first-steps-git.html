@@ -185,8 +185,14 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../misc/objectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning Objectives</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/intro-version-control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to version control</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -274,6 +280,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../misc/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../misc/cheatsheet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cheatsheet</span></a>
   </div>
@@ -312,42 +324,36 @@ div.csl-indent {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#logistics" id="toc-logistics" class="nav-link active" data-scroll-target="#logistics"><span class="header-section-number">5.1</span> Logistics</a>
+  <li><a href="#creating-a-git-repository" id="toc-creating-a-git-repository" class="nav-link active" data-scroll-target="#creating-a-git-repository"><span class="header-section-number">5.1</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Creating a Git repository</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">5.1.1</span> Learning Objectives</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">5.1.2</span> Prerequisites</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.1.3</span> Exercises</a></li>
+  <li><a href="#checking-the-status-of-the-git-repository" id="toc-checking-the-status-of-the-git-repository" class="nav-link" data-scroll-target="#checking-the-status-of-the-git-repository"><span class="header-section-number">5.1.1</span> Checking the status of the Git repository</a></li>
+  <li><a href="#adding-files-to-the-git-repository" id="toc-adding-files-to-the-git-repository" class="nav-link" data-scroll-target="#adding-files-to-the-git-repository"><span class="header-section-number">5.1.2</span> Adding files to the Git repository</a></li>
   </ul></li>
-  <li><a href="#creating-a-git-repository" id="toc-creating-a-git-repository" class="nav-link" data-scroll-target="#creating-a-git-repository"><span class="header-section-number">5.2</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Creating a Git repository</a>
+  <li><a href="#status-staging-and-committing" id="toc-status-staging-and-committing" class="nav-link" data-scroll-target="#status-staging-and-committing"><span class="header-section-number">5.2</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, staging and committing</a>
   <ul class="collapse">
-  <li><a href="#checking-the-status-of-the-git-repository" id="toc-checking-the-status-of-the-git-repository" class="nav-link" data-scroll-target="#checking-the-status-of-the-git-repository"><span class="header-section-number">5.2.1</span> Checking the status of the Git repository</a></li>
-  <li><a href="#adding-files-to-the-git-repository" id="toc-adding-files-to-the-git-repository" class="nav-link" data-scroll-target="#adding-files-to-the-git-repository"><span class="header-section-number">5.2.2</span> Adding files to the Git repository</a></li>
+  <li><a href="#checking-the-status-of-your-git-repository-again" id="toc-checking-the-status-of-your-git-repository-again" class="nav-link" data-scroll-target="#checking-the-status-of-your-git-repository-again"><span class="header-section-number">5.2.1</span> Checking the status of your Git repository again</a></li>
+  <li><a href="#introduction-to-staging-and-committing" id="toc-introduction-to-staging-and-committing" class="nav-link" data-scroll-target="#introduction-to-staging-and-committing"><span class="header-section-number">5.2.2</span> Introduction to staging and committing</a></li>
+  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging"><span class="header-section-number">5.2.3</span> Staging</a></li>
+  <li><a href="#committing" id="toc-committing" class="nav-link" data-scroll-target="#committing"><span class="header-section-number">5.2.4</span> Committing</a></li>
+  <li><a href="#logging-commits" id="toc-logging-commits" class="nav-link" data-scroll-target="#logging-commits"><span class="header-section-number">5.2.5</span> Logging commits</a></li>
+  <li><a href="#comparing-versions" id="toc-comparing-versions" class="nav-link" data-scroll-target="#comparing-versions"><span class="header-section-number">5.2.6</span> Comparing versions</a></li>
+  <li><a href="#good-commits" id="toc-good-commits" class="nav-link" data-scroll-target="#good-commits"><span class="header-section-number">5.2.7</span> Good commits</a></li>
+  <li><a href="#commit-messages-etiquette" id="toc-commit-messages-etiquette" class="nav-link" data-scroll-target="#commit-messages-etiquette"><span class="header-section-number">5.2.8</span> Commit messages etiquette</a></li>
+  <li><a href="#amending-a-commit" id="toc-amending-a-commit" class="nav-link" data-scroll-target="#amending-a-commit"><span class="header-section-number">5.2.9</span> Amending a commit</a></li>
   </ul></li>
-  <li><a href="#status-staging-and-committing" id="toc-status-staging-and-committing" class="nav-link" data-scroll-target="#status-staging-and-committing"><span class="header-section-number">5.3</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, staging and committing</a>
+  <li><a href="#what-files-canshould-i-track-with-git" id="toc-what-files-canshould-i-track-with-git" class="nav-link" data-scroll-target="#what-files-canshould-i-track-with-git"><span class="header-section-number">5.3</span> What files can/should I track with Git?</a>
   <ul class="collapse">
-  <li><a href="#checking-the-status-of-your-git-repository-again" id="toc-checking-the-status-of-your-git-repository-again" class="nav-link" data-scroll-target="#checking-the-status-of-your-git-repository-again"><span class="header-section-number">5.3.1</span> Checking the status of your Git repository again</a></li>
-  <li><a href="#introduction-to-staging-and-committing" id="toc-introduction-to-staging-and-committing" class="nav-link" data-scroll-target="#introduction-to-staging-and-committing"><span class="header-section-number">5.3.2</span> Introduction to staging and committing</a></li>
-  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging"><span class="header-section-number">5.3.3</span> Staging</a></li>
-  <li><a href="#committing" id="toc-committing" class="nav-link" data-scroll-target="#committing"><span class="header-section-number">5.3.4</span> Committing</a></li>
-  <li><a href="#logging-commits" id="toc-logging-commits" class="nav-link" data-scroll-target="#logging-commits"><span class="header-section-number">5.3.5</span> Logging commits</a></li>
-  <li><a href="#comparing-versions" id="toc-comparing-versions" class="nav-link" data-scroll-target="#comparing-versions"><span class="header-section-number">5.3.6</span> Comparing versions</a></li>
-  <li><a href="#good-commits" id="toc-good-commits" class="nav-link" data-scroll-target="#good-commits"><span class="header-section-number">5.3.7</span> Good commits</a></li>
-  <li><a href="#commit-messages-etiquette" id="toc-commit-messages-etiquette" class="nav-link" data-scroll-target="#commit-messages-etiquette"><span class="header-section-number">5.3.8</span> Commit messages etiquette</a></li>
-  <li><a href="#amending-a-commit" id="toc-amending-a-commit" class="nav-link" data-scroll-target="#amending-a-commit"><span class="header-section-number">5.3.9</span> Amending a commit</a></li>
+  <li><a href="#code-files" id="toc-code-files" class="nav-link" data-scroll-target="#code-files"><span class="header-section-number">5.3.1</span> <i class="fa-solid fa-code" aria-label="code"></i> Code files</a></li>
+  <li><a href="#plain-textfiles" id="toc-plain-textfiles" class="nav-link" data-scroll-target="#plain-textfiles"><span class="header-section-number">5.3.2</span> <i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Plain textfiles</a></li>
+  <li><a href="#microsoft-office-files" id="toc-microsoft-office-files" class="nav-link" data-scroll-target="#microsoft-office-files"><span class="header-section-number">5.3.3</span> <i class="fa-brands fa-windows" aria-label="windows"></i> Microsoft office files</a></li>
   </ul></li>
-  <li><a href="#what-files-canshould-i-track-with-git" id="toc-what-files-canshould-i-track-with-git" class="nav-link" data-scroll-target="#what-files-canshould-i-track-with-git"><span class="header-section-number">5.4</span> What files can/should I track with Git?</a>
+  <li><a href="#ignoring-files-and-folders-.gitignore" id="toc-ignoring-files-and-folders-.gitignore" class="nav-link" data-scroll-target="#ignoring-files-and-folders-.gitignore"><span class="header-section-number">5.4</span> Ignoring files and folders: <code>.gitignore</code></a>
   <ul class="collapse">
-  <li><a href="#code-files" id="toc-code-files" class="nav-link" data-scroll-target="#code-files"><span class="header-section-number">5.4.1</span> <i class="fa-solid fa-code" aria-label="code"></i> Code files</a></li>
-  <li><a href="#plain-textfiles" id="toc-plain-textfiles" class="nav-link" data-scroll-target="#plain-textfiles"><span class="header-section-number">5.4.2</span> <i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Plain textfiles</a></li>
-  <li><a href="#microsoft-office-files" id="toc-microsoft-office-files" class="nav-link" data-scroll-target="#microsoft-office-files"><span class="header-section-number">5.4.3</span> <i class="fa-brands fa-windows" aria-label="windows"></i> Microsoft office files</a></li>
+  <li><a href="#global-.gitignore-file" id="toc-global-.gitignore-file" class="nav-link" data-scroll-target="#global-.gitignore-file"><span class="header-section-number">5.4.1</span> Global <code>.gitignore</code> file</a></li>
   </ul></li>
-  <li><a href="#ignoring-files-and-folders-.gitignore" id="toc-ignoring-files-and-folders-.gitignore" class="nav-link" data-scroll-target="#ignoring-files-and-folders-.gitignore"><span class="header-section-number">5.5</span> Ignoring files and folders: <code>.gitignore</code></a>
-  <ul class="collapse">
-  <li><a href="#global-.gitignore-file" id="toc-global-.gitignore-file" class="nav-link" data-scroll-target="#global-.gitignore-file"><span class="header-section-number">5.5.1</span> Global <code>.gitignore</code> file</a></li>
-  </ul></li>
-  <li><a href="#bonus-exercises" id="toc-bonus-exercises" class="nav-link" data-scroll-target="#bonus-exercises"><span class="header-section-number">5.6</span> Bonus exercises</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">5.7</span> Cheatsheet</a></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">5.8</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#bonus-exercises" id="toc-bonus-exercises" class="nav-link" data-scroll-target="#bonus-exercises"><span class="header-section-number">5.5</span> Bonus exercises</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">5.6</span> Cheatsheet</a></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">5.7</span> Acknowledgements &amp; further reading</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/first-steps-git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/first-steps-git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -365,37 +371,39 @@ div.csl-indent {
 </header>
 
 
-<section id="logistics" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="logistics"><span class="header-section-number">5.1</span> Logistics</h2>
-<section id="learning-objectives" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">5.1.1</span> Learning Objectives</h3>
-<p>In this chapter, you will learn fundamental operations in Git, including:</p>
+<p><a href="https://version-control-basics.formr.org" class="btn btn-outline-secondary" role="button"><i class="fa-circle-question fa-regular" aria-label="regular"></i> Take the quiz!</a> <a href="https://lennartwittkuhn.com/version-control-course-uhh-ws23/sessions/session03.html" class="btn btn-outline-secondary" role="button"><i class="fa-solid fa-display" aria-label="display"></i> UHH WS 23/24</a></p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<h5 class="anchored">
+Learning Objectives
+</h5>
 <p><span class="emoji" data-emoji="bulb">💡</span> Initializing a Git repository<br> <span class="emoji" data-emoji="bulb">💡</span> Staging and committing changes<br> <span class="emoji" data-emoji="bulb">💡</span> Exploring the commit history<br> <span class="emoji" data-emoji="bulb">💡</span> Comparing versions<br> <span class="emoji" data-emoji="bulb">💡</span> Creating a <code>.gitignore</code> file</p>
-</section>
-<section id="prerequisites" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">5.1.2</span> Prerequisites</h3>
-<p>To follow the contents of this chapter, you should have:</p>
-<ul>
-<li>Basic <strong>familiarity with the command line</strong>. Recommended reading: <a href="../chapters/command-line.html">“Command line” chapter</a></li>
-<li><strong>Installed Git</strong>. Recommended reading: <a href="../chapters/installation.html">“Installation” chapter</a></li>
-<li><strong>Set up Git</strong>. Recommended reading: <a href="../chapters/setup.html">“Setup” chapter</a></li>
-</ul>
-</section>
-<section id="exercises" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5.1.3</span> Exercises</h3>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<h5 class="anchored">
+Exercises
+</h5>
 <p>To learn Git effectively, it makes sense to practice version control by implementing it on your own small project. For the purpose of this guide, we will start off with a small project that only involves plain-text files. You don’t need to know any programming language like R or Python. So while reading this chapter and using the commands along, <strong>your task</strong> is to:</p>
-<ol type="1">
-<li>Create a folder called <code>recipes</code> and initialize it as a Git repository.</li>
-<li>Create a plain text file called <code>recipes.txt</code> in this folder.</li>
-<li><strong>Add a recipe</strong> in this file. This can be the recipe for your favorite dish or an <a href="https://www.theguardian.com/world/2023/aug/10/pak-n-save-savey-meal-bot-ai-app-malfunction-recipes">unusual AI-generated recipe</a>.</li>
-<li>Stage and commit your changes to the file</li>
-</ol>
+<p><span class="emoji" data-emoji="memo">📝</span> Create a folder called <code>recipes</code> and initialize it as a Git repository. <br> <span class="emoji" data-emoji="memo">📝</span> Create a plain text file called <code>recipes.txt</code> in this folder. <br> <span class="emoji" data-emoji="memo">📝</span> <strong>Add a recipe</strong> in this file. <br></p>
+<p>This can be the recipe for your favorite dish or an <a href="https://www.theguardian.com/world/2023/aug/10/pak-n-save-savey-meal-bot-ai-app-malfunction-recipes">unusual AI-generated recipe</a>. <span class="emoji" data-emoji="memo">📝</span> Stage and commit your changes to the file</p>
 <p>Please <strong>keep this project directory</strong>! This guide will continue to use your recipe project as an example in following chapters.</p>
 <p>There are several terms in these instructions that might be unfamiliar to you, for example “repository”, “stage” or “commit”. Don’t worry, you will learn about what these terms mean in this chapter. Let’s <em>git</em> started!</p>
-</section>
-</section>
-<section id="creating-a-git-repository" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="creating-a-git-repository"><span class="header-section-number">5.2</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Creating a Git repository</h2>
+</div>
+</div>
+</div>
+<section id="creating-a-git-repository" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="creating-a-git-repository"><span class="header-section-number">5.1</span> <i class="fa-solid fa-folder-closed" aria-label="folder-closed"></i> Creating a Git repository</h2>
 <p>First, we will create a so-called “repository” (or “repo”, for short). A repository is a regular folder on your computer that is tracked by Git. The full history of commits of a project and information about who changed what, when is also stored by Git in this folder.</p>
 <p>To create your first Git repository, you need to initialize a folder as a Git repository.</p>
 <p>First, create an empty folder, for example using the <a href="../chapters/command-line.html">command line</a>:</p>
@@ -451,8 +459,8 @@ Don’t mess with the <code>.git</code> folder!
 </div>
 </div>
 </div>
-<section id="checking-the-status-of-the-git-repository" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="checking-the-status-of-the-git-repository"><span class="header-section-number">5.2.1</span> Checking the status of the Git repository</h3>
+<section id="checking-the-status-of-the-git-repository" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="checking-the-status-of-the-git-repository"><span class="header-section-number">5.1.1</span> Checking the status of the Git repository</h3>
 <p>After you initialized a Git repository, you can use <code>git status</code> to receive the current file tracking status from Git.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -494,8 +502,8 @@ Common <code>git status</code> flags
 </div>
 </div>
 </section>
-<section id="adding-files-to-the-git-repository" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="adding-files-to-the-git-repository"><span class="header-section-number">5.2.2</span> Adding files to the Git repository</h3>
+<section id="adding-files-to-the-git-repository" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="adding-files-to-the-git-repository"><span class="header-section-number">5.1.2</span> Adding files to the Git repository</h3>
 <p>In the next step, please create an empty text file within your repository, for example using the <code>touch</code> command:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> filename.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -503,10 +511,10 @@ Common <code>git status</code> flags
 <p>You can also use any other method or application for creating files.</p>
 </section>
 </section>
-<section id="status-staging-and-committing" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="status-staging-and-committing"><span class="header-section-number">5.3</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, staging and committing</h2>
-<section id="checking-the-status-of-your-git-repository-again" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="checking-the-status-of-your-git-repository-again"><span class="header-section-number">5.3.1</span> Checking the status of your Git repository again</h3>
+<section id="status-staging-and-committing" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="status-staging-and-committing"><span class="header-section-number">5.2</span> <i class="fa-solid fa-file-export" aria-label="file-export"></i> Status, staging and committing</h2>
+<section id="checking-the-status-of-your-git-repository-again" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="checking-the-status-of-your-git-repository-again"><span class="header-section-number">5.2.1</span> Checking the status of your Git repository again</h3>
 <p>After you initialized a Git repository and added a file, you can use <code>git status</code> to receive the current file tracking status from Git again. This time, you should see output similar to the following:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
@@ -521,12 +529,12 @@ Common <code>git status</code> flags
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> added to commit but untracked files present <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="introduction-to-staging-and-committing" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="introduction-to-staging-and-committing"><span class="header-section-number">5.3.2</span> Introduction to staging and committing</h3>
+<section id="introduction-to-staging-and-committing" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="introduction-to-staging-and-committing"><span class="header-section-number">5.2.2</span> Introduction to staging and committing</h3>
 <p>After initializing a folder with Git, it’s capable of recording changes in your files, but it won’t do so automatically. In Git, the process of saving changes involves two steps: the staging area and commits. The <strong>staging area</strong> is like a preparation area where you gather and organize your changes before saving them. You can choose which changes to include in a snapshot by adding them to the staging area using <code>git add</code>. Once you are happy with the changes in the staging area, you create a commit with <code>git commit</code>. A <strong>commit</strong> is like taking a snapshot of your project at a specific moment, capturing all changes in the staging area and saving them as a new version of your project. Commits serve as milestones to track your project’s progress and allow you to revert to previous versions if needed. As further introduction to the basic workflow of Git you can check out the last two minutes of the Youtube video: <a href="https://www.youtube.com/watch?v=HMqUFlu0gFc&amp;t=228s">Version control for reproducible research</a> from <a href="https://www.berd-nfdi.de/berd-academy/">BERD Academy</a>, which explains the process very vividly.</p>
 </section>
-<section id="staging" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="staging"><span class="header-section-number">5.3.3</span> Staging</h3>
+<section id="staging" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="staging"><span class="header-section-number">5.2.3</span> Staging</h3>
 <p>You can use <code>git add</code> to place new or modified files in the staging area. The staging area acts as a space for gathering changes you plan to commit shortly. It bridges between your modified files and the next commit.</p>
 <p>For example, you can stage a specific file like this:</p>
 <div class="cell">
@@ -581,8 +589,8 @@ Common <code>git add</code> flags
 </div>
 </div>
 </section>
-<section id="committing" class="level3" data-number="5.3.4">
-<h3 data-number="5.3.4" class="anchored" data-anchor-id="committing"><span class="header-section-number">5.3.4</span> Committing</h3>
+<section id="committing" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="committing"><span class="header-section-number">5.2.4</span> Committing</h3>
 <p>Now that the changes to your file(s) are staged, you are ready to <strong>create a commit</strong>.</p>
 <p>In simple terms, <strong>a “commit” in Git is like taking a snapshot of your project</strong> at a specific moment in time. It’s a way to save the changes you’ve made to your files. When you make a commit, you’re saying, “I want to remember what my project looks like right now”. Each commit in Git includes a record of the changes you’ve made, a description of what you did, and a unique identifier. Commits are like milestones in your project’s history, and they allow you to keep track of all the different versions of your work over time. You can go back to any commit to see what your project looked like at that point or even undo changes if needed. Commits help you manage and document the history of your project.</p>
 <p>To create a commit, use the <code>git commit</code> command followed by the flag <code>-m</code> and a commit message <strong>in quotes</strong> that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. If you just use <code>git commit</code> without adding a commit massage, the editor of <a href="../chapters/setup.html">your choosing</a>, opens up and lets you type in a commit message.</p>
@@ -597,8 +605,8 @@ Common <code>git add</code> flags
 </div>
 <p>Congratulations! You have successfully created your first commit in the Git repository. <span class="emoji" data-emoji="tada">🎉</span> Commits are the core elements of version control and the “commit history” of your Git repository. They allow you to track the history of your project and easily revert changes if needed.</p>
 <p>You can use the same workflow of <code>git add</code> and <code>git commit</code> for every file you add or make changes in.</p>
-<section id="commit-description" class="level4" data-number="5.3.4.1">
-<h4 data-number="5.3.4.1" class="anchored" data-anchor-id="commit-description"><span class="header-section-number">5.3.4.1</span> Commit description</h4>
+<section id="commit-description" class="level4" data-number="5.2.4.1">
+<h4 data-number="5.2.4.1" class="anchored" data-anchor-id="commit-description"><span class="header-section-number">5.2.4.1</span> Commit description</h4>
 <p>Though it’s not required, it can be a good idea to add a more thorough description to the commit, in addition to the (shorter) commit message. While the commit message is usually a single short (less than 50 character) line summarizing the change, a more through description can be used to add more background information or helpful links that may help to understand the changes of the commit.</p>
 <p>To add an additional description directly in the command line, add an extra <code>-m</code> after the commit message, followed by the description in quotes:</p>
 <div class="cell">
@@ -626,8 +634,8 @@ Common <code>git commit</code> flags
 </div>
 </section>
 </section>
-<section id="logging-commits" class="level3" data-number="5.3.5">
-<h3 data-number="5.3.5" class="anchored" data-anchor-id="logging-commits"><span class="header-section-number">5.3.5</span> Logging commits</h3>
+<section id="logging-commits" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="logging-commits"><span class="header-section-number">5.2.5</span> Logging commits</h3>
 <p>To look at your past commits you can use the <code>git log</code> command.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -662,8 +670,8 @@ Common <code>git log</code> flags
 </div>
 </div>
 </section>
-<section id="comparing-versions" class="level3" data-number="5.3.6">
-<h3 data-number="5.3.6" class="anchored" data-anchor-id="comparing-versions"><span class="header-section-number">5.3.6</span> Comparing versions</h3>
+<section id="comparing-versions" class="level3" data-number="5.2.6">
+<h3 data-number="5.2.6" class="anchored" data-anchor-id="comparing-versions"><span class="header-section-number">5.2.6</span> Comparing versions</h3>
 <p>Another very handy feature is the <code>git diff</code> command. It allows you to <strong>compare two different versions of your file(s)</strong>. By default it shows you any uncommitted changes since the last commit. You can explore this by pasting text in your <code>.txt</code> file, for example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. </span>
@@ -724,13 +732,13 @@ Common <code>git diff</code> flags
 </div>
 </div>
 </section>
-<section id="good-commits" class="level3" data-number="5.3.7">
-<h3 data-number="5.3.7" class="anchored" data-anchor-id="good-commits"><span class="header-section-number">5.3.7</span> Good commits</h3>
+<section id="good-commits" class="level3" data-number="5.2.7">
+<h3 data-number="5.2.7" class="anchored" data-anchor-id="good-commits"><span class="header-section-number">5.2.7</span> Good commits</h3>
 <p>You should not consider a commit as a general <code>Save</code> button, that you use to save all your recent changes in one go. Instead, each commit should ideally contain one isolated and complete change. For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.</p>
 <p>This approach to commits, helps you down the line. For example, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename. If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.</p>
 </section>
-<section id="commit-messages-etiquette" class="level3" data-number="5.3.8">
-<h3 data-number="5.3.8" class="anchored" data-anchor-id="commit-messages-etiquette"><span class="header-section-number">5.3.8</span> Commit messages etiquette</h3>
+<section id="commit-messages-etiquette" class="level3" data-number="5.2.8">
+<h3 data-number="5.2.8" class="anchored" data-anchor-id="commit-messages-etiquette"><span class="header-section-number">5.2.8</span> Commit messages etiquette</h3>
 <p>Git allows for a title or commit message with a 72 character limit and a description without such a limit. In general you should aim to write clear and short commit messages. There are different conventions across projects/persons but also some general guidelines, you can stick to.</p>
 <p>It is standard to start the title with an <strong>imperative verb</strong> to indicate the purpose of the commit, for examople, “add”, “fix” or “improve”. It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary). Here is an example:</p>
 <div class="cell">
@@ -765,8 +773,8 @@ Commit messages examples
 </div>
 </div>
 </section>
-<section id="amending-a-commit" class="level3" data-number="5.3.9">
-<h3 data-number="5.3.9" class="anchored" data-anchor-id="amending-a-commit"><span class="header-section-number">5.3.9</span> Amending a commit</h3>
+<section id="amending-a-commit" class="level3" data-number="5.2.9">
+<h3 data-number="5.2.9" class="anchored" data-anchor-id="amending-a-commit"><span class="header-section-number">5.2.9</span> Amending a commit</h3>
 <p>The <code>git commit --amend</code> command is used to modify (or “amend”) your most recent Git commit in your repository. It allows you to edit the commit message, add more changes to the commit, or simply adjust the last commit without creating a new commit. This flag can be useful if you forgot to include something in your last commit, made a typo or want to change your commit message. You can also combine <code>--amend</code> with other flags. To change the commit message of your last commit (without opening an editor) try:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">-m</span> <span class="st">"changed commit message"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -777,33 +785,33 @@ Commit messages examples
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">--no-edit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>--no-edit</code> flag, lets you keep the commit message of your most recent commit.</p>
-<section id="the-repeated---amend-workflow" class="level4" data-number="5.3.9.1">
-<h4 data-number="5.3.9.1" class="anchored" data-anchor-id="the-repeated---amend-workflow"><span class="header-section-number">5.3.9.1</span> The repeated <code>--amend</code> workflow</h4>
+<section id="the-repeated---amend-workflow" class="level4" data-number="5.2.9.1">
+<h4 data-number="5.2.9.1" class="anchored" data-anchor-id="the-repeated---amend-workflow"><span class="header-section-number">5.2.9.1</span> The repeated <code>--amend</code> workflow</h4>
 <p>The “repeated amend” is a Git workflow where you avoid cluttering your history with numerous tiny commits. Instead, you gradually build up a “good” commit by amending it repeatedly. Continue making small changes and amending the existing commit, refining it over time. This method keeps your Git history useful and looking good, making sure your commits tell a straightforward story of how your project evolved.</p>
 <p>This workflow can be useful when you’re working on a new feature or a significant change and you might make several small adjustments to get it right. Instead of cluttering your history with numerous tiny commits for each tweak, you can use the “repeated amend” to gradually build up a well-polished commit that includes the entire feature.</p>
 </section>
 </section>
 </section>
-<section id="what-files-canshould-i-track-with-git" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="what-files-canshould-i-track-with-git"><span class="header-section-number">5.4</span> What files can/should I track with Git?</h2>
+<section id="what-files-canshould-i-track-with-git" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="what-files-canshould-i-track-with-git"><span class="header-section-number">5.3</span> What files can/should I track with Git?</h2>
 <p>In principle, any file can be tracked with Git. However, to make use of the full potential of Git, it is recommended to mainly track plain text files with Git.</p>
-<section id="code-files" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="code-files"><span class="header-section-number">5.4.1</span> <i class="fa-solid fa-code" aria-label="code"></i> Code files</h3>
+<section id="code-files" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="code-files"><span class="header-section-number">5.3.1</span> <i class="fa-solid fa-code" aria-label="code"></i> Code files</h3>
 <p>Tracking code files is the most common and original use case for version control with Git. Git is well-suited for tracking changes in source code, and it’s widely used by developers and teams for this purpose. Whether it’s a single developer maintaining a personal project or a large team collaborating on a complex software system, Git excels at tracking code files throughout the development lifecycle.</p>
 </section>
-<section id="plain-textfiles" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="plain-textfiles"><span class="header-section-number">5.4.2</span> <i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Plain textfiles</h3>
+<section id="plain-textfiles" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="plain-textfiles"><span class="header-section-number">5.3.2</span> <i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Plain textfiles</h3>
 <p>Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup that uses emails or shared Dropbox folders for “version control” (see the <a href="introduction.qmd">introduction</a> chapter). However, to really be able to use the full set of features of Git, you should rely on plain text files for your project. This is because <code>.docx</code> files are saved as binary files, which makes meaningful outputs of the text inside it impossible for Git. “Plain textfiles” does not mean you have to use <code>.txt</code> files. Instead you can use formattable Markdown (<code>.md</code>) files. Markdown (<code>.md</code>) files are plain text files that contain formatting elements, making them more versatile than plain .txt files. Markdown allows you to add simple formatting like headings, lists, links, and images.</p>
 </section>
-<section id="microsoft-office-files" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="microsoft-office-files"><span class="header-section-number">5.4.3</span> <i class="fa-brands fa-windows" aria-label="windows"></i> Microsoft office files</h3>
+<section id="microsoft-office-files" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="microsoft-office-files"><span class="header-section-number">5.3.3</span> <i class="fa-brands fa-windows" aria-label="windows"></i> Microsoft office files</h3>
 <p>As said earlier, it is not recommended to track Microsoft office files using Git, since Git treats <code>.docx</code> files as binary files. Binary files lack the inherent structure that allows Git to capture and display changes effectively. Git relies on understanding the differences between versions of files. With binary files, you won’t benefit from the ability to view detailed textual differences (<code>git diff</code>) or effectively use <a href="../chapters/branches.html">branches</a>. Collaborative work on binary files, such as simultaneous editing of a Word document, may result in complex <a href="../chapters/branches.html">merge conflicts</a> that are challenging to resolve.</p>
 <p>So while it is possible to track <code>.docx</code> files with Git, you will not be able to use the many features of Git, which rely on Git being able to display the file, since Git can only output the “zeros and ones” and not the text inside the <code>.docx</code> files.</p>
 <p>If you ever choose to track them regardless, you should use detailed commit messages, since you will not be able to easily look at the text content of past versions. You will also need to know about temporary word files. For it’s own version control system, Word creates temporary files in the folder of your word file. You should not track these files using Git, since Word creates a lot of them. To not stage or commit these files by accident, you can use the <code>.gitignore</code> file.</p>
 </section>
 </section>
-<section id="ignoring-files-and-folders-.gitignore" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="ignoring-files-and-folders-.gitignore"><span class="header-section-number">5.5</span> Ignoring files and folders: <code>.gitignore</code></h2>
+<section id="ignoring-files-and-folders-.gitignore" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="ignoring-files-and-folders-.gitignore"><span class="header-section-number">5.4</span> Ignoring files and folders: <code>.gitignore</code></h2>
 <p><code>.gitignore</code> is a special file. It is used in Git to specify files and directories that should be ignored and not tracked. When you create a <code>.gitignore</code> file, place it inside your Git repository and specify filenames inside it. Git will then exclude these files and directories from being staged or committed, e.g.&nbsp;when using <code>git add -A</code>. which normally stages all your files.</p>
 <p>The <code>.gitignore</code> file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history. Files that can recreated from the code, like for example <code>.png</code> plots from R code, should also be included in your project’s <code>.gitignore</code> file. Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project fules without distractions from unnecessary files. <code>.gitignore</code> can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches. Huge files, like big data files should also not be committed, since they can slow down working with your repository. To version control files with a big size, toolsl like <a href="https://www.datalad.org">DataLad</a> are more appropriate.</p>
 <p>To create a <code>.gitignore</code> file from the command line, navigate to your repository and use the <code>touch</code> command. Alternatively, create the file in your favorite text editor.</p>
@@ -815,8 +823,8 @@ Commit messages examples
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now you can write a filename or folder name inside it, to prevent Git from tracking it.</p>
-<section id="global-.gitignore-file" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="global-.gitignore-file"><span class="header-section-number">5.5.1</span> Global <code>.gitignore</code> file</h3>
+<section id="global-.gitignore-file" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="global-.gitignore-file"><span class="header-section-number">5.4.1</span> Global <code>.gitignore</code> file</h3>
 <p>Instead of specifying files you want Git to ignore for each folder, you can also create global <code>.gitignore</code> file. To do this, you create a file named <code>.gitignore_global</code> (or any name you prefer) in your users’s home directory (located, for example, at <code>/Users/yourusername</code>). Then, you configure Git to use this global file by running:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.excludesfile ~/.gitignore_global</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -923,8 +931,8 @@ Example <code>.gitignore</code> file for an R project
 </div>
 </section>
 </section>
-<section id="bonus-exercises" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="bonus-exercises"><span class="header-section-number">5.6</span> Bonus exercises</h2>
+<section id="bonus-exercises" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="bonus-exercises"><span class="header-section-number">5.5</span> Bonus exercises</h2>
 <p>Besides generally playing around with staging, committing, <code>git log</code> and <code>git diff</code>, you can also do these tasks:</p>
 <ul>
 <li>Add a recipe to your project using the repeated <code>--amend</code> workflow</li>
@@ -933,8 +941,8 @@ Example <code>.gitignore</code> file for an R project
 <li>Create a <code>.gitignore</code> file, where you put all temporary files Word creates.</li>
 </ul>
 </section>
-<section id="cheatsheet" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">5.7</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">5.6</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -974,8 +982,8 @@ Example <code>.gitignore</code> file for an R project
 </div>
 </div>
 </section>
-<section id="acknowledgements-further-reading" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">5.8</span> Acknowledgements &amp; further reading</h2>
+<section id="acknowledgements-further-reading" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">5.7</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="table">
 <thead>

@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
-<meta name="description" content="Introduction to fundamental concepts of version control.">
 
-<title>Version Control of Code and Data - 9&nbsp; Project Management</title>
+<title>Version Control of Code and Data - Exercises</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/issues.html" rel="next">
-<link href="../chapters/tags-and-releases.html" rel="prev">
+<link href="../misc/cheatsheet.html" rel="next">
+<link href="../chapters/rewriting-history.html" rel="prev">
 <link href="../static/git-icon.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -83,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/project-management.html">Project Management</a></li><li class="breadcrumb-item"><a href="../chapters/project-management.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Project Management</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../misc/exercises.html">Exercises</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -193,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/project-management.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/project-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Project Management</span></span></a>
   </div>
 </li>
@@ -225,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../misc/exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../misc/exercises.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
@@ -269,43 +268,89 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#communication" id="toc-communication" class="nav-link active" data-scroll-target="#communication"><span class="header-section-number">9.1</span> Communication</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">9.2</span> Overview</a></li>
+  <li><a href="#first-steps-with-git" id="toc-first-steps-with-git" class="nav-link active" data-scroll-target="#first-steps-with-git">First steps with Git</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
+  <li><a href="#tags-and-releases" id="toc-tags-and-releases" class="nav-link" data-scroll-target="#tags-and-releases">Tags and Releases</a></li>
+  <li><a href="#graphical-user-interfaces" id="toc-graphical-user-interfaces" class="nav-link" data-scroll-target="#graphical-user-interfaces">Graphical User Interfaces</a></li>
+  <li><a href="#stashing-and-co." id="toc-stashing-and-co." class="nav-link" data-scroll-target="#stashing-and-co.">Stashing and Co.</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/project-management.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/project-management.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/exercises.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/exercises.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Project Management</span></h1>
+<h1 class="title display-7">Exercises</h1>
 <p class="author"></p>
 
 </header>
 
 
-<section id="communication" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="communication"><span class="header-section-number">9.1</span> Communication</h2>
-<p>Communication in science often happens across a diversity of communication channels, including email, messenger apps like Slack, Mattermost or Discord and Project Management Software like Trello. As illustrated in <a href="#fig-xkcd-chat-systems" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> this can often lead to uncertainty about how to communicate about a project most effectively with whom.</p>
-<div id="fig-xkcd-chat-systems" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-xkcd-chat-systems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/xkcd-chat-systems.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-xkcd-chat-systems-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.1: “Chat Systems” by xkcd (<a href="https://xkcd.com/">xkcd.com</a>). Used under a <a href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 (CC BY-NC 2.5) licence</a> (<a href="https://xkcd.com/1810/">direct link</a>).
-</figcaption>
-</figure>
-</div>
+<section id="first-steps-with-git" class="level2">
+<h2 class="anchored" data-anchor-id="first-steps-with-git">First steps with Git</h2>
+<p>To learn Git effectively, it makes sense to practice version control by implementing it on your own small project. For the purpose of this guide, we will start off with a small project that only involves plain-text files. You don’t need to know any programming language like R or Python. So while reading this chapter and using the commands along, <strong>your task</strong> is to:</p>
+<p><span class="emoji" data-emoji="memo">📝</span> Create a folder called <code>recipes</code> and initialize it as a Git repository. <br> <span class="emoji" data-emoji="memo">📝</span> Create a plain text file called <code>recipes.txt</code> in this folder. <br> <span class="emoji" data-emoji="memo">📝</span> <strong>Add a recipe</strong> in this file. <br></p>
+<p>This can be the recipe for your favorite dish or an <a href="https://www.theguardian.com/world/2023/aug/10/pak-n-save-savey-meal-bot-ai-app-malfunction-recipes">unusual AI-generated recipe</a>. <span class="emoji" data-emoji="memo">📝</span> Stage and commit your changes to the file</p>
+<p>Please <strong>keep this project directory</strong>! This guide will continue to use your recipe project as an example in following chapters.</p>
+<p>There are several terms in these instructions that might be unfamiliar to you, for example “repository”, “stage” or “commit”. Don’t worry, you will learn about what these terms mean in this chapter. Let’s <em>git</em> started!</p>
 </section>
-<section id="overview" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="overview"><span class="header-section-number">9.2</span> Overview</h2>
-<p>The basic idea is to manage your project next to your work (your code, your data) via a repository hosting service, in this case <a href="https://github.com">GitHub</a>.</p>
+<section id="branches" class="level2">
+<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<p><span class="emoji" data-emoji="memo">📝</span> Create a new branch called <code>feature/newrecipe</code> <br> <span class="emoji" data-emoji="memo">📝</span> Add a new recipe to your recipe text file <br> <span class="emoji" data-emoji="memo">📝</span> Merge this branch with your <code>main</code> branch and delete the <code>feature</code> branch afterwards</p>
+</section>
+<section id="github" class="level2">
+<h2 class="anchored" data-anchor-id="github">GitHub</h2>
+<p><span class="emoji" data-emoji="memo">📝</span> Upload your repository to GitHub</p>
 <ul>
-<li>Discuss and plan your work in <a href="https://github.com/features/issues">Issues</a></li>
-<li>Propose changes to code or data using <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">pull requests</a></li>
-<li>Manage access to your code and data with detailed <a href="https://docs.github.com/en/get-started/learning-about-github/access-permissions-on-github">permissions and roles</a></li>
-<li>Add documentation to your repository or in a separate <a href="https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis">wiki</a></li>
+<li>Create a new repository on GitHub.</li>
+<li>Set the remote URL to your GitHub repository.</li>
+<li>Push your changes to GitHub.</li>
+</ul>
+<p><span class="emoji" data-emoji="memo">📝</span> Clone your repository, push and pull</p>
+<ul>
+<li>Clone your uploaded repository to a different location on your computer.</li>
+<li>Make changes and push them to GitHub.</li>
+<li>Pull the changes into your original repository.</li>
+</ul>
+<p><span class="emoji" data-emoji="memo">📝</span> Bonus: Create a Pull Request</p>
+<ul>
+<li>Create a new branch in your local repository.</li>
+<li>Add, commit, and push changes in the new branch.</li>
+<li>Create and merge a pull request for this new branch on GitHub</li>
+</ul>
+</section>
+<section id="tags-and-releases" class="level2">
+<h2 class="anchored" data-anchor-id="tags-and-releases">Tags and Releases</h2>
+<p><span class="emoji" data-emoji="memo">📝</span> Create a Lightweight Tag <br> <span class="emoji" data-emoji="memo">📝</span> Create an Annotated Tag <br> <span class="emoji" data-emoji="memo">📝</span> Switch to a Tag <br> <span class="emoji" data-emoji="memo">📝</span> Delete a Tag <br> <span class="emoji" data-emoji="memo">📝</span> Push a Tag to remote <br> <span class="emoji" data-emoji="memo">📝</span> Create a GitHub release <br> <span class="emoji" data-emoji="memo">📝</span> Link a Zenodo record <br></p>
+</section>
+<section id="graphical-user-interfaces" class="level2">
+<h2 class="anchored" data-anchor-id="graphical-user-interfaces">Graphical User Interfaces</h2>
+<p><span class="emoji" data-emoji="memo">📝</span> Install GitKraken or GitHub Desktop <br> <span class="emoji" data-emoji="memo">📝</span> Login to the client using your GitHub Account and view your recipe repository <br> <span class="emoji" data-emoji="memo">📝</span> Add two recipes in the same file, stage and commit only one of them, using a GUI <br> <span class="emoji" data-emoji="memo">📝</span> Open your recipe repository in RStudio, edit a file and commit your changes <br></p>
+</section>
+<section id="stashing-and-co." class="level2">
+<h2 class="anchored" data-anchor-id="stashing-and-co.">Stashing and Co.</h2>
+<p><span class="emoji" data-emoji="memo">📝</span> Stashing</p>
+<ul>
+<li>Create a new branch called <code>feature/stash-exercise</code>.</li>
+<li>Make changes to two different files in your project directory.</li>
+<li>Stash your changes without adding a message.</li>
+<li>Use <code>git status</code> to verify that your working directory is clean.</li>
+<li>Apply the stash to your working directory and verify that your changes are restored.</li>
+</ul>
+<p><span class="emoji" data-emoji="memo">📝</span> Reverting</p>
+<ul>
+<li>Create a new branch called <code>feature/revert-exercise</code>.</li>
+<li>Make changes and commit these to your file.</li>
+<li>Use <code>git revert</code> to revert the most recent commit, specifying its hash.</li>
+</ul>
+<p><span class="emoji" data-emoji="memo">📝</span> Rebasing</p>
+<ul>
+<li>Create a new branch called <code>feature/rebase-exercise</code>.</li>
+<li>Make three commits with minor changes on the <code>feature/rebase-exercise</code> branch.</li>
+<li>Switch to the <code>main</code> branch and make additional changes.</li>
+<li>Rebase the <code>feature/rebase-example</code> branch onto the <code>main</code> branch using <code>git rebase main</code>.</li>
+<li>Check the commit history with <code>git log</code> to see the updated order of commits.</li>
 </ul>
 
 
@@ -759,13 +804,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/tags-and-releases.html" class="pagination-link" aria-label="Tags and Releases">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span>
+      <a href="../chapters/rewriting-history.html" class="pagination-link" aria-label="Rewriting history">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting history</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/issues.html" class="pagination-link" aria-label="Issues">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Issues</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../misc/cheatsheet.html" class="pagination-link" aria-label="Cheatsheet">
+        <span class="nav-page-text">Cheatsheet</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -783,7 +828,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/project-management.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/project-management.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/exercises.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/exercises.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
 </div>
