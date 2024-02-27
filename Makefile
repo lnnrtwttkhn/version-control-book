@@ -8,6 +8,18 @@ IMAGES_DIR=static/
 # define the default targets of the make command
 all: download-images
 
+.PHONY: preview
+preview:
+	quarto preview --to html
+
+.PHONY: html
+html:
+	quarto render --to html
+
+.PHONY: pdf
+pdf:
+	quarto render --to pdf
+
 # download and extract images:
 download-images:
 	wget $(IMAGES_URL) -O $(IMAGES_ARCHIVE)
