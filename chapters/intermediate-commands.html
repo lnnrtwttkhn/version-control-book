@@ -8,7 +8,7 @@
 
 <meta name="author" content="">
 
-<title>Version Control of Code and Data - 12&nbsp; Stashing and Co.</title>
+<title>Version Control of Code and Data - 11&nbsp; Stashing and Co.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intermediate-commands.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intermediate-commands.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -237,45 +237,28 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Project Management</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/project-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Project Management</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/intermediate-commands.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -324,28 +307,28 @@ div.csl-indent {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#stashing-changes-for-later-use" id="toc-stashing-changes-for-later-use" class="nav-link active" data-scroll-target="#stashing-changes-for-later-use"><span class="header-section-number">12.1</span> Stashing changes for later use</a>
+  <li><a href="#stashing-changes-for-later-use" id="toc-stashing-changes-for-later-use" class="nav-link active" data-scroll-target="#stashing-changes-for-later-use"><span class="header-section-number">11.1</span> Stashing changes for later use</a>
   <ul class="collapse">
-  <li><a href="#stashing-changes" id="toc-stashing-changes" class="nav-link" data-scroll-target="#stashing-changes"><span class="header-section-number">12.1.1</span> Stashing changes</a></li>
-  <li><a href="#retrieving-stashed-changes" id="toc-retrieving-stashed-changes" class="nav-link" data-scroll-target="#retrieving-stashed-changes"><span class="header-section-number">12.1.2</span> Retrieving stashed changes</a></li>
+  <li><a href="#stashing-changes" id="toc-stashing-changes" class="nav-link" data-scroll-target="#stashing-changes"><span class="header-section-number">11.1.1</span> Stashing changes</a></li>
+  <li><a href="#retrieving-stashed-changes" id="toc-retrieving-stashed-changes" class="nav-link" data-scroll-target="#retrieving-stashed-changes"><span class="header-section-number">11.1.2</span> Retrieving stashed changes</a></li>
   </ul></li>
-  <li><a href="#removing-changes-or-files" id="toc-removing-changes-or-files" class="nav-link" data-scroll-target="#removing-changes-or-files"><span class="header-section-number">12.2</span> Removing changes or files</a>
+  <li><a href="#removing-changes-or-files" id="toc-removing-changes-or-files" class="nav-link" data-scroll-target="#removing-changes-or-files"><span class="header-section-number">11.2</span> Removing changes or files</a>
   <ul class="collapse">
-  <li><a href="#discarding-changes-in-the-working-directory" id="toc-discarding-changes-in-the-working-directory" class="nav-link" data-scroll-target="#discarding-changes-in-the-working-directory"><span class="header-section-number">12.2.1</span> Discarding changes in the working directory</a></li>
-  <li><a href="#unstaging-files" id="toc-unstaging-files" class="nav-link" data-scroll-target="#unstaging-files"><span class="header-section-number">12.2.2</span> Unstaging files</a></li>
-  <li><a href="#deleting-files" id="toc-deleting-files" class="nav-link" data-scroll-target="#deleting-files"><span class="header-section-number">12.2.3</span> Deleting files</a></li>
-  <li><a href="#untracking-files" id="toc-untracking-files" class="nav-link" data-scroll-target="#untracking-files"><span class="header-section-number">12.2.4</span> “Untracking” files</a></li>
-  <li><a href="#reverting-commits" id="toc-reverting-commits" class="nav-link" data-scroll-target="#reverting-commits"><span class="header-section-number">12.2.5</span> Reverting commits</a></li>
-  <li><a href="#resetting-to-a-commit" id="toc-resetting-to-a-commit" class="nav-link" data-scroll-target="#resetting-to-a-commit"><span class="header-section-number">12.2.6</span> Resetting to a commit</a></li>
+  <li><a href="#discarding-changes-in-the-working-directory" id="toc-discarding-changes-in-the-working-directory" class="nav-link" data-scroll-target="#discarding-changes-in-the-working-directory"><span class="header-section-number">11.2.1</span> Discarding changes in the working directory</a></li>
+  <li><a href="#unstaging-files" id="toc-unstaging-files" class="nav-link" data-scroll-target="#unstaging-files"><span class="header-section-number">11.2.2</span> Unstaging files</a></li>
+  <li><a href="#deleting-files" id="toc-deleting-files" class="nav-link" data-scroll-target="#deleting-files"><span class="header-section-number">11.2.3</span> Deleting files</a></li>
+  <li><a href="#untracking-files" id="toc-untracking-files" class="nav-link" data-scroll-target="#untracking-files"><span class="header-section-number">11.2.4</span> “Untracking” files</a></li>
+  <li><a href="#reverting-commits" id="toc-reverting-commits" class="nav-link" data-scroll-target="#reverting-commits"><span class="header-section-number">11.2.5</span> Reverting commits</a></li>
+  <li><a href="#resetting-to-a-commit" id="toc-resetting-to-a-commit" class="nav-link" data-scroll-target="#resetting-to-a-commit"><span class="header-section-number">11.2.6</span> Resetting to a commit</a></li>
   </ul></li>
-  <li><a href="#partial-commits" id="toc-partial-commits" class="nav-link" data-scroll-target="#partial-commits"><span class="header-section-number">12.3</span> Partial commits</a></li>
-  <li><a href="#alternatives-to-standard-merging" id="toc-alternatives-to-standard-merging" class="nav-link" data-scroll-target="#alternatives-to-standard-merging"><span class="header-section-number">12.4</span> Alternatives to standard merging</a>
+  <li><a href="#partial-commits" id="toc-partial-commits" class="nav-link" data-scroll-target="#partial-commits"><span class="header-section-number">11.3</span> Partial commits</a></li>
+  <li><a href="#alternatives-to-standard-merging" id="toc-alternatives-to-standard-merging" class="nav-link" data-scroll-target="#alternatives-to-standard-merging"><span class="header-section-number">11.4</span> Alternatives to standard merging</a>
   <ul class="collapse">
-  <li><a href="#cherrypicking" id="toc-cherrypicking" class="nav-link" data-scroll-target="#cherrypicking"><span class="header-section-number">12.4.1</span> Cherrypicking</a></li>
-  <li><a href="#rebasing" id="toc-rebasing" class="nav-link" data-scroll-target="#rebasing"><span class="header-section-number">12.4.2</span> Rebasing</a></li>
+  <li><a href="#cherrypicking" id="toc-cherrypicking" class="nav-link" data-scroll-target="#cherrypicking"><span class="header-section-number">11.4.1</span> Cherrypicking</a></li>
+  <li><a href="#rebasing" id="toc-rebasing" class="nav-link" data-scroll-target="#rebasing"><span class="header-section-number">11.4.2</span> Rebasing</a></li>
   </ul></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">12.5</span> Acknowledgements &amp; further reading</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">12.6</span> Cheatsheet</a></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">11.5</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">11.6</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/intermediate-commands.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/intermediate-commands.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -353,7 +336,7 @@ div.csl-indent {
 <main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></h1>
+<h1 class="title display-7"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></h1>
 <p class="author"></p>
 
 <div class="abstract">
@@ -410,11 +393,11 @@ Exercises
 </div>
 </div>
 </div>
-<section id="stashing-changes-for-later-use" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="stashing-changes-for-later-use"><span class="header-section-number">12.1</span> Stashing changes for later use</h2>
+<section id="stashing-changes-for-later-use" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="stashing-changes-for-later-use"><span class="header-section-number">11.1</span> Stashing changes for later use</h2>
 <p><code>git stash</code> is a valuable command in Git that allows you to save your current changes temporarily without committing them. This is useful when you need to switch branches or work on something else without creating a commit for unfinished work. For example, when you’re working on a feature and you need to switch to a different task quickly or your work gets interrupted unexpectedly, you may not want to commit your unfinished changes. When you run <code>git stash</code>, Git stores the changes in your working directory and staged changes in a special stash commit. The working directory is then reverted to the last committed state, providing a clean slate for your next task.</p>
-<section id="stashing-changes" class="level3" data-number="12.1.1">
-<h3 data-number="12.1.1" class="anchored" data-anchor-id="stashing-changes"><span class="header-section-number">12.1.1</span> Stashing changes</h3>
+<section id="stashing-changes" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="stashing-changes"><span class="header-section-number">11.1.1</span> Stashing changes</h3>
 <p>To demonstrate the usefulness of <code>git stash</code>, you can edit one or more files in your repository, stage or don’t stage your changes, but don’t commit them. Now use <code>git status</code> to look at your working directory.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -447,8 +430,8 @@ Exercises
 </div>
 <p>Now you can switch branches and work on something else or stop working on the project altogether.</p>
 </section>
-<section id="retrieving-stashed-changes" class="level3" data-number="12.1.2">
-<h3 data-number="12.1.2" class="anchored" data-anchor-id="retrieving-stashed-changes"><span class="header-section-number">12.1.2</span> Retrieving stashed changes</h3>
+<section id="retrieving-stashed-changes" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="retrieving-stashed-changes"><span class="header-section-number">11.1.2</span> Retrieving stashed changes</h3>
 <p>If you want to reapply your changes, you can use <code>git stash apply</code>. To look at all your stored stashes, you can use <code>git stash list</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -498,8 +481,8 @@ Common <code>git stash</code> flags
 </div>
 </section>
 </section>
-<section id="removing-changes-or-files" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="removing-changes-or-files"><span class="header-section-number">12.2</span> Removing changes or files</h2>
+<section id="removing-changes-or-files" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="removing-changes-or-files"><span class="header-section-number">11.2</span> Removing changes or files</h2>
 <div class="callout callout-style-default callout-warning callout-titled" title="Be careful about data loss!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -513,8 +496,8 @@ Be careful about data loss!
 <p>This section introduces Git commands that may delete changes in your repository beyond recovery. Especially if you apply them for the first time, take your time and only execute a command if you are certain about its consequences. Better yet, experiment with these commands in a separate test repository, not in a repository where you keep your most important work.</p>
 </div>
 </div>
-<section id="discarding-changes-in-the-working-directory" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="discarding-changes-in-the-working-directory"><span class="header-section-number">12.2.1</span> Discarding changes in the working directory</h3>
+<section id="discarding-changes-in-the-working-directory" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="discarding-changes-in-the-working-directory"><span class="header-section-number">11.2.1</span> Discarding changes in the working directory</h3>
 <p>Sometimes you might want to revert files back to the state of your last commit. For example, this can be useful when you realize that the recent changes you made to a file have introduced an error. You can use <code>git restore</code> to <strong>discard changes in the working directory</strong> and revert the files to the state they were in when you last committed them.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -537,8 +520,8 @@ Be careful about data loss!
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="unstaging-files" class="level3" data-number="12.2.2">
-<h3 data-number="12.2.2" class="anchored" data-anchor-id="unstaging-files"><span class="header-section-number">12.2.2</span> Unstaging files</h3>
+<section id="unstaging-files" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="unstaging-files"><span class="header-section-number">11.2.2</span> Unstaging files</h3>
 <p>You can also use <code>git restore</code> with the <code>--staged</code> flag to unstage files, you have previously added to the staging area. This can be useful when you accidentally staged files or want to reorganize your commit.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--staged</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -548,8 +531,8 @@ Be careful about data loss!
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--staged</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="deleting-files" class="level3" data-number="12.2.3">
-<h3 data-number="12.2.3" class="anchored" data-anchor-id="deleting-files"><span class="header-section-number">12.2.3</span> Deleting files</h3>
+<section id="deleting-files" class="level3" data-number="11.2.3">
+<h3 data-number="11.2.3" class="anchored" data-anchor-id="deleting-files"><span class="header-section-number">11.2.3</span> Deleting files</h3>
 <p>If you want to delete files from your computer and your Git repository, you can use the <code>git rm</code> command. This command removes files from your working directory and automatically stages this change for your next commit. The workflow would go like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rm <span class="op">&lt;</span>FILE<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -577,15 +560,15 @@ Common <code>git rm</code> flags
 </div>
 </div>
 </section>
-<section id="untracking-files" class="level3" data-number="12.2.4">
-<h3 data-number="12.2.4" class="anchored" data-anchor-id="untracking-files"><span class="header-section-number">12.2.4</span> “Untracking” files</h3>
+<section id="untracking-files" class="level3" data-number="11.2.4">
+<h3 data-number="11.2.4" class="anchored" data-anchor-id="untracking-files"><span class="header-section-number">11.2.4</span> “Untracking” files</h3>
 <p>Sometimes, you may have files, in your Git repository that you no longer want to track or include in future commits, but want to keep in your local filesystem. It makes sense to include these files in a <code>.gitignore</code> file, as discussed in the chapter on <a href="../chapters/first-steps-git.html">first steps with Git</a>. You could also use <code>git rm</code> in combination with the <code>--cached</code> flag.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rm <span class="at">--cached</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="reverting-commits" class="level3" data-number="12.2.5">
-<h3 data-number="12.2.5" class="anchored" data-anchor-id="reverting-commits"><span class="header-section-number">12.2.5</span> Reverting commits</h3>
+<section id="reverting-commits" class="level3" data-number="11.2.5">
+<h3 data-number="11.2.5" class="anchored" data-anchor-id="reverting-commits"><span class="header-section-number">11.2.5</span> Reverting commits</h3>
 <p>The <code>git revert</code> command is used to create a <strong>new commit that undoes the changes made in a previous commit</strong>. It’s a way to safely reverse the effects of a specific commit without actually removing that commit from the commit history. It requires specifying the commit hash you want to revert. To look at the hashes of your commits, you can use the <code>git log</code> command. If you have a specific commit that you want to revert, you would use a command like:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> revert <span class="op">&lt;</span>commithash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -626,8 +609,8 @@ Common <code>git revert</code> flags
 </div>
 </div>
 </section>
-<section id="resetting-to-a-commit" class="level3" data-number="12.2.6">
-<h3 data-number="12.2.6" class="anchored" data-anchor-id="resetting-to-a-commit"><span class="header-section-number">12.2.6</span> Resetting to a commit</h3>
+<section id="resetting-to-a-commit" class="level3" data-number="11.2.6">
+<h3 data-number="11.2.6" class="anchored" data-anchor-id="resetting-to-a-commit"><span class="header-section-number">11.2.6</span> Resetting to a commit</h3>
 <p>If you want to reset your repository to a commit that was made in the past, you can use the <code>git reset</code> command.</p>
 <p>To get an overview of your past commits you can either use <code>git log</code> or <code>git reflog</code>. Both commands should get you an overview of your past commits. For example:</p>
 <div class="cell">
@@ -701,8 +684,8 @@ Common <code>git reset</code> flags
 </div>
 </section>
 </section>
-<section id="partial-commits" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="partial-commits"><span class="header-section-number">12.3</span> Partial commits</h2>
+<section id="partial-commits" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="partial-commits"><span class="header-section-number">11.3</span> Partial commits</h2>
 <p>Git allows you to make partial commits by staging only specific parts of your file before committing. This can be achieved using <code>git add</code> with the <code>-p</code> or <code>--patch</code> option, which allows you to interactively choose which changes to stage.</p>
 <p>To try this make some changes to your file(s) and use:</p>
 <div class="cell">
@@ -761,11 +744,11 @@ Our recommendation: Use a GUI for partial commits
 </div>
 </div>
 </section>
-<section id="alternatives-to-standard-merging" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="alternatives-to-standard-merging"><span class="header-section-number">12.4</span> Alternatives to standard merging</h2>
-<section id="cherrypicking" class="level3" data-number="12.4.1">
-<h3 data-number="12.4.1" class="anchored" data-anchor-id="cherrypicking"><span class="header-section-number">12.4.1</span> Cherrypicking</h3>
-<p><code>git cherry-pick</code> allows you to apply the changes from a specific commit from one branch to another. This means, you can pick and apply specific commits to your current branch without merging the entire branch. This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in <a href="#fig-cherry-pick" class="quarto-xref">Figure&nbsp;<span>12.1</span></a>. You will need the hash of the commit you want to “cherry-pick” and then use the command:</p>
+<section id="alternatives-to-standard-merging" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="alternatives-to-standard-merging"><span class="header-section-number">11.4</span> Alternatives to standard merging</h2>
+<section id="cherrypicking" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="cherrypicking"><span class="header-section-number">11.4.1</span> Cherrypicking</h3>
+<p><code>git cherry-pick</code> allows you to apply the changes from a specific commit from one branch to another. This means, you can pick and apply specific commits to your current branch without merging the entire branch. This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in <a href="#fig-cherry-pick" class="quarto-xref">Figure&nbsp;<span>11.1</span></a>. You will need the hash of the commit you want to “cherry-pick” and then use the command:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="op">&lt;</span>commithash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -780,7 +763,7 @@ Our recommendation: Use a GUI for partial commits
 <img src="../static/cherry-pick.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cherry-pick-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.1: Image from <a href="https://dev.to/0xkoji/what-is-git-cherry-pick-3fka">Blogpost “What IS git cherry-pick?”</a> by <a href="https://dev.to/0xkoji">0xkoji</a>
+Figure&nbsp;11.1: Image from <a href="https://dev.to/0xkoji/what-is-git-cherry-pick-3fka">Blogpost “What IS git cherry-pick?”</a> by <a href="https://dev.to/0xkoji">0xkoji</a>
 </figcaption>
 </figure>
 </div>
@@ -802,9 +785,9 @@ Common <code>git cherry-pick</code> flags
 </div>
 </div>
 </section>
-<section id="rebasing" class="level3" data-number="12.4.2">
-<h3 data-number="12.4.2" class="anchored" data-anchor-id="rebasing"><span class="header-section-number">12.4.2</span> Rebasing</h3>
-<p><code>git rebase</code> is a different way compared to a standard merge to integrate changes from one branch into another. For example, when you rebase the <code>feature</code> branch onto the <code>main</code> branch you “rearrange” the commits. It’s like taking your changes, applying them on top of the latest <code>main</code> branch, and making it all look like a smooth line. The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the main branch. It’s like picking up your changes and placing them on the latest code, resulting in a linear history. For an illustration, see <a href="#fig-rebasing" class="quarto-xref">Figure&nbsp;<span>12.2</span></a>.</p>
+<section id="rebasing" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="rebasing"><span class="header-section-number">11.4.2</span> Rebasing</h3>
+<p><code>git rebase</code> is a different way compared to a standard merge to integrate changes from one branch into another. For example, when you rebase the <code>feature</code> branch onto the <code>main</code> branch you “rearrange” the commits. It’s like taking your changes, applying them on top of the latest <code>main</code> branch, and making it all look like a smooth line. The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the main branch. It’s like picking up your changes and placing them on the latest code, resulting in a linear history. For an illustration, see <a href="#fig-rebasing" class="quarto-xref">Figure&nbsp;<span>11.2</span></a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -815,7 +798,7 @@ Common <code>git cherry-pick</code> flags
 <img src="../static/rebasing.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rebasing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.2: Image from <a href="https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05">Blogpost “Deep dive into Git Rebase”</a> by <a href="https://dev.to/_mohanmurali">Mohan Murali</a>
+Figure&nbsp;11.2: Image from <a href="https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05">Blogpost “Deep dive into Git Rebase”</a> by <a href="https://dev.to/_mohanmurali">Mohan Murali</a>
 </figcaption>
 </figure>
 </div>
@@ -842,8 +825,8 @@ Common <code>git rebase</code> flags
 </div>
 </section>
 </section>
-<section id="acknowledgements-further-reading" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">12.5</span> Acknowledgements &amp; further reading</h2>
+<section id="acknowledgements-further-reading" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">11.5</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="table">
 <thead>
@@ -866,8 +849,8 @@ Common <code>git rebase</code> flags
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="12.6">
-<h2 data-number="12.6" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">12.6</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">11.6</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -1424,12 +1407,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/gui.html" class="pagination-link" aria-label="Graphical User Interfaces">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/rewriting-history.html" class="pagination-link" aria-label="Rewriting history">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting history</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting history</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
