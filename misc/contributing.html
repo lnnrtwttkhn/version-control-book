@@ -84,7 +84,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../misc/style-guide.html" rel="next">
 <link href="../misc/acknowledgements.html" rel="prev">
 <link href="../static/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -291,12 +290,6 @@ div.csl-indent {
  <span class="menu-text">Contributing</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../misc/style-guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Style Guide</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -343,6 +336,12 @@ div.csl-indent {
   </ul></li>
   <li><a href="#sec-variables" id="toc-sec-variables" class="nav-link" data-scroll-target="#sec-variables">Variables</a></li>
   <li><a href="#sec-icons" id="toc-sec-icons" class="nav-link" data-scroll-target="#sec-icons">Fontawesome Icons</a></li>
+  <li><a href="#style-guide" id="toc-style-guide" class="nav-link" data-scroll-target="#style-guide">Style Guide</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#write-one-sentence-per-line" id="toc-write-one-sentence-per-line" class="nav-link" data-scroll-target="#write-one-sentence-per-line">Write one sentence per line</a></li>
+  <li><a href="#use-consistent-language" id="toc-use-consistent-language" class="nav-link" data-scroll-target="#use-consistent-language">Use consistent language</a></li>
+  </ul></li>
   <li><a href="#sec-acknowledgements" id="toc-sec-acknowledgements" class="nav-link" data-scroll-target="#sec-acknowledgements">Acknowledgements &amp; Attribution</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/contributing.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -525,76 +524,75 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <span id="cb4-45"><a href="#cb4-45"></a>    <span class="ex">-</span> misc/references.qmd</span>
 <span id="cb4-46"><a href="#cb4-46"></a>    <span class="ex">-</span> misc/acknowledgements.qmd</span>
 <span id="cb4-47"><a href="#cb4-47"></a>    <span class="ex">-</span> misc/contributing.qmd</span>
-<span id="cb4-48"><a href="#cb4-48"></a>    <span class="ex">-</span> misc/style-guide.qmd</span>
-<span id="cb4-49"><a href="#cb4-49"></a>  <span class="ex">page-navigation:</span> true</span>
-<span id="cb4-50"><a href="#cb4-50"></a>  <span class="ex">back-to-top-navigation:</span> true</span>
-<span id="cb4-51"><a href="#cb4-51"></a>  <span class="co"># side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):</span></span>
-<span id="cb4-52"><a href="#cb4-52"></a>  <span class="ex">sidebar:</span></span>
-<span id="cb4-53"><a href="#cb4-53"></a>    <span class="ex">id:</span> sidebar</span>
-<span id="cb4-54"><a href="#cb4-54"></a>    <span class="ex">title:</span> <span class="st">"Version Control of Code and Data"</span></span>
-<span id="cb4-55"><a href="#cb4-55"></a>    <span class="ex">subtitle:</span> <span class="st">"An introduction to Git for research"</span></span>
-<span id="cb4-56"><a href="#cb4-56"></a>    <span class="ex">logo:</span> static/logo.svg</span>
-<span id="cb4-57"><a href="#cb4-57"></a>    <span class="ex">search:</span> true</span>
-<span id="cb4-58"><a href="#cb4-58"></a>    <span class="ex">tools:</span></span>
-<span id="cb4-59"><a href="#cb4-59"></a>      <span class="ex">-</span> icon: globe</span>
-<span id="cb4-60"><a href="#cb4-60"></a>        <span class="ex">href:</span> https://lennartwittkuhn.com/version-control-book</span>
-<span id="cb4-61"><a href="#cb4-61"></a>      <span class="ex">-</span> icon: bug</span>
-<span id="cb4-62"><a href="#cb4-62"></a>        <span class="ex">href:</span> https://github.com/lnnrtwttkhn/version-control-book/issues</span>
-<span id="cb4-63"><a href="#cb4-63"></a>    <span class="ex">style:</span> floating</span>
-<span id="cb4-64"><a href="#cb4-64"></a>    <span class="ex">type:</span> light</span>
-<span id="cb4-65"><a href="#cb4-65"></a>    <span class="ex">border:</span> false</span>
-<span id="cb4-66"><a href="#cb4-66"></a>    <span class="ex">alignment:</span> center</span>
-<span id="cb4-67"><a href="#cb4-67"></a>    <span class="ex">collapse-level:</span> 2</span>
-<span id="cb4-68"><a href="#cb4-68"></a>    <span class="ex">pinned:</span> true</span>
-<span id="cb4-69"><a href="#cb4-69"></a>  <span class="ex">page-footer:</span></span>
-<span id="cb4-70"><a href="#cb4-70"></a>    <span class="ex">left:</span> <span class="kw">|</span></span>
-<span id="cb4-71"><a href="#cb4-71"></a>      <span class="kw">&amp;</span><span class="ex">copy</span><span class="kw">;</span> <span class="ex">{{</span><span class="op">&lt;</span> var <span class="ex">years</span> <span class="op">&gt;</span>}} The Version Control Book Team</span>
-<span id="cb4-72"><a href="#cb4-72"></a>    <span class="ex">center:</span></span>
-<span id="cb4-73"><a href="#cb4-73"></a>      <span class="ex">-</span> text: <span class="st">"Funded by the Digital and Data Literacy in Teaching Lab"</span></span>
-<span id="cb4-74"><a href="#cb4-74"></a>        <span class="ex">href:</span> misc/acknowledgements.qmd</span>
-<span id="cb4-75"><a href="#cb4-75"></a>    <span class="ex">right:</span> <span class="kw">|</span></span>
-<span id="cb4-76"><a href="#cb4-76"></a>      <span class="ex">License:</span> [CC BY-SA 4.0]<span class="er">(</span><span class="ex">https://creativecommons.org/licenses/by-sa/4.0/</span><span class="kw">)</span></span>
-<span id="cb4-77"><a href="#cb4-77"></a>    <span class="ex">border:</span> false</span>
-<span id="cb4-78"><a href="#cb4-78"></a>    <span class="ex">background:</span> light</span>
-<span id="cb4-79"><a href="#cb4-79"></a></span>
-<span id="cb4-80"><a href="#cb4-80"></a><span class="ex">format:</span></span>
-<span id="cb4-81"><a href="#cb4-81"></a>  <span class="ex">html:</span></span>
-<span id="cb4-82"><a href="#cb4-82"></a>    <span class="ex">theme:</span> default</span>
-<span id="cb4-83"><a href="#cb4-83"></a>    <span class="ex">from:</span> markdown+emoji</span>
-<span id="cb4-84"><a href="#cb4-84"></a>    <span class="ex">link-external-newwindow:</span> true</span>
-<span id="cb4-85"><a href="#cb4-85"></a>    <span class="ex">toc:</span> true</span>
-<span id="cb4-86"><a href="#cb4-86"></a>    <span class="ex">toc-depth:</span> 3</span>
-<span id="cb4-87"><a href="#cb4-87"></a>    <span class="ex">toc-title:</span> <span class="st">"Contents"</span></span>
-<span id="cb4-88"><a href="#cb4-88"></a>    <span class="ex">number-sections:</span> true</span>
-<span id="cb4-89"><a href="#cb4-89"></a>    <span class="ex">anchor-sections:</span> true</span>
-<span id="cb4-90"><a href="#cb4-90"></a>    <span class="co"># layout (https://quarto.org/docs/reference/formats/html.html#layout):</span></span>
-<span id="cb4-91"><a href="#cb4-91"></a>    <span class="ex">fig-cap-location:</span> bottom</span>
-<span id="cb4-92"><a href="#cb4-92"></a>    <span class="ex">page-layout:</span> full</span>
-<span id="cb4-93"><a href="#cb4-93"></a>    <span class="co"># title-block-style: default</span></span>
-<span id="cb4-94"><a href="#cb4-94"></a>    <span class="co"># code (https://quarto.org/docs/reference/formats/html.html#code):</span></span>
-<span id="cb4-95"><a href="#cb4-95"></a>    <span class="ex">code-fold:</span> false</span>
-<span id="cb4-96"><a href="#cb4-96"></a>    <span class="ex">code-overflow:</span> wrap</span>
-<span id="cb4-97"><a href="#cb4-97"></a>    <span class="ex">code-line-numbers:</span> false</span>
-<span id="cb4-98"><a href="#cb4-98"></a>    <span class="ex">code-copy:</span> true</span>
-<span id="cb4-99"><a href="#cb4-99"></a>    <span class="ex">code-link:</span> false</span>
-<span id="cb4-100"><a href="#cb4-100"></a>    <span class="ex">code-annotations:</span> hover</span>
-<span id="cb4-101"><a href="#cb4-101"></a>    <span class="ex">code-tools:</span> false</span>
-<span id="cb4-102"><a href="#cb4-102"></a>    <span class="ex">highlight-style:</span> monokai</span>
-<span id="cb4-103"><a href="#cb4-103"></a>    <span class="co"># references:</span></span>
-<span id="cb4-104"><a href="#cb4-104"></a>    <span class="ex">bibliography:</span> references.bib</span>
-<span id="cb4-105"><a href="#cb4-105"></a>    <span class="ex">csl:</span> chicago-author-date-note.csl</span>
-<span id="cb4-106"><a href="#cb4-106"></a>    <span class="ex">citations-hover:</span> true</span>
-<span id="cb4-107"><a href="#cb4-107"></a>    <span class="ex">citation-location:</span> document</span>
-<span id="cb4-108"><a href="#cb4-108"></a>    <span class="ex">citeproc:</span> true</span>
-<span id="cb4-109"><a href="#cb4-109"></a>    <span class="co"># footnotes:</span></span>
-<span id="cb4-110"><a href="#cb4-110"></a>    <span class="ex">footnotes-hover:</span> true</span>
-<span id="cb4-111"><a href="#cb4-111"></a>    <span class="co"># includes:</span></span>
-<span id="cb4-112"><a href="#cb4-112"></a>    <span class="ex">include-after-body:</span> plausible.html</span>
-<span id="cb4-113"><a href="#cb4-113"></a></span>
-<span id="cb4-114"><a href="#cb4-114"></a><span class="ex">metadata-files:</span></span>
-<span id="cb4-115"><a href="#cb4-115"></a>  <span class="ex">-</span> _authors.yml</span>
-<span id="cb4-116"><a href="#cb4-116"></a>  <span class="ex">-</span> _affiliations.yml</span>
-<span id="cb4-117"><a href="#cb4-117"></a>  <span class="ex">-</span> _metadata.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-48"><a href="#cb4-48"></a>  <span class="ex">page-navigation:</span> true</span>
+<span id="cb4-49"><a href="#cb4-49"></a>  <span class="ex">back-to-top-navigation:</span> true</span>
+<span id="cb4-50"><a href="#cb4-50"></a>  <span class="co"># side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):</span></span>
+<span id="cb4-51"><a href="#cb4-51"></a>  <span class="ex">sidebar:</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a>    <span class="ex">id:</span> sidebar</span>
+<span id="cb4-53"><a href="#cb4-53"></a>    <span class="ex">title:</span> <span class="st">"Version Control of Code and Data"</span></span>
+<span id="cb4-54"><a href="#cb4-54"></a>    <span class="ex">subtitle:</span> <span class="st">"An introduction to Git for research"</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a>    <span class="ex">logo:</span> static/logo.svg</span>
+<span id="cb4-56"><a href="#cb4-56"></a>    <span class="ex">search:</span> true</span>
+<span id="cb4-57"><a href="#cb4-57"></a>    <span class="ex">tools:</span></span>
+<span id="cb4-58"><a href="#cb4-58"></a>      <span class="ex">-</span> icon: globe</span>
+<span id="cb4-59"><a href="#cb4-59"></a>        <span class="ex">href:</span> https://lennartwittkuhn.com/version-control-book</span>
+<span id="cb4-60"><a href="#cb4-60"></a>      <span class="ex">-</span> icon: bug</span>
+<span id="cb4-61"><a href="#cb4-61"></a>        <span class="ex">href:</span> https://github.com/lnnrtwttkhn/version-control-book/issues</span>
+<span id="cb4-62"><a href="#cb4-62"></a>    <span class="ex">style:</span> floating</span>
+<span id="cb4-63"><a href="#cb4-63"></a>    <span class="ex">type:</span> light</span>
+<span id="cb4-64"><a href="#cb4-64"></a>    <span class="ex">border:</span> false</span>
+<span id="cb4-65"><a href="#cb4-65"></a>    <span class="ex">alignment:</span> center</span>
+<span id="cb4-66"><a href="#cb4-66"></a>    <span class="ex">collapse-level:</span> 2</span>
+<span id="cb4-67"><a href="#cb4-67"></a>    <span class="ex">pinned:</span> true</span>
+<span id="cb4-68"><a href="#cb4-68"></a>  <span class="ex">page-footer:</span></span>
+<span id="cb4-69"><a href="#cb4-69"></a>    <span class="ex">left:</span> <span class="kw">|</span></span>
+<span id="cb4-70"><a href="#cb4-70"></a>      <span class="kw">&amp;</span><span class="ex">copy</span><span class="kw">;</span> <span class="ex">{{</span><span class="op">&lt;</span> var <span class="ex">years</span> <span class="op">&gt;</span>}} The Version Control Book Team</span>
+<span id="cb4-71"><a href="#cb4-71"></a>    <span class="ex">center:</span></span>
+<span id="cb4-72"><a href="#cb4-72"></a>      <span class="ex">-</span> text: <span class="st">"Funded by the Digital and Data Literacy in Teaching Lab"</span></span>
+<span id="cb4-73"><a href="#cb4-73"></a>        <span class="ex">href:</span> misc/acknowledgements.qmd</span>
+<span id="cb4-74"><a href="#cb4-74"></a>    <span class="ex">right:</span> <span class="kw">|</span></span>
+<span id="cb4-75"><a href="#cb4-75"></a>      <span class="ex">License:</span> [CC BY-SA 4.0]<span class="er">(</span><span class="ex">https://creativecommons.org/licenses/by-sa/4.0/</span><span class="kw">)</span></span>
+<span id="cb4-76"><a href="#cb4-76"></a>    <span class="ex">border:</span> false</span>
+<span id="cb4-77"><a href="#cb4-77"></a>    <span class="ex">background:</span> light</span>
+<span id="cb4-78"><a href="#cb4-78"></a></span>
+<span id="cb4-79"><a href="#cb4-79"></a><span class="ex">format:</span></span>
+<span id="cb4-80"><a href="#cb4-80"></a>  <span class="ex">html:</span></span>
+<span id="cb4-81"><a href="#cb4-81"></a>    <span class="ex">theme:</span> default</span>
+<span id="cb4-82"><a href="#cb4-82"></a>    <span class="ex">from:</span> markdown+emoji</span>
+<span id="cb4-83"><a href="#cb4-83"></a>    <span class="ex">link-external-newwindow:</span> true</span>
+<span id="cb4-84"><a href="#cb4-84"></a>    <span class="ex">toc:</span> true</span>
+<span id="cb4-85"><a href="#cb4-85"></a>    <span class="ex">toc-depth:</span> 3</span>
+<span id="cb4-86"><a href="#cb4-86"></a>    <span class="ex">toc-title:</span> <span class="st">"Contents"</span></span>
+<span id="cb4-87"><a href="#cb4-87"></a>    <span class="ex">number-sections:</span> true</span>
+<span id="cb4-88"><a href="#cb4-88"></a>    <span class="ex">anchor-sections:</span> true</span>
+<span id="cb4-89"><a href="#cb4-89"></a>    <span class="co"># layout (https://quarto.org/docs/reference/formats/html.html#layout):</span></span>
+<span id="cb4-90"><a href="#cb4-90"></a>    <span class="ex">fig-cap-location:</span> bottom</span>
+<span id="cb4-91"><a href="#cb4-91"></a>    <span class="ex">page-layout:</span> full</span>
+<span id="cb4-92"><a href="#cb4-92"></a>    <span class="co"># title-block-style: default</span></span>
+<span id="cb4-93"><a href="#cb4-93"></a>    <span class="co"># code (https://quarto.org/docs/reference/formats/html.html#code):</span></span>
+<span id="cb4-94"><a href="#cb4-94"></a>    <span class="ex">code-fold:</span> false</span>
+<span id="cb4-95"><a href="#cb4-95"></a>    <span class="ex">code-overflow:</span> wrap</span>
+<span id="cb4-96"><a href="#cb4-96"></a>    <span class="ex">code-line-numbers:</span> false</span>
+<span id="cb4-97"><a href="#cb4-97"></a>    <span class="ex">code-copy:</span> true</span>
+<span id="cb4-98"><a href="#cb4-98"></a>    <span class="ex">code-link:</span> false</span>
+<span id="cb4-99"><a href="#cb4-99"></a>    <span class="ex">code-annotations:</span> hover</span>
+<span id="cb4-100"><a href="#cb4-100"></a>    <span class="ex">code-tools:</span> false</span>
+<span id="cb4-101"><a href="#cb4-101"></a>    <span class="ex">highlight-style:</span> monokai</span>
+<span id="cb4-102"><a href="#cb4-102"></a>    <span class="co"># references:</span></span>
+<span id="cb4-103"><a href="#cb4-103"></a>    <span class="ex">bibliography:</span> references.bib</span>
+<span id="cb4-104"><a href="#cb4-104"></a>    <span class="ex">csl:</span> chicago-author-date-note.csl</span>
+<span id="cb4-105"><a href="#cb4-105"></a>    <span class="ex">citations-hover:</span> true</span>
+<span id="cb4-106"><a href="#cb4-106"></a>    <span class="ex">citation-location:</span> document</span>
+<span id="cb4-107"><a href="#cb4-107"></a>    <span class="ex">citeproc:</span> true</span>
+<span id="cb4-108"><a href="#cb4-108"></a>    <span class="co"># footnotes:</span></span>
+<span id="cb4-109"><a href="#cb4-109"></a>    <span class="ex">footnotes-hover:</span> true</span>
+<span id="cb4-110"><a href="#cb4-110"></a>    <span class="co"># includes:</span></span>
+<span id="cb4-111"><a href="#cb4-111"></a>    <span class="ex">include-after-body:</span> plausible.html</span>
+<span id="cb4-112"><a href="#cb4-112"></a></span>
+<span id="cb4-113"><a href="#cb4-113"></a><span class="ex">metadata-files:</span></span>
+<span id="cb4-114"><a href="#cb4-114"></a>  <span class="ex">-</span> _authors.yml</span>
+<span id="cb4-115"><a href="#cb4-115"></a>  <span class="co"># - _affiliations.yml</span></span>
+<span id="cb4-116"><a href="#cb4-116"></a>  <span class="ex">-</span> _metadata.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1758,7 +1756,7 @@ Example: Click here for the YAML header of the current document.
 <span id="cb16-3"><a href="#cb16-3"></a><span class="fu">title-block-style</span><span class="kw">:</span><span class="at"> none</span></span>
 <span id="cb16-4"><a href="#cb16-4"></a><span class="pp">---</span></span>
 <span id="cb16-5"><a href="#cb16-5"></a></span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="co"># Contributing {.unnumbered}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="at">```{r}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -2039,12 +2037,59 @@ Click here to view the full <code>_variables.yml</code> file of this project.
 <p>This extension includes support for <strong>only free Font Awesome icons</strong>.</p>
 <p>To embed an icon, use the <code>{{&lt; fa &gt;}}</code> shortcode. For example, <code>{{&lt; fa thumbs-up &gt;}}</code> will result in <i class="fa-solid fa-thumbs-up" aria-label="thumbs-up"></i>. For details, see the <a href="https://github.com/quarto-ext/fontawesome">project documentation on GitHub</a>.</p>
 </section>
+<section id="style-guide" class="level2">
+<h2 class="anchored" data-anchor-id="style-guide">Style Guide</h2>
+<p>We have compiled a set of guidelines to keep a consistent style across all chapters of the book.</p>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<ol type="1">
+<li><a href="#write-one-sentence-per-line">Write one sentence per line</a></li>
+<li><a href="#use-consistent-language">Use consistent language</a></li>
+</ol>
+</section>
+<section id="write-one-sentence-per-line" class="level3">
+<h3 class="anchored" data-anchor-id="write-one-sentence-per-line">Write one sentence per line</h3>
+<p>Please write each sentence on a new line. Having each sentence on a new line will make no difference to how the text is displayed, there will still be paragraphs, but it will mean that any pull requests will be easier to check; the changes will be on a single line instead of somewhere in a paragraph. Consider the example below.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Today you are you, that is truer than true. There is no one alive who is youer than you. - Dr Seuss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A pull request on this correcting it to have a ‘.’ after Dr would show as a change to the whole paragraph. Contrast this with the next example which will be displayed online in the exact same way, but would see a change to a single line.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>Today you are you, that is truer than true.</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>There is no one alive who is youer than you.</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dr Seuss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="use-consistent-language" class="level3">
+<h3 class="anchored" data-anchor-id="use-consistent-language">Use consistent language</h3>
+<p>We try to use consistent language:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">TRUE</th>
+<th style="text-align: left;">FALSE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">don’t</td>
+<td style="text-align: left;">do not</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">folder</td>
+<td style="text-align: left;">directory</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">documentation</td>
+<td style="text-align: left;">docs</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="sec-acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="sec-acknowledgements">Acknowledgements &amp; Attribution</h2>
 <ul>
 <li>The Quarto documentation <span class="citation" data-cites="allaire2022">(<a href="references.html#ref-allaire2022" role="doc-biblioref">Allaire et al. 2022</a>)</span>, in particular the chapters on <a href="https://quarto.org/docs/authoring/variables.html">Variables</a>, <a href="https://quarto.org/docs/extensions/">Quarto Extensions</a>, <a href="https://quarto.org/docs/authoring/code-annotation.html">“Code Annotation”</a> (License: <a href="https://quarto.org/license.html">GNU GPL v2</a>)</li>
 <li><span class="citation" data-cites="blischak2016">(<a href="references.html#ref-blischak2016" role="doc-biblioref">Blischak, Davenport, and Wilson 2016</a>)</span></li>
 <li>The <a href="https://github.com/quarto-ext/fontawesome">Font Awesome Extension for Quarto</a> (License: <a href="https://github.com/quarto-ext/fontawesome/blob/main/LICENSE">MIT</a>)</li>
+<li><span class="citation" data-cites="community2022">The Turing Way Community (<a href="references.html#ref-community2022" role="doc-biblioref">2022</a>)</span>: <a href="https://the-turing-way.netlify.app/community-handbook/style.html">Style Guide</a></li>
 </ul>
 
 
@@ -2057,6 +2102,9 @@ Blischak, John D., Emily R. Davenport, and Greg Wilson. 2016. <span>“A Quick I
 </div>
 <div id="ref-chacon2014" class="csl-entry" role="listitem">
 Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
+</div>
+<div id="ref-community2022" class="csl-entry" role="listitem">
+The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: The process documents and data are made available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>. Software are made available under an <a href="https://opensource.org/license/mit/">MIT license</a>. Website: <a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a>.
 </div>
 </div>
 </section>
@@ -2514,9 +2562,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../misc/style-guide.html" class="pagination-link" aria-label="Style Guide">
-        <span class="nav-page-text">Style Guide</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
