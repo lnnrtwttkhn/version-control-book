@@ -327,20 +327,13 @@ div.csl-indent {
   <li><a href="#forking-a-repository" id="toc-forking-a-repository" class="nav-link" data-scroll-target="#forking-a-repository"><span class="header-section-number">7.8.1</span> Forking a repository</a></li>
   <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link" data-scroll-target="#pull-requests"><span class="header-section-number">7.8.2</span> Pull requests</a></li>
   <li><a href="#readme-file" id="toc-readme-file" class="nav-link" data-scroll-target="#readme-file"><span class="header-section-number">7.8.3</span> <code>README</code> file</a></li>
+  <li><a href="#git-blame" id="toc-git-blame" class="nav-link" data-scroll-target="#git-blame"><span class="header-section-number">8.5.1</span> Git blame</a></li>
+  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">8.5.2</span> Template repositories</a></li>
+  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">8.5.3</span> Branch protection</a></li>
+  <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">8.5.4</span> Alternatives to GitHub</a></li>
   </ul></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">7.9</span> Description</a></li>
-  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing"><span class="header-section-number">7.10</span> Contributing</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage"><span class="header-section-number">7.11</span> Usage</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license"><span class="header-section-number">7.12</span> License</a></li>
-  <li><a href="#contributors" id="toc-contributors" class="nav-link" data-scroll-target="#contributors"><span class="header-section-number">7.13</span> Contributors</a>
-  <ul class="collapse">
-  <li><a href="#git-blame" id="toc-git-blame" class="nav-link" data-scroll-target="#git-blame"><span class="header-section-number">7.13.1</span> Git blame</a></li>
-  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">7.13.2</span> Template repositories</a></li>
-  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">7.13.3</span> Branch protection</a></li>
-  <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">7.13.4</span> Alternatives to GitHub</a></li>
-  </ul></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">7.14</span> Acknowledgements</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">7.15</span> Cheatsheet</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">8.6</span> Acknowledgements</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">8.7</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/github-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/github-intro.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -753,7 +746,7 @@ Figure&nbsp;7.3: Screenshot of a repository with fork button
 </section>
 </section>
 <section id="readme-file" class="level3" data-number="7.8.3">
-<h3 data-number="7.8.3" class="anchored" data-anchor-id="readme-file"><span class="header-section-number">7.8.3</span> <code>README</code> file</h3>
+<h3 data-number="7.8.3" class="anchored"><span class="header-section-number">7.8.3</span> <code>README</code> file</h3>
 <p>As mentioned earlier, the <code>README</code> file can be created together with your repository or can be added later. The <code>README</code> file should contain “a description of your repository” but what does that entail?</p>
 <p>The exact content depends on your repository, but some general things that you might want to include are:</p>
 <ul>
@@ -782,26 +775,36 @@ Adding a <code>CONTRIBUTING.md</code> file to a repository
 <li><p><strong>Acknowledgments</strong>: Give credit to any third-party libraries, tools, or individuals that contributed to your project.</p></li>
 <li><p><strong>License</strong>: Choose a license that aligns with your project’s goals. Common options include GPL, allowing modifications and commercial use. You can use <a href="https://choosealicense.com">choosealicense.com</a> for guidance. The chosen license influences contributions to your project.</p></li>
 </ul>
-<p>::: {.callout-tip title=“<i class="fa-solid fa-eye" aria-label="eye"></i> View the <code>README.md</code> file of this project.” collapse=“true” appearance=“simple” icon=false} # Version Control Book</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled" title="View the `README.md` file of this project.">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+View the <code>README.md</code> file of this project.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<section id="version-control-book" class="level1 callout-body-container callout-body" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Version Control Book</h1>
 <p><a href="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml"><img src="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg" class="img-fluid" alt="Quarto Publish"></a> <a href="#contributors"><img src="https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&amp;style=flat-square.png" class="img-fluid" alt="All Contributors"></a> <a href="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml"><img src="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg" class="img-fluid" alt="Codespell"></a></p>
-</section>
-</section>
-<section id="description" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="description"><span class="header-section-number">7.9</span> Description</h2>
+<section id="description" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="description"><span class="header-section-number">8.1</span> Description</h2>
 <p>Welcome to the <a href="https://lennartwittkuhn.com/version-control-book/">Version Control Book</a>, a resource initially created in the context of a <a href="https://lennartwittkuhn.com/version-control-course-uhh-ws23/">course on version control</a> at <a href="https://www.uni-hamburg.de">Universität Hamburg</a> in 2023/2024.</p>
 <p>The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course. The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git and GitHub. This is a living resource on why and - more importantly - how to use Git. The rendered version is at <a href="https://lennartwittkuhn.com/version-control-book/" class="uri">https://lennartwittkuhn.com/version-control-book/</a> and is under constant development.</p>
 </section>
-<section id="contributing" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="contributing"><span class="header-section-number">7.10</span> Contributing</h2>
+<section id="contributing" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="contributing"><span class="header-section-number">8.2</span> Contributing</h2>
 <p>Contributions in any form - pull requests, issues, content requests, ideas, etc. - are always welcome. If you are using the book and find that something does not work, please <a href="https://github.com/lnnrtwttkhn/version-control-book/issues">let us know</a>. You can find out more on how to contribute <a href="https://lennartwittkuhn.com/version-control-book/misc/contributing.html">here</a>, and a list of all contributors so far <a href="#contributors">below</a>. Before contributing, please read the <a href="https://lennartwittkuhn.com/version-control-book/misc/contributing.html">guidelines for contributions</a> on how to get involved. To maintain consistency and readability, we follow a <a href="https://lennartwittkuhn.com/version-control-book/misc/style-guide.html">style guide</a>. Please refer to the Style Guide for details on formatting, coding standards, and other conventions. We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control!</p>
 </section>
-<section id="usage" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="usage"><span class="header-section-number">7.11</span> Usage</h2>
+<section id="usage" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="usage"><span class="header-section-number">8.3</span> Usage</h2>
 <p>To render and preview, execute:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="license" class="level2" data-number="7.12">
-<h2 data-number="7.12" class="anchored" data-anchor-id="license"><span class="header-section-number">7.12</span> License</h2>
+<section id="license" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="license"><span class="header-section-number">8.4</span> License</h2>
 <p><a href="LICENSE">CC-BY-SA</a></p>
 <p>You are free to</p>
 <ul>
@@ -814,8 +817,8 @@ Adding a <code>CONTRIBUTING.md</code> file to a repository
 <li><p><strong>ShareAlike</strong> — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</p></li>
 </ol>
 </section>
-<section id="contributors" class="level2" data-number="7.13">
-<h2 data-number="7.13" class="anchored" data-anchor-id="contributors"><span class="header-section-number">7.13</span> Contributors</h2>
+<section id="contributors" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="contributors"><span class="header-section-number">8.5</span> Contributors</h2>
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -837,100 +840,24 @@ Adding a <code>CONTRIBUTING.md</code> file to a repository
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-<p>:::</p>
-<p>::: {.callout-tip title=“<i class="fa-solid fa-code" aria-label="code"></i> View the code for the <code>README.md</code> file of this project.” collapse=“true” appearance=“simple” icon=false}</p>
-<p>This code can also be found <a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/README.md?plain=1">on GitHub</a>.</p>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>README.md</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource yaml code-overflow-scroll number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Version Control Book</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="kw">[</span><span class="at">!</span><span class="kw">[</span><span class="at">Quarto Publish</span><span class="kw">]</span><span class="at">(https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg)</span><span class="kw">]</span><span class="at">(https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml)</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="kw">[</span><span class="at">!</span><span class="kw">[</span><span class="at">All Contributors</span><span class="kw">]</span><span class="at">(https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449</span><span class="ot">&amp;style=flat-square)](#contributors)</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="kw">[</span><span class="at">!</span><span class="kw">[</span><span class="at">Codespell</span><span class="kw">]</span><span class="at">(https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)</span><span class="kw">]</span><span class="at">(https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="co">## Description</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a></span>
-<span id="cb9-9"><a href="#cb9-9"></a><span class="at">Welcome to the </span><span class="kw">[</span><span class="at">Version Control Book</span><span class="kw">]</span><span class="at">(https://lennartwittkuhn.com/version-control-book/)</span><span class="kw">,</span><span class="at"> a resource initially created in the context of a </span><span class="kw">[</span><span class="at">course on version control</span><span class="kw">]</span><span class="at">(https://lennartwittkuhn.com/version-control-course-uhh-ws23/) at </span><span class="kw">[</span><span class="at">Universität Hamburg</span><span class="kw">]</span><span class="at">(https://www.uni-hamburg.de) in 2023/</span><span class="fl">2024.</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a></span>
-<span id="cb9-11"><a href="#cb9-11"></a><span class="at">The Version Control Book aims to summarize all the relevant course contents for the students</span><span class="kw">,</span><span class="at"> effectively serving as a textbook for this course.</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="at">The book also aims to serve as an open-source learning resource for everyone</span><span class="kw">,</span><span class="at"> with a particular emphasis on providing guidance for researchers learning version control using Git and GitHub.</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a><span class="at">This is a living resource on why and - more importantly - how to use Git.</span></span>
-<span id="cb9-14"><a href="#cb9-14"></a><span class="at">The rendered version is at &lt;https://lennartwittkuhn.com/version-control-book/&gt; and is under constant development.</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a></span>
-<span id="cb9-16"><a href="#cb9-16"></a><span class="co">## Contributing</span></span>
-<span id="cb9-17"><a href="#cb9-17"></a></span>
-<span id="cb9-18"><a href="#cb9-18"></a><span class="at">Contributions in any form - pull requests</span><span class="kw">,</span><span class="at"> issues</span><span class="kw">,</span><span class="at"> content requests</span><span class="kw">,</span><span class="at"> ideas</span><span class="kw">,</span><span class="at"> etc. - are always welcome.</span></span>
-<span id="cb9-19"><a href="#cb9-19"></a><span class="at">If you are using the book and find that something does not work</span><span class="kw">,</span><span class="at"> please </span><span class="kw">[</span><span class="at">let us know</span><span class="kw">]</span><span class="at">(https://github.com/lnnrtwttkhn/version-control-book/issues).</span></span>
-<span id="cb9-20"><a href="#cb9-20"></a><span class="at">You can find out more on how to contribute </span><span class="kw">[</span><span class="at">here</span><span class="kw">]</span><span class="at">(https://lennartwittkuhn.com/version-control-book/misc/contributing.html)</span><span class="kw">,</span><span class="at"> and a list of all contributors so far </span><span class="kw">[</span><span class="at">below</span><span class="kw">]</span><span class="at">(</span><span class="co">#contributors).</span></span>
-<span id="cb9-21"><a href="#cb9-21"></a><span class="at">Before contributing</span><span class="kw">,</span><span class="at"> please read the </span><span class="kw">[</span><span class="at">guidelines for contributions</span><span class="kw">]</span><span class="at">(https://lennartwittkuhn.com/version-control-book/misc/contributing.html) on how to get involved.</span></span>
-<span id="cb9-22"><a href="#cb9-22"></a><span class="at">To maintain consistency and readability</span><span class="kw">,</span><span class="at"> we follow a </span><span class="kw">[</span><span class="at">style guide</span><span class="kw">]</span><span class="at">(https://lennartwittkuhn.com/version-control-book/misc/style-guide.html). </span></span>
-<span id="cb9-23"><a href="#cb9-23"></a><span class="at">Please refer to the Style Guide for details on formatting</span><span class="kw">,</span><span class="at"> coding standards</span><span class="kw">,</span><span class="at"> and other conventions.</span></span>
-<span id="cb9-24"><a href="#cb9-24"></a><span class="at">We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control!</span></span>
-<span id="cb9-25"><a href="#cb9-25"></a></span>
-<span id="cb9-26"><a href="#cb9-26"></a><span class="co">## Usage</span></span>
-<span id="cb9-27"><a href="#cb9-27"></a></span>
-<span id="cb9-28"><a href="#cb9-28"></a><span class="at">To render and preview</span><span class="kw">,</span><span class="at"> </span><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb9-29"><a href="#cb9-29"></a></span>
-<span id="cb9-30"><a href="#cb9-30"></a><span class="at">```bash</span></span>
-<span id="cb9-31"><a href="#cb9-31"></a><span class="at">quarto preview</span></span>
-<span id="cb9-32"><a href="#cb9-32"></a><span class="at">```</span></span>
-<span id="cb9-33"><a href="#cb9-33"></a></span>
-<span id="cb9-34"><a href="#cb9-34"></a><span class="co">## License</span></span>
-<span id="cb9-35"><a href="#cb9-35"></a></span>
-<span id="cb9-36"><a href="#cb9-36"></a><span class="kw">[</span><span class="at">CC-BY-SA</span><span class="kw">]</span><span class="at">(LICENSE)</span></span>
-<span id="cb9-37"><a href="#cb9-37"></a></span>
-<span id="cb9-38"><a href="#cb9-38"></a><span class="at">You are free to</span></span>
-<span id="cb9-39"><a href="#cb9-39"></a></span>
-<span id="cb9-40"><a href="#cb9-40"></a><span class="at">- </span><span class="ot">**share**</span><span class="at"> - copy and redistribute the material in any medium or format</span></span>
-<span id="cb9-41"><a href="#cb9-41"></a><span class="at">- </span><span class="ot">**adapt**</span><span class="at"> - remix</span><span class="kw">,</span><span class="at"> transform</span><span class="kw">,</span><span class="at"> and build upon the material for any purpose</span><span class="kw">,</span><span class="at"> even commercially</span></span>
-<span id="cb9-42"><a href="#cb9-42"></a></span>
-<span id="cb9-43"><a href="#cb9-43"></a><span class="fu">under the following terms</span><span class="kw">:</span></span>
-<span id="cb9-44"><a href="#cb9-44"></a></span>
-<span id="cb9-45"><a href="#cb9-45"></a><span class="at">1) </span><span class="ot">**Attribution**</span><span class="at"> — You must give appropriate credit</span><span class="kw">,</span><span class="at"> provide a link to the license</span><span class="kw">,</span><span class="at"> and indicate</span></span>
-<span id="cb9-46"><a href="#cb9-46"></a><span class="at"> if changes were made. You may do so in any reasonable manner</span><span class="kw">,</span><span class="at"> but not in any way that suggests</span></span>
-<span id="cb9-47"><a href="#cb9-47"></a><span class="at"> the licensor endorses you or your use.</span></span>
-<span id="cb9-48"><a href="#cb9-48"></a></span>
-<span id="cb9-49"><a href="#cb9-49"></a><span class="at">2) </span><span class="ot">**ShareAlike**</span><span class="at"> — If you remix</span><span class="kw">,</span><span class="at"> transform</span><span class="kw">,</span><span class="at"> or build upon the material</span><span class="kw">,</span><span class="at"> you must distribute your</span></span>
-<span id="cb9-50"><a href="#cb9-50"></a><span class="at"> contributions under the same license as the original.</span></span>
-<span id="cb9-51"><a href="#cb9-51"></a></span>
-<span id="cb9-52"><a href="#cb9-52"></a><span class="co">## Contributors</span></span>
-<span id="cb9-53"><a href="#cb9-53"></a></span>
-<span id="cb9-54"><a href="#cb9-54"></a><span class="at">&lt;!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section --&gt;</span></span>
-<span id="cb9-55"><a href="#cb9-55"></a><span class="at">&lt;!-- prettier-ignore-start --&gt;</span></span>
-<span id="cb9-56"><a href="#cb9-56"></a><span class="at">&lt;!-- markdownlint-disable --&gt;</span></span>
-<span id="cb9-57"><a href="#cb9-57"></a><span class="at">&lt;table&gt;</span></span>
-<span id="cb9-58"><a href="#cb9-58"></a><span class="at">  &lt;tbody&gt;</span></span>
-<span id="cb9-59"><a href="#cb9-59"></a><span class="at">    &lt;tr&gt;</span></span>
-<span id="cb9-60"><a href="#cb9-60"></a><span class="at">      &lt;td align=</span><span class="st">"center"</span><span class="at"> valign=</span><span class="st">"top"</span><span class="at"> width=</span><span class="st">"14.28%"</span><span class="at">&gt;&lt;a href=</span><span class="st">"https://lennartwittkuhn.com/"</span><span class="at">&gt;&lt;img src=</span><span class="st">"https://avatars.githubusercontent.com/u/42233065?v=4?s=100"</span><span class="at"> width=</span><span class="st">"100px;"</span><span class="at"> alt=</span><span class="st">"Lennart Wittkuhn"</span><span class="at">/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Lennart Wittkuhn&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/issues?q=author%3Alnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Bug reports"</span><span class="at">&gt;🐛&lt;/a&gt; &lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/commits?author=lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Code"</span><span class="at">&gt;💻&lt;/a&gt; &lt;a href=</span><span class="st">"#content-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Content"</span><span class="at">&gt;🖋&lt;/a&gt; &lt;a href=</span><span class="st">"#design-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Design"</span><span class="at">&gt;🎨&lt;/a&gt; &lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/commits?author=lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Documentation"</span><span class="at">&gt;📖&lt;/a&gt; &lt;a href=</span><span class="st">"#example-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Examples"</span><span class="at">&gt;💡&lt;/a&gt; &lt;a href=</span><span class="st">"#financial-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Financial"</span><span class="at">&gt;💵&lt;/a&gt; &lt;a href=</span><span class="st">"#fundingFinding-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Funding Finding"</span><span class="at">&gt;🔍&lt;/a&gt; &lt;a href=</span><span class="st">"#ideas-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Ideas, Planning, &amp; Feedback"</span><span class="at">&gt;🤔&lt;/a&gt; &lt;a href=</span><span class="st">"#infra-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Infrastructure (Hosting, Build-Tools, etc)"</span><span class="at">&gt;🚇&lt;/a&gt; &lt;a href=</span><span class="st">"#maintenance-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Maintenance"</span><span class="at">&gt;🚧&lt;/a&gt; &lt;a href=</span><span class="st">"#mentoring-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Mentoring"</span><span class="at">&gt;🧑‍🏫&lt;/a&gt; &lt;a href=</span><span class="st">"#projectManagement-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Project Management"</span><span class="at">&gt;📆&lt;/a&gt; &lt;a href=</span><span class="st">"#question-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Answering Questions"</span><span class="at">&gt;💬&lt;/a&gt; &lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/pulls?q=is%3Apr+reviewed-by%3Alnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Reviewed Pull Requests"</span><span class="at">&gt;👀&lt;/a&gt; &lt;a href=</span><span class="st">"#talk-lnnrtwttkhn"</span><span class="at"> title=</span><span class="st">"Talks"</span><span class="at">&gt;📢&lt;/a&gt;&lt;/td&gt;</span></span>
-<span id="cb9-61"><a href="#cb9-61"></a><span class="at">      &lt;td align=</span><span class="st">"center"</span><span class="at"> valign=</span><span class="st">"top"</span><span class="at"> width=</span><span class="st">"14.28%"</span><span class="at">&gt;&lt;a href=</span><span class="st">"https://github.com/konradpa"</span><span class="at">&gt;&lt;img src=</span><span class="st">"https://avatars.githubusercontent.com/u/135045175?v=4?s=100"</span><span class="at"> width=</span><span class="st">"100px;"</span><span class="at"> alt=</span><span class="st">"Konrad Pagenstedt"</span><span class="at">/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Konrad Pagenstedt&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/issues?q=author%3Akonradpa"</span><span class="at"> title=</span><span class="st">"Bug reports"</span><span class="at">&gt;🐛&lt;/a&gt; &lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/commits?author=konradpa"</span><span class="at"> title=</span><span class="st">"Code"</span><span class="at">&gt;💻&lt;/a&gt; &lt;a href=</span><span class="st">"#content-konradpa"</span><span class="at"> title=</span><span class="st">"Content"</span><span class="at">&gt;🖋&lt;/a&gt; &lt;a href=</span><span class="st">"#design-konradpa"</span><span class="at"> title=</span><span class="st">"Design"</span><span class="at">&gt;🎨&lt;/a&gt; &lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/commits?author=konradpa"</span><span class="at"> title=</span><span class="st">"Documentation"</span><span class="at">&gt;📖&lt;/a&gt; &lt;a href=</span><span class="st">"#example-konradpa"</span><span class="at"> title=</span><span class="st">"Examples"</span><span class="at">&gt;💡&lt;/a&gt; &lt;a href=</span><span class="st">"#ideas-konradpa"</span><span class="at"> title=</span><span class="st">"Ideas, Planning, &amp; Feedback"</span><span class="at">&gt;🤔&lt;/a&gt; &lt;a href=</span><span class="st">"#maintenance-konradpa"</span><span class="at"> title=</span><span class="st">"Maintenance"</span><span class="at">&gt;🚧&lt;/a&gt; &lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/pulls?q=is%3Apr+reviewed-by%3Akonradpa"</span><span class="at"> title=</span><span class="st">"Reviewed Pull Requests"</span><span class="at">&gt;👀&lt;/a&gt;&lt;/td&gt;</span></span>
-<span id="cb9-62"><a href="#cb9-62"></a><span class="at">      &lt;td align=</span><span class="st">"center"</span><span class="at"> valign=</span><span class="st">"top"</span><span class="at"> width=</span><span class="st">"14.28%"</span><span class="at">&gt;&lt;a href=</span><span class="st">"http://www.oneukrainian.com"</span><span class="at">&gt;&lt;img src=</span><span class="st">"https://avatars.githubusercontent.com/u/39889?v=4?s=100"</span><span class="at"> width=</span><span class="st">"100px;"</span><span class="at"> alt=</span><span class="st">"Yaroslav Halchenko"</span><span class="at">/&gt;&lt;br /&gt;&lt;sub&gt;&lt;b&gt;Yaroslav Halchenko&lt;/b&gt;&lt;/sub&gt;&lt;/a&gt;&lt;br /&gt;&lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/issues?q=author%3Ayarikoptic"</span><span class="at"> title=</span><span class="st">"Bug reports"</span><span class="at">&gt;🐛&lt;/a&gt; &lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/commits?author=yarikoptic"</span><span class="at"> title=</span><span class="st">"Code"</span><span class="at">&gt;💻&lt;/a&gt; &lt;a href=</span><span class="st">"#infra-yarikoptic"</span><span class="at"> title=</span><span class="st">"Infrastructure (Hosting, Build-Tools, etc)"</span><span class="at">&gt;🚇&lt;/a&gt; &lt;a href=</span><span class="st">"https://github.com/lnnrtwttkhn/version-control-book/pulls?q=is%3Apr+reviewed-by%3Ayarikoptic"</span><span class="at"> title=</span><span class="st">"Reviewed Pull Requests"</span><span class="at">&gt;👀&lt;/a&gt;&lt;/td&gt;</span></span>
-<span id="cb9-63"><a href="#cb9-63"></a><span class="at">    &lt;/tr&gt;</span></span>
-<span id="cb9-64"><a href="#cb9-64"></a><span class="at">  &lt;/tbody&gt;</span></span>
-<span id="cb9-65"><a href="#cb9-65"></a><span class="at">&lt;/table&gt;</span></span>
-<span id="cb9-66"><a href="#cb9-66"></a></span>
-<span id="cb9-67"><a href="#cb9-67"></a><span class="at">&lt;!-- markdownlint-restore --&gt;</span></span>
-<span id="cb9-68"><a href="#cb9-68"></a><span class="at">&lt;!-- prettier-ignore-end --&gt;</span></span>
-<span id="cb9-69"><a href="#cb9-69"></a></span>
-<span id="cb9-70"><a href="#cb9-70"></a><span class="at">&lt;!-- ALL-CONTRIBUTORS-LIST:END --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
 </div>
 </div>
-<p>:::</p>
 <section id="markdown-syntax" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="markdown-syntax">Markdown syntax</h4>
 <p>A <code>README</code> is typically a Markdown (<code>.md</code>) file, which means you can use <a href="https://www.markdownguide.org/">Markdown</a> syntax in it. Markdown allows you to easily format text, create lists, include links, and embed images. For an introduction, you can check out the <a href="https://lennartwittkuhn.com/quarto-workshop/">Quarto workshop slides</a> by the creators of this book.</p>
 </section>
-<section id="git-blame" class="level3" data-number="7.13.1">
-<h3 data-number="7.13.1" class="anchored" data-anchor-id="git-blame"><span class="header-section-number">7.13.1</span> Git blame</h3>
+</section>
+<section id="git-blame" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="git-blame"><span class="header-section-number">8.5.1</span> Git blame</h3>
 <p>The command <code>git blame</code> is useful when you are working on a project with multiple collaborators. It it used to show when and by whom, each line in a specific file was last changed. You have to specify a file when using it, for example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> blame recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> blame recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you are working solo on a text file, the result should not be very interesting. However if you collaborate on code, this command can be very useful (for blame <strong>or</strong> praise!)</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git blame` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -939,7 +866,7 @@ Common <code>git blame</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-L &lt;start&gt;,&lt;end&gt;</code>: Specifies a line range to blame. For example, <code>git blame -L 10,20 file.txt</code> will blame lines 10 to 20 of the file.</p>
 <p><code>-M</code>: Detects lines that were moved within the file and shows the original author’s information.</p>
@@ -949,25 +876,25 @@ Common <code>git blame</code> flags
 </div>
 </div>
 </section>
-<section id="template-repositories" class="level3" data-number="7.13.2">
-<h3 data-number="7.13.2" class="anchored" data-anchor-id="template-repositories"><span class="header-section-number">7.13.2</span> Template repositories</h3>
-<p>Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others. Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. This simplifies the process of setting up new projects that share common characteristics or follow best practices. Template repositories have a “Use this template” button on a template repository page, as shown in <a href="#fig-template" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>. Click it to provide a new, repository name and description, and then create the repository with your desired settings.</p>
+<section id="template-repositories" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="template-repositories"><span class="header-section-number">8.5.2</span> Template repositories</h3>
+<p>Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others. Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. This simplifies the process of setting up new projects that share common characteristics or follow best practices. Template repositories have a “Use this template” button on a template repository page, as shown in <a href="#fig-template" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>. Click it to provide a new, repository name and description, and then create the repository with your desired settings.</p>
 <div id="fig-template" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-template-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/github-template.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-template-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.4: Screenshot of a template repository
+Figure&nbsp;8.1: Screenshot of a template repository
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="branch-protection" class="level3" data-number="7.13.3">
-<h3 data-number="7.13.3" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">7.13.3</span> Branch protection</h3>
+<section id="branch-protection" class="level3" data-number="8.5.3">
+<h3 data-number="8.5.3" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">8.5.3</span> Branch protection</h3>
 <p>When using Git hosting platforms like GitHub or GitLab, it’s a good idea to enable branch protection rules for your critical branch(es), typically your <code>main</code> or <code>master</code> branch. By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch. It also prevents accidental or unauthorized changes from being merged directly.</p>
-<section id="how-to-protect-the-main-branch-on-github" class="level4" data-number="7.13.3.1">
-<h4 data-number="7.13.3.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">7.13.3.1</span> How to protect the <code>main</code> branch on GitHub</h4>
+<section id="how-to-protect-the-main-branch-on-github" class="level4" data-number="8.5.3.1">
+<h4 data-number="8.5.3.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">8.5.3.1</span> How to protect the <code>main</code> branch on GitHub</h4>
 <ul>
 <li>Go to your repository on GitHub and click on “Settings”.</li>
 <li>In the left sidebar, select “Branches”.</li>
@@ -979,14 +906,14 @@ Figure&nbsp;7.4: Screenshot of a template repository
 <p>A common option includes to <strong>require pull request reviews</strong>. This requires one or more approving reviews before changes can be merged. Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.</p>
 </section>
 </section>
-<section id="alternatives-to-github" class="level3" data-number="7.13.4">
-<h3 data-number="7.13.4" class="anchored" data-anchor-id="alternatives-to-github"><span class="header-section-number">7.13.4</span> Alternatives to GitHub</h3>
+<section id="alternatives-to-github" class="level3" data-number="8.5.4">
+<h3 data-number="8.5.4" class="anchored" data-anchor-id="alternatives-to-github"><span class="header-section-number">8.5.4</span> Alternatives to GitHub</h3>
 <p>While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub. Not only since it was bought by Microsoft in 2018, who subsequently <a href="https://www.vice.com/en/article/g5vmgw/github-users-want-to-sue-microsoft-for-training-an-ai-tool-with-their-code">used public repositories to train their AI tool</a> Some prominent options include <a href="https://about.gitlab.com/de-de/">GitLab</a>, <a href="https://bitbucket.org">Bitbucket</a>, <a href="https://sourceforge.net">SourceForge</a> or <a href="https://codeberg.org/">Codeberg</a>.</p>
 <p>Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in. On the other hand there are also advantages to GitHub like it’s relatively easy to use interface, the rich ecosystem and it’s extensive integration to third party tools.</p>
 </section>
 </section>
-<section id="acknowledgements" class="level2" data-number="7.14">
-<h2 data-number="7.14" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">7.14</span> Acknowledgements</h2>
+<section id="acknowledgements" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">8.6</span> Acknowledgements</h2>
 <table class="table">
 <thead>
 <tr class="header">
@@ -1022,8 +949,8 @@ Figure&nbsp;7.4: Screenshot of a template repository
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="7.15">
-<h2 data-number="7.15" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">7.15</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">8.7</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
