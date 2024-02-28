@@ -14,13 +14,16 @@ project:
 
 book:
   title: "Version Control of Code and Data"
-  subtitle: "An introduction to Git for research"
+  subtitle: "Track, organize and share your work: An introduction to Git for research"
+  author:
+    - "Lennart Wittkuhn [{{< fa envelope >}}](mailto:lennart.wittkuhn@uni-hamburg.de) [{{< fa globe >}}](https://lennartwittkuhn.com/)"
+    - "Konrad Pagenstedt [{{< fa envelope >}}](mailto:konrad@pagenstedt.de)"
   search: true
   repo-url: https://github.com/lnnrtwttkhn/version-control-book/
   repo-branch: main
   repo-actions: [edit, issue, source]
   # downloads: [pdf, epub]
-  favicon: static/git-icon.svg
+  favicon: static/logo.svg
   twitter-card: false
   site-url: https://lennartwittkuhn.com/version-control-book
   chapters:
@@ -35,10 +38,8 @@ book:
     - chapters/branches.qmd
     - chapters/github-intro.qmd
     - chapters/tags-and-releases.qmd
-    - part: Project Management
-      chapters:
-        - chapters/project-management.qmd
-        - chapters/issues.qmd
+    # - chapters/project-management.qmd
+    - chapters/issues.qmd
     - chapters/gui.qmd
     - chapters/intermediate-commands.qmd
     - chapters/rewriting-history.qmd
@@ -47,7 +48,6 @@ book:
     - misc/references.qmd
     - misc/acknowledgements.qmd
     - misc/contributing.qmd
-    - misc/style-guide.qmd
   page-navigation: true
   back-to-top-navigation: true
   # side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):
@@ -55,7 +55,7 @@ book:
     id: sidebar
     title: "Version Control of Code and Data"
     subtitle: "An introduction to Git for research"
-    logo: static/git-icon.svg
+    logo: static/logo.svg
     search: true
     tools:
       - icon: globe
@@ -161,6 +161,6 @@ format:
     default-image-extension: png
     
 metadata-files:
-  - _authors.yml
-  - _affiliations.yml
+  # - _authors.yml
+  # - _affiliations.yml
   - _metadata.yml
