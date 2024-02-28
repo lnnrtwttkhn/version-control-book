@@ -8,7 +8,7 @@
 
 <meta name="author" content="">
 
-<title>Version Control of Code and Data - 12&nbsp; Rewriting history</title>
+<title>Version Control of Code and Data - 12&nbsp; Rewriting History</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -76,6 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -116,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/rewriting-history.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting history</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/rewriting-history.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting History</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -236,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting history</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -282,16 +304,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#how-to-avoid-accidental-commits" id="toc-how-to-avoid-accidental-commits" class="nav-link active" data-scroll-target="#how-to-avoid-accidental-commits"><span class="header-section-number">12.1</span> How to avoid accidental commits</a></li>
   <li><a href="#purging-a-file-from-your-repositorys-history" id="toc-purging-a-file-from-your-repositorys-history" class="nav-link" data-scroll-target="#purging-a-file-from-your-repositorys-history"><span class="header-section-number">12.2</span> Purging a file from your repository’s history</a>
   <ul class="collapse">
-  <li><a href="#using-the-bfg" id="toc-using-the-bfg" class="nav-link" data-scroll-target="#using-the-bfg"><span class="header-section-number">12.2.1</span> Using the BFG</a></li>
-  <li><a href="#using-git-filter-repo" id="toc-using-git-filter-repo" class="nav-link" data-scroll-target="#using-git-filter-repo"><span class="header-section-number">12.2.2</span> Using git filter-repo</a></li>
-  <li><a href="#clone-the-repository" id="toc-clone-the-repository" class="nav-link" data-scroll-target="#clone-the-repository"><span class="header-section-number">12.2.3</span> Clone the repository</a></li>
-  <li><a href="#navigate-into-the-repositorys-working-directory" id="toc-navigate-into-the-repositorys-working-directory" class="nav-link" data-scroll-target="#navigate-into-the-repositorys-working-directory"><span class="header-section-number">12.2.4</span> Navigate into the repository’s working directory</a></li>
-  <li><a href="#run-git-filter-repo-command" id="toc-run-git-filter-repo-command" class="nav-link" data-scroll-target="#run-git-filter-repo-command"><span class="header-section-number">12.2.5</span> Run <code>git filter-repo</code> command</a></li>
-  <li><a href="#double-check-the-state-of-your-repository" id="toc-double-check-the-state-of-your-repository" class="nav-link" data-scroll-target="#double-check-the-state-of-your-repository"><span class="header-section-number">12.2.6</span> Double-check the state of your repository</a></li>
-  <li><a href="#force-push-your-local-changes-to-github" id="toc-force-push-your-local-changes-to-github" class="nav-link" data-scroll-target="#force-push-your-local-changes-to-github"><span class="header-section-number">12.2.7</span> Force-push your local changes to GitHub</a></li>
+  <li><a href="#git-filter-repo" id="toc-git-filter-repo" class="nav-link" data-scroll-target="#git-filter-repo"><span class="header-section-number">12.2.1</span> git filter-repo</a></li>
+  <li><a href="#bfg" id="toc-bfg" class="nav-link" data-scroll-target="#bfg"><span class="header-section-number">12.2.2</span> BFG</a></li>
+  <li><a href="#force-push-your-local-changes-to-github" id="toc-force-push-your-local-changes-to-github" class="nav-link" data-scroll-target="#force-push-your-local-changes-to-github"><span class="header-section-number">12.2.3</span> Force-push your local changes to GitHub</a></li>
   </ul></li>
-  <li><a href="#fully-removing-the-data-from-github" id="toc-fully-removing-the-data-from-github" class="nav-link" data-scroll-target="#fully-removing-the-data-from-github"><span class="header-section-number">12.3</span> Fully removing the data from GitHub</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">12.4</span> References</a></li>
+  <li><a href="#fully-removing-data-from-github" id="toc-fully-removing-data-from-github" class="nav-link" data-scroll-target="#fully-removing-data-from-github"><span class="header-section-number">12.3</span> Fully removing data from GitHub</a></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">12.4</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">12.5</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/rewriting-history.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/rewriting-history.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -299,45 +318,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting history</span></h1>
+<h1 class="title display-7"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting History</span></h1>
 <p class="author"></p>
 
+<div class="abstract">
+<div class="abstract-title">Summary</div>
+<p>Dive into Git’s history-rewriting features for cleaner commits and efficient collaboration.</p>
+</div>
 </header>
 
 
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<h5 class="anchored">
+Learning Objectives
+</h5>
+<p><span class="emoji" data-emoji="bulb">💡</span> Understanding the Risks of Sensitive Data in Git History<br> <span class="emoji" data-emoji="bulb">💡</span> Mastering Tools for History Rewriting<br> <span class="emoji" data-emoji="bulb">💡</span> Ensuring Collaborative Clean-Up</p>
+</div>
+</div>
+</div>
 <section id="how-to-avoid-accidental-commits" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="how-to-avoid-accidental-commits"><span class="header-section-number">12.1</span> How to avoid accidental commits</h2>
-<p>There are a few simple tricks to avoid committing things you don’t want committed:</p>
-<ul>
-<li>Use a visual program like GitHub Desktop or gitk to commit changes. Visual programs generally make it easier to see exactly which files will be added, deleted, and modified with each commit.</li>
-<li>Avoid the catch-all commands <code>git add .</code> and <code>git commit -a</code> on the command line—use <code>git add filename</code> and <code>git rm filename</code> to individually stage files, instead.</li>
-<li>Use <code>git add --interactive</code> to individually review and stage changes within each file.</li>
-<li>Use git <code>diff --cached</code> to review the changes that you have staged for commit. This is the exact diff that git commit will produce as long as you don’t use the <code>-a</code> flag.</li>
-</ul>
-<p>You accidentally added a large file to a previous commit.</p>
-<p>Now you want to remove the file but keep all commits that came afterwards.</p>
+<p>Considering rewriting Git history? This usually comes into play when there are errors or changes needed in the initial commits. There are a few tricks to avoid committing things you don’t want committed:</p>
+<ol type="1">
+<li><p>Avoid the catch-all commands <code>git add .</code> and <code>git commit -a</code>. Use <code>git add filename</code> and <code>git rm filename</code> to individually stage files.</p></li>
+<li><p>Use <code>git add --interactive</code> to individually review and stage changes within each file.</p></li>
+<li><p>Use git <code>diff --cached</code> to review the changes that you have staged for commit. This is the exact diff that <code>git commit</code> will produce as long as you don’t use the <code>-a</code> flag.</p></li>
+<li><p>You can use also a visual program like <a href="https://desktop.github.com">GitHub Desktop</a> or <a href="https://desktop.github.com">GitKraken</a> to commit changes. Visual programs generally make it easier to see exactly which files will be added, deleted, and modified with each commit.</p></li>
+</ol>
 </section>
 <section id="purging-a-file-from-your-repositorys-history" class="level2" data-number="12.2">
 <h2 data-number="12.2" class="anchored" data-anchor-id="purging-a-file-from-your-repositorys-history"><span class="header-section-number">12.2</span> Purging a file from your repository’s history</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Let’s say that you accidentally added a large file to a previous commit. Now you want to remove the file but keep all commits that came afterwards.</p>
+<p>For example, this could be the case if you committed sensitive data as a binary file. You will need to remove the file from the history, as you can’t modify it to remove or replace the data.</p>
+<section id="git-filter-repo" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="git-filter-repo"><span class="header-section-number">12.2.1</span> git filter-repo</h3>
+<p><a href="https://github.com/newren/git-filter-repo">git filter-repo</a> is a very useful tool that is not part of the official Git distribution. It is a third-party tool and is designed to be used alongside Git for more advanced repository history manipulation tasks.</p>
+<p>To illustrate how <code>git filter-repo</code> works, we’ll show you how to remove your file with sensitive data from the history of your repository and add it to <code>.gitignore</code> to ensure that it is not accidentally re-committed.</p>
+<section id="installation" class="level4" data-number="12.2.1.1">
+<h4 data-number="12.2.1.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">12.2.1.1</span> Installation</h4>
+<p>Since <code>git filter-repo</code> is not a part of standard Git, you will need to install it first. You can install <code>git-filter-repo</code> manually or by using a package manager. For example, to install the tool with <a href="https://brew.sh/">HomeBrew</a> on macOS, use the <code>brew install</code> command.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git-filter-repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If sensitive data is located in a file that’s identified as a binary file, you’ll need to remove the file from the history, as you can’t modify it to remove or replace the data.</p>
-</div>
-</div>
-<section id="using-the-bfg" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="using-the-bfg"><span class="header-section-number">12.2.1</span> Using the BFG</h3>
-<p>TODO: TBA</p>
+<p>For more information on installation, see <a href="https://github.com/newren/git-filter-repo/blob/main/INSTALL.md">INSTALL.md</a> in the <a href="(https://github.com/newren/git-filter-repo) repository">newren/git-filter-repo</a>.</p>
 </section>
-<section id="using-git-filter-repo" class="level3" data-number="12.2.2">
-<h3 data-number="12.2.2" class="anchored" data-anchor-id="using-git-filter-repo"><span class="header-section-number">12.2.2</span> Using git filter-repo</h3>
+<section id="clone-a-fresh-copy-of-the-repository" class="level4" data-number="12.2.1.2">
+<h4 data-number="12.2.1.2" class="anchored" data-anchor-id="clone-a-fresh-copy-of-the-repository"><span class="header-section-number">12.2.1.2</span> Clone a fresh copy of the repository</h4>
+<p>If you don’t already have a local copy of your repository with sensitive data in its history, clone the repository to your local computer.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR-USERNAME<span class="op">&gt;</span>/YOUR-REPOSITORY</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Replace <code>YOUR-USERNAME</code> with your GitHub username and <code>YOUR-REPOSITORY</code> with the name of your GitHub repository.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="navigate-into-the-repositorys-working-directory" class="level4" data-number="12.2.1.3">
+<h4 data-number="12.2.1.3" class="anchored" data-anchor-id="navigate-into-the-repositorys-working-directory"><span class="header-section-number">12.2.1.3</span> Navigate into the repository’s working directory</h4>
+<p>Navigate into the repository’s working directory. For details on folder navigation in the command line, see the <a href="../chapters/command-line.html">“Command Line” chapter</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> YOUR-REPOSITORY</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">Replace <code>YOUR-REPOSITORY</code> with the name of your GitHub repository. For details on the <code>cd</code> command, see the <a href="../chapters/command-line.html">“Command Line” chapter</a>.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="running-git-filter-repo-command" class="level4" data-number="12.2.1.4">
+<h4 data-number="12.2.1.4" class="anchored" data-anchor-id="running-git-filter-repo-command"><span class="header-section-number">12.2.1.4</span> Running <code>git filter-repo</code> command</h4>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -348,84 +409,30 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Warning: If you run <code>git filter-repo</code> after stashing changes, you won’t be able to retrieve your changes with other stash commands. Before running git filter-repo, we recommend unstashing any changes you’ve made. To unstash the last set of changes you’ve stashed, run <code>git stash show -p | git apply -R</code>. For more information, see <a href="https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning">Git Tools - Stashing and Cleaning</a>.</p>
+<p>If you run <code>git filter-repo</code> after stashing changes, you won’t be able to retrieve your changes with other stash commands. Before running <code>git filter-repo</code>, we recommend unstashing any changes you’ve made. To unstash the last set of changes you’ve stashed, run <code>git stash show -p | git apply -R</code>. For more information, see <a href="https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning">Git Tools - Stashing and Cleaning</a>.</p>
 </div>
 </div>
-<p>To illustrate how <code>git filter-repo</code> works, we’ll show you how to remove your file with sensitive data from the history of your repository and add it to <code>.gitignore</code> to ensure that it is not accidentally re-committed.</p>
-<div class="callout callout-style-default callout-caution callout-titled" title="Install `git filter-repo`">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Install <code>git filter-repo</code>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Install the latest release of the <code>git filter-repo</code> tool. You can install <code>git-filter-repo</code> manually or by using a package manager. For example, to install the tool with <a href="https://brew.sh/">HomeBrew</a> on macOS, use the <code>brew install</code> command.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git-filter-repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For more information, see <a href="https://github.com/newren/git-filter-repo/blob/main/INSTALL.md">INSTALL.md</a> in the <code>newren/git-filter-repo</code> repository.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="clone-the-repository" class="level3" data-number="12.2.3">
-<h3 data-number="12.2.3" class="anchored" data-anchor-id="clone-the-repository"><span class="header-section-number">12.2.3</span> Clone the repository</h3>
-<p>If you don’t already have a local copy of your repository with sensitive data in its history, clone the repository to your local computer.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR-USERNAME<span class="op">&gt;</span>/YOUR-REPOSITORY</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">Replace <code>YOUR-USERNAME</code> with your GitHub username and <code>YOUR-REPOSITORY</code> with the name of your GitHub repository.</span>
-</dd>
-</dl>
-</div>
-</div>
-</section>
-<section id="navigate-into-the-repositorys-working-directory" class="level3" data-number="12.2.4">
-<h3 data-number="12.2.4" class="anchored" data-anchor-id="navigate-into-the-repositorys-working-directory"><span class="header-section-number">12.2.4</span> Navigate into the repository’s working directory</h3>
-<p>Navigate into the repository’s working directory.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> YOUR-REPOSITORY</span>
-<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: add reference to command line chapter</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Replace <code>YOUR-REPOSITORY</code> with the name of your GitHub repository. For details on the <code>cd</code> command, see the chapter on command line.</span>
-</dd>
-</dl>
-</div>
-</div>
-</section>
-<section id="run-git-filter-repo-command" class="level3" data-number="12.2.5">
-<h3 data-number="12.2.5" class="anchored" data-anchor-id="run-git-filter-repo-command"><span class="header-section-number">12.2.5</span> Run <code>git filter-repo</code> command</h3>
-<p>Run the following command, replacing <code>PATH-TO-FILE-YOU-WANT-TO-REMOVE</code> with the path to the file you want to remove, not just its file name. These arguments will:</p>
-<ul>
+<p>Let’s say that you accidentally committed (and pushed) a file you actually don’t want to share because it contains sensitive data. After you installed the <code>git filter-repo</code> tool, you can use it to exclude a specific file from you commit history.</p>
+<p>Run the following command, replacing <code>PATH-TO-FILE-YOU-WANT-TO-REMOVE</code> with the path to the file you want to remove, not just its file name. These arguments will do the following:</p>
+<ol type="1">
 <li>Force Git to process, but not check out, the entire history of every branch and tag</li>
-<li>Remove the specified file, as well as any empty commits generated as a result</li>
-<li>Remove some configurations, such as the remote URL, stored in the <code>.git/config</code> file. You may want to back up this file in advance for restoration later.</li>
+<li>Remove the specified file, as well as any empty commits generated as a result 1- Remove some configurations, such as the remote URL, stored in the <code>.git/config</code> file. You may want to back up this file in advance for restoration later.</li>
 <li>Overwrite your existing tags</li>
-</ul>
+</ol>
+<p>Essentially, <code>git filter-repo</code> will modify your entire Git repository history to exclude the specified file (<code>PATH-TO-FILE-YOU-WANT-TO-REMOVE</code>). The <code>--invert-paths</code> flag inverts the selection, so it keeps everything except the specified path, effectively removing the file from the entire history of the repository. If you do not use <code>--invert-paths</code>, the command would only keep the specified file in your repository, discarding everything else.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> filter-repo <span class="at">--invert-paths</span> <span class="at">--path</span> PATH-TO-FILE-YOU-WANT-TO-REMOVE</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> filter-repo <span class="at">--invert-paths</span> <span class="at">--path</span> PATH-TO-FILE-YOU-WANT-TO-REMOVE</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">Replace <code>PATH-TO-FILE-YOU-WANT-TO-REMOVE</code> with the path to the file you want to remove, not just its file name.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">Replace <code>PATH-TO-FILE-YOU-WANT-TO-REMOVE</code> with the path to the file** you want to remove, not just its file name.</span>
 </dd>
 </dl>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="I did not clone a fresh copy of the repository. Is this a problem?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -434,7 +441,7 @@ I did not clone a fresh copy of the repository. Is this a problem?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you did not clone a fresh copy of your repository, you may see this message after running the <code>git filter-repo</code> command:</p>
 <div class="cell">
@@ -452,85 +459,69 @@ I did not clone a fresh copy of the repository. Is this a problem?
 </div>
 </div>
 </div>
-<section id="add-your-file-to-.gitignore" class="level4" data-number="12.2.5.1">
-<h4 data-number="12.2.5.1" class="anchored" data-anchor-id="add-your-file-to-.gitignore"><span class="header-section-number">12.2.5.1</span> Add your file to <code>.gitignore</code></h4>
-<p>Add your file to <code>.gitignore</code> to ensure that you don’t accidentally commit it again. You can edit <code>.gitignore</code> in your favorite text editor</p>
+</section>
+<section id="add-your-file-to-.gitignore" class="level4" data-number="12.2.1.5">
+<h4 data-number="12.2.1.5" class="anchored" data-anchor-id="add-your-file-to-.gitignore"><span class="header-section-number">12.2.1.5</span> Add your file to <code>.gitignore</code></h4>
+<p>Add your file to <code>.gitignore</code> to ensure that you don’t accidentally commit it again. You can edit <code>.gitignore</code> in your favorite text editor.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"PATH-TO-FILE-YOU-WANT-TO-REMOVE"</span> <span class="op">&gt;&gt;</span> .gitignore</span>
-<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .gitignore</span>
-<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1">1</button><span id="annotated-cell-5-1" class="code-annotation-target"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"PATH-TO-FILE-YOU-WANT-TO-REMOVE"</span> <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .gitignore</span>
+<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">This command writes <code>PATH-TO-FILE-YOU-WANT-TO-REMOVE</code> inside the <code>.gitignore</code> file. <code>&gt;&gt;</code> makes sure that this is written to a new line inside the <code>.gitignore</code> file.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="1" data-code-annotation="1">This command writes <code>PATH-TO-FILE-YOU-WANT-TO-REMOVE</code> inside the <code>.gitignore</code> file. <code>&gt;&gt;</code> makes sure that this is written to a new line inside the <code>.gitignore</code> file.</span>
 </dd>
 </dl>
 </div>
 </div>
-<p>This will create the following output:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[main</span> 64dda05] Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">1</span> files changed, 1 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="double-check-the-state-of-your-repository" class="level3" data-number="12.2.6">
-<h3 data-number="12.2.6" class="anchored" data-anchor-id="double-check-the-state-of-your-repository"><span class="header-section-number">12.2.6</span> Double-check the state of your repository</h3>
 <p>Double-check that you’ve removed everything you wanted to from your repository’s history, and that all of your branches are checked out.</p>
 </section>
-<section id="force-push-your-local-changes-to-github" class="level3" data-number="12.2.7">
-<h3 data-number="12.2.7" class="anchored" data-anchor-id="force-push-your-local-changes-to-github"><span class="header-section-number">12.2.7</span> Force-push your local changes to GitHub</h3>
-<p>If you are happy with the state of your repository, force-push your local changes to overwrite your repository on <a href="https://github.com">github.com/</a>, as well as all the branches you’ve pushed up. A force push is required to remove sensitive data from your commit history.</p>
+</section>
+<section id="bfg" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="bfg"><span class="header-section-number">12.2.2</span> BFG</h3>
+<p>Instead of using <code>git filter-repo</code> it is also possible to use the open source tool <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG repo cleaner</a>. The tool is especially useful if you need to remove very large files from your commit history.</p>
+</section>
+<section id="force-push-your-local-changes-to-github" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="force-push-your-local-changes-to-github"><span class="header-section-number">12.2.3</span> Force-push your local changes to GitHub</h3>
+<p>If you are happy with the state of your repository, force-push your local changes to overwrite your repository to <a href="https://github.com">GitHub</a>, as well as all the branches you’ve pushed up. A force push is required to remove sensitive data from your commit history.</p>
+<p>When you perform a force push, you are essentially overwriting the existing commit history on the remote branch with the new commit history from your local branch. So instead of adding changes to your commit history, like with a normal push, a force push changes or discards the existing commit history on that branch. To do a force push, you use <code>git push</code> together with the <code>--force</code> flag. The <code>--all</code> flag is used to push all branches that have corresponding branches on the remote repository, that way you are updating multiple branches at once.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--force</span> <span class="at">--all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--force</span> <span class="at">--all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<details>
-<summary>
-Output
-</summary>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Counting</span> objects: 1074, done.</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Delta</span> compression using 2 threads.</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Compressing</span> objects: 100% <span class="er">(</span><span class="ex">677/677</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Writing</span> objects: 100% <span class="er">(</span><span class="ex">1058/1058</span><span class="kw">)</span><span class="ex">,</span> 148.85 KiB, done.</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Total</span> 1058 <span class="er">(</span><span class="ex">delta</span> 590<span class="kw">)</span><span class="ex">,</span> reused 602 <span class="er">(</span><span class="ex">delta</span> 378<span class="kw">)</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">+</span> 48dc599...64dda05 main <span class="at">-</span><span class="op">&gt;</span> main <span class="er">(</span><span class="ex">forced</span> update<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</details>
-<div class="callout callout-style-default callout-tip callout-titled" title="fatal: 'origin' does not appear to be a git repository">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled" title="Error: `fatal: 'origin' does not appear to be a git repository`">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-fatal: ‘origin’ does not appear to be a git repository
+Error: <code>fatal: 'origin' does not appear to be a git repository</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Did you receive this error message?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> <span class="st">'origin'</span> does not appear to be a git repository</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> Could not read from remote repository.</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Please</span> make sure you have the correct access rights</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">and</span> the repository exists.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> <span class="st">'origin'</span> does not appear to be a git repository</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> Could not read from remote repository.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Please</span> make sure you have the correct access rights</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">and</span> the repository exists.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>As described above, this could mean that <code>origin</code> was removed from your repo. Configure origin again:</p>
+<p>As described above, this could mean that <code>origin</code> was removed from your repository. Configure origin again using either SSH or HTTPS:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">SSH</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">HTTPS</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1">1</button><span id="annotated-cell-14-1" class="code-annotation-target"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="1">1</button><span id="annotated-cell-13-1" class="code-annotation-target"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-lines="1" data-code-annotation="1">Replace <code>YOUR-USERNAME</code> with your GitHub username and <code>YOUR-REPOSITORY</code> with the name of your GitHub repository.</span>
+<span data-code-cell="annotated-cell-13" data-code-lines="1" data-code-annotation="1">Replace <code>YOUR-USERNAME</code> with your GitHub username and <code>YOUR-REPOSITORY</code> with the name of your GitHub repository.</span>
 </dd>
 </dl>
 </div>
@@ -538,12 +529,12 @@ fatal: ‘origin’ does not appear to be a git repository
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="2">2</button><span id="annotated-cell-15-1" class="code-annotation-target"><a href="#annotated-cell-15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1">1</button><span id="annotated-cell-14-1" class="code-annotation-target"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-15" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-15" data-code-lines="1" data-code-annotation="2">Replace <code>&lt;YOUR-USERNAME&gt;</code> with your GitHub username and <code>&lt;YOUR-REPOSITORY&gt;</code> with the name of your GitHub repository.</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="1" data-code-annotation="1">Replace <code>&lt;YOUR-USERNAME&gt;</code> with your GitHub username and <code>&lt;YOUR-REPOSITORY&gt;</code> with the name of your GitHub repository.</span>
 </dd>
 </dl>
 </div>
@@ -556,51 +547,118 @@ fatal: ‘origin’ does not appear to be a git repository
 </div>
 <p>In order to remove the sensitive file from your tagged releases, you’ll also need to force-push against your Git tags:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--force</span> <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--force</span> <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<details>
-<summary>
-Output
-</summary>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Counting</span> objects: 321, done.</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Delta</span> compression using up to 8 threads.</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Compressing</span> objects: 100% <span class="er">(</span><span class="ex">166/166</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Writing</span> objects: 100% <span class="er">(</span><span class="ex">321/321</span><span class="kw">)</span><span class="ex">,</span> 331.74 KiB <span class="kw">|</span> <span class="ex">0</span> bytes/s, done.</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Total</span> 321 <span class="er">(</span><span class="ex">delta</span> 124<span class="kw">)</span><span class="ex">,</span> reused 269 <span class="er">(</span><span class="ex">delta</span> 108<span class="kw">)</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a> <span class="ex">+</span> 48dc599...051452f main <span class="at">-</span><span class="op">&gt;</span> main <span class="er">(</span><span class="ex">forced</span> update<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled" title="The dangers of force pushing">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</details>
+<div class="callout-title-container flex-fill">
+The dangers of force pushing
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>As stated in this example, force pushing can be very useful, for example if you committed and pushed data you want to remove again. However force pushing comes with potential drawbacks and should mostly be used as a last resort.</p>
+<p>Force pushing can lead to the <strong>loss of commit history</strong> on the remote branch, which may cause confusion or conflicts for collaborators who have based their work on the previous history. Force pushing to a shared branch can <strong>cause conflicts for collaborators</strong> who have already cloned the repository and pulled changes. Once a force push is executed, the old <strong>commit history may become difficult to recover.</strong></p>
+<p>Especially if you collaborate with others on your repository, <strong>let them know in advance</strong> that you are force-pushing to your common remote repository.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="fully-removing-the-data-from-github" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="fully-removing-the-data-from-github"><span class="header-section-number">12.3</span> Fully removing the data from GitHub</h2>
-<p>After using either the BFG tool or git filter-repo to remove the sensitive data and pushing your changes to GitHub, you must take a few more steps to fully remove the data from GitHub.</p>
+<section id="fully-removing-data-from-github" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="fully-removing-data-from-github"><span class="header-section-number">12.3</span> Fully removing data from GitHub</h2>
+<p>If you you committed <strong>really</strong> sensitive data and want to make <strong>absolutely</strong> sure that it’s deleted, you will have to complete a few additional steps. After using either the <a href="#bfg">BFG</a> tool or <a href="#git-filter-repo">git filter-repo</a> to remove the sensitive data and pushing your changes to GitHub, you must take a few more steps to fully remove the data from GitHub.</p>
 <ol type="1">
 <li><p>Contact <a href="https://support.github.com/contact?tags=docs-generic">GitHub Support</a>, asking them to remove cached views and references to the sensitive data in pull requests on GitHub. Please provide the name of the repository and/or a link to the commit you need removed.</p></li>
 <li><p>Tell your collaborators to <a href="https://git-scm.com/book/en/Git-Branching-Rebasing">rebase</a>, not merge, any branches they created off of your old (tainted) repository history. One merge commit could reintroduce some or all of the tainted history that you just went to the trouble of purging.</p></li>
-<li><p>After some time has passed and you’re confident that the BFG tool / <code>git filter-repo</code> had no unintended side effects, you can force all objects in your local repository to be dereferenced and garbage collected with the following commands (using Git 1.8.5 or newer)</p></li>
+<li><p>After some time has passed and you’re confident that BFG / git filter-repo had no unintended side effects, you can force all objects in your local repository to be dereferenced and garbage collected with the following commands (using Git 1.8.5 or newer):</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git for-each-ref <span class="at">--format</span><span class="op">=</span><span class="st">"delete %(refname)"</span> refs/original <span class="kw">|</span> <span class="fu">git</span> update-ref <span class="at">--stdin</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git reflog expire <span class="at">--expire</span><span class="op">=</span>now <span class="at">--all</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git gc <span class="at">--prune</span><span class="op">=</span>now</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Counting <span class="ex">objects:</span> 2437, done.</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Delta <span class="ex">compression</span> using up to 4 threads.</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Compressing <span class="ex">objects:</span> 100% <span class="er">(</span><span class="ex">1378/1378</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Writing <span class="ex">objects:</span> 100% <span class="er">(</span><span class="ex">2437/2437</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Total <span class="ex">2437</span> <span class="er">(</span><span class="ex">delta</span> 1461<span class="kw">)</span><span class="ex">,</span> reused 1802 <span class="er">(</span><span class="ex">delta</span> 1048<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> for-each-ref <span class="at">--format</span><span class="op">=</span><span class="st">"delete %(refname)"</span> refs/original <span class="kw">|</span> <span class="fu">git</span> update-ref <span class="at">--stdin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Note: You can also achieve this by pushing your filtered history to a new or empty repository and then making a fresh clone from GitHub.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reflog expire <span class="at">--expire</span><span class="op">=</span>now <span class="at">--all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> gc <span class="at">--prune</span><span class="op">=</span>now</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can also achieve this by pushing your filtered history to a new or empty repo.</p>
+</div>
+</div>
 </section>
-<section id="references" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="references"><span class="header-section-number">12.4</span> References</h2>
-<ul>
-<li>https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository</li>
-</ul>
+<section id="acknowledgements-further-reading" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">12.4</span> Acknowledgements &amp; further reading</h2>
+<p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="GitHub2023">GitHub (<a href="../misc/references.html#ref-GitHub2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">GitHub Docs</td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cheatsheet" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">12.5</span> Cheatsheet</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 59%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>git filter-repo --invert-paths --path &lt; PATH-TO-FILE-YOU-WANT-TO-REMOVE &gt;</code></td>
+<td style="text-align: left;">Remove specified file from your repository history</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>brew install git-filter-repo</code></td>
+<td style="text-align: left;">Installs git filter-repo using brew</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-GitHub2023" class="csl-entry" role="listitem">
+GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en">https://docs.github.com/en</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
