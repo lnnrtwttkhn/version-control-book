@@ -11,46 +11,46 @@ execute:
 
 # Rewriting History
 
-## Logistics
-
-### Learning Objectives
-
-- Understanding the Risks of Sensitive Data in Git History
-- Mastering Tools for History Rewriting
-- Ensuring Collaborative Clean-Up
+::: {.callout-tip appearance="minimal"}
+<h5>Learning Objectives</h5>
+{{< include ../objectives/_objectives-rewriting-history.qmd >}}
+:::
 
 ## How to avoid accidental commits
 
-Of course you will only have to rewrite your Git history, if you "committed wrong" in the first place.
+Considering rewriting Git history?
+This usually comes into play when there are errors or changes needed in the initial commits.
+There are a few tricks to avoid committing things you don't want committed:
 
-There are a few simple tricks to avoid committing things you don't want committed:
+1. Avoid the catch-all commands `git add .` and `git commit -a`.
+Use `git add filename` and `git rm filename` to individually stage files.
 
-- Avoid the catch-all commands `git add .` and `git commit -a` on the command line—use `git add filename` and `git rm filename` to individually stage files, instead.
+1. Use `git add --interactive` to individually review and stage changes within each file.
 
-- Use `git add --interactive` to individually review and stage changes within each file.
+1. Use git `diff --cached` to review the changes that you have staged for commit.
+This is the exact diff that `git commit` will produce as long as you don't use the `-a` flag.
 
-- Use git `diff --cached` to review the changes that you have staged for commit.
-This is the exact diff that git commit will produce as long as you don't use the `-a` flag.
-
-- You can use also a visual program like [GitHub Desktop](https://desktop.github.com) or [GitKraken](https://desktop.github.com) to commit changes. 
+1. You can use also a visual program like [GitHub Desktop](https://desktop.github.com) or [GitKraken](https://desktop.github.com) to commit changes. 
 Visual programs generally make it easier to see exactly which files will be added, deleted, and modified with each commit.
 
 ## Purging a file from your repository's history
 
-Let us say you accidentally added a large file to a previous commit.
+Let's say that you accidentally added a large file to a previous commit.
 Now you want to remove the file but keep all commits that came afterwards.
 
-This could e.g. be the case if you committed sensitive data as a binary file.
+For example, this could be the case if you committed sensitive data as a binary file.
 You will need to remove the file from the history, as you can't modify it to remove or replace the data.
 
 ### git filter-repo
 
-This very useful tool: [git filter-repo](https://github.com/newren/git-filter-repo), is not part of the official Git distribution. 
+[git filter-repo](https://github.com/newren/git-filter-repo) is a very useful tool that is not part of the official Git distribution. 
 It is a third-party tool and is designed to be used alongside Git for more advanced repository history manipulation tasks.
 
 To illustrate how `git filter-repo` works, we'll show you how to remove your file with sensitive data from the history of your repository and add it to `.gitignore` to ensure that it is not accidentally re-committed.
 
-Since `git filter-repo` is not a part of standard Git , you will need to install theit first.
+#### Installation
+
+Since `git filter-repo` is not a part of standard Git, you will need to install it first.
 You can install `git-filter-repo` manually or by using a package manager.
 For example, to install the tool with [HomeBrew](https://brew.sh/) on macOS, use the `brew install` command.
 
@@ -58,31 +58,57 @@ For example, to install the tool with [HomeBrew](https://brew.sh/) on macOS, use
 brew install git-filter-repo
 ```
 
-For more information, see [INSTALL.md](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md) in the [newren/git-filter-repo]((https://github.com/newren/git-filter-repo) repository).
+For more information on installation, see [INSTALL.md](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md) in the [newren/git-filter-repo]((https://github.com/newren/git-filter-repo) repository).
+
+#### Clone a fresh copy of the repository
+
+If you don't already have a local copy of your repository with sensitive data in its history, clone the repository to your local computer.
+
+```{bash}
+git clone https://github.com/YOUR-USERNAME>/YOUR-REPOSITORY # <1>
+```
+1. Replace `YOUR-USERNAME` with your GitHub username and `YOUR-REPOSITORY` with the name of your GitHub repository. 
+
+#### Navigate into the repository's working directory
+
+Navigate into the repository's working directory.
+For details on folder navigation in the command line, see the ["Command Line" chapter](command-line.qmd).
+
+```{bash}
+cd YOUR-REPOSITORY # <1>
+```
+1. Replace `YOUR-REPOSITORY` with the name of your GitHub repository.
+For details on the `cd` command, see the ["Command Line" chapter](command-line.qmd).
 
 #### Running `git filter-repo` command
 
-Lets´s say you accidentally committed (and pushed) a file you dont´t actually want to share because it contains sensitive data.
-After you installed the `git filter-repo` tool, you can use it to exclude a specific file ftom you commit history.
+::: {.callout-warning}
+If you run `git filter-repo` after stashing changes, you won't be able to retrieve your changes with other stash commands.
+Before running `git filter-repo`, we recommend unstashing any changes you've made.
+To unstash the last set of changes you've stashed, run `git stash show -p | git apply -R`.
+For more information, see [Git Tools - Stashing and Cleaning](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning).
+:::
+
+Let's say that you accidentally committed (and pushed) a file you actually don't want to share because it contains sensitive data.
+After you installed the `git filter-repo` tool, you can use it to exclude a specific file from you commit history.
 
 Run the following command, replacing `PATH-TO-FILE-YOU-WANT-TO-REMOVE` with the path to the file you want to remove, not just its file name.
-These arguments will:
+These arguments will do the following:
 
-- Force Git to process, but not check out, the entire history of every branch and tag
-- Remove the specified file, as well as any empty commits generated as a result
-- Remove some configurations, such as the remote URL, stored in the `.git/config` file.
+1. Force Git to process, but not check out, the entire history of every branch and tag
+1. Remove the specified file, as well as any empty commits generated as a result
+1-  Remove some configurations, such as the remote URL, stored in the `.git/config` file.
 You may want to back up this file in advance for restoration later.
-- Overwrite your existing tags
+1. Overwrite your existing tags
 
-Essentially it will modify your entire Git repository history to exclude the specified file (`PATH-TO-FILE-YOU-WANT-TO-REMOVE`). 
+Essentially, `git filter-repo` will modify your entire Git repository history to exclude the specified file (`PATH-TO-FILE-YOU-WANT-TO-REMOVE`). 
 The `--invert-paths` flag inverts the selection, so it keeps everything except the specified path, effectively removing the file from the entire history of the repository.
 If you do not use `--invert-paths`, the command would only keep the specified file in your repository, discarding everything else.
 
 ```{bash}
-git filter-repo --invert-paths --path PATH-TO-FILE-YOU-WANT-TO-REMOVE
+git filter-repo --invert-paths --path PATH-TO-FILE-YOU-WANT-TO-REMOVE #<1>
 ```
-
-**Replace `PATH-TO-FILE-YOU-WANT-TO-REMOVE` with the path to the file** you want to remove, not just its file name.
+1. Replace `PATH-TO-FILE-YOU-WANT-TO-REMOVE` with the path to the file** you want to remove, not just its file name.
 
 ::: {.callout-tip title="I did not clone a fresh copy of the repository. Is this a problem?" collapse="true"}
 
@@ -103,17 +129,10 @@ As described in the message, you have two options:
 
 :::
 
-::: {.callout-warning}
-Warning: If you run `git filter-repo` after stashing changes, you won't be able to retrieve your changes with other stash commands.
-Before running `git filter-repo`, we recommend unstashing any changes you've made.
-To unstash the last set of changes you've stashed, run `git stash show -p | git apply -R`.
-For more information, see [Git Tools - Stashing and Cleaning](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning).
-:::
-
 #### Add your file to `.gitignore` 
 
 Add your file to `.gitignore` to ensure that you don't accidentally commit it again.
-You can edit `.gitignore` in your favorite text editor
+You can edit `.gitignore` in your favorite text editor.
 
 ```{bash}
 echo "PATH-TO-FILE-YOU-WANT-TO-REMOVE" >> .gitignore # <1>
@@ -123,16 +142,9 @@ git commit -m "Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore" # <3>
 1. This command writes `PATH-TO-FILE-YOU-WANT-TO-REMOVE` inside the `.gitignore` file.
 `>>` makes sure that this is written to a new line inside the `.gitignore` file.
 
-This will create the following output:
-
-```{bash}
-[main 64dda05] Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore
- 1 files changed, 1 insertions(+), 0 deletions(-)
-```
-
 Double-check that you've removed everything you wanted to from your repository's history, and that all of your branches are checked out.
 
-### Using the BFG
+### BFG
 
 Instead of using `git filter-repo` it is also possible to use the open source tool [BFG repo cleaner](https://rtyley.github.io/bfg-repo-cleaner/).
 The tool is especially useful if you need to remove very large files from your commit history.
@@ -143,7 +155,7 @@ If you are happy with the state of your repository, force-push your local change
 A force push is required to remove sensitive data from your commit history.
 
 When you perform a force push, you are essentially overwriting the existing commit history on the remote branch with the new commit history from your local branch.
-So instead of adding changes to your commit history, like with a normal push,a force push changes or discards the existing commit history on that branch.
+So instead of adding changes to your commit history, like with a normal push, a force push changes or discards the existing commit history on that branch.
 To do a force push, you use `git push` together with the `--force` flag.
 The `--all` flag is used to push all branches that have corresponding branches on the remote repository, that way you are updating multiple branches at once.
 
@@ -151,17 +163,7 @@ The `--all` flag is used to push all branches that have corresponding branches o
 git push origin --force --all
 ```
 
-```{bash}
-Counting objects: 1074, done.
-Delta compression using 2 threads.
-Compressing objects: 100% (677/677), done.
-Writing objects: 100% (1058/1058), 148.85 KiB, done.
-Total 1058 (delta 590), reused 602 (delta 378)
-To https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-  + 48dc599...64dda05 main -> main (forced update)
-```
-
-:::: {.callout-tip title="fatal: 'origin' does not appear to be a git repository" collapse="true"}
+:::: {.callout-tip title="Error: `fatal: 'origin' does not appear to be a git repository`" collapse="true"}
 
 Did you receive this error message?
 
@@ -173,24 +175,24 @@ Please make sure you have the correct access rights
 and the repository exists.
 ```
 
-As described above, this could mean that `origin` was removed from your repo.
-Configure origin again:
+As described above, this could mean that `origin` was removed from your repository.
+Configure origin again using either SSH or HTTPS:
 
 ::: {.panel-tabset}
 
-## SSH
+### SSH
 
 ```{bash}
 git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY # <1>
 ```
 1. Replace `YOUR-USERNAME` with your GitHub username and `YOUR-REPOSITORY` with the name of your GitHub repository. 
 
-## HTTPS
+### HTTPS
 
 ```{bash}
-git remote add origin git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git # <2>
+git remote add origin git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git # <1>
 ```
-2. Replace `<YOUR-USERNAME>` with your GitHub username and `<YOUR-REPOSITORY>` with the name of your GitHub repository.
+1. Replace `<YOUR-USERNAME>` with your GitHub username and `<YOUR-REPOSITORY>` with the name of your GitHub repository.
 
 :::
 
@@ -202,50 +204,44 @@ In order to remove the sensitive file from your tagged releases, you'll also nee
 git push origin --force --tags
 ```
 
-```{bash}
-Counting objects: 321, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (166/166), done.
-Writing objects: 100% (321/321), 331.74 KiB | 0 bytes/s, done.
-Total 321 (delta 124), reused 269 (delta 108)
-To https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
- + 48dc599...051452f main -> main (forced update)
-```
-
-
-:::: {.callout-tip title="Dangers of force pushing" collapse="true"}
-As stated in this example, force pushing can be very useful if you e.g. committed and pushed data you want to take down again.
+::: {.callout-warning title="The dangers of force pushing" collapse="false"}
+As stated in this example, force pushing can be very useful, for example if you committed and pushed data you want to remove again.
 However force pushing comes with potential drawbacks and should mostly be used as a last resort.
-Especially if you collaborate with others on your repository. 
 
 Force pushing can lead to the **loss of commit history** on the remote branch, which may cause confusion or conflicts for collaborators who have based their work on the previous history.
 Force pushing to a shared branch can **cause conflicts for collaborators** who have already cloned the repository and pulled changes.
 Once a force push is executed, the old **commit history may become difficult to recover.**
-::::
 
-## Fully removing the data from GitHub
+Especially if you collaborate with others on your repository, **let them know in advance** that you are force-pushing to your common remote repository.
+:::
 
-If you you committd **real** sensitive data and want to make **completely** sure it is deleted, you will have to follow additional steps.
-After using either the BFG tool or git filter-repo to remove the sensitive data and pushing your changes to GitHub, you must take a few more steps to fully remove the data from GitHub.
+## Fully removing data from GitHub
+
+If you you committed **really** sensitive data and want to make **absolutely** sure that it's deleted, you will have to complete a few additional steps.
+After using either the [BFG](#bfg) tool or [git filter-repo](#git-filter-repo) to remove the sensitive data and pushing your changes to GitHub, you must take a few more steps to fully remove the data from GitHub.
 
 1. Contact [GitHub Support](https://support.github.com/contact?tags=docs-generic), asking them to remove cached views and references to the sensitive data in pull requests on GitHub. Please provide the name of the repository and/or a link to the commit you need removed.
 
-1. Tell your collaborators to [rebase](https://git-scm.com/book/en/Git-Branching-Rebasing), not merge, any branches they created off of your old (tainted) repository history. One merge commit could reintroduce some or all of the tainted history that you just went to the trouble of purging.
+1. Tell your collaborators to [rebase](https://git-scm.com/book/en/Git-Branching-Rebasing), not merge, any branches they created off of your old (tainted) repository history.
+One merge commit could reintroduce some or all of the tainted history that you just went to the trouble of purging.
 
-1. After some time has passed and you're confident that the BFG tool / `git filter-repo` had no unintended side effects, you can force all objects in your local repository to be dereferenced and garbage collected with the following commands (using Git 1.8.5 or newer)
+1. After some time has passed and you're confident that BFG / git filter-repo had no unintended side effects, you can force all objects in your local repository to be dereferenced and garbage collected with the following commands (using Git 1.8.5 or newer):
 
 ```{bash}
-$ git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
-$ git reflog expire --expire=now --all
-$ git gc --prune=now
-> Counting objects: 2437, done.
-> Delta compression using up to 4 threads.
-> Compressing objects: 100% (1378/1378), done.
-> Writing objects: 100% (2437/2437), done.
-> Total 2437 (delta 1461), reused 1802 (delta 1048)
+git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
 ```
 
-**Note:** You can also achieve this by pushing your filtered history to a new or empty repository and then making a fresh clone from GitHub.
+```{bash}
+git reflog expire --expire=now --all
+```
+
+```{bash}
+git gc --prune=now
+```
+
+::: {.callout-tip}
+You can also achieve this by pushing your filtered history to a new or empty repo.
+:::
 
 ## Acknowledgements & further reading
 
