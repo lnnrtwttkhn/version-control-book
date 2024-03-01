@@ -1,5 +1,7 @@
 # Version Control Book
 
+[![DOI](https://zenodo.org/badge/648830079.svg)](https://zenodo.org/doi/10.5281/zenodo.10724424)
+[![DOI](https://www.fdr.uni-hamburg.de/badge/DOI/10.25592/uhhfdm.14149.svg)](https://doi.org/10.25592/uhhfdm.14149)
 [![Quarto Publish](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml)
 [![All Contributors](https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&style=flat-square)](#contributors)
 [![Codespell](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)
@@ -10,7 +12,7 @@ Welcome to the [Version Control Book](https://lennartwittkuhn.com/version-contro
 
 The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course.
 The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git and GitHub.
-This is a living resource on why and - more importantly - how to use DataLad.
+This is a living resource on why and - more importantly - how to use Git.
 The rendered version is at <https://lennartwittkuhn.com/version-control-book/> and is under constant development.
 
 ## Contributing
