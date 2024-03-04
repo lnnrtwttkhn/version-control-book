@@ -1,5 +1,4 @@
 ---
-author: ""
 image: ../static/version-control-turing-way.svg
 categories: [beginner, basics]
 abstract: "Introduction to fundamental concepts of version control."
@@ -7,27 +6,13 @@ abstract: "Introduction to fundamental concepts of version control."
 
 # Introduction
 
-## Acknowledgements
+[{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.intro >}}){.btn .btn-outline-secondary role="button"}
+[{{< fa display >}} UHH WS 23/24]({{< var uhh-ws23.intro >}}){.btn .btn-outline-secondary role="button"}
 
-We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
-We recommend these references for further reading:
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| output: asis
-bibtexkeys = c("koziar2023", "bryan2018", "ram2013", "perez-riverol2016", "aimrsf2023")
-knitr::kable(ref_table(bibtexkeys), format = "markdown")
-```
-
-## Learning Objectives
-
-- [x] What is version control?
-- [x] Why is version control useful (for research)?
-- [x] What are Git and GitHub?
-- [x] What is the difference between Git and GitHub?
+::: {.callout-tip appearance="minimal"}
+<h5>Learning Objectives</h5>
+{{< include ../objectives/_objectives-intro.qmd >}}
+:::
 
 ## What is version control?
 
@@ -280,3 +265,18 @@ Even if you currently don't have a specific reason to collaborate with others, t
 Unlike automatic saving, where changes are continuously saved in the background, Git requires manual intervention to capture snapshots.
 You have to explicitly inform Git when you want to take a snapshot, indicating that you want it to acknowledge your changes.
 While this may sound annoying at first, the benefits of having full control over your version history will become apparent in later chapters of this book.
+
+## Acknowledgements
+
+We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
+We recommend these references for further reading:
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("koziar2023", "bryan2018", "ram2013", "perez-riverol2016", "aimrsf2023")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```

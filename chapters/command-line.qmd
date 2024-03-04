@@ -1,5 +1,4 @@
 ---
-author: ""
 image: ../static/terminal-computer.jpg
 image-alt: "https://commons.wikimedia.org/wiki/File:DEC_VT100_terminal.jpg"
 categories: [beginner, basics, command line]
@@ -9,41 +8,20 @@ abstract: |
 
 # Command Line
 
-## Introduction
+[{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.cli >}}){.btn .btn-outline-secondary role="button"}
+[{{< fa display >}} UHH WS 23/24]({{< var uhh-ws23.cli >}}){.btn .btn-outline-secondary role="button"} 
 
-### Prerequisites
+::: {.callout-tip appearance="minimal"}
+<h5>Learning Objectives</h5>
+{{< include ../objectives/_objectives-cli.qmd >}}
+:::
 
-If you have stored files on a computer and you are familiar with terms such as "file," "directory," or "folder," you are adequately prepared for this lesson.
-The goal of this chapter is to teach you enough to be able to use Git from the command line.
-
-To get the most out of this chapter, don't just passively read – take action! Open your terminal and type the commands as you go along. 
-Feel the power of the command line and witness the results firsthand.
-By actively typing commands into your terminal, you'll gain practical experience and a deeper understanding of the material.
-
-### Questions
-
-At the end of this chapter, you should be able to answer the following questions:
-
-- What is the shell, command line, or terminal?
-- Why would I use the command line?
-- Why do I need to know the command line to use Git?
-- How do I use the command line?
-- Which are basic commands in the command line?
-
-### Learning objectives
-
-- Explain when and why command-line interfaces should be used instead of graphical interfaces.
-- Understand how to form file paths and navigate directories
-- Understand the difference between absolute and relative paths
-- Understand how arguments and flags are used to modify command-line commands
-- Understand the concept of wild cards (`*`)
-
-### Why using Git from the command line?
+## Why using Git from the command line?
 
 Git is fundamentally a command-line tool.
 This is why comfort with the command line is essential for learning Git.
 
-### General advantages of the command line
+## General advantages of the command line
 
 1. **Longevity:** The command line has stood the test of time, remaining relevant and widely used even as new technologies emerge.
 1. **Power:** The command line is a robust and powerful tool, enabling users to accomplish intricate tasks efficiently.
@@ -103,8 +81,11 @@ There are (at least) three different ways to get there:
 
 You may want to keep Terminal in your [Dock](https://support.apple.com/guide/mac-help/open-apps-from-the-dock-mh35859/mac) to find it more easily.
 
+::: {.callout-tip title="Mac Terminal: Bash or Zsh?" collapse="true"}
+
 On a Mac computer running macOS Mojave or earlier versions, the default Unix Shell is Bash.
-However, for a Mac computer operating on macOS Catalina or later releases, the default Unix Shell is Zsh.
+Unix being a family of operating systems serving as the basis for Linux and macOS with the inclusion of a command line interface (or Unix Shell) as a key feature.
+For a Mac computer operating on macOS Catalina or later releases, the default Unix Shell is Zsh.
 Bash and Zsh are both programs, which are command-line interfaces for interacting with an operating system.
 Zsh is often considered better than Bash for its more advanced features and improved scripting capabilities.
 It also has extensive community-contributed plugins and themes.
@@ -116,6 +97,7 @@ This is the most common shell on Unix-based systems, including macOS.
 If the output is `/bin/zsh` or a similar path, it means your default shell is set to Zsh.
 If the output is a different path, it indicates that your shell is configured to use a different shell program.
 If your machine is configured to use a shell other than Bash, you can switch to Bash by opening a terminal and typing `bash`.
+:::
 
 ::: {.callout-tip collapse="true"}
 ### Which macOS version do I have installed?
@@ -193,16 +175,69 @@ wittkuhn@lip-osx-005509:~$
 
 ### Introduction
 
-You might be familiar with using your mouse to click through folders, or perhaps you use arrow keys and clicks in the Finder (on macOS) or File Explorer (on Windows) to manage your files.
+You might be familiar with using your mouse to click through folders in your file browser, or perhaps you use arrow keys and clicks in the Finder (on macOS) or File Explorer (on Windows) to manage your files.
 
-The command line offers a different, perhaps less intuitive, but very efficient and precise way to interact with your computer's file system. 
-Instead of relying on graphical elements, you use text-based commands to perform tasks like exploring directories, creating and deleting files, and moving between folders. 
+The command line offers a different, one could say less intuitive, but very efficient and precise way to interact with your computer's file system.
+Instead of relying on a graphical user interface, you use text-based commands to perform tasks like exploring the contents of folders, creating and deleting files, and moving between folders. 
+
+### Directory and file structure
+
+In a file system, directories (or folders) and files are organized hierarchically to enable the storage and retrieval of data.
+Each level in the hierarchy is called a "level" or "depth".
+In the context of file systems, the hierarchy of directories is often described as a parent-child relationship and folders are therefore often referred to as "parent directories" and "child directories" (for details, see the box below).
+
+The **root directory** is the highest level in the hierarchy.
+On Unix-based systems (including macOS), the root directory is denoted by `/`.
+On Windows, it is typically denoted by a drive letter followed by `\` (e.g., `C:\`).
+While the fundamental concepts of directories and files are consistent across operating systems, there are some differences in folder structures between macOS (Unix-based) and Windows:
+
+::: {.callout-tip title='What are "parent" and "child" directories?' collapse="true"}
+In the context of file systems, a "parent directory" and a "child directory" describe the relationship between directories (or folders).
+
+- **Parent Directory:** This is the directory that is "higher up" in the directory hierarchy and contains one or more "child directories."
+- **Child Directory:** A child directory is located "inside" or "below" a parent directory.
+It is contained within the parent directory and is considered subordinate to it, much like a child in a family is part of the larger family unit.
+
+```{bash}
+parent $ tree
+.
+├── child1
+└── child2
+
+3 directories
+```
+
+:::
+
+::: {.panel-tabset}
+
+#### {{< fa brands microsoft >}} Windows
+
+Each drive (e.g., `C:`, `D:`) has its own root directory, and it is denoted by the drive letter followed by `\` (e.g., `C:\`).
+Windows uses `\` as the directory separator.
+The home directory is often `C:\Users\username\`.
+An example path on Windows might be:
+
+```{bash}
+C:\Users\username\Documents\file.txt` 
+```
+
+#### {{< fa brands apple >}} macOS
+
+On macOS the root directory is denoted by `/`, which is also used as the directory separator.
+The home directory for a user is typically `/Users/username/`.
+An example path on Mac OS could be:
+
+```{bash}
+/Users/username/Documents/file.txt
+```
+
+:::
 
 ### Current working directory
 
-Enter the command `pwd` (short for "print working directory").
-The working directory is the location within your file system where a user or an application is presently performing file operations or running commands.
-`pwd` will display the current directory that the shell is currently focused on in your file system.
+The current **working directory** is the location within your file system where a user or an application is presently performing file operations or running commands.
+The command `pwd` (short for "print working directory") will display the current directory that the shell is currently focused on in your file system.
 
 ```{bash}
 pwd
@@ -251,6 +286,22 @@ wittkuhn@lip-osx-005509:~/Downloads$ pwd
 You may notice that the prompt has been updated to show the new working directory.
 If a path starts with a forward slash (`/`), it is considered an *absolute* path.
 Paths that do not start with a forward slash are considered *relative* to the current working directory.
+
+Note, that if a path contains a space, it needs to be enclosed in quotes to be recognized by the command line.
+Here is an example of a path with a space:
+
+```{bash}
+/Users/User/Downloads/Directory with Space/
+```
+
+If you attempt to use this path in a command without quotes, the command interpreter would understand it as three separate arguments since in command-line interfaces, spaces are typically used to separate different arguments or parameters.
+Navigating to this absolute path with spaces would look like this:
+
+```{bash}
+cd '/Users/User/Downloads/Directory with Space/'
+```
+
+While the command line can handle paths (or files) with spaces in this way, we **recommend to avoid spaces** in folder and file names altogether, especially if you use the command line frequently.
 
 ### Taking shortcuts
 
@@ -312,23 +363,53 @@ This makes it easier to find and reuse specific commands.
 And is also [the reason](https://www.commitstrip.com/en/2017/02/28/definitely-not-lazy/?) why the up arrow key is among the earliest that needs replacement on software developers' keyboards.
 :::
 
-::: {.callout-tip title='What are "parent" and "child" directories?' collapse="true"}
-In the context of file systems, a "parent directory" and a "child directory" describe the relationship between directories (or folders).
+### Autocompletion
 
-- **Parent Directory:** This is the directory that is "higher up" in the directory hierarchy and contains one or more "child directories."
-- **Child Directory:** A child directory is located "inside" or "below" a parent directory.
-It is contained within the parent directory and is considered subordinate to it, much like a child in a family is part of the larger family unit.
+While using the command line, instead of typing out the full command or path, you can press the <kbd>⇥ Tab</kbd> key to automatically complete the rest.
+Begin typing a command or the initial letters of a file or directory, for example:
 
 ```{bash}
-parent $ tree
-.
-├── child1
-└── child2
-
-3 directories
+cd ~/Doc
 ```
 
-:::
+Once you've typed a portion of the command or path, press the <kbd>⇥ Tab</kbd> key.
+The command-line interface will attempt to autocomplete the command or path based on what matches your input.
+In this case for example:
+
+```{bash}
+cd ~/Documents/
+```
+
+If there are multiple possibilities, pressing <kbd>⇥ Tab</kbd> again will cycle through the available options.
+Autocompletion also works for system commands. 
+For example, typing `ls` and pressing <kbd>⇥ Tab</kbd> might complete it to `ls -l` or `ls -a`.
+Autocompletion also works for the Git commands, that will be introduced in the following chapters of this book.
+
+### Command history
+
+Using the `Up` and `Down` arrow keys on your keyboard allows you to quickly access and reuse commands without retyping them.
+
+After executing one or multiple commands, pressing the `Up` arrow key retrieves the most recent command.
+If you've navigated back using the `Up` arrow, pressing the `Down` arrow key moves you forward through the command history.
+You can continue to press `Up` and `Down` to cycle through the executed commands.
+
+The primary benefit of this is time efficiency. 
+Instead of typing out the entire command, especially for lengthy or complex commands, you can retrieve and modify previous commands quickly.
+It also minimizes the chances of introducing typos or syntax errors when reusing commands.
+
+### Clearing the command line
+
+The `clear` command is used to clear the content of your terminal, providing a clean and empty slate. 
+It helps improve visibility by removing previous commands, outputs, and clutter from your terminal window.
+
+To clear the content of the terminal screen, simply type and execute the `clear` command:
+
+```{bash}
+clear
+```
+
+Press `Enter` and the terminal screen will be cleared, leaving only a new prompt at the top of the window.
+After using `clear`, you can continue working in a fresh and uncluttered terminal environment.
 
 ## List files and folders
 
@@ -433,10 +514,34 @@ ls -alh
 ```
 </details>
 
-#### The `--help` flag
+#### Getting help
+
+::: {.panel-tabset}
+
+#### {{< fa brands microsoft >}} Windows (GitBash)
 
 If you want to know what flags and arguments a command supports, most commands provide usage information when you use the flag `--help`.
-In some cases, the flag `-h` can also be used to achieve the same result.
+For example, you can use the `ls` command together with the `--help` flag:
+
+```{bash}
+ls --help
+```
+
+This will list all possible flags you can use together with the `ls` command.
+
+#### {{< fa brands apple >}} macOS
+
+On Mac OS you can not use the `--help` flag.
+Instead you can use the `man` command, in combination with your desired command.
+This will display the manual page for a specified command. 
+You can navigate through the manual pages using the arrow keys, and you can exit by pressing `q`. 
+For example:
+
+```{bash}
+man ls
+```
+
+:::
 
 ## Manipulating the file system
 
@@ -465,7 +570,6 @@ ls
 cd my-project
 ```
 
-
 ### Creating multiple folders
 
 Next, we will proceed to create multiple additional folders within the `my-project` project folder.
@@ -487,6 +591,64 @@ For example, to create an empty file called `file.txt`, we can use the following
 ```{bash}
 touch file.txt
 ```
+
+### Opening files
+
+To open files, you can use your preferred text editor but also the command line. 
+On the command line, you can use the `open` command on macOS or the `start` command on Windows using Gitbash. 
+
+::: {.panel-tabset}
+
+#### {{< fa brands microsoft >}} Windows (GitBash)
+
+```{bash}
+start file.txt
+```
+
+
+#### {{< fa brands apple >}} macOS
+
+```{bash}
+open file.txt
+```
+
+:::
+
+These commands will open the specified file in the default application associated with the file type.
+
+### Writing short text into files
+
+The `echo` command can be used to write text to a file, directly from the command line.
+Using `echo` in combination with `>>` adds content to an existing file. 
+For example, to add text to the `file.txt` file:
+
+```{bash}
+echo "This is a project for demonstration purposes." >> file.txt 
+```
+
+This adds the provided text to the existing content of `file.txt`.
+
+### Viewing file content
+
+If you want to quickly view the content of a file without opening it, you can do so in the command line using the `cat` command.
+To display the content of a file, simply use `cat` followed by the file name. 
+For example:
+
+```{bash}
+cat file.txt 
+```
+
+This command will output the entire content of the `file.txt` file to the terminal.
+
+<details>
+<summary>{{< fa eye >}} Click here to see the output of the `cat` command applied to the `.gitignore` file in the project directory of this guide.</summary>
+```{bash}
+#| eval: true
+#| echo: false
+#| class.output: bash
+cat .gitignore
+```
+</details>
 
 ### Moving folders and files
 
@@ -526,6 +688,28 @@ ls -alh *.yml
 #| class.output: bash
 ls -alh *.yml
 ```
+
+::: {.callout-tip title="What does this output mean?" collapse="true"}
+The first column (`-rw-r--r--`) represents the file permissions.
+In Unix-like systems, it shows who can read, write, or execute the file.
+In this case, the files are readable and writable by the owner (`rw-`), readable by the group (`r--`), and readable by others (`r--`).
+
+The second column (`1`) indicates the number of hard links to the file.
+
+The third column (`runner`) is the username of the file's owner.
+Here, the username is `runner` because the this online guide is build automatically on GitHub using [GitHub Actions](https://github.com/features/actions) and `runner` refers to the computing environment where the build process is executed.
+If you would build the book on your computer, it would show your username. 
+
+The fourth column (`docker`) is the group associated with the file.
+Here, the group name is `docker` which again refers to the computing environment where this online guide is built.
+
+The fifth column shows the size of the file. 
+In this case there are just small textfiles included with the sizes ranging from `97B` to `3.0K`.
+
+The next column (for example, `Jan 18 20:39`) display the date and time when the file was last modified.
+
+The last column (for example, `_affiliations.yml` etc.) shows the name of each file.
+:::
 </details>
 
 By using the wildcard `*`, we can generate a list of all files ending with `.yml`.
@@ -557,14 +741,29 @@ For example, to remove the `docs` folder, you would use the following command:
 rm -r docs
 ```
 
-**Warning:** 
-When you use the `rm` command to delete files, they are **removed entirely**(!) from your system and cannot be retrieved from a "Recycle Bin" or "Trash" as when you delete files using GUIs.
+::: {.callout-warning title="**Warning: Be careful when using the `rm` command!**" collapse="false"}
+When you use the `rm` command to delete files, they are **removed entirely (!!!)** from your system and cannot be retrieved from a "Recycle Bin" or "Trash" as when you delete files using the file browser!
+:::
+
+### Combining commands 
+
+Combining commands in the command-line using semicolons `;` is a way to execute multiple commands sequentially on a single line. 
+Each command is separated by a semicolon, and they are executed one after the other, regardless of the success or failure of the previous command.
+
+For example, let's say you want to (1) create a new directory, (2) move into that directory, and then (3) list the files in that directory, all in one go.
+You can use semicolons to combine these commands like this:
+
+```{bash}
+mkdir new_directory ; cd new_directory ; ls
+```
+
+This will (1) create a new directory called `new_directory`, (2) change the current working directory to `new_directory` and (3) list the files in this new directory. 
 
 ## Summary
 
 In this lesson, we have achieved the following:
 
-1. Simplified and clarified some of the technical terms associated with the command line.
+1. Clarified some of the technical terms associated with the command line.
 1. Explored the components of command-line commands: paths, arguments, and flags.
 1. Gained knowledge about relative and absolute paths, including convenient shortcuts like `~`, `.` and `..`.
 1. Witnessed the functionality of wildcards.

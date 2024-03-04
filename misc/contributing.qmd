@@ -1,6 +1,14 @@
 ---
 author: ""
+title-block-style: none
 ---
+
+```{r}
+#| eval: true
+#| include: false
+library("magrittr")
+library("data.table")
+```
 
 # Contributing {.unnumbered}
 
@@ -534,8 +542,58 @@ To embed an icon, use the `{{{< fa >}}}` shortcode.
 For example, `{{{< fa thumbs-up >}}}` will result in {{< fa thumbs-up >}}.
 For details, see the [project documentation on GitHub](https://github.com/quarto-ext/fontawesome).
 
+## Style Guide
+
+We have compiled a set of guidelines to keep a consistent style across all chapters of the book.
+
+### Summary
+
+1. [Write one sentence per line](#write-one-sentence-per-line)
+1. [Use consistent language](#use-consistent-language)
+
+### Write one sentence per line
+
+Please write each sentence on a new line.
+Having each sentence on a new line will make no difference to how the text is displayed, there will still be paragraphs, but it will mean that any pull requests will be easier to check; the changes will be on a single line instead of somewhere in a paragraph.
+Consider the example below.
+
+```markdown
+Today you are you, that is truer than true. There is no one alive who is youer than you. - Dr Seuss
+```
+
+A pull request on this correcting it to have a ‘.’ after Dr would show as a change to the whole paragraph.
+Contrast this with the next example which will be displayed online in the exact same way, but would see a change to a single line.
+
+```markdown
+Today you are you, that is truer than true.
+There is no one alive who is youer than you.
+- Dr Seuss
+```
+
+### Use consistent language
+
+We try to use consistent language: 
+
+```{r}
+#| eval: true
+#| echo: false
+variables <- yaml::read_yaml(here::here("_variables.yml"))
+dt_input <- data.table::rbindlist(variables$language, fill = TRUE)
+dt_output <- dt_input
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| output: asis
+dt_print <- dt_output %>%
+  knitr::kable(., format = "markdown")
+dt_print
+```
+
 ## Acknowledgements & Attribution {#sec-acknowledgements}
 
 - The Quarto documentation [@allaire2022], in particular the chapters on [Variables](https://quarto.org/docs/authoring/variables.html), [Quarto Extensions](https://quarto.org/docs/extensions/), ["Code Annotation"](https://quarto.org/docs/authoring/code-annotation.html) (License: [GNU GPL v2](https://quarto.org/license.html))
 - [@blischak2016]
 - The [Font Awesome Extension for Quarto](https://github.com/quarto-ext/fontawesome) (License: [MIT](https://github.com/quarto-ext/fontawesome/blob/main/LICENSE))
+- @community2022: [Style Guide](https://the-turing-way.netlify.app/community-handbook/style.html)

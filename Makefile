@@ -16,4 +16,4 @@ download-images:
 
 # clean downloaded images folder:
 clean:
-	rm -rf $(IMAGES_DIR)*
+	rm -rf $(IMAGES_DIR)* _book/

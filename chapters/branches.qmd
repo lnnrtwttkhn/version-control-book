@@ -1,7 +1,6 @@
 ---
-author: ""
-categories: [beginner, basics]
 image: ../static/branches.svg
+categories: [beginner, basics]
 abstract: |
   In this chapter you will learn about the power of branches.
   Create, manage and merge branches like a pro!
@@ -12,19 +11,18 @@ execute:
 
 # Branches
 
-## Logistics
+[{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.branches >}}){.btn .btn-outline-secondary role="button"}
+[{{< fa display >}} UHH WS 23/24]({{< var uhh-ws23.branches >}}){.btn .btn-outline-secondary role="button"} 
 
-### Learning Objectives
+::: {.callout-tip appearance="minimal"}
+<h5>Learning Objectives</h5>
+{{< include ../objectives/_objectives-branches.qmd >}}
+:::
 
-:bulb: Knowing purpose and benefits of using branches in Git<br>
-:bulb: Creating and switching between branches<br>
-:bulb: Merging branches and resolving conflicts
-
-### Exercises 
-
--   Create a new branch called `feature/newrecipe` 
--   Add a new recipe to your recipe text file
--   Merge this branch with your `main` branch and delete the `feature` branch afterwards
+::: {.callout-note appearance="minimal"}
+<h5>Exercises</h5>
+{{< include ../exercises/_exercises-branches.qmd >}}
+:::
 
 ## Why branches?
 
@@ -418,3 +416,14 @@ Clear and standardized branch names make it easier to identify the purpose of ea
 Create branches with a **specific goal or task** in mind, and aim to **keep them short-lived**.
 Long-lived branches can lead to conflicts and make it harder to merge changes.
 Once the task is complete or the feature is integrated, consider deleting the branch.
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "branches"), format = "markdown", row.names = FALSE)
+```
+
