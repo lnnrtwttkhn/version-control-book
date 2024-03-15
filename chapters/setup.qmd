@@ -129,19 +129,43 @@ git var GIT_EDITOR
 
 If the output is: `vim` or `vi`, your systems default editor is indeed Vim/Vi.
 (Vim is an improved version of Vi, but there are virtually no differences between them for our usecase.)
-
 In this situation, you can either pick up on the basics of Vim (see below) or simply change the text editor.
 Also note that you will typically not have to use the text editor in the command line a lot.
 
 ### Vim Basics
 
 To start [Vim](https://www.vim.org/), open the command line and type `vim` followed by the filename of the file that you want to edit (for example, `vim file.txt`).
-In Vim, you have two main modes: "Insert" mode for typing and "Normal" mode for navigation and command execution.
-Inside Vimn to switch from "Normal" mode to "Insert" mode, press `i` for inserting text.
-To save your changes and exit Vim, press `Esc` to enter "Normal" mode, then type `:w` to save, and `:q` to quit.
-Vim's strength lies in its powerful commands for text manipulation, such as copying, pasting, and searching, which are executed in "Normal" mode.
-
+In Vim, you have two main modes: *Insert* mode for typing your text and *Normal* mode for navigation and command execution.
+Vim will always start in *Normal* mode, which can be confusing. 
+To switch from *Normal* mode to *Insert* mode, press `i`. 
+To switch back to *Normal* mode, save your changes and exit Vim, press `Esc` to enter *Normal* mode, then type `:w` to save, and `:q` to quit Vim.
+You can also combine commands in Vim, meaning you can use `:wq` to save your changes and exit Vim with just one command.
 For a more detailed and interactive tutorial, you can check out [openvim.com](https://www.openvim.com).
+
+::: {.callout-tip title="More Vim Commands" collapse="true"}
+To navigate through the text in Normal mode without using the arrow keys, you can use `h` to move left, `j` to move down, `k` to move up, and `l` to move right. 
+If you need to delete a character in *Normal mode*, simply press `x`.
+This will remove the character under the cursor. 
+To delete an entire line, use `dd`.
+
+Undoing changes is also straightforward in Vim. 
+Press `u` in Normal mode to undo the last action, and `Ctrl + r` to redo an action if you've undone too much.
+
+Sometimes, you might want to search for a specific word or phrase in your file. 
+To do this, press `/` followed by the word or phrase you're looking for, and then press Enter. 
+Vim will jump to the first instance of that text. 
+Press `n` to find the next instance or N to find the previous instance.
+
+To replace one word with another throughout the entire file, you can use the substitute command: `:%s/old/new/g`.
+This command will replace all occurrences of "old" with "new".
+If you want to confirm each replacement, add a `c` at the end: `:%s/old/new/gc`.
+
+For editing multiple lines at once, you can enter Visual mode by pressing `v` in Normal mode. 
+Move the cursor to select multiple lines or characters, then you can perform operations on that selection, like deleting with `d` or copying with `y`. 
+To paste the copied or cut text, use `p`.
+
+To open a new file or switch between multiple files in Vim, use the `:e filename` command. To list all open files (buffers) and switch between them, use `:ls` to list and `:b number` to switch, where number is the buffer number.
+:::
 
 ### Changing your text editor
 
