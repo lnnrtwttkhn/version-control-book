@@ -1,0 +1,199 @@
+---
+categories: [intermediate, github, remote]
+image: ../static/githubchapter.png
+abstract: |
+  Explore advanced GitHub features and workflows.
+---
+
+# GitHub: Advanced
+
+[{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.github >}}){.btn .btn-outline-secondary role="button"}
+[{{< fa display >}} UHH WS 23/24]({{< var uhh-ws23.github >}}){.btn .btn-outline-secondary role="button"} 
+
+::: {.callout-tip appearance="minimal"}
+<h5>Learning Objectives</h5>
+{{< include ../objectives/_objectives-GitHub_advanced.qmd >}}
+:::
+
+::: {.callout-note appearance="minimal"}
+<h5>Exercises</h5>
+{{< include ../exercises/_exercises-GitHub_advanced.qmd >}}
+:::
+
+
+## Forking a repository
+
+Forking a repository on GitHub allows you to create a personal copy of a project under your GitHub account.
+
+This separate copy includes all files, commit history, and branches.
+Forking is commonly used when you want to contribute to a project without directly modifying the original repository. 
+It enables you to make changes independently, create new branches, and push modifications to your forked repository.
+You can also submit changes to the original repository through pull requests.
+
+By clicking the **Fork** button on a repository page, shown in @fig-forking, you create an identical copy in your GitHub account.
+
+![Screenshot of a repository with fork button](../static/github-forking.png){#fig-forking}
+
+Once the forking process is complete, you can clone the repository to your local machine using the `git clone` command.
+
+## Pull requests
+
+A **pull request** serves as a request for code review and integration into a project's codebase, enabling collaboration and ensuring code quality before changes are merged. 
+When dealing with pull requests, there are two main workflows: (1) a pull request from a forked repository, (2) a pull request from a branch within a repository.
+
+### Pull request from a forked repository
+
+To create a pull request after forking a repository and making changes follow these steps:
+
+1.  Navigate to your forked repository on GitHub by visiting https://github.com/<your-username>/<repository-name>. 
+Make sure you are on the branch that contains the changes you want to propose.
+
+2.  Click on "Contribute" and then "Open Pull Request".
+
+3.  In the pull request interface, choose the branch you made changes to in your fork (the "compare" branch) and the original repository's branch where you want to propose your changes (the "base" branch).
+
+4.  Review the changes.
+
+5.  Click on the "Create Pull Request" button.
+Give your pull request a meaningful title and provide a description explaining the changes you made.
+
+6.  Submit the Pull Request.
+
+The owner of the original repository can now approve the changes and thereby merge your repository's branch into his.
+
+### Pull request from a branch within a repository
+
+In this scenario, contributors work directly within the main repository, creating a new branch for their changes. 
+After completing the changes in the branch, they create a pull request from that branch to the main repository's default branch (typically `main` or `master`). 
+The workflow for this is the same as for opening a pull request for a forked repository.
+
+##  `README` file 
+
+As mentioned earlier, the `README` file can be created together with your repository or can be added later. 
+The `README` file should contain "a description of your repository" but what does that entail?
+
+The exact content depends on your repository, but some general things that you might want to include are:
+
+- **Project description**:
+What function does this repository serve, what are it's key features?
+
+- **Installation instructions** (if applicable): Explain how to install and set up your project, including any dependencies or prerequisites.
+Provide clear instructions to help users or contributors get started with your project  quickly.
+
+- **Usage** (if applicable):
+Provide examples or code snippets demonstrating how to use your project.
+
+- **Contributing**:
+If you welcome contributions, specify how others can contribute to your project.
+Here, you can also include guidelines for submitting bug reports, feature requests, or pull requests.
+
+::: {.callout-tip title="Adding a `CONTRIBUTING.md` file to a repository" collapse="true" appearance="simple"}
+For larger or more complex projects where contributions may involve setting up a specific development environment or adhering to specific workflows, it is standard practice to create a file called `CONTRIBUTING.md`.
+GitHub recognizes the presence of a `CONTRIBUTING.md` file in a repository and, for example, automatically includes a link to the `CONTRIBUTING.md` file when users open a new issue or pull request.
+:::
+
+- **Acknowledgments**:
+Give credit to any third-party libraries, tools, or individuals that contributed to your project.
+
+- **License**:
+Choose a license that aligns with your project's goals. 
+Common options include GPL, allowing modifications and commercial use. 
+You can use [choosealicense.com](https://choosealicense.com) for guidance. 
+The chosen license influences contributions to your project.
+
+::: {.callout-tip title="View the `README.md` file of this project." collapse="true" appearance="simple" icon="false"}
+{{< include ../README.md >}}
+:::
+
+### Markdown syntax {.unnumbered}
+
+A `README` is typically a Markdown (`.md`) file, which means you can use [Markdown]({{< var links.markdown >}}) syntax in it.
+Markdown allows you to easily format text, create lists, include links, and embed images.
+For an introduction, you can check out the [Quarto workshop slides]({{< var links.quarto-workshop >}}) by the creators of this book.
+
+## Git blame
+
+The command `git blame` is useful when you are working on a project with multiple collaborators. 
+It it used to show when and by whom, each line in a specific file was last changed.
+You have to specify a file when using it, for example:
+
+```{bash}
+git blame recipes.txt
+```
+
+If you are working solo on a text file, the result should not be very interesting.
+However if you collaborate on code, this command can be very useful (for blame **or** praise!)
+
+::: {.callout-tip title="Common `git blame` flags" collapse="true"}
+`-L <start>,<end>`:
+Specifies a line range to blame. For example, `git blame -L 10,20 file.txt` will blame lines 10 to 20 of the file.
+
+`-M`:
+Detects lines that were moved within the file and shows the original author's information.
+
+`-e`:
+Shows the author's email address in addition to their name.
+
+`-t`: 
+Shows the commit timestamp for each line.
+:::
+
+## Template repositories
+
+Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others. 
+Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. 
+This simplifies the process of setting up new projects that share common characteristics or follow best practices. 
+Template repositories have a "Use this template" button on a template repository page, as shown in @fig-template. 
+Click it to provide a new, repository name and description, and then create the repository with your desired settings.
+
+![Screenshot of a template repository](../static/github-template.png){#fig-template}
+
+## Branch protection
+
+When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
+By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch.
+It also prevents accidental or unauthorized changes from being merged directly.
+
+### How to protect the `main` branch on GitHub
+
+-   Go to your repository on GitHub and click on "Settings".
+-   In the left sidebar, select "Branches".
+-   Under "Branch protection rules," click on "Add rule".
+-   In the "Branch name pattern" field, enter the name of your `main` branch.
+-   Enable the options you want to enforce for the `main` branch. 
+-   Click "Create" to save the branch protection rule.
+
+A common option includes to **require pull request reviews**.
+This requires one or more approving reviews before changes can be merged.
+Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.
+
+## Alternatives to GitHub
+
+While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub.
+Not only since it was bought by Microsoft in 2018, who subsequently [used public repositories to train their AI tool](https://www.vice.com/en/article/g5vmgw/github-users-want-to-sue-microsoft-for-training-an-ai-tool-with-their-code)
+Some prominent options include [GitLab](https://about.gitlab.com/de-de/), [Bitbucket](https://bitbucket.org), [SourceForge](https://sourceforge.net) or [Codeberg](https://codeberg.org/).
+
+Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in. 
+On the other hand there are also advantages to GitHub like it's relatively easy to use interface, the rich ecosystem and it's extensive integration to third party tools.
+
+## Acknowledgements
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("GitHub2023", "chacon2014", "community2022")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "github"), format = "markdown", row.names = FALSE)
+```
