@@ -161,8 +161,8 @@ Offers administrative access to the entire organization, including managing team
 To create a new repository, click on the "**+**" sign in the top-right corner of the GitHub page.
 From the dropdown menu, select **New repository**."
 On the new repository page, as shown in @fig-newrepo, enter a name for your repository and make sure the "**Public**" option is selected if you want it to be accessible to everyone.
-You can also choose to create a README file by checking the corresponding box.
-If you want to upload an existing repository, you should not create a README, since your GitHub repository needs to be completely empty.
+You can also choose to create a `README.md` file by checking the corresponding box.
+If you want to upload an existing repository, you should not create a `README.md`, since your GitHub repository needs to be completely empty.
 Finally, click the green **"Create repository"** button at the bottom of the page to complete the creation process.
 
 ::: {.callout-tip title="Public or private?" collapse="true"}
@@ -214,7 +214,7 @@ This pushes the local branch named "main" to a remote repository called "origin"
 `-u` is used to set the upstream branch.
 It tells Git to remember the remote branch to which your local branch should be pushed in the future.
 
-::: {.callout-tip title="common git remote commands" collapse="true"}
+::: {.callout-tip title="Common git remote commands" collapse="true"}
 `git remote`: Lists all remote repositories associated with the current local repository.
 
 `git remote -v`: Lists remote repositories along with their URLs.
@@ -246,25 +246,21 @@ You can now work with the files in the repository, make changes, and commit your
 Remember to use the appropriate Git commands like `git add`, `git commit`, and `git push` to manage your changes and synchronize them with the remote repository as needed.
 By default, `git clone` will create a reference to the remote repository called "origin", so you do not have to use `git remote` to create a remote repository.
 
+Before you make changes to your newly cloned repository you should use the `cd` to navigate into it.
+This step of changing into the repository directory is crucial. 
+Forgetting to do so may lead to confusion, as any Git commands you run will not affect the intended repository but rather the one associated with the current working directory.
+
 ### Repository settings
 
 To access the settings of a GitHub repository, go to the main page of the GitHub repository you want to configure and look for the "Settings" tab, usually located towards the right side of the repository's navigation bar.
 Once you're on the repository settings page, you'll find various sections on the left sidebar that allow you to configure different aspects of the repository, such as "General," "Branches," or "Collaborators".
 
 In the "General" section you can, for example, rename your repository or default branch, change the repositories visibility or delete your repository.
-
-In the "Collaborators" tab, it is possible to add accounts which can view or change your repository, even if it is private. 
 For a detailed guide on the repository settings, you can check out the [GitHub documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features).
 
-### Fetching
+### Addding Collaborators
 
-The command `git fetch` is used to keep up-to-date with changes in the remote repository, *without* merging them into your local branch.
-Instead Git will update all your local tracking branches to the remote branch.
-To view your remote tracking branches, you can use `git branch -r`.
-After fetching, you can use `git switch` to review the changes on these branches.
-If you want to integrate the changes into you local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
-
-`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
+In the "Collaborators" tab of the settings, it is possible to add accounts which can view or add changes your repository, even if it is private by entering their GitHub username or email address. 
 
 ## {{< fa download >}} Pulling
 
@@ -330,6 +326,16 @@ This can be useful for cleaning up the commit history or grouping related change
 Automatically stash local changes before pulling, then apply them back after the pull is complete.
 This is handy when you have changes in progress and want to pull in the latest changes from the remote branch.
 :::
+
+### Fetching
+
+The command `git fetch` is used to keep up-to-date with changes in the remote repository, *without* merging them into your local branch.
+Instead Git will update all your local tracking branches to the remote branch.
+To view your remote tracking branches, you can use `git branch -r`.
+After fetching, you can use `git switch` to review the changes on these branches.
+If you want to integrate the changes into you local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
+
+`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 
 ## {{< fa upload >}} Pushing
 
