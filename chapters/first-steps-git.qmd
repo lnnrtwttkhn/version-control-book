@@ -420,12 +420,9 @@ You should not consider a commit as a general `Save` button, that you use to sav
 Instead, each commit should ideally contain one isolated and complete change.
 For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
 
-This approach to commits, helps you down the line. 
+This approach to commits helps you down the line. 
 For example, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
 If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
-An example of commit messages, which are not really optimal, you can see down below in @fig-bad_commits_comic.
-
-![Comic: Git Commit, by [xkcd](https://xkcd.com/1296/)](../static/bad_commits_comic.png){#fig-bad_commits_comic}
 
 ### Commit messages etiquette
 
@@ -444,6 +441,11 @@ This commit adds the user registration functionality to the application. It incl
 - Created a new 'register' route and view for user registration.
 - Added form validation for user input."
 ```
+
+An example of commit messages, which are not really optimal, are illustrated by @fig-bad_commits_comic.
+
+!["Git Commit" by [xkcd](https://xkcd.com/1296/) (License: [CC BY-NC 2.5](https://xkcd.com/license.html))](../static/xkcs-git-commit.png){#fig-bad_commits_comic}
+
 
 ::: {.callout-tip title="Commit messages examples" collapse="true"}
 Some examples for commit messages, which stick to the etiquette:
