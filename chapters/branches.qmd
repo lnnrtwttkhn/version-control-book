@@ -31,7 +31,7 @@ They let you work on different stuff without messing up the main code.
 You can visualize branches as shown in @fig-branches.
 
 Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you're ready. 
-It's great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. 
+Branches are great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. 
 Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis.
 Git makes it easy to switch between branches and handle conflicts when merging.
 With branches, you can work independently and keep your code organized.
@@ -61,7 +61,7 @@ In Git, you can have multiple branches in your project, and this command helps y
 The one with the asterisk is the branch where your working directory is currently positioned. 
 In this case, `main` is the active branch.
 If there were other branches listed without an asterisk, it means they exist, but you are not currently "on" those branches.
-You are "on `main`".
+You are currently "on main".
 
 ## Creating a new branch
 
@@ -124,7 +124,14 @@ If you switched branches successfully, you should receive an output similar to t
 Switched to branch 'feature'
 ```
 
-Now you can work on this branch as usual using the staging/committing workflow introduced in the chapter on [basic Git commands](first-steps-git.qmd).
+Now you can work on this branch as usual, staging and committing changes, as introduced in the chapter on [basic Git commands](first-steps-git.qmd).
+
+::: {.callout-note title="I just created a new Git repository but can't switch the branch! What is going on?" collapse="true"}
+
+Before you can switch branches for the first time, you need to have made at least one commit on your current branch (for example, on the `main` branch).
+This requirement ensures that there's a baseline history in your repository, allowing Git to manage changes.
+
+:::
 
 ::: {.callout-tip title="What is the difference between `git checkout` and `git switch`?" collapse="true"}
 Prior to Git version 2.23, the `git checkout` command was the primary way to switch branches. 
@@ -136,10 +143,13 @@ It simplifies the branch-switching process and provides clearer feedback in case
 It can be used for branch switching, but it may have some ambiguity in its syntax, especially when used for other purposes.
 :::
 
-### Error when switching branches
+### Switching branches with uncommitted changes
+
+When you have uncommitted changes in your working directory that do not conflict with the branch you're switching to, Git allows you to switch branches without losing those changes.
+Your uncommitted changes are effectively brought over to the new branch. This feature can be particularly useful when you've started making changes and then realize you're on the wrong branch or need to move your work to a different context.
 
 Git is designed to prevent you from switching branches if there's a risk of overwriting your changes.
-This means that Git will not allow you to switch branches if you have uncommitted changes on your branch.
+This means that Git will not allow you to switch branches if your uncommitted changes would cause conflicts with the branch you're attempting to switch to.
 If you try to switch branches with uncommitted changes you will get an error message similar to:
 
 ```{bash}
@@ -151,8 +161,22 @@ Aborting
 
 The message specifies the file with modifications, and indicates an aborted branch switch due to uncommitted changes.
 
-If you want to keep your changes you should save them using the [stage and commit workflow](first-steps-git.qmd)
-It is also possible to temporarily stash your changes using `git stash` or delete your changes using `git reset` which is covered in the [Stashing and co.](intermediate-commands.qmd) chapter.
+To resolve this and switch branches safely, you have a few options:
+
+**Commit your changes:**
+Use the commit process to save your work on the current branch. This involves staging your changes with `git add` and then committing them with `git commit`.
+This workflow is explained in detail in the chapter on [basic Git commands](first-steps-git.qmd).
+
+**Stash your changes:**
+If you're not ready to commit, you can use `git stash` to temporarily shelve your changes.
+This clears your working directory, allowing you to switch branches. 
+Your stashed changes can be reapplied later. 
+The process of stashing, and other techniques to manage uncommitted changes, are covered in the [Stashing and Co. chapter](intermediate-commands.qmd).
+
+**Discard your changes:** 
+If the changes are not needed, you can remove them using `git reset` to unstage all changes. 
+This action should be used with caution as it will erase your modifications. 
+This command is also explained in the [Stashing and Co. chapter](intermediate-commands.qmd).
 
 ## Merging branches
 
@@ -189,9 +213,8 @@ Fast-forward
 
 The output reveals a **"fast-forward" merge** operation, where changes from commit `555ba0c` to `994bb8d` are incorporated.
 The common starting point of the two branches is commit `555ba0c` and commit `994bb8d` marks the latest commit in the merged branch.
-A "fast-forward" merge, the simplest form of merges, smoothly updates your position to the latest changes without creating a new commit.
-This linear integration avoids diverging paths.
-Additionally, the merge modified only one file, the `example.txt` file, introducing four new lines denoted by `4 ++++`.
+A "fast-forward" merge, the simplest form of merges, updates your position to the latest changes without creating a new commit.
+In this example, the merge modified only one file, the `example.txt` file, introducing four new lines denoted by `4 ++++`.
 
 ## Merge conflicts
 
@@ -230,7 +253,7 @@ To do this, open up the file(s) with conflicts in a text editor, and you'll see 
 
 This might look something like this:
 
-```
+```{console}
 \<<<<<<< HEAD
 # Recipe: Chocolate Cake
 
@@ -272,7 +295,7 @@ You might want to keep some changes from your current branch, some from the inco
 
 After editing the file it might look something like this:
 
-```
+```{console}
 # Recipe: Chocolate Cake
 
 Ingredients:
@@ -302,8 +325,8 @@ Instructions:
 3. Combine dry ingredients and gradually add to the butter mixture.
 4. If desired, fold in chopped nuts.
 5. Spread the batter evenly into the prepared pan.
-
 ```
+
 In this example, the conflict has been resolved by keeping both sets of changes. 
 The sections for "Chocolate Cake" and "Chocolate Brownies" are now both present in the file.
 
@@ -336,7 +359,7 @@ Each merge type has its purpose and advantages, allowing developers to choose th
 
 #### Standard merge
 
-In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original time stamps. 
+In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch (the branch you are currently on) with their original time stamps. 
 It creates a new "merge commit", a special record that marks when the merge happened, showing that the branches are now combined.
 To perform a standard merge, use the following command:
 
