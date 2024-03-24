@@ -305,7 +305,7 @@ div.csl-indent {
   <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch"><span class="header-section-number">6.3</span> Creating a new branch</a></li>
   <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches"><span class="header-section-number">6.4</span> Switching branches</a>
   <ul class="collapse">
-  <li><a href="#error-when-switching-branches" id="toc-error-when-switching-branches" class="nav-link" data-scroll-target="#error-when-switching-branches"><span class="header-section-number">6.4.1</span> Error when switching branches</a></li>
+  <li><a href="#switching-branches-with-uncommitted-changes" id="toc-switching-branches-with-uncommitted-changes" class="nav-link" data-scroll-target="#switching-branches-with-uncommitted-changes"><span class="header-section-number">6.4.1</span> Switching branches with uncommitted changes</a></li>
   </ul></li>
   <li><a href="#merging-branches" id="toc-merging-branches" class="nav-link" data-scroll-target="#merging-branches"><span class="header-section-number">6.5</span> Merging branches</a></li>
   <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts"><span class="header-section-number">6.6</span> Merge conflicts</a>
@@ -361,14 +361,14 @@ Learning Objectives
 <h5 class="anchored">
 Exercises
 </h5>
-<p><span class="emoji" data-emoji="memo">📝</span> Create a new branch called <code>feature/newrecipe</code> <br> <span class="emoji" data-emoji="memo">📝</span> Add a new recipe to your recipe text file <br> <span class="emoji" data-emoji="memo">📝</span> Merge this branch with your <code>main</code> branch and delete the <code>feature</code> branch afterwards</p>
+<p><span class="emoji" data-emoji="memo">📝</span> Create a new branch called <code>feature</code>.<br> <span class="emoji" data-emoji="memo">📝</span> Add a new recipe to your recipe text file.<br> <span class="emoji" data-emoji="memo">📝</span> Merge this branch with your <code>main</code> branch and delete the <code>feature</code> branch afterwards.</p>
 </div>
 </div>
 </div>
 <section id="why-branches" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="why-branches"><span class="header-section-number">6.1</span> Why branches?</h2>
 <p>Git branches are like separate workspaces within a Git repository. They let you work on different stuff without messing up the main code. You can visualize branches as shown in <a href="#fig-branches" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>.</p>
-<p>Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you’re ready. It’s great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis. Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.</p>
+<p>Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you’re ready. Branches are great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis. Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.</p>
 <div id="fig-branches" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -391,7 +391,7 @@ Figure&nbsp;6.1: Image from <a href="https://www.atlassian.com/git/tutorials/usi
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This output indicates that you are currently on the branch named <code>main</code>. The asterisk (<code>*</code>) in front of the branch name indicates the active or current branch in your Git repository.</p>
-<p>In Git, you can have multiple branches in your project, and this command helps you see the list of available branches. The one with the asterisk is the branch where your working directory is currently positioned. In this case, <code>main</code> is the active branch. If there were other branches listed without an asterisk, it means they exist, but you are not currently “on” those branches. You are “on <code>main</code>”.</p>
+<p>In Git, you can have multiple branches in your project, and this command helps you see the list of available branches. The one with the asterisk is the branch where your working directory is currently positioned. In this case, <code>main</code> is the active branch. If there were other branches listed without an asterisk, it means they exist, but you are not currently “on” those branches. You are currently “on main”.</p>
 </section>
 <section id="creating-a-new-branch" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="creating-a-new-branch"><span class="header-section-number">6.3</span> Creating a new branch</h2>
@@ -444,9 +444,25 @@ Common <code>git branch</code> flags
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Switched</span> to branch <span class="st">'feature'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now you can work on this branch as usual using the staging/committing workflow introduced in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="What is the difference between `git checkout` and `git switch`?">
+<p>Now you can work on this branch as usual, staging and committing changes, as introduced in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="I just created a new Git repository but can't switch the branch! What is going on?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+I just created a new Git repository but can’t switch the branch! What is going on?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Before you can switch branches for the first time, you need to have made at least one commit on your current branch (for example, on the <code>main</code> branch). This requirement ensures that there’s a baseline history in your repository, allowing Git to manage changes.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="What is the difference between `git checkout` and `git switch`?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -455,16 +471,17 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Prior to Git version 2.23, the <code>git checkout</code> command was the primary way to switch branches. It allows you to move to a different branch and update your working directory to reflect the state of that branch. In Git 2.23 and later versions, the <code>git switch</code> command was introduced as a safer and more intuitive alternative to <code>git checkout</code>. It simplifies the branch-switching process and provides clearer feedback in case of errors.</p>
 <p><code>git checkout</code> is a versatile and powerful command that, among other things, was traditionally used for switching branches. However, it has other use cases like checking out specific files or commits. It can be used for branch switching, but it may have some ambiguity in its syntax, especially when used for other purposes.</p>
 </div>
 </div>
 </div>
-<section id="error-when-switching-branches" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="error-when-switching-branches"><span class="header-section-number">6.4.1</span> Error when switching branches</h3>
-<p>Git is designed to prevent you from switching branches if there’s a risk of overwriting your changes. This means that Git will not allow you to switch branches if you have uncommitted changes on your branch. If you try to switch branches with uncommitted changes you will get an error message similar to:</p>
+<section id="switching-branches-with-uncommitted-changes" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="switching-branches-with-uncommitted-changes"><span class="header-section-number">6.4.1</span> Switching branches with uncommitted changes</h3>
+<p>When you have uncommitted changes in your working directory that do not conflict with the branch you’re switching to, Git allows you to switch branches without losing those changes. Your uncommitted changes are effectively brought over to the new branch. This feature can be particularly useful when you’ve started making changes and then realize you’re on the wrong branch or need to move your work to a different context.</p>
+<p>Git is designed to prevent you from switching branches if there’s a risk of overwriting your changes. This means that Git will not allow you to switch branches if your uncommitted changes would cause conflicts with the branch you’re attempting to switch to. If you try to switch branches with uncommitted changes you will get an error message similar to:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> Your local changes to the following files would be overwritten by checkout:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        <span class="ex">chapters/branches.qmd</span></span>
@@ -472,7 +489,10 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Aborting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The message specifies the file with modifications, and indicates an aborted branch switch due to uncommitted changes.</p>
-<p>If you want to keep your changes you should save them using the <a href="../chapters/first-steps-git.html">stage and commit workflow</a> It is also possible to temporarily stash your changes using <code>git stash</code> or delete your changes using <code>git reset</code> which is covered in the <a href="../chapters/intermediate-commands.html">Stashing and co.</a> chapter.</p>
+<p>To resolve this and switch branches safely, you have a few options:</p>
+<p><strong>Commit your changes:</strong> Use the commit process to save your work on the current branch. This involves staging your changes with <code>git add</code> and then committing them with <code>git commit</code>. This workflow is explained in detail in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p>
+<p><strong>Stash your changes:</strong> If you’re not ready to commit, you can use <code>git stash</code> to temporarily shelve your changes. This clears your working directory, allowing you to switch branches. Your stashed changes can be reapplied later. The process of stashing, and other techniques to manage uncommitted changes, are covered in the <a href="../chapters/intermediate-commands.html">Stashing and Co.&nbsp;chapter</a>.</p>
+<p><strong>Discard your changes:</strong> If the changes are not needed, you can remove them using <code>git reset</code> to unstage all changes. This action should be used with caution as it will erase your modifications. This command is also explained in the <a href="../chapters/intermediate-commands.html">Stashing and Co.&nbsp;chapter</a>.</p>
 </section>
 </section>
 <section id="merging-branches" class="level2" data-number="6.5">
@@ -496,7 +516,7 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a> <span class="ex">1</span> file changed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The output reveals a <strong>“fast-forward” merge</strong> operation, where changes from commit <code>555ba0c</code> to <code>994bb8d</code> are incorporated. The common starting point of the two branches is commit <code>555ba0c</code> and commit <code>994bb8d</code> marks the latest commit in the merged branch. A “fast-forward” merge, the simplest form of merges, smoothly updates your position to the latest changes without creating a new commit. This linear integration avoids diverging paths. Additionally, the merge modified only one file, the <code>example.txt</code> file, introducing four new lines denoted by <code>4 ++++</code>.</p>
+<p>The output reveals a <strong>“fast-forward” merge</strong> operation, where changes from commit <code>555ba0c</code> to <code>994bb8d</code> are incorporated. The common starting point of the two branches is commit <code>555ba0c</code> and commit <code>994bb8d</code> marks the latest commit in the merged branch. A “fast-forward” merge, the simplest form of merges, updates your position to the latest changes without creating a new commit. In this example, the merge modified only one file, the <code>example.txt</code> file, introducing four new lines denoted by <code>4 ++++</code>.</p>
 </section>
 <section id="merge-conflicts" class="level2" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="merge-conflicts"><span class="header-section-number">6.6</span> Merge conflicts</h2>
@@ -517,7 +537,8 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 </div>
 <p>Git will highlight the conflicting parts in the affected file(s), and you must choose the desired changes or modify them to create a consistent version. To do this, open up the file(s) with conflicts in a text editor, and you’ll see the conflicting sections marked with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
 <p>This might look something like this:</p>
-<pre><code>\&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<div class="cell">
+<pre class="console cell-code"><code>\&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 # Recipe: Chocolate Cake
 
 Ingredients:
@@ -548,10 +569,12 @@ Instructions:
 4. If desired, fold in chopped nuts.
 5. Spread the batter evenly into the prepared pan.
 \&gt;&gt;&gt;&gt;&gt;&gt;&gt; </code></pre>
+</div>
 <p>The lines between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> represent the changes that were made in your current branch. The section between <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> represents the changes from the branch you are trying to merge into your current branch.</p>
 <p>Manually edit the conflicting sections to the desired state, removing the conflict markers. You might want to keep some changes from your current branch, some from the incoming branch, or make entirely new changes.</p>
 <p>After editing the file it might look something like this:</p>
-<pre><code># Recipe: Chocolate Cake
+<div class="cell">
+<pre class="console cell-code"><code># Recipe: Chocolate Cake
 
 Ingredients:
 - 2 cups all-purpose flour
@@ -579,8 +602,8 @@ Instructions:
 2. Melt butter, then stir in sugar, eggs, and vanilla.
 3. Combine dry ingredients and gradually add to the butter mixture.
 4. If desired, fold in chopped nuts.
-5. Spread the batter evenly into the prepared pan.
-</code></pre>
+5. Spread the batter evenly into the prepared pan.</code></pre>
+</div>
 <p>In this example, the conflict has been resolved by keeping both sets of changes. The sections for “Chocolate Cake” and “Chocolate Brownies” are now both present in the file.</p>
 <p>If you are done, save the file and use <code>git add</code> to stage the resolved changes:</p>
 <div class="cell">
@@ -592,7 +615,7 @@ Instructions:
 </div>
 <p>Your branches should now be merged and your conflict resolved.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -601,7 +624,7 @@ Common <code>git merge</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--abort</code>: Abort the current merge operation and reset the branch to its pre-merge state.</p>
 <p><code>--continue</code>: Continue the merge process after resolving conflicts.</p>
@@ -615,7 +638,7 @@ Common <code>git merge</code> flags
 <p>Git supports different types of merges to cater to various situations in software development. Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.</p>
 <section id="standard-merge" class="level4" data-number="6.6.3.1">
 <h4 data-number="6.6.3.1" class="anchored" data-anchor-id="standard-merge"><span class="header-section-number">6.6.3.1</span> Standard merge</h4>
-<p>In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch with their original time stamps. It creates a new “merge commit”, a special record that marks when the merge happened, showing that the branches are now combined. To perform a standard merge, use the following command:</p>
+<p>In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch (the branch you are currently on) with their original time stamps. It creates a new “merge commit”, a special record that marks when the merge happened, showing that the branches are now combined. To perform a standard merge, use the following command:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -638,7 +661,7 @@ Common <code>git merge</code> flags
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--squash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -647,7 +670,7 @@ Common <code>git merge</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--interactive</code> or <code>-i</code>: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.</p>
 <p><code>--continue</code>: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.</p>
