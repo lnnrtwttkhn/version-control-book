@@ -32,9 +32,9 @@ jobs:
         with:
           cache-version: 1
 
-      - name: Download images
+      - name: Download static
         run: |
-          make download-images
+          make static
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
