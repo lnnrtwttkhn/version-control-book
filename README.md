@@ -1,4 +1,4 @@
-# Version Control Book
+# Version Control Book {.unnumbered}
 
 [![DOI](https://zenodo.org/badge/648830079.svg)](https://zenodo.org/doi/10.5281/zenodo.10724424)
 [![DOI](https://www.fdr.uni-hamburg.de/badge/DOI/10.25592/uhhfdm.14149.svg)](https://doi.org/10.25592/uhhfdm.14149)
@@ -6,7 +6,7 @@
 [![All Contributors](https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&style=flat-square)](#contributors)
 [![Codespell](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg)](https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml)
 
-## Description
+## Description {.unnumbered}
 
 Welcome to the [Version Control Book](https://lennartwittkuhn.com/version-control-book/), a resource initially created in the context of a [course on version control](https://lennartwittkuhn.com/version-control-course-uhh-ws23/) at [Universität Hamburg](https://www.uni-hamburg.de) in 2023/2024.
 
@@ -15,7 +15,7 @@ The book also aims to serve as an open-source learning resource for everyone, wi
 This is a living resource on why and - more importantly - how to use Git.
 The rendered version is at <https://lennartwittkuhn.com/version-control-book/> and is under constant development.
 
-## Contributing
+## Contributing {.unnumbered}
 
 Contributions in any form - pull requests, issues, content requests, ideas, etc. - are always welcome.
 If you are using the book and find that something does not work, please [let us know](https://github.com/lnnrtwttkhn/version-control-book/issues).
@@ -25,7 +25,7 @@ To maintain consistency and readability, we follow a [style guide](https://lenna
 Please refer to the Style Guide for details on formatting, coding standards, and other conventions.
 We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control!
 
-## Usage
+## Usage {.unnumbered}
 
 To render and preview, execute:
 
@@ -33,7 +33,7 @@ To render and preview, execute:
 quarto preview
 ```
 
-## License
+## License {.unnumbered}
 
 [CC-BY-SA](LICENSE)
 
@@ -51,7 +51,7 @@ under the following terms:
 2) **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your
  contributions under the same license as the original.
 
-## Contributors
+## Contributors {.unnumbered}
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
