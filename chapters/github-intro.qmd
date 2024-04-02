@@ -267,7 +267,7 @@ In the "Collaborators" tab of the settings, it is possible to add accounts which
 ## {{< fa download >}} Pulling
 
 The `git pull` command is used to retrieve the latest changes from a remote repository **and** merge them into your local branch.
-Effectively, `git pull` first runs `git fetch` (see above) to fetch the latest changes from the remote repository and then integrates these changes into the local branch, either using `git merge` (for details, see the [branches](branches.qmd) chapter) or `git rebase` (for details, see the section on [rebasing](intermediate-commands.qmd)), depending on the configuration.
+Effectively, `git pull` first runs `git fetch` (see below) to fetch the latest changes from the remote repository and then integrates these changes into the local branch, either using `git merge` (for details, see the [branches](branches.qmd) chapter) or `git rebase` (for details, see the section on [rebasing](intermediate-commands.qmd)), depending on the configuration.
 In other words, `git pull` is a `git fetch` followed by a `git merge`.
 
 You can test this function by editing a file in your repository on GitHub and then use `git pull` to update your local file with the change made on GitHub.
@@ -334,9 +334,10 @@ This is handy when you have changes in progress and want to pull in the latest c
 
 The command `git fetch` is used to keep up-to-date with changes in the remote repository, *without* merging them into your local branch.
 Instead, Git will update all your local tracking branches to the remote branch.
+That means if you have made changes in your remote repository to a branch called e.g. `feature`, `git fetch` will leave your local `feature` branch as it is, but will update your remote tracking branch called: `origin/feature`.
 To view your remote tracking branches, you can use `git branch -r`.
 After fetching, you can use `git switch` to review the changes on these branches.
-If you want to integrate the changes into you local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
+If you want to integrate the changes into your local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
 
 `git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 This allows you to review the changes fetched from the remote repository before integrating them with your local branch.
