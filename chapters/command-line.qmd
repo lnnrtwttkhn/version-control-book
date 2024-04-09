@@ -18,8 +18,8 @@ abstract: |
 
 ## Why using Git from the command line?
 
-Git is fundamentally a command-line tool.
-This is why comfort with the command line is essential for learning Git.
+Even though many [Graphical User Interfaces](gui.qmd) exist, Git is fundamentally a command-line tool.
+This is why comfort with the command line a good basis for learning Git.
 
 ## General advantages of the command line
 
@@ -27,6 +27,7 @@ This is why comfort with the command line is essential for learning Git.
 1. **Power:** The command line is a robust and powerful tool, enabling users to accomplish intricate tasks efficiently.
 1. **Simplicity:** With just a few keystrokes or lines of code, the command line empowers users to execute complex tasks effortlessly.
 1. **Task Automation:** The shell allows users to automate repetitive tasks, saving time and effort in performing them manually.
+1. **Flexibility:** Knowing how to use Git from the command line, allows you to use Git on every device.
 1. **Workflow Integration:** Users can seamlessly combine smaller tasks into larger, more potent workflows, enhancing productivity and efficiency.
 1. **Comprehensive Feature Set:** The command line interface provides access to the complete range of Git features, offering more extensive functionality compared to graphical user interfaces (GUIs).
 1. **Extensive Online Support:** When seeking help or troubleshooting Git-related issues online, you will often find valuable assistance in the form of command line instructions.
@@ -122,7 +123,7 @@ Once you have installed Git for Windows, you can easily open a terminal by launc
 
 ## {{< fa brands linux >}} Linux
 
-Open a fresh Terminal.
+To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing Ctrl + Alt + T simultaneously. If this shortcut does not work, you can find the terminal application in your system's applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.
 
 ## {{< fa rocket >}} JupyterHub
 
@@ -560,24 +561,24 @@ The path of the directory we want to create is given as an argument to the comma
 If we want to create a directory in the current folder, we just need to use its name, as the path is assumed to be relative.
 
 ```{bash}
-mkdir my-project
+mkdir recipes
 ```
 
 Make sure the project folder is present by using the `ls` command, and then move into it by using the `cd` command.
 
 ```{bash}
 ls
-cd my-project
+cd recipes
 ```
 
 ### Creating multiple folders
 
-Next, we will proceed to create multiple additional folders within the `my-project` project folder.
+Next, we will proceed to create multiple additional folders within the `recipes` project folder.
 The `mkdir` command allows us to create multiple directories simultaneously by providing multiple arguments, each representing a separate folder.
 For example, for a data analysis project we might create the following three folders:
 
 ```{bash}
-mkdir data results scripts
+mkdir vegetarian vegan glutenfree
 ```
 
 ### Creating files
@@ -586,10 +587,10 @@ Let's create some files in the `my-project` project folder.
 To do this, you can use your favorite text editor or the command line.
 In the command line, you can use the `touch` command to create a new empty file.
 The file doesn't need to contain anything.
-For example, to create an empty file called `file.txt`, we can use the following command:
+For example, to create an empty file called `recipes`.txt`, we can use the following command:
 
 ```{bash}
-touch file.txt
+touch recipes.txt
 ```
 
 ### Opening files
@@ -602,14 +603,14 @@ On the command line, you can use the `open` command on macOS or the `start` comm
 #### {{< fa brands microsoft >}} Windows (GitBash)
 
 ```{bash}
-start file.txt
+start recipes.txt
 ```
 
 
 #### {{< fa brands apple >}} macOS
 
 ```{bash}
-open file.txt
+open recipes.txt
 ```
 
 :::
@@ -635,10 +636,10 @@ To display the content of a file, simply use `cat` followed by the file name.
 For example:
 
 ```{bash}
-cat file.txt 
+cat recipes.txt 
 ```
 
-This command will output the entire content of the `file.txt` file to the terminal.
+This command will output the entire content of the `recipes`.txt` file to the terminal.
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of the `cat` command applied to the `.gitignore` file in the project directory of this guide.</summary>
@@ -652,22 +653,22 @@ cat .gitignore
 
 ### Moving folders and files
 
-Let's say we want to move the `file.txt` file to the `/scripts` folder.
+Let's say we want to move the `recipes.txt` file to the `/vegan` folder.
 We can use the `mv` command to move files and folders.
 The `mv` command requires two arguments: the first is the files or folders to be moved, and the second is the path where they should be moved.
-To move the `file.txt` file, the command would look like this:
+To move the `recipes.txt` file, the command would look like this:
 
 ```{bash}
-mv file.txt scripts
+mv recipes.txt vegan
 ```
 
 ### Renaming files and folders
 
-Suppose we don't like the folder name `scripts` because `file.txt` is actually a documentation file, not a script.
-We can use the `mv` command to rename files and folders by moving them to a different location in the file system, for example `docs`, like this:
+Suppose we don't like the folder name `vegan` because `recipes.txt` actually contains meat recipes.
+We can use the `mv` command to rename files and folders by moving them to a different location in the file system, for example `meat`, like this:
 
 ```{bash}
-mv scripts docs
+mv vegan meat
 ```
 
 ### Wildcards
@@ -735,10 +736,10 @@ To delete files and folders, you can use the `rm` command.
 Provide the path of the files or folders that you want to delete as the argument.
 However, if you want to remove a folder, you need to include the `-r` (or `--recursive`) flag.
 
-For example, to remove the `docs` folder, you would use the following command:
+For example, to remove the `glutenfree` folder, you would use the following command:
 
 ```{bash}
-rm -r docs
+rm -r glutenfree
 ```
 
 ::: {.callout-warning title="**Warning: Be careful when using the `rm` command!**" collapse="false"}
