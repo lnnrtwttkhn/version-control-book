@@ -9,6 +9,7 @@ abstract: |
 # Command Line
 
 [{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.cli >}}){.btn .btn-outline-secondary role="button"}
+[{{< fa display >}} UHH SS 24]({{< var uhh-ss24.cli >}}){.btn .btn-outline-secondary role="button"} 
 [{{< fa display >}} UHH WS 23/24]({{< var uhh-ws23.cli >}}){.btn .btn-outline-secondary role="button"} 
 
 ::: {.callout-tip appearance="minimal"}
@@ -23,25 +24,30 @@ abstract: |
 
 ## Why using Git from the command line?
 
-Even though many [Graphical User Interfaces](gui.qmd) exist, Git is fundamentally a command-line tool.
-This is why comfort with the command line a good basis for learning Git.
+You are most likely used to interacting with programs on your computer through graphical user interfaces (GUIs) where you can select options through graphical icons and visual indicators using the computer mouse.
+However, computers have historically been controlled through text-based commands typed into command-line interfaces (CLIs) using the computer keyboard.
+To this day, the command line has persisted as a reliable (and sometimes the only) way to interact effectively with computer programs.
+Similarly, even though many GUIs for Git exist (for an overview, see the chapter on [Graphical User Interfaces](gui.qmd)), Git is fundamentally a command-line tool.
+This is why comfort with the command line is a good basis for learning Git.
 
-## General advantages of the command line
+**General advantages** of the command line include:
 
 1. **Longevity:** The command line has stood the test of time, remaining relevant and widely used even as new technologies emerge.
 1. **Power:** The command line is a robust and powerful tool, enabling users to accomplish intricate tasks efficiently.
 1. **Simplicity:** With just a few keystrokes or lines of code, the command line empowers users to execute complex tasks effortlessly.
-1. **Task Automation:** The shell allows users to automate repetitive tasks, saving time and effort in performing them manually.
+1. **Task Automation:** The command line allows users to automate repetitive tasks, saving time and effort in performing them manually.
 1. **Flexibility:** Knowing how to use Git from the command line, allows you to use Git on every device.
 1. **Workflow Integration:** Users can seamlessly combine smaller tasks into larger, more potent workflows, enhancing productivity and efficiency.
 1. **Comprehensive Feature Set:** The command line interface provides access to the complete range of Git features, offering more extensive functionality compared to graphical user interfaces (GUIs).
-1. **Extensive Online Support:** When seeking help or troubleshooting Git-related issues online, you will often find valuable assistance in the form of command line instructions.
+1. **Extensive Online Support:** When looking for help or troubleshooting Git-related issues online, you will often find valuable assistance in the form of command line instructions.
 Platforms like [Stack Overflow](https://stackoverflow.com/questions/tagged/git) frequently provide guidance and solutions based on command line usage.
 
 ## Terminology
 
+Before we begin explaining the basics of the command line, let's start by defining some key terms that you'll frequently encounter throughout this book:
+
 A **file** is an unit of digital data storage that can contain a variety of information, such as text, images or even programs. 
-It is identified by an unique name and an extension, which indicates the file's format or type. 
+It is identified by an unique name and an extension, which indicates the file's format or type (for example, `file.txt`). 
 Files are organized within a file system, allowing users to create, access, modify, and delete them.
 
 A **folder** is a container used in file systems to store and organize files and other folders.
@@ -51,32 +57,45 @@ A **directory** is the more technical term, while **folder** is a user-friendly 
 In practice, the two terms are often used interchangeably, and many operating systems have adopted the term "folder".
 
 The **"command-line interface (CLI)"** is a text-based way to interact with computer programs.
+Specifically, the term "command line" refers to the interface where users input text commands to communicate with the computer.
 Most people primarily use a Graphical User Interface (GUI) to work with their programs, but historically, text-based interfaces were more common.
 Often, the GUI can only access a limited set of features available through the CLI and some programs don't even have a GUI and can only be used through the command line.
 For many years, the command line was the primary way to interact with computers.
-Before GUIs like the ones we use today, early computer users communicated with their machines by typing text-based commands.
-This text-based interaction allowed them to perform various tasks, from running programs to managing files and directories.
+This text-based interaction allows to perform various tasks, from running programs to managing files and directories.
 
-**"Terminal"** is short for "terminal emulator", which is a program that mimics a physical device called a terminal.
+The **"terminal"**, short for "terminal emulator", is the application or program that you open on your computer to access the command-line interface.
 Terminals were used to connect to mainframe computers in the early days of computing.
-The terminal program creates the window with the dark background, light text, and cursor.
+The terminal program creates a window in which you can type commands and see the output from these commands..
 
-A **"shell"** is a program that provides the command line to your operating system.
+The **"shell"** is a software that interprets the commands you type into the terminal.
+It acts as a layer between you and the operating system.
+The shell processes the commands and communicates with the computer's operating system to execute them.
 It allows you to perform various tasks that your operating system offers, such as managing files, running and stopping programs, and changing system settings, all through text commands.
-When you "open a terminal", the program initially communicating with the terminal is a shell.
-There are multiple shell options available for different operating systems, with the most popular one being the "Bourne Again Shell" or "Bash".
+Examples of popular shells include Bash on Linux and macOS, and PowerShell on Windows.
 
-The terms "shell", "command line", "command-line interface (CLI)", and "terminal" are used interchangeably and generally refer to the same thing: a simple window with a dark background and light text, showing a prompt and a blinking cursor.
+In combination, in a typical scenario, you would open a terminal (the window), use the shell within that terminal to understand and process your commands, and interact with your computer through the command line interface provided by the terminal.
+That being said, the terms "shell", "command line", "command-line interface (CLI)", and "terminal" are often used interchangeably and roughly refer to the same thing: a simple window showing a prompt and a blinking cursor (see @fig-cli).
 In movies, when people hack into computers, they often type rapidly in this window.
+
+![The command line (Bourne shell interaction in Version 7 Unix). License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en), Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Version_7_UNIX_SIMH_PDP11_Kernels_Shell.png)
+](../static/command-line-bash.png){#fig-cli}
 
 ## Finding the command line
 
 This section can you help you finding the command line on your system.
-Click on the tab for your operating system for detailed information.
+Click on the tab for your operating system or computer environment for detailed information.
 
 ::: {.panel-tabset}
 
-## {{< fa brands apple >}} MacOS
+## {{< fa brands microsoft >}} Windows
+
+By default, Windows operating systems do not come with a pre-installed Unix Shell program.
+In this guide, we recommend using an emulator provided by [Git for Windows](https://gitforwindows.org/), which grants you access to both Bash shell commands and Git.
+
+For an installation guide, you can check out the chapter on [installation](installation.qmd) and [setup](setup.qmd).
+Once you have installed Git for Windows, you can open a terminal by launching the program called "Git Bash" from the Windows start menu.
+
+## {{< fa brands apple >}} macOS
 
 You can access your default shell through the Terminal program located within the Utilities folder:
 There are (at least) three different ways to get there:
@@ -118,14 +137,6 @@ The version number will be listed under the "Overview" tab.
 For example, it might say "macOS Big Sur" or "macOS Monterey", along with the version number (e.g., "Version 11.4").
 :::
 
-## {{< fa brands microsoft >}} Windows
-
-By default, Windows operating systems do not come with a pre-installed Unix Shell program.
-In this guide, we recommend using an emulator provided by [Git for Windows](https://gitforwindows.org/), which grants you access to both Bash shell commands and Git.
-
-For an installation guide, you can check out the chapter on [installation](installation.qmd) and [setup](setup.qmd).
-Once you have installed Git for Windows, you can easily open a terminal by launching the program called Git Bash from the Windows start menu.
-
 ## {{< fa brands linux >}} Linux
 
 To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing Ctrl + Alt + T simultaneously. If this shortcut does not work, you can find the terminal application in your system's applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.
@@ -151,14 +162,14 @@ Your remote environment will be mostly empty, but you can move around and manage
 
 ## Opening the command line
 
-When you open the shell, you'll see a prompt that tells you the shell is ready for input.
+When you open the shell, you'll see a prompt that tells you that the shell is ready for input.
 Your terminal interface will usually show a message similar to the following prompt:
 
 ```{bash}
 $
 ```
 
-In the shell, the prompt is usually represented by the symbol `$` but it can be different sometimes.
+In the shell, the prompt is usually represented by the symbol `$` but it can look a bit different sometimes.
 In our examples, we'll use `$` as the prompt.
 The important thing to remember is **to not type the prompt, `$`, itself when entering commands**.
 Only type the command that comes after the `$` prompt.
@@ -181,7 +192,7 @@ wittkuhn@lip-osx-005509:~$
 
 ### Introduction
 
-You might be familiar with using your mouse to click through folders in your file browser, or perhaps you use arrow keys and clicks in the Finder (on macOS) or File Explorer (on Windows) to manage your files.
+You are most likely familiar with using your computer mouse to click through folders in your file browser, or perhaps you use arrow keys and clicks in the File Explorer (on Windows) or Finder (on macOS) to manage your files.
 
 The command line offers a different, one could say less intuitive, but very efficient and precise way to interact with your computer's file system.
 Instead of relying on a graphical user interface, you use text-based commands to perform tasks like exploring the contents of folders, creating and deleting files, and moving between folders. 
@@ -232,7 +243,7 @@ C:\Users\username\Documents\file.txt`
 
 On macOS the root directory is denoted by `/`, which is also used as the directory separator.
 The home directory for a user is typically `/Users/username/`.
-An example path on Mac OS could be:
+An example path on macOS could be:
 
 ```{bash}
 /Users/username/Documents/file.txt
@@ -293,18 +304,20 @@ You may notice that the prompt has been updated to show the new working director
 If a path starts with a forward slash (`/`), it is considered an *absolute* path.
 Paths that do not start with a forward slash are considered *relative* to the current working directory.
 
-Note, that if a path contains a space, it needs to be enclosed in quotes to be recognized by the command line.
+### Paths with spaces
+
+Note, that if a path contains a space, it needs to be enclosed in quotation marks to be recognized by the command line.
 Here is an example of a path with a space:
 
 ```{bash}
-/Users/User/Downloads/Directory with Space/
+/Users/User/Downloads/Directory with space/
 ```
 
 If you attempt to use this path in a command without quotes, the command interpreter would understand it as three separate arguments since in command-line interfaces, spaces are typically used to separate different arguments or parameters.
 Navigating to this absolute path with spaces would look like this:
 
 ```{bash}
-cd '/Users/User/Downloads/Directory with Space/'
+cd '/Users/User/Downloads/Directory with space/'
 ```
 
 While the command line can handle paths (or files) with spaces in this way, we **recommend to avoid spaces** in folder and file names altogether, especially if you use the command line frequently.
@@ -349,7 +362,6 @@ This is useful for creating relative paths to other branches within a directory 
 
 For instance, by executing the following sequence of commands, we will navigate horizontally (or sideways) to a folder located at the same hierarchical level as the current working directory:
 
-
 ```{bash}
 wittkuhn@lip-osx-005509:~$ cd ~ # <1>
 wittkuhn@lip-osx-005509:~$ cd Downloads # <2>
@@ -360,13 +372,13 @@ wittkuhn@lip-osx-005509:~/Documents$ pwd # <4>
 1. Move to the user's home directory using the `~` shorthand.
 1. Move to the `Downloads` folder.
 1. Move sideways to the `Documents` folder.
-1. Display the current working directory.
+1. Display the current working directory using `pwd`.
 
-::: {.callout-tip title="Using Command History Navigation" collapse="true"}
+::: {.callout-tip title="Efficiency Tip: Quickly retrieve previous commands from the command history" collapse="false"}
 You can access your command history by using the up and down arrow keys on your keyboard to cycle through your last used commands.
 To execute a command, hit Enter, or you can edit it as needed before execution.
 This makes it easier to find and reuse specific commands.
-And is also [the reason](https://www.commitstrip.com/en/2017/02/28/definitely-not-lazy/?) why the up arrow key is among the earliest that needs replacement on software developers' keyboards.
+And it's also [the reason](https://www.commitstrip.com/en/2017/02/28/definitely-not-lazy/?) why the up arrow key is among the earliest that needs replacement on software developers' keyboards.
 :::
 
 ### Autocompletion
@@ -388,7 +400,7 @@ cd ~/Documents/
 
 If there are multiple possibilities, pressing <kbd>⇥ Tab</kbd> again will cycle through the available options.
 Autocompletion also works for system commands. 
-For example, typing `ls` and pressing <kbd>⇥ Tab</kbd> might complete it to `ls -l` or `ls -a`.
+For example, typing `ls` (you will find out more about this command below) and pressing <kbd>⇥ Tab</kbd> might complete it to `ls -l` or `ls -a`.
 Autocompletion also works for the Git commands, that will be introduced in the following chapters of this book.
 
 ### Command history
@@ -415,7 +427,7 @@ clear
 ```
 
 Press `Enter` and the terminal screen will be cleared, leaving only a new prompt at the top of the window.
-After using `clear`, you can continue working in a fresh and uncluttered terminal environment.
+After using `clear`, you can continue working in a fresh and uncluttered terminal window.
 
 ## List files and folders
 
@@ -457,15 +469,15 @@ ls chapters
 ```
 </details>
 
-In this case, `chapters` is an argument to the `ls` command.
+In this case, `chapters` is a a so-called "argument" to the `ls` command.
 
 ### Listing hidden files
 
-Hidden files, often starting with a dot in their names, are files that remain mostly concealed from the regular view in GUIs.
+Hidden files, often starting with a dot in their names, are files that remain mostly hidden from the regular view in GUIs.
 They can serve different purposes, such as storing configuration settings, sensitive data, or temporary files.
 Hidden files can be accessed through the command line or by changing settings in the file manager to make them visible.
-It's important to be cautious when modifying or deleting hidden files, as they can impact the proper functioning of the operating system and applications.
-This is also typically the reason for these files being hidden. 
+It's important to **be cautious when modifying or deleting hidden files**, as they can impact the proper functioning of the operating system and applications.
+This is also typically the reason why these files are hidden.
 To view hidden files, we can use the `-a` (for "all") flag in the `ls` command.
 For example, we can list hidden files in the project directory:
 
@@ -483,9 +495,7 @@ ls -a
 ```
 </details>
 
-### Interlude: What is the difference between a flag and an argument?
-
-#### Overview
+### What is the difference between a flag and an argument?
 
 The difference between a flag and an argument is that a **flag is used to modify the behavior** of a command, while an **argument provides additional input** or information to the command.
 
@@ -524,7 +534,7 @@ ls -alh
 
 ::: {.panel-tabset}
 
-#### {{< fa brands microsoft >}} Windows (GitBash)
+#### {{< fa brands microsoft >}} Windows
 
 If you want to know what flags and arguments a command supports, most commands provide usage information when you use the flag `--help`.
 For example, you can use the `ls` command together with the `--help` flag:
@@ -537,7 +547,7 @@ This will list all possible flags you can use together with the `ls` command.
 
 #### {{< fa brands apple >}} macOS
 
-On Mac OS you can not use the `--help` flag.
+On macOS you can not use the `--help` flag.
 Instead you can use the `man` command, in combination with your desired command.
 This will display the manual page for a specified command. 
 You can navigate through the manual pages using the arrow keys, and you can exit by pressing `q`. 
@@ -560,10 +570,11 @@ To make a directory, we'll use the `mkdir` command.
 
 **Note:** 
 When creating new directories, consider their location carefully. 
-Consider deleting the newly created directories afterwards to avoid clutter.
+If you are experimenting, consider deleting the newly created directories afterwards to avoid clutter.
 
 The path of the directory we want to create is given as an argument to the command.
 If we want to create a directory in the current folder, we just need to use its name, as the path is assumed to be relative.
+For example, to create a new folder for your favorite recipes, we can use the following command:
 
 ```{bash}
 mkdir recipes
@@ -580,7 +591,7 @@ cd recipes
 
 Next, we will proceed to create multiple additional folders within the `recipes` project folder.
 The `mkdir` command allows us to create multiple directories simultaneously by providing multiple arguments, each representing a separate folder.
-For example, for a data analysis project we might create the following three folders:
+For example, we might create the following three folders:
 
 ```{bash}
 mkdir vegetarian vegan glutenfree
@@ -588,11 +599,11 @@ mkdir vegetarian vegan glutenfree
 
 ### Creating files
 
-Let's create some files in the `my-project` project folder.
+Let's create some files in the `recipes` project folder.
 To do this, you can use your favorite text editor or the command line.
 In the command line, you can use the `touch` command to create a new empty file.
 The file doesn't need to contain anything.
-For example, to create an empty file called `recipes`.txt`, we can use the following command:
+For example, to create an empty file called `recipes.txt`, we can use the following command:
 
 ```{bash}
 touch recipes.txt
@@ -601,7 +612,8 @@ touch recipes.txt
 ### Opening files
 
 To open files, you can use your preferred text editor but also the command line. 
-On the command line, you can use the `open` command on macOS or the `start` command on Windows using Gitbash. 
+On the command line, you can use the `start` command on Windows using Gitbash or the `open` command on macOS.
+These commands will open the specified file in the default application associated with the file type.
 
 ::: {.panel-tabset}
 
@@ -620,19 +632,17 @@ open recipes.txt
 
 :::
 
-These commands will open the specified file in the default application associated with the file type.
-
 ### Writing short text into files
 
 The `echo` command can be used to write text to a file, directly from the command line.
 Using `echo` in combination with `>>` adds content to an existing file. 
-For example, to add text to the `file.txt` file:
+For example, to add text to the `recipes.txt` file using the command line:
 
 ```{bash}
-echo "This is a project for demonstration purposes." >> file.txt 
+echo "This is a list of all my favorite recipes." >> recipes.txt 
 ```
 
-This adds the provided text to the existing content of `file.txt`.
+This adds the provided text *to the existing content* of `recipes.txt `.
 
 ### Viewing file content
 
@@ -644,7 +654,7 @@ For example:
 cat recipes.txt 
 ```
 
-This command will output the entire content of the `recipes`.txt` file to the terminal.
+This command will output the entire content of the `recipes.txt` file to the terminal.
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of the `cat` command applied to the `.gitignore` file in the project directory of this guide.</summary>
@@ -658,10 +668,10 @@ cat .gitignore
 
 ### Moving folders and files
 
-Let's say we want to move the `recipes.txt` file to the `/vegan` folder.
+Let's say we want to move the `recipes.txt` file to the `/vegan` subfolder.
 We can use the `mv` command to move files and folders.
 The `mv` command requires two arguments: the first is the files or folders to be moved, and the second is the path where they should be moved.
-To move the `recipes.txt` file, the command would look like this:
+To move the `recipes.txt` file to the `/vegan` subfolder, the command would look like this:
 
 ```{bash}
 mv recipes.txt vegan
@@ -669,7 +679,7 @@ mv recipes.txt vegan
 
 ### Renaming files and folders
 
-Suppose we don't like the folder name `vegan` because `recipes.txt` actually contains meat recipes.
+Suppose we don't like the folder name `vegan` because `recipes.txt` actually contains recipes with meat
 We can use the `mv` command to rename files and folders by moving them to a different location in the file system, for example `meat`, like this:
 
 ```{bash}
@@ -741,15 +751,15 @@ To delete files and folders, you can use the `rm` command.
 Provide the path of the files or folders that you want to delete as the argument.
 However, if you want to remove a folder, you need to include the `-r` (or `--recursive`) flag.
 
+::: {.callout-warning title="**Warning: Be careful when using the `rm` command!**" collapse="false"}
+When you use the `rm` command to delete files, they are **removed entirely (!!!)** from your system and cannot be retrieved from a "Recycle Bin" or "Trash" as when you delete files using the file browser!
+:::
+
 For example, to remove the `glutenfree` folder, you would use the following command:
 
 ```{bash}
 rm -r glutenfree
 ```
-
-::: {.callout-warning title="**Warning: Be careful when using the `rm` command!**" collapse="false"}
-When you use the `rm` command to delete files, they are **removed entirely (!!!)** from your system and cannot be retrieved from a "Recycle Bin" or "Trash" as when you delete files using the file browser!
-:::
 
 ### Combining commands 
 
@@ -769,11 +779,11 @@ This will (1) create a new directory called `new_directory`, (2) change the curr
 
 In this lesson, we have achieved the following:
 
-1. Clarified some of the technical terms associated with the command line.
-1. Explored the components of command-line commands: paths, arguments, and flags.
-1. Gained knowledge about relative and absolute paths, including convenient shortcuts like `~`, `.` and `..`.
-1. Witnessed the functionality of wildcards.
-1. Acquired familiarity with several essential shell commands.
+1. We clarified some of the technical terms associated with the command line.
+1. We explored the components of command-line commands: paths, arguments, and flags.
+1. We gained knowledge about relative and absolute paths, including convenient shortcuts like `~`, `.` and `..`.
+1. We experience the functionality of wildcards.
+1. We acquired familiarity with several essential shell commands.
 
 It's important to note that what we covered here only scratches the surface of what can be accomplished using the shell.
 The primary aim was to provide useful concepts that help when learning Git.
