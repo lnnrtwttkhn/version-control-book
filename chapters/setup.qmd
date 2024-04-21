@@ -2,7 +2,7 @@
 categories: [beginner, basics, setup]
 image: ../static/gear-solid.svg
 abstract: |
-  In this chapter, we will configure Git!
+  In this chapter, we will set up and configure Git!
 ---
 
 # Setup
@@ -19,21 +19,21 @@ abstract: |
 
 ## Configuring Git
 
-Once you [installed Git](installation.qmd), it is time to set it up.
+Once you [installed Git](installation.qmd), it's time to set it up.
 We will use the the [command line](command-line.qmd) to set up and configure Git.
 The `git config` command is used to get and set configuration settings. 
 It allows you to customize Git according to your preferences and requirements.
-This chapter will focus on the most important and / or necessary configurations.
-To look at all the different configuration commands, enter `git config` into the command line:
+This chapter will focus on the most important and necessary configurations.
+To look at all the different configuration options, enter `git config` into the command line:
 
 ```{bash}
 git config
 ```
 
-In Git, configuration values can be stored at three different levels: system, global, and local.
+In Git, configuration values can be stored at three different configuration levels: the *system*, *global*, and *local* level.
 Find out more in the box below how you can set configuration values at each level.
 
-::: {.callout-tip title="What are the different configuration levels?" collapse="true"}
+::: {.callout-tip title="Find out more: What are the different Git configuration levels?" collapse="true"}
 Git configuration values can be stored at **three different configuration levels**:
 
 **System-level configuration**: This level applies configuration values to every user on the system and all their repositories.
@@ -70,11 +70,11 @@ The configuration set at the local level will override the configurations set at
 Before you start using Git, it's important to set your username and email address. 
 This information is crucial because Git uses it to identify the author of each change you track with Git. 
 By associating your changes with your username and email, it allows others (including future you) to see who made the changes which facilitates transparency and collaboration within a project.
-You will be able connect Git to remote repositories like GitHub, using this email address. 
+You will be able to connect Git to remote repositories like GitHub using this email address. 
 So it makes sense to set your email address to the one you use (or will use) to create a GitHub account.
 
-Setting your username and email address is a one-time setup process, but you can always update them later, if needed. 
-To perform this configuration, you can use the command line:
+Setting your username and email address is a one-time setup process on a new computer, but you can always update them later, if needed. 
+To perform this configuration using the command line, use the following command:
 
 ```{bash}
 git config --global user.name "Jane Doe" # <1>
@@ -85,18 +85,20 @@ git config --global user.email jane@example.com # <2>
 
 Make sure to replace `"Jane Doe"` with your own username and `jane@example.com` with your own email address.
 
-::: {.callout-tip title="FAQ: Which name should I use for Git?" collapse="true"}
-It can be your **GitHub username**, your **real name**, or something informative about you.
-This name will be attached to the changes you track with Git, so **choose something that makes sense** to others and yourself in the future.
+::: {.callout-tip title="FAQ: Which username should I use for Git?" collapse="true"}
+Your username will be attached to the changes you track with Git, so **choose something that is meaningful and informative** for others and yourself in the future.
+After all, one main purpose of Git is to be able to track of *who* made which changes and when.
+This can help a ot in the future when you need to figure out who to talk to about a particular change.
+Your username can be your **real name**, your **GitHub username**, or something informative about you.
 :::
 
 ### Configuring the default name of the initial branch
 
-Git uses a concept called "branches" to enable working on different versions of the same project.
-Branches will be introduced in a later [chapter](chapters.qmd) of this book.
-For now you can think of branches as parallel versions of your repository contents.
+Git uses a concept called "branches" to allow working on different versions of the same project.
+Branches will be introduced in a [later chapter](chapters.qmd) of this book.
+For now, you can think of branches as parallel versions of your repository contents.
 
-On most installations of Git, by default, the name "master" for the initial branch is used when creating a new repository.
+On most installations of Git, by default, the name "master" is used for the initial branch when creating a new Git repository.
 However, there has been a growing movement to transition to using "main" as the default branch name instead.
 One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons [here](https://sfconservancy.org/news/2020/jun/23/gitbranchname/) or  [here](https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/)). 
 To configure the default branch name to "main" in Git, you can use the following command:
@@ -134,12 +136,13 @@ git config --help
 
 To quit the browser use `q`.
 
-While the command provides extensive documentation and information about Git commands, it is arguably not the most beginner-friendly resource.
+While the `git config --help` command provides extensive documentation and information about Git commands, it is arguably not the most beginner-friendly resource.
+Platforms like [Stack Overflow](https://stackoverflow.com/questions/tagged/git) provide help for many questions around using Git.
 
 ## Configuring your text editor
 
-Sometimes, Git might open up a text editor inside the command line, and it can be annoying if you end up in an editor you don't like or don't know how to use. 
-The standard text editor on macOS and when using "Git for Windows" is called [Vim](https://www.vim.org/) (or Vi), which is arguably widely known for being difficult to use.
+Sometimes Git might open up a text editor inside the command line, and it can be annoying if you end up in an editor that you don't like or don't know how to use. 
+The standard text editor on macOS and "Git for Windows" is called [Vim](https://www.vim.org/) (or Vi), which has a (perhaps questionable) popularity for being difficult to use.
 You can find more information about the challenges of using Vim (and some funny memes) [here](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
 To check out which text editor Git is using, you can use:
 
@@ -148,7 +151,7 @@ git config --get core.editor
 ```
 
 If you have not changed your text editor yet, the output should be empty.
-This means that Git is using the command line's default editor, which should be **Vim** if you are using macOS or Git for Windows. 
+This means that Git is using the command line's default editor, which should be Vim if you are using macOS or "Git for Windows". 
 To make sure, you can use:
 
 ```{bash}
@@ -156,10 +159,10 @@ git var GIT_EDITOR
 ```
 
 If the output is `vim` or `vi`, your system's default editor is indeed Vim / Vi.
-Vim is an improved version of Vi, but there are virtually no differences that are relevant for learning Git and the scope of this book.
+Vim is an improved version of Vi, but there are virtually no differences that are relevant for learning Git or the scope of this book.
 In this situation, you can either pick up on the [basics of Vim](#vim-basics) (see below) or simply change the text editor.
 Also note that, depending on your workflow, you will typically not have to use a text editor in the command line a lot.
-For beginners, we recommend to become familiar with the basics of your system's default text editor to be able to perform basic operations (at least, how to exit it) when interacting with Git.
+For beginners, we recommend to become familiar with the basics of your system's default text editor (in most cases, Vim) to be able to perform basic operations (at least, how to exit it) when interacting with Git.
 
 ### Vim Basics
 
@@ -172,7 +175,7 @@ You can also combine commands in Vim, so you can use `:wq` to save your changes 
 For a more detailed and interactive tutorial of Vim, you can check out [openvim.com](https://www.openvim.com).
 For more information about common Vim commands, also see the box below.
 
-::: {.callout-tip title="More Vim commands" collapse="true"}
+::: {.callout-tip title="Find out more: Vim commands" collapse="true"}
 To navigate through the text in Normal mode without using the arrow keys, you can use `h` to move left, `j` to move down, `k` to move up, and `l` to move right. 
 If you need to delete a character in *Normal mode*, simply press `x`.
 This will remove the character under the cursor. 
@@ -200,12 +203,20 @@ To open a new file or switch between multiple files in Vim, use the `:e filename
 ### Changing your text editor
 
 If you want to change the standard text editor to one that you are more comfortable with, there a lot of alternatives like [Nano](https://www.nano-editor.org/docs.php), [Visual Studio Code](https://code.visualstudio.com) or [Notepad++](https://notepad-plus-plus.org/downloads/).
-If you have decided to use a different text editor you can use the following command (replace `editor-name` with the name of your preferred text editor):
+If you have decided to use a different text editor you can use the following command (replace `"EDITOR_NAME"` with the name of your preferred text editor):
 
 ```{bash}
-git config --global core.editor editor-name # <1>
+git config --global core.editor "EDITOR_NAME" # <1>
 ```
-1. Replace `editor-name` with the name if your preferred text editor.
+1. Replace `"EDITOR_NAME"` with the name if your preferred text editor.
+
+For example, to set [Nano](https://www.nano-editor.org/docs.php) as the default text editor, use the following command:
+
+```{bash}
+git config --global core.editor "nano"
+```
+
+More information about associating text editors with Git, for example Visual Studio Code, can be found in the [GitHub documentation](https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git).
 
 From now on, when Git requires you to interact with a text editor, it will open the one that you have set.
 If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.
@@ -235,6 +246,8 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
 
 ## Cheatsheet
+
+In this chapter, we have learned about the following commands:
 
 ```{r}
 #| eval: true
