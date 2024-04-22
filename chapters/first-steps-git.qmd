@@ -22,23 +22,17 @@ abstract: |
 
 ## Creating a Git repository 
 
+Let's *git* started!
 First, we will create a so-called **"repository"** (or "repo", for short).
 A repository is a regular folder on your computer that is tracked by Git.
-The full history of commits of a project and information about who changed what, when is also stored by Git in this folder.
+The full history of changes of a project and information about who changed what and when is also stored by Git in this folder.
 
-To create your first Git repository, you need to initialize a folder as a Git repository.
-
-First, create an empty folder, using the [command line](command-line.qmd):
-
-```{bash}
-mkdir foldername # <1>
-```
-1. Replace `foldername` with your desired folder name.
-
+To create a new Git repository, you need to initialize a folder as a Git repository.
+First, let's create an empty folder using the command line^[:bulb: Tip: Use `mkdir FOLDER_NAME` (details [here](command-line.qmd#creating-a-folder))].
 Alternatively, you can create a new folder using the graphical user interface of your file browser.
 
-Next, use the [command line](command-line.qmd#navigating-the-file-system) to navigate to the folder which you want to initialize as a Git repository.
-You can use the `cd` command to change directories.
+Next, use the command line to navigate to the folder which you want to initialize as a Git repository
+^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#navigating-the-file-system))].
 Once you are in the desired folder, run the `git init` command to initialize the folder as a Git repository:
 
 ```{bash}
@@ -53,7 +47,7 @@ Initialized empty Git repository in /foldername/.git/
 
 Congratulations on successfully initializing your first Git repository! :tada:
 
-Git is now able to track your file(s) and the changes you make to them in this folder.
+Git is now able to track your file(s) and the changes you make in this folder.
 You only need to use `git init` once per folder.
 
 You can also skip creating a folder manually and only use the `git init` command:
@@ -64,14 +58,14 @@ git init /Users/yourusername/Desktop/foldername # <1>
 1. Replace `/Users/yourusername/Desktop/foldername` with the (absolute or relative) path to the folder which you want to initialize as a Git repository.
 
 Git will create an already initialized folder at the path and with the name you use.
-Check your [current working directory](command-line.qmd#current-working-directory) to be sure that you create the Git repository in the desired location.
-You can use both absolute and relative paths as arguments to the `git init` command to specify the location of your Git repository.
+Check your current working directory to be sure that you create the Git repository in the desired location ^[:bulb: Tip: Use `pwd` (details [here](command-line.qmd#current-working-directory))].
+You can use both absolute and relative paths as arguments to the `git init` command to specify the location of your Git repository ^[:bulb: Tip: Details about absolute and relative paths [here](command-line.qmd#moving-between-folders)].
 
 Git can now track every file you move, create or change in this folder.
-You can use this folder, like any other normal folder on you computer.
+You can use this folder like any other normal folder on you computer.
 The only difference is the tiny but powerful folder called `.git` within it, which stores the full history of files and relevant metadata of your project, thereby enabling the tracking of your project progress.
 
-::: {.callout-tip title="`.git` folder?" collapse="true"}
+::: {.callout-tip title="Find out more: `.git` folder?" collapse="true"}
 If you want to verify that Git is tracking your folder, you can look for the `.git` folder.
 To do this navigate to the correct folder and use `ls -a` to receive a list of hidden files.
 If the folder has been initialized as a Git repository, you should see a folder called `.git`.
@@ -108,7 +102,7 @@ Be aware that this action is irreversible and will permanently delete the reposi
 Generally, you can organize your Git-initialized project folder in any way you want (just like a regular folder on your computer), for example by creating subfolders within your repository.
 This allows for better organization of your files and directories, making it easier to manage larger projects.
 Git will also track the changes in these subfolders.
-Git commands are designed to work recursively from the parent directory in which `git init` was executed. 
+Git commands are designed to work recursively from the parent directory in which `git init` was executed ^[:bulb: Tip: Details about parent and child directories [here](command-line.qmd##directory-and-file-structure)]. 
 This means that if you use Git commands within any of the child directories (subfolders) of the repository, those commands will still apply to the entire repository context. 
 For example, if you make changes to a file within a subfolder and commit those changes, Git will process this action in the context of the parent repository, ensuring that the entire project's history is maintained cohesively.
 
@@ -132,20 +126,29 @@ nothing to commit (create/copy files and use "git add" to track)
 
 Let's unpack what this output means:
 
-- `On branch main` tell you that you are currently working on the "main" branch of your Git repository.
+###### `On branch main` {.unnumbered}
+
+This tells you that you are currently working on the `main` branch of your Git repository.
 A branch is like a separate line of development in your project.
 The default branch is often configured during the [setup](setup.qmd) of Git.
 You can find out more about branches in a [later chapter](branches.qmd).
-- `No commits yet` means that there haven't been any changes or updates made to the repository yet.
+
+###### `No commits yet` {.unnumbered}
+
+This  means that there haven't been any changes or updates made to the repository yet.
 You haven't created or saved any new versions of your project.
-- `nothing to commit (create/copy files and use "git add" to track)` indicates that there are no new changes to save or "commit" to the repository at this moment.
+The term "commit" will be introduced below.
+
+###### `nothing to commit (create/copy files and use "git add" to track)` {.unnumbered} 
+
+This indicates that there are no new changes to save or "commit" to the repository at this moment.
 Git is suggesting that if you want to start tracking changes, you should create or copy some files into the repository's directory and then use the `git add` command to tell Git to start keeping track of those files.
 Once you've added files with `git add`, you can then commit those changes to save them in your project's history (for more details, see below).
 
 As you can see `git status` gives you an overview, which files Git is tracking for you. 
 The `git status` command is helpful for understanding the current state of your Git repository and we recommend to use it frequently, especially before adding or committing changes in files to the Git history (see below for more details).
 
-::: {.callout-tip title="Common `git status` flags" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git status` flags" collapse="true"}
 `-s`: 
 Provides a more compact and simplified output, showing only the file status in a short format.
 
@@ -167,7 +170,7 @@ For example, `git status -s -b` will display a short and concise output along wi
 
 ### Adding files to the Git repository
 
-In the next step, please create an empty text file within your repository, for example using the `touch` command (as introduced in the [command line](command-line.qmd#creating-files) chapter):
+In the next step, please create an empty text file within your repository ^[:bulb: Tip: Use `touch` (details [here](command-line.qmd#creating-files))].
 
 ```{bash}
 touch filename.txt
@@ -495,7 +498,7 @@ This commit adds the user registration functionality to the application. It incl
 
 An example of commit messages, which are not really optimal, are illustrated by @fig-bad_commits_comic.
 
-!["Git Commit" by [xkcd](https://xkcd.com/1296/) (License: [CC BY-NC 2.5](https://xkcd.com/license.html))](../static/xkcs-git-commit.png){#fig-bad_commits_comic}
+!["Git Commit" by [xkcd](https://xkcd.com/1296/) (License: [CC BY-NC 2.5](https://xkcd.com/license.html))](../static/xkcd-git-commit.png){#fig-bad_commits_comic}
 
 
 ::: {.callout-tip title="Commit messages examples" collapse="true"}
