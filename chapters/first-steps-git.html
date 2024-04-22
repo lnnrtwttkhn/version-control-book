@@ -356,7 +356,7 @@ div.csl-indent {
 <h5 class="anchored">
 Learning Objectives
 </h5>
-<p><span class="emoji" data-emoji="bulb">💡</span> Initializing a Git repository<br> <span class="emoji" data-emoji="bulb">💡</span> Staging and committing changes<br> <span class="emoji" data-emoji="bulb">💡</span> Exploring the commit history<br> <span class="emoji" data-emoji="bulb">💡</span> Comparing versions<br> <span class="emoji" data-emoji="bulb">💡</span> Creating a <code>.gitignore</code> file</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You can initialize a Git repository<br> <span class="emoji" data-emoji="bulb">💡</span> You can stage and commit changes<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file</p>
 </div>
 </div>
 </div>
@@ -370,7 +370,7 @@ Learning Objectives
 Exercises
 </h5>
 <p>To learn Git effectively, it makes sense to practice version control by implementing it on your own small project. For the purpose of this guide, we will start off with a small project that only involves plain-text files. You don’t need to know any programming language like R or Python. So while reading this chapter and using the commands along, <strong>your task</strong> is to:</p>
-<p><span class="emoji" data-emoji="memo">📝</span> <strong>Setup:</strong> Create a recipes folder and turn it into a Git repository. <br> <span class="emoji" data-emoji="memo">📝</span> <strong>Create File:</strong> Inside recipes, make a recipes.txt file. <br> <span class="emoji" data-emoji="memo">📝</span> <strong>Add Content:</strong> Write down a recipe—any favorite or an intriguing AI-generated one—in <code>recipes.txt</code> or <code>recipes.qmd</code>. <br> <span class="emoji" data-emoji="memo">📝</span> <strong>Save Changes:</strong> Stage and commit your recipe to the repository. <br></p>
+<p><span class="emoji" data-emoji="memo">📝</span> <strong>Setup:</strong> Create a recipes folder and <strong>turn it into a Git repository.</strong> <br> <span class="emoji" data-emoji="memo">📝</span> <strong>Add Content:</strong> Write down a recipe—any favorite or an AI-generated one in <code>recipes.txt</code> or <code>recipes.qmd</code>. <br> <span class="emoji" data-emoji="memo">📝</span> <strong>Save Changes:</strong> Stage and commit your recipe to the repository. <br></p>
 <p>Please <strong>keep this project directory</strong>! This guide will continue to use your recipe project as an example in following chapters.</p>
 <p>There are several terms in these instructions that might be unfamiliar to you, for example “repository”, “stage” or “commit”. Don’t worry, you will learn about what these terms mean in this chapter. Let’s <em>git</em> started!</p>
 <p><strong>Bonus exercises</strong></p>
@@ -381,22 +381,9 @@ Exercises
 </div>
 <section id="creating-a-git-repository" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="creating-a-git-repository"><span class="header-section-number">5.1</span> Creating a Git repository</h2>
-<p>First, we will create a so-called <strong>“repository”</strong> (or “repo”, for short). A repository is a regular folder on your computer that is tracked by Git. The full history of commits of a project and information about who changed what, when is also stored by Git in this folder.</p>
-<p>To create your first Git repository, you need to initialize a folder as a Git repository.</p>
-<p>First, create an empty folder, using the <a href="../chapters/command-line.html">command line</a>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> foldername</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">Replace <code>foldername</code> with your desired folder name.</span>
-</dd>
-</dl>
-</div>
-</div>
-<p>Alternatively, you can create a new folder using the graphical user interface of your file browser.</p>
-<p>Next, use the <a href="../chapters/command-line.html#navigating-the-file-system">command line</a> to navigate to the folder which you want to initialize as a Git repository. You can use the <code>cd</code> command to change directories. Once you are in the desired folder, run the <code>git init</code> command to initialize the folder as a Git repository:</p>
+<p>Let’s <em>git</em> started! First, we will create a so-called <strong>“repository”</strong> (or “repo”, for short). A repository is a regular folder on your computer that is tracked by Git. The full history of changes of a project and information about who changed what and when is also stored by Git in this folder.</p>
+<p>To create a new Git repository, you need to initialize a folder as a Git repository. First, let’s create an empty folder using the command line<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Alternatively, you can create a new folder using the graphical user interface of your file browser.</p>
+<p>Next, use the command line to navigate to the folder which you want to initialize as a Git repository <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Once you are in the desired folder, run the <code>git init</code> command to initialize the folder as a Git repository:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -405,28 +392,28 @@ Exercises
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Initialized</span> empty Git repository in /foldername/.git/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Congratulations on successfully initializing your first Git repository! <span class="emoji" data-emoji="tada">🎉</span></p>
-<p>Git is now able to track your file(s) and the changes you make to them in this folder. You only need to use <code>git init</code> once per folder.</p>
+<p>Git is now able to track your file(s) and the changes you make in this folder. You only need to use <code>git init</code> once per folder.</p>
 <p>You can also skip creating a folder manually and only use the <code>git init</code> command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init /Users/yourusername/Desktop/foldername</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init /Users/yourusername/Desktop/foldername</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">Replace <code>/Users/yourusername/Desktop/foldername</code> with the (absolute or relative) path to the folder which you want to initialize as a Git repository.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">Replace <code>/Users/yourusername/Desktop/foldername</code> with the (absolute or relative) path to the folder which you want to initialize as a Git repository.</span>
 </dd>
 </dl>
 </div>
 </div>
-<p>Git will create an already initialized folder at the path and with the name you use. Check your <a href="../chapters/command-line.html#current-working-directory">current working directory</a> to be sure that you create the Git repository in the desired location. You can use both absolute and relative paths as arguments to the <code>git init</code> command to specify the location of your Git repository.</p>
-<p>Git can now track every file you move, create or change in this folder. You can use this folder, like any other normal folder on you computer. The only difference is the tiny but powerful folder called <code>.git</code> within it, which stores the full history of files and relevant metadata of your project, thereby enabling the tracking of your project progress.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="`.git` folder?">
+<p>Git will create an already initialized folder at the path and with the name you use. Check your current working directory to be sure that you create the Git repository in the desired location <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. You can use both absolute and relative paths as arguments to the <code>git init</code> command to specify the location of your Git repository <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>Git can now track every file you move, create or change in this folder. You can use this folder like any other normal folder on you computer. The only difference is the tiny but powerful folder called <code>.git</code> within it, which stores the full history of files and relevant metadata of your project, thereby enabling the tracking of your project progress.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: `.git` folder?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>.git</code> folder?
+Find out more: <code>.git</code> folder?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -474,7 +461,7 @@ Undoing <code>git init</code>
 </div>
 <section id="subfolders-in-a-git-repository" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="subfolders-in-a-git-repository"><span class="header-section-number">5.1.1</span> Subfolders in a Git repository</h3>
-<p>Generally, you can organize your Git-initialized project folder in any way you want (just like a regular folder on your computer), for example by creating subfolders within your repository. This allows for better organization of your files and directories, making it easier to manage larger projects. Git will also track the changes in these subfolders. Git commands are designed to work recursively from the parent directory in which <code>git init</code> was executed. This means that if you use Git commands within any of the child directories (subfolders) of the repository, those commands will still apply to the entire repository context. For example, if you make changes to a file within a subfolder and commit those changes, Git will process this action in the context of the parent repository, ensuring that the entire project’s history is maintained cohesively.</p>
+<p>Generally, you can organize your Git-initialized project folder in any way you want (just like a regular folder on your computer), for example by creating subfolders within your repository. This allows for better organization of your files and directories, making it easier to manage larger projects. Git will also track the changes in these subfolders. Git commands are designed to work recursively from the parent directory in which <code>git init</code> was executed <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. This means that if you use Git commands within any of the child directories (subfolders) of the repository, those commands will still apply to the entire repository context. For example, if you make changes to a file within a subfolder and commit those changes, Git will process this action in the context of the parent repository, ensuring that the entire project’s history is maintained cohesively.</p>
 </section>
 <section id="checking-the-status-of-the-git-repository" class="level3" data-number="5.1.2">
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="checking-the-status-of-the-git-repository"><span class="header-section-number">5.1.2</span> Checking the status of the Git repository</h3>
@@ -491,19 +478,25 @@ Undoing <code>git init</code>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit <span class="er">(</span><span class="ex">create/copy</span> files and use <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s unpack what this output means:</p>
-<ul>
-<li><code>On branch main</code> tell you that you are currently working on the “main” branch of your Git repository. A branch is like a separate line of development in your project. The default branch is often configured during the <a href="../chapters/setup.html">setup</a> of Git. You can find out more about branches in a <a href="../chapters/branches.html">later chapter</a>.</li>
-<li><code>No commits yet</code> means that there haven’t been any changes or updates made to the repository yet. You haven’t created or saved any new versions of your project.</li>
-<li><code>nothing to commit (create/copy files and use "git add" to track)</code> indicates that there are no new changes to save or “commit” to the repository at this moment. Git is suggesting that if you want to start tracking changes, you should create or copy some files into the repository’s directory and then use the <code>git add</code> command to tell Git to start keeping track of those files. Once you’ve added files with <code>git add</code>, you can then commit those changes to save them in your project’s history (for more details, see below).</li>
-</ul>
+<section id="on-branch-main" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="on-branch-main"><code>On branch main</code></h6>
+<p>This tells you that you are currently working on the <code>main</code> branch of your Git repository. A branch is like a separate line of development in your project. The default branch is often configured during the <a href="../chapters/setup.html">setup</a> of Git. You can find out more about branches in a <a href="../chapters/branches.html">later chapter</a>.</p>
+</section>
+<section id="no-commits-yet" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="no-commits-yet"><code>No commits yet</code></h6>
+<p>This means that there haven’t been any changes or updates made to the repository yet. You haven’t created or saved any new versions of your project. The term “commit” will be introduced below.</p>
+</section>
+<section id="nothing-to-commit-createcopy-files-and-use-git-add-to-track" class="level6 unnumbered">
+<h6 class="unnumbered anchored" data-anchor-id="nothing-to-commit-createcopy-files-and-use-git-add-to-track"><code>nothing to commit (create/copy files and use "git add" to track)</code></h6>
+<p>This indicates that there are no new changes to save or “commit” to the repository at this moment. Git is suggesting that if you want to start tracking changes, you should create or copy some files into the repository’s directory and then use the <code>git add</code> command to tell Git to start keeping track of those files. Once you’ve added files with <code>git add</code>, you can then commit those changes to save them in your project’s history (for more details, see below).</p>
 <p>As you can see <code>git status</code> gives you an overview, which files Git is tracking for you. The <code>git status</code> command is helpful for understanding the current state of your Git repository and we recommend to use it frequently, especially before adding or committing changes in files to the Git history (see below for more details).</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Common `git status` flags">
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git status` flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Common <code>git status</code> flags
+Find out more: Common <code>git status</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -519,9 +512,10 @@ Common <code>git status</code> flags
 </div>
 </div>
 </section>
+</section>
 <section id="adding-files-to-the-git-repository" class="level3" data-number="5.1.3">
 <h3 data-number="5.1.3" class="anchored" data-anchor-id="adding-files-to-the-git-repository"><span class="header-section-number">5.1.3</span> Adding files to the Git repository</h3>
-<p>In the next step, please create an empty text file within your repository, for example using the <code>touch</code> command (as introduced in the <a href="../chapters/command-line.html#creating-files">command line</a> chapter):</p>
+<p>In the next step, please create an empty text file within your repository <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> filename.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -728,12 +722,12 @@ Common <code>git log</code> flags
 </div>
 <p>If you only want to look at the changes of a specific file, you can specify that file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-22"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-22" data-target-annotation="1">1</button><span id="annotated-cell-22-1" class="code-annotation-target"><a href="#annotated-cell-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff <span class="op">&lt;</span>filename<span class="op">&gt;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-21"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-21" data-target-annotation="1">1</button><span id="annotated-cell-21-1" class="code-annotation-target"><a href="#annotated-cell-21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff <span class="op">&lt;</span>filename<span class="op">&gt;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-22" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-21" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-22" data-code-lines="1" data-code-annotation="1">Replace <code>&lt;filename&gt;</code> with the actual name of the file that you want to inspect.</span>
+<span data-code-cell="annotated-cell-21" data-code-lines="1" data-code-annotation="1">Replace <code>&lt;filename&gt;</code> with the actual name of the file that you want to inspect.</span>
 </dd>
 </dl>
 </div>
@@ -785,7 +779,7 @@ Common <code>git diff</code> flags
 <div id="fig-bad_commits_comic" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bad_commits_comic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/xkcs-git-commit.png" class="img-fluid figure-img">
+<img src="../static/xkcd-git-commit.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bad_commits_comic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.1: “Git Commit” by <a href="https://xkcd.com/1296/">xkcd</a> (License: <a href="https://xkcd.com/license.html">CC BY-NC 2.5</a>)
@@ -1076,6 +1070,17 @@ Millman, K. Jarrod, Matthew Brett, Ross Barnowski, and Jean-Baptiste Poline. 201
 The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: The process documents and data are made available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>. Software are made available under an <a href="https://opensource.org/license/mit/">MIT license</a>. Website: <a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a>.
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Use <code>mkdir FOLDER_NAME</code> (details <a href="../chapters/command-line.html#creating-a-folder">here</a>)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Use <code>cd</code> (details <a href="../chapters/command-line.html#navigating-the-file-system">here</a>)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Use <code>pwd</code> (details <a href="../chapters/command-line.html#current-working-directory">here</a>)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Details about absolute and relative paths <a href="../chapters/command-line.html#moving-between-folders">here</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Details about parent and child directories <a href="../chapters/command-line.html##directory-and-file-structure">here</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Use <code>touch</code> (details <a href="../chapters/command-line.html#creating-files">here</a>)<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

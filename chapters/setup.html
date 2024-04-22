@@ -326,7 +326,7 @@ div.csl-indent {
 
 <div class="abstract">
 <div class="abstract-title">Summary</div>
-<p>In this chapter, we will configure Git!</p>
+<p>In this chapter, we will set up and configure Git!</p>
 </div>
 </header>
 
@@ -340,7 +340,7 @@ div.csl-indent {
 <h5 class="anchored">
 Learning Objectives
 </h5>
-<p><span class="emoji" data-emoji="bulb">💡</span> You know how to set up Git for the first time<br> <span class="emoji" data-emoji="bulb">💡</span> You have set up Git on your computer<br> <span class="emoji" data-emoji="bulb">💡</span> You understand the different Git configuration levels<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to configure your username and email address in Git<br> <span class="emoji" data-emoji="bulb">💡</span> You have set up your preferred text editor when working with Git<br> <span class="emoji" data-emoji="bulb">💡</span> You can escape the command-line text editor Vim</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You know how to set up Git for the first time<br> <span class="emoji" data-emoji="bulb">💡</span> You have set up Git on your computer<br> <span class="emoji" data-emoji="bulb">💡</span> You understand the difference between the three Git configuration levels<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to configure your username and email address in Git<br> <span class="emoji" data-emoji="bulb">💡</span> You have set up your preferred text editor when working with Git<br> <span class="emoji" data-emoji="bulb">💡</span> You can escape the command-line text editor Vim</p>
 </div>
 </div>
 </div>
@@ -359,18 +359,18 @@ Exercises
 </div>
 <section id="configuring-git" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="configuring-git"><span class="header-section-number">4.1</span> Configuring Git</h2>
-<p>Once you <a href="../chapters/installation.html">installed Git</a>, it is time to set it up. We will use the the <a href="../chapters/command-line.html">command line</a> to set up and configure Git. The <code>git config</code> command is used to get and set configuration settings. It allows you to customize Git according to your preferences and requirements. This chapter will focus on the most important and / or necessary configurations. To look at all the different configuration commands, enter <code>git config</code> into the command line:</p>
+<p>Once you <a href="../chapters/installation.html">installed Git</a>, it’s time to set it up. We will use the the <a href="../chapters/command-line.html">command line</a> to set up and configure Git. The <code>git config</code> command is used to get and set configuration settings. It allows you to customize Git according to your preferences and requirements. This chapter will focus on the most important and necessary configurations. To look at all the different configuration options, enter <code>git config</code> into the command line:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In Git, configuration values can be stored at three different levels: system, global, and local. Find out more in the box below how you can set configuration values at each level.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="What are the different configuration levels?">
+<p>In Git, configuration values can be stored at three different configuration levels: the <em>system</em>, <em>global</em>, and <em>local</em> level. Find out more in the box below how you can set configuration values at each level.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: What are the different Git configuration levels?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What are the different configuration levels?
+Find out more: What are the different Git configuration levels?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -395,8 +395,8 @@ What are the different configuration levels?
 </div>
 <section id="identifying-yourself" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="identifying-yourself"><span class="header-section-number">4.1.1</span> Identifying yourself</h3>
-<p>Before you start using Git, it’s important to set your username and email address. This information is crucial because Git uses it to identify the author of each change you track with Git. By associating your changes with your username and email, it allows others (including future you) to see who made the changes which facilitates transparency and collaboration within a project. You will be able connect Git to remote repositories like GitHub, using this email address. So it makes sense to set your email address to the one you use (or will use) to create a GitHub account.</p>
-<p>Setting your username and email address is a one-time setup process, but you can always update them later, if needed. To perform this configuration, you can use the command line:</p>
+<p>Before you start using Git, it’s important to set your username and email address. This information is crucial because Git uses it to identify the author of each change you track with Git. By associating your changes with your username and email, it allows others (including future you) to see who made the changes which facilitates transparency and collaboration within a project. You will be able to connect Git to remote repositories like GitHub using this email address. So it makes sense to set your email address to the one you use (or will use) to create a GitHub account.</p>
+<p>Setting your username and email address is a one-time setup process on a new computer, but you can always update them later, if needed. To perform this configuration using the command line, use the following command:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Jane Doe"</span></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email jane@example.com</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -414,27 +414,27 @@ What are the different configuration levels?
 </div>
 </div>
 <p>Make sure to replace <code>"Jane Doe"</code> with your own username and <code>jane@example.com</code> with your own email address.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: Which name should I use for Git?">
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: Which username should I use for Git?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-FAQ: Which name should I use for Git?
+FAQ: Which username should I use for Git?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>It can be your <strong>GitHub username</strong>, your <strong>real name</strong>, or something informative about you. This name will be attached to the changes you track with Git, so <strong>choose something that makes sense</strong> to others and yourself in the future.</p>
+<p>Your username will be attached to the changes you track with Git, so <strong>choose something that is meaningful and informative</strong> for others and yourself in the future. After all, one main purpose of Git is to be able to track of <em>who</em> made which changes and when. This can help a lot in the future when you need to figure out who to talk to about a particular change. Your username can be your <strong>real name</strong>, your <strong>GitHub username</strong>, or something informative about you.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="configuring-the-default-name-of-the-initial-branch" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="configuring-the-default-name-of-the-initial-branch"><span class="header-section-number">4.1.2</span> Configuring the default name of the initial branch</h3>
-<p>Git uses a concept called “branches” to enable working on different versions of the same project. Branches will be introduced in a later <a href="chapters.qmd">chapter</a> of this book. For now you can think of branches as parallel versions of your repository contents.</p>
-<p>On most installations of Git, by default, the name “master” for the initial branch is used when creating a new repository. However, there has been a growing movement to transition to using “main” as the default branch name instead. One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">here</a> or <a href="https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/">here</a>). To configure the default branch name to “main” in Git, you can use the following command:</p>
+<p>Git uses a concept called “branches” to allow working on different versions of the same project. Branches will be introduced in a <a href="chapters.qmd">later chapter</a> of this book. For now, you can think of branches as parallel versions of your repository contents.</p>
+<p>On most installations of Git, by default, the name “master” is used for the initial branch when creating a new Git repository. However, there has been a growing movement to transition to using “main” as the default branch name instead. One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">here</a> or <a href="https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/">here</a>). To configure the default branch name to “main” in Git, you can use the following command:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -461,29 +461,29 @@ FAQ: Which name should I use for Git?
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To quit the browser use <code>q</code>.</p>
-<p>While the command provides extensive documentation and information about Git commands, it is arguably not the most beginner-friendly resource.</p>
+<p>While the <code>git config --help</code> command provides extensive documentation and information about Git commands, it is arguably not the most beginner-friendly resource. Platforms like <a href="https://stackoverflow.com/questions/tagged/git">Stack Overflow</a> provide help for many questions around using Git.</p>
 </section>
 <section id="configuring-your-text-editor" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="configuring-your-text-editor"><span class="header-section-number">4.4</span> Configuring your text editor</h2>
-<p>Sometimes, Git might open up a text editor inside the command line, and it can be annoying if you end up in an editor you don’t like or don’t know how to use. The standard text editor on macOS and when using “Git for Windows” is called <a href="https://www.vim.org/">Vim</a> (or Vi), which is arguably widely known for being difficult to use. You can find more information about the challenges of using Vim (and some funny memes) <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">here</a>. To check out which text editor Git is using, you can use:</p>
+<p>Sometimes Git might open up a text editor inside the command line, and it can be annoying if you end up in an editor that you don’t like or don’t know how to use. The standard text editor on macOS and “Git for Windows” is called <a href="https://www.vim.org/">Vim</a> (or Vi), which has a (perhaps questionable) popularity for being difficult to use. You can find more information about the challenges of using Vim (and some funny memes) <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">here</a>. To check out which text editor Git is using, you can use:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--get</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you have not changed your text editor yet, the output should be empty. This means that Git is using the command line’s default editor, which should be <strong>Vim</strong> if you are using macOS or Git for Windows. To make sure, you can use:</p>
+<p>If you have not changed your text editor yet, the output should be empty. This means that Git is using the command line’s default editor, which should be Vim if you are using macOS or “Git for Windows”. To make sure, you can use:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> var GIT_EDITOR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If the output is <code>vim</code> or <code>vi</code>, your system’s default editor is indeed Vim / Vi. Vim is an improved version of Vi, but there are virtually no differences that are relevant for learning Git and the scope of this book. In this situation, you can either pick up on the <a href="#vim-basics">basics of Vim</a> (see below) or simply change the text editor. Also note that, depending on your workflow, you will typically not have to use a text editor in the command line a lot. For beginners, we recommend to become familiar with the basics of your system’s default text editor to be able to perform basic operations (at least, how to exit it) when interacting with Git.</p>
+<p>If the output is <code>vim</code> or <code>vi</code>, your system’s default editor is indeed Vim / Vi. Vim is an improved version of Vi, but there are virtually no differences that are relevant for learning Git or the scope of this book. In this situation, you can either pick up on the <a href="#vim-basics">basics of Vim</a> (see below) or simply change the text editor. Also note that, depending on your workflow, you will typically not have to use a text editor in the command line a lot. For beginners, we recommend to become familiar with the basics of your system’s default text editor (in most cases, Vim) to be able to perform basic operations (at least, how to exit it) when interacting with Git.</p>
 <section id="vim-basics" class="level3" data-number="4.4.1">
 <h3 data-number="4.4.1" class="anchored" data-anchor-id="vim-basics"><span class="header-section-number">4.4.1</span> Vim Basics</h3>
 <p>To start <a href="https://www.vim.org/">Vim</a>, open the command line and type <code>vim</code> followed by the filename of the file that you want to edit (for example, <code>vim file.txt</code>). In Vim, you have two main modes: <em>Insert</em> mode for typing your text and <em>Normal</em> mode for navigation and command execution. Vim will always start in <em>Normal</em> mode, which can be confusing. To switch from <em>Normal</em> mode to <em>Insert</em> mode, press <code>i</code>. To switch back to <em>Normal</em> mode, save your changes and exit Vim, press <code>Esc</code> to enter <em>Normal</em> mode, then type <code>:w</code> to save, and <code>:q</code> to quit Vim. You can also combine commands in Vim, so you can use <code>:wq</code> to save your changes and exit Vim with just one command. For a more detailed and interactive tutorial of Vim, you can check out <a href="https://www.openvim.com">openvim.com</a>. For more information about common Vim commands, also see the box below.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="More Vim commands">
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Vim commands">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-More Vim commands
+Find out more: Vim commands
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -501,18 +501,23 @@ More Vim commands
 </section>
 <section id="changing-your-text-editor" class="level3" data-number="4.4.2">
 <h3 data-number="4.4.2" class="anchored" data-anchor-id="changing-your-text-editor"><span class="header-section-number">4.4.2</span> Changing your text editor</h3>
-<p>If you want to change the standard text editor to one that you are more comfortable with, there a lot of alternatives like <a href="https://www.nano-editor.org/docs.php">Nano</a>, <a href="https://code.visualstudio.com">Visual Studio Code</a> or <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>. If you have decided to use a different text editor you can use the following command (replace <code>editor-name</code> with the name of your preferred text editor):</p>
+<p>If you want to change the standard text editor to one that you are more comfortable with, there a lot of alternatives like <a href="https://www.nano-editor.org/docs.php">Nano</a>, <a href="https://code.visualstudio.com">Visual Studio Code</a> or <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>. If you have decided to use a different text editor you can use the following command (replace <code>"EDITOR_NAME"</code> with the name of your preferred text editor):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-1" class="code-annotation-target"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor editor-name</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-1" class="code-annotation-target"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"EDITOR_NAME"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="1" data-code-annotation="1">Replace <code>editor-name</code> with the name if your preferred text editor.</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="1" data-code-annotation="1">Replace <code>"EDITOR_NAME"</code> with the name if your preferred text editor.</span>
 </dd>
 </dl>
 </div>
 </div>
+<p>For example, to set <a href="https://www.nano-editor.org/docs.php">Nano</a> as the default text editor, use the following command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"nano"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>More information about associating text editors with Git, for example Visual Studio Code, can be found in the <a href="https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git">GitHub documentation</a>.</p>
 <p>From now on, when Git requires you to interact with a text editor, it will open the one that you have set. If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.</p>
 </section>
 </section>
@@ -520,7 +525,7 @@ More Vim commands
 <h2 data-number="4.5" class="anchored" data-anchor-id="unsetting-configuration"><span class="header-section-number">4.5</span> Unsetting configuration</h2>
 <p>If you want to undo a configuration setting, you can use the <code>--unset</code> in the <code>git config</code> command. For example, to unset the global configuration of your preferred text editor (<code>core.editor</code>) you can use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="acknowledgements-and-further-reading" class="level2" data-number="4.6">
@@ -570,6 +575,7 @@ More Vim commands
 </section>
 <section id="cheatsheet" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">4.7</span> Cheatsheet</h2>
+<p>In this chapter, we have learned about the following commands:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
