@@ -168,10 +168,106 @@ For beginners, we recommend to become familiar with the basics of your system's 
 
 To start [Vim](https://www.vim.org/), open the command line and type `vim` followed by the filename of the file that you want to edit (for example, `vim file.txt`).
 In Vim, you have two main modes: *Insert* mode for typing your text and *Normal* mode for navigation and command execution.
-Vim will always start in *Normal* mode, which can be confusing. 
-To switch from *Normal* mode to *Insert* mode, press `i`. 
-To switch back to *Normal* mode, save your changes and exit Vim, press `Esc` to enter *Normal* mode, then type `:w` to save, and `:q` to quit Vim.
-You can also combine commands in Vim, so you can use `:wq` to save your changes and exit Vim with just one command.
+Vim will always start in *Normal* mode, which can be confusing.
+The command line will probably look like this:
+
+```{bash}
+
+~
+~
+~
+```
+
+To switch from *Normal* mode to *Insert* mode, press <kbd>I</kbd> on the keyboard.
+You can see that `-- INSERT --` appears at the bottom of the command line window.
+This should look like this:
+
+```{bash}
+
+~
+~
+~
+-- INSERT --
+```
+
+You can now start writing any text into the file.
+This could look like this:
+
+```{bash}
+Cool, I am using Vim!
+~                                                                         
+~                                                                         
+~                                                                         
+-- INSERT --
+```
+
+::: {.callout-tip collapse="true" title="FAQ: I entered `vim` without providing a filename like `filename.txt`? What do I do now?"}
+
+If you entered `vim` into the command line without providing a filename, a welcome screen similar to the following will appear:
+
+```{bash}
+~                                                                               
+~                              VIM - Vi IMproved                                
+~                                                                               
+~                               version 9.0.2136                                
+~                           by Bram Moolenaar et al.                            
+~                 Vim is open source and freely distributable                   
+~                                                                               
+~                        Help poor children in Uganda!                          
+~                type  :help iccf<Enter>       for information                  
+~                                                                               
+~                type  :q<Enter>               to exit                          
+~                type  :help<Enter>  or  <F1>  for on-line help                 
+~                type  :help version9<Enter>   for version info                 
+~                                                                               
+```
+
+To make things easy: You can exit Vim again by pressing <kbd>Esc</kbd>, then entering `:q!` and pressing <kbd>Enter</kbd>.
+
+:::
+
+When you're done writing, here's how to save and exit Vim:
+
+1. Switch back to *Normal* mode using <kbd>Esc</kbd>.
+1. Save your changes by typing `:w` (then press <kbd>Enter</kbd>)
+1. To exit Vim, type `:q` (and press <kbd>Enter</kbd>).
+
+You can also combine commands in Vim, so you can use `:wq` to save your changes and exit Vim with just one command (don't forget to hit <kbd>Enter</kbd>).
+This will look like this:
+
+```{bash}
+Cool, I am using Vim!
+~                                                                         
+~                                                                         
+~                                                                         
+:wq
+```
+
+::: {.callout-tip collapse="true" title="Error: `E37: No write since last change (add ! to override)`"}
+
+This error might occur if you made changes to a file using Vim and tried to exit Vim using `:q` but didn't use `:w` before to save the changes.
+Vim therefore warns you that you didn't "write since last change":
+
+```{bash}
+
+~
+~
+~
+E37: No write since last change (add ! to override)
+```
+
+You can now decide to either (1) save the change using `:w` then quit using `:q` (or combine with `:wq`) or, as Vim suggests, override or discard the changes using `:q!`.
+
+```{bash}
+
+~
+~
+~
+:q!
+```
+
+:::
+
 For a more detailed and interactive tutorial of Vim, you can check out [openvim.com](https://www.openvim.com).
 For more information about common Vim commands, also see the box below.
 
