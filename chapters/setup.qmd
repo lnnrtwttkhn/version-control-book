@@ -326,6 +326,33 @@ For example, to unset the global configuration of your preferred text editor (`c
 git config --global --unset core.editor
 ```
 
+## The `.gitconfig` file
+
+The configurations that you apply to Git using the `git config` command are stored in a configuration file called `.gitconfig` that can usually be found in the user's home directory.
+
+::: {.callout-caution collapse="true" title="Mini Exercise: View the contents of `.gitconfig` with one command from the command line."}
+
+As always, there are multiple ways how to view the contents of `.gitconfig` with one command from the command line.
+Here is one example using the `cat` command in combination with the `~`:
+
+```{bash filename="Code"}
+cat ~/.gitconfig
+```
+
+This command will result in an output similar to this:
+
+```{bash filename="Output"}
+[user]
+	email = jane@example.com
+	name = Jane Doe
+[init]
+	defaultBranch = main
+```
+
+:::
+
+You can manually edit the `.gitconfig` file to customize your Git environment, but it's often more convenient to use Git commands like `git config` to manage these settings.
+
 ## Acknowledgements and further reading
 
 We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
