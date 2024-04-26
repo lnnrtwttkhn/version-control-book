@@ -312,6 +312,29 @@ You may notice that the prompt has been updated to show the new working director
 If a path starts with a forward slash (`/`), it is considered an *absolute* path.
 Paths that do not start with a forward slash are considered *relative* to the current working directory.
 
+::: {.callout-tip collapse="true" title="Is Bash case sensitive?"}
+
+Yes, in general Bash is case sensitive.
+This means that it distinguishes between uppercase and lowercase letters in commands and filenames.
+For example, if you created a file like `banana.txt` and then listed files that start with the letter `B`, the command line would tell you that there is `No such file or directory`.
+If you then listed files that start with the letter `b`, the command line would find the file.
+
+```{bash}
+touch banana.txt
+ls B*
+ls: B*: No such file or directory
+ls b*
+banana.txt
+```
+
+Note that this case sensitivity might not apply to paths on your computer.
+For example, `cd ~/Desktop` and `cd ~/desktop` might both lead macOS users to their `Desktop` directory.
+Generally, if you're experiencing different behavior, it's possible that you're using a file system or environment where case sensitivity is not enforced, or there may be other factors at play.
+Some file systems, such as those commonly used in macOS, are case-insensitive by default, while others, like those used in most Linux distributions, are case-sensitive.
+Additionally, some configurations or filesystem options can affect this behavior.
+
+:::
+
 ### Paths with spaces
 
 Note, that if a path contains a space, it needs to be enclosed in quotation marks to be recognized by the command line.
