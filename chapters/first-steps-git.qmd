@@ -293,6 +293,25 @@ They allow you to track the history of your project and easily revert changes if
 
 You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
 
+::: {.callout-tip collapse="true" title='FAQ: "I forgot to close the quotation marks of my commit message! What do I do?"'}
+
+In this situation, you command line probably looks like this:
+
+```{bash, filename="Output"}
+#| code-copy: false
+git commit -m "Add filename.txt
+>
+>
+>
+```
+
+You can try one of the following solutions:
+
+1. Close the quotation marks by entering another `"`.
+1. Abort the `git commit` command by typing <kbd>Ctrl</kbd> + <kbd>C</kbd> simultaneously and repeat it (now with quotation marks closed).
+
+:::
+
 #### Commit description
 
 Although it's not required, it can be a good idea to add a more thorough description to the commit, in addition to the (shorter) commit message.
