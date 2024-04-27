@@ -117,7 +117,8 @@ git config --list
 
 This should create a long output list, in which you should find your configurations, for example:
 
-```{bash filename="Code"}
+```{bash filename="Output"}
+#| code-copy: false
 user.name=Jane Doe
 user.email=jane@example.com
 init.defaultbranch=main
@@ -172,6 +173,7 @@ Vim will always start in *Normal* mode, which can be confusing.
 The command line will probably look like this:
 
 ```{bash filename="Output"}
+#| code-copy: false
 
 ~
 ~
@@ -183,6 +185,7 @@ You can see that `-- INSERT --` appears at the bottom of the command line window
 This should look like this:
 
 ```{bash filename="Output"}
+#| code-copy: false
 
 ~
 ~
@@ -194,6 +197,7 @@ You can now start writing any text into the file.
 This could look like this:
 
 ```{bash filename="Output"}
+#| code-copy: false
 Cool, I am using Vim!
 ~                                                                         
 ~                                                                         
@@ -206,6 +210,7 @@ Cool, I am using Vim!
 If you entered `vim` into the command line without providing a filename, a welcome screen similar to the following will appear:
 
 ```{bash filename="Output"}
+#| code-copy: false
 ~                                                                               
 ~                              VIM - Vi IMproved                                
 ~                                                                               
@@ -236,6 +241,7 @@ You can also combine commands in Vim, so you can use `:wq` to save your changes 
 This will look like this:
 
 ```{bash filename="Output"}
+#| code-copy: false
 Cool, I am using Vim!
 ~                                                                         
 ~                                                                         
@@ -249,6 +255,7 @@ This error might occur if you made changes to a file using Vim and tried to exit
 Vim therefore warns you that you didn't "write since last change":
 
 ```{bash filename="Output"}
+#| code-copy: false
 
 ~
 ~
@@ -259,6 +266,7 @@ E37: No write since last change (add ! to override)
 You can now decide to either (1) save the change using `:w` then quit using `:q` (or combine with `:wq`) or, as Vim suggests, override or discard the changes using `:q!`.
 
 ```{bash filename="Output"}
+#| code-copy: false
 
 ~
 ~
@@ -342,6 +350,7 @@ cat ~/.gitconfig
 This command will result in an output similar to this:
 
 ```{bash filename="Output"}
+#| code-copy: false
 [user]
 	email = jane@example.com
 	name = Jane Doe
