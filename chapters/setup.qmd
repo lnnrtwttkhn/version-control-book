@@ -26,7 +26,7 @@ It allows you to customize Git according to your preferences and requirements.
 This chapter will focus on the most important and necessary configurations.
 To look at all the different configuration options, enter `git config` into the command line:
 
-```{bash}
+```{bash filename="Code"}
 git config
 ```
 
@@ -48,7 +48,7 @@ git config --system <key> <value>
 Configuration values set at this level will be applied to all repositories owned by the user.
 To set a global-level configuration, use the following command syntax:
 
-```{bash}
+```{bash filename="Code"}
 git config --global <key> <value>
 ```
 
@@ -56,7 +56,7 @@ git config --global <key> <value>
 The configuration values set at this level **override values set at the system-level and user-level configurations** for that specific repository.
 By default, Git reads from and writes to this file when you use the `git config` command without any additional options.
 
-```{bash}
+```{bash filename="Code"}
 git config --local <key> <value>
 ```
 
@@ -76,7 +76,7 @@ So it makes sense to set your email address to the one you use (or will use) to 
 Setting your username and email address is a one-time setup process on a new computer, but you can always update them later, if needed. 
 To perform this configuration using the command line, use the following command:
 
-```{bash}
+```{bash filename="Code"}
 git config --global user.name "Jane Doe" # <1>
 git config --global user.email jane@example.com # <2>
 ```
@@ -103,7 +103,7 @@ However, there has been a growing movement to transition to using "main" as the 
 One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons [here](https://sfconservancy.org/news/2020/jun/23/gitbranchname/) or  [here](https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/)). 
 To configure the default branch name to "main" in Git, you can use the following command:
 
-```{bash}
+```{bash filename="Code"}
 git config --global init.defaultBranch main
 ```
 
@@ -111,13 +111,14 @@ git config --global init.defaultBranch main
 
 You can verify if your configurations were set correctly using the following command:
 
-```{bash}
+```{bash filename="Code"}
 git config --list
 ```
 
 This should create a long output list, in which you should find your configurations, for example:
 
-```{bash}
+```{bash filename="Output"}
+#| code-copy: false
 user.name=Jane Doe
 user.email=jane@example.com
 init.defaultbranch=main
@@ -130,7 +131,7 @@ When you run a Git command followed by `--help`, Git displays information about 
 
 For example, the following command will open up a browser in the command line containing information about the `git config` command.
 
-```{bash}
+```{bash filename="Code"}
 git config --help
 ```
 
@@ -146,7 +147,7 @@ The standard text editor on macOS and "Git for Windows" is called [Vim](https://
 You can find more information about the challenges of using Vim (and some funny memes) [here](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
 To check out which text editor Git is using, you can use:
 
-```{bash}
+```{bash filename="Code"}
 git config --get core.editor
 ```
 
@@ -154,7 +155,7 @@ If you have not changed your text editor yet, the output should be empty.
 This means that Git is using the command line's default editor, which should be Vim if you are using macOS or "Git for Windows". 
 To make sure, you can use:
 
-```{bash}
+```{bash filename="Code"}
 git var GIT_EDITOR
 ```
 
@@ -168,10 +169,113 @@ For beginners, we recommend to become familiar with the basics of your system's 
 
 To start [Vim](https://www.vim.org/), open the command line and type `vim` followed by the filename of the file that you want to edit (for example, `vim file.txt`).
 In Vim, you have two main modes: *Insert* mode for typing your text and *Normal* mode for navigation and command execution.
-Vim will always start in *Normal* mode, which can be confusing. 
-To switch from *Normal* mode to *Insert* mode, press `i`. 
-To switch back to *Normal* mode, save your changes and exit Vim, press `Esc` to enter *Normal* mode, then type `:w` to save, and `:q` to quit Vim.
-You can also combine commands in Vim, so you can use `:wq` to save your changes and exit Vim with just one command.
+Vim will always start in *Normal* mode, which can be confusing.
+The command line will probably look like this:
+
+```{bash filename="Output"}
+#| code-copy: false
+
+~
+~
+~
+```
+
+To switch from *Normal* mode to *Insert* mode, press <kbd>I</kbd> on the keyboard.
+You can see that `-- INSERT --` appears at the bottom of the command line window.
+This should look like this:
+
+```{bash filename="Output"}
+#| code-copy: false
+
+~
+~
+~
+-- INSERT --
+```
+
+You can now start writing any text into the file.
+This could look like this:
+
+```{bash filename="Output"}
+#| code-copy: false
+Cool, I am using Vim!
+~                                                                         
+~                                                                         
+~                                                                         
+-- INSERT --
+```
+
+::: {.callout-tip collapse="true" title="FAQ: I entered `vim` without providing a filename like `filename.txt`? What do I do now?"}
+
+If you entered `vim` into the command line without providing a filename, a welcome screen similar to the following will appear:
+
+```{bash filename="Output"}
+#| code-copy: false
+~                                                                               
+~                              VIM - Vi IMproved                                
+~                                                                               
+~                               version 9.0.2136                                
+~                           by Bram Moolenaar et al.                            
+~                 Vim is open source and freely distributable                   
+~                                                                               
+~                        Help poor children in Uganda!                          
+~                type  :help iccf<Enter>       for information                  
+~                                                                               
+~                type  :q<Enter>               to exit                          
+~                type  :help<Enter>  or  <F1>  for on-line help                 
+~                type  :help version9<Enter>   for version info                 
+~                                                                               
+```
+
+To make things easy: You can exit Vim again by pressing <kbd>Esc</kbd>, then entering `:q!` and pressing <kbd>Enter</kbd>.
+
+:::
+
+When you're done writing, here's how to save and exit Vim:
+
+1. Switch back to *Normal* mode using <kbd>Esc</kbd>.
+1. Save your changes by typing `:w` (then press <kbd>Enter</kbd>)
+1. To exit Vim, type `:q` (and press <kbd>Enter</kbd>).
+
+You can also combine commands in Vim, so you can use `:wq` to save your changes and exit Vim with just one command (don't forget to hit <kbd>Enter</kbd>).
+This will look like this:
+
+```{bash filename="Output"}
+#| code-copy: false
+Cool, I am using Vim!
+~                                                                         
+~                                                                         
+~                                                                         
+:wq
+```
+
+::: {.callout-tip collapse="true" title="Error: `E37: No write since last change (add ! to override)`"}
+
+This error might occur if you made changes to a file using Vim and tried to exit Vim using `:q` but didn't use `:w` before to save the changes.
+Vim therefore warns you that you didn't "write since last change":
+
+```{bash filename="Output"}
+#| code-copy: false
+
+~
+~
+~
+E37: No write since last change (add ! to override)
+```
+
+You can now decide to either (1) save the change using `:w` then quit using `:q` (or combine with `:wq`) or, as Vim suggests, override or discard the changes using `:q!`.
+
+```{bash filename="Output"}
+#| code-copy: false
+
+~
+~
+~
+:q!
+```
+
+:::
+
 For a more detailed and interactive tutorial of Vim, you can check out [openvim.com](https://www.openvim.com).
 For more information about common Vim commands, also see the box below.
 
@@ -205,14 +309,14 @@ To open a new file or switch between multiple files in Vim, use the `:e filename
 If you want to change the standard text editor to one that you are more comfortable with, there a lot of alternatives like [Nano](https://www.nano-editor.org/docs.php), [Visual Studio Code](https://code.visualstudio.com) or [Notepad++](https://notepad-plus-plus.org/downloads/).
 If you have decided to use a different text editor you can use the following command (replace `"EDITOR_NAME"` with the name of your preferred text editor):
 
-```{bash}
+```{bash filename="Code"}
 git config --global core.editor "EDITOR_NAME" # <1>
 ```
 1. Replace `"EDITOR_NAME"` with the name if your preferred text editor.
 
 For example, to set [Nano](https://www.nano-editor.org/docs.php) as the default text editor, use the following command:
 
-```{bash}
+```{bash filename="Code"}
 git config --global core.editor "nano"
 ```
 
@@ -226,9 +330,37 @@ If you ever want to change your Git editor in the future, you can repeat the abo
 If you want to undo a configuration setting, you can use the `--unset` in the `git config` command.
 For example, to unset the global configuration of your preferred text editor (`core.editor`) you can use the following command:
 
-```{bash}
+```{bash filename="Code"}
 git config --global --unset core.editor
 ```
+
+## The `.gitconfig` file
+
+The configurations that you apply to Git using the `git config` command are stored in a configuration file called `.gitconfig` that can usually be found in the user's home directory.
+
+::: {.callout-caution collapse="true" title="Mini Exercise: View the contents of `.gitconfig` with one command from the command line."}
+
+As always, there are multiple ways how to view the contents of `.gitconfig` with one command from the command line.
+Here is one example using the `cat` command in combination with the `~`:
+
+```{bash filename="Code"}
+cat ~/.gitconfig
+```
+
+This command will result in an output similar to this:
+
+```{bash filename="Output"}
+#| code-copy: false
+[user]
+	email = jane@example.com
+	name = Jane Doe
+[init]
+	defaultBranch = main
+```
+
+:::
+
+You can manually edit the `.gitconfig` file to customize your Git environment, but it's often more convenient to use Git commands like `git config` to manage these settings.
 
 ## Acknowledgements and further reading
 
