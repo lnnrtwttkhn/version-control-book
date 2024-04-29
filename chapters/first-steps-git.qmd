@@ -753,6 +753,39 @@ DESCRIPTION.meta
 ```
 :::
 
+## Tracking empty folders
+
+Normally, Git does not track empty folders in a repository.
+However, tracking an empty directory in a Git repository can be useful in some scenarios.
+For example, you want to track an empty folder as a placeholder for future content or as a way to organize the project more clearly.
+
+A workaround, to get Git to track your empty folder, is adding a hidden `.gitkeep` file in this folder^[:bulb: Tip: Use `touch .gitkeep` (details [here](command-line.qmd#creating-files))].
+This not an official Git feature but rather a convention adopted by software developers.
+That means you could name this file anything, but `.gitkeep` is used by convention to explicitly state its purpose for keeping otherwise empty folders in Git.
+
+::: {.callout-tip collapse="true" title="Find out more: Use-cases for empty folders in Git repositories for scientific projects"}
+
+As discussed above, Git is not suitable for tracking a lot of large files, as is often the case when working with research data.
+Imagine that you use Git for your code that you use to analyze data from a research project.
+Usually, your analysis code needs access to the research data but you think that the research data is too large to be tracked with Git.
+
+Here is what you could do:
+
+1. Create an empty subfolder in your analysis Git repo, called `data`.
+1. Add a `.gitkeep` file to the `/data` folder and commit it.
+1. Add the `/data` folder to your `.gitignore` file.
+1. Add your research data to the `/data` folder.
+
+This is the result: Your analysis code and research data can now live in the same repository.
+Your analysis code can access your research data in the `/data` folder.
+However, the contents of `/data` are not committed to the repository, thanks to the `.gitignore` file.
+If you later share that repository with collaborators, they will only receive a repository with an empty `/data` folder, thanks to `.gitkeep`.
+The advantage is that your collaborators can easily understand where to put the research data.
+Note, however, that you still need to make the research data accessible to your collaborators in another way.
+
+If you are interested in version control of larger datasets, you can check out [DataLad](https://handbook.datalad.org/en/latest/).
+:::
+
 ## Cheatsheet
 
 ```{r}
