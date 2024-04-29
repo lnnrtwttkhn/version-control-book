@@ -313,8 +313,9 @@ div.csl-indent {
   <li><a href="#changing-your-text-editor" id="toc-changing-your-text-editor" class="nav-link" data-scroll-target="#changing-your-text-editor"><span class="header-section-number">4.4.2</span> Changing your text editor</a></li>
   </ul></li>
   <li><a href="#unsetting-configuration" id="toc-unsetting-configuration" class="nav-link" data-scroll-target="#unsetting-configuration"><span class="header-section-number">4.5</span> Unsetting configuration</a></li>
-  <li><a href="#acknowledgements-and-further-reading" id="toc-acknowledgements-and-further-reading" class="nav-link" data-scroll-target="#acknowledgements-and-further-reading"><span class="header-section-number">4.6</span> Acknowledgements and further reading</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">4.7</span> Cheatsheet</a></li>
+  <li><a href="#the-.gitconfig-file" id="toc-the-.gitconfig-file" class="nav-link" data-scroll-target="#the-.gitconfig-file"><span class="header-section-number">4.6</span> The <code>.gitconfig</code> file</a></li>
+  <li><a href="#acknowledgements-and-further-reading" id="toc-acknowledgements-and-further-reading" class="nav-link" data-scroll-target="#acknowledgements-and-further-reading"><span class="header-section-number">4.7</span> Acknowledgements and further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">4.8</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -361,7 +362,12 @@ Exercises
 <h2 data-number="4.1" class="anchored" data-anchor-id="configuring-git"><span class="header-section-number">4.1</span> Configuring Git</h2>
 <p>Once you <a href="../chapters/installation.html">installed Git</a>, it’s time to set it up. We will use the the <a href="../chapters/command-line.html">command line</a> to set up and configure Git. The <code>git config</code> command is used to get and set configuration settings. It allows you to customize Git according to your preferences and requirements. This chapter will focus on the most important and necessary configurations. To look at all the different configuration options, enter <code>git config</code> into the command line:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>In Git, configuration values can be stored at three different configuration levels: the <em>system</em>, <em>global</em>, and <em>local</em> level. Find out more in the box below how you can set configuration values at each level.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: What are the different Git configuration levels?">
@@ -383,11 +389,21 @@ Find out more: What are the different Git configuration levels?
 </div>
 <p><strong>Global-level</strong> or <strong>user-level configuration</strong>: This level is specific to an individual user. Configuration values set at this level will be applied to all repositories owned by the user. To set a global-level configuration, use the following command syntax:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="op">&lt;</span>key<span class="op">&gt;</span> <span class="op">&lt;</span>value<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p><strong>Repository-level configuration</strong>: This level is specific to a particular Git repository. The configuration values set at this level <strong>override values set at the system-level and user-level configurations</strong> for that specific repository. By default, Git reads from and writes to this file when you use the <code>git config</code> command without any additional options.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--local</span> <span class="op">&lt;</span>key<span class="op">&gt;</span> <span class="op">&lt;</span>value<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Keep in mind that when you set configurations at different levels, <strong>Git looks for the configuration from the most specific level to the least specific</strong> (local &gt; global &gt; system). The configuration set at the local level will override the configurations set at the global and system levels for that particular repository.</p>
 </div>
@@ -398,8 +414,13 @@ Find out more: What are the different Git configuration levels?
 <p>Before you start using Git, it’s important to set your username and email address. This information is crucial because Git uses it to identify the author of each change you track with Git. By associating your changes with your username and email, it allows others (including future you) to see who made the changes which facilitates transparency and collaboration within a project. You will be able to connect Git to remote repositories like GitHub using this email address. So it makes sense to set your email address to the one you use (or will use) to create a GitHub account.</p>
 <p>Setting your username and email address is a one-time setup process on a new computer, but you can always update them later, if needed. To perform this configuration using the command line, use the following command:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Jane Doe"</span></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email jane@example.com</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
@@ -436,7 +457,12 @@ FAQ: Which username should I use for Git?
 <p>Git uses a concept called “branches” to allow working on different versions of the same project. Branches will be introduced in a <a href="chapters.qmd">later chapter</a> of this book. For now, you can think of branches as parallel versions of your repository contents.</p>
 <p>On most installations of Git, by default, the name “master” is used for the initial branch when creating a new Git repository. However, there has been a growing movement to transition to using “main” as the default branch name instead. One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">here</a> or <a href="https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/">here</a>). To configure the default branch name to “main” in Git, you can use the following command:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 </section>
@@ -444,13 +470,23 @@ FAQ: Which username should I use for Git?
 <h2 data-number="4.2" class="anchored" data-anchor-id="checking-your-git-settings"><span class="header-section-number">4.2</span> Checking your Git settings</h2>
 <p>You can verify if your configurations were set correctly using the following command:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>This should create a long output list, in which you should find your configurations, for example:</p>
-<div class="cell">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user.name=Jane</span> Doe</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">user.email=jane@example.com</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">init.defaultbranch=main</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="calling-for-help" class="level2" data-number="4.3">
@@ -458,7 +494,12 @@ FAQ: Which username should I use for Git?
 <p>The <code>--help</code> option in Git is a command that provides you with access to the built-in Git documentation and help resources. When you run a Git command followed by <code>--help</code>, Git displays information about that command, including its usage, available options, and a brief description of its functionality.</p>
 <p>For example, the following command will open up a browser in the command line containing information about the <code>git config</code> command.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>To quit the browser use <code>q</code>.</p>
 <p>While the <code>git config --help</code> command provides extensive documentation and information about Git commands, it is arguably not the most beginner-friendly resource. Platforms like <a href="https://stackoverflow.com/questions/tagged/git">Stack Overflow</a> provide help for many questions around using Git.</p>
@@ -467,18 +508,160 @@ FAQ: Which username should I use for Git?
 <h2 data-number="4.4" class="anchored" data-anchor-id="configuring-your-text-editor"><span class="header-section-number">4.4</span> Configuring your text editor</h2>
 <p>Sometimes Git might open up a text editor inside the command line, and it can be annoying if you end up in an editor that you don’t like or don’t know how to use. The standard text editor on macOS and “Git for Windows” is called <a href="https://www.vim.org/">Vim</a> (or Vi), which has a (perhaps questionable) popularity for being difficult to use. You can find more information about the challenges of using Vim (and some funny memes) <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">here</a>. To check out which text editor Git is using, you can use:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--get</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>If you have not changed your text editor yet, the output should be empty. This means that Git is using the command line’s default editor, which should be Vim if you are using macOS or “Git for Windows”. To make sure, you can use:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> var GIT_EDITOR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>If the output is <code>vim</code> or <code>vi</code>, your system’s default editor is indeed Vim / Vi. Vim is an improved version of Vi, but there are virtually no differences that are relevant for learning Git or the scope of this book. In this situation, you can either pick up on the <a href="#vim-basics">basics of Vim</a> (see below) or simply change the text editor. Also note that, depending on your workflow, you will typically not have to use a text editor in the command line a lot. For beginners, we recommend to become familiar with the basics of your system’s default text editor (in most cases, Vim) to be able to perform basic operations (at least, how to exit it) when interacting with Git.</p>
 <section id="vim-basics" class="level3" data-number="4.4.1">
 <h3 data-number="4.4.1" class="anchored" data-anchor-id="vim-basics"><span class="header-section-number">4.4.1</span> Vim Basics</h3>
-<p>To start <a href="https://www.vim.org/">Vim</a>, open the command line and type <code>vim</code> followed by the filename of the file that you want to edit (for example, <code>vim file.txt</code>). In Vim, you have two main modes: <em>Insert</em> mode for typing your text and <em>Normal</em> mode for navigation and command execution. Vim will always start in <em>Normal</em> mode, which can be confusing. To switch from <em>Normal</em> mode to <em>Insert</em> mode, press <code>i</code>. To switch back to <em>Normal</em> mode, save your changes and exit Vim, press <code>Esc</code> to enter <em>Normal</em> mode, then type <code>:w</code> to save, and <code>:q</code> to quit Vim. You can also combine commands in Vim, so you can use <code>:wq</code> to save your changes and exit Vim with just one command. For a more detailed and interactive tutorial of Vim, you can check out <a href="https://www.openvim.com">openvim.com</a>. For more information about common Vim commands, also see the box below.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Vim commands">
+<p>To start <a href="https://www.vim.org/">Vim</a>, open the command line and type <code>vim</code> followed by the filename of the file that you want to edit (for example, <code>vim file.txt</code>). In Vim, you have two main modes: <em>Insert</em> mode for typing your text and <em>Normal</em> mode for navigation and command execution. Vim will always start in <em>Normal</em> mode, which can be confusing. The command line will probably look like this:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>To switch from <em>Normal</em> mode to <em>Insert</em> mode, press <kbd>I</kbd> on the keyboard. You can see that <code>-- INSERT --</code> appears at the bottom of the command line window. This should look like this:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">--</span> INSERT <span class="at">--</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You can now start writing any text into the file. This could look like this:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Cool,</span> I am using Vim!</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                         </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                         </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                         </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="ex">--</span> INSERT <span class="at">--</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: I entered `vim` without providing a filename like `filename.txt`? What do I do now?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: I entered <code>vim</code> without providing a filename like <code>filename.txt</code>? What do I do now?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you entered <code>vim</code> into the command line without providing a filename, a welcome screen similar to the following will appear:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                               </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                              VIM <span class="at">-</span> Vi IMproved                                </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                               </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                               version 9.0.2136                                </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                           by Bram Moolenaar et al.                            </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                 Vim is open source and freely distributable                   </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                               </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                        Help poor children in Uganda!                          </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                type  :help iccf<span class="op">&lt;</span>Enter<span class="op">&gt;</span>       for information                  </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                               </span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                type  :q<span class="op">&lt;</span>Enter<span class="op">&gt;</span>               to exit                          </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                type  :help<span class="op">&lt;</span>Enter<span class="op">&gt;</span>  or  <span class="op">&lt;</span>F1<span class="op">&gt;</span>  for on-line help                 </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                type  :help version9<span class="op">&lt;</span>Enter<span class="op">&gt;</span>   for version info                 </span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                               </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>To make things easy: You can exit Vim again by pressing <kbd>Esc</kbd>, then entering <code>:q!</code> and pressing <kbd>Enter</kbd>.</p>
+</div>
+</div>
+</div>
+<p>When you’re done writing, here’s how to save and exit Vim:</p>
+<ol type="1">
+<li>Switch back to <em>Normal</em> mode using <kbd>Esc</kbd>.</li>
+<li>Save your changes by typing <code>:w</code> (then press <kbd>Enter</kbd>)</li>
+<li>To exit Vim, type <code>:q</code> (and press <kbd>Enter</kbd>).</li>
+</ol>
+<p>You can also combine commands in Vim, so you can use <code>:wq</code> to save your changes and exit Vim with just one command (don’t forget to hit <kbd>Enter</kbd>). This will look like this:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Cool,</span> I am using Vim!</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                         </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                         </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span>                                                                         </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">:wq</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Error: `E37: No write since last change (add ! to override)`">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Error: <code>E37: No write since last change (add ! to override)</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This error might occur if you made changes to a file using Vim and tried to exit Vim using <code>:q</code> but didn’t use <code>:w</code> before to save the changes. Vim therefore warns you that you didn’t “write since last change”:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="ex">E37:</span> No write since last change <span class="er">(</span><span class="ex">add</span> ! to override<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You can now decide to either (1) save the change using <code>:w</code> then quit using <code>:q</code> (or combine with <code>:wq</code>) or, as Vim suggests, override or discard the changes using <code>:q!</code>.</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="ex">:q!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For a more detailed and interactive tutorial of Vim, you can check out <a href="https://www.openvim.com">openvim.com</a>. For more information about common Vim commands, also see the box below.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Vim commands">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -487,7 +670,7 @@ Find out more: Vim commands
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To navigate through the text in Normal mode without using the arrow keys, you can use <code>h</code> to move left, <code>j</code> to move down, <code>k</code> to move up, and <code>l</code> to move right. If you need to delete a character in <em>Normal mode</em>, simply press <code>x</code>. This will remove the character under the cursor. To delete an entire line, use <code>dd</code>.</p>
 <p>Undoing changes is also straightforward in Vim. Press <code>u</code> in Normal mode to undo the last action, and <code>Ctrl + r</code> to redo an action if you’ve undone too much.</p>
@@ -503,19 +686,29 @@ Find out more: Vim commands
 <h3 data-number="4.4.2" class="anchored" data-anchor-id="changing-your-text-editor"><span class="header-section-number">4.4.2</span> Changing your text editor</h3>
 <p>If you want to change the standard text editor to one that you are more comfortable with, there a lot of alternatives like <a href="https://www.nano-editor.org/docs.php">Nano</a>, <a href="https://code.visualstudio.com">Visual Studio Code</a> or <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>. If you have decided to use a different text editor you can use the following command (replace <code>"EDITOR_NAME"</code> with the name of your preferred text editor):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-1" class="code-annotation-target"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"EDITOR_NAME"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="1">1</button><span id="annotated-cell-13-1" class="code-annotation-target"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"EDITOR_NAME"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="1" data-code-annotation="1">Replace <code>"EDITOR_NAME"</code> with the name if your preferred text editor.</span>
+<span data-code-cell="annotated-cell-13" data-code-lines="1" data-code-annotation="1">Replace <code>"EDITOR_NAME"</code> with the name if your preferred text editor.</span>
 </dd>
 </dl>
 </div>
 </div>
 <p>For example, to set <a href="https://www.nano-editor.org/docs.php">Nano</a> as the default text editor, use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"nano"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"nano"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>More information about associating text editors with Git, for example Visual Studio Code, can be found in the <a href="https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git">GitHub documentation</a>.</p>
 <p>From now on, when Git requires you to interact with a text editor, it will open the one that you have set. If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.</p>
@@ -525,11 +718,58 @@ Find out more: Vim commands
 <h2 data-number="4.5" class="anchored" data-anchor-id="unsetting-configuration"><span class="header-section-number">4.5</span> Unsetting configuration</h2>
 <p>If you want to undo a configuration setting, you can use the <code>--unset</code> in the <code>git config</code> command. For example, to unset the global configuration of your preferred text editor (<code>core.editor</code>) you can use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--unset</span> core.editor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
-<section id="acknowledgements-and-further-reading" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="acknowledgements-and-further-reading"><span class="header-section-number">4.6</span> Acknowledgements and further reading</h2>
+<section id="the-.gitconfig-file" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="the-.gitconfig-file"><span class="header-section-number">4.6</span> The <code>.gitconfig</code> file</h2>
+<p>The configurations that you apply to Git using the <code>git config</code> command are stored in a configuration file called <code>.gitconfig</code> that can usually be found in the user’s home directory.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Mini Exercise: View the contents of `.gitconfig` with one command from the command line.">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mini Exercise: View the contents of <code>.gitconfig</code> with one command from the command line.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As always, there are multiple ways how to view the contents of <code>.gitconfig</code> with one command from the command line. Here is one example using the <code>cat</code> command in combination with the <code>~</code>:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.gitconfig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This command will result in an output similar to this:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[user]</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">email</span> = jane@example.com</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">name</span> = Jane Doe</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="ex">[init]</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">defaultBranch</span> = main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>You can manually edit the <code>.gitconfig</code> file to customize your Git environment, but it’s often more convenient to use Git commands like <code>git config</code> to manage these settings.</p>
+</section>
+<section id="acknowledgements-and-further-reading" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="acknowledgements-and-further-reading"><span class="header-section-number">4.7</span> Acknowledgements and further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="table">
 <thead>
@@ -573,8 +813,8 @@ Find out more: Vim commands
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">4.7</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">4.8</span> Cheatsheet</h2>
 <p>In this chapter, we have learned about the following commands:</p>
 <div class="cell">
 <div class="cell-output-display">

@@ -404,9 +404,9 @@ Exercises
 <p>A <strong>file</strong> is an unit of digital data storage that can contain a variety of information, such as text, images or even programs. It is identified by an unique name and an extension, which indicates the file’s format or type (for example, <code>file.txt</code>). Files are organized within a file system, allowing users to create, access, modify, and delete them.</p>
 <p>A <strong>folder</strong> is a container used in file systems to store and organize files and other folders. Folders provide a hierarchical structure that allows users to group and manage files, making it easier to locate and navigate through data.</p>
 <p>A <strong>directory</strong> is the more technical term, while <strong>folder</strong> is a user-friendly term for the same concept. In practice, the two terms are often used interchangeably, and many operating systems have adopted the term “folder”.</p>
-<p>The <strong>“command-line interface (CLI)”</strong> is a text-based way to interact with computer programs. Specifically, the term “command line” refers to the interface where users input text commands to communicate with the computer. Most people primarily use a Graphical User Interface (GUI) to work with their programs, but historically, text-based interfaces were more common. Often, the GUI can only access a limited set of features available through the CLI and some programs don’t even have a GUI and can only be used through the command line. For many years, the command line was the primary way to interact with computers. This text-based interaction allows to perform various tasks, from running programs to managing files and directories.</p>
-<p>The <strong>“terminal”</strong>, short for “terminal emulator”, is the application or program that you open on your computer to access the command-line interface. Terminals were used to connect to mainframe computers in the early days of computing. The terminal program creates a window in which you can type commands and see the output from these commands..</p>
-<p>The <strong>“shell”</strong> is a software that interprets the commands you type into the terminal. It acts as a layer between you and the operating system. The shell processes the commands and communicates with the computer’s operating system to execute them. It allows you to perform various tasks that your operating system offers, such as managing files, running and stopping programs, and changing system settings, all through text commands. Examples of popular shells include Bash on Linux and macOS, and PowerShell on Windows.</p>
+<p>The <strong>command-line interface (CLI)</strong> is a text-based way to interact with computer programs. Specifically, the term “command line” refers to the interface where users input text commands to communicate with the computer. Most people primarily use a Graphical User Interface (GUI) to work with their programs, but historically, text-based interfaces were more common. Often, the GUI can only access a limited set of features available through the CLI and some programs don’t even have a GUI and can only be used through the command line. For many years, the command line was the primary way to interact with computers. This text-based interaction allows to perform various tasks, from running programs to managing files and directories.</p>
+<p>The <strong>terminal</strong>, short for “terminal emulator”, is the application or program that you open on your computer to access the command-line interface. Terminals were used to connect to mainframe computers in the early days of computing. The terminal program creates a window in which you can type commands and see the output from these commands..</p>
+<p>The <strong>shell</strong> is a software that interprets the commands you type into the terminal. It acts as a layer between you and the operating system. The shell processes the commands and communicates with the computer’s operating system to execute them. It allows you to perform various tasks that your operating system offers, such as managing files, running and stopping programs, and changing system settings, all through text commands. Examples of popular shells include Bash on Linux and macOS, and PowerShell on Windows.</p>
 <p>In combination, in a typical scenario, you would open a terminal (the window), use the shell within that terminal to understand and process your commands, and interact with your computer through the command line interface provided by the terminal. That being said, the terms “shell”, “command line”, “command-line interface (CLI)”, and “terminal” are often used interchangeably and roughly refer to the same thing: a simple window showing a prompt and a blinking cursor (see <a href="#fig-cli" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>). In movies, when people hack into computers, they often type rapidly in this window.</p>
 <div id="fig-cli" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -418,6 +418,22 @@ Figure&nbsp;2.1: The command line (Bourne shell interaction in Version 7 Unix). 
 </figcaption>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: Which programming language does the command line use?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: Which programming language does the command line use?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As briefly described in the <a href="#terminology">section on terminology</a>, the default “programming language” of the command line is a version of the <strong>shell</strong>. Examples of popular shells include <a href="https://www.gnu.org/software/bash/">Bash</a> on Linux and macOS, and <a href="https://learn.microsoft.com/en-us/powershell/">PowerShell</a> on Windows. The program <a href="https://gitforwindows.org/">Git for Windows</a> provides a Bash emulation that is used to run Git from the command line which generally behaves like Bash in Linux and macOS environments.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="finding-the-command-line" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="finding-the-command-line"><span class="header-section-number">2.3</span> Finding the command line</h2>
@@ -426,36 +442,46 @@ Figure&nbsp;2.1: The command line (Bourne shell interaction in Version 7 Unix). 
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false"><i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false"><i class="fa-solid fa-rocket" aria-label="rocket"></i> JupyterHub</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>By default, Windows operating systems do not come with a pre-installed Unix Shell program. In this guide, we recommend using an emulator provided by <a href="https://gitforwindows.org/">Git for Windows</a>, which grants you access to both Bash shell commands and Git.</p>
-<p>For an installation guide, you can check out the chapter on <a href="../chapters/installation.html">installation</a> and <a href="../chapters/setup.html">setup</a>. Once you have installed Git for Windows, you can open a terminal by launching the program called “Git Bash” from the Windows start menu.</p>
+<p>By default, Windows operating systems do not come with a pre-installed Unix Shell program. In this guide, we recommend using an emulator provided by <a href="https://gitforwindows.org/">Git for Windows</a>, which grants you access to both the Bash shell commands and Git.</p>
+<p>For an installation guide, you can check out the chapters on <a href="../chapters/installation.html">installation</a> and <a href="../chapters/setup.html">setup</a>. Once you have installed Git for Windows, you can open a terminal by launching the program called “Git Bash” from the Windows start menu.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>You can access your default shell through the Terminal program located within the Utilities folder: There are (at least) three different ways to get there:</p>
-<ul>
+<div id="fig-terminal" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/terminal-icon.png" class="img-fluid figure-img" style="width:20.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Icon of the Terminal program on macOS (Source: <a href="https://commons.wikimedia.org/wiki/File:Terminalicon2.png">Wikimedia Commons</a>, License: Public Domain)
+</figcaption>
+</figure>
+</div>
+<p>You can access your default shell through the <strong>Terminal</strong> program (see the icon in <a href="#fig-terminal" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>) that can be found within the <code>Utilities</code> folder: There are (at least) three different ways to get there:</p>
+<ol type="1">
 <li>In the Finder, go to <code>Applications</code> &gt; <code>Utilities</code> &gt; <code>Terminal.app</code></li>
 <li>In the Finder, select the <code>Go</code> menu &gt; <code>Utilities</code> &gt; <code>Terminal.app</code></li>
-<li>Activate the Mac <code>Spotlight</code> search function, type <code>Terminal</code> in the search bar, and press the <code>Return</code> key.</li>
-</ul>
-<p>You may want to keep Terminal in your <a href="https://support.apple.com/guide/mac-help/open-apps-from-the-dock-mh35859/mac">Dock</a> to find it more easily.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Mac Terminal: Bash or Zsh?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<li>Activate the Mac <code>Spotlight</code> search function, type <code>Terminal</code> in the search bar, and press the <kbd>Enter</kbd> key.</li>
+</ol>
+<p>You may want to keep the Terminal in your <a href="https://support.apple.com/guide/mac-help/open-apps-from-the-dock-mh35859/mac">Dock</a> to find it more easily.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="macOS Terminal: Bash or Zsh?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Mac Terminal: Bash or Zsh?
+macOS Terminal: Bash or Zsh?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>On a Mac computer running macOS Mojave or earlier versions, the default Unix Shell is Bash. Unix being a family of operating systems serving as the basis for Linux and macOS with the inclusion of a command line interface (or Unix Shell) as a key feature. For a Mac computer operating on macOS Catalina or later releases, the default Unix Shell is Zsh. Bash and Zsh are both programs, which are command-line interfaces for interacting with an operating system. Zsh is often considered better than Bash for its more advanced features and improved scripting capabilities. It also has extensive community-contributed plugins and themes. However, the change to Zsh was not a drastic shift for most users, since there a few practical differences.</p>
+<p>On a Mac computer running macOS Mojave or earlier versions, the default Unix Shell is Bash. Unix is a family of operating systems serving as the basis for Linux and macOS with the inclusion of a command line interface (or Unix Shell) as a key feature. For a Mac computer operating on macOS Catalina or later releases, the default Unix Shell is Zsh. Bash and Zsh are both programs, which are command-line interfaces for interacting with an operating system. Zsh is often considered better than Bash for its more advanced features and improved scripting capabilities. It also has extensive community-contributed plugins and themes. However, the change to Zsh was not a drastic shift for most users, since there a few practical differences.</p>
 <p>To verify if your machine is configured to use a shell other than Bash, you can type <code>echo $SHELL</code> in your Terminal window. If the output is <code>/bin/bash</code> or a similar path, it means your default shell is set to Bash. This is the most common shell on Unix-based systems, including macOS. If the output is <code>/bin/zsh</code> or a similar path, it means your default shell is set to Zsh. If the output is a different path, it indicates that your shell is configured to use a different shell program. If your machine is configured to use a shell other than Bash, you can switch to Bash by opening a terminal and typing <code>bash</code>.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled" title="Which macOS version do I have installed?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -464,23 +490,45 @@ Which macOS version do I have installed?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>In the upper-left corner of your screen, click on the <i class="fa-brands fa-apple" aria-label="apple"></i> logo.</li>
 <li>Select “About This Mac”: A dropdown menu will appear. Choose “About This Mac”.</li>
-<li>View macOS Version: In the “About This Mac” window, you will see information about your Mac, including the macOS version. The version number will be listed under the “Overview” tab. For example, it might say “macOS Big Sur” or “macOS Monterey”, along with the version number (e.g., “Version 11.4”).</li>
+<li>View the macOS Version: In the “About This Mac” window, you will see information about your Mac, including the macOS version. The version number will be listed under the “Overview” tab. For example, it might say “macOS Big Sur” or “macOS Monterey”, along with the version number (for example, “Version 11.4”).</li>
 </ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: How can I customize the look of my shell?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: How can I customize the look of my shell?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For example, you can check out <a href="https://ohmyz.sh/">Oh My Zsh</a>.</p>
+<blockquote class="blockquote">
+<p>Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes,</p>
+</blockquote>
+<p>In addition, if you want to add syntax highlighting (similar to the code chunks in this book), check out <a href="https://github.com/zsh-users/zsh-syntax-highlighting/tree/master">zsh-syntax-highlighting</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing Ctrl + Alt + T simultaneously. If this shortcut does not work, you can find the terminal application in your system’s applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.</p>
+<p>To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> simultaneously. If this shortcut does not work, you can find the terminal application in your system’s applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.</p>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p>If it is not possible for you to access a command line interface using your personal computer, you can use a remote solution with <a href="https://jupyter.org/hub">JupyterHub</a>. JupyterHub is a web-based platform that allows multiple users to access an interactive computing environment on a shared server.</p>
-<p>You can access a remote environment, using your Universität Hamburg login credentials <a href="https://code.min.uni-hamburg.de">here</a>. Simply click on the link and log in.</p>
+<p>If you are a student at University of Hamburg, you can access a remote environment, using your university login credentials here:</p>
+<p><a href="https://code.min.uni-hamburg.de" class="uri">https://code.min.uni-hamburg.de</a></p>
+<p>Simply click on the link and log in.</p>
 <p>Once you are logged in, you should be able to view the remote environment and create files using different programs like <i class="fa-brands fa-r-project" aria-label="r-project"></i>, Python <i class="fa-brands fa-python" aria-label="python"></i> or Java <i class="fa-brands fa-java" aria-label="java"></i>.</p>
 <div id="fig-jupyter" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -488,7 +536,7 @@ Which macOS version do I have installed?
 <img src="../static/cli_jupyter.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jupyter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: Screenshot of JupyterHub, showing the start screen.
+Figure&nbsp;2.3: Screenshot of JupyterHub, showing the start screen.
 </figcaption>
 </figure>
 </div>
@@ -499,7 +547,7 @@ Figure&nbsp;2.2: Screenshot of JupyterHub, showing the start screen.
 <img src="../static/cli_jupyter_2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jupyter_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: Screenshot of JupyterHub, showing the terminal.
+Figure&nbsp;2.4: Screenshot of JupyterHub, showing the terminal.
 </figcaption>
 </figure>
 </div>
@@ -510,14 +558,24 @@ Figure&nbsp;2.3: Screenshot of JupyterHub, showing the terminal.
 <section id="opening-the-command-line" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="opening-the-command-line"><span class="header-section-number">2.4</span> Opening the command line</h2>
 <p>When you open the shell, you’ll see a prompt that tells you that the shell is ready for input. Your terminal interface will usually show a message similar to the following prompt:</p>
-<div class="cell">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>In the shell, the prompt is usually represented by the symbol <code>$</code> but it can look a bit different sometimes. In our examples, we’ll use <code>$</code> as the prompt. The important thing to remember is <strong>to not type the prompt, <code>$</code>, itself when entering commands</strong>. Only type the command that comes after the <code>$</code> prompt. For this reason, we remove the <code>$</code> prompt from all code examples in this guide. Also, remember to press the <code>Enter</code> key after typing a command to execute it.</p>
 <p>After the prompt, you’ll see a text cursor that shows where you can type. The cursor can be a flashing or solid block, or it can be an underscore or a pipe symbol. You may have seen a similar cursor in a text editing program.</p>
 <p>Keep in mind that your prompt may look slightly different. Usually, in popular shell environments, your username and the host name appear before the <code>$</code> symbol. For example, your prompt might look like this:</p>
-<div class="cell">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="navigating-the-file-system" class="level2" data-number="2.5">
@@ -532,7 +590,7 @@ Figure&nbsp;2.3: Screenshot of JupyterHub, showing the terminal.
 <p>In a file system, directories (or folders) and files are organized hierarchically to enable the storage and retrieval of data. Each level in the hierarchy is called a “level” or “depth”. In the context of file systems, the hierarchy of directories is often described as a parent-child relationship and folders are therefore often referred to as “parent directories” and “child directories” (for details, see the box below).</p>
 <p>The <strong>root directory</strong> is the highest level in the hierarchy. On Unix-based systems (including macOS), the root directory is denoted by <code>/</code>. On Windows, it is typically denoted by a drive letter followed by <code>\</code> (e.g., <code>C:\</code>). While the fundamental concepts of directories and files are consistent across operating systems, there are some differences in folder structures between macOS (Unix-based) and Windows:</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="What are &quot;parent&quot; and &quot;child&quot; directories?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -541,14 +599,18 @@ What are “parent” and “child” directories?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In the context of file systems, a “parent directory” and a “child directory” describe the relationship between directories (or folders).</p>
 <ul>
 <li><strong>Parent Directory:</strong> This is the directory that is “higher up” in the directory hierarchy and contains one or more “child directories.”</li>
 <li><strong>Child Directory:</strong> A child directory is located “inside” or “below” a parent directory. It is contained within the parent directory and is considered subordinate to it, much like a child in a family is part of the larger family unit.</li>
 </ul>
-<div class="cell">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">parent</span> $ tree</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> child1</span>
@@ -559,19 +621,30 @@ What are “parent” and “child” directories?
 </div>
 </div>
 </div>
+</div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>Each drive (e.g., <code>C:</code>, <code>D:</code>) has its own root directory, and it is denoted by the drive letter followed by <code>\</code> (e.g., <code>C:\</code>). Windows uses <code>\</code> as the directory separator. The home directory is often <code>C:\Users\username\</code>. An example path on Windows might be:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\Users\username\Documents\file.txt</span><span class="kw">`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\Users\username\Documents\file.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>On macOS the root directory is denoted by <code>/</code>, which is also used as the directory separator. The home directory for a user is typically <code>/Users/username/</code>. An example path on macOS could be:</p>
-<div class="cell">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/username/Documents/file.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -581,13 +654,18 @@ What are “parent” and “child” directories?
 <h3 data-number="2.5.3" class="anchored" data-anchor-id="current-working-directory"><span class="header-section-number">2.5.3</span> Current working directory</h3>
 <p>The current <strong>working directory</strong> is the location within your file system where a user or an application is presently performing file operations or running commands. The command <code>pwd</code> (short for “print working directory”) will display the current directory that the shell is currently focused on in your file system.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <details>
 <summary>
 <i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of this command executed in the project directory of this guide.
 </summary>
-<div class="cell">
+<div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/runner/work/version-control-book/version-control-book</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -597,45 +675,79 @@ What are “parent” and “child” directories?
 <section id="command-not-found" class="level3" data-number="2.5.4">
 <h3 data-number="2.5.4" class="anchored" data-anchor-id="command-not-found"><span class="header-section-number">2.5.4</span> Command not found</h3>
 <p>If the shell cannot find the program you typed as a command, it will show an error message. This can happen if you made a mistake when typing the command or if the program for that command is not installed on your system. For example, if you made a mistake when typing the <code>pwd</code> command, and accidentally entered <code>pws</code>, the following error message might appear:</p>
-<div class="cell">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pws:</span> command not found</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="moving-between-folders" class="level3" data-number="2.5.5">
 <h3 data-number="2.5.5" class="anchored" data-anchor-id="moving-between-folders"><span class="header-section-number">2.5.5</span> Moving between folders</h3>
 <p>The <code>cd</code> command is used to change the current working directory (or “move” to a different directory in your file system). To use it, type <code>cd</code> followed by an argument, which is the path of the folder you want to navigate to. The path can be either <em>absolute</em> or <em>relative</em>.</p>
-<p>For example, if you are on macOS and your current working directory is your home directory (for example, <code>/Users/wittkuhn</code>), you can switch to the <code>/Downloads</code> folder by using either an absolute or relative path with the <code>cd</code> command:</p>
-<div class="cell">
+<p>For example, if you are on macOS and your current working directory is your home directory (for example, <code>/Users/user</code>), you can switch to the <code>/Downloads</code> folder by using either an absolute or relative path with the <code>cd</code> command:</p>
+<div class="cell" data-code-copy="false">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Absolute path</strong></pre>
+<pre><strong>Absolute path (Output)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span> cd /Users/wittkuhn/Downloads</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~/Downloads$</span> pwd</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/wittkuhn/Downloads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd /Users/user/Downloads</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> pwd</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Downloads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-code-copy="false">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Relative path</strong></pre>
+<pre><strong>Relative path (Output)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span> cd Downloads</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~/Downloads$</span> pwd</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/wittkuhn/Downloads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd Downloads</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> pwd</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Downloads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>You may notice that the prompt has been updated to show the new working directory. If a path starts with a forward slash (<code>/</code>), it is considered an <em>absolute</em> path. Paths that do not start with a forward slash are considered <em>relative</em> to the current working directory.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: Is Bash case sensitive?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: Is Bash case sensitive?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Yes, in general Bash is case sensitive. This means that it distinguishes between uppercase and lowercase letters in commands and filenames. For example, if you created a file like <code>banana.txt</code> and then listed files that start with the letter <code>B</code>, the command line would tell you that there is <code>No such file or directory</code>. If you then listed files that start with the letter <code>b</code>, the command line would find the file.</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> banana.txt</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> B<span class="pp">*</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">ls:</span> B<span class="pp">*</span>: No such file or directory</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> b<span class="pp">*</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ex">banana.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Note that this case sensitivity might not apply to paths on your computer. For example, <code>cd ~/Desktop</code> and <code>cd ~/desktop</code> might both lead macOS users to their <code>Desktop</code> directory. Generally, if you’re experiencing different behavior, it’s possible that you’re using a file system or environment where case sensitivity is not enforced, or there may be other factors at play. Some file systems, such as those commonly used in macOS, are case-insensitive by default, while others, like those used in most Linux distributions, are case-sensitive. Additionally, some configurations or filesystem options can affect this behavior.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="paths-with-spaces" class="level3" data-number="2.5.6">
 <h3 data-number="2.5.6" class="anchored" data-anchor-id="paths-with-spaces"><span class="header-section-number">2.5.6</span> Paths with spaces</h3>
 <p>Note, that if a path contains a space, it needs to be enclosed in quotation marks to be recognized by the command line. Here is an example of a path with a space:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/User/Downloads/Directory</span> with space/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/User/Downloads/Directory</span> with space/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you attempt to use this path in a command without quotes, the command interpreter would understand it as three separate arguments since in command-line interfaces, spaces are typically used to separate different arguments or parameters. Navigating to this absolute path with spaces would look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="st">'/Users/User/Downloads/Directory with space/'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="st">'/Users/User/Downloads/Directory with space/'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>While the command line can handle paths (or files) with spaces in this way, we <strong>recommend to avoid spaces</strong> in folder and file names altogether, especially if you use the command line frequently.</p>
 </section>
@@ -644,36 +756,61 @@ What are “parent” and “child” directories?
 <section id="tilde" class="level4" data-number="2.5.7.1">
 <h4 data-number="2.5.7.1" class="anchored" data-anchor-id="tilde"><span class="header-section-number">2.5.7.1</span> Tilde: <code>~</code></h4>
 <p>The tilde symbol (<code>~</code>) provides a convenient and abbreviated way to refer to the user’s home directory, enabling us to easily construct paths relative to that directory. To quickly change the current working directory to your user’s home directory anywhere on your file system, we can use <code>cd ~</code> which will transport us back to the user’s home directory.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~/Downloads$</span> cd ~</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> cd ~</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="dot-." class="level4" data-number="2.5.7.2">
 <h4 data-number="2.5.7.2" class="anchored" data-anchor-id="dot-."><span class="header-section-number">2.5.7.2</span> Dot: <code>.</code></h4>
 <p>Another symbol with a special meaning in paths, aside from <code>~</code>, is the dot (<code>.</code>). It serves as a shorthand representation for the current working directory, and using it in a path means the reference remains within the same directory.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span> cd .</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd .</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>In turn, these two commands are equivalent:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span> cd ./Downloads</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span> cd Downloads</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd ./Downloads</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd Downloads</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="dot-dot-.." class="level4" data-number="2.5.7.3">
 <h4 data-number="2.5.7.3" class="anchored" data-anchor-id="dot-dot-.."><span class="header-section-number">2.5.7.3</span> Dot Dot: <code>..</code></h4>
 <p>The <code>..</code> symbol is a shorthand representation for the parent directory of the current working directory. It can be used repeatedly, allowing <code>cd ..</code> to move up one folder and `<code>cd ../..</code> to move up two folders. This is useful for creating relative paths to other branches within a directory tree.</p>
 <p>For instance, by executing the following sequence of commands, we will navigate horizontally (or sideways) to a folder located at the same hierarchical level as the current working directory:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="1">1</button><span id="annotated-cell-13-1" class="code-annotation-target"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span> cd ~</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="2">2</button><span id="annotated-cell-13-2" class="code-annotation-target"><a href="#annotated-cell-13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span> cd Downloads</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="3">3</button><span id="annotated-cell-13-3" class="code-annotation-target"><a href="#annotated-cell-13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~/Downloads$</span> cd ../Documents</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="4">4</button><span id="annotated-cell-13-4" class="code-annotation-target"><a href="#annotated-cell-13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~/Documents$</span> pwd</span>
-<span id="annotated-cell-13-5"><a href="#annotated-cell-13-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/wittkuhn/Documents</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="1">1</button><span id="annotated-cell-13-1" class="code-annotation-target"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd ~</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="2">2</button><span id="annotated-cell-13-2" class="code-annotation-target"><a href="#annotated-cell-13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd Downloads</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="3">3</button><span id="annotated-cell-13-3" class="code-annotation-target"><a href="#annotated-cell-13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> cd ../Documents</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="4">4</button><span id="annotated-cell-13-4" class="code-annotation-target"><a href="#annotated-cell-13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Documents$</span> pwd</span>
+<span id="annotated-cell-13-5"><a href="#annotated-cell-13-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Documents</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
@@ -696,7 +833,7 @@ What are “parent” and “child” directories?
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Efficiency Tip: Quickly retrieve previous commands from the command history">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -705,7 +842,7 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>You can access your command history by using the up and down arrow keys on your keyboard to cycle through your last used commands. To execute a command, hit Enter, or you can edit it as needed before execution. This makes it easier to find and reuse specific commands. And it’s also <a href="https://www.commitstrip.com/en/2017/02/28/definitely-not-lazy/?">the reason</a> why the up arrow key is among the earliest that needs replacement on software developers’ keyboards.</p>
 </div>
@@ -717,11 +854,11 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <h3 data-number="2.5.8" class="anchored" data-anchor-id="autocompletion"><span class="header-section-number">2.5.8</span> Autocompletion</h3>
 <p>While using the command line, instead of typing out the full command or path, you can press the <kbd>⇥ Tab</kbd> key to automatically complete the rest. Begin typing a command or the initial letters of a file or directory, for example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once you’ve typed a portion of the command or path, press the <kbd>⇥ Tab</kbd> key. The command-line interface will attempt to autocomplete the command or path based on what matches your input. In this case for example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Documents/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Documents/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If there are multiple possibilities, pressing <kbd>⇥ Tab</kbd> again will cycle through the available options. Autocompletion also works for system commands. For example, typing <code>ls</code> (you will find out more about this command below) and pressing <kbd>⇥ Tab</kbd> might complete it to <code>ls -l</code> or <code>ls -a</code>. Autocompletion also works for the Git commands, that will be introduced in the following chapters of this book.</p>
 </section>
@@ -736,7 +873,12 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <p>The <code>clear</code> command is used to clear the content of your terminal, providing a clean and empty slate. It helps improve visibility by removing previous commands, outputs, and clutter from your terminal window.</p>
 <p>To clear the content of the terminal screen, simply type and execute the <code>clear</code> command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Press <code>Enter</code> and the terminal screen will be cleared, leaving only a new prompt at the top of the window. After using <code>clear</code>, you can continue working in a fresh and uncluttered terminal window.</p>
 </section>
@@ -745,44 +887,50 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <h2 data-number="2.6" class="anchored" data-anchor-id="list-files-and-folders"><span class="header-section-number">2.6</span> List files and folders</h2>
 <p>The <code>ls</code> command is used to list the files and folders in a specified directory or the current working directory. If you run this command, you will see the contents of your current working directory.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <details>
 <summary>
-<i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of this command executed in the project directory of this guide.
+<i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of the <code>ls</code> executed in the project directory of this guide.
 </summary>
-<div class="cell">
+<div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CITATION.cff</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">LICENSE</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Makefile</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="ex">README.md</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="ex">_affiliations.yml</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="ex">_authors.yml</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="ex">_book</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="ex">_extensions</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="ex">_metadata.yml</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="ex">_quarto.yml</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="ex">_variables.yml</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="ex">chapters</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="ex">cheatsheet.json</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="ex">chicago-author-date-note.csl</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="ex">contents-listing.json</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="ex">contents.html</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="ex">contents.qmd</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="ex">exercises</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="ex">functions.R</span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="ex">index.html</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="ex">index.qmd</span></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="ex">misc</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="ex">objectives</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="ex">plausible.html</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="ex">references.bib</span></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="ex">renv</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="ex">renv.lock</span></span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="ex">site_libs</span></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="ex">version-control-book.Rproj</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CITATION.cff</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ex">LICENSE</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Makefile</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="ex">README.md</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="ex">_affiliations.yml</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="ex">_authors.yml</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="ex">_book</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="ex">_extensions</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="ex">_metadata.yml</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="ex">_quarto.yml</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="ex">_variables.yml</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="ex">chapters</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="ex">cheatsheet.json</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="ex">chicago-author-date-note.csl</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="ex">contents-listing.json</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="ex">contents.html</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="ex">contents.qmd</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="ex">custom.scss</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="ex">exercises</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="ex">functions.R</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="ex">index.html</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="ex">index.qmd</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="ex">misc</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="ex">objectives</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="ex">plausible.html</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="ex">references.bib</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="ex">renv</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="ex">renv.lock</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="ex">site_libs</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="ex">version-control-book.Rproj</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -791,29 +939,34 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="list-files-in-a-specific-directory"><span class="header-section-number">2.6.1</span> List files in a specific directory</h3>
 <p>For example, we can list the contents of the <code>/chapters</code> folder in the project directory of this guide:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> chapters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> chapters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <details>
 <summary>
 <i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of this command executed in the project directory of this guide.
 </summary>
-<div class="cell">
+<div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">branches.qmd</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">command-line.qmd</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ex">command-line.rmarkdown</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ex">first-steps-git.qmd</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ex">github-intro.qmd</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gui.qmd</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="ex">installation.qmd</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="ex">intermediate-commands.qmd</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="ex">intro-version-control.html</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="ex">intro-version-control.qmd</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="ex">issues.qmd</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="ex">project-management.qmd</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="ex">rewriting-history.qmd</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="ex">setup.qmd</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="ex">tags-and-releases.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">branches.qmd</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">command-line.qmd</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ex">command-line.rmarkdown</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="ex">first-steps-git.qmd</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="ex">github-intro.qmd</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gui.qmd</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="ex">installation.qmd</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="ex">intermediate-commands.qmd</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="ex">intro-version-control.html</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="ex">intro-version-control.qmd</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="ex">issues.qmd</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="ex">project-management.qmd</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="ex">rewriting-history.qmd</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="ex">setup.qmd</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="ex">tags-and-releases.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -823,55 +976,61 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <h3 data-number="2.6.2" class="anchored" data-anchor-id="listing-hidden-files"><span class="header-section-number">2.6.2</span> Listing hidden files</h3>
 <p>Hidden files, often starting with a dot in their names, are files that remain mostly hidden from the regular view in GUIs. They can serve different purposes, such as storing configuration settings, sensitive data, or temporary files. Hidden files can be accessed through the command line or by changing settings in the file manager to make them visible. It’s important to <strong>be cautious when modifying or deleting hidden files</strong>, as they can impact the proper functioning of the operating system and applications. This is also typically the reason why these files are hidden. To view hidden files, we can use the <code>-a</code> (for “all”) flag in the <code>ls</code> command. For example, we can list hidden files in the project directory:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <details>
 <summary>
-<i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of this command executed in the <code>/chapters</code> directory of this guide.
+<i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of <code>ls -a</code> executed in the <code>/chapters</code> directory of this guide.
 </summary>
-<div class="cell">
+<div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">..</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Renviron</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rprofile</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.all-contributorsrc</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.codespellrc</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.git</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="ex">.github</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="ex">.gitignore</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="ex">.quarto</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="ex">.zenodo.json</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="ex">CITATION.cff</span></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="ex">LICENSE</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="ex">Makefile</span></span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="ex">README.md</span></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="ex">_affiliations.yml</span></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="ex">_authors.yml</span></span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="ex">_book</span></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="ex">_extensions</span></span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="ex">_metadata.yml</span></span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="ex">_quarto.yml</span></span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="ex">_variables.yml</span></span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="ex">chapters</span></span>
-<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="ex">cheatsheet.json</span></span>
-<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="ex">chicago-author-date-note.csl</span></span>
-<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="ex">contents-listing.json</span></span>
-<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="ex">contents.html</span></span>
-<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="ex">contents.qmd</span></span>
-<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a><span class="ex">exercises</span></span>
-<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a><span class="ex">functions.R</span></span>
-<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a><span class="ex">index.html</span></span>
-<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a><span class="ex">index.qmd</span></span>
-<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a><span class="ex">misc</span></span>
-<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a><span class="ex">objectives</span></span>
-<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a><span class="ex">plausible.html</span></span>
-<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a><span class="ex">references.bib</span></span>
-<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a><span class="ex">renv</span></span>
-<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a><span class="ex">renv.lock</span></span>
-<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a><span class="ex">site_libs</span></span>
-<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span></span>
-<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a><span class="ex">version-control-book.Rproj</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">..</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Renviron</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rprofile</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.all-contributorsrc</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.codespellrc</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="ex">.git</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="ex">.github</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="ex">.gitignore</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="ex">.quarto</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="ex">.zenodo.json</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="ex">CITATION.cff</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="ex">LICENSE</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="ex">Makefile</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="ex">README.md</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="ex">_affiliations.yml</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="ex">_authors.yml</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="ex">_book</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="ex">_extensions</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="ex">_metadata.yml</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a><span class="ex">_quarto.yml</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="ex">_variables.yml</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="ex">chapters</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a><span class="ex">cheatsheet.json</span></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a><span class="ex">chicago-author-date-note.csl</span></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a><span class="ex">contents-listing.json</span></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a><span class="ex">contents.html</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a><span class="ex">contents.qmd</span></span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a><span class="ex">custom.scss</span></span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a><span class="ex">exercises</span></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a><span class="ex">functions.R</span></span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a><span class="ex">index.html</span></span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a><span class="ex">index.qmd</span></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a><span class="ex">misc</span></span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a><span class="ex">objectives</span></span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a><span class="ex">plausible.html</span></span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a><span class="ex">references.bib</span></span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a><span class="ex">renv</span></span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a><span class="ex">renv.lock</span></span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a><span class="ex">site_libs</span></span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span></span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a><span class="ex">version-control-book.Rproj</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -891,56 +1050,62 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <h4 data-number="2.6.3.3" class="anchored" data-anchor-id="multiple-single-letter-flags"><span class="header-section-number">2.6.3.3</span> Multiple single-letter flags</h4>
 <p>You can combine multiple single-letter flags by using a single dash. For example, to instruct the <code>ls</code> command to list <em>all</em> files (including hidden files) in a <em>long</em> format that is easy to read for <em>humans</em>, you can use the following combination of flags:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <details>
 <summary>
-<i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of this command executed in the project directory of this guide.
+<i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of <code>ls -alh</code> executed in the project directory of this guide.
 </summary>
-<div class="cell">
+<div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 320K</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 14 runner docker 4.0K Apr 22 10:05 .</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Apr 22 09:56 ..</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Apr 22 09:56 .Renviron</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Apr 22 09:56 .Rprofile</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.6K Apr 22 09:56 .all-contributorsrc</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Apr 22 09:56 .codespellrc</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Apr 22 10:05 .git</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Apr 22 09:56 .github</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   82 Apr 22 09:56 .gitignore</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Apr 22 10:05 .quarto</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Apr 22 09:56 .zenodo.json</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Apr 22 09:56 CITATION.cff</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Apr 22 09:56 LICENSE</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  517 Apr 22 09:56 Makefile</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.8K Apr 22 09:56 README.md</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.1K Apr 22 09:56 _affiliations.yml</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  362 Apr 22 09:56 _authors.yml</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 22 10:05 _book</span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Apr 22 09:56 _extensions</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   86 Apr 22 09:56 _metadata.yml</span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.5K Apr 22 09:56 _quarto.yml</span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.0K Apr 22 09:56 _variables.yml</span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 22 10:05 chapters</span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 5.4K Apr 22 09:56 cheatsheet.json</span>
-<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Apr 22 09:56 chicago-author-date-note.csl</span>
-<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  475 Apr 22 10:05 contents-listing.json</span>
-<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  53K Apr 22 10:05 contents.html</span>
-<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  671 Apr 22 09:56 contents.qmd</span>
-<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 22 09:56 exercises</span>
-<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.8K Apr 22 09:56 functions.R</span>
-<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  39K Apr 22 10:05 index.html</span>
-<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 5.5K Apr 22 09:56 index.qmd</span>
-<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 22 10:05 misc</span>
-<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 22 09:56 objectives</span>
-<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Apr 22 09:56 plausible.html</span>
-<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Apr 22 09:56 references.bib</span>
-<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Apr 22 09:58 renv</span>
-<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  16K Apr 22 09:56 renv.lock</span>
-<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Apr 22 10:05 site_libs</span>
-<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 22 10:05 static</span>
-<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Apr 22 09:56 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 324K</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 14 runner docker 4.0K Apr 29 09:37 .</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Apr 29 09:28 ..</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Apr 29 09:29 .Renviron</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Apr 29 09:29 .Rprofile</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.6K Apr 29 09:29 .all-contributorsrc</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Apr 29 09:29 .codespellrc</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Apr 29 09:37 .git</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Apr 29 09:29 .github</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   82 Apr 29 09:29 .gitignore</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Apr 29 09:37 .quarto</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Apr 29 09:29 .zenodo.json</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Apr 29 09:29 CITATION.cff</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Apr 29 09:29 LICENSE</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  517 Apr 29 09:29 Makefile</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.8K Apr 29 09:29 README.md</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.1K Apr 29 09:29 _affiliations.yml</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  362 Apr 29 09:29 _authors.yml</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 29 09:37 _book</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Apr 29 09:29 _extensions</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   86 Apr 29 09:29 _metadata.yml</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.6K Apr 29 09:29 _quarto.yml</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.0K Apr 29 09:29 _variables.yml</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 29 09:37 chapters</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 5.4K Apr 29 09:29 cheatsheet.json</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Apr 29 09:29 chicago-author-date-note.csl</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  475 Apr 29 09:37 contents-listing.json</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  53K Apr 29 09:37 contents.html</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  671 Apr 29 09:29 contents.qmd</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Apr 29 09:29 custom.scss</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 29 09:29 exercises</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.8K Apr 29 09:29 functions.R</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  39K Apr 29 09:37 index.html</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 5.5K Apr 29 09:29 index.qmd</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 29 09:37 misc</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 29 09:29 objectives</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Apr 29 09:29 plausible.html</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Apr 29 09:29 references.bib</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Apr 29 09:30 renv</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  16K Apr 29 09:29 renv.lock</span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Apr 29 09:37 site_libs</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Apr 29 09:37 static</span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Apr 29 09:29 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -953,14 +1118,24 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>If you want to know what flags and arguments a command supports, most commands provide usage information when you use the flag <code>--help</code>. For example, you can use the <code>ls</code> command together with the <code>--help</code> flag:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>This will list all possible flags you can use together with the <code>ls</code> command.</p>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <p>On macOS you can not use the <code>--help</code> flag. Instead you can use the <code>man</code> command, in combination with your desired command. This will display the manual page for a specified command. You can navigate through the manual pages using the arrow keys, and you can exit by pressing <code>q</code>. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -977,26 +1152,53 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <p><strong>Note:</strong> When creating new directories, consider their location carefully. If you are experimenting, consider deleting the newly created directories afterwards to avoid clutter.</p>
 <p>The path of the directory we want to create is given as an argument to the command. If we want to create a directory in the current folder, we just need to use its name, as the path is assumed to be relative. For example, to create a new folder for your favorite recipes, we can use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Make sure the project folder is present by using the <code>ls</code> command, and then move into it by using the <code>cd</code> command.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="creating-multiple-folders" class="level3" data-number="2.7.2">
 <h3 data-number="2.7.2" class="anchored" data-anchor-id="creating-multiple-folders"><span class="header-section-number">2.7.2</span> Creating multiple folders</h3>
 <p>Next, we will proceed to create multiple additional folders within the <code>recipes</code> project folder. The <code>mkdir</code> command allows us to create multiple directories simultaneously by providing multiple arguments, each representing a separate folder. For example, we might create the following three folders:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> vegetarian vegan glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> vegetarian vegan glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="creating-files" class="level3" data-number="2.7.3">
 <h3 data-number="2.7.3" class="anchored" data-anchor-id="creating-files"><span class="header-section-number">2.7.3</span> Creating files</h3>
 <p>Let’s create some files in the <code>recipes</code> project folder. To do this, you can use your favorite text editor or the command line. In the command line, you can use the <code>touch</code> command to create a new empty file. The file doesn’t need to contain anything. For example, to create an empty file called <code>recipes.txt</code>, we can use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="opening-files" class="level3" data-number="2.7.4">
@@ -1007,12 +1209,22 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">start</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">start</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1022,7 +1234,12 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <h3 data-number="2.7.5" class="anchored" data-anchor-id="writing-short-text-into-files"><span class="header-section-number">2.7.5</span> Writing short text into files</h3>
 <p>The <code>echo</code> command can be used to write text to a file, directly from the command line. Using <code>echo</code> in combination with <code>&gt;&gt;</code> adds content to an existing file. For example, to add text to the <code>recipes.txt</code> file using the command line:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is a list of all my favorite recipes."</span> <span class="op">&gt;&gt;</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is a list of all my favorite recipes."</span> <span class="op">&gt;&gt;</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>This adds the provided text <em>to the existing content</em> of <code>recipes.txt</code>.</p>
 </section>
@@ -1030,24 +1247,29 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <h3 data-number="2.7.6" class="anchored" data-anchor-id="viewing-file-content"><span class="header-section-number">2.7.6</span> Viewing file content</h3>
 <p>If you want to quickly view the content of a file without opening it, you can do so in the command line using the <code>cat</code> command. To display the content of a file, simply use <code>cat</code> followed by the file name. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>This command will output the entire content of the <code>recipes.txt</code> file to the terminal.</p>
 <details>
 <summary>
 <i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of the <code>cat</code> command applied to the <code>.gitignore</code> file in the project directory of this guide.
 </summary>
-<div class="cell">
+<div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/.quarto/</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/_book/</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="ex">/env/</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="ex">/.luarc.json</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="ex">*.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/.quarto/</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/_book/</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj.user</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="ex">/env/</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rhistory</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="ex">static</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="ex">/.luarc.json</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="ex">*.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1056,37 +1278,52 @@ Efficiency Tip: Quickly retrieve previous commands from the command history
 <h3 data-number="2.7.7" class="anchored" data-anchor-id="moving-folders-and-files"><span class="header-section-number">2.7.7</span> Moving folders and files</h3>
 <p>Let’s say we want to move the <code>recipes.txt</code> file to the <code>/vegan</code> subfolder. We can use the <code>mv</code> command to move files and folders. The <code>mv</code> command requires two arguments: the first is the files or folders to be moved, and the second is the path where they should be moved. To move the <code>recipes.txt</code> file to the <code>/vegan</code> subfolder, the command would look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt vegan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt vegan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="renaming-files-and-folders" class="level3" data-number="2.7.8">
 <h3 data-number="2.7.8" class="anchored" data-anchor-id="renaming-files-and-folders"><span class="header-section-number">2.7.8</span> Renaming files and folders</h3>
 <p>Suppose we don’t like the folder name <code>vegan</code> because <code>recipes.txt</code> actually contains recipes with meat We can use the <code>mv</code> command to rename files and folders by moving them to a different location in the file system, for example <code>meat</code>, like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> vegan meat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> vegan meat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="wildcards" class="level3" data-number="2.7.9">
 <h3 data-number="2.7.9" class="anchored" data-anchor-id="wildcards"><span class="header-section-number">2.7.9</span> Wildcards</h3>
 <p>Now, let’s learn how to use wildcards to perform actions on multiple files or folders at the same time. A wildcard is denoted by the symbol <code>*</code>, and it helps us select file system arguments that match certain patterns. For example, suppose we wish to display a list of all files of a certain file type (here, all files with the <code>.yml</code> file extension) in the current directory:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> <span class="pp">*</span>.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> <span class="pp">*</span>.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <details>
 <summary>
 <i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of this command executed in the project directory of this guide.
 </summary>
-<div class="cell">
+<div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.1K Apr 22 09:56 _affiliations.yml</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  362 Apr 22 09:56 _authors.yml</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker   86 Apr 22 09:56 _metadata.yml</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.5K Apr 22 09:56 _quarto.yml</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 2.0K Apr 22 09:56 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.1K Apr 29 09:29 _affiliations.yml</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  362 Apr 29 09:29 _authors.yml</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker   86 Apr 29 09:29 _metadata.yml</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.6K Apr 29 09:29 _quarto.yml</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 2.0K Apr 29 09:29 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What does this output mean?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1095,7 +1332,7 @@ What does this output mean?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The first column (<code>-rw-r--r--</code>) represents the file permissions. In Unix-like systems, it shows who can read, write, or execute the file. In this case, the files are readable and writable by the owner (<code>rw-</code>), readable by the group (<code>r--</code>), and readable by others (<code>r--</code>).</p>
 <p>The second column (<code>1</code>) indicates the number of hard links to the file.</p>
@@ -1110,16 +1347,21 @@ What does this output mean?
 </details>
 <p>By using the wildcard <code>*</code>, we can generate a list of all files ending with <code>.yml</code>. Similarly, we can apply the wildcard at the end of a path to match items starting with a specific letter, such as folders beginning with <code>i</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> i<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> i<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <details>
 <summary>
 <i class="fa-solid fa-eye" aria-label="eye"></i> Click here to see the output of this command executed in the project directory of this guide.
 </summary>
-<div class="cell">
+<div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  39K Apr 22 10:05 index.html</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 5.5K Apr 22 09:56 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  39K Apr 29 09:37 index.html</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 5.5K Apr 29 09:29 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1128,7 +1370,7 @@ What does this output mean?
 <h3 data-number="2.7.10" class="anchored" data-anchor-id="removing-files-and-folders"><span class="header-section-number">2.7.10</span> Removing files and folders</h3>
 <p>To delete files and folders, you can use the <code>rm</code> command. Provide the path of the files or folders that you want to delete as the argument. However, if you want to remove a folder, you need to include the <code>-r</code> (or <code>--recursive</code>) flag.</p>
 <div class="callout callout-style-default callout-warning callout-titled" title="**Warning: Be careful when using the `rm` command!**">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1137,7 +1379,7 @@ What does this output mean?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>When you use the <code>rm</code> command to delete files, they are <strong>removed entirely (!!!)</strong> from your system and cannot be retrieved from a “Recycle Bin” or “Trash” as when you delete files using the file browser!</p>
 </div>
@@ -1145,7 +1387,12 @@ What does this output mean?
 </div>
 <p>For example, to remove the <code>glutenfree</code> folder, you would use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="combining-commands" class="level3" data-number="2.7.11">
@@ -1153,7 +1400,12 @@ What does this output mean?
 <p>Combining commands in the command-line using semicolons <code>;</code> is a way to execute multiple commands sequentially on a single line. Each command is separated by a semicolon, and they are executed one after the other, regardless of the success or failure of the previous command.</p>
 <p>For example, let’s say you want to (1) create a new directory, (2) move into that directory, and then (3) list the files in that directory, all in one go. You can use semicolons to combine these commands like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> new_directory <span class="kw">;</span> <span class="bu">cd</span> new_directory <span class="kw">;</span> <span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> new_directory <span class="kw">;</span> <span class="bu">cd</span> new_directory <span class="kw">;</span> <span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>This will (1) create a new directory called <code>new_directory</code>, (2) change the current working directory to <code>new_directory</code> and (3) list the files in this new directory.</p>
 </section>
@@ -1175,7 +1427,7 @@ What does this output mean?
 <img src="../static/cli_meme.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.4: “Hackerman” meme found on <a href="https://www.reddit.com/r/meme/comments/fu9f3b/command_prompt/">Reddit.com</a>
+Figure&nbsp;2.5: “Hackerman” meme found on <a href="https://www.reddit.com/r/meme/comments/fu9f3b/command_prompt/">Reddit.com</a>
 </figcaption>
 </figure>
 </div>
