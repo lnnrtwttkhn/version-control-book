@@ -23,7 +23,7 @@ abstract: |
 ## Creating a Git repository 
 
 Let's *git* started!
-First, we will create a so-called **"repository"** (or "repo", for short).
+First, we will create a so-called **repository** (or **repo**, for short).
 A repository is a regular folder on your computer that is tracked by Git.
 The full history of changes of a project and information about who changed what and when is also stored by Git in this folder.
 
@@ -35,13 +35,14 @@ Next, use the command line to navigate to the folder which you want to initializ
 ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#navigating-the-file-system))].
 Once you are in the desired folder, run the `git init` command to initialize the folder as a Git repository:
 
-```{bash}
+```{bash filename="Code"}
 git init
 ```
 
 You should see an output similar to:
 
-```{bash}
+```{bash filename="Output"}
+#| code-copy: false
 Initialized empty Git repository in /foldername/.git/
 ```
 
@@ -52,7 +53,7 @@ You only need to use `git init` once per folder.
 
 You can also skip creating a folder manually and only use the `git init` command:
 
-```{bash}
+```{bash filename="Code"}
 git init /Users/yourusername/Desktop/foldername # <1>
 ```
 1. Replace `/Users/yourusername/Desktop/foldername` with the (absolute or relative) path to the folder which you want to initialize as a Git repository.
@@ -83,7 +84,7 @@ In short: Don't mess with the `.git` folder.
 
 Short version (if you know what you are doing): To remove Git from a folder run:
 
-```{bash}
+```{bash filename="Code"}
 rm -rf .git
 ```
 
@@ -110,13 +111,14 @@ For example, if you make changes to a file within a subfolder and commit those c
 
 After you initialized a Git repository, you can use `git status` to receive the current file tracking status from Git.
 
-```{bash}
+```{bash filename="Code"}
 git status
 ```
 
 If you initialized a new Git repository, you should see an output similar to the following:
 
-```{bash}
+```{bash filename="Output"}
+#| code-copy: false
 On branch main
 
 No commits yet
@@ -172,7 +174,7 @@ For example, `git status -s -b` will display a short and concise output along wi
 
 In the next step, please create an empty text file within your repository ^[:bulb: Tip: Use `touch` (details [here](command-line.qmd#creating-files))].
 
-```{bash}
+```{bash filename="Code"}
 touch filename.txt
 ```
 
@@ -185,7 +187,8 @@ You can also use any other method or application for creating files.
 After you initialized a Git repository and added a file, you can use `git status` to receive the current file tracking status from Git again.
 This time, you should see an output similar to the following:
 
-```{bash}
+```{bash filename="Output"}
+#| code-copy: false
 On branch main
 
 No commits yet
@@ -200,9 +203,10 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ### Introduction to staging and committing
 
+We will now introduce central concepts of Git that might not be super intuitive if you learn about them for the first time, so read carefully.
 After initializing a folder with Git, it's capable of recording changes in your files, but it won't do so automatically. 
-In Git, the process of saving changes involves two steps: the staging area and commits.
-The **staging area** is like a preparation area where you gather and organize your changes before saving them.
+In Git, the process of saving changes involves two steps: the *staging area* and *commits*.
+The **staging area** is like a preparation area where you gather and organize your changes before saving them as a snapshot.
 You can choose which changes to include in a snapshot by adding them to the staging area using `git add`.
 Once you are happy with the changes in the staging area, you create a commit with `git commit`. 
 A **commit** is like taking a snapshot of your project at a specific moment, capturing all changes in the staging area and saving them as a new version of your project.
@@ -217,13 +221,14 @@ It bridges between your modified files and the next commit.
 
 For example, you can stage a specific file like this:
 
-```{bash}
+```{bash filename="Code"}
 git add filename.txt
 ```
 
 If you use `git status` again, your file(s) should now show up under "Changes to be committed".
 
-```{bash}
+```{bash filename="Output"}
+#| code-copy: false
 On branch main
 
 No commits yet
@@ -237,7 +242,7 @@ Your change to the file (or the addition of it to the project directory) is now 
 Especially if you have many files, you don't have to add every file one by one, but you can simply use the `-A` flag.
 This means if you want to stage every file in your project for preparation of your next commit, you can use:
 
-```{bash}
+```{bash filename="Code"}
 git add -A
 ```
 
@@ -247,7 +252,7 @@ Git might start to track files that you are actually not interested in tracking.
 We recommend to use `git status` frequently to check which files are in the staging area and will therefore be added to the next commit.
 :::
 
-::: {.callout-tip title="Common `git add` flags" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git add` flags" collapse="true"}
 `-A`: 
 Adds all changes, including modifications, deletions, and new files, in the entire working tree.
 
@@ -262,7 +267,7 @@ Ignores errors when adding files, allowing the command to continue even if some 
 
 Now that the changes to your file(s) are staged, you are ready to **create a commit**.
 
-In simple terms, **a "commit" in Git is like taking a snapshot of your project** at a specific moment in time.
+In simple terms, **a commit in Git is like taking a snapshot of your project** at a specific moment in time.
 It's a way to save the changes you've made to your files.
 When you make a commit, you're saying, "I want to remember what my project looks like right now".
 Each commit in Git includes a record of the changes you've made, a description of what you did, and a unique identifier.
@@ -272,15 +277,16 @@ Commits help you manage and document the history of your project.
 
 To create a commit, use the `git commit` command followed by the flag `-m` and a commit message *in quotes* that describes the changes you made.
 The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
-If you just use `git commit` without adding a commit massage, the editor of [your choosing](setup.qmd), opens up and lets you type in a commit message.
+If you just use `git commit` without adding a commit massage, the text editor of [your choosing](setup.qmd), opens up and lets you type in a commit message.
 
-```{bash}
+```{bash filename="Code"}
 git commit -m "Add filename.txt file"
 ```
 
 You should see output similar to the following:
 
-```{bash}
+```{bash filename="Output"}
+#| code-copy: false
 [main (root-commit) e9ea807] Add filename.txt file
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 filename.txt
@@ -288,23 +294,55 @@ You should see output similar to the following:
 
 Congratulations!
 You have successfully created your first commit in the Git repository. :tada:
+
 Commits are the core elements of version control and the "commit history" of your Git repository.
 They allow you to track the history of your project and easily revert changes if needed.
 
 You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
 
+#### Rock climbing analogy
+
+> Using a Git commit is like using anchors and other protection when climbing.
+If you’re crossing a dangerous rock face you want to make sure you’ve used protection to catch you if you fall.
+Commits play a similar role: if you make a mistake, you can’t fall past the previous commit.
+Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high!
+Like rock climbing protection, you want to be judicious in your use of commits.
+Committing too frequently will slow your progress; use more commits when you’re in uncertain or dangerous territory.
+Commits are also helpful to others, because they show your journey, not just the destination. 
+
+from [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html#git-commit)
+
+::: {.callout-tip collapse="true" title='FAQ: "I forgot to close the quotation marks of my commit message! What do I do?"'}
+
+In this situation, you command line probably looks like this:
+
+```{bash, filename="Output"}
+#| code-copy: false
+git commit -m "Add filename.txt
+>
+>
+>
+```
+
+You can try one of the following solutions:
+
+1. Close the quotation marks by entering another `"`.
+1. Abort the `git commit` command by typing <kbd>Ctrl</kbd> + <kbd>C</kbd> simultaneously and repeat it (now with quotation marks closed).
+
+:::
+
 #### Commit description
 
 Although it's not required, it can be a good idea to add a more thorough description to the commit, in addition to the (shorter) commit message.
-While the commit message is usually a single short (less than 50 character) line summarizing the change, a more through description can be used to add more background information or helpful links that may help to understand the changes of the commit.
+While the commit message is usually a single short (less than 50 character) line summarizing the change, a more thorough description can be used to add more background information or helpful links that may help to understand the changes of the commit.
 
 To add an additional description directly in the command line, add an extra `-m` after the commit message, followed by the description in quotes:
 
-```{bash}
+```{bash filename="Code"}
 git commit -m "Message" -m "Description"
 ```
 
-::: {.callout-tip title="Common `git commit` flags" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git commit` flags" collapse="true"}
 `-m` <message>: 
 Specifies the commit message inline.
 For example, `git commit -m "Fix typo"` allows you to provide a short commit message directly in the command.
@@ -326,15 +364,16 @@ It allows you to add new changes to the previous commit or modify its commit mes
 
 ### Logging commits
 
-To look at your past commits you can use the `git log` command.
+To look at the history of your past commits, you can use the `git log` command.
 
-```{bash}
+```{bash filename="Code"}
 git log
 ```
 
 You should see output similar to the following:
 
-```{bash}
+```{bash filename="Output"}
+#| code-copy: false
 commit e9ea80781ceed7cc3d6bff0c7bfa71f320ec1f60 (HEAD -> main)
 Author: Jane Doe <jane@example.com>
 Date:   Thu Jun 29 12:23:53 2023 +0200
@@ -343,10 +382,9 @@ Date:   Thu Jun 29 12:23:53 2023 +0200
 ```
 
 `git log` is a very useful command because it provides a clear and organized view of a repository's commit history. 
-It allows you to track the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps. 
-The command can help identifying the source of bugs or issues by pinpointing the commit that introduced them.
+It allows you to understand the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps. 
 
-::: {.callout-tip title="Common `git log` flags" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git log` flags" collapse="true"}
 `--oneline`: 
 Provides a condensed output with each commit displayed on a single line, showing the abbreviated commit hash and commit message.
 
@@ -363,7 +401,7 @@ Shows commits made before the specified <date>.
 Filters commits by the author's name or email using a specified <pattern>.
 :::
 
-#### `HEAD`
+::: {.callout-tip title="Find out more: What is `HEAD`?" collapse="true"}
 
 `HEAD` can be thought as the current spot in your project's timeline, like a bookmark.
 When you see `HEAD -> main`, it means your bookmark is on the `main` branch, usually at the most recent update.
@@ -373,14 +411,17 @@ When you switch branches with a command like `git switch`, `HEAD` moves to point
 For example, `git reset HEAD` is a command used to unstage changes by moving the current branch's tip back to `HEAD`, without altering the working directory.
 Similarly, `git checkout HEAD~1` will move `HEAD` back one commit as a way to look at or revert to a previous state of the project without making any changes to the branch itself.
 
+:::
+
 ### Comparing versions
 
 Another very handy feature is the `git diff` command.
 It allows you to **compare two different versions of your file(s)**.
+
 By default it shows you any uncommitted changes since the last commit.
 You can explore this by pasting any additional text in your `.txt` file, for example:
 
-```{tex}
+```{tex filename="Code"}
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
 Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -389,13 +430,14 @@ Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deseru
 
 You can then look at the changes using:
 
-```{bash}
+```{bash filename="Code"}
 git diff
 ```
 
-You should see output similar to the following:
+You should see an output similar to the following:
 
-```{bash}
+```{tex filename="Output"}
+#| code-copy: false
 +++ b/filename.txt
 @@ -0,0 +1 @@
 +Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -414,7 +456,7 @@ Lines that are identical between the two versions are not explicitly shown.
 You can also use `git diff` to **compare two specific commits**. 
 For example, if you want to compare the current state of your file with a commit from a few commits ago:
 
-```{bash}
+```{bash filename="Code"}
 git diff <commit-A> <commit-B>
 ```
 
@@ -422,20 +464,20 @@ Instead of `<commit-A>` and `<commit-B>`, you use the commit hashes, that you ca
 
 If you've staged some changes using `git add`, you can **compare the staged changes to your last commit**.
 
-```{bash}
+```{bash filename="Code"}
 git diff --staged
 ```
 
 If you only want to look at the changes of a specific file, you can specify that file.
 
-```{bash}
+```{bash filename="Code"}
 git diff <filename> # <1>
 ```
 1. Replace `<filename>` with the actual name of the file that you want to inspect.
 
 This command can also be combined with additional flags and options.
 
-::: {.callout-tip title="Common `git diff` flags" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git diff` flags" collapse="true"}
 
 `--cached` or `--staged`: 
 Shows the changes that are staged (added) but not yet committed.
@@ -478,17 +520,17 @@ This approach to commits helps you down the line.
 For example, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
 If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
 
-### Commit messages etiquette
+### Commit message etiquette
 
-Git allows for a title or commit message with a 72 character limit and a description without such a limit.
-In general you should aim to write clear and short commit messages.
+Git allows for a commit message with a 72 character limit and a description without such a limit.
+In general, you should aim to write clear and short commit messages.
 There are different conventions across projects/persons but also some general guidelines, you can stick to. 
 
-It is standard to start the title with an **imperative verb** to indicate the purpose of the commit, for examople, "add", "fix" or "improve".
+It is standard to start the title with an **imperative verb** to indicate the purpose of the commit, for example, "add", "fix" or "improve".
 It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary).
 Here is an example:
 
-```{bash}
+```{bash filename="Example"}
 git commit -m "Implement user registration feature
 
 This commit adds the user registration functionality to the application. It includes the following changes:
@@ -496,12 +538,12 @@ This commit adds the user registration functionality to the application. It incl
 - Added form validation for user input."
 ```
 
-An example of commit messages, which are not really optimal, are illustrated by @fig-bad_commits_comic.
+An example of commit messages, which are not really optimal, are illustrated in @fig-bad_commits_comic.
 
 !["Git Commit" by [xkcd](https://xkcd.com/1296/) (License: [CC BY-NC 2.5](https://xkcd.com/license.html))](../static/xkcd-git-commit.png){#fig-bad_commits_comic}
 
 
-::: {.callout-tip title="Commit messages examples" collapse="true"}
+::: {.callout-tip title="Find our more: Commit messages examples" collapse="true"}
 Some examples for commit messages, which stick to the etiquette:
 
 - `"Add 'favourites.txt' to the project"`
@@ -521,7 +563,7 @@ This flag can be useful if you forgot to include something in your last commit, 
 You can also combine `--amend` with other flags.
 To change the commit message of your last commit (without opening an editor) try:
 
-```{bash}
+```{bash filename="Code"}
 git commit --amend -m "changed commit message"
 ```
 
@@ -529,13 +571,17 @@ Replace `"changed commit message"` with your actual improved commit message.
 
 If you want to to keep your commit message but include new changes to your file(s) in you last commit, you can use:
 
-```{bash}
+```{bash filename="Code"}
 git commit --amend --no-edit
 ```
 
 The `--no-edit` flag, lets you keep the commit message of your most recent commit.
 
 #### The repeated `--amend` workflow
+
+Let's consider the following part of the [rock climbing analogy](#rock-climbing-analogy) for commits again:
+
+> use more commits when you’re in uncertain or dangerous territory.
 
 The "repeated amend" is a Git workflow where you avoid cluttering your history with numerous tiny commits.
 Instead, you gradually build up a "good" commit by amending it repeatedly. 
@@ -555,7 +601,7 @@ Tracking code files is the most common and original use case for version control
 Git is well-suited for tracking changes in source code, and it's widely used by developers and teams for this purpose.
 Whether it's a single developer maintaining a personal project or a large team collaborating on a complex software system, Git excels at tracking code files throughout the development lifecycle.
 
-### {{< fa file-lines >}} Plain textfiles
+### Plain textfiles
 
 Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup that uses emails or shared Dropbox folders for "version control" (see the [introduction](intro-version-control.qmd) chapter). 
 However, to really be able to use the full set of features of Git, you should rely on plain text files for your project.
@@ -565,7 +611,7 @@ Instead you can use formattable Markdown (`.md`) files.
 Markdown (`.md`) files are plain text files that contain formatting elements, making them more versatile than plain .txt files.
 Markdown allows you to add simple formatting like headings, lists, links, and images.
 
-### {{< fa brands windows >}} Microsoft office files
+### Microsoft Office files
 As said earlier, it is not recommended to track Microsoft office files using Git, since Git treats `.docx` files as binary files.
 Binary files lack the inherent structure that allows Git to capture and display changes effectively.
 Git relies on understanding the differences between versions of files.
@@ -592,19 +638,19 @@ Files that can recreated from the code, like for example `.png` plots from R cod
 Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project fules without distractions from unnecessary files.
 `.gitignore` can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
 Huge files, like big data files should also not be committed, since they can slow down working with your repository.
-To version control files with a big size, toolsl like [DataLad](https://www.datalad.org) are more appropriate.
+To version control files with a big size, tools like [DataLad](https://www.datalad.org) are more appropriate.
 
 To create a `.gitignore` file from the command line, navigate to your repository and use the `touch` command.
 Alternatively, create the file in your favorite text editor.
 
-```{bash}
+```{bash filename="Code"}
 touch .gitignore
 ```
 
 `.gitignore` will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag in the `ls` command.
 For details on listing of files and folders, see the chapter on the [command line](command-line.qmd).
 
-```{bash}
+```{bash filename="Code"}
 ls -a
 ```
 
@@ -616,14 +662,14 @@ Instead of specifying files you want Git to ignore for each folder, you can also
 To do this, you create a file named `.gitignore_global` (or any name you prefer) in your users's home directory (located, for example, at `/Users/yourusername`). 
 Then, you configure Git to use this global file by running:
 
-```{bash}
+```{bash filename="Code"}
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
 After this setup, you can add common files to this list, that you want to ignore.
 These rules will apply across to *all* Git repositories on your computer.
 
-::: {.callout-tip title="Common wildcards" collapse="true"}
+::: {.callout-tip title="Find out more: Common wildcards" collapse="true"}
 
 As discussed in the [command line chapter](command-line.qmd) wildcards are special characters that represent patterns of filenames or directory names.
 They can be used to specify multiple files or directories that should be ignored by Git when tracking changes.
@@ -645,7 +691,7 @@ Matches any single character within the brackets. For example, file\[123\].txt w
 Negates a pattern and includes files that would otherwise be ignored. For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
 :::
 
-::: {.callout-tip title="Common files to ignore in scientific settings" collapse="true"}
+::: {.callout-tip title="Find our more: Common files to ignore in scientific settings" collapse="true"}
 - **Temporary files and output:** 
 Ignore files generated during analysis, like log files, temporary files, or intermediate data files.
 - **Data folders:** 
