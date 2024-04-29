@@ -230,13 +230,23 @@ parent $ tree
 
 #### {{< fa brands microsoft >}} Windows
 
-Each drive (e.g., `C:`, `D:`) has its own root directory, and it is denoted by the drive letter followed by `\` (e.g., `C:\`).
-Windows uses `\` as the directory separator.
-The home directory is often `C:\Users\username\`.
-An example path on Windows might be:
+In Windows operating systems, each drive, such as `C:` or `D:`, has its own root directory, denoted by the drive letter followed by a backslash, like `C:\`. 
+Windows uses the backslash (`\`) as the directory separator.
+The "Users" folder, which typically contains the personal folders of all users on the system, is usually located in the root directory of the drive where Windows is installed. 
+The standard path to the "Users" folder is `C:\Users`.
+
+To find or navigate to the "Users" folder in Windows, you can:
+
+1. Use the tilde symbol (`~`): 
+In Git bash, you can use `~` to represent the home directory of the current user, which is typically `C:\Users\<username>`.
+
+2. Directly navigate using the command prompt:
+If your present working directory (pwd) is at the root (`C:\`), you can directly navigate to the "Users" folder by entering the command: `cd Users`.
+Alternatively, if you are not sure which drive you are currently on, you can switch to the `C:` drive by typing `cd C:` and then navigate to the "Users" folder with `cd Users`.
+An example path to a file within the "Users" directory on Windows might be:
 
 ```{bash}
-C:\Users\username\Documents\file.txt` 
+C:\Users\username\Documents\file.txt
 ```
 
 #### {{< fa brands apple >}} macOS
