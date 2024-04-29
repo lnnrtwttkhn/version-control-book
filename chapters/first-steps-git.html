@@ -328,8 +328,9 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#global-.gitignore-file" id="toc-global-.gitignore-file" class="nav-link" data-scroll-target="#global-.gitignore-file"><span class="header-section-number">5.4.1</span> Global <code>.gitignore</code> file</a></li>
   </ul></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">5.5</span> Cheatsheet</a></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">5.6</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#tracking-empty-folders" id="toc-tracking-empty-folders" class="nav-link" data-scroll-target="#tracking-empty-folders"><span class="header-section-number">5.5</span> Tracking empty folders</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">5.6</span> Cheatsheet</a></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">5.7</span> Acknowledgements &amp; further reading</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/first-steps-git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/first-steps-git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -1166,8 +1167,38 @@ Example <code>.gitignore</code> file for an R project
 </div>
 </section>
 </section>
-<section id="cheatsheet" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">5.5</span> Cheatsheet</h2>
+<section id="tracking-empty-folders" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="tracking-empty-folders"><span class="header-section-number">5.5</span> Tracking empty folders</h2>
+<p>Normally, Git does not track empty folders in a repository. However, tracking an empty directory in a Git repository can be useful in some scenarios. For example, you want to track an empty folder as a placeholder for future content or as a way to organize the project more clearly.</p>
+<p>A workaround, to get Git to track your empty folder, is adding a hidden <code>.gitkeep</code> file in this folder<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. This not an official Git feature but rather a convention adopted by software developers. That means you could name this file anything, but <code>.gitkeep</code> is used by convention to explicitly state its purpose for keeping otherwise empty folders in Git.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Use-cases for empty folders in Git repositories for scientific projects">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Find out more: Use-cases for empty folders in Git repositories for scientific projects
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As discussed above, Git is not suitable for tracking a lot of large files, as is often the case when working with research data. Imagine that you use Git for your code that you use to analyze data from a research project. Usually, your analysis code needs access to the research data but you think that the research data is too large to be tracked with Git.</p>
+<p>Here is what you could do:</p>
+<ol type="1">
+<li>Create an empty subfolder in your analysis Git repo, called <code>data</code>.</li>
+<li>Add a <code>.gitkeep</code> file to the <code>/data</code> folder and commit it.</li>
+<li>Add the <code>/data</code> folder to your <code>.gitignore</code> file.</li>
+<li>Add your research data to the <code>/data</code> folder.</li>
+</ol>
+<p>This is the result: Your analysis code and research data can now live in the same repository. Your analysis code can access your research data in the <code>/data</code> folder. However, the contents of <code>/data</code> are not committed to the repository, thanks to the <code>.gitignore</code> file. If you later share that repository with collaborators, they will only receive a repository with an empty <code>/data</code> folder, thanks to <code>.gitkeep</code>. The advantage is that your collaborators can easily understand where to put the research data. Note, however, that you still need to make the research data accessible to your collaborators in another way.</p>
+<p>If you are interested in version control of larger datasets, you can check out <a href="https://handbook.datalad.org/en/latest/">DataLad</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="cheatsheet" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">5.6</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -1207,8 +1238,8 @@ Example <code>.gitignore</code> file for an R project
 </div>
 </div>
 </section>
-<section id="acknowledgements-further-reading" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">5.6</span> Acknowledgements &amp; further reading</h2>
+<section id="acknowledgements-further-reading" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">5.7</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="table">
 <thead>
@@ -1277,6 +1308,7 @@ The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible,
 <li id="fn4"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Details about absolute and relative paths <a href="../chapters/command-line.html#moving-between-folders">here</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Details about parent and child directories <a href="../chapters/command-line.html##directory-and-file-structure">here</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Use <code>touch</code> (details <a href="../chapters/command-line.html#creating-files">here</a>)<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Use <code>touch .gitkeep</code> (details <a href="../chapters/command-line.html#creating-files">here</a>)<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
