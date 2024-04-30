@@ -51,6 +51,7 @@ git branch
 This should return the following output, if you have not yet created a new branch:
 
 ```{bash, filename="Output"}
+#| code-copy: false
 * main
 ```
 
@@ -81,6 +82,7 @@ git branch
 This should return the following output:
 
 ```{bash, filename="Output"}
+#| code-copy: false
   feature
 * main
 ```
@@ -121,6 +123,7 @@ git switch feature
 If you switched branches successfully, you should receive an output similar to this:
 
 ```{bash, filename="Output"}
+#| code-copy: false
 Switched to branch 'feature'
 ```
 
@@ -153,6 +156,7 @@ This means that Git will not allow you to switch branches if your uncommitted ch
 If you try to switch branches with uncommitted changes you will get an error message similar to:
 
 ```{bash, filename="Output"}
+#| code-copy: false
 error: Your local changes to the following files would be overwritten by checkout:
         chapters/branches.qmd
 Please commit your changes or stash them before you switch branches.
@@ -194,6 +198,7 @@ For example, if you want to merge changes *into* the `main` branch *from* the `f
 If you have not yet made any changes you should get the following output:
 
 ```{bash, filename="Output"}
+#| code-copy: false
 Already up to date.
 ```
 
@@ -203,6 +208,7 @@ In other words, there are no new changes in the `feature` branch that need to be
 If you have changed file(s) in your folder, you should get an output similar to:
 
 ```{bash, filename="Output"}
+#| code-copy: false
 Updating 555ba0c..994bb8d
 Fast-forward
  
@@ -239,6 +245,7 @@ When a merge conflict arises, you should not view it as a limitation of Git but 
 If you try to merge with conflicting changes in a file the output looks similar to this:
 
 ```{bash, filename="Output"}
+#| code-copy: false
 Auto-merging example.txt
 CONFLICT (content): Merge conflict in example.txt
 Automatic merge failed; fix conflicts and then commit the result.
@@ -417,6 +424,7 @@ git branch -d feature
 This should yield an output similar to:
 
 ```{bash, filename="Output"}
+#| code-copy: false
 Deleted branch feature (was 3343f36).
 ```
 
