@@ -502,6 +502,26 @@ clear
 Press `Enter` and the terminal screen will be cleared, leaving only a new prompt at the top of the window.
 After using `clear`, you can continue working in a fresh and uncluttered terminal window.
 
+### Saving Command Line history
+
+When you exit your command line or terminal session, your command history is not automatically saved by default. 
+To review the commands you've used, you can utilize the history command, which works on both macOS and Windows (when using Git Bash).
+
+If you're interested in preserving your history for documentation or learning purposes, you can easily save either your current session's history or the entire history stored by your terminal to a text file using the following command: 
+
+```{bash, filename="Code"}
+history > history.txt
+```
+
+This command will capture your entire command history and save it to a file named history.txt in your current directory. 
+You can view this file directly from the terminal or through your usual file viewer.
+
+If you prefer to add the history to an existing file instead of creating a new one, use the `>>` symbol instead of `>` to avoid overwriting the existing content:
+
+```{bash, filename="Code"}
+history >> history.txt
+```
+
 ## List files and folders
 
 The `ls` command is used to list the files and folders in a specified directory or the current working directory.
