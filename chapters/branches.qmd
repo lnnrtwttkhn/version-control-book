@@ -48,7 +48,7 @@ You can list the available branches in your repository by using `git branch`.
 git branch 
 ```
 
-This should return the following output:
+This should return the following output, if you have not yet created a new branch:
 
 ```{bash, filename="Output"}
 * main
@@ -229,17 +229,13 @@ So, it raises its hand and asks you, the developer, to step in and help.
 Merge conflicts can be a bit of a headache. 
 If you only work locally on your computer, without a remote repository (for example, an online version of your repository on [GitHub](github-intro.qmd)), you can avoid merge conflicts easier, and might not even need different branches.
 However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts.
-That being said, 
-
-Employing good development practices can minimize the occurrence of merge conflicts.
+That being said, employing good development practices can minimize the occurrence of merge conflicts.
 Regularly pulling changes from the remote repository into your local branch (using `git pull`) and keeping your branch up-to-date can help identify and resolve conflicts early.
 You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on [GitHub](github-intro.qmd).
 
 ### Resolving merge conflicts
 
 When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. 
-Git is like a referee saying, "Hey, programmers, sort out your differences!"
-
 If you try to merge with conflicting changes in a file the output looks similar to this:
 
 ```{bash, filename="Output"}
@@ -254,7 +250,7 @@ To do this, open up the file(s) with conflicts in a text editor, and you'll see 
 This might look something like this:
 
 ```{console}
-\<<<<<<< HEAD
+<<<<<<< HEAD
 # Recipe: Chocolate Cake
 
 Ingredients:
@@ -269,7 +265,7 @@ Instructions:
 3. Add eggs, milk, oil, and vanilla. Beat well.
 4. Stir in boiling water.
 5. Pour into prepared pans.
-\=======
+=======
 # Recipe: Chocolate Brownies
 
 Ingredients:
@@ -284,7 +280,7 @@ Instructions:
 3. Combine dry ingredients and gradually add to the butter mixture.
 4. If desired, fold in chopped nuts.
 5. Spread the batter evenly into the prepared pan.
-\>>>>>>> 
+>>>>>>> 
 ```
 
 The lines between `<<<<<<< HEAD` and `=======` represent the changes that were made in your current branch.
@@ -330,7 +326,7 @@ Instructions:
 In this example, the conflict has been resolved by keeping both sets of changes. 
 The sections for "Chocolate Cake" and "Chocolate Brownies" are now both present in the file.
 
-If you are done, save the file and use `git add` to stage the resolved changes:
+If you are done you can use `git add` to stage the resolved changes:
 
 ```{bash, filename="Code"}
 git add example.txt
@@ -464,4 +460,3 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 #| warning: false
 knitr::kable(table_cheatsheet(name = "branches"), format = "markdown", row.names = FALSE)
 ```
-
