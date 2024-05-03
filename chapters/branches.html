@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -301,27 +301,33 @@ div.csl-indent {
    
   <ul>
   <li><a href="#why-branches" id="toc-why-branches" class="nav-link active" data-scroll-target="#why-branches"><span class="header-section-number">6.1</span> Why branches?</a></li>
-  <li><a href="#checking-your-branches" id="toc-checking-your-branches" class="nav-link" data-scroll-target="#checking-your-branches"><span class="header-section-number">6.2</span> Checking your branches</a></li>
-  <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch"><span class="header-section-number">6.3</span> Creating a new branch</a></li>
-  <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches"><span class="header-section-number">6.4</span> Switching branches</a>
+  <li><a href="#what-are-branches" id="toc-what-are-branches" class="nav-link" data-scroll-target="#what-are-branches"><span class="header-section-number">6.2</span> What are branches?</a></li>
+  <li><a href="#checking-your-branches" id="toc-checking-your-branches" class="nav-link" data-scroll-target="#checking-your-branches"><span class="header-section-number">6.3</span> Checking your branches</a></li>
+  <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch"><span class="header-section-number">6.4</span> Creating a new branch</a></li>
+  <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches"><span class="header-section-number">6.5</span> Switching branches</a>
   <ul class="collapse">
-  <li><a href="#switching-branches-with-uncommitted-changes" id="toc-switching-branches-with-uncommitted-changes" class="nav-link" data-scroll-target="#switching-branches-with-uncommitted-changes"><span class="header-section-number">6.4.1</span> Switching branches with uncommitted changes</a></li>
+  <li><a href="#switching-branches-with-uncommitted-changes" id="toc-switching-branches-with-uncommitted-changes" class="nav-link" data-scroll-target="#switching-branches-with-uncommitted-changes"><span class="header-section-number">6.5.1</span> Switching branches with uncommitted changes</a></li>
   </ul></li>
-  <li><a href="#merging-branches" id="toc-merging-branches" class="nav-link" data-scroll-target="#merging-branches"><span class="header-section-number">6.5</span> Merging branches</a></li>
-  <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts"><span class="header-section-number">6.6</span> Merge conflicts</a>
+  <li><a href="#merging-branches" id="toc-merging-branches" class="nav-link" data-scroll-target="#merging-branches"><span class="header-section-number">6.6</span> Merging branches</a></li>
+  <li><a href="#merge-conflicts" id="toc-merge-conflicts" class="nav-link" data-scroll-target="#merge-conflicts"><span class="header-section-number">6.7</span> Merge conflicts</a>
   <ul class="collapse">
-  <li><a href="#avoiding-merge-conflicts" id="toc-avoiding-merge-conflicts" class="nav-link" data-scroll-target="#avoiding-merge-conflicts"><span class="header-section-number">6.6.1</span> Avoiding merge conflicts</a></li>
-  <li><a href="#resolving-merge-conflicts" id="toc-resolving-merge-conflicts" class="nav-link" data-scroll-target="#resolving-merge-conflicts"><span class="header-section-number">6.6.2</span> Resolving merge conflicts</a></li>
-  <li><a href="#types-of-merges" id="toc-types-of-merges" class="nav-link" data-scroll-target="#types-of-merges"><span class="header-section-number">6.6.3</span> Types of merges</a></li>
+  <li><a href="#avoiding-merge-conflicts" id="toc-avoiding-merge-conflicts" class="nav-link" data-scroll-target="#avoiding-merge-conflicts"><span class="header-section-number">6.7.1</span> Avoiding merge conflicts</a></li>
+  <li><a href="#example-merge-conflict" id="toc-example-merge-conflict" class="nav-link" data-scroll-target="#example-merge-conflict"><span class="header-section-number">6.7.2</span> Example merge conflict</a></li>
+  <li><a href="#understanding-merge-conflicts" id="toc-understanding-merge-conflicts" class="nav-link" data-scroll-target="#understanding-merge-conflicts"><span class="header-section-number">6.7.3</span> Understanding merge conflicts</a></li>
+  <li><a href="#resolving-merge-conflicts" id="toc-resolving-merge-conflicts" class="nav-link" data-scroll-target="#resolving-merge-conflicts"><span class="header-section-number">6.7.4</span> Resolving merge conflicts</a></li>
+  <li><a href="#aborting-a-merge" id="toc-aborting-a-merge" class="nav-link" data-scroll-target="#aborting-a-merge"><span class="header-section-number">6.7.5</span> Aborting a merge</a></li>
+  <li><a href="#types-of-merges" id="toc-types-of-merges" class="nav-link" data-scroll-target="#types-of-merges"><span class="header-section-number">6.7.6</span> Types of merges</a></li>
   </ul></li>
-  <li><a href="#deleting-branches" id="toc-deleting-branches" class="nav-link" data-scroll-target="#deleting-branches"><span class="header-section-number">6.7</span> Deleting Branches</a></li>
-  <li><a href="#branches-best-practices" id="toc-branches-best-practices" class="nav-link" data-scroll-target="#branches-best-practices"><span class="header-section-number">6.8</span> Branches best practices</a>
+  <li><a href="#deleting-branches" id="toc-deleting-branches" class="nav-link" data-scroll-target="#deleting-branches"><span class="header-section-number">6.8</span> Deleting Branches</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices"><span class="header-section-number">6.9</span> Best practices</a>
   <ul class="collapse">
-  <li><a href="#naming-branches" id="toc-naming-branches" class="nav-link" data-scroll-target="#naming-branches"><span class="header-section-number">6.8.1</span> Naming branches</a></li>
-  <li><a href="#branch-lifecycle" id="toc-branch-lifecycle" class="nav-link" data-scroll-target="#branch-lifecycle"><span class="header-section-number">6.8.2</span> Branch Lifecycle</a></li>
+  <li><a href="#keep-the-main-branch-clean" id="toc-keep-the-main-branch-clean" class="nav-link" data-scroll-target="#keep-the-main-branch-clean"><span class="header-section-number">6.9.1</span> Keep the main branch clean</a></li>
+  <li><a href="#name-branches-consistently" id="toc-name-branches-consistently" class="nav-link" data-scroll-target="#name-branches-consistently"><span class="header-section-number">6.9.2</span> Name branches consistently</a></li>
+  <li><a href="#keep-branches-specific-and-short-lived" id="toc-keep-branches-specific-and-short-lived" class="nav-link" data-scroll-target="#keep-branches-specific-and-short-lived"><span class="header-section-number">6.9.3</span> Keep branches specific and short-lived</a></li>
+  <li><a href="#avoiding-merge-conflicts-1" id="toc-avoiding-merge-conflicts-1" class="nav-link" data-scroll-target="#avoiding-merge-conflicts-1"><span class="header-section-number">6.9.4</span> Avoiding merge conflicts</a></li>
   </ul></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">6.9</span> Acknowledgements &amp; further reading</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.10</span> Cheatsheet</a></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">6.10</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.11</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/branches.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -348,7 +354,7 @@ div.csl-indent {
 <h5 class="anchored">
 Learning Objectives
 </h5>
-<p><span class="emoji" data-emoji="bulb">💡</span> Knowing purpose and benefits of using branches in Git<br> <span class="emoji" data-emoji="bulb">💡</span> Creating and switching between branches<br> <span class="emoji" data-emoji="bulb">💡</span> Merging branches and resolving conflicts</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You understand the purpose and benefits of using branches in Git<br> <span class="emoji" data-emoji="bulb">💡</span> You can create and switch between branches<br> <span class="emoji" data-emoji="bulb">💡</span> You can merge branches and resolve merge conflicts</p>
 </div>
 </div>
 </div>
@@ -361,61 +367,114 @@ Learning Objectives
 <h5 class="anchored">
 Exercises
 </h5>
-<p><span class="emoji" data-emoji="memo">📝</span> Create a new branch called <code>feature</code>.<br> <span class="emoji" data-emoji="memo">📝</span> Add a new recipe to your recipe text file.<br> <span class="emoji" data-emoji="memo">📝</span> Merge this branch with your <code>main</code> branch and delete the <code>feature</code> branch afterwards.</p>
+<p><strong>Create and merge a new branch</strong></p>
+<ol type="1">
+<li>Create a new branch called <code>feature</code>.</li>
+<li>Switch to your new branch.</li>
+<li>Add a new recipe to your recipes text file.</li>
+<li>Switch back to the default branch (<code>main</code> or <code>master</code>).</li>
+<li>Merge the <code>feature</code> branch with your default branch and delete the <code>feature</code> branch afterwards.</li>
+</ol>
+<p><strong>Create and resolve a merge conflict</strong></p>
+<p>Deliberately create a merge conflict by editing the same section of a file on two separate branches and attempting to merge them. An example can be found <a href="#example-merge-conflict">further below</a> in this chapter. Resolve the merge conflict and delete the feature branch afterwards.</p>
 </div>
 </div>
 </div>
 <section id="why-branches" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="why-branches"><span class="header-section-number">6.1</span> Why branches?</h2>
-<p>Git branches are like separate workspaces within a Git repository. They let you work on different stuff without messing up the main code. You can visualize branches as shown in <a href="#fig-branches" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>.</p>
-<p>Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you’re ready. Branches are great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis. Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.</p>
+<p>In short, branches in Git allow you to keep different versions of your repository content in parallel, develop them independently, and integrate them when they are ready. Before we explain the concept of branches in more detail, let’s look at a few scenarios that illustrate why branches are useful <span class="citation" data-cites="community2022">(taken from <a href="../misc/references.html#ref-community2022" role="doc-biblioref">The Turing Way Community 2022</a>)</span>:</p>
+<ol type="1">
+<li><p>You want to add a new feature to your project (for example, a new analysis) but while doing so, you run the risk of accidentally breaking your working code as you test the new feature. You may want to quickly go back to your previous working version while working on the new feature but keep the as yet unfinished progress on the new feature.</p></li>
+<li><p>If you collaborate with others on the same Git repository (we will look at collaboration with Git in the <a href="../chapters/github-intro.html">chapter on GitHub</a>) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.</p></li>
+</ol>
+</section>
+<section id="what-are-branches" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="what-are-branches"><span class="header-section-number">6.2</span> What are branches?</h2>
+<p>By default, every Git repository has one default branch, typically called <code>main</code> or <code>master</code>. Git branches are like separate versions or workspaces within the same Git repository. Branching allows to create a copy of a project and continue to make commits without integrating them into the default branch right away. Branches let you work on a parallel version of your repository’s contents without changing the content on your default branch (your <code>main</code> or <code>master</code> branch). You can visualize branches as shown in <a href="#fig-branches" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>.</p>
+<p>Each branch keeps its own history of changes, so you can develop things in parallel and merge changes between branches when you’re ready. Even if you are not happy with what you’ve developed on a branch, you can just delete or abandon the branch and continue with what you have on the default branch (see the “Feature B” branch in <a href="#fig-branches" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>). You can have as many branches as you want and also branch off from a branch that branched off from the default branch (see the “Feature A-1” branch in <a href="#fig-branches" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>).</p>
+<p>Branches are great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis. Git makes it easy to switch between branches and handle conflicts when merging. With branches, you can work independently and keep your code organized.</p>
 <div id="fig-branches" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/branches.svg" class="img-fluid figure-img">
+<img src="../static/turing-way-branches.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: Image from <a href="https://www.atlassian.com/git/tutorials/using-branches">Chapter “Git Branch”</a> of the <a href="https://www.atlassian.com/git/tutorials">Atlassian “Become a git guru” tutorials</a>, used under a <a href="https://creativecommons.org/licenses/by/2.5/au/">Creative Commons Attribution 2.5 Australia License</a> (<a href="https://www.atlassian.com/git/tutorials/using-branches">direct link</a>)
+Figure&nbsp;6.1: <strong>Illustration of branches in a Git repository.</strong> Each circle represents a commit. Commits on the <code>Main</code> branch are shown in gray. The branch <code>Feature A</code> (blue circles) was created from the <code>Main</code> branch and later merged again. In-between, another branch <code>Feature A-1</code> was created from the <code>Feature A</code> branch (green circles) and merged with that branch again before the <code>Feature A</code> branch was eventually merged with the <code>Main</code> branch. The branch <code>Feature B</code> was created but abandoned and not merged with the <code>Main</code> branch. Image from <a href="https://book.the-turing-way.org/reproducible-research/vcs/vcs-git-branches.html">Chapter “Git Branches”</a> of the <a href="https://book.the-turing-way.org/">“The Turing Way handbook to reproducible, ethical and collaborative data science”</a>, used under a <a href="https://github.com/the-turing-way/the-turing-way/blob/main/LICENSE.md">Creative Commons Attribution 4.0 License</a>.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="checking-your-branches" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="checking-your-branches"><span class="header-section-number">6.2</span> Checking your branches</h2>
-<p>By default, your work is on the initial branch, usually called <code>main</code> (or <code>master</code>). We recommend changing your initial branch name to <code>main</code>, as discussed in the <a href="../chapters/setup.html">setup</a> chapter. You can list the available branches in your repository by using <code>git branch</code>.</p>
+<section id="checking-your-branches" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="checking-your-branches"><span class="header-section-number">6.3</span> Checking your branches</h2>
+<p>By default, your work is on the default branch, usually called <code>main</code> (or <code>master</code>). We recommend changing your default branch name to <code>main</code>, as discussed in the <a href="../chapters/setup.html">setup</a> chapter. You can list the available branches in your repository by using <code>git branch</code>:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This should return the following output:</p>
-<div class="cell">
+</div>
+<p>This should return the following output, if you have not yet created a new branch:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This output indicates that you are currently on the branch named <code>main</code>. The asterisk (<code>*</code>) in front of the branch name indicates the active or current branch in your Git repository.</p>
-<p>In Git, you can have multiple branches in your project, and this command helps you see the list of available branches. The one with the asterisk is the branch where your working directory is currently positioned. In this case, <code>main</code> is the active branch. If there were other branches listed without an asterisk, it means they exist, but you are not currently “on” those branches. You are currently “on main”.</p>
+</div>
+<p>This output indicates that you are currently “on the branch” named <code>main</code>. The asterisk (<code>*</code>) in front of the branch name indicates the active or current branch in your Git repository.</p>
+<p>In Git, you can have multiple branches in your project, and the <code>git branch</code> helps you see the list of available branches. The one with the asterisk is the branch where your working directory is currently positioned. In this case, <code>main</code> is the active branch. If there were other branches listed without an asterisk, it means they exist, but you are not currently “on” those branches. You are currently “on main”.</p>
+<p>You can also use <code>git status</code> to check which branch you are on. <code>git status</code> will return an output similar to the following:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
-<section id="creating-a-new-branch" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="creating-a-new-branch"><span class="header-section-number">6.3</span> Creating a new branch</h2>
+<section id="creating-a-new-branch" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="creating-a-new-branch"><span class="header-section-number">6.4</span> Creating a new branch</h2>
 <p>To create a new branch, use <code>git branch</code> followed by a branch name. For example, to create a new branch called <code>feature</code> run the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Now you can use <code>git branch</code> again to confirm the creation of the new branch.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>This should return the following output:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">feature</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
 </div>
-<p>Your newly created branch will show up, but your active branch should still be <code>main</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Common `git branch` flags">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">feature</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Your newly created branch (here, <code>feature</code>) will show up, but your active branch should still be <code>main</code>. Note that <code>feature</code> is just a name. You could also call your branch <code>banana</code>, if you want. Find out more about naming convention for Git branches in the <a href="#best-practices">section on best practices</a> below.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git branch` flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Common <code>git branch</code> flags
+Find out more: Common <code>git branch</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -433,25 +492,35 @@ Common <code>git branch</code> flags
 </div>
 </div>
 </section>
-<section id="switching-branches" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="switching-branches"><span class="header-section-number">6.4</span> Switching branches</h2>
+<section id="switching-branches" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="switching-branches"><span class="header-section-number">6.5</span> Switching branches</h2>
 <p>To switch to another branch, you can use <code>git checkout</code> or <code>git switch</code>.</p>
 <p>For example, enter the following command to switch to the newly created <code>feature</code> branch:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>If you switched branches successfully, you should receive an output similar to this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Switched</span> to branch <span class="st">'feature'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Switched</span> to branch <span class="st">'feature'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Now you can work on this branch as usual, staging and committing changes, as introduced in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="I just created a new Git repository but can't switch the branch! What is going on?">
+<div class="callout callout-style-default callout-note callout-titled" title="Help: I just created a new Git repository but can't switch the branch! What is going on?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-I just created a new Git repository but can’t switch the branch! What is going on?
+Help: I just created a new Git repository but can’t switch the branch! What is going on?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -478,37 +547,75 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 </div>
 </div>
 </div>
-<section id="switching-branches-with-uncommitted-changes" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="switching-branches-with-uncommitted-changes"><span class="header-section-number">6.4.1</span> Switching branches with uncommitted changes</h3>
+<section id="switching-branches-with-uncommitted-changes" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="switching-branches-with-uncommitted-changes"><span class="header-section-number">6.5.1</span> Switching branches with uncommitted changes</h3>
+<div class="callout callout-style-simple callout-caution">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This section references some more advanced Git commits. If you’re facing the issue that Git prevents you from switching branches, read on. If you’re just learning about branches and switching branches worked without any problems, feel free to skip this section for now.</p>
+</div>
+</div>
+</div>
 <p>When you have uncommitted changes in your working directory that do not conflict with the branch you’re switching to, Git allows you to switch branches without losing those changes. Your uncommitted changes are effectively brought over to the new branch. This feature can be particularly useful when you’ve started making changes and then realize you’re on the wrong branch or need to move your work to a different context.</p>
 <p>Git is designed to prevent you from switching branches if there’s a risk of overwriting your changes. This means that Git will not allow you to switch branches if your uncommitted changes would cause conflicts with the branch you’re attempting to switch to. If you try to switch branches with uncommitted changes you will get an error message similar to:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> Your local changes to the following files would be overwritten by checkout:</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        <span class="ex">chapters/branches.qmd</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Please</span> commit your changes or stash them before you switch branches.</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Aborting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
 </div>
-<p>The message specifies the file with modifications, and indicates an aborted branch switch due to uncommitted changes.</p>
-<p>To resolve this and switch branches safely, you have a few options:</p>
-<p><strong>Commit your changes:</strong> Use the commit process to save your work on the current branch. This involves staging your changes with <code>git add</code> and then committing them with <code>git commit</code>. This workflow is explained in detail in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p>
-<p><strong>Stash your changes:</strong> If you’re not ready to commit, you can use <code>git stash</code> to temporarily shelve your changes. This clears your working directory, allowing you to switch branches. Your stashed changes can be reapplied later. The process of stashing, and other techniques to manage uncommitted changes, are covered in the <a href="../chapters/intermediate-commands.html">Stashing and Co.&nbsp;chapter</a>.</p>
-<p><strong>Discard your changes:</strong> If the changes are not needed, you can remove them using <code>git reset</code> to unstage all changes. This action should be used with caution as it will erase your modifications. This command is also explained in the <a href="../chapters/intermediate-commands.html">Stashing and Co.&nbsp;chapter</a>.</p>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> Your local changes to the following files would be overwritten by checkout:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="ex">chapters/branches.qmd</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Please</span> commit your changes or stash them before you switch branches.</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Aborting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>The message specifies the file with modifications, and indicates an aborted branch switch due to uncommitted changes. To resolve this and switch branches safely, you have a few options:</p>
+<ol type="1">
+<li><p><strong>Commit your changes:</strong> Use the commit process to save your work on the current branch. This involves staging your changes with <code>git add</code> and then committing them with <code>git commit</code>. This workflow is explained in detail in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p></li>
+<li><p><strong>Stash your changes:</strong> If you’re not ready to commit, you can use <code>git stash</code> to temporarily shelve your changes. This clears your working directory, allowing you to switch branches. Your stashed changes can be reapplied later. The process of stashing, and other techniques to manage uncommitted changes, are covered in the <a href="../chapters/intermediate-commands.html">Stashing and Co.&nbsp;chapter</a>.</p></li>
+<li><p><strong>Discard your changes:</strong> If the changes are not needed, you can remove them using <code>git reset</code> to unstage all changes. This action should be used with caution as it will erase your modifications. This command is also explained in the <a href="../chapters/intermediate-commands.html">Stashing and Co.&nbsp;chapter</a>.</p></li>
+</ol>
 </section>
 </section>
-<section id="merging-branches" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="merging-branches"><span class="header-section-number">6.5</span> Merging branches</h2>
-<p>After you worked on a branch for some time you might want to incorporate your work into the <code>main</code> branch. You can do this using the <code>git merge</code> command. Switch to your <code>main</code> branch (using <code>git switch</code> or <code>git checkout</code>) and then use:</p>
+<section id="merging-branches" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="merging-branches"><span class="header-section-number">6.6</span> Merging branches</h2>
+<p>After you’ve worked on a branch for some time and you completed work on the feature that you wanted to implement, you might want to incorporate your work into the <code>main</code> branch (or any other target branch). You can do this using the <code>git merge</code> command. To do this, switch to your <code>main</code> branch (using <code>git switch</code> or <code>git checkout</code>) and then use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-1" class="code-annotation-target"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge feature</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="1" data-code-annotation="1">Replace <code>feature</code> with the name of your branch, if needed.</span>
+</dd>
+</dl>
+</div>
 </div>
 <p>Note, that your current branch (the branch that you are “on”) should be the one that you want to merge changes <em>into</em> from another branch. For example, if you want to merge changes <em>into</em> the <code>main</code> branch <em>from</em> the <code>feature</code> branch, you need to be on <code>main</code> and then merge the <code>feature</code> branch.</p>
-<p>If you have not yet made any changes you should get the following output:</p>
-<div class="cell">
+<p>If you have not yet made any changes on the <code>feature</code> branch you should get the following output:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Already</span> up to date.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>This output indicates that the branch you are trying to merge is already fully incorporated into the branch you are currently on. In other words, there are no new changes in the <code>feature</code> branch that need to be merged because your current branch already contains all the changes from the <code>feature</code> branch.</p>
-<p>If you have changed file(s) in your folder, you should get an output similar to:</p>
-<div class="cell">
+<p>If you have changed file(s) in your folder and committed them on the <code>feature</code> branch, you’ll likely get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Updating</span> 555ba0c..994bb8d</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Fast-forward</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a> </span>
@@ -516,104 +623,126 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a> <span class="ex">1</span> file changed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The output reveals a <strong>“fast-forward” merge</strong> operation, where changes from commit <code>555ba0c</code> to <code>994bb8d</code> are incorporated. The common starting point of the two branches is commit <code>555ba0c</code> and commit <code>994bb8d</code> marks the latest commit in the merged branch. A “fast-forward” merge, the simplest form of merges, updates your position to the latest changes without creating a new commit. In this example, the merge modified only one file, the <code>example.txt</code> file, introducing four new lines denoted by <code>4 ++++</code>.</p>
+</div>
+<p>The output reveals a <strong>“fast-forward” merge</strong> operation, where changes from commit <code>555ba0c</code> to <code>994bb8d</code> are incorporated. The common starting point of the two branches is commit <code>555ba0c</code> and commit <code>994bb8d</code> marks the latest commit in the merged branch. A “fast-forward” merge, the simplest form of merges, updates your position to the latest changes without creating a new commit. In this example, the merge modified only one file, the <code>example.txt</code> file, introducing four new lines denoted by <code>4 ++++</code>. For more information about different types of merges, see the <a href="#types-of-merges">section on “Types of merges”</a> below.</p>
 </section>
-<section id="merge-conflicts" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="merge-conflicts"><span class="header-section-number">6.6</span> Merge conflicts</h2>
-<p>Merge conflicts occur when Git is unable to automatically resolve differences between two branches during a merge. This happens when both branches include conflicting changes to the same part of a file. Git simply can’t determine which version of the code should take precedence, and as a result, it requests manual intervention from the developer. It’s like when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep. So, it raises its hand and asks you, the developer, to step in and help.</p>
-<section id="avoiding-merge-conflicts" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="avoiding-merge-conflicts"><span class="header-section-number">6.6.1</span> Avoiding merge conflicts</h3>
-<p>Merge conflicts can be a bit of a headache. If you only work locally on your computer, without a remote repository (for example, an online version of your repository on <a href="../chapters/github-intro.html">GitHub</a>), you can avoid merge conflicts easier, and might not even need different branches. However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts. That being said,</p>
-<p>Employing good development practices can minimize the occurrence of merge conflicts. Regularly pulling changes from the remote repository into your local branch (using <code>git pull</code>) and keeping your branch up-to-date can help identify and resolve conflicts early. You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on <a href="../chapters/github-intro.html">GitHub</a>.</p>
+<section id="merge-conflicts" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="merge-conflicts"><span class="header-section-number">6.7</span> Merge conflicts</h2>
+<p>Merge conflicts occur when Git is unable to automatically resolve differences between two branches during a merge. This happens when both branches include conflicting changes to the same part of a file. Git simply can’t determine which version of the code should be favored, and as a result, it requests manual intervention from you, the developer. It’s similar to when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep. Merge conflicts are more likely to occur in collaborative projects, where multiple people modify the same files. However, they can also happen in projects where you work on your own.</p>
+<section id="avoiding-merge-conflicts" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="avoiding-merge-conflicts"><span class="header-section-number">6.7.1</span> Avoiding merge conflicts</h3>
+<p>Merge conflicts can be a bit of a headache. If you only work locally on your computer, without a remote repository (for example, an online version of your repository on <a href="../chapters/github-intro.html">GitHub</a>), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches. However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts. That being said, employing good development practices can minimize the occurrence of merge conflicts. Regularly pulling changes from the remote repository into your local branch (using <code>git pull</code>) and keeping your branch up-to-date can help identify and resolve conflicts early. You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on <a href="../chapters/github-intro.html">GitHub</a>.</p>
 </section>
-<section id="resolving-merge-conflicts" class="level3" data-number="6.6.2">
-<h3 data-number="6.6.2" class="anchored" data-anchor-id="resolving-merge-conflicts"><span class="header-section-number">6.6.2</span> Resolving merge conflicts</h3>
-<p>When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. Git is like a referee saying, “Hey, programmers, sort out your differences!”</p>
-<p>If you try to merge with conflicting changes in a file the output looks similar to this:</p>
-<div class="cell">
+<section id="example-merge-conflict" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="example-merge-conflict"><span class="header-section-number">6.7.2</span> Example merge conflict</h3>
+<p>Let’s look at an example merge conflict. You can recreate this example yourself by following the instructions below.</p>
+<ol type="1">
+<li>Create a new file, for example called <code>example.txt</code>.</li>
+<li>Create and switch to a new branch, for example called <code>feature</code>.</li>
+<li>Add some text to the first line of the <code>example.txt</code> file, for example <code>Git is super</code>.</li>
+<li>Add and commit your changes on the <code>feature</code> branch.</li>
+<li>Switch back to your <code>main</code> branch.</li>
+<li>Add some text to the first line of the <code>example.txt</code> file, for example <code>Git is cool</code>. Note that <code>example.txt</code> should be empty because the previous text was added on the <code>feature</code> branch, not on the <code>main</code> branch.</li>
+<li>Add and commit your changes on the <code>main</code> branch.</li>
+<li>Merge the changes on the <code>feature</code> branch into the <code>main</code> branch: <code>git merge feature</code>.</li>
+<li>Congrats, you create a merge conflict!</li>
+</ol>
+</section>
+<section id="understanding-merge-conflicts" class="level3" data-number="6.7.3">
+<h3 data-number="6.7.3" class="anchored" data-anchor-id="understanding-merge-conflicts"><span class="header-section-number">6.7.3</span> Understanding merge conflicts</h3>
+<p>When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. If you try to merge branches with conflicting changes in a file the output looks similar to this:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Auto-merging</span> example.txt</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">CONFLICT</span> <span class="er">(</span><span class="ex">content</span><span class="kw">)</span><span class="bu">:</span> Merge conflict in example.txt</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">CONFLICT:</span> Merge conflict in example.txt</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Automatic</span> merge failed<span class="kw">;</span> <span class="ex">fix</span> conflicts and then commit the result.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Git will highlight the conflicting parts in the affected file(s), and you must choose the desired changes or modify them to create a consistent version. To do this, open up the file(s) with conflicts in a text editor, and you’ll see the conflicting sections marked with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
-<p>This might look something like this:</p>
-<div class="cell">
-<pre class="console cell-code"><code>\&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-# Recipe: Chocolate Cake
-
-Ingredients:
-- 2 cups all-purpose flour
-- 1 3/4 cups granulated sugar
-- 3/4 cup unsweetened cocoa powder
-- ...
-
-Instructions:
-1. Preheat the oven to 350°F (175°C).
-2. In a large bowl, whisk together dry ingredients.
-3. Add eggs, milk, oil, and vanilla. Beat well.
-4. Stir in boiling water.
-5. Pour into prepared pans.
-\=======
-# Recipe: Chocolate Brownies
-
-Ingredients:
-- 1 cup unsalted butter
-- 2 cups granulated sugar
-- 4 large eggs
-- ...
-
-Instructions:
-1. Preheat the oven to 350°F (175°C).
-2. Melt butter, then stir in sugar, eggs, and vanilla.
-3. Combine dry ingredients and gradually add to the butter mixture.
-4. If desired, fold in chopped nuts.
-5. Spread the batter evenly into the prepared pan.
-\&gt;&gt;&gt;&gt;&gt;&gt;&gt; </code></pre>
 </div>
-<p>The lines between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> represent the changes that were made in your current branch. The section between <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> represents the changes from the branch you are trying to merge into your current branch.</p>
-<p>Manually edit the conflicting sections to the desired state, removing the conflict markers. You might want to keep some changes from your current branch, some from the incoming branch, or make entirely new changes.</p>
-<p>After editing the file it might look something like this:</p>
+<p>During a merge conflict, you can run <code>git status</code> to see which files are in conflict:</p>
 <div class="cell">
-<pre class="console cell-code"><code># Recipe: Chocolate Cake
-
-Ingredients:
-- 2 cups all-purpose flour
-- 1 3/4 cups granulated sugar
-- 3/4 cup unsweetened cocoa powder
-- ...
-
-Instructions:
-1. Preheat the oven to 350°F (175°C).
-2. In a large bowl, whisk together dry ingredients.
-3. Add eggs, milk, oil, and vanilla. Beat well.
-4. Stir in boiling water.
-5. Pour into prepared pans.
-
-# Recipe: Chocolate Brownies
-
-Ingredients:
-- 1 cup unsalted butter
-- 2 cups granulated sugar
-- 4 large eggs
-- ...
-
-Instructions:
-1. Preheat the oven to 350°F (175°C).
-2. Melt butter, then stir in sugar, eggs, and vanilla.
-3. Combine dry ingredients and gradually add to the butter mixture.
-4. If desired, fold in chopped nuts.
-5. Spread the batter evenly into the prepared pan.</code></pre>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
 </div>
-<p>In this example, the conflict has been resolved by keeping both sets of changes. The sections for “Chocolate Cake” and “Chocolate Brownies” are now both present in the file.</p>
-<p>If you are done, save the file and use <code>git add</code> to stage the resolved changes:</p>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">You</span> have unmerged paths.</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">fix</span> conflicts and run <span class="st">"git commit"</span><span class="kw">)</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git merge --abort"</span> to abort the merge<span class="kw">)</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Unmerged</span> paths:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to mark resolution<span class="kw">)</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">both</span> modified:   example.txt</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="ex">no</span> changes added to commit <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> and/or <span class="st">"git commit -a"</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Git will highlight the conflicting parts in the affected file(s), and you must choose the desired changes or modify them to create a consistent version. To do this, open up the file(s) with conflicts in a text editor of your choice, and you’ll see the conflicting sections marked with the following indicators:</p>
+<ul>
+<li><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code></li>
+<li><code>=======</code></li>
+<li><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code></li>
+</ul>
+<p>In our example, this will look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Git is cool</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>=======</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>Git is super</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> indicates the beginning of lines that encountered a merge conflict. The initial lines are from the file where you were attempting to merge the changes (in this case, the changes on the <code>main</code> branch). The lines between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> represent the changes that were made in your current branch (here, the <code>main</code> branch). <code>=======</code> shows the break point for comparison. It divides the changes the user has committed (above) from the changes brought in from the merge (below) for visual comparison. The section between <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> represents the changes from the branch you are trying to merge into your current branch (here, the <code>feature</code> branch). <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> shows the end of the lines with a merge conflict.</p>
+</section>
+<section id="resolving-merge-conflicts" class="level3" data-number="6.7.4">
+<h3 data-number="6.7.4" class="anchored" data-anchor-id="resolving-merge-conflicts"><span class="header-section-number">6.7.4</span> Resolving merge conflicts</h3>
+<p>To resolve the merge conflict, you need to <strong>manually edit the conflicting sections to the desired state</strong>, removing the conflict markers. You might want to keep some changes from your current branch, some from the merged branch, keep only the changes from one branch, or make entirely new changes. After editing the file it might look something like this:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Git</span> is super cool!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>In this example, the conflict has been resolved by mixing both sets of changes. Parts of the changes from both branches are now present in the file. If you are done you can use <code>git add</code> to stage the resolved changes:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Once all conflicts are resolved, proceed with the commit, for example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Your branches should now be merged and your conflict resolved.</p>
+<p>Before you try to fix more complex merge conflicts, make sure you understand the changes that don’t match up to avoid making things more complicated. Resolving conflicts can be tricky, especially when merging branches with many differences. But remember that your old versions are safe, so you can fix the issue without affecting them.</p>
+</section>
+<section id="aborting-a-merge" class="level3" data-number="6.7.5">
+<h3 data-number="6.7.5" class="anchored" data-anchor-id="aborting-a-merge"><span class="header-section-number">6.7.5</span> Aborting a merge</h3>
+<p>If you feel like you are stuck in the merge process and want to get back to the state of the branch before you started the merge process, you can also abort the merge using:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--abort</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -633,82 +762,130 @@ Common <code>git merge</code> flags
 </div>
 </div>
 </section>
-<section id="types-of-merges" class="level3" data-number="6.6.3">
-<h3 data-number="6.6.3" class="anchored" data-anchor-id="types-of-merges"><span class="header-section-number">6.6.3</span> Types of merges</h3>
-<p>Git supports different types of merges to cater to various situations in software development. Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.</p>
-<section id="standard-merge" class="level4" data-number="6.6.3.1">
-<h4 data-number="6.6.3.1" class="anchored" data-anchor-id="standard-merge"><span class="header-section-number">6.6.3.1</span> Standard merge</h4>
+<section id="types-of-merges" class="level3" data-number="6.7.6">
+<h3 data-number="6.7.6" class="anchored" data-anchor-id="types-of-merges"><span class="header-section-number">6.7.6</span> Types of merges</h3>
+<p>Git supports different types of merges to support various situations in software development. Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.</p>
+<section id="standard-merge" class="level4" data-number="6.7.6.1">
+<h4 data-number="6.7.6.1" class="anchored" data-anchor-id="standard-merge"><span class="header-section-number">6.7.6.1</span> Standard merge</h4>
 <p>In a standard merge, Git takes each commit from the merged branch and adds them to the history of the base branch (the branch you are currently on) with their original time stamps. It creates a new “merge commit”, a special record that marks when the merge happened, showing that the branches are now combined. To perform a standard merge, use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
-<section id="fast-forward-merge" class="level4" data-number="6.6.3.2">
-<h4 data-number="6.6.3.2" class="anchored" data-anchor-id="fast-forward-merge"><span class="header-section-number">6.6.3.2</span> Fast Forward Merge</h4>
+<section id="fast-forward-merge" class="level4" data-number="6.7.6.2">
+<h4 data-number="6.7.6.2" class="anchored" data-anchor-id="fast-forward-merge"><span class="header-section-number">6.7.6.2</span> Fast-forward merge</h4>
 <p>If no new commits were made to the base branch since the feature was created, Git automatically does a “Fast Forward Merge”. It’s like the standard merge, but no new merge commit is created. It’s as if you made the commits directly on the base branch. Since the base branch remained unchanged, there’s no need to mark a separate merge in the history. You can ensure a fast-forward merge by using the <code>--ff-only</code> flag:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--ff-only</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>If you do not want a fast-forward merge, you can ensure a merge commit with the <code>--no-ff</code> flag.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
-<section id="squash-and-merge" class="level4" data-number="6.6.3.3">
-<h4 data-number="6.6.3.3" class="anchored" data-anchor-id="squash-and-merge"><span class="header-section-number">6.6.3.3</span> Squash and Merge</h4>
+<section id="squash-and-merge" class="level4" data-number="6.7.6.3">
+<h4 data-number="6.7.6.3" class="anchored" data-anchor-id="squash-and-merge"><span class="header-section-number">6.7.6.3</span> Squash and merge</h4>
 <p>When you squash a branch, Git combines all commits of the branch into a single commit. This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately. Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--squash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--squash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Squashing commits can be desirable in a situation where you don’t want others to see the history of individual commits made on the <code>feature</code> branch. For example, imagine writing the draft of a paper and you’ve made a couple of changes in the early phase of writing the draft that you consider silly and you only want your collaborators to see the final draft version. In this situation, you could squash all previous commits and only merge the latest version of your draft.</p>
+</section>
+</section>
+</section>
+<section id="deleting-branches" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="deleting-branches"><span class="header-section-number">6.8</span> Deleting Branches</h2>
+<p>Once a branch has served its purpose and is no longer needed, it can be deleted. Removing branches that are no longer active helps maintain a clean and manageable branch structure. To delete a branch you can use the <code>git branch</code> command, followed by a <code>-d</code> flag.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This should yield an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Deleted</span> branch feature.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You can only delete a branch, you are <em>not</em> currently on.</p>
+</section>
+<section id="best-practices" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="best-practices"><span class="header-section-number">6.9</span> Best practices</h2>
+<section id="keep-the-main-branch-clean" class="level3" data-number="6.9.1">
+<h3 data-number="6.9.1" class="anchored" data-anchor-id="keep-the-main-branch-clean"><span class="header-section-number">6.9.1</span> Keep the main branch clean</h3>
+<p>The central purpose of branches is to <strong>keep the main branch clean</strong>. In practice, this means that you should regularly work on separate branches and only integrate new changes into the main branch when they are ready. The main branch should only contain work that is complete and rightfully belongs in the main version of your project. For example, if you use Git to track changes in code (like analysis scripts) you should make sure that the version of the code on the main branch always works, i.e., can be executed without errors. Any addition to your analysis code would be developed on a separate branch and only integrated with the main branch if the code can be executed without errors.</p>
+</section>
+<section id="name-branches-consistently" class="level3" data-number="6.9.2">
+<h3 data-number="6.9.2" class="anchored" data-anchor-id="name-branches-consistently"><span class="header-section-number">6.9.2</span> Name branches consistently</h3>
+<p>Adopt a <strong>consistent naming convention</strong> for branches that accurately <strong>reflects their purpose</strong>. This can include prefixes like <code>feature/</code>, <code>bug/</code>, followed by a descriptive name. Clear and standardized branch names make it easier to identify the purpose of each branch.</p>
+<div id="tip-branch-names" class="callout callout-style-default callout-tip callout-titled" title="Find out more: Naming conventions for Git branches">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Common <code>git merge</code> flags
+Tip&nbsp;6.1: Find out more: Naming conventions for Git branches
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><code>--interactive</code> or <code>-i</code>: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.</p>
-<p><code>--continue</code>: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.</p>
-<p><code>--abort</code>: Abort the current rebase operation and return the branch to its original state before the rebase.</p>
-<p><code>--skip</code>: Skip the current commit during an interactive rebase.</p>
-<p><code>-p</code> or <code>--preserve-merges</code>: Preserve merge commits during the rebase.</p>
-<p><code>--autosquash</code>: Automatically squash commits marked with “squash” or “fixup” in their commit message during an interactive rebase.</p>
+<p><strong>Basic recommendations for branch names</strong></p>
+<ol type="1">
+<li><strong>Lowercase and hyphen-separated:</strong> Use lowercase letters for your branch names and hyphens to separate words. For example: <code>feature/new-login</code> or <code>bugfix/header-styling</code>.</li>
+<li><strong>Alphanumeric characters:</strong> Limit branch names to alphanumeric characters (a-z, 0-9) and hyphens, avoiding punctuation, spaces, underscores, or other non-alphanumeric characters.</li>
+<li><strong>No continuous hyphens:</strong> Avoid using continuous hyphens in branch names, as in <code>feature--new-login</code>, which can be confusing.</li>
+<li><strong>No trailing hyphens:</strong> Refrain from ending branch names with a hyphen, as in <code>feature-new-login-</code>.</li>
+<li><strong>Descriptive:</strong> Choose descriptive and concise names that reflect the focus of the work carried out on the branch.</li>
+</ol>
+<p><strong>Branch prefixes</strong></p>
+<p>Using prefixes in branch names helps to quickly identify the purpose of a branch. Below are two common branch types with their corresponding prefixes:</p>
+<ul>
+<li><strong>Feature Branches:</strong> These branches are used for developing new features. Use the prefix <code>feature</code>, for example: <code>feature/new-analysis</code>.</li>
+<li><strong>Bugfix Branches:</strong> These branches are used to fix bugs (errors or problems with the code). Use the prefix <code>bugfix</code>, for example: <code>bugfix/fix-typo</code>.</li>
+</ul>
+<p>For more recommendations on branch naming conventions, see for example <span class="citation" data-cites="amin2023">Amin (<a href="../misc/references.html#ref-amin2023" role="doc-biblioref">2023</a>)</span>.</p>
 </div>
 </div>
 </div>
 </section>
+<section id="keep-branches-specific-and-short-lived" class="level3" data-number="6.9.3">
+<h3 data-number="6.9.3" class="anchored" data-anchor-id="keep-branches-specific-and-short-lived"><span class="header-section-number">6.9.3</span> Keep branches specific and short-lived</h3>
+<p>Create branches with a <strong>specific goal or task</strong> in mind, and aim to <strong>keep them short-lived</strong>. As for your main branch, you should try to keep individual branches clean by focusing on adding one new feature per branch. This approach ensures that completed features can be merged into the main branch independently of those that are still in progress. Long-lived branches can lead to conflicts and make it harder to merge changes. Once the task is complete or the feature is integrated, consider deleting the branch.</p>
+</section>
+<section id="avoiding-merge-conflicts-1" class="level3" data-number="6.9.4">
+<h3 data-number="6.9.4" class="anchored" data-anchor-id="avoiding-merge-conflicts-1"><span class="header-section-number">6.9.4</span> Avoiding merge conflicts</h3>
+<p>The best way to deal with merge conflicts, is to try and avoid them in the first place. You can reduce the chances of conflicts by keeping branches tidy, concentrating on one task, and involving fewer files. In addition, it’s good practice to merge each other’s changes into your work frequently. Before merging, understand the content in both branches. If multiple people have worked on the same branches, open communication and good project management can also help to stay informed about each other’s changes.</p>
 </section>
 </section>
-<section id="deleting-branches" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="deleting-branches"><span class="header-section-number">6.7</span> Deleting Branches</h2>
-<p>Once a branch has served its purpose and is no longer needed, it can be deleted. Removing branches that are no longer active helps maintain a clean and manageable branch structure. To delete a branch you can use the <code>git branch</code> command, followed by a <code>-d</code> flag.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This should yield an output similar to:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Deleted</span> branch feature <span class="er">(</span><span class="ex">was</span> 3343f36<span class="kw">)</span><span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can only delete a branch, you are not currently on.</p>
-</section>
-<section id="branches-best-practices" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="branches-best-practices"><span class="header-section-number">6.8</span> Branches best practices</h2>
-<section id="naming-branches" class="level3" data-number="6.8.1">
-<h3 data-number="6.8.1" class="anchored" data-anchor-id="naming-branches"><span class="header-section-number">6.8.1</span> Naming branches</h3>
-<p>Adopt a <strong>consistent naming convention</strong> for branches that accurately <strong>reflects their purpose</strong>. This can include prefixes like <code>feature/</code>, <code>bug/</code>, or <code>hotfix/</code> followed by a descriptive name. Clear and standardized branch names make it easier to identify the purpose of each branch.</p>
-</section>
-<section id="branch-lifecycle" class="level3" data-number="6.8.2">
-<h3 data-number="6.8.2" class="anchored" data-anchor-id="branch-lifecycle"><span class="header-section-number">6.8.2</span> Branch Lifecycle</h3>
-<p>Create branches with a <strong>specific goal or task</strong> in mind, and aim to <strong>keep them short-lived</strong>. Long-lived branches can lead to conflicts and make it harder to merge changes. Once the task is complete or the feature is integrated, consider deleting the branch.</p>
-</section>
-</section>
-<section id="acknowledgements-further-reading" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">6.9</span> Acknowledgements &amp; further reading</h2>
+<section id="acknowledgements-further-reading" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">6.10</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="table">
 <thead>
@@ -722,31 +899,41 @@ Common <code>git merge</code> flags
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="community2022">The Turing Way Community (<a href="../misc/references.html#ref-community2022" role="doc-biblioref">2022</a>)</span></td>
+<td style="text-align: left;">The Turing Way: A handbook for reproducible, ethical and collaborative research</td>
+<td style="text-align: left;"><a href="https://the-turing-way.netlify.app/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/the-turing-way/the-turing-way"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><span class="citation" data-cites="chacon2014">Chacon and Straub (<a href="../misc/references.html#ref-chacon2014" role="doc-biblioref">2014</a>)</span></td>
 <td style="text-align: left;">Pro Git</td>
 <td style="text-align: left;"><a href="https://git-scm.com/book/en/v2"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
 <td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a></td>
 <td style="text-align: left;"><a href="https://github.com/progit/progit2"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="GitHub2023">GitHub (<a href="../misc/references.html#ref-GitHub2023" role="doc-biblioref">2023</a>)</span></td>
 <td style="text-align: left;">GitHub Docs</td>
 <td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
 <td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
 <td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
 </tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="amin2023">Amin (<a href="../misc/references.html#ref-amin2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">Naming conventions for Git Branches — a Cheatsheet</td>
+<td style="text-align: left;"><a href="https://medium.com/@abhay.pixolo/naming-conventions-for-git-branches-a-cheatsheet-8549feca2534"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="NA">NA</a></td>
+<td style="text-align: left;"><a href="NA"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.10</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.11</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 79%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Command</th>
@@ -771,8 +958,16 @@ Common <code>git merge</code> flags
 <td style="text-align: left;">Merging branches</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>git rebase</code></td>
-<td style="text-align: left;">A different way of integrating changes from two branches</td>
+<td style="text-align: left;"><code>git merge --abort</code></td>
+<td style="text-align: left;">Aborting a merge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git merge --squash</code></td>
+<td style="text-align: left;">Squach commit on branch and merge</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git branch -d feature</code></td>
+<td style="text-align: left;">Deleting the <code>feature</code> branch</td>
 </tr>
 </tbody>
 </table>
@@ -781,11 +976,17 @@ Common <code>git merge</code> flags
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-amin2023" class="csl-entry" role="listitem">
+Amin, Abhay. 2023. <span>“Naming Conventions for Git Branches — a Cheatsheet.”</span> 2023. <a href="https://medium.com/@abhay.pixolo/naming-conventions-for-git-branches-a-cheatsheet-8549feca2534">https://medium.com/@abhay.pixolo/naming-conventions-for-git-branches-a-cheatsheet-8549feca2534</a>. License: <a href="NA">NA</a>. Source: <a href="NA" class="uri">NA</a>. Website: <a href="https://medium.com/@abhay.pixolo/naming-conventions-for-git-branches-a-cheatsheet-8549feca2534" class="uri">https://medium.com/@abhay.pixolo/naming-conventions-for-git-branches-a-cheatsheet-8549feca2534</a>.
+</div>
 <div id="ref-chacon2014" class="csl-entry" role="listitem">
 Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
 </div>
 <div id="ref-GitHub2023" class="csl-entry" role="listitem">
 GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en">https://docs.github.com/en</a>.
+</div>
+<div id="ref-community2022" class="csl-entry" role="listitem">
+The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/the-turing-way/the-turing-way" class="uri">https://github.com/the-turing-way/the-turing-way</a>. Website: <a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a>.
 </div>
 </div>
 </section>

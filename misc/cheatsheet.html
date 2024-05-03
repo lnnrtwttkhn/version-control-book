@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -498,108 +498,118 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td style="text-align: left;">branches</td>
-<td style="text-align: left;"><code>git rebase</code></td>
-<td style="text-align: left;">A different way of integrating changes from two branches</td>
+<td style="text-align: left;"><code>git merge --abort</code></td>
+<td style="text-align: left;">Aborting a merge</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">stashing</td>
-<td style="text-align: left;"><code>git rebase</code></td>
-<td style="text-align: left;">Different way of integrating changes from two branches</td>
+<td style="text-align: left;">branches</td>
+<td style="text-align: left;"><code>git merge --squash</code></td>
+<td style="text-align: left;">Squach commit on branch and merge</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">branches</td>
+<td style="text-align: left;"><code>git branch -d feature</code></td>
+<td style="text-align: left;">Deleting the <code>feature</code> branch</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash</code></td>
 <td style="text-align: left;">Stores made changes for later use</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash -m stashing message</code></td>
 <td style="text-align: left;">Stashes your changes and includes a message</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash list</code></td>
 <td style="text-align: left;">Shows all of your stored stashes</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash apply</code></td>
 <td style="text-align: left;">Applies your latest stash</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash apply stash@{n}</code></td>
 <td style="text-align: left;">Applies a specific stash</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash pop</code></td>
 <td style="text-align: left;">Applies your latest stash and removes it from stash list</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash pop stash@{n}</code></td>
 <td style="text-align: left;">Applies a specific stash and removes it from stash list</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git restore &lt;file&gt;</code></td>
 <td style="text-align: left;">Reverts <file> back to the state of your last commit</file></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git restore .</code></td>
 <td style="text-align: left;">Reverts all files in your repository back to the state of your last commit</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git restore --staged &lt;file&gt;</code></td>
 <td style="text-align: left;">Removes <file> from your staging area</file></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git restore --staged .</code></td>
 <td style="text-align: left;">Removes all files in your repository from your staging area</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git rm &lt;file&gt;</code></td>
 <td style="text-align: left;">Deletes <file> from your repository</file></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git rm --cached &lt;file&gt;</code></td>
 <td style="text-align: left;">Removes <file> from your repository but keeps <file> on your system</file></file></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git revert &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Creates a new commit which reverts your repository back to <commithash></commithash></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git reflog</code></td>
 <td style="text-align: left;">Logs recent branch changes</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git reset &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Resets the branch to a specified commit, keeping changes in the working directory</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git reset --hard &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Resets the branch to a specified commit</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git cherry-pick &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Applies changes from <commithash></commithash></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git clean</code></td>
 <td style="text-align: left;">Deletes untracked files from your directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stashing</td>
+<td style="text-align: left;"><code>git rebase</code></td>
+<td style="text-align: left;">Different way of integrating changes from two branches</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Tags and Releases</td>
