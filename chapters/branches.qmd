@@ -26,68 +26,97 @@ execute:
 
 ## Why branches?
 
-Git branches are like separate workspaces within a Git repository. 
-They let you work on different stuff without messing up the main code. 
+In short, branches in Git allow you to keep different versions of your repository content in parallel, develop them independently, and integrate them when they are ready.
+Before we explain the concept of branches in more detail, let's look at a few scenarios that illustrate why branches are useful [taken from @community2022]:
+
+1. You want to add a new feature to your project (for example, a new analysis) but while doing so, you run the risk of accidentally breaking your working code as you test the new feature.
+You may want to quickly go back to your previous working version while working on the new feature but keep the as yet unfinished progress on the new feature.
+
+2. If you collaborate with others on the same Git repository (we will look at collaboration with Git in the [chapter on GitHub](github-intro.qmd)) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.
+
+## What are branches?
+
+By default, every Git repository has one default branch, typically called `main` or `master`.
+Git branches are like separate versions or workspaces within the same Git repository.
+Branching allows to create a copy of a project and continue to make commits without integrating them into the default branch right away.
+Branches let you work on a parallel version of your repository's contents without changing the content on your default branch (your `main` or `master` branch). 
 You can visualize branches as shown in @fig-branches.
 
-Each branch keeps its own history, so you can develop things in parallel and easily merge changes between branches when you're ready. 
+Each branch keeps its own history of changes, so you can develop things in parallel and merge changes between branches when you're ready.
+Even if you are not happy with what you've developed on a branch, you can just delete or abandon the branch and continue with what you have on the default branch (see the "Feature B" branch in @fig-branches).
+You can have as many branches as you want and also branch off from a branch that branched off from the default branch (see the "Feature A-1" branch in @fig-branches).
+
 Branches are great for trying out new features, fixing bugs, or experimenting without causing chaos in the main development branch. 
 Scientists might use branches to collaborate on research papers, exploring different parameters while running experiments or to test different data processing techniques or visualization approaches during data analysis.
 Git makes it easy to switch between branches and handle conflicts when merging.
 With branches, you can work independently and keep your code organized.
 
-![Image from [Chapter "Git Branch"](https://www.atlassian.com/git/tutorials/using-branches) of the [Atlassian "Become a git guru" tutorials](https://www.atlassian.com/git/tutorials), used under a [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/) ([direct link](https://www.atlassian.com/git/tutorials/using-branches))](../static/branches.svg){#fig-branches}
+![**Illustration of branches in a Git repository.** Each circle represents a commit. Commits on the `Main` branch are shown in gray. The branch `Feature A` (blue circles) was created from the `Main` branch and later merged again. In-between, another branch `Feature A-1` was created from the `Feature A` branch (green circles) and merged with that branch again before the `Feature A` branch was eventually merged with the `Main` branch. The branch `Feature B` was created but abandoned and not merged with the `Main` branch. Image from [Chapter "Git Branches"](https://book.the-turing-way.org/reproducible-research/vcs/vcs-git-branches.html) of the ["The Turing Way handbook to reproducible, ethical and collaborative data science"](https://book.the-turing-way.org/), used under a [Creative Commons Attribution 4.0 License](https://github.com/the-turing-way/the-turing-way/blob/main/LICENSE.md).](../static/turing-way-branches.png){#fig-branches}
 
 ## Checking your branches
 
-By default, your work is on the initial branch, usually called `main` (or `master`). 
-We recommend changing your initial branch name to `main`, as discussed in the [setup](setup.qmd) chapter.
-You can list the available branches in your repository by using `git branch`.
+By default, your work is on the default branch, usually called `main` (or `master`). 
+We recommend changing your default branch name to `main`, as discussed in the [setup](setup.qmd) chapter.
+You can list the available branches in your repository by using `git branch`:
 
-```{bash}
+```{bash, filename="Code"}
 git branch 
 ```
 
-This should return the following output:
+This should return the following output, if you have not yet created a new branch:
 
-```{bash}
+```{bash, filename="Output"}
+#| code-copy: false
 * main
 ```
 
-This output indicates that you are currently on the branch named `main`. 
+This output indicates that you are currently "on the branch" named `main`. 
 The asterisk (`*`) in front of the branch name indicates the active or current branch in your Git repository.
 
-In Git, you can have multiple branches in your project, and this command helps you see the list of available branches. 
+In Git, you can have multiple branches in your project, and the `git branch` helps you see the list of available branches. 
 The one with the asterisk is the branch where your working directory is currently positioned. 
 In this case, `main` is the active branch.
 If there were other branches listed without an asterisk, it means they exist, but you are not currently "on" those branches.
 You are currently "on main".
+
+You can also use `git status` to check which branch you are on.
+`git status` will return an output similar to the following:
+
+```{bash, filename="Output"}
+#| code-copy: false
+On branch main
+nothing to commit, working tree clean
+```
 
 ## Creating a new branch
 
 To create a new branch, use `git branch` followed by a branch name.
 For example, to create a new branch called `feature` run the following command:
 
-```{bash}
+```{bash, filename="Code"}
 git branch feature
 ```
 
 Now you can use `git branch` again to confirm the creation of the new branch.
 
-```{bash}
+```{bash, filename="Code"}
 git branch 
 ```
 
 This should return the following output:
 
-```{bash}
+```{bash, filename="Output"}
+#| code-copy: false
   feature
 * main
 ```
 
-Your newly created branch will show up, but your active branch should still be `main`.
+Your newly created branch (here, `feature`) will show up, but your active branch should still be `main`.
+Note that `feature` is just a name.
+You could also call your branch `banana`, if you want.
+Find out more about naming convention for Git branches in the [section on best practices](#best-practices) below.
 
-::: {.callout-tip title="Common `git branch` flags" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git branch` flags" collapse="true"}
 `-a` or `--all`: Lists both local and remote branches.
 
 `-r or --remote`: Lists only remote branches.
@@ -114,19 +143,20 @@ To switch to another branch, you can use `git checkout` or `git switch`.
 
 For example, enter the following command to switch to the newly created `feature` branch:
 
-```{bash}
+```{bash, filename="Code"}
 git switch feature
 ```
 
 If you switched branches successfully, you should receive an output similar to this:
 
-```{bash}
+```{bash, filename="Output"}
+#| code-copy: false
 Switched to branch 'feature'
 ```
 
 Now you can work on this branch as usual, staging and committing changes, as introduced in the chapter on [basic Git commands](first-steps-git.qmd).
 
-::: {.callout-note title="I just created a new Git repository but can't switch the branch! What is going on?" collapse="true"}
+::: {.callout-note title="Help: I just created a new Git repository but can't switch the branch! What is going on?" collapse="true"}
 
 Before you can switch branches for the first time, you need to have made at least one commit on your current branch (for example, on the `main` branch).
 This requirement ensures that there's a baseline history in your repository, allowing Git to manage changes.
@@ -145,14 +175,22 @@ It can be used for branch switching, but it may have some ambiguity in its synta
 
 ### Switching branches with uncommitted changes
 
+::: {.callout-caution collapse="false" appearance="simple"}
+This section references some more advanced Git commits.
+If you're facing the issue that Git prevents you from switching branches, read on.
+If you're just learning about branches and switching branches worked without any problems, feel free to skip this section for now.
+:::
+
 When you have uncommitted changes in your working directory that do not conflict with the branch you're switching to, Git allows you to switch branches without losing those changes.
-Your uncommitted changes are effectively brought over to the new branch. This feature can be particularly useful when you've started making changes and then realize you're on the wrong branch or need to move your work to a different context.
+Your uncommitted changes are effectively brought over to the new branch.
+This feature can be particularly useful when you've started making changes and then realize you're on the wrong branch or need to move your work to a different context.
 
 Git is designed to prevent you from switching branches if there's a risk of overwriting your changes.
 This means that Git will not allow you to switch branches if your uncommitted changes would cause conflicts with the branch you're attempting to switch to.
 If you try to switch branches with uncommitted changes you will get an error message similar to:
 
-```{bash}
+```{bash, filename="Output"}
+#| code-copy: false
 error: Your local changes to the following files would be overwritten by checkout:
         chapters/branches.qmd
 Please commit your changes or stash them before you switch branches.
@@ -160,49 +198,52 @@ Aborting
 ```
 
 The message specifies the file with modifications, and indicates an aborted branch switch due to uncommitted changes.
-
 To resolve this and switch branches safely, you have a few options:
 
-**Commit your changes:**
-Use the commit process to save your work on the current branch. This involves staging your changes with `git add` and then committing them with `git commit`.
+1. **Commit your changes:**
+Use the commit process to save your work on the current branch.
+This involves staging your changes with `git add` and then committing them with `git commit`.
 This workflow is explained in detail in the chapter on [basic Git commands](first-steps-git.qmd).
 
-**Stash your changes:**
+2. **Stash your changes:**
 If you're not ready to commit, you can use `git stash` to temporarily shelve your changes.
 This clears your working directory, allowing you to switch branches. 
 Your stashed changes can be reapplied later. 
 The process of stashing, and other techniques to manage uncommitted changes, are covered in the [Stashing and Co. chapter](intermediate-commands.qmd).
 
-**Discard your changes:** 
+3. **Discard your changes:** 
 If the changes are not needed, you can remove them using `git reset` to unstage all changes. 
 This action should be used with caution as it will erase your modifications. 
 This command is also explained in the [Stashing and Co. chapter](intermediate-commands.qmd).
 
 ## Merging branches
 
-After you worked on a branch for some time you might want to incorporate your work into the `main` branch. 
+After you've worked on a branch for some time and you completed work on the feature that you wanted to implement, you might want to incorporate your work into the `main` branch (or any other target branch). 
 You can do this using the `git merge` command. 
-Switch to your `main` branch (using `git switch` or `git checkout`) and then use:
+To do this, switch to your `main` branch (using `git switch` or `git checkout`) and then use:
 
-```{bash}
-git merge feature
+```{bash, filename="Code"}
+git merge feature # <1>
 ```
+1. Replace `feature` with the name of your branch, if needed.
 
 Note, that your current branch (the branch that you are "on") should be the one that you want to merge changes *into* from another branch.
 For example, if you want to merge changes *into* the `main` branch *from* the `feature` branch, you need to be on `main` and then merge the `feature` branch.
 
-If you have not yet made any changes you should get the following output:
+If you have not yet made any changes on the `feature` branch you should get the following output:
 
-```{bash}
+```{bash, filename="Output"}
+#| code-copy: false
 Already up to date.
 ```
 
 This output indicates that the branch you are trying to merge is already fully incorporated into the branch you are currently on.
 In other words, there are no new changes in the `feature` branch that need to be merged because your current branch already contains all the changes from the `feature` branch.
 
-If you have changed file(s) in your folder, you should get an output similar to:
+If you have changed file(s) in your folder and committed them on the `feature` branch, you'll likely get an output similar to:
 
-```{bash}
+```{bash, filename="Output"}
+#| code-copy: false
 Updating 555ba0c..994bb8d
 Fast-forward
  
@@ -215,134 +256,132 @@ The output reveals a **"fast-forward" merge** operation, where changes from comm
 The common starting point of the two branches is commit `555ba0c` and commit `994bb8d` marks the latest commit in the merged branch.
 A "fast-forward" merge, the simplest form of merges, updates your position to the latest changes without creating a new commit.
 In this example, the merge modified only one file, the `example.txt` file, introducing four new lines denoted by `4 ++++`.
+For more information about different types of merges, see the [section on "Types of merges"](#types-of-merges) below.
 
 ## Merge conflicts
 
 Merge conflicts occur when Git is unable to automatically resolve differences between two branches during a merge. 
 This happens when both branches include conflicting changes to the same part of a file. 
-Git simply can't determine which version of the code should take precedence, and as a result, it requests manual intervention from the developer. 
-It's like when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep. 
-So, it raises its hand and asks you, the developer, to step in and help.
+Git simply can't determine which version of the code should be favored, and as a result, it requests manual intervention from you, the developer.
+It's similar to when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep.
+Merge conflicts are more likely to occur in collaborative projects, where multiple people modify the same files.
+However, they can also happen in projects where you work on your own.
 
 ### Avoiding merge conflicts
 
 Merge conflicts can be a bit of a headache. 
-If you only work locally on your computer, without a remote repository (for example, an online version of your repository on [GitHub](github-intro.qmd)), you can avoid merge conflicts easier, and might not even need different branches.
+If you only work locally on your computer, without a remote repository (for example, an online version of your repository on [GitHub](github-intro.qmd)), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches.
 However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts.
-That being said, 
-
-Employing good development practices can minimize the occurrence of merge conflicts.
+That being said, employing good development practices can minimize the occurrence of merge conflicts.
 Regularly pulling changes from the remote repository into your local branch (using `git pull`) and keeping your branch up-to-date can help identify and resolve conflicts early.
 You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on [GitHub](github-intro.qmd).
 
-### Resolving merge conflicts
+### Example merge conflict
+
+Let's look at an example merge conflict.
+You can recreate this example yourself by following the instructions below.
+
+1. Create a new file, for example called `example.txt`.
+1. Create and switch to a new branch, for example called `feature`.
+1. Add some text to the first line of the `example.txt` file, for example `Git is super`.
+1. Add and commit your changes on the `feature` branch.
+1. Switch back to your `main` branch.
+1. Add some text to the first line of the `example.txt` file, for example `Git is cool`.
+Note that `example.txt` should be empty because the previous text was added on the `feature` branch, not on the `main` branch.
+1. Add and commit your changes on the `main` branch.
+1. Merge the changes on the `feature` branch into the `main` branch: `git merge feature`.
+1. Congrats, you create a merge conflict!
+
+### Understanding merge conflicts
 
 When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. 
-Git is like a referee saying, "Hey, programmers, sort out your differences!"
+If you try to merge branches with conflicting changes in a file the output looks similar to this:
 
-If you try to merge with conflicting changes in a file the output looks similar to this:
-
-```{bash}
+```{bash, filename="Output"}
+#| code-copy: false
 Auto-merging example.txt
-CONFLICT (content): Merge conflict in example.txt
+CONFLICT: Merge conflict in example.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Git will highlight the conflicting parts in the affected file(s), and you must choose the desired changes or modify them to create a consistent version. 
-To do this, open up the file(s) with conflicts in a text editor, and you'll see the conflicting sections marked with `<<<<<<<`, `=======`, and `>>>>>>>`.
+During a merge conflict, you can run `git status` to see which files are in conflict:
 
-This might look something like this:
+```{bash, filename="Output"}
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
 
-```{console}
-\<<<<<<< HEAD
-# Recipe: Chocolate Cake
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   example.txt
 
-Ingredients:
-- 2 cups all-purpose flour
-- 1 3/4 cups granulated sugar
-- 3/4 cup unsweetened cocoa powder
-- ...
-
-Instructions:
-1. Preheat the oven to 350°F (175°C).
-2. In a large bowl, whisk together dry ingredients.
-3. Add eggs, milk, oil, and vanilla. Beat well.
-4. Stir in boiling water.
-5. Pour into prepared pans.
-\=======
-# Recipe: Chocolate Brownies
-
-Ingredients:
-- 1 cup unsalted butter
-- 2 cups granulated sugar
-- 4 large eggs
-- ...
-
-Instructions:
-1. Preheat the oven to 350°F (175°C).
-2. Melt butter, then stir in sugar, eggs, and vanilla.
-3. Combine dry ingredients and gradually add to the butter mixture.
-4. If desired, fold in chopped nuts.
-5. Spread the batter evenly into the prepared pan.
-\>>>>>>> 
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-The lines between `<<<<<<< HEAD` and `=======` represent the changes that were made in your current branch.
-The section between `=======` and `>>>>>>>` represents the changes from the branch you are trying to merge into your current branch.
 
-Manually edit the conflicting sections to the desired state, removing the conflict markers. 
-You might want to keep some changes from your current branch, some from the incoming branch, or make entirely new changes.
+Git will highlight the conflicting parts in the affected file(s), and you must choose the desired changes or modify them to create a consistent version. 
+To do this, open up the file(s) with conflicts in a text editor of your choice, and you'll see the conflicting sections marked with the following indicators:
 
+- `<<<<<<<`
+- `=======`
+- `>>>>>>>`
+
+In our example, this will look like this:
+
+```{tex, filename="Output"}
+<<<<<<< HEAD
+Git is cool
+=======
+Git is super
+>>>>>>> feature
+```
+
+`<<<<<<<` indicates the beginning of lines that encountered a merge conflict.
+The initial lines are from the file where you were attempting to merge the changes (in this case, the changes on the `main` branch).
+The lines between `<<<<<<< HEAD` and `=======` represent the changes that were made in your current branch (here, the `main` branch).
+`=======` shows the break point for comparison.
+It divides the changes the user has committed (above) from the changes brought in from the merge (below) for visual comparison.
+The section between `=======` and `>>>>>>>` represents the changes from the branch you are trying to merge into your current branch (here, the `feature` branch).
+`>>>>>>>` shows the end of the lines with a merge conflict.
+
+### Resolving merge conflicts
+
+To resolve the merge conflict, you need to **manually edit the conflicting sections to the desired state**, removing the conflict markers.
+You might want to keep some changes from your current branch, some from the merged branch, keep only the changes from one branch, or make entirely new changes.
 After editing the file it might look something like this:
 
-```{console}
-# Recipe: Chocolate Cake
-
-Ingredients:
-- 2 cups all-purpose flour
-- 1 3/4 cups granulated sugar
-- 3/4 cup unsweetened cocoa powder
-- ...
-
-Instructions:
-1. Preheat the oven to 350°F (175°C).
-2. In a large bowl, whisk together dry ingredients.
-3. Add eggs, milk, oil, and vanilla. Beat well.
-4. Stir in boiling water.
-5. Pour into prepared pans.
-
-# Recipe: Chocolate Brownies
-
-Ingredients:
-- 1 cup unsalted butter
-- 2 cups granulated sugar
-- 4 large eggs
-- ...
-
-Instructions:
-1. Preheat the oven to 350°F (175°C).
-2. Melt butter, then stir in sugar, eggs, and vanilla.
-3. Combine dry ingredients and gradually add to the butter mixture.
-4. If desired, fold in chopped nuts.
-5. Spread the batter evenly into the prepared pan.
+```{bash, filename="Output"}
+Git is super cool!
 ```
 
-In this example, the conflict has been resolved by keeping both sets of changes. 
-The sections for "Chocolate Cake" and "Chocolate Brownies" are now both present in the file.
+In this example, the conflict has been resolved by mixing both sets of changes. 
+Parts of the changes from both branches are now present in the file.
+If you are done you can use `git add` to stage the resolved changes:
 
-If you are done, save the file and use `git add` to stage the resolved changes:
-
-```{bash}
+```{bash, filename="Code"}
 git add example.txt
 ```
 
 Once all conflicts are resolved, proceed with the commit, for example:
 
-```{bash}
+```{bash, filename="Code"}
 git commit -m "Resolve merge conflict"
 ```
 
 Your branches should now be merged and your conflict resolved.
+
+Before you try to fix more complex merge conflicts, make sure you understand the changes that don't match up to avoid making things more complicated.
+Resolving conflicts can be tricky, especially when merging branches with many differences.
+But remember that your old versions are safe, so you can fix the issue without affecting them.
+
+### Aborting a merge
+
+If you feel like you are stuck in the merge process and want to get back to the state of the branch before you started the merge process, you can also abort the merge using:
+
+```{bash, filename="Code"}
+git merge --abort
+```
 
 ::: {.callout-tip title="Common `git merge` flags" collapse="true"}
 `--abort`: Abort the current merge operation and reset the branch to its pre-merge state.
@@ -354,7 +393,7 @@ Your branches should now be merged and your conflict resolved.
 
 ### Types of merges
 
-Git supports different types of merges to cater to various situations in software development. 
+Git supports different types of merges to support various situations in software development. 
 Each merge type has its purpose and advantages, allowing developers to choose the most suitable approach based on their specific project needs and workflow.
 
 #### Standard merge
@@ -363,50 +402,40 @@ In a standard merge, Git takes each commit from the merged branch and adds them 
 It creates a new "merge commit", a special record that marks when the merge happened, showing that the branches are now combined.
 To perform a standard merge, use the following command:
 
-```{bash}
+```{bash, filename="Code"}
 git merge 
 ```
 
-#### Fast Forward Merge
+#### Fast-forward merge
 
 If no new commits were made to the base branch since the feature was created, Git automatically does a "Fast Forward Merge".
 It's like the standard merge, but no new merge commit is created.
 It's as if you made the commits directly on the base branch.
 Since the base branch remained unchanged, there's no need to mark a separate merge in the history. You can ensure a fast-forward merge by using the `--ff-only` flag:
 
-```{bash}
+```{bash, filename="Code"}
 git merge --ff-only
 ```
 
 If you do not want a fast-forward merge, you can ensure a merge commit with the `--no-ff` flag.
 
-```{bash}
+```{bash, filename="Code"}
 git merge --no-ff
 ```
 
-#### Squash and Merge
+#### Squash and merge
 
 When you squash a branch, Git combines all commits of the branch into a single commit.
 This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately.
 Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.
 
-```{bash}
+```{bash, filename="Code"}
 git merge --squash
 ```
 
-::: {.callout-tip title="Common `git merge` flags" collapse="true"}
-`--interactive` or `-i`: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
-
-`--continue`: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
-
-`--abort`: Abort the current rebase operation and return the branch to its original state before the rebase.
-
-`--skip`: Skip the current commit during an interactive rebase.
-
-`-p` or `--preserve-merges`: Preserve merge commits during the rebase.
-
-`--autosquash`: Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
-:::
+Squashing commits can be desirable in a situation where you don't want others to see the history of individual commits made on the `feature` branch.
+For example, imagine writing the draft of a paper and you've made a couple of changes in the early phase of writing the draft that you consider silly and you only want your collaborators to see the final draft version.
+In this situation, you could squash all previous commits and only merge the latest version of your draft.
 
 ## Deleting Branches
 
@@ -414,31 +443,75 @@ Once a branch has served its purpose and is no longer needed, it can be deleted.
 Removing branches that are no longer active helps maintain a clean and manageable branch structure.
 To delete a branch you can use the `git branch` command, followed by a `-d` flag.
 
-```{bash}
+```{bash, filename="Code"}
 git branch -d feature
 ```
 
 This should yield an output similar to:
 
-```{bash}
-Deleted branch feature (was 3343f36).
+```{bash, filename="Output"}
+#| code-copy: false
+Deleted branch feature.
 ```
 
-You can only delete a branch, you are not currently on.
+You can only delete a branch, you are *not* currently on.
 
-## Branches best practices
+## Best practices
 
-### Naming branches
+### Keep the main branch clean
+
+The central purpose of branches is to **keep the main branch clean**.
+In practice, this means that you should regularly work on separate branches and only integrate new changes into the main branch when they are ready.
+The main branch should only contain work that is complete and rightfully belongs in the main version of your project.
+For example, if you use Git to track changes in code (like analysis scripts) you should make sure that the version of the code on the main branch always works, i.e., can be executed without errors.
+Any addition to your analysis code would be developed on a separate branch and only integrated with the main branch if the code can be executed without errors.
+
+### Name branches consistently
 
 Adopt a **consistent naming convention** for branches that accurately **reflects their purpose**.
-This can include prefixes like `feature/`, `bug/`, or `hotfix/` followed by a descriptive name.
+This can include prefixes like `feature/`, `bug/`, followed by a descriptive name.
 Clear and standardized branch names make it easier to identify the purpose of each branch.
 
-### Branch Lifecycle
+::: {#tip-branch-names .callout-tip collapse="true" title="Find out more: Naming conventions for Git branches"}
+
+**Basic recommendations for branch names**
+
+1. **Lowercase and hyphen-separated:** Use lowercase letters for your branch names and hyphens to separate words.
+For example: `feature/new-login` or `bugfix/header-styling`.
+1. **Alphanumeric characters:** Limit branch names to alphanumeric characters (a-z, 0-9) and hyphens, avoiding punctuation, spaces, underscores, or other non-alphanumeric characters.
+1. **No continuous hyphens:** Avoid using continuous hyphens in branch names, as in `feature--new-login`, which can be confusing.
+1. **No trailing hyphens:** Refrain from ending branch names with a hyphen, as in `feature-new-login-`.
+1. **Descriptive:** Choose descriptive and concise names that reflect the focus of the work carried out on the branch.
+
+**Branch prefixes**
+
+Using prefixes in branch names helps to quickly identify the purpose of a branch.
+Below are two common branch types with their corresponding prefixes:
+
+- **Feature Branches:** These branches are used for developing new features.
+Use the prefix `feature`, for example: `feature/new-analysis`.
+- **Bugfix Branches:** These branches are used to fix bugs (errors or problems with the code).
+Use the prefix `bugfix`, for example: `bugfix/fix-typo`.
+
+For more recommendations on branch naming conventions, see for example @amin2023.
+
+:::
+
+### Keep branches specific and short-lived
 
 Create branches with a **specific goal or task** in mind, and aim to **keep them short-lived**.
+As for your main branch, you should try to keep individual branches clean by focusing on adding one new feature per branch.
+This approach ensures that completed features can be merged into the main branch independently of those that are still in progress.
 Long-lived branches can lead to conflicts and make it harder to merge changes.
 Once the task is complete or the feature is integrated, consider deleting the branch.
+
+### Avoiding merge conflicts
+
+The best way to deal with merge conflicts, is to try and avoid them in the first place.
+You can reduce the chances of conflicts by keeping branches tidy, concentrating on one task, and involving fewer files.
+In addition, it's good practice to merge each other's changes into your work frequently.
+Before merging, understand the content in both branches.
+If multiple people have worked on the same branches, open communication and good project management can also help to stay informed about each other's changes.
 
 ## Acknowledgements & further reading
 
@@ -451,7 +524,7 @@ We recommend these references for further reading:
 #| message: false
 #| warning: false
 #| output: asis
-bibtexkeys = c("GitHub2023", "chacon2014")
+bibtexkeys = c("GitHub2023", "chacon2014", "community2022", "amin2023")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
 
@@ -464,4 +537,3 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 #| warning: false
 knitr::kable(table_cheatsheet(name = "branches"), format = "markdown", row.names = FALSE)
 ```
-
