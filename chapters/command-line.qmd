@@ -504,23 +504,17 @@ After using `clear`, you can continue working in a fresh and uncluttered termina
 
 ### Saving command line history
 
-When you exit your command line or terminal session, your command history is not automatically saved by default. 
-To review the commands you've used, you can utilize the history command, which works on both macOS and Windows (when using Git Bash).
+When you exit the command line, your command history is not automatically saved by default. 
+To review the commands you've used, you can use the `history` command, which works on both macOS and Windows (when using Git Bash).
 
-If you're interested in preserving your history for documentation or learning purposes, you can easily save either your current session's history or the entire history stored by your terminal to a text file using the following command: 
+If you're interested in keeping your command history for documentation or learning purposes, you can easily save either your current session's history or the entire history stored by your terminal to a text file using the following command: 
 
 ```{bash, filename="Code"}
 history > history.txt
 ```
 
-This command will capture your entire command history and save it to a file named history.txt in your current directory. 
-You can view this file directly from the terminal or through your usual file viewer.
-
-If you prefer to add the history to an existing file instead of creating a new one, use the `>>` symbol instead of `>` to avoid overwriting the existing content:
-
-```{bash, filename="Code"}
-history >> history.txt
-```
+This command will capture your entire command history and save it to a file named `history.txt` in your current directory.
+You can then view this file directly from the command line or through your usual file viewer.
 
 ## List files and folders
 
@@ -743,6 +737,16 @@ echo "This is a list of all my favorite recipes." >> recipes.txt
 ```
 
 This adds the provided text *to the existing content* of `recipes.txt `.
+
+::: {.callout-warning collapse="false" title="Difference between using `>>` or `>` with `echo` when writing short text into files"}
+
+When you use the command `echo "Git is cool" >> file.txt`, it will append the text "Git is cool" to the end of the file `file.txt`.
+If the file does not exist, it will be created and the text "Git is cool" will be added.
+
+On the other hand, when you use the command `echo "Git is cool" > file.txt`, it will write the text "Git is cool" to a file named `file.txt`.
+**If the file already exists, it will overwrite its contents** with the new text "Git is cool".
+
+:::
 
 ### Viewing file content
 
