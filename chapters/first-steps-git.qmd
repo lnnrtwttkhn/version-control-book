@@ -629,13 +629,13 @@ To not stage or commit these files by accident, you can use the `.gitignore` fil
 ## Ignoring files and folders: `.gitignore`
 
 `.gitignore` is a special file.
-It is used in Git to specify files and directories that should be ignored and not tracked.
-When you create a `.gitignore` file, place it inside your Git repository and specify filenames inside it.
-Git will then exclude these files and directories from being staged or committed, e.g. when using `git add -A`. which normally stages all your files.
+It is used to specify files and folders that should be ignored and not tracked by Git.
+When you create a `.gitignore` file, place it inside your Git repository and specify names of files or folders inside it.
+Git will then exclude these files and directories from being staged or committed, for example when using `git add -A` which normally stages all your files.
 
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
 Files that can recreated from the code, like for example `.png` plots from R code, should also be included in your project's `.gitignore` file.
-Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project fules without distractions from unnecessary files.
+Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project files without distractions from unnecessary files.
 `.gitignore` can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
 Huge files, like big data files should also not be committed, since they can slow down working with your repository.
 To version control files with a big size, tools like [DataLad](https://www.datalad.org) are more appropriate.
@@ -647,7 +647,7 @@ Alternatively, create the file in your favorite text editor.
 touch .gitignore
 ```
 
-`.gitignore` will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag in the `ls` command.
+`.gitignore` will be a hidden file, so to make it show up in the command line, you will have to use the `-a` flag in the `ls` command.
 For details on listing of files and folders, see the chapter on the [command line](command-line.qmd).
 
 ```{zsh filename="Code"}
