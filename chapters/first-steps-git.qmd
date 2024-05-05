@@ -35,13 +35,13 @@ Next, use the command line to navigate to the folder which you want to initializ
 ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#navigating-the-file-system))].
 Once you are in the desired folder, run the `git init` command to initialize the folder as a Git repository:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git init
 ```
 
 You should see an output similar to:
 
-```{bash filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 Initialized empty Git repository in /foldername/.git/
 ```
@@ -53,7 +53,7 @@ You only need to use `git init` once per folder.
 
 You can also skip creating a folder manually and only use the `git init` command:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git init /Users/yourusername/Desktop/foldername # <1>
 ```
 1. Replace `/Users/yourusername/Desktop/foldername` with the (absolute or relative) path to the folder which you want to initialize as a Git repository.
@@ -84,7 +84,7 @@ In short: Don't mess with the `.git` folder.
 
 Short version (if you know what you are doing): To remove Git from a folder run:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 rm -rf .git
 ```
 
@@ -111,13 +111,13 @@ For example, if you make changes to a file within a subfolder and commit those c
 
 After you initialized a Git repository, you can use `git status` to receive the current file tracking status from Git.
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git status
 ```
 
 If you initialized a new Git repository, you should see an output similar to the following:
 
-```{bash filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 On branch main
 
@@ -174,7 +174,7 @@ For example, `git status -s -b` will display a short and concise output along wi
 
 In the next step, please create an empty text file within your repository ^[:bulb: Tip: Use `touch` (details [here](command-line.qmd#creating-files))].
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 touch filename.txt
 ```
 
@@ -187,7 +187,7 @@ You can also use any other method or application for creating files.
 After you initialized a Git repository and added a file, you can use `git status` to receive the current file tracking status from Git again.
 This time, you should see an output similar to the following:
 
-```{bash filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 On branch main
 
@@ -221,13 +221,13 @@ It bridges between your modified files and the next commit.
 
 For example, you can stage a specific file like this:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git add filename.txt
 ```
 
 If you use `git status` again, your file(s) should now show up under "Changes to be committed".
 
-```{bash filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 On branch main
 
@@ -242,7 +242,7 @@ Your change to the file (or the addition of it to the project directory) is now 
 Especially if you have many files, you don't have to add every file one by one, but you can simply use the `-A` flag.
 This means if you want to stage every file in your project for preparation of your next commit, you can use:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git add -A
 ```
 
@@ -279,13 +279,13 @@ To create a commit, use the `git commit` command followed by the flag `-m` and a
 The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
 If you just use `git commit` without adding a commit massage, the text editor of [your choosing](setup.qmd), opens up and lets you type in a commit message.
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git commit -m "Add filename.txt file"
 ```
 
 You should see output similar to the following:
 
-```{bash filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 [main (root-commit) e9ea807] Add filename.txt file
  1 file changed, 0 insertions(+), 0 deletions(-)
@@ -316,7 +316,7 @@ from [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html#git-commit)
 
 In this situation, you command line probably looks like this:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 git commit -m "Add filename.txt
 >
@@ -338,7 +338,7 @@ While the commit message is usually a single short (less than 50 character) line
 
 To add an additional description directly in the command line, add an extra `-m` after the commit message, followed by the description in quotes:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git commit -m "Message" -m "Description"
 ```
 
@@ -366,13 +366,13 @@ It allows you to add new changes to the previous commit or modify its commit mes
 
 To look at the history of your past commits, you can use the `git log` command.
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git log
 ```
 
 You should see output similar to the following:
 
-```{bash filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 commit e9ea80781ceed7cc3d6bff0c7bfa71f320ec1f60 (HEAD -> main)
 Author: Jane Doe <jane@example.com>
@@ -421,7 +421,7 @@ It allows you to **compare two different versions of your file(s)**.
 By default it shows you any uncommitted changes since the last commit.
 You can explore this by pasting any additional text in your `.txt` file, for example:
 
-```{tex filename="Code"}
+```{zsh filename="Code"}
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
 Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -430,13 +430,13 @@ Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deseru
 
 You can then look at the changes using:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git diff
 ```
 
 You should see an output similar to the following:
 
-```{tex filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 +++ b/filename.txt
 @@ -0,0 +1 @@
@@ -456,7 +456,7 @@ Lines that are identical between the two versions are not explicitly shown.
 You can also use `git diff` to **compare two specific commits**. 
 For example, if you want to compare the current state of your file with a commit from a few commits ago:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git diff <commit-A> <commit-B>
 ```
 
@@ -464,13 +464,13 @@ Instead of `<commit-A>` and `<commit-B>`, you use the commit hashes, that you ca
 
 If you've staged some changes using `git add`, you can **compare the staged changes to your last commit**.
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git diff --staged
 ```
 
 If you only want to look at the changes of a specific file, you can specify that file.
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git diff <filename> # <1>
 ```
 1. Replace `<filename>` with the actual name of the file that you want to inspect.
@@ -530,7 +530,7 @@ It is standard to start the title with an **imperative verb** to indicate the pu
 It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary).
 Here is an example:
 
-```{bash filename="Example"}
+```{zsh filename="Example"}
 git commit -m "Implement user registration feature
 
 This commit adds the user registration functionality to the application. It includes the following changes:
@@ -563,7 +563,7 @@ This flag can be useful if you forgot to include something in your last commit, 
 You can also combine `--amend` with other flags.
 To change the commit message of your last commit (without opening an editor) try:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git commit --amend -m "changed commit message"
 ```
 
@@ -571,7 +571,7 @@ Replace `"changed commit message"` with your actual improved commit message.
 
 If you want to to keep your commit message but include new changes to your file(s) in you last commit, you can use:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git commit --amend --no-edit
 ```
 
@@ -643,14 +643,14 @@ To version control files with a big size, tools like [DataLad](https://www.datal
 To create a `.gitignore` file from the command line, navigate to your repository and use the `touch` command.
 Alternatively, create the file in your favorite text editor.
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 touch .gitignore
 ```
 
 `.gitignore` will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag in the `ls` command.
 For details on listing of files and folders, see the chapter on the [command line](command-line.qmd).
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 ls -a
 ```
 
@@ -662,7 +662,7 @@ Instead of specifying files you want Git to ignore for each folder, you can also
 To do this, you create a file named `.gitignore_global` (or any name you prefer) in your users's home directory (located, for example, at `/Users/yourusername`). 
 Then, you configure Git to use this global file by running:
 
-```{bash filename="Code"}
+```{zsh filename="Code"}
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
@@ -711,7 +711,7 @@ Ignore auxiliary files like `.aux`, `.log`, `.bbl`, and `.blg` files generated d
 
 ::: {.callout-tip title="Example `.gitignore` file for an R project" collapse="true"}
 
-```{bash} 
+```{zsh} 
 
 # R-specific
 *.Rproj.user/
