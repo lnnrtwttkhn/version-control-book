@@ -59,13 +59,13 @@ By default, your work is on the default branch, usually called `main` (or `maste
 We recommend changing your default branch name to `main`, as discussed in the [setup](setup.qmd) chapter.
 You can list the available branches in your repository by using `git branch`:
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git branch 
 ```
 
 This should return the following output, if you have not yet created a new branch:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 * main
 ```
@@ -82,7 +82,7 @@ You are currently "on main".
 You can also use `git status` to check which branch you are on.
 `git status` will return an output similar to the following:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 On branch main
 nothing to commit, working tree clean
@@ -93,19 +93,19 @@ nothing to commit, working tree clean
 To create a new branch, use `git branch` followed by a branch name.
 For example, to create a new branch called `feature` run the following command:
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git branch feature
 ```
 
 Now you can use `git branch` again to confirm the creation of the new branch.
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git branch 
 ```
 
 This should return the following output:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
   feature
 * main
@@ -143,13 +143,13 @@ To switch to another branch, you can use `git checkout` or `git switch`.
 
 For example, enter the following command to switch to the newly created `feature` branch:
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git switch feature
 ```
 
 If you switched branches successfully, you should receive an output similar to this:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 Switched to branch 'feature'
 ```
@@ -189,7 +189,7 @@ Git is designed to prevent you from switching branches if there's a risk of over
 This means that Git will not allow you to switch branches if your uncommitted changes would cause conflicts with the branch you're attempting to switch to.
 If you try to switch branches with uncommitted changes you will get an error message similar to:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 error: Your local changes to the following files would be overwritten by checkout:
         chapters/branches.qmd
@@ -232,7 +232,7 @@ For example, if you want to merge changes *into* the `main` branch *from* the `f
 
 If you have not yet made any changes on the `feature` branch you should get the following output:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 Already up to date.
 ```
@@ -242,7 +242,7 @@ In other words, there are no new changes in the `feature` branch that need to be
 
 If you have changed file(s) in your folder and committed them on the `feature` branch, you'll likely get an output similar to:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 Updating 555ba0c..994bb8d
 Fast-forward
@@ -297,7 +297,7 @@ Note that `example.txt` should be empty because the previous text was added on t
 When a merge conflict arises, you should not view it as a limitation of Git but rather as a helpful feature. 
 If you try to merge branches with conflicting changes in a file the output looks similar to this:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 Auto-merging example.txt
 CONFLICT: Merge conflict in example.txt
@@ -306,7 +306,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 During a merge conflict, you can run `git status` to see which files are in conflict:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 On branch main
 You have unmerged paths.
   (fix conflicts and run "git commit")
@@ -329,7 +329,7 @@ To do this, open up the file(s) with conflicts in a text editor of your choice, 
 
 In our example, this will look like this:
 
-```{tex, filename="Output"}
+```{zsh, filename="Output"}
 <<<<<<< HEAD
 Git is cool
 =======
@@ -351,7 +351,7 @@ To resolve the merge conflict, you need to **manually edit the conflicting secti
 You might want to keep some changes from your current branch, some from the merged branch, keep only the changes from one branch, or make entirely new changes.
 After editing the file it might look something like this:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 Git is super cool!
 ```
 
@@ -359,13 +359,13 @@ In this example, the conflict has been resolved by mixing both sets of changes.
 Parts of the changes from both branches are now present in the file.
 If you are done you can use `git add` to stage the resolved changes:
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git add example.txt
 ```
 
 Once all conflicts are resolved, proceed with the commit, for example:
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git commit -m "Resolve merge conflict"
 ```
 
@@ -379,7 +379,7 @@ But remember that your old versions are safe, so you can fix the issue without a
 
 If you feel like you are stuck in the merge process and want to get back to the state of the branch before you started the merge process, you can also abort the merge using:
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git merge --abort
 ```
 
@@ -402,7 +402,7 @@ In a standard merge, Git takes each commit from the merged branch and adds them 
 It creates a new "merge commit", a special record that marks when the merge happened, showing that the branches are now combined.
 To perform a standard merge, use the following command:
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git merge 
 ```
 
@@ -413,13 +413,13 @@ It's like the standard merge, but no new merge commit is created.
 It's as if you made the commits directly on the base branch.
 Since the base branch remained unchanged, there's no need to mark a separate merge in the history. You can ensure a fast-forward merge by using the `--ff-only` flag:
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git merge --ff-only
 ```
 
 If you do not want a fast-forward merge, you can ensure a merge commit with the `--no-ff` flag.
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git merge --no-ff
 ```
 
@@ -429,7 +429,7 @@ When you squash a branch, Git combines all commits of the branch into a single c
 This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately.
 Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git merge --squash
 ```
 
@@ -443,13 +443,13 @@ Once a branch has served its purpose and is no longer needed, it can be deleted.
 Removing branches that are no longer active helps maintain a clean and manageable branch structure.
 To delete a branch you can use the `git branch` command, followed by a `-d` flag.
 
-```{bash, filename="Code"}
+```{zsh, filename="Code"}
 git branch -d feature
 ```
 
 This should yield an output similar to:
 
-```{bash, filename="Output"}
+```{zsh, filename="Output"}
 #| code-copy: false
 Deleted branch feature.
 ```
