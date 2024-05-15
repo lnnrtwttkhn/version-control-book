@@ -1,7 +1,8 @@
 ---
 categories: [beginner, basics, setup]
+image: ../static/gear-solid.svg
 abstract: |
-  In this chapter, we will configure Git!
+  In this chapter, we will set up and configure Git!
 ---
 
 # Setup
@@ -11,148 +12,328 @@ abstract: |
 {{< include ../objectives/_objectives-setup.qmd >}}
 :::
 
+::: {.callout-note appearance="minimal"}
+<h5>Exercises</h5>
+{{< include ../exercises/_exercises-setup.qmd >}}
+:::
+
 ## Configuring Git
 
-Once you [installed Git](installation.qmd), it is time to set it up.
+Once you [installed Git](installation.qmd), it's time to set it up.
 We will use the the [command line](command-line.qmd) to set up and configure Git.
-The `git config` command is used to get and set configuration. 
-It allows you to customize Git according to your preferences and requirements. 
-To look at all the different configuration commands you can use
+The `git config` command is used to get and set configuration settings. 
+It allows you to customize Git according to your preferences and requirements.
+This chapter will focus on the most important and necessary configurations.
+To look at all the different configuration options, enter `git config` into the command line:
 
-```{bash}
+```{bash filename="Code"}
 git config
 ```
 
-This chapter will focus on the most important and / or necessary configurations.
+In Git, configuration values can be stored at three different configuration levels: the *system*, *global*, and *local* level.
+Find out more in the box below how you can set configuration values at each level.
 
-::: {.callout-tip title="What are the different configuration levels?" collapse="true"}
+::: {.callout-tip title="Find out more: What are the different Git configuration levels?" collapse="true"}
 Git configuration values can be stored at **three different configuration levels**:
 
 **System-level configuration**: This level applies configuration values to every user on the system and all their repositories.
-To read or write configuration values at this level, you need administrative or superuser privileges.
+To read or write configuration values at this level, you need administrative privileges.
+To set a system-level configuration, use the following command syntax:
 
-**User-level configuration**: This level is specific to an individual user.
+```{bash}
+git config --system <key> <value>
+```
+
+**Global-level** or **user-level configuration**: This level is specific to an individual user.
 Configuration values set at this level will be applied to all repositories owned by the user.
+To set a global-level configuration, use the following command syntax:
+
+```{bash filename="Code"}
+git config --global <key> <value>
+```
 
 **Repository-level configuration**: This level is specific to a particular Git repository.
-The configuration values set at this level override values set at the system-level and user-level configurations for that specific repository.
+The configuration values set at this level **override values set at the system-level and user-level configurations** for that specific repository.
 By default, Git reads from and writes to this file when you use the `git config` command without any additional options.
+
+```{bash filename="Code"}
+git config --local <key> <value>
+```
+
+Keep in mind that when you set configurations at different levels, **Git looks for the configuration from the most specific level to the least specific** (local > global > system).
+The configuration set at the local level will override the configurations set at the global and system levels for that particular repository.
+
 :::
 
-### {{< fa person >}} Identifying yourself
+::: {.callout-tip title="Find our more: How to enable copy and paste in Git Bash?" collapse="true"}
+
+By default, copy and pasting is disabled Git Bash for Windows.
+To enable it, follow these steps:
+
+1. Click the Git Bash icon on the **top-left corner**, and choose **options**.
+1. Go to **Keys menu** and enable Copy and Paste (Ctrl/Shift + Ins) option.
+1. **Apply and Save.**
+
+:::
+
+### Identifying yourself
 
 Before you start using Git, it's important to set your username and email address. 
 This information is crucial because Git uses it to identify the author of each change you track with Git. 
 By associating your changes with your username and email, it allows others (including future you) to see who made the changes which facilitates transparency and collaboration within a project.
-You will be able connect Git to remote repositories like GitHub, using this email address. 
+You will be able to connect Git to remote repositories like GitHub using this email address. 
 So it makes sense to set your email address to the one you use (or will use) to create a GitHub account.
 
-Setting your username and email address is a one-time setup process, but you can always update them later, if needed. 
-To perform this configuration, you can use the command line:
+Setting your username and email address is a one-time setup process on a new computer, but you can always update them later, if needed. 
+To perform this configuration using the command line, use the following command:
 
-```{bash}
-git config --global user.name "Jane Doe"
-git config --global user.email jane@example.com
+```{bash filename="Code"}
+git config --global user.name "Jane Doe" # <1>
+git config --global user.email jane@example.com # <2>
 ```
+1. Replace `"Jane Doe"` with your own username.
+1. Replace `jane@example.com` with your own email address.
 
 Make sure to replace `"Jane Doe"` with your own username and `jane@example.com` with your own email address.
 
-::: {.callout-tip title="FAQ: Which name should I use for Git?" collapse="true"}
-It can be your **GitHub username**, your **real name**, or something informative about you.
-This name will be attached to the changes you track with Git, so **choose something that makes sense** to others and yourself in the future.
+::: {.callout-tip title="FAQ: Which username should I use for Git?" collapse="true"}
+Your username will be attached to the changes you track with Git, so **choose something that is meaningful and informative** for others and yourself in the future.
+After all, one main purpose of Git is to be able to track of *who* made which changes and when.
+This can help a lot in the future when you need to figure out who to talk to about a particular change.
+Your username can be your **real name**, your **GitHub username**, or something informative about you.
 :::
 
-### {{< fa code-branch >}} Configure the default name of the initial branch
+### Configuring the default name of the initial branch
 
+Git uses a concept called "branches" to allow working on different versions of the same project.
+Branches will be introduced in a [later chapter](chapters.qmd) of this book.
+For now, you can think of branches as parallel versions of your repository contents.
 
-Git uses a concept called "branches" to enable working on different versions of the same project. 
-(More on this will be explained later in the book.)
-
-On most installations of Git, by default, the name "master" for the initial branch is used when creating a new repository.
+On most installations of Git, by default, the name "master" is used for the initial branch when creating a new Git repository.
 However, there has been a growing movement to transition to using "main" as the default branch name instead.
 One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons [here](https://sfconservancy.org/news/2020/jun/23/gitbranchname/) or  [here](https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/)). 
-To configure the default branch name to "main" in Git, you can use the following command
+To configure the default branch name to "main" in Git, you can use the following command:
 
-```{bash}
+```{bash filename="Code"}
 git config --global init.defaultBranch main
 ```
 
-## {{< fa gear >}} Check your settings
+## Checking your Git settings
 
 You can verify if your configurations were set correctly using the following command:
 
-```{bash}
+```{bash filename="Code"}
 git config --list
 ```
 
-This should create a long output list, in which you should find your set configurations, for example:
+This should create a long output list, in which you should find your configurations, for example:
 
-```{bash}
+```{bash filename="Output"}
+#| code-copy: false
 user.name=Jane Doe
 user.email=jane@example.com
 init.defaultbranch=main
 ```
 
-## {{< fa circle-question >}} Calling for Help
+## Calling for help
 
 The `--help` option in Git is a command that provides you with access to the built-in Git documentation and help resources.
 When you run a Git command followed by `--help`, Git displays information about that command, including its usage, available options, and a brief description of its functionality.
 
 For example, the following command will open up a browser in the command line containing information about the `git config` command.
 
-```{bash}
+```{bash filename="Code"}
 git config --help
 ```
 
 To quit the browser use `q`.
 
-While the command provides extensive documentation and information about Git commands, it is arguably not the most beginner-friendly resource.
+While the `git config --help` command provides extensive documentation and information about Git commands, it is arguably not the most beginner-friendly resource.
+Platforms like [Stack Overflow](https://stackoverflow.com/questions/tagged/git) provide help for many questions around using Git.
 
-## {{< fa pen >}} Text editor
+## Configuring your text editor
 
-Sometimes, Git might open up a text editor inside the command line, and it can be annoying if you end up in an editor you don't like or don't know how to use. 
-The standard text editor on macOS and when using "Git for Windows" is called [Vim](https://www.vim.org/), which is widely known for being difficult to use. 
+Sometimes Git might open up a text editor inside the command line, and it can be annoying if you end up in an editor that you don't like or don't know how to use. 
+The standard text editor on macOS and "Git for Windows" is called [Vim](https://www.vim.org/) (or Vi), which has a (perhaps questionable) popularity for being difficult to use.
 You can find more information about the challenges of using Vim (and some funny memes) [here](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
 To check out which text editor Git is using, you can use:
 
-```{bash}
+```{bash filename="Code"}
 git config --get core.editor
 ```
 
 If you have not changed your text editor yet, the output should be empty.
-This means that Git is using the command line´s default editor, which should be **Vim** if you are using a Mac or Git for Windows. 
+This means that Git is using the command line's default editor, which should be Vim if you are using macOS or "Git for Windows". 
 To make sure, you can use:
 
-```{bash}
+```{bash filename="Code"}
 git var GIT_EDITOR
 ```
 
-If the output is: `vim` or `vi`, your systems default editor is indeed Vim/Vi.
-(Vim is an improved version of Vi, but there are virtually no differences between them for our usecase.)
-
-In this situation, you can either pick up on the basics of Vim (see below) or simply change the text editor.
-Also note that you will typically not have to use the text editor in the command line a lot.
+If the output is `vim` or `vi`, your system's default editor is indeed Vim / Vi.
+Vim is an improved version of Vi, but there are virtually no differences that are relevant for learning Git or the scope of this book.
+In this situation, you can either pick up on the [basics of Vim](#vim-basics) (see below) or simply change the text editor.
+Also note that, depending on your workflow, you will typically not have to use a text editor in the command line a lot.
+For beginners, we recommend to become familiar with the basics of your system's default text editor (in most cases, Vim) to be able to perform basic operations (at least, how to exit it) when interacting with Git.
 
 ### Vim Basics
 
 To start [Vim](https://www.vim.org/), open the command line and type `vim` followed by the filename of the file that you want to edit (for example, `vim file.txt`).
-In Vim, you have two main modes: "Insert" mode for typing and "Normal" mode for navigation and command execution.
-Inside Vimn to switch from "Normal" mode to "Insert" mode, press `i` for inserting text.
-To save your changes and exit Vim, press `Esc` to enter "Normal" mode, then type `:w` to save, and `:q` to quit.
-Vim's strength lies in its powerful commands for text manipulation, such as copying, pasting, and searching, which are executed in "Normal" mode.
+In Vim, you have two main modes: *Insert* mode for typing your text and *Normal* mode for navigation and command execution.
+Vim will always start in *Normal* mode, which can be confusing.
+The command line will probably look like this:
 
-For a more detailed and interactive tutorial, you can check out [openvim.com](https://www.openvim.com).
+```{bash filename="Output"}
+#| code-copy: false
+
+~
+~
+~
+```
+
+To switch from *Normal* mode to *Insert* mode, press <kbd>I</kbd> on the keyboard.
+You can see that `-- INSERT --` appears at the bottom of the command line window.
+This should look like this:
+
+```{bash filename="Output"}
+#| code-copy: false
+
+~
+~
+~
+-- INSERT --
+```
+
+You can now start writing any text into the file.
+This could look like this:
+
+```{bash filename="Output"}
+#| code-copy: false
+Cool, I am using Vim!
+~                                                                         
+~                                                                         
+~                                                                         
+-- INSERT --
+```
+
+::: {.callout-tip collapse="true" title="FAQ: I entered `vim` without providing a filename like `filename.txt`? What do I do now?"}
+
+If you entered `vim` into the command line without providing a filename, a welcome screen similar to the following will appear:
+
+```{bash filename="Output"}
+#| code-copy: false
+~                                                                               
+~                              VIM - Vi IMproved                                
+~                                                                               
+~                               version 9.0.2136                                
+~                           by Bram Moolenaar et al.                            
+~                 Vim is open source and freely distributable                   
+~                                                                               
+~                        Help poor children in Uganda!                          
+~                type  :help iccf<Enter>       for information                  
+~                                                                               
+~                type  :q<Enter>               to exit                          
+~                type  :help<Enter>  or  <F1>  for on-line help                 
+~                type  :help version9<Enter>   for version info                 
+~                                                                               
+```
+
+To make things easy: You can exit Vim again by pressing <kbd>Esc</kbd>, then entering `:q!` and pressing <kbd>Enter</kbd>.
+
+:::
+
+When you're done writing, here's how to save and exit Vim:
+
+1. Switch back to *Normal* mode using <kbd>Esc</kbd>.
+1. Save your changes by typing `:w` (then press <kbd>Enter</kbd>)
+1. To exit Vim, type `:q` (and press <kbd>Enter</kbd>).
+
+You can also combine commands in Vim, so you can use `:wq` to save your changes and exit Vim with just one command (don't forget to hit <kbd>Enter</kbd>).
+This will look like this:
+
+```{bash filename="Output"}
+#| code-copy: false
+Cool, I am using Vim!
+~                                                                         
+~                                                                         
+~                                                                         
+:wq
+```
+
+::: {.callout-tip collapse="true" title="Error: `E37: No write since last change (add ! to override)`"}
+
+This error might occur if you made changes to a file using Vim and tried to exit Vim using `:q` but didn't use `:w` before to save the changes.
+Vim therefore warns you that you didn't "write since last change":
+
+```{bash filename="Output"}
+#| code-copy: false
+
+~
+~
+~
+E37: No write since last change (add ! to override)
+```
+
+You can now decide to either (1) save the change using `:w` then quit using `:q` (or combine with `:wq`) or, as Vim suggests, override or discard the changes using `:q!`.
+
+```{bash filename="Output"}
+#| code-copy: false
+
+~
+~
+~
+:q!
+```
+
+:::
+
+For a more detailed and interactive tutorial of Vim, you can check out [openvim.com](https://www.openvim.com).
+For more information about common Vim commands, also see the box below.
+
+::: {.callout-tip title="Find out more: Vim commands" collapse="true"}
+To navigate through the text in Normal mode without using the arrow keys, you can use `h` to move left, `j` to move down, `k` to move up, and `l` to move right. 
+If you need to delete a character in *Normal mode*, simply press `x`.
+This will remove the character under the cursor. 
+To delete an entire line, use `dd`.
+
+Undoing changes is also straightforward in Vim. 
+Press `u` in Normal mode to undo the last action, and `Ctrl + r` to redo an action if you've undone too much.
+
+Sometimes, you might want to search for a specific word or phrase in your file. 
+To do this, press `/` followed by the word or phrase you're looking for, and then press `Enter`. 
+Vim will jump to the first instance of that text. 
+Press `n` to find the next instance or `N` to find the previous instance.
+
+To replace one word with another throughout the entire file, you can use the substitute command: `:%s/old/new/g`.
+This command will replace all occurrences of `"old"` with `"new"`.
+If you want to confirm each replacement, add a `c` at the end: `:%s/old/new/gc`.
+
+For editing multiple lines at once, you can enter Visual mode by pressing `v` in Normal mode. 
+Move the cursor to select multiple lines or characters, then you can perform operations on that selection, like deleting with `d` or copying with `y`. 
+To paste the copied or cut text, use `p`.
+
+To open a new file or switch between multiple files in Vim, use the `:e filename` command. To list all open files (buffers) and switch between them, use `:ls` to list and `:b number` to switch, where number is the buffer number.
+:::
 
 ### Changing your text editor
 
-If you want to change the standard text editor, to one you are more comfortable with, there a lot of alternatives like [Nano](https://www.nano-editor.org/docs.php), [Visual Studio Code](https://code.visualstudio.com) or [Notepad++](https://notepad-plus-plus.org/downloads/).
-If you have decided to use a different text editor you can use the following command (replace `editor-name` with the name of your preferred text editor):
+If you want to change the standard text editor to one that you are more comfortable with, there a lot of alternatives like [Nano](https://www.nano-editor.org/docs.php), [Visual Studio Code](https://code.visualstudio.com) or [Notepad++](https://notepad-plus-plus.org/downloads/).
+If you have decided to use a different text editor you can use the following command (replace `"EDITOR_NAME"` with the name of your preferred text editor):
 
-```{bash}
-git config --global core.editor editor-name
+```{bash filename="Code"}
+git config --global core.editor "EDITOR_NAME" # <1>
+```
+1. Replace `"EDITOR_NAME"` with the name if your preferred text editor.
+
+For example, to set [Nano](https://www.nano-editor.org/docs.php) as the default text editor, use the following command:
+
+```{bash filename="Code"}
+git config --global core.editor "nano"
 ```
 
-From now on, when Git requires you to interact with a text editor, it will use the one you have set.
+More information about associating text editors with Git, for example Visual Studio Code, can be found in the [GitHub documentation](https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git).
+
+From now on, when Git requires you to interact with a text editor, it will open the one that you have set.
 If you ever want to change your Git editor in the future, you can repeat the above steps and specify the new editor command or path.
 
 ## Unsetting configuration
@@ -160,9 +341,37 @@ If you ever want to change your Git editor in the future, you can repeat the abo
 If you want to undo a configuration setting, you can use the `--unset` in the `git config` command.
 For example, to unset the global configuration of your preferred text editor (`core.editor`) you can use the following command:
 
-```{bash}
-git config --global --unset core.editor 
+```{bash filename="Code"}
+git config --global --unset core.editor
 ```
+
+## The `.gitconfig` file
+
+The configurations that you apply to Git using the `git config` command are stored in a configuration file called `.gitconfig` that can usually be found in the user's home directory.
+
+::: {.callout-caution collapse="true" title="Mini Exercise: View the contents of `.gitconfig` with one command from the command line."}
+
+As always, there are multiple ways how to view the contents of `.gitconfig` with one command from the command line.
+Here is one example using the `cat` command in combination with the `~`:
+
+```{bash filename="Code"}
+cat ~/.gitconfig
+```
+
+This command will result in an output similar to this:
+
+```{bash filename="Output"}
+#| code-copy: false
+[user]
+	email = jane@example.com
+	name = Jane Doe
+[init]
+	defaultBranch = main
+```
+
+:::
+
+You can manually edit the `.gitconfig` file to customize your Git environment, but it's often more convenient to use Git commands like `git config` to manage these settings.
 
 ## Acknowledgements and further reading
 
@@ -180,6 +389,8 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
 
 ## Cheatsheet
+
+In this chapter, we have learned about the following commands:
 
 ```{r}
 #| eval: true

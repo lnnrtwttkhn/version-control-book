@@ -22,14 +22,19 @@
     "mv FILE.txt <FOLDER>": "Move `FILE.txt` into `<FOLDER>`",
     "mv <FOLDER_OLD> <FOLDER_NEW>": "Rename `<FOLDER_OLD>` to `<FOLDER_NEW>`",
     "ls -alh *.csv": "Use a wildcard to list all `.csv` files",
-    "rm -r <FOLDER>": "Remove the folder `<FOLDER>`"
+    "rm -r <FOLDER>": "Remove the folder `<FOLDER>`",
+    "history": "Display the command history of the current terminal session",
+    "history > history.txt": "Save the entire command history to a file named 'history.txt'",
+    "history >> history.txt": "Adds the entire command history to the end of the file named          'history.txt'"
+    
+
   },
   "config": {
     "git config": "Overview of config commands",
-    "git config --global user.name": "Set Username",
-    "git config --global user.email": "Set Email",
-    "git config --global core.editor": "Set Editor",
-    "git config --global init.defaultBranch main": "Set default branch name",
+    "git config --global user.name": "Set username",
+    "git config --global user.email": "Set email address",
+    "git config --global core.editor": "Set text editor",
+    "git config --global init.defaultBranch main": "Set default branch name to `main`",
     "git config --list": "View set configurations"
   },
   "basic": {
@@ -55,7 +60,9 @@
     "git switch": "Switching branches",
     "git checkout": "Switching branches",
     "git merge": "Merging branches",
-    "git rebase": "A different way of integrating changes from two branches"
+    "git merge --abort": "Aborting a merge",
+    "git merge --squash": "Squach commit on branch and merge",
+    "git branch -d feature": "Deleting the `feature` branch"
   },
   "stashing": {
     "git stash": "Stores made changes for later use",
