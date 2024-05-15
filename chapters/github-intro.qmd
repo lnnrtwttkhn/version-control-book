@@ -252,6 +252,14 @@ Before you make changes to your newly cloned repository you should use the `cd` 
 This step of changing into the repository directory is crucial. 
 Forgetting to do so may lead to confusion, as any Git commands you run will not affect the intended folder but rather the one associated with the current working directory.
 
+To clone the repository into a different folder, you can specify the new folder name as an additional "argument" in the git clone command:
+
+```{zsh filename="Code"}
+git clone https://github.com/username/repository.git new-folder
+```
+
+This will create a directory named new-folder and clone the repository into it. 
+
 ### Repository settings
 
 To access the settings of a GitHub repository, go to the main page of the GitHub repository you want to configure and look for the "Settings" tab, usually located towards the right side of the repository's navigation bar.
