@@ -198,7 +198,7 @@ To initialize an existing folder as a GitHub repository, you first need to creat
 
 To add a remote repository to your folder, navigate to your folder using the command line and use the `git remote` command.
 
-```{bash}
+```{zsh filename="Code"}
 git remote add origin https://github.com/yourusername/repositoryname.git
 ```
 
@@ -208,7 +208,7 @@ The term "origin" is a conventionally used name for the default remote repositor
 
 Your are now able to upload your files to the remote repo using `git push`.
 
-```{bash}
+```{zsh filename="Code"}
 git push -u origin main
 ```
 
@@ -239,7 +239,7 @@ You can find the repository's HTTPS URL on the repository page, if you click on 
 Then use the command line to navigate to the directory where you want to clone the repository.
 Then use the `git clone` command followed by the URL of the remote repository:
 
-```{bash}
+```{zsh filename="Code"}
 git clone https://github.com/username/repository.git
 ```
 
@@ -280,13 +280,13 @@ Provide a brief description of the changes in the "Commit changes" section at th
 
 Now you can open up your command line once again, and in the relevant directory use the `git pull` command to update your local file with the change made on GitHub.
 
-```{bash}
+```{zsh filename="Code"}
 git pull
 ```
 
 If the pull is successful and there are no conflicts, you should see a message like this:
  
-```{bash}
+```{zsh filename="Output"}
 Updating abc123..def456
 Fast-forward file.txt | 2 +- 1 file changed, 
 1 insertion(+), 1 deletion(-)
@@ -355,14 +355,14 @@ It's important to note that you need appropriate access and permissions to push 
 If you do not have write access, you won't be able to push your changes.
 If you do not specify a branch, Git will push the one "you are on" in the moment.
 
-```{bash}
+```{zsh filename="Code"}
 git push origin main
 ```
 
 The command above pushes your local commits to the remote repository called `origin` on the branch `main`.
 After a successful push, you will get a message like this:
 
-```{bash}
+```{zsh filename="Output"}
 Enumerating objects: 17, done.
 Counting objects: 100% (17/17), done.
 Delta compression using up to 8 threads
