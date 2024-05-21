@@ -1,11 +1,18 @@
 :memo: Upload your repository to GitHub
 
-1   Create a new repository on GitHub.
+1   Create a new repository on GitHub. (Do not initialize the repository with a `README` file.)
 1   Set the remote URL to your GitHub repository.
 1.  Push your changes to GitHub.
 
-:memo: Clone your repository, push and pull changes
+:memo: Create a `README` file on GitHub
 
-1. Clone your uploaded repository to a different location on your computer.
-1. Make changes and push them to GitHub.
-1. Pull the changes into your original repository.
+1. Navigate to your repository on GitHub, click "Add file", and select "Create new file".
+1. Name the file README.md, add a brief description of your project, and provide a commit 
+1. message.
+1. Click the green "Commit new file" button to save the README file to the repository.
+
+:memo: Fetch and merge your changes
+
+1. Run `git fetch` to retrieve the latest changes from the remote repository.
+1. Run git merge origin/main to merge the fetched changes into your local branch.
+1. Verify that your local repository now includes the changes made on GitHub.
