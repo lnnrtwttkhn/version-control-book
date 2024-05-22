@@ -22,26 +22,130 @@ execute:
 
 ## Introduction
 
-Purpose of the chapter
+Understanding the internal work of Git provides significant benefits for anyone managing projects with version control.
+This knowledge can e.g. lead to better control over project changes and more effective troubleshooting when issues arise. 
+By learning about the inner workings of Git, particularly the `.git` folder, you can gain a deeper understanding of how Git tracks changes and maintains the history of your work. 
+This understanding is not just for developers.
+Everybody can use these insights to manage their projects more effectively.
 
-Concept of Git internals 
+The `.git` folder is the "heart" of any Git repository. 
+It contains all the metadata and object data that Git uses to manage and track your project versions. 
+By unterstanding its structure and contents, you can better understand how Git operate. 
+This chapter aims to clearly explain what is going on in the `.git` folder, making its structure and function more clear.
 
+Git's architecture is built around the concept of snapshots and content addressability. I
+nstead of storing differences between file versions, Git captures the state of the entire repository at each commit. 
+These snapshots are stored as objects in the `.git` directory, each identified by a unique SHA-1 `hash`. 
+This design ensures that every object is fixed and verifiable, allowing Git to quickly and reliably reconstruct the history of any project.
+
+By the end of this chapter, you will have a clearer understanding of how Git manages your project's history, enabling you to use Git more effectively and troubleshoot any issues with confidence.
 
 ## `.git` folder
 
-Significance, Location...
+The `.git` folder is the basis of any Git repository.
+When you initialize a Git repository using `git init`, this hidden folder is created inside your project. 
+It contains all the metadata and object data that Git needs to manage and track your project's versions.
+This data is stored in files and folders that you can normally open and view.
+If you use `ls -a` in your `.git` folder to show all files and folders in it, you should normally get the output:
 
-### `HEAD`
+```{zsh, filename="Output"}
+config
+description
+HEAD
+hooks/
+info/
+objects/
+refs/
+```
+
+This chapter is going to explain all files and folders of these down below.
 
 ### `config` file
 
+The config file within the .git directory is where Git stores 
+configuration settings (e.g. name, email...) specific to that repository, that are not set globally.
+The `config` file is organized in sections, each containing related configuration variables.
+For instance:
+
+```
+[user]: Contains the user's name and email.
+[core]: General settings, such as file modes.
+[remote "origin"]: Details about the default remote repository.
+
+```
+
+Instead of using `git config` you can also edit this file directly to make changes.
+
 ### `description` file
+
+The `description` file within the `.git` directory plays a minor but specific role in the context of Git repositories.
+The `description` file is most commonly used in bare repositories.
+In bare repositories, Git web interfaces and hosting services use the content of this file to display information about the repository to users.
+It should contain a contain a simple, plain-text description of the repository.
+
+A bare repository is a special repository without a working directory, meaning you can not directly edit files in this repository as it *only* contains the `.git` folder.
+This type of repository can be created using `git init --bare` or `git clone --bare`.
+It is typically used in software devolopments for collaboration.
+
+### `HEAD` file
+
+The `HEAD` file in the `.git` folder points to the latest commit on the current branch you are working on. 
+Typically, `HEAD` contains a reference to the branch name, such as `ref: refs/heads/main`. 
+This means `HEAD` is pointing to the `main` branch.
+When you checkout a specific commit rather than a branch, `HEAD` is said to be in a "detached" state, pointing directly to that commit’s hash.
+
+You view the content of your own `HEAD` file simply navigate in your `.git` folder using `cd .git` and then use .... on Windows/`open HEAD` on Mac OS.
+This chapter is going to explain some of the file/folder´s content in detail down below.
+
+### `hooks` folder
+
+The `hooks` folder allows you to automate various tasks in your Git workflow. 
+Git hooks are scripts that are executed by specific events in the Git lifecycle, such as committing changes or pushing to a repository. 
+To create a hook you have to write a script inside a file in `.git/hooks`.
+Git uses predefined names for hook scripts. 
+You cannot choose arbitrary names; instead, you must use the names that Git recognizes for the various hooks. 
+Git hooks are typically written in bash, but can be in any programming language, provided the scripts are executable on your system. 
+
+::: {.callout-tip title="Example Hook " collapse="false"}
+
+#### Commit message hook:
+
+This hook would run after a commit message is entered but before the commit is finalized.
+To ensure that Git recognizes it, you have to place it inside `.git/hooks` and name it: `commit-msg` (without any file ending)
+Hooks that run before a a commit message is input, can be useful for enforcing commit message standards.
+
+**Example:**
+
+```
+#!/bin/sh
+COMMIT_MSG_FILE=$1
+MSG=$(cat $COMMIT_MSG_FILE)
+if ! echo "$MSG" | grep -q "Reviewed"
+then
+  echo "Commit message must contain the word 'Reviewed'"
+  exit 1
+fi
+
+```
+
+The script ensures commit messages include the word "Reviewed".
+This could be useful in a workflow where commits need to be reviewed by another team member before they are accepted.
+It reads the commit message from a file provided as an argument and checks if the commit message contains the word "Reviewed".
+If the word is not found, it prints an error message and prevents the commit.
+
+
+There are many more ways to use hooks (e.g. pre-commit, pre-push etc..). 
+
+Link to Ressource?
+:::
+
+### `info` folder
+
+The `info` folder contains information and configurations 
 
 ### `objects` folder
 
 ### `refs` folder
-
-### `hooks` folder
 
 ### `logs` folder
 
@@ -54,6 +158,8 @@ Significance, Location...
 ### Commits
 
 ### Pack files
+
+### Garbage Collection
 
 ## Practical Tips
 
