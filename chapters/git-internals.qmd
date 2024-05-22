@@ -1,0 +1,83 @@
+---
+image: ../static/
+categories: [intermediate]
+abstract: |
+  How does Git work under the hood?
+engine: knitr
+execute:
+  eval: false
+---
+
+# Git internals
+ 
+::: {.callout-tip appearance="minimal"}
+<h5>Learning Objectives</h5>
+
+:::
+
+::: {.callout-note appearance="minimal"}
+<h5>Exercises</h5>
+
+:::
+
+## Introduction
+
+Purpose of the chapter
+
+Concept of Git internals 
+
+
+## `.git` folder
+
+Significance, Location...
+
+### `HEAD`
+
+### `config` file
+
+### `description` file
+
+### `objects` folder
+
+### `refs` folder
+
+### `hooks` folder
+
+### `logs` folder
+
+## How Git stores data
+
+### Hashes
+
+### Blobs
+
+### Commits
+
+### Pack files
+
+## Practical Tips
+
+### Inspect Objects
+
+### Repairing `.git` folder
+
+### Exploring `.git` folder
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("GitHub2023", "chacon2014", "community2022", "amin2023")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "branches"), format = "markdown", row.names = FALSE)
