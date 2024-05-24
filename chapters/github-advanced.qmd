@@ -126,15 +126,17 @@ Delete the feature branch to maintain a tidy project structure.
 
 ## `README` file 
 
-As mentioned earlier, the `README` file can be created together with your repository or can be added later. 
-The `README` file should contain "a description of your repository" but what does that entail?
+A `README` is a text file that provides basic information about a project.
+As mentioned earlier, the `README` file can be created together with your repository or can be added later.
+In the context of a Git repository, the `README` file should contain "a description of your repository".
 The exact content depends on your repository, but some general things that you might want to include are:
 
 - **Project description**:
-What function does this repository serve, what are it's key features?
+What function does this repository serve and what are it's key features?
 
 - **Installation instructions** (if applicable): Explain how to install and set up your project, including any dependencies or prerequisites.
-Provide clear instructions to help users or contributors get started with your project  quickly.
+This is particularly relevant for repositories that contain programming code.
+Provide clear instructions to help users or contributors get started with your project quickly.
 
 - **Usage** (if applicable):
 Provide examples or code snippets demonstrating how to use your project.
@@ -156,7 +158,7 @@ Choose a license that aligns with your project's goals.
 You can use [choosealicense.com](https://choosealicense.com) for guidance. 
 The chosen license influences contributions to your project.
 
-::: {.callout-tip title="View the `README.md` file of this project." collapse="true" appearance="simple" icon="false"}
+::: {.callout-tip title="Find out more: View the `README.md` file of this project." collapse="true" appearance="simple" icon="true"}
 {{< include ../README.md >}}
 :::
 
@@ -164,7 +166,6 @@ The chosen license influences contributions to your project.
 
 A `README` is typically a Markdown (`.md`) file, which means you can use [Markdown]({{< var links.markdown >}}) syntax in it.
 Markdown allows you to easily format text, create lists, include links, and embed images.
-For an introduction, you can check out the [Quarto workshop slides]({{< var links.quarto-workshop >}}) by the creators of this book.
 
 ## Git blame
 
@@ -177,9 +178,9 @@ git blame recipes.txt
 ```
 
 If you are working solo on a text file, the result should not be very interesting.
-However if you collaborate on code, this command can be very useful (for blame **or** praise!)
+However, if you collaborate on code, this command can be very useful (for blame **or** praise!)
 
-::: {.callout-tip title="Common `git blame` flags" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git blame` flags" collapse="true"}
 `-L <start>,<end>`:
 Specifies a line range to blame. For example, `git blame -L 10,20 file.txt` will blame lines 10 to 20 of the file.
 
@@ -195,11 +196,11 @@ Shows the commit timestamp for each line.
 
 ## Template repositories
 
-Template repositories, or repository templates, on GitHub allow you to create a repository that acts as a starting point for others. 
+Template repositories, or repository templates, on GitHub allow you to create a repository that acts as a starting point for other new repositories. 
 Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. 
 This simplifies the process of setting up new projects that share common characteristics or follow best practices. 
 Template repositories have a "Use this template" button on a template repository page, as shown in @fig-template. 
-Click it to provide a new, repository name and description, and then create the repository with your desired settings.
+Click it, provide a new repository name and an optional description and decide whether to include all branches and whether to create a public or private repository.
 
 ![Screenshot of a template repository on GitHub](../static/github-template.png){#fig-template}
 
@@ -218,18 +219,17 @@ It also prevents accidental or unauthorized changes from being merged directly.
 -   Enable the options you want to enforce for the `main` branch. 
 -   Click "Create" to save the branch protection rule.
 
-A common option includes to **require pull request reviews**.
+A common option is to **require pull request reviews**.
 This requires one or more approving reviews before changes can be merged.
 Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.
 
 ## Alternatives to GitHub
 
 While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub.
-Not only since it was bought by Microsoft in 2018, who subsequently [used public repositories to train their AI tool](https://www.vice.com/en/article/g5vmgw/github-users-want-to-sue-microsoft-for-training-an-ai-tool-with-their-code).
 Some prominent alternative include [GitLab](https://about.gitlab.com/de-de/), [Bitbucket](https://bitbucket.org), [SourceForge](https://sourceforge.net) or [Codeberg](https://codeberg.org/).
 
 Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in. 
-On the other hand there are also advantages to GitHub like it's relatively easy to use interface, the rich ecosystem and it's extensive integration to third-party tools.
+On the other hand there are also advantages to GitHub, for example it's user-friendly interface, the rich ecosystem and it's extensive integration to third-party tools.
 
 ## Acknowledgements
 
