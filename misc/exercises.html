@@ -174,37 +174,43 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub: Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/github-advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/tags-and-releases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/intermediate-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,7 +255,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#first-steps-with-git" id="toc-first-steps-with-git" class="nav-link active" data-scroll-target="#first-steps-with-git">First steps with Git</a></li>
   <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
+  <li><a href="#github-intro" id="toc-github-intro" class="nav-link" data-scroll-target="#github-intro">GitHub: Intro</a></li>
+  <li><a href="#github-advanced" id="toc-github-advanced" class="nav-link" data-scroll-target="#github-advanced">GitHub: Advanced</a></li>
   <li><a href="#tags-and-releases" id="toc-tags-and-releases" class="nav-link" data-scroll-target="#tags-and-releases">Tags and Releases</a></li>
   <li><a href="#graphical-user-interfaces" id="toc-graphical-user-interfaces" class="nav-link" data-scroll-target="#graphical-user-interfaces">Graphical User Interfaces</a></li>
   <li><a href="#stashing-and-co." id="toc-stashing-and-co." class="nav-link" data-scroll-target="#stashing-and-co.">Stashing and Co.</a></li>
@@ -289,26 +296,48 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Create and resolve a merge conflict</strong></p>
 <p>Deliberately create a merge conflict by editing the same section of a file on two separate branches and attempting to merge them. An example can be found <a href="../chapters/branches.html#example-merge-conflict">further below</a> in this chapter. Resolve the merge conflict and delete the feature branch afterwards.</p>
 </section>
-<section id="github" class="level2">
-<h2 class="anchored" data-anchor-id="github">GitHub</h2>
-<p><span class="emoji" data-emoji="memo">📝</span> Upload your repository to GitHub</p>
-<ul>
-<li>Create a new repository on GitHub.</li>
+<section id="github-intro" class="level2">
+<h2 class="anchored" data-anchor-id="github-intro">GitHub: Intro</h2>
+<p><span class="emoji" data-emoji="memo">📝</span> Task 1: Upload your local repository to GitHub</p>
+<ol type="1">
+<li>Create a new repository on GitHub (do not initialize the remote repository with any files).</li>
 <li>Set the remote URL to your GitHub repository.</li>
-<li>Push your changes to GitHub.</li>
-</ul>
-<p><span class="emoji" data-emoji="memo">📝</span> Clone your repository, push and pull</p>
-<ul>
-<li>Clone your uploaded repository to a different location on your computer.</li>
-<li>Make changes and push them to GitHub.</li>
-<li>Pull the changes into your original repository.</li>
-</ul>
-<p><span class="emoji" data-emoji="memo">📝</span> Bonus: Create a Pull Request</p>
-<ul>
+<li>Push the changes on your <code>main</code> branch to GitHub.</li>
+</ol>
+<p><span class="emoji" data-emoji="memo">📝</span> Task 2: Create a <code>README</code> file on GitHub</p>
+<ol type="1">
+<li>Navigate to your repository on GitHub, click “Add file”, and select “Create new file”.</li>
+<li>Name the file <code>README.md</code>, add a brief description of your project, and provide a commit message.</li>
+<li>Click the green “Commit new file” button to save the <code>README.md</code> file to the repository.</li>
+</ol>
+<p><span class="emoji" data-emoji="memo">📝</span> Task 3: Fetch and merge your changes</p>
+<ol type="1">
+<li>Run <code>git fetch</code> to retrieve the latest changes from the remote repository.</li>
+<li>Run <code>git merge origin/main</code> to merge the fetched changes into your local <code>main</code> branch.</li>
+<li>Verify that your local repository now includes the changes made on GitHub.</li>
+</ol>
+<p><span class="emoji" data-emoji="memo">📝</span> Task 4: Mimicking collaboration: Clone, push, pull</p>
+<ol type="1">
+<li>Clone your repository to a <em>different location</em> on your computer.</li>
+<li>Commit at least one change and push back to GitHub.</li>
+<li>Pull changes from GitHub to the original repository on your computer.</li>
+<li>Delete your newly cloned repository.</li>
+</ol>
+</section>
+<section id="github-advanced" class="level2">
+<h2 class="anchored" data-anchor-id="github-advanced">GitHub: Advanced</h2>
+<p><span class="emoji" data-emoji="memo">📝</span> Task 1: Create a Pull Request using GitHub flow</p>
+<ol type="1">
 <li>Create a new branch in your local repository.</li>
-<li>Add, commit, and push changes in the new branch.</li>
+<li>Add, commit, and push changes on the new branch.</li>
 <li>Create and merge a pull request for this new branch on GitHub</li>
-</ul>
+</ol>
+<p><span class="emoji" data-emoji="memo">📝</span> Task 3: Protect your branch</p>
+<ol type="1">
+<li>Go to your repository’s “Settings” and select “Branches”.</li>
+<li>Under “Branch protection rules”, click “Add rule” and enter “main” in the “Branch name pattern” field.</li>
+<li>Enable the desired protection options (for example, require pull request reviews) and click “Create” to save the rule.</li>
+</ol>
 </section>
 <section id="tags-and-releases" class="level2">
 <h2 class="anchored" data-anchor-id="tags-and-releases">Tags and Releases</h2>
@@ -804,7 +833,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/rewriting-history.html" class="pagination-link" aria-label="Rewriting History">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting History</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

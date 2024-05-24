@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.554">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Version Control of Code and Data - 8&nbsp; GitHub: Advanced</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/tags-and-releases.html" rel="next">
+<link href="../chapters/github-intro.html" rel="prev">
+<link href="../static/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/github-advanced.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../static/logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Version Control of Code and Data</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://lennartwittkuhn.com/version-control-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/issues" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-bug"></i></a>
+    <a href="https://github.com/lnnrtwttkhn/version-control-book/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contents</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../misc/objectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning Objectives</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intro-version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/command-line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Command Line</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/first-steps-git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">First steps with Git</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/branches.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub: Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/github-advanced.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/tags-and-releases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/issues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intermediate-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../misc/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../misc/cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheet</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../misc/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../misc/acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../misc/contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#forking" id="toc-forking" class="nav-link active" data-scroll-target="#forking"><span class="header-section-number">8.1</span> Forking</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-fork" id="toc-creating-a-fork" class="nav-link" data-scroll-target="#creating-a-fork"><span class="header-section-number">8.1.1</span> Creating a fork</a></li>
+  </ul></li>
+  <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link" data-scroll-target="#pull-requests"><span class="header-section-number">8.2</span> Pull requests</a>
+  <ul class="collapse">
+  <li><a href="#pull-request-from-a-forked-repository" id="toc-pull-request-from-a-forked-repository" class="nav-link" data-scroll-target="#pull-request-from-a-forked-repository"><span class="header-section-number">8.2.1</span> Pull request from a forked repository</a></li>
+  <li><a href="#pull-request-from-a-branch-within-a-repository" id="toc-pull-request-from-a-branch-within-a-repository" class="nav-link" data-scroll-target="#pull-request-from-a-branch-within-a-repository"><span class="header-section-number">8.2.2</span> Pull request from a branch within a repository</a></li>
+  </ul></li>
+  <li><a href="#github-flow" id="toc-github-flow" class="nav-link" data-scroll-target="#github-flow"><span class="header-section-number">8.3</span> GitHub Flow</a>
+  <ul class="collapse">
+  <li><a href="#steps-in-github-flow" id="toc-steps-in-github-flow" class="nav-link" data-scroll-target="#steps-in-github-flow"><span class="header-section-number">8.3.1</span> Steps in GitHub Flow</a></li>
+  </ul></li>
+  <li><a href="#readme-file" id="toc-readme-file" class="nav-link" data-scroll-target="#readme-file"><span class="header-section-number">8.4</span> <code>README</code> file</a>
+  <ul class="collapse">
+  <li><a href="#markdown-syntax" id="toc-markdown-syntax" class="nav-link" data-scroll-target="#markdown-syntax"><span class="header-section-number">8.4.1</span> Markdown syntax</a></li>
+  </ul></li>
+  <li><a href="#git-blame" id="toc-git-blame" class="nav-link" data-scroll-target="#git-blame"><span class="header-section-number">8.5</span> Git blame</a></li>
+  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">8.6</span> Template repositories</a></li>
+  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">8.7</span> Branch protection</a>
+  <ul class="collapse">
+  <li><a href="#how-to-protect-the-main-branch-on-github" id="toc-how-to-protect-the-main-branch-on-github" class="nav-link" data-scroll-target="#how-to-protect-the-main-branch-on-github"><span class="header-section-number">8.7.1</span> How to protect the <code>main</code> branch on GitHub</a></li>
+  </ul></li>
+  <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">8.8</span> Alternatives to GitHub</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">8.9</span> Acknowledgements</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">8.10</span> Cheatsheet</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/github-advanced.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/github-advanced.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title display-7"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></h1>
+
+<div class="abstract">
+<div class="abstract-title">Summary</div>
+<p>In this chapter, we will explore more advanced features of GitHub, including forking, pull requests and workflows for collaboration with Git and GitHub.</p>
+</div>
+</header>
+
+
+<p><a href="https://version-control-github.formr.org" class="btn btn-outline-secondary" role="button"><i class="fa-circle-question fa-regular" aria-label="regular"></i> Take the quiz!</a> <a href="https://lennartwittkuhn.com/version-control-course-uhh-ws23/sessions/session09.html" class="btn btn-outline-secondary" role="button"><i class="fa-solid fa-display" aria-label="display"></i> UHH WS 23/24</a></p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<h5 class="anchored">
+Learning Objectives
+</h5>
+<p><span class="emoji" data-emoji="bulb">💡</span> You can fork a repository.<br> <span class="emoji" data-emoji="bulb">💡</span> You know the purpose and components of a Pull Request.<br> <span class="emoji" data-emoji="bulb">💡</span> You can create a Pull Request from a forked repository.<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to collaborate using the popular workflow strategy GitHub flow.<br> <span class="emoji" data-emoji="bulb">💡</span> You know the purpose and components of a <code>README</code> file.<br> <span class="emoji" data-emoji="bulb">💡</span> You can protect your <code>main</code> branch.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<h5 class="anchored">
+Exercises
+</h5>
+<p><span class="emoji" data-emoji="memo">📝</span> Task 1: Create a Pull Request using GitHub flow</p>
+<ol type="1">
+<li>Create a new branch in your local repository.</li>
+<li>Add, commit, and push changes on the new branch.</li>
+<li>Create and merge a pull request for this new branch on GitHub</li>
+</ol>
+<p><span class="emoji" data-emoji="memo">📝</span> Task 3: Protect your branch</p>
+<ol type="1">
+<li>Go to your repository’s “Settings” and select “Branches”.</li>
+<li>Under “Branch protection rules”, click “Add rule” and enter “main” in the “Branch name pattern” field.</li>
+<li>Enable the desired protection options (for example, require pull request reviews) and click “Create” to save the rule.</li>
+</ol>
+</div>
+</div>
+</div>
+<section id="forking" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="forking"><span class="header-section-number">8.1</span> Forking</h2>
+<p>In the <a href="../chapters/github-intro.html">previous chapter</a>, you learned that you can invite other people as collaborators to your repository. However, this usually comes with a few privileges in administering your project that you might not want to share with any random person who would like to contribute to your project. At the same, a central idea of open-source development is that even people who don’t know each other can collaborate together on open-source code. This is where forking comes in: Forking a repository on GitHub allows you to <strong>create a personal copy of <em>someone else’s</em> project</strong> under your GitHub account and contributing to that project without direct access to the original repository.</p>
+<p>This copy of the repository includes all files, commit history, and branches and also keeps a reference to the repository it was copied from. Forking is commonly used when you want to contribute to a project but you don’t have direct access to the original repository. It enables you to make changes independently, create new branches, and push modifications to your forked repository. You can also submit changes to the original repository through so-called <a href="#pull-requests">pull requests</a> which will be explained in more detail below.</p>
+<section id="creating-a-fork" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="creating-a-fork"><span class="header-section-number">8.1.1</span> Creating a fork</h3>
+<p>By clicking the <strong>Fork</strong> button on a repository page, as shown in <a href="#fig-forking" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>, you create an identical copy of the repository in your GitHub account.</p>
+<div id="fig-forking" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-forking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/github-forking.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Screenshot of a repository with fork button
+</figcaption>
+</figure>
+</div>
+<p>Once the forking process is complete, you can clone the repository to your local machine using the <code>git clone</code> command (for more details on <code>git clone</code>, see the <a href="../chapters/github-intro.html#cloning">previous chapter</a>).</p>
+</section>
+</section>
+<section id="pull-requests" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="pull-requests"><span class="header-section-number">8.2</span> Pull requests</h2>
+<p>A <strong>pull request</strong> (PR) serves as a request for code review and integration into a project’s codebase, enabling collaboration and ensuring code quality before changes are merged. Basically, it’s a way to propose a merge from a branch. Often it’s used to merge changes from a <code>feature</code> branch into the <code>main</code> branch of the repository.</p>
+<p>When dealing with pull requests, there are two main workflows: (1) a pull request from a forked repository, (2) a pull request from a branch within a repository. Here’s a breakdown of the components of a pull request:</p>
+<ul>
+<li><strong>Base branch:</strong> The branch that your changes will be merged into. This is often the main branch.</li>
+<li><strong>Compare branch:</strong> The branch containing your changes that you want to merge.</li>
+<li><strong>Title:</strong> A concise description of the changes proposed.</li>
+<li><strong>Description:</strong> A detailed account of the changes, why they’re needed, and any other relevant information.</li>
+</ul>
+<p>In addition, to these basic components, the pull request interface provides sections for reviewers, assignees, labels, and milestones on the right-hand side (see <a href="#fig-pr" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>).</p>
+<section id="pull-request-from-a-forked-repository" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="pull-request-from-a-forked-repository"><span class="header-section-number">8.2.1</span> Pull request from a forked repository</h3>
+<p>To create a pull request after forking a repository and making changes, follow these steps:</p>
+<ol type="1">
+<li><p>Navigate to your forked repository on GitHub. Make sure you are on the branch that contains the changes you want to propose.</p></li>
+<li><p>Click on “Contribute” and then “Open Pull Request”.</p></li>
+<li><p>In the pull request interface, choose the branch you made changes to in your fork (the “compare” branch) and the original repository’s branch where you want to propose your changes (the “base” branch).</p></li>
+<li><p>Review the changes.</p></li>
+<li><p>Click on the “Create Pull Request” button. Give your pull request a meaningful title and provide a description explaining the changes you made.</p></li>
+<li><p>Submit the Pull Request.</p></li>
+</ol>
+<p>The owner of the original repository can now approve the changes and thereby merge your repository’s branch into his.</p>
+</section>
+<section id="pull-request-from-a-branch-within-a-repository" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="pull-request-from-a-branch-within-a-repository"><span class="header-section-number">8.2.2</span> Pull request from a branch within a repository</h3>
+<p>In this scenario, contributors work directly within the original repository, creating a new branch for their changes. After completing the changes in the branch, they create a pull request from that branch to the main repository’s default branch (typically <code>main</code> or <code>master</code>). The workflow for this is the same as for opening a pull request for a forked repository. You can see an example pull request within a repository in <a href="#fig-pr" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>.</p>
+<div id="fig-pr" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/pr_screenshot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Screenshot of a Pull Request on GitHub
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="github-flow" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="github-flow"><span class="header-section-number">8.3</span> GitHub Flow</h2>
+<p>When using Git collaboratively, several workflow strategies or “flows” have been developed to manage the development process efficiently. <a href="https://docs.github.com/en/get-started/using-github/github-flow">GitHub Flow</a> is popular because it’s simple and it makes sure everyone’s contributions are reviewed and integrated smoothly.</p>
+<section id="steps-in-github-flow" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="steps-in-github-flow"><span class="header-section-number">8.3.1</span> Steps in GitHub Flow</h3>
+<ol type="1">
+<li><p><strong>Create a branch:</strong> This step involves branching off from the main project (usually from the <code>main</code> or <code>master</code> branch). The branch should be named descriptively to reflect the work that will be done within it. For details, see the previous <a href="../chapters/branches.html">chapter on branches</a>.</p></li>
+<li><p><strong>Make changes:</strong> After creating your branch, you can start working on your project within this new branch. This involves making changes, adding new features, or fixing bugs. It’s recommended to commit your changes regularly with clear and concise commit messages.</p></li>
+<li><p><strong>Open a pull request:</strong> Once you have made enough progress on your branch or completed the work, you can open a pull request (PR), as outlined above. This is a way to notify your team that your changes are ready to be reviewed. A PR allows your teammates to see the changes you’ve made and provides a platform for discussing the proposed modifications.</p></li>
+<li><p><strong>Discuss and review your changes:</strong> Once you’ve opened a PR, your team will go over your updates, share their thoughts, and recommend any adjustments. This review process is crucial for ensuring the code’s robustness, efficiency, and adherence to the project’s guidelines.</p></li>
+<li><p><strong>Merge the branch:</strong> After you have been reviewed and your changes validated, your branch needs to be merged back into the <code>main</code> branch. Your work becomes part of the main codebase, and everyone can see the contribution you’ve made.</p></li>
+<li><p><strong>Pull changes:</strong> Finally, everyone updates their own versions of the project with the latest changes from the <code>main</code> branch. This ensures that everyone is working with the most current version, including the changes you’ve just added.</p></li>
+<li><p><strong>Delete branch:</strong> Once your branch has been successfully merged, it’s time to clean up. Delete the feature branch to maintain a tidy project structure.</p></li>
+</ol>
+</section>
+</section>
+<section id="readme-file" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="readme-file"><span class="header-section-number">8.4</span> <code>README</code> file</h2>
+<p>A <code>README</code> is a text file that provides basic information about a project. As mentioned earlier, the <code>README</code> file can be created together with your repository or can be added later. In the context of a Git repository, the <code>README</code> file should contain “a description of your repository”. The exact content depends on your repository, but some general things that you might want to include are:</p>
+<ul>
+<li><p><strong>Project description</strong>: What function does this repository serve and what are it’s key features?</p></li>
+<li><p><strong>Installation instructions</strong> (if applicable): Explain how to install and set up your project, including any dependencies or prerequisites. This is particularly relevant for repositories that contain programming code. Provide clear instructions to help users or contributors get started with your project quickly.</p></li>
+<li><p><strong>Usage</strong> (if applicable): Provide examples or code snippets demonstrating how to use your project.</p></li>
+<li><p><strong>Contributing</strong>: If you welcome contributions, specify how others can contribute to your project. Here, you can also include guidelines for submitting bug reports, feature requests, or pull requests.</p></li>
+</ul>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Adding a `CONTRIBUTING.md` file to a repository">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adding a <code>CONTRIBUTING.md</code> file to a repository
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For larger or more complex projects where contributions may involve setting up a specific development environment or adhering to specific workflows, it is standard practice to create a file called <code>CONTRIBUTING.md</code>. GitHub recognizes the presence of a <code>CONTRIBUTING.md</code> file in a repository and, for example, automatically includes a link to the <code>CONTRIBUTING.md</code> file when users open a new issue or pull request.</p>
+</div>
+</div>
+</div>
+<ul>
+<li><p><strong>Acknowledgments</strong>: Give credit to any third-party libraries, tools, or individuals that contributed to your project.</p></li>
+<li><p><strong>License</strong>: Choose a license that aligns with your project’s goals. You can use <a href="https://choosealicense.com">choosealicense.com</a> for guidance. The chosen license influences contributions to your project.</p></li>
+</ul>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Find out more: View the `README.md` file of this project.">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Find out more: View the <code>README.md</code> file of this project.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<section id="version-control-book" class="level1 unnumbered callout-body-container callout-body">
+<h1 class="unnumbered">Version Control Book</h1>
+<p><a href="https://zenodo.org/doi/10.5281/zenodo.10724424"><img src="https://zenodo.org/badge/648830079.svg" class="img-fluid" alt="DOI"></a> <a href="https://doi.org/10.25592/uhhfdm.14149"><img src="https://www.fdr.uni-hamburg.de/badge/DOI/10.25592/uhhfdm.14149.svg" class="img-fluid" alt="DOI"></a> <a href="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml"><img src="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg" class="img-fluid" alt="Quarto Publish"></a> <a href="#contributors"><img src="https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&amp;style=flat-square.png" class="img-fluid" alt="All Contributors"></a> <a href="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml"><img src="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg" class="img-fluid" alt="Codespell"></a></p>
+<section id="description" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="description">Description</h2>
+<p>Welcome to the <a href="https://lennartwittkuhn.com/version-control-book/">Version Control Book</a>, a resource initially created in the context of a <a href="https://lennartwittkuhn.com/version-control-course-uhh-ws23/">course on version control</a> at <a href="https://www.uni-hamburg.de">Universität Hamburg</a> in 2023/2024.</p>
+<p>The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course. The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git and GitHub. This is a living resource on why and - more importantly - how to use Git. The rendered version is at <a href="https://lennartwittkuhn.com/version-control-book/" class="uri">https://lennartwittkuhn.com/version-control-book/</a> and is under constant development.</p>
+</section>
+<section id="contributing" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="contributing">Contributing</h2>
+<p>Contributions in any form - pull requests, issues, content requests, ideas, etc. - are always welcome. If you are using the book and find that something does not work, please <a href="https://github.com/lnnrtwttkhn/version-control-book/issues">let us know</a>. You can find out more on how to contribute <a href="https://lennartwittkuhn.com/version-control-book/misc/contributing.html">here</a>, and a list of all contributors so far <a href="#contributors">below</a>. Before contributing, please read the <a href="https://lennartwittkuhn.com/version-control-book/misc/contributing.html">guidelines for contributions</a> on how to get involved. To maintain consistency and readability, we follow a <a href="https://lennartwittkuhn.com/version-control-book/misc/style-guide.html">style guide</a>. Please refer to the Style Guide for details on formatting, coding standards, and other conventions. We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control!</p>
+</section>
+<section id="usage" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="usage">Usage</h2>
+<p>To render and preview, execute:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="license" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="license">License</h2>
+<p><a href="LICENSE">CC-BY-SA</a></p>
+<p>You are free to</p>
+<ul>
+<li><strong>share</strong> - copy and redistribute the material in any medium or format</li>
+<li><strong>adapt</strong> - remix, transform, and build upon the material for any purpose, even commercially</li>
+</ul>
+<p>under the following terms:</p>
+<ol type="1">
+<li><p><strong>Attribution</strong> — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</p></li>
+<li><p><strong>ShareAlike</strong> — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</p></li>
+</ol>
+</section>
+<section id="contributors" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="contributors">Contributors</h2>
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+<tbody>
+<tr>
+<td align="center" valign="top" width="14.28%">
+<a href="https://lennartwittkuhn.com/"><img src="https://avatars.githubusercontent.com/u/42233065?v=4?s=100" width="100px;" alt="Lennart Wittkuhn"><br><sub><b>Lennart Wittkuhn</b></sub></a><br><a href="https://github.com/lnnrtwttkhn/version-control-book/issues?q=author%3Alnnrtwttkhn" title="Bug reports">🐛</a> <a href="https://github.com/lnnrtwttkhn/version-control-book/commits?author=lnnrtwttkhn" title="Code">💻</a> <a href="#content-lnnrtwttkhn" title="Content">🖋</a> <a href="#design-lnnrtwttkhn" title="Design">🎨</a> <a href="https://github.com/lnnrtwttkhn/version-control-book/commits?author=lnnrtwttkhn" title="Documentation">📖</a> <a href="#example-lnnrtwttkhn" title="Examples">💡</a> <a href="#financial-lnnrtwttkhn" title="Financial">💵</a> <a href="#fundingFinding-lnnrtwttkhn" title="Funding Finding">🔍</a> <a href="#ideas-lnnrtwttkhn" title="Ideas, Planning, &amp; Feedback">🤔</a> <a href="#infra-lnnrtwttkhn" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-lnnrtwttkhn" title="Maintenance">🚧</a> <a href="#mentoring-lnnrtwttkhn" title="Mentoring">🧑‍🏫</a> <a href="#projectManagement-lnnrtwttkhn" title="Project Management">📆</a> <a href="#question-lnnrtwttkhn" title="Answering Questions">💬</a> <a href="https://github.com/lnnrtwttkhn/version-control-book/pulls?q=is%3Apr+reviewed-by%3Alnnrtwttkhn" title="Reviewed Pull Requests">👀</a> <a href="#talk-lnnrtwttkhn" title="Talks">📢</a>
+</td>
+<td align="center" valign="top" width="14.28%">
+<a href="https://github.com/konradpa"><img src="https://avatars.githubusercontent.com/u/135045175?v=4?s=100" width="100px;" alt="Konrad Pagenstedt"><br><sub><b>Konrad Pagenstedt</b></sub></a><br><a href="https://github.com/lnnrtwttkhn/version-control-book/issues?q=author%3Akonradpa" title="Bug reports">🐛</a> <a href="https://github.com/lnnrtwttkhn/version-control-book/commits?author=konradpa" title="Code">💻</a> <a href="#content-konradpa" title="Content">🖋</a> <a href="#design-konradpa" title="Design">🎨</a> <a href="https://github.com/lnnrtwttkhn/version-control-book/commits?author=konradpa" title="Documentation">📖</a> <a href="#example-konradpa" title="Examples">💡</a> <a href="#ideas-konradpa" title="Ideas, Planning, &amp; Feedback">🤔</a> <a href="#maintenance-konradpa" title="Maintenance">🚧</a> <a href="https://github.com/lnnrtwttkhn/version-control-book/pulls?q=is%3Apr+reviewed-by%3Akonradpa" title="Reviewed Pull Requests">👀</a>
+</td>
+<td align="center" valign="top" width="14.28%">
+<a href="http://www.oneukrainian.com"><img src="https://avatars.githubusercontent.com/u/39889?v=4?s=100" width="100px;" alt="Yaroslav Halchenko"><br><sub><b>Yaroslav Halchenko</b></sub></a><br><a href="https://github.com/lnnrtwttkhn/version-control-book/issues?q=author%3Ayarikoptic" title="Bug reports">🐛</a> <a href="https://github.com/lnnrtwttkhn/version-control-book/commits?author=yarikoptic" title="Code">💻</a> <a href="#infra-yarikoptic" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/lnnrtwttkhn/version-control-book/pulls?q=is%3Apr+reviewed-by%3Ayarikoptic" title="Reviewed Pull Requests">👀</a>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+</section>
+</section>
+</div>
+</div>
+<section id="markdown-syntax" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="markdown-syntax"><span class="header-section-number">8.4.1</span> Markdown syntax</h3>
+<p>A <code>README</code> is typically a Markdown (<code>.md</code>) file, which means you can use <a href="https://www.markdownguide.org/">Markdown</a> syntax in it. Markdown allows you to easily format text, create lists, include links, and embed images.</p>
+</section>
+</section>
+<section id="git-blame" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="git-blame"><span class="header-section-number">8.5</span> Git blame</h2>
+<p>The command <code>git blame</code> is useful when you are working on a project with multiple collaborators. It it used to show when and by whom, each line in a specific file was last changed. You have to specify a file when using it, for example:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> blame recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>If you are working solo on a text file, the result should not be very interesting. However, if you collaborate on code, this command can be very useful (for blame <strong>or</strong> praise!)</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git blame` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Find out more: Common <code>git blame</code> flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>-L &lt;start&gt;,&lt;end&gt;</code>: Specifies a line range to blame. For example, <code>git blame -L 10,20 file.txt</code> will blame lines 10 to 20 of the file.</p>
+<p><code>-M</code>: Detects lines that were moved within the file and shows the original author’s information.</p>
+<p><code>-e</code>: Shows the author’s email address in addition to their name.</p>
+<p><code>-t</code>: Shows the commit timestamp for each line.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="template-repositories" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="template-repositories"><span class="header-section-number">8.6</span> Template repositories</h2>
+<p>Template repositories, or repository templates, on GitHub allow you to create a repository that acts as a starting point for other new repositories. Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. This simplifies the process of setting up new projects that share common characteristics or follow best practices. Template repositories have a “Use this template” button on a template repository page, as shown in <a href="#fig-template" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>. Click it, provide a new repository name and an optional description and decide whether to include all branches and whether to create a public or private repository.</p>
+<div id="fig-template" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-template-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/github-template.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-template-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: Screenshot of a template repository on GitHub
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="branch-protection" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">8.7</span> Branch protection</h2>
+<p>When using Git hosting platforms like GitHub or GitLab, it’s a good idea to enable branch protection rules for your critical branch(es), typically your <code>main</code> or <code>master</code> branch. By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch. It also prevents accidental or unauthorized changes from being merged directly.</p>
+<section id="how-to-protect-the-main-branch-on-github" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">8.7.1</span> How to protect the <code>main</code> branch on GitHub</h3>
+<ul>
+<li>Go to your repository on GitHub and click on “Settings”.</li>
+<li>In the left sidebar, select “Branches”.</li>
+<li>Under “Branch protection rules,” click on “Add rule”.</li>
+<li>In the “Branch name pattern” field, enter the name of your <code>main</code> branch.</li>
+<li>Enable the options you want to enforce for the <code>main</code> branch.</li>
+<li>Click “Create” to save the branch protection rule.</li>
+</ul>
+<p>A common option is to <strong>require pull request reviews</strong>. This requires one or more approving reviews before changes can be merged. Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.</p>
+</section>
+</section>
+<section id="alternatives-to-github" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="alternatives-to-github"><span class="header-section-number">8.8</span> Alternatives to GitHub</h2>
+<p>While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub. Some prominent alternative include <a href="https://about.gitlab.com/de-de/">GitLab</a>, <a href="https://bitbucket.org">Bitbucket</a>, <a href="https://sourceforge.net">SourceForge</a> or <a href="https://codeberg.org/">Codeberg</a>.</p>
+<p>Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in. On the other hand there are also advantages to GitHub, for example it’s user-friendly interface, the rich ecosystem and it’s extensive integration to third-party tools.</p>
+</section>
+<section id="acknowledgements" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">8.9</span> Acknowledgements</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="community2022">The Turing Way Community (<a href="../misc/references.html#ref-community2022" role="doc-biblioref">2022</a>)</span></td>
+<td style="text-align: left;">The Turing Way: A handbook for reproducible, ethical and collaborative research</td>
+<td style="text-align: left;"><a href="https://the-turing-way.netlify.app/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/the-turing-way/the-turing-way"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="chacon2014">Chacon and Straub (<a href="../misc/references.html#ref-chacon2014" role="doc-biblioref">2014</a>)</span></td>
+<td style="text-align: left;">Pro Git</td>
+<td style="text-align: left;"><a href="https://git-scm.com/book/en/v2"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a></td>
+<td style="text-align: left;"><a href="https://github.com/progit/progit2"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="GitHub2023">GitHub (<a href="../misc/references.html#ref-GitHub2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">GitHub Docs</td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cheatsheet" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">8.10</span> Cheatsheet</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>git blame</code></td>
+<td style="text-align: left;">shows the authorship and commit information of each line in a file</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-chacon2014" class="csl-entry" role="listitem">
+Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
+</div>
+<div id="ref-GitHub2023" class="csl-entry" role="listitem">
+GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en">https://docs.github.com/en</a>.
+</div>
+<div id="ref-community2022" class="csl-entry" role="listitem">
+The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/the-turing-way/the-turing-way" class="uri">https://github.com/the-turing-way/the-turing-way</a>. Website: <a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script defer="" data-domain="lennartwittkuhn.com/version-control-book" src="https://plausible.io/js/script.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/github-intro.html" class="pagination-link" aria-label="GitHub: Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub: Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/tags-and-releases.html" class="pagination-link" aria-label="Tags and Releases">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2023 – 2024 The Version Control Book Team</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="../misc/acknowledgements.html" aria-current="page">
+<p>Funded by the Digital and Data Literacy in Teaching Lab</p>
+</a>
+  </li>  
+</ul>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/github-advanced.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/github-advanced.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
