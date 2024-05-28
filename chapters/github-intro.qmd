@@ -188,6 +188,14 @@ Note, that if you want to upload an existing repository from your computer, you 
 
 1. Finally, click the green **"Create repository"** button at the bottom of the page to create a new repository with these settings.
 
+::: {.callout-warning title="Be aware which branch you are pulling!" collapse="false"}
+If you want to upload your local repository to GitHub, ensure you create the GitHub repository **without initializing it with a `README` file** or any other files.
+Initializing the repository with a `README` or any other files creates a commit in the GitHub repository. 
+When you try to push your local repository, you may encounter conflicts because the histories of your local and remote repositories will differ.
+
+To avoid this, create the GitHub repository empty. You can add a `README` and other files after pushing your local repository.
+:::
+
 ::: {.callout-tip title="Find out more: Public or private repository?" collapse="true"}
 When you create a new repository on GitHub, you can **control who can see it** by choosing if it's public or private.
 
@@ -384,7 +392,7 @@ Updating abc123..def456
 Fast-forward file.txt | 2 +- 1 file changed, 
 1 insertion(+), 1 deletion(-)
 ```
-
+^
 The first part of the message indicates the range of commits that were fetched and merged.
 In this example, it suggests that Git is updating from commit `abc123` to commit `def456`.
 The "Fast-forward" message indicates that the local branch could be updated by moving the branch pointer forward, incorporating the new commits from the remote branch. 
