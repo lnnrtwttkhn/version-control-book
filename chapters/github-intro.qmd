@@ -5,73 +5,78 @@ abstract: |
   This chapter will introduce you to remote repositories, in particular GitHub.
 ---
 
-# GitHub
+# GitHub: Introduction
 
-[{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.github >}}){.btn .btn-outline-secondary role="button"}
 [{{< fa display >}} UHH WS 23/24]({{< var uhh-ws23.github >}}){.btn .btn-outline-secondary role="button"} 
 
 ::: {.callout-tip appearance="minimal"}
 <h5>Learning Objectives</h5>
-{{< include ../objectives/_objectives-github.qmd >}}
+{{< include ../objectives/_objectives-github-intro.qmd >}}
 :::
 
 ::: {.callout-note appearance="minimal"}
 <h5>Exercises</h5>
-{{< include ../exercises/_exercises-github.qmd >}}
+{{< include ../exercises/_exercises-github-intro.qmd >}}
 :::
 
-## What are remote repositories
+## What are remote repositories?
 
-A remote repository is a version of your Git repository that is hosted on a server, mostly on the internet.
+A remote repository is **a version of your Git repository that is hosted on a server**, usually on the internet.
 Unlike your local repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. 
-These remote repositories could be hosted on platforms like GitHub, GitLab, Bitbucket, or a private server.
+These remote repositories could be hosted on platforms like [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/), [Codeberg](https://codeberg.org/) or a private server.
+In this chapter, we will introduce the repository hosting platform [GitHub](https://github.com/), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)).
 
 ### Why use remote repositories?
 
-One of the primary reasons to use remote repositories is for **collaboration**. 
-They provide a centralized location where team members can collectively work on a project. 
+One of the main reasons to use remote repositories is for **collaboration**.
+If your Git repository only exists on your computer, no one else can access it.
+Remote repositories provide a central location where team members can collectively work on a project. 
 Whether contributors are across the room or across the globe, remote repositories make it possible for everyone to access the same set of project files and contribute to the development process.
 
 Hosting a project on a remote repository also serves as a **backup mechanism**.
 If a contributor's computer fails or their files get corrupted, they can always clone a fresh copy of the project from the remote repository.
-This ensures that the project's progress is not dependent on a single person's local environment.
+This ensures that the project's progress is not dependent on a single person's computer.
+@fig-git-in-case-of-fire jokingly illustrates this point.
 
-## {{< fa brands github >}} What is GitHub?
+!["In case of fire" by [Louis-Michel Couture](https://github.com/louim) (License: [MIT](https://github.com/louim/in-case-of-fire/blob/master/LICENSE); [Source on GitHub](https://github.com/louim/in-case-of-fire))](../static/git-in-case-of-fire){#fig-git-in-case-of-fire width="60%"}
+
+## What is GitHub?
 
 GitHub is a popular web-based platform that hosts Git repositories remotely. 
 You can use it in your browser without installing any software on your computer. 
 It's a collaborative environment for software development, allowing developers to work together, manage code, and track changes.
 GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.
 
-## {{< fa brands github >}} Creating a GitHub account
+## Creating a GitHub account
 
-To be able to use GitHub, you will need to create an account:
+To be able to use GitHub, you need to create an account:
 
-1.  Open <https://github.com> in your browser
-2.  Click the `Sign up` button
-3.  Enter the required personal details
-4.  In step 2 select the free plan.
+1.  Open <https://github.com> in your browser.
+2.  Click the `Sign up` button.
+3.  Enter the required personal details.
+4.  In step 2, select the free plan.
 
-::: {.callout-tip title="Choosing a Github Name" collapse="true"}
+::: {.callout-tip title="Find out more: Choosing a GitHub username" collapse="true"}
+GitHub will ask you to choose a username.
 Here are some tips for choosing a GitHub username:
 
--   Incorporate your name.
+-   Incorporate your real name.
 -   Adapt your username from other platforms.
 -   Choose a professional username.
     Your future boss might look at your GitHub profile.
--   Opt for a shorter username.
+-   Opt for a short username.
 -   Be unique and concise.
 -   Avoid references to specific institutions.
 -   Use all lowercase and hyphens for word separation.
 :::
 
-::: {.callout-tip title="GitHub student education pack" collapse="true"}
+::: {.callout-tip title="Tip: Sign-up for the GitHub Student Developer Pack" collapse="true"}
 The [GitHub Student Developer Pack](https://education.github.com/pack) is a program offered by GitHub to students, providing them with free access to a collection of valuable developer tools and services.
-To benefit from the pack, visit the [GitHub Education website](https://www.education.github.com) and sign up with your student email to verify your academic status.
+To benefit from the pack, visit the [GitHub Education website](https://github.com/edu) and sign up with your student email to verify your academic status.
 Once verified, you gain access to various resources, including [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) with unlimited private repositories, free domain names, cloud credits, coding courses, and more.
 :::
 
-## {{< fa brands github >}} Connecting to GitHub
+## Connecting to GitHub
 
 ### Authentication
 
@@ -83,11 +88,11 @@ For security reasons it is no longer possible to authenticate yourself using onl
 There are multiple authentication methods which offer different advantages and drawbacks.
 In this section, we will briefly introduce one of the two most common authentication methods: Personal Access Tokens.
 
-If you would rather use the SSH protocol for authentication, check out the [SSH documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) on Github.com.
+If you would rather use the [SSH](https://de.wikipedia.org/wiki/Secure_Shell) protocol for authentication, check out the [SSH documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
-#### Personal Access Token
+#### Personal Access Token (PAT)
 
-Follow these steps to set it up:
+Follow these steps to set a Personal Access Token (PAT; see @fig-pat):
 
 1.  Log in to your GitHub account on [GitHub.com](https://github.com/)
 
@@ -99,26 +104,28 @@ Follow these steps to set it up:
 
 1.  Give your token a **name**.
 The name should help you to later identify in which context you used the token.
-For example, you could add a short description of the machine that you generated the token for.
+For example, you could add a short description of the machine that you generated the token for, for example `MacBook Pro 14-inch, 2021`.
 
 1. Choose the desired **scopes**.
 The scopes define the permissions of the token, or "what it is allowed to do" with your GitHub account and repositories.
-For a normal usecase, you should enable the scopes: **repo**, **admin:org** and **delete_repo** for a full access.
+For a normal use case, you should enable the scopes **repo**, **admin:org** and **delete_repo** for a full access.
 
 1. Set an expiration date if needed.
 You can also choose "No expiration".
 
-![Screenshot of the personal access token settings](../static/github-pat.png){#fig-PAT}
+1. Click "**Generate token**," and you'll be presented with your new token.
 
-Click "**Generate token**," and you'll be presented with your new token.
-
-Make sure to copy it as it won't be shown again.
+::: {.callout-important collapse="false" title="Make sure to copy the PAT as it won't be shown again!"}
+Make sure to copy the Personal Access Token (PAT) as it won't be shown again!
 The first time you try to interact with a remote repository, you will get asked for a password. 
-**Paste this key as a password into the terminal to proceed.**
+Paste the PAT as the password into the terminal to proceed.
 
 If you use Git Bash on Windows, your terminal will open a window where you can choose to authenticate yourself with a PAT.
+:::
 
-::: {.callout-tip title="More about PAT settings" collapse="true"}
+![Screenshot of the personal access token settings](../static/github-pat.png){#fig-pat}
+
+::: {.callout-tip title="Find out more: More details about PAT settings" collapse="true"}
 **Expiration Date:**
 
 When you create a Personal Access Token, you can specify its expiration date.
@@ -155,67 +162,74 @@ Provides permission to delete repositories.
 Offers administrative access to the entire organization, including managing teams and repositories.
 :::
 
-## {{< fa folder-closed >}} GitHub repositories
+## GitHub repositories
 
 ### Creating a GitHub repository
 
-To create a new repository, click on the "**+**" sign in the top-right corner of the GitHub page.
-From the dropdown menu, select **New repository**."
-On the new repository page, as shown in @fig-newrepo, enter a name for your repository and make sure the "**Public**" option is selected if you want it to be accessible to everyone.
-You can also choose to create a README file by checking the corresponding box.
-If you want to upload an existing repository, you should not create a README, since your GitHub repository needs to be completely empty.
-Finally, click the green **"Create repository"** button at the bottom of the page to complete the creation process.
+To create a new repository on GitHub, click on the "**+**" sign in the top-right corner of the GitHub page.
+From the drop down menu, select "**New repository**".
+On the new repository page, you are asked to enter some details about your repository and select a few options (see @fig-newrepo):
 
-::: {.callout-tip title="Public or private?" collapse="true"}
-When you create a new repository on GitHub, you can control who can see it by choosing if it's public or private.
+1. On the new repository page, as shown in  enter a **name for your repository**.
+If you are planning to upload a local repository (a repository on your computer) to GitHub, it makes sense to choose the same name as on your computer.
+Also, we recommend to avoid white spaces and use hyphens (`-`) or underscores (`_`) to separate words in your repository name.
+
+1. You can also add an additional (optional) **description** to provide more details about the content of your repository.
+The description will be shown on the main page of your GitHub repository and can help other users to understand the purpose of your repository.
+
+1. Next, you can choose to make the repository **public or private**.
+A public repository can be viewed by anyone worldwide even if they don't have a GitHub account.
+It's like a public website on the internet.
+A private repository can only be viewed by you and any collaborators that you specifically invite to your repository.
+For more details about public vs. private repositories, see the box below.
+
+1. At last, you can choose to initialize your repository with a few files, specifically a **README** file (find out more in the [next chapter](github-advanced.qmd#readme-file)), a template **`.gitignore`** file (see the chapter on ["First steps with Git"](first-steps-git.qmd)), or a **license** file.
+Note, that if you want to upload an existing repository from your computer, you should *not* initialize the repository on GitHub with any files, since your GitHub repository needs to be completely empty in order to synchronize your local repository.
+
+1. Finally, click the green **"Create repository"** button at the bottom of the page to create a new repository with these settings.
+
+::: {.callout-tip title="Find out more: Public or private repository?" collapse="true"}
+When you create a new repository on GitHub, you can **control who can see it** by choosing if it's public or private.
 
 If it's public, anyone on the internet can access it.
 If it's private, only you, the people you specifically allow, and, for organization repositories, certain members can access it.
 For further details, see the [chapter "About repository visibility"](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility) in the GitHub documentation.
 
 If you have admin permissions for a repository, you can change its visibility.
-This means you can later still make a public repository private and vice verca, if needed.
+This means you can later still make a public repository private and private repository public, if needed.
 :::
 
 ![Screenshot of creating a new repository](../static/github-newrepository.png){#fig-newrepo}
 
-### Committing changes on GitHub directly
+### Repository settings
 
-Once you have created the repository and initialized it with a `README.md` file, you will find the `README.md` file in your repository.
-You can edit this file to provide information and details about your project.
-Whatever you write in the `README.md` file will be displayed on the front page of your project.
+To access the settings of a GitHub repository, go to the main page of the GitHub repository you want to configure and look for the "Settings" tab, usually located towards the right side of the repository's navigation bar.
+Once you're on the repository settings page, you'll find various sections on the left sidebar that allow you to configure different aspects of the repository, such as "General," "Branches," or "Collaborators".
 
-To add more files to your repository, click on the "**Add file**" button and choose whether to upload existing files or create a new file directly on GitHub.
-You can edit and commit changes to every file in your repository. 
-The commit message helps you keep track of the changes you've made and serves as a brief summary of the modifications made to the repository.
+In the "General" section you can, for example, rename your repository or default branch, change the repositories visibility or delete your repository.
+For a detailed guide on the repository settings, you can check out the [GitHub documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features).
 
-### Uploading your repository
+#### Adding collaborators
 
-To initialize an existing folder as a GitHub repository, you first need to create a new repository, like explained above.
-You will then need to initialize the folder as a Git repository using `git init`.
-If you have already done this, you can of course skip this.
+In the "Collaborators" tab of the settings, it is possible to add accounts which can view or add changes your repository, even if it is private by entering their GitHub username or email address. 
 
-To add your folder as a remote repository, navigate to your folder using the command line and use the `git remote` command.
+## Adding a remote to your local repository
 
-```{bash}
+Let's assume that you have a local Git repository on your computer that you want to upload to GitHub.
+To initialize an existing repository as a GitHub repository, you first need to create a new repository on GitHub, as explained above.
+
+To add a remote repository to your local Git repository, navigate to your repository using the command line ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#moving-between-folders))] and use the `git remote` command:
+
+```{zsh filename="Code"}
 git remote add origin https://github.com/yourusername/repositoryname.git
 ```
 
 This command is essentially telling Git: "Add a remote repository named `origin` with the location (URL) `https://github.com/yourusername/repositoryname.git`".
-After running this command, your local Git repository will be aware of the remote repository, and you can push and pull changes between your local repository and the one on GitHub.
-The term "origin" is a conventionally used name for the default remote repository. It's a standard name, but you could technically choose another name if you prefer. 
+After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository on GitHub.
+The term "origin" is a conventionally used name for the default remote repository.
+It's a standard name and we recommend to use it, but you could also choose any another name (for example, `github`) if you prefer. 
 
-Your are now able to push your files to the remote repo using `git push`.
-
-```{bash}
-git push -u origin main
-```
-
-This pushes the local branch named "main" to a remote repository called "origin" while setting it as the upstream branch.
-`-u` is used to set the upstream branch.
-It tells Git to remember the remote branch to which your local branch should be pushed in the future.
-
-::: {.callout-tip title="common git remote commands" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git remote` commands" collapse="true"}
 `git remote`: Lists all remote repositories associated with the current local repository.
 
 `git remote -v`: Lists remote repositories along with their URLs.
@@ -227,51 +241,127 @@ It tells Git to remember the remote branch to which your local branch should be 
 `git remote rename <old-name> <new-name>:` Renames a remote repository from old-name to new-name.
 :::
 
-### {{< fa clone >}} Cloning a Repository
+## Pushing
 
-Cloning refers to creating a local copy of a repository from GitHub on your computer.
-When you clone a repository, you download all of its files, commit history, and branches to your local machine.
-Cloning allows you to work with the repository locally, make changes, and push those changes back to the original repository if you have write access.
-It is commonly used when you want to contribute to a project or work on it independently.
+After you added a remote to your local repository, you are now able to "upload" your files to the remote repository using the command `git push`.
+This command is used to "upload" your local commits to the remote repository.
+When you run `git push`, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository.
+
+```{zsh filename="Code"}
+git push -u origin main
+```
+
+The command above "uploads" the local branch named "main" to a remote repository called "origin" while setting it as the upstream branch.
+`-u` is used to set the upstream branch.
+It tells Git to remember the remote branch to which your local branch should be uploaded in the future.
+After a successful push, you will get a message like this:
+
+```{zsh filename="Output"}
+#| code-copy: false
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (12/12), 2.11 KiB | 2.11 MiB/s, done.
+Total 12 (delta 9), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (9/9), completed with 5 local objects.
+To https://github.com/username/repository.git
+   fb3efef..8f50685  main -> main
+```
+
+The `git push` operation involves enumerating, compressing, and writing objects to the remote repository. 
+The output indicates the progress of these steps, including delta compression, and concludes with a summary of the pushed branch and commit range.
+In this specific example, changes from the local main branch (commit `fb3efef`) were pushed to the remote main branch (commit `8f50685`).
+
+It's important to note that you need appropriate access and permissions to push to a remote repository. 
+If you do not have write access, you won't be able to push your changes.
+If you do not specify a branch and just run `git push`, Git will push the one "you are on" in the moment.
+
+Git will verify if your local branch is up to date with the remote branch. 
+If there are new commits on the remote branch that you don't have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts (find out more about [pulling](#pulling) below).
+
+::: {.callout-tip title="Common `git push` flags" collapse="true"}
+`-u` or `--set-upstream`:
+This flag is used to set the upstream branch for the current branch. 
+It is typically used when pushing a branch for the first time to link the local branch with a remote branch.
+
+`--force` or `-f`:
+Force pushes the local main branch to the origin remote repository, overwriting any changes that may have been made to the main branch in the remote repository.
+
+`--all`: 
+This flag pushes all branches to the remote repository.
+
+`--dry-run`:
+This flag simulates the push operation without actually pushing any data to the remote repository. 
+It's useful for checking what would be pushed.
+
+`local_branch:remote_branch`:
+This syntax allows you to push a specific local branch to a specific remote branch.
+Example: `git push origin my_local_branch:my_remote_branch`
+:::
+
+
+## Committing changes on GitHub directly
+
+You can add or edit files directly on GitHub. 
+This is particularly useful if you need to make quick changes without accessing your local repository.
+
+### Adding a new file on GitHub
+
+1. Navigate to the desired repository on GitHub.
+1. Click on the "Add file" button and select "Create new file".
+1. Enter a name for your new file, including the appropriate file extension (for example, `example.txt`).
+1. Add your content in the text editor provided.
+1. Write a commit message describing the changes you are making.
+1. Click on the green "Commit new file" button to save the new file to the repository.
+
+### Editing an existing file
+
+1. Navigate to the desired repository on GitHub and locate the file you want to edit.
+1. Click on the file name to view its contents.
+1. In the top-right corner of the file view, click on the pencil icon ("Edit this file") to start editing.
+1. Make the necessary changes to the file in the in-browser editor.
+1. Provide a brief description of the changes in the "Commit changes" section at the bottom of the page.
+1. Click on the green "Commit changes" button to save your modifications.
+
+## Cloning
+
+Cloning refers to **creating a local copy of a repository from GitHub on your computer**.
+When you clone a repository, you download all of its files, commit history, and branches to your local computer.
+Cloning allows you to work with the repository locally, make changes, and upload those changes back to the original repository (if you have write access).
+Cloning is commonly used when you want to contribute to a project or work on it independently.
 To clone a repository, you need the repository's URL from GitHub.
 You can find the repository's HTTPS URL on the repository page, if you click on the green **Code** button.
-Then use the terminal to navigate to the directory where you want to clone the repository.
-Then use the `git clone` command followed byh the URL of the remote repository.
+Then use the command line to navigate to the directory where you want to clone the repository.
+Then use the `git clone` command followed by the URL of the remote repository:
 
-```{bash}
+```{zsh filename="Code"}
 git clone https://github.com/username/repository.git
 ```
 
 Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified.
 You can now work with the files in the repository, make changes, and commit your modifications locally.
-Remember to use the appropriate Git commands like `git add`, `git commit`, and `git push` to manage your changes and synchronize them with the remote repository as needed.
+Remember to use the appropriate Git commands like `git add`, `git commit`, and `git push` to manage your changes and synchronize them with the remote repository as needed (for details, see the chapter on [Git basics](first-steps-git.qmd)).
 By default, `git clone` will create a reference to the remote repository called "origin", so you do not have to use `git remote` to create a remote repository.
 
-### Repository settings
+Before you make changes to your newly cloned repository you should use the `cd` command to navigate into it.
+This step of changing into the repository directory is crucial. 
+Forgetting to do so may lead to confusion, as any Git commands you run will not affect the intended folder but rather the one associated with the current working directory.
 
-To access the settings of a GitHub repository, go to the main page of the GitHub repository you want to configure and look for the "Settings" tab, usually located towards the right side of the repository's navigation bar.
-Once you're on the repository settings page, you'll find various sections on the left sidebar that allow you to configure different aspects of the repository, such as "General," "Branches," or "Collaborators".
+To clone the repository into a different folder, you can specify the new folder name as an additional "argument" in the `git clone` command:
 
-In the "General" section you can, for example, rename your repository or default branch, change the repositories visibility or delete your repository.
+```{zsh filename="Code"}
+git clone https://github.com/username/repository.git new-folder
+```
 
-In the "Collaborators" tab, it is possible to add accounts which can view or change your repository, even if it is private. 
-For a detailed guide on the repository settings, you can check out the [GitHub documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features).
+This will create a directory named `new-folder` and clone the repository into it. 
 
-### Fetching
+## Pulling
 
-The command `git fetch` is used to keep up-to-date with changes in the remote repository, *without* merging them into your local branch.
-Instead Git will update all your local tracking branches to the remote branch.
-To view your remote tracking branches, you can use `git branch -r`.
-After fetching, you can use `git switch` to review the changes on these branches.
-If you want to integrate the changes into you local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
-
-`git fetch` is the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
-
-## {{< fa download >}} Pulling
-
-The `git pull` command is used to retrieve the latest changes from a remote repository **and** merge them into your local branch.
-Effectively `git pull` first runs `git fetch` (see above) to fetch the latest changes from the remote repository and then integrates these changes into the local branch, either using `git merge` (for details, see the [branches](branches.qmd) chapter) or `git rebase` (for details, see the section on [rebasing](intermediate-commands.qmd)), depending on the configuration.
+The `git pull` command is used to **retrieve the latest changes from a remote repository** *and* merge them into your local branch.
+Effectively, `git pull` first runs `git fetch` (see below) to fetch the latest changes from the remote repository and then integrates these changes into the local branch, either using `git merge` (for details, see the [branches](branches.qmd) chapter) or `git rebase` (for details, see the section on [rebasing](intermediate-commands.qmd)), depending on the configuration.
 In other words, `git pull` is a `git fetch` followed by a `git merge`.
+
 You can test this function by editing a file in your repository on GitHub and then use `git pull` to update your local file with the change made on GitHub.
 To edit a file, first click on it, in the repository.
 In the top-right corner of the file view, click on the pencil icon ("Edit this file") to start editing.
@@ -280,15 +370,16 @@ You can add, modify, or delete content as needed.
 As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as "changes not staged for commit".
 Provide a brief description of the changes in the "Commit changes" section at the bottom of the page.
 
-Now you can open up your terminal once again, and in the relevant directory use the `git pull` command to update your local file with the change made on GitHub.
+Now you can open up your command line once again, and in the relevant directory use the `git pull` command to update your local file with the change made on GitHub.
 
-```{bash}
+```{zsh filename="Code"}
 git pull
 ```
 
-If the pull is successful and there are no conflicts, you might see a message like:
+If the pull is successful and there are no conflicts, you should see a message like this:
  
-```{bash}
+```{zsh filename="Output"}
+#| code-copy: false
 Updating abc123..def456
 Fast-forward file.txt | 2 +- 1 file changed, 
 1 insertion(+), 1 deletion(-)
@@ -302,14 +393,14 @@ The next line shows changes in the file `file.txt`. The `2 +-` indicates that tw
 The last line of the message provides a summary of the changes.
 It states that one file was changed, with one line inserted and one line deleted.
 
-::: {.callout-warning title="Be aware which branch you are pulling!" collapse="true"}
+::: {.callout-warning title="Be aware which branch you are pulling!" collapse="false"}
 A regular `git pull` incorporates changes from a remote repository into the **current** branch.
 You can use the `git branch` command to verify which branch you are currently on (for details, see the [branches](branches.qmd) chapter).
 If the current branch is behind the remote, then by default it will fast-forward the current branch to match the remote.
 If the current branch and the remote have diverged, the user needs to specify how to reconcile the divergent branches.
 :::
 
-::: {.callout-tip title="Common `git pull` command flags" collapse="true"}
+::: {.callout-tip title="Find out more: Common `git pull` command flags" collapse="true"}
 `--ff-only`:
 Perform a fast-forward merge only.
 If the remote branch has new changes, Git will only update your local branch if a fast-forward merge is possible.
@@ -332,216 +423,17 @@ Automatically stash local changes before pulling, then apply them back after the
 This is handy when you have changes in progress and want to pull in the latest changes from the remote branch.
 :::
 
-## {{< fa upload >}} Pushing
+## Fetching
 
-The`git push` command is like a reversed `git pull`.
-It is used to upload your local commits to the remote repository.
-When you run `git push`, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository.
-Git will verify if your local branch is up to date with the remote branch. 
-If there are new commits on the remote branch that you don't have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts.
-It's important to note that you need appropriate access and permissions to push to a remote repository. 
-If you do not have write access, you won't be able to push your changes.
-If you do not specify a branch, Git will push the one you are on in the moment.
+The command `git fetch` is used to keep up-to-date with changes in the remote repository, *without* merging them into your local branch.
+Instead, Git will update all your local tracking branches to the remote branch.
+That means if you have made changes in your remote repository to a branch, for example called `feature`, `git fetch` will leave your local `feature` branch as it is, but will update your remote tracking branch called: `origin/feature`.
+To view your remote tracking branches, you can use `git branch -r`.
+After fetching, you can use `git switch` to review the changes on these branches.
+If you want to integrate the changes into your local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
 
-```{bash}
-git push origin main
-```
-
-This pushes your local commits to the remote repository called `origin` on the branch `main`.
-After a successful push, you will get a message like this:
-
-```{bash}
-Enumerating objects: 17, done.
-Counting objects: 100% (17/17), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (12/12), done.
-Writing objects: 100% (12/12), 2.11 KiB | 2.11 MiB/s, done.
-Total 12 (delta 9), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (9/9), completed with 5 local objects.
-To https://github.com/username/repository.git
-   fb3efef..8f50685  main -> main
-```
-
-The `git push` operation involves enumerating, compressing, and writing objects to the remote repository. 
-The output indicates the progress of these steps, including delta compression, and concludes with a summary of the pushed branch and commit range.
-In this specific example, changes from the local main branch (commit `fb3efef`) were pushed to the remote main branch (commit `8f50685`).
-
-::: {.callout-tip title="Common `git push` flags" collapse="true"}
-`-u` or `--set-upstream`:
-This flag is used to set the upstream branch for the current branch. 
-It is typically used when pushing a branch for the first time to link the local branch with a remote branch.
-
-`--force` or `-f`:
-Force pushes the local main branch to the origin remote repository, overwriting any changes that may have been made to the main branch in the remote repository.
-
-`--all`: 
-This flag pushes all branches to the remote repository.
-
-`--dry-run`:
-This flag simulates the push operation without actually pushing any data to the remote repository. 
-It's useful for checking what would be pushed.
-
-`local_branch:remote_branch`:
-This syntax allows you to push a specific local branch to a specific remote branch.
-Example: `git push origin my_local_branch:my_remote_branch`
-:::
-
-## Extra features
-
-### Forking a repository
-
-Forking a repository on GitHub allows you to create a personal copy of a project under your GitHub account.
-
-This separate copy includes all files, commit history, and branches.
-Forking is commonly used when you want to contribute to a project without directly modifying the original repository. 
-It enables you to make changes independently, create new branches, and push modifications to your forked repository.
-You can also submit changes to the original repository through pull requests.
-
-By clicking the **Fork** button on a repository page, shown in @fig-forking, you create an identical copy in your GitHub account.
-
-![Screenshot of a repository with fork button](../static/github-forking.png){#fig-forking}
-
-Once the forking process is complete, you can clone the repository to your local machine using the `git clone` command.
-
-### Pull requests
-
-A **pull request** serves as a request for code review and integration into a project's codebase, enabling collaboration and ensuring code quality before changes are merged. 
-When dealing with pull requests, there are two main workflows: (1) a pull request from a forked repository, (2) a pull request from a branch within a repository.
-
-#### Pull request from a forked repository
-
-To create a pull request after forking a repository and making changes follow these steps:
-
-1.  Navigate to your forked repository on GitHub by visiting https://github.com/<your-username>/<repository-name>. 
-Make sure you are on the branch that contains the changes you want to propose.
-
-2.  Click on "Contribute" and then "Open Pull Request".
-
-3.  In the pull request interface, choose the branch you made changes to in your fork (the "compare" branch) and the original repository's branch where you want to propose your changes (the "base" branch).
-
-4.  Review the changes.
-
-5.  Click on the "Create Pull Request" button.
-Give your pull request a meaningful title and provide a description explaining the changes you made.
-
-6.  Submit the Pull Request.
-
-The owner of the original repository can now approve the changes and thereby merge your repository's branch into his.
-
-#### Pull request from a branch within a repository
-
-In this scenario, contributors work directly within the main repository, creating a new branch for their changes. 
-After completing the changes in the branch, they create a pull request from that branch to the main repository's default branch (typically `main` or `master`). 
-The workflow for this is the same as for opening a pull request for a forked repository.
-
-### `README` file 
-
-As mentioned earlier, the `README` file can be created together with your repository or can be added later. 
-The `README` file should contain "a description of your repository" but what does that entail?
-
-The exact content depends on your repository, but some general things that you might want to include are:
-
-- **Project description**:
-What function does this repository serve, what are it's key features?
-
-- **Installation instructions** (if applicable): Explain how to install and set up your project, including any dependencies or prerequisites.
-Provide clear instructions to help users or contributors get started with your project  quickly.
-
-- **Usage** (if applicable):
-Provide examples or code snippets demonstrating how to use your project.
-
-- **Contributing**:
-If you welcome contributions, specify how others can contribute to your project.
-Here, you can also include guidelines for submitting bug reports, feature requests, or pull requests.
-
-::: {.callout-tip title="Adding a `CONTRIBUTING.md` file to a repository" collapse="true" appearance="simple"}
-For larger or more complex projects where contributions may involve setting up a specific development environment or adhering to specific workflows, it is standard practice to create a file called `CONTRIBUTING.md`.
-GitHub recognizes the presence of a `CONTRIBUTING.md` file in a repository and, for example, automatically includes a link to the `CONTRIBUTING.md` file when users open a new issue or pull request.
-:::
-
-- **Acknowledgments**:
-Give credit to any third-party libraries, tools, or individuals that contributed to your project.
-
-- **License**:
-Choose a license that aligns with your project's goals. 
-Common options include GPL, allowing modifications and commercial use. 
-You can use [choosealicense.com](https://choosealicense.com) for guidance. 
-The chosen license influences contributions to your project.
-
-::: {.callout-tip title="View the `README.md` file of this project." collapse="true" appearance="simple" icon="false"}
-{{< include ../README.md >}}
-:::
-
-#### Markdown syntax {.unnumbered}
-
-A `README` is typically a Markdown (`.md`) file, which means you can use [Markdown]({{< var links.markdown >}}) syntax in it.
-Markdown allows you to easily format text, create lists, include links, and embed images.
-For an introduction, you can check out the [Quarto workshop slides]({{< var links.quarto-workshop >}}) by the creators of this book.
-
-### Git blame
-
-The command `git blame` is useful when you are working on a project with multiple collaborators. 
-It it used to show when and by whom, each line in a specific file was last changed.
-You have to specify a file when using it, for example:
-
-```{bash}
-git blame recipes.txt
-```
-
-If you are working solo on a text file, the result should not be very interesting.
-However if you collaborate on code, this command can be very useful (for blame **or** praise!)
-
-::: {.callout-tip title="Common `git blame` flags" collapse="true"}
-`-L <start>,<end>`:
-Specifies a line range to blame. For example, `git blame -L 10,20 file.txt` will blame lines 10 to 20 of the file.
-
-`-M`:
-Detects lines that were moved within the file and shows the original author's information.
-
-`-e`:
-Shows the author's email address in addition to their name.
-
-`-t`: 
-Shows the commit timestamp for each line.
-:::
-
-### Template repositories
-
-Template repositories, or repository templates, on GitHub enable you to create a repository that acts as a starting point for others. 
-Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. 
-This simplifies the process of setting up new projects that share common characteristics or follow best practices. 
-Template repositories have a "Use this template" button on a template repository page, as shown in @fig-template. 
-Click it to provide a new, repository name and description, and then create the repository with your desired settings.
-
-![Screenshot of a template repository](../static/github-template.png){#fig-template}
-
-### Branch protection
-
-When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
-By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch.
-It also prevents accidental or unauthorized changes from being merged directly.
-
-#### How to protect the `main` branch on GitHub
-
--   Go to your repository on GitHub and click on "Settings".
--   In the left sidebar, select "Branches".
--   Under "Branch protection rules," click on "Add rule".
--   In the "Branch name pattern" field, enter the name of your `main` branch.
--   Enable the options you want to enforce for the `main` branch. 
--   Click "Create" to save the branch protection rule.
-
-A common option includes to **require pull request reviews**.
-This requires one or more approving reviews before changes can be merged.
-Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.
-
-### Alternatives to GitHub
-
-While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub.
-Not only since it was bought by Microsoft in 2018, who subsequently [used public repositories to train their AI tool](https://www.vice.com/en/article/g5vmgw/github-users-want-to-sue-microsoft-for-training-an-ai-tool-with-their-code)
-Some prominent options include [GitLab](https://about.gitlab.com/de-de/), [Bitbucket](https://bitbucket.org), [SourceForge](https://sourceforge.net) or [Codeberg](https://codeberg.org/).
-
-Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in. 
-On the other hand there are also advantages to GitHub like it's relatively easy to use interface, the rich ecosystem and it's extensive integration to third party tools.
+`git fetch` is arguably the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
+This allows you to review the changes fetched from the remote repository before integrating them with your local branch.
 
 ## Acknowledgements
 
@@ -562,5 +454,5 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 #| echo: false
 #| message: false
 #| warning: false
-knitr::kable(table_cheatsheet(name = "github"), format = "markdown", row.names = FALSE)
+knitr::kable(table_cheatsheet(name = "github_intro"), format = "markdown", row.names = FALSE)
 ```
