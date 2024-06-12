@@ -24,7 +24,7 @@ abstract: |
 A remote repository is **a version of your Git repository that is hosted on a server**, usually on the internet.
 Unlike your local repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. 
 These remote repositories could be hosted on platforms like [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/), [Codeberg](https://codeberg.org/) or a private server.
-In this chapter, we will introduce the repository hosting platform [GitHub](https://github.com/), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)).
+In this chapter, we will introduce the repository hosting platforms [GitHub](https://github.com/), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)) and [GitLab](https://gitlab.com), since it is a very popular alternative.
 
 ### Why use remote repositories?
 
@@ -42,22 +42,29 @@ This ensures that the project's progress is not dependent on a single person's c
 
 ## What is GitHub?
 
-GitHub is a popular web-based platform that hosts Git repositories remotely. 
+GitHub is the most popular web-based platform that hosts Git repositories remotely. 
 You can use it in your browser without installing any software on your computer. 
 It's a collaborative environment for software development, allowing developers to work together, manage code, and track changes.
 GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.
 
-## Creating a GitHub account
+## Creating an account
 
-To be able to use GitHub, you need to create an account:
+::: {.panel-tabset}
 
-1.  Open <https://github.com> in your browser.
-2.  Click the `Sign up` button.
-3.  Enter the required personal details.
-4.  In step 2, select the free plan.
+## GitHub
+1. Open [GitHub](https://github.com) in your browser.
+2. Click the **Sign up** button.
+3. Enter the required personal details and select the free plan.
 
-::: {.callout-tip title="Find out more: Choosing a GitHub username" collapse="true"}
-GitHub will ask you to choose a username.
+## GitLab
+1. Open [GitLab](https://gitlab.com) in your browser.
+. Click the **Sign in** and the **Register** button.
+3. Enter the required personal details.
+
+:::
+
+::: {.callout-tip title="Find out more: Choosing a  username" collapse="true"}
+GitHub and GitLab will ask you to choose a username.
 Here are some tips for choosing a GitHub username:
 
 -   Incorporate your real name.
@@ -76,9 +83,13 @@ To benefit from the pack, visit the [GitHub Education website](https://github.co
 Once verified, you gain access to various resources, including [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) with unlimited private repositories, free domain names, cloud credits, coding courses, and more.
 :::
 
-## Connecting to GitHub
+## Connecting to a Remote Repository Hosting Service
 
 ### Authentication
+
+::: {.panel-tabset}
+
+#### GitHub
 
 GitHub authentication is needed to access and work with repositories that are stored on GitHub.
 It is kind of like showing your ID to prove who you are before entering a restricted area.
@@ -90,7 +101,7 @@ In this section, we will briefly introduce one of the two most common authentica
 
 If you would rather use the [SSH](https://de.wikipedia.org/wiki/Secure_Shell) protocol for authentication, check out the [SSH documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
-#### Personal Access Token (PAT)
+##### Personal Access Token (PAT)
 
 Follow these steps to set a Personal Access Token (PAT; see @fig-pat):
 
@@ -162,9 +173,18 @@ Provides permission to delete repositories.
 Offers administrative access to the entire organization, including managing teams and repositories.
 :::
 
-## GitHub repositories
+#### GitLab
 
-### Creating a GitHub repository
+Coming Soon
+
+:::
+
+
+## Creating a remote repository
+
+::: {.panel-tabset}
+
+### GitHub
 
 To create a new repository on GitHub, click on the "**+**" sign in the top-right corner of the GitHub page.
 From the drop down menu, select "**New repository**".
@@ -201,7 +221,7 @@ This means you can later still make a public repository private and private repo
 
 ![Screenshot of creating a new repository](../static/github-newrepository.png){#fig-newrepo}
 
-### Repository settings
+#### Repository settings
 
 To access the settings of a GitHub repository, go to the main page of the GitHub repository you want to configure and look for the "Settings" tab, usually located towards the right side of the repository's navigation bar.
 Once you're on the repository settings page, you'll find various sections on the left sidebar that allow you to configure different aspects of the repository, such as "General," "Branches," or "Collaborators".
@@ -213,21 +233,29 @@ For a detailed guide on the repository settings, you can check out the [GitHub d
 
 In the "Collaborators" tab of the settings, it is possible to add accounts which can view or add changes your repository, even if it is private by entering their GitHub username or email address. 
 
+### GitLab 
+
+Coming Soon
+
+:::
+
 ## Adding a remote to your local repository
 
-Let's assume that you have a local Git repository on your computer that you want to upload to GitHub.
-To initialize an existing repository as a GitHub repository, you first need to create a new repository on GitHub, as explained above.
+Let's assume that you have a local Git repository on your computer that you want to upload to a remote hosting service.
+To initialize an existing repository as a remote repository, you first need to create a new repository on your chosen hosting service (e.g., GitHub, GitLab, Bitbucket), as explained above.
 
 To add a remote repository to your local Git repository, navigate to your repository using the command line ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#moving-between-folders))] and use the `git remote` command:
 
 ```{zsh filename="Code"}
-git remote add origin https://github.com/yourusername/repositoryname.git
+git remote add origin <remote-repository-URL>
 ```
 
-This command is essentially telling Git: "Add a remote repository named `origin` with the location (URL) `https://github.com/yourusername/repositoryname.git`".
-After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository on GitHub.
-The term "origin" is a conventionally used name for the default remote repository.
-It's a standard name and we recommend to use it, but you could also choose any another name (for example, `github`) if you prefer. 
+Replace `<remote-repository-URL>` with the URL of your remote repository. 
+This command is essentially telling Git: 
+“Add a remote repository named origin with the specified location (URL).”
+After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository.
+The term “origin” is a conventionally used name for the default remote repository. 
+It’s a standard name and we recommend using it, but you could also choose another name if you prefer.
 
 ::: {.callout-tip title="Find out more: Common `git remote` commands" collapse="true"}
 `git remote`: Lists all remote repositories associated with the current local repository.
@@ -300,43 +328,19 @@ This syntax allows you to push a specific local branch to a specific remote bran
 Example: `git push origin my_local_branch:my_remote_branch`
 :::
 
-
-## Committing changes on GitHub directly
-
-You can add or edit files directly on GitHub. 
-This is particularly useful if you need to make quick changes without accessing your local repository.
-
-### Adding a new file on GitHub
-
-1. Navigate to the desired repository on GitHub.
-1. Click on the "Add file" button and select "Create new file".
-1. Enter a name for your new file, including the appropriate file extension (for example, `example.txt`).
-1. Add your content in the text editor provided.
-1. Write a commit message describing the changes you are making.
-1. Click on the green "Commit new file" button to save the new file to the repository.
-
-### Editing an existing file
-
-1. Navigate to the desired repository on GitHub and locate the file you want to edit.
-1. Click on the file name to view its contents.
-1. In the top-right corner of the file view, click on the pencil icon ("Edit this file") to start editing.
-1. Make the necessary changes to the file in the in-browser editor.
-1. Provide a brief description of the changes in the "Commit changes" section at the bottom of the page.
-1. Click on the green "Commit changes" button to save your modifications.
-
 ## Cloning
 
-Cloning refers to **creating a local copy of a repository from GitHub on your computer**.
+Cloning refers to **creating a local copy of a repository from a remote hosting service on your computer**.
 When you clone a repository, you download all of its files, commit history, and branches to your local computer.
 Cloning allows you to work with the repository locally, make changes, and upload those changes back to the original repository (if you have write access).
 Cloning is commonly used when you want to contribute to a project or work on it independently.
-To clone a repository, you need the repository's URL from GitHub.
+To clone a repository, you need the repository's URL from your chosen hosting service
 You can find the repository's HTTPS URL on the repository page, if you click on the green **Code** button.
 Then use the command line to navigate to the directory where you want to clone the repository.
 Then use the `git clone` command followed by the URL of the remote repository:
 
 ```{zsh filename="Code"}
-git clone https://github.com/username/repository.git
+git clone https://your-remote-repo-url.git
 ```
 
 Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified.
@@ -351,7 +355,7 @@ Forgetting to do so may lead to confusion, as any Git commands you run will not 
 To clone the repository into a different folder, you can specify the new folder name as an additional "argument" in the `git clone` command:
 
 ```{zsh filename="Code"}
-git clone https://github.com/username/repository.git new-folder
+git clone https://your-remote-repo-url.git new-folder
 ```
 
 This will create a directory named `new-folder` and clone the repository into it. 
@@ -434,6 +438,36 @@ If you want to integrate the changes into your local branch, you can either now 
 
 `git fetch` is arguably the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 This allows you to review the changes fetched from the remote repository before integrating them with your local branch.
+
+## Committing changes on the remote directly
+
+::: {.panel-tabset}
+
+### GitHub
+
+You can add or edit files directly on GitHub. 
+This is particularly useful if you need to make quick changes without accessing your local repository.
+
+#### Adding a new file on GitHub
+
+1. Navigate to the desired repository on GitHub.
+1. Click on the "Add file" button and select "Create new file".
+1. Enter a name for your new file, including the appropriate file extension (for example, `example.txt`).
+1. Add your content in the text editor provided.
+1. Write a commit message describing the changes you are making.
+1. Click on the green "Commit new file" button to save the new file to the repository.
+
+#### Editing an existing file
+
+1. Navigate to the desired repository on GitHub and locate the file you want to edit.
+1. Click on the file name to view its contents.
+1. In the top-right corner of the file view, click on the pencil icon ("Edit this file") to start editing.
+1. Make the necessary changes to the file in the in-browser editor.
+1. Provide a brief description of the changes in the "Commit changes" section at the bottom of the page.
+1. Click on the green "Commit changes" button to save your modifications.
+
+### GitLab
+:::
 
 ## Acknowledgements
 
