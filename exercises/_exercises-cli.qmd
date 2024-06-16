@@ -1,14 +1,138 @@
-**Navigate the File System**
+### Navigate the file system
 
+1. Identify a folder on your computer where you (want to) keep course-related files. 
+If you don't have one, choose a suitable location in your file system.
+1. **Navigate into the chosen location** using the command line.
+1. Use the command line to **display the path** of your chosen directory.
+What is the output?
+
+::: {.callout-tip title="Solution" collapse="true" appearance="simple"}
+For folder navigation, use `cd`.
+To display the contents of a folder, use `ls`.
+To display the path of the current working directory, use `pwd`.
+For example, on macOS if you navigated to the `Documents` folder and used `pwd`, the path looks like this:
+
+```{zsh filename="Output"}
+#| code-copy: false
+/Users/myusername/Documents
+```
+:::
+
+::: {.callout-note title="Variation 1" collapse="true" appearance="simple"}
 1. Open your terminal.
 1. Navigate to your home directory using the tilde shortcut. 
 1. List all files and directories in your home directory. 
 1. Navigate to your Documents folder using a relative path. 
 1. Print the current working directory.
+:::
 
-**Create and Organize Directories**
+### Create files and folders
 
+1. Within your chosen folder, create a new subfolder and name it `recipes`.
+1. Navigate into the `recipes` folder. 
+1. **Create a new file** and name it `recipes.txt`.
+1. **Confirm the creation of the file by listing the contents** of the `recipes` folder.
+
+**Which commands did you use?**
+
+::: {.callout-tip title="Solution" collapse="true" appearance="simple"}
+
+1. Create a folder called `recipes`:
+
+```{zsh filename="Code"}
+mkdir recipes
+```
+
+2. Navigate into the `recipes` folder:
+
+```{zsh filename="Code"}
+cd recipes
+```
+
+3. Create a file and name it `recipes.txt`:
+
+```{zsh filename="Code"}
+touch recipes.txt
+```
+
+4. List the contents of the `recipes` folder:
+
+```{zsh filename="Code"}
+ls
+```
+
+:::
+
+::: {.callout-note title="Variation 1" collapse="true" appearance="simple"}
 1. In your home directory, create a new directory called projects. 
 1. Navigate into the projects directory.
 1. Create three subdirectories: `project1`, `project2`, and `project3`. 
 1. List all directories in the projects directory.
+:::
+
+### Write and opening files
+
+**Add the title** "My Favorite Recipes" to `recipes.txt`.
+Which command or method did you use?
+
+::: {.callout-tip title="Solution" collapse="true" appearance="simple"}
+
+I added the title to `recipes.txt` by using the following command:
+
+```{zsh filename="Code"}
+echo "My Favorite Recipes" > recipes.txt
+```
+
+This command writes "My Favorite Recipes" to the file, overwriting any existing content.
+
+:::
+
+### Create multiple files
+
+Go back to your main course-related folder. 
+Using the command line, **create three new files:** `notes.txt`, `assignments.txt`, and `schedule.txt`.
+Provide the command you used.
+
+::: {.callout-tip title="Solution" collapse="true" appearance="simple"}
+
+```{zsh filename="Code"}
+touch notes.txt assignments.txt schedule.txt
+```
+
+:::
+
+### Use wildcards
+
+Use a wildcard pattern to **list all `.txt` files** in your folder.
+Which command did you use?
+
+::: {.callout-tip title="Solution" collapse="true" appearance="simple"}
+
+```{zsh filename="Code"}
+ls *.txt
+```
+
+:::
+
+### Bonus exercise
+
+Imagine, that you are in a folder containing multiple text files with various extensions, including `.txt`, `.md`, and `.docx`.
+You want to move all the `.txt` files to a subfolder named "text_files" while keeping the other file types in the current directory.
+Write a series of command-line commands to accomplish this task, including creating the "text_files" subdirectory.
+Explain each step in your solution.
+
+::: {.callout-tip title="Solution" collapse="true" appearance="simple"}
+
+1. Creating the "text_files" subfolder:
+
+```{zsh filename="Code"}
+mkdir text_files
+```
+
+2. Moving all the `.txt` files to the "text_files" subfolder:
+
+```{zsh filename="Code"}
+mv *.txt text_files
+```
+
+:::
