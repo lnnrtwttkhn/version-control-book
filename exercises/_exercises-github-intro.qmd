@@ -1,24 +1,55 @@
-**Upload your local repository to GitHub**
+#### Connect to GitHub
 
-1.    Create a new repository on GitHub (do not initialize the remote repository with any files).
-1.    Set the remote URL to your GitHub repository.
-1.    Push the changes on your `main` branch to GitHub.
+1.  Generate a personal access token (PAT) on GitHub.
+1.  Use the PAT for GitHub authentication.
 
-**Create a `README` file on GitHub**
+### Upload your local repository to GitHub
 
-1.    Navigate to your repository on GitHub, click "Add file", and select "Create new file".
-1.    Name the file `README.md`, add a brief description of your project, and provide a commit message.
-1.    Click the green "Commit new file" button to save the `README.md` file to the repository.
+1.  Create a new empty repository on GitHub (do not initialize the repository with any files).
+1.  Set the remote URL of your local repository to your GitHub repository.
+1.  Push the changes on your `main` branch to GitHub.
 
-**Fetch and merge your changes**
+### Create a `README.md` file on GitHub
 
-1.    Run `git fetch` to retrieve the latest changes from the remote repository.
-1.    Run `git merge origin/main` to merge the fetched changes into your local `main` branch.
-1.    Verify that your local repository now includes the changes made on GitHub.
+1.  Navigate to your repository on GitHub, click "Add file", and select "Create new file".
+1.  Name the file `README.md`, add a brief description, and provide a commit message.
+1.  :rocket: Optional: Play around with [Markdown](https://www.markdownguide.org/) syntax.
+1.  Click the green "Commit new file" button to save the `README.md` file to the repository.
+1.  Pull the changes to your local repository.
 
-**Mimicking collaboration: Clone, push, pull**
+### Fetch and merge your changes
 
-1.    Clone your repository to a *different location* on your computer.
-1.    Commit at least one change and push back to GitHub.
-1.    Pull changes from GitHub to the original repository on your computer.
-1.    Delete your newly cloned repository.
+1.  Run `git fetch` to retrieve the latest changes from the remote repository.
+1.  Run `git merge origin/main` to merge the fetched changes into your local `main` branch.
+1.  Verify that your local repository now includes the changes made on GitHub.
+
+### "Private" collaboration with pull requests (using "GitHub Flow")
+
+1.  Add your partner (desk neighbor) as a collaborator to your `recipes` repository.
+1.  Clone your partner's repository.
+1.  Create a new branch in your partner's repository.
+1.  Add a recipe to your partner's `recipe.txt` file.
+1.  Add and commit the changes.
+1.  Push the changes on the new branch to GitHub.
+1.  Create a Pull Request.
+1.  Review the PR your partner made in your repository.
+1.  Merge the PR into your repository.
+
+### Manage branches
+
+1.  Push another branch (other than the default branch) with changes to GitHub.
+1.  Delete any unused or merged branches.
+
+### Clean up your repository on GitHub
+
+1.  Delete unnecessary files or add a new recipe directly on GitHub.
+1.  Commit changes on GitHub with a message.
+1.  Pull the changes to your local repository.
+
+### Clone and sync your repo
+
+1.  Clone your repository from GitHub to a *different location* on your computer.
+1.  Stage and commit changes in the new location (consider using a new branch).
+1.  Push these new changes to GitHub.
+1.  Pull the changes to the repository in the original location.
+1.  Delete your newly cloned repository.
