@@ -13,7 +13,7 @@ project:
     navigate: true
 
 book:
-  title: "Version Control of Code and Data"
+  title: "The Version Control Book"
   subtitle: "Track, organize and share your work: An introduction to Git for research"
   author:
     - "Lennart Wittkuhn [{{< fa envelope >}}](mailto:lennart.wittkuhn@uni-hamburg.de) [{{< fa globe >}}](https://lennartwittkuhn.com/)"
@@ -55,8 +55,7 @@ book:
   # side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):
   sidebar:
     id: sidebar
-    title: "Version Control of Code and Data"
-    subtitle: "An introduction to Git for research"
+    title: "{{< var project.title >}}"
     logo: static/logo.svg
     search: true
     tools:
@@ -72,9 +71,9 @@ book:
     pinned: true
   page-footer:
     left: |
-      &copy; {{< var years >}} The Version Control Book Team
+      &copy; {{< var project.duration >}} [The {{< var project.title >}} Team]({{< var project.contributors >}})
     center:
-      - text: "Funded by the Digital and Data Literacy in Teaching Lab"
+      - text: "Acknowledgements"
         href: misc/acknowledgements.qmd
     right: |
       License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
@@ -114,6 +113,7 @@ format:
     footnotes-hover: true
     # includes:
     include-after-body: plausible.html
+    include-in-header: github-buttons.html
 
 metadata-files:
   # - _authors.yml
