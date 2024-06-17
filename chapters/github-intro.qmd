@@ -116,6 +116,14 @@ Paste the PAT as the password into the terminal to proceed.
 If you use Git Bash on Windows, your terminal will open a window where you can choose to authenticate yourself with a PAT.
 :::
 
+::: {.callout-tip collapse="false" title="FAQ: My PAT is not shown when I enter it into the terminal?"}
+When authenticating with GitHub on macOS, you may notice that the password doesn't show up in the command line as you type it.
+This is normal behavior to ensure security. 
+You can still enter your password (or delete what you typed) even though it doesn't appear on the screen.
+You can also copy and paste text, for example your PAT from GitHub.
+When authenticating on Windows, a new window might pop up in which you can enter your PAT.
+:::
+
 ![Screenshot of the personal access token settings](../static/github-pat.png){#fig-pat}
 
 ::: {.callout-tip title="Find out more: More details about PAT settings" collapse="true"}
@@ -177,9 +185,17 @@ A private repository can only be viewed by you and any collaborators that you sp
 For more details about public vs. private repositories, see the box below.
 
 1. At last, you can choose to initialize your repository with a few files, specifically a **README** file (find out more in the [next chapter](github-advanced.qmd#readme-file)), a template **`.gitignore`** file (see the chapter on ["First steps with Git"](first-steps-git.qmd)), or a **license** file.
-Note, that if you want to upload an existing repository from your computer, you should *not* initialize the repository on GitHub with any files, since your GitHub repository needs to be completely empty in order to synchronize your local repository.
 
 1. Finally, click the green **"Create repository"** button at the bottom of the page to create a new repository with these settings.
+
+::: {.callout-warning title="Don't initialize the GitHub repository with any files, if you want to upload a local repository!" collapse="false"}
+If you want to upload your local repository to GitHub, make sure that you create the GitHub repository **without initializing it with a `README` file** or any other files.
+Initializing the repository with a `README` or any other files creates a commit in the GitHub repository. 
+When you try to push your local repository, you will encounter conflicts because the histories of your local and remote repositories will differ.
+
+To avoid this, create the GitHub repository empty.
+You can add a `README.md` and other files after pushing your local repository.
+:::
 
 ::: {.callout-tip title="Find out more: Public or private repository?" collapse="true"}
 When you create a new repository on GitHub, you can **control who can see it** by choosing if it's public or private.
@@ -206,7 +222,9 @@ For a detailed guide on the repository settings, you can check out the [GitHub d
 
 In the "Collaborators" tab of the settings, it is possible to add accounts which can view or add changes your repository, even if it is private by entering their GitHub username or email address. 
 
-## Adding a remote to your local repository
+## Managing remotes
+
+### Adding a remote to your local repository
 
 Let's assume that you have a local Git repository on your computer that you want to upload to GitHub.
 To initialize an existing repository as a GitHub repository, you first need to create a new repository on GitHub, as explained above.
@@ -222,6 +240,53 @@ After running this command, your local Git repository will be aware of the remot
 The term "origin" is a conventionally used name for the default remote repository.
 It's a standard name and we recommend to use it, but you could also choose any another name (for example, `github`) if you prefer. 
 
+### Checking configured remotes
+
+If you want to check which remotes are configured for a local repository, run the following command:
+
+```{zsh filename="Code"}
+git remote -v
+```
+
+Below is an example output, in this case for the Git repository for this book.
+This output basically tells you that one remote called `origin` is configured, it shows the URL for the remote repository on GitHub, and indicated that this remote is used both to fetch changes from and push changes to GitHub.
+
+```{zsh filename="Code"}
+#| code-copy: false
+origin  git@github.com:lnnrtwttkhn/version-control-book.git (fetch)
+origin  git@github.com:lnnrtwttkhn/version-control-book.git (push)
+```
+
+
+### Editing the remote URL
+
+If you need to change the URL of an existing remote repository, you have two options: removing the remote and re-adding it, or setting a new URL directly.
+
+#### Remove and re-add the remote
+
+1. Remove the existing remote (assuming that it's called `origin`):
+
+```{zsh filename="Code"}
+git remote rm origin
+```
+
+2. Add the remote again with a different URL:
+
+```{zsh filename="Code"}
+git remote add origin https://github.com/yourusername/newrepositoryname.git
+```
+
+#### Set a new URL
+
+You can also directly update the URL:
+
+```{zsh filename="Code"}
+git remote set-url origin https://github.com/yourusername/newrepositoryname.git
+```
+
+There is no feedback following this command.
+To check if the new URL was set as expected, you can enter `git remote -v`.
+
 ::: {.callout-tip title="Find out more: Common `git remote` commands" collapse="true"}
 `git remote`: Lists all remote repositories associated with the current local repository.
 
@@ -231,7 +296,10 @@ It's a standard name and we recommend to use it, but you could also choose any a
 
 `git remote rm <name>`: Removes the remote repository with the specified name.
 
-`git remote rename <old-name> <new-name>:` Renames a remote repository from old-name to new-name.
+`git remote rename <old-name> <new-name>:` Renames a remote repository from `old-name` to `new-name`.
+
+`git remote set-url <name> <url>:` Update the URL of the remote to a new repository URL.
+
 :::
 
 ## Pushing
@@ -292,7 +360,6 @@ It's useful for checking what would be pushed.
 This syntax allows you to push a specific local branch to a specific remote branch.
 Example: `git push origin my_local_branch:my_remote_branch`
 :::
-
 
 ## Committing changes on GitHub directly
 
