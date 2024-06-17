@@ -327,7 +327,12 @@ div.csl-indent {
   <li><a href="#creating-a-github-repository" id="toc-creating-a-github-repository" class="nav-link" data-scroll-target="#creating-a-github-repository"><span class="header-section-number">7.5.1</span> Creating a GitHub repository</a></li>
   <li><a href="#repository-settings" id="toc-repository-settings" class="nav-link" data-scroll-target="#repository-settings"><span class="header-section-number">7.5.2</span> Repository settings</a></li>
   </ul></li>
-  <li><a href="#adding-a-remote-to-your-local-repository" id="toc-adding-a-remote-to-your-local-repository" class="nav-link" data-scroll-target="#adding-a-remote-to-your-local-repository"><span class="header-section-number">7.6</span> Adding a remote to your local repository</a></li>
+  <li><a href="#managing-remotes" id="toc-managing-remotes" class="nav-link" data-scroll-target="#managing-remotes"><span class="header-section-number">7.6</span> Managing remotes</a>
+  <ul class="collapse">
+  <li><a href="#adding-a-remote-to-your-local-repository" id="toc-adding-a-remote-to-your-local-repository" class="nav-link" data-scroll-target="#adding-a-remote-to-your-local-repository"><span class="header-section-number">7.6.1</span> Adding a remote to your local repository</a></li>
+  <li><a href="#checking-configured-remotes" id="toc-checking-configured-remotes" class="nav-link" data-scroll-target="#checking-configured-remotes"><span class="header-section-number">7.6.2</span> Checking configured remotes</a></li>
+  <li><a href="#editing-the-remote-url" id="toc-editing-the-remote-url" class="nav-link" data-scroll-target="#editing-the-remote-url"><span class="header-section-number">7.6.3</span> Editing the remote URL</a></li>
+  </ul></li>
   <li><a href="#pushing" id="toc-pushing" class="nav-link" data-scroll-target="#pushing"><span class="header-section-number">7.7</span> Pushing</a></li>
   <li><a href="#committing-changes-on-github-directly" id="toc-committing-changes-on-github-directly" class="nav-link" data-scroll-target="#committing-changes-on-github-directly"><span class="header-section-number">7.8</span> Committing changes on GitHub directly</a>
   <ul class="collapse">
@@ -479,6 +484,22 @@ Make sure to copy the PAT as it won’t be shown again!
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: My PAT is not shown when I enter it into the terminal?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: My PAT is not shown when I enter it into the terminal?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>When authenticating with GitHub on macOS, you may notice that the password doesn’t show up in the command line as you type it. This is normal behavior to ensure security. You can still enter your password (or delete what you typed) even though it doesn’t appear on the screen. You can also copy and paste text, for example your PAT from GitHub. When authenticating on Windows, a new window might pop up in which you can enter your PAT.</p>
+</div>
+</div>
+</div>
 <div id="fig-pat" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -490,7 +511,7 @@ Figure&nbsp;7.2: Screenshot of the personal access token settings
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: More details about PAT settings">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -499,7 +520,7 @@ Find out more: More details about PAT settings
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Expiration Date:</strong></p>
 <p>When you create a Personal Access Token, you can specify its expiration date. The expiration date is the date and time when the token becomes invalid and cannot be used for authentication anymore. Setting an expiration date is a security measure to limit the time during which the token can be misused if it falls into the wrong hands. Creating an expiration date for a GitHub Personal Access Token (PAT) is not strictly necessary, but it is considered a good security practice.</p>
@@ -528,11 +549,28 @@ Find out more: More details about PAT settings
 <li><p>On the new repository page, as shown in enter a <strong>name for your repository</strong>. If you are planning to upload a local repository (a repository on your computer) to GitHub, it makes sense to choose the same name as on your computer. Also, we recommend to avoid white spaces and use hyphens (<code>-</code>) or underscores (<code>_</code>) to separate words in your repository name.</p></li>
 <li><p>You can also add an additional (optional) <strong>description</strong> to provide more details about the content of your repository. The description will be shown on the main page of your GitHub repository and can help other users to understand the purpose of your repository.</p></li>
 <li><p>Next, you can choose to make the repository <strong>public or private</strong>. A public repository can be viewed by anyone worldwide even if they don’t have a GitHub account. It’s like a public website on the internet. A private repository can only be viewed by you and any collaborators that you specifically invite to your repository. For more details about public vs.&nbsp;private repositories, see the box below.</p></li>
-<li><p>At last, you can choose to initialize your repository with a few files, specifically a <strong>README</strong> file (find out more in the <a href="../chapters/github-advanced.html#readme-file">next chapter</a>), a template <strong><code>.gitignore</code></strong> file (see the chapter on <a href="../chapters/first-steps-git.html">“First steps with Git”</a>), or a <strong>license</strong> file. Note, that if you want to upload an existing repository from your computer, you should <em>not</em> initialize the repository on GitHub with any files, since your GitHub repository needs to be completely empty in order to synchronize your local repository.</p></li>
+<li><p>At last, you can choose to initialize your repository with a few files, specifically a <strong>README</strong> file (find out more in the <a href="../chapters/github-advanced.html#readme-file">next chapter</a>), a template <strong><code>.gitignore</code></strong> file (see the chapter on <a href="../chapters/first-steps-git.html">“First steps with Git”</a>), or a <strong>license</strong> file.</p></li>
 <li><p>Finally, click the green <strong>“Create repository”</strong> button at the bottom of the page to create a new repository with these settings.</p></li>
 </ol>
+<div class="callout callout-style-default callout-warning callout-titled" title="Don't initialize the GitHub repository with any files, if you want to upload a local repository!">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Don’t initialize the GitHub repository with any files, if you want to upload a local repository!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you want to upload your local repository to GitHub, make sure that you create the GitHub repository <strong>without initializing it with a <code>README</code> file</strong> or any other files. Initializing the repository with a <code>README</code> or any other files creates a commit in the GitHub repository. When you try to push your local repository, you will encounter conflicts because the histories of your local and remote repositories will differ.</p>
+<p>To avoid this, create the GitHub repository empty. You can add a <code>README.md</code> and other files after pushing your local repository.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Public or private repository?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -541,7 +579,7 @@ Find out more: Public or private repository?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When you create a new repository on GitHub, you can <strong>control who can see it</strong> by choosing if it’s public or private.</p>
 <p>If it’s public, anyone on the internet can access it. If it’s private, only you, the people you specifically allow, and, for organization repositories, certain members can access it. For further details, see the <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility">chapter “About repository visibility”</a> in the GitHub documentation.</p>
@@ -570,8 +608,10 @@ Figure&nbsp;7.3: Screenshot of creating a new repository
 </section>
 </section>
 </section>
-<section id="adding-a-remote-to-your-local-repository" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="adding-a-remote-to-your-local-repository"><span class="header-section-number">7.6</span> Adding a remote to your local repository</h2>
+<section id="managing-remotes" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="managing-remotes"><span class="header-section-number">7.6</span> Managing remotes</h2>
+<section id="adding-a-remote-to-your-local-repository" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="adding-a-remote-to-your-local-repository"><span class="header-section-number">7.6.1</span> Adding a remote to your local repository</h3>
 <p>Let’s assume that you have a local Git repository on your computer that you want to upload to GitHub. To initialize an existing repository as a GitHub repository, you first need to create a new repository on GitHub, as explained above.</p>
 <p>To add a remote repository to your local Git repository, navigate to your repository using the command line <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and use the <code>git remote</code> command:</p>
 <div class="cell">
@@ -583,8 +623,71 @@ Figure&nbsp;7.3: Screenshot of creating a new repository
 </div>
 </div>
 <p>This command is essentially telling Git: “Add a remote repository named <code>origin</code> with the location (URL) <code>https://github.com/yourusername/repositoryname.git</code>”. After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository on GitHub. The term “origin” is a conventionally used name for the default remote repository. It’s a standard name and we recommend to use it, but you could also choose any another name (for example, <code>github</code>) if you prefer.</p>
+</section>
+<section id="checking-configured-remotes" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="checking-configured-remotes"><span class="header-section-number">7.6.2</span> Checking configured remotes</h3>
+<p>If you want to check which remotes are configured for a local repository, run the following command:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Below is an example output, in this case for the Git repository for this book. This output basically tells you that one remote called <code>origin</code> is configured, it shows the URL for the remote repository on GitHub, and indicated that this remote is used both to fetch changes from and push changes to GitHub.</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span>  git@github.com:lnnrtwttkhn/version-control-book.git <span class="op">(fe</span>tch)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>origin  git@github.com:lnnrtwttkhn/version-control-book.git (push)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="editing-the-remote-url" class="level3" data-number="7.6.3">
+<h3 data-number="7.6.3" class="anchored" data-anchor-id="editing-the-remote-url"><span class="header-section-number">7.6.3</span> Editing the remote URL</h3>
+<p>If you need to change the URL of an existing remote repository, you have two options: removing the remote and re-adding it, or setting a new URL directly.</p>
+<section id="remove-and-re-add-the-remote" class="level4" data-number="7.6.3.1">
+<h4 data-number="7.6.3.1" class="anchored" data-anchor-id="remove-and-re-add-the-remote"><span class="header-section-number">7.6.3.1</span> Remove and re-add the remote</h4>
+<ol type="1">
+<li>Remove the existing remote (assuming that it’s called <code>origin</code>):</li>
+</ol>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote rm origin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Add the remote again with a different URL:</li>
+</ol>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/yourusername/newrepositoryname.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="set-a-new-url" class="level4" data-number="7.6.3.2">
+<h4 data-number="7.6.3.2" class="anchored" data-anchor-id="set-a-new-url"><span class="header-section-number">7.6.3.2</span> Set a new URL</h4>
+<p>You can also directly update the URL:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://github.com/yourusername/newrepositoryname.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>There is no feedback following this command. To check if the new URL was set as expected, you can enter <code>git remote -v</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git remote` commands">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -593,16 +696,19 @@ Find out more: Common <code>git remote</code> commands
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>git remote</code>: Lists all remote repositories associated with the current local repository.</p>
 <p><code>git remote -v</code>: Lists remote repositories along with their URLs.</p>
 <p><code>git remote add &lt;name&gt; &lt;url&gt;</code>: Adds a new remote repository with the specified name and URL.</p>
 <p><code>git remote rm &lt;name&gt;</code>: Removes the remote repository with the specified name.</p>
-<p><code>git remote rename &lt;old-name&gt; &lt;new-name&gt;:</code> Renames a remote repository from old-name to new-name.</p>
+<p><code>git remote rename &lt;old-name&gt; &lt;new-name&gt;:</code> Renames a remote repository from <code>old-name</code> to <code>new-name</code>.</p>
+<p><code>git remote set-url &lt;name&gt; &lt;url&gt;:</code> Update the URL of the remote to a new repository URL.</p>
 </div>
 </div>
 </div>
+</section>
+</section>
 </section>
 <section id="pushing" class="level2" data-number="7.7">
 <h2 data-number="7.7" class="anchored" data-anchor-id="pushing"><span class="header-section-number">7.7</span> Pushing</h2>
@@ -612,7 +718,7 @@ Find out more: Common <code>git remote</code> commands
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>The command above “uploads” the local branch named “main” to a remote repository called “origin” while setting it as the upstream branch. <code>-u</code> is used to set the upstream branch. It tells Git to remember the remote branch to which your local branch should be uploaded in the future. After a successful push, you will get a message like this:</p>
@@ -621,22 +727,22 @@ Find out more: Common <code>git remote</code> commands
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Enumerating</span> objects: 17, done.</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Counting</span> objects: 100% <span class="pp">(</span><span class="ss">17/17</span><span class="pp">)</span>, done.</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Delta</span> compression using up to 8 threads</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Compressing</span> objects: 100% <span class="pp">(</span><span class="ss">12/12</span><span class="pp">)</span>, done.</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Writing</span> objects: 100% <span class="pp">(</span><span class="ss">12/12</span><span class="pp">)</span>, 2.11 KiB <span class="kw">|</span> <span class="ex">2.11</span> MiB/s, done.</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Total</span> 12 <span class="pp">(</span><span class="ss">delta 9</span><span class="pp">)</span>, reused 0 <span class="pp">(</span><span class="ss">delta 0</span><span class="pp">)</span>, pack-reused 0</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Resolving deltas: 100% <span class="pp">(</span><span class="ss">9/9</span><span class="pp">)</span>, completed with 5 local objects.</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> https://github.com/username/repository.git</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>   <span class="ex">fb3efef..8f50685</span>  main <span class="at">-</span><span class="op">&gt;</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Enumerating</span> objects: 17, done.</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Counting</span> objects: 100% <span class="pp">(</span><span class="ss">17/17</span><span class="pp">)</span>, done.</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Delta</span> compression using up to 8 threads</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Compressing</span> objects: 100% <span class="pp">(</span><span class="ss">12/12</span><span class="pp">)</span>, done.</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Writing</span> objects: 100% <span class="pp">(</span><span class="ss">12/12</span><span class="pp">)</span>, 2.11 KiB <span class="kw">|</span> <span class="ex">2.11</span> MiB/s, done.</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Total</span> 12 <span class="pp">(</span><span class="ss">delta 9</span><span class="pp">)</span>, reused 0 <span class="pp">(</span><span class="ss">delta 0</span><span class="pp">)</span>, pack-reused 0</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Resolving deltas: 100% <span class="pp">(</span><span class="ss">9/9</span><span class="pp">)</span>, completed with 5 local objects.</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> https://github.com/username/repository.git</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>   <span class="ex">fb3efef..8f50685</span>  main <span class="at">-</span><span class="op">&gt;</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>The <code>git push</code> operation involves enumerating, compressing, and writing objects to the remote repository. The output indicates the progress of these steps, including delta compression, and concludes with a summary of the pushed branch and commit range. In this specific example, changes from the local main branch (commit <code>fb3efef</code>) were pushed to the remote main branch (commit <code>8f50685</code>).</p>
 <p>It’s important to note that you need appropriate access and permissions to push to a remote repository. If you do not have write access, you won’t be able to push your changes. If you do not specify a branch and just run <code>git push</code>, Git will push the one “you are on” in the moment.</p>
 <p>Git will verify if your local branch is up to date with the remote branch. If there are new commits on the remote branch that you don’t have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts (find out more about <a href="#pulling">pulling</a> below).</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git push` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -645,7 +751,7 @@ Common <code>git push</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-u</code> or <code>--set-upstream</code>: This flag is used to set the upstream branch for the current branch. It is typically used when pushing a branch for the first time to link the local branch with a remote branch.</p>
 <p><code>--force</code> or <code>-f</code>: Force pushes the local main branch to the origin remote repository, overwriting any changes that may have been made to the main branch in the remote repository.</p>
@@ -690,7 +796,7 @@ Common <code>git push</code> flags
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified. You can now work with the files in the repository, make changes, and commit your modifications locally. Remember to use the appropriate Git commands like <code>git add</code>, <code>git commit</code>, and <code>git push</code> to manage your changes and synchronize them with the remote repository as needed (for details, see the chapter on <a href="../chapters/first-steps-git.html">Git basics</a>). By default, <code>git clone</code> will create a reference to the remote repository called “origin”, so you do not have to use <code>git remote</code> to create a remote repository.</p>
@@ -701,7 +807,7 @@ Common <code>git push</code> flags
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/username/repository.git new-folder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/username/repository.git new-folder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This will create a directory named <code>new-folder</code> and clone the repository into it.</p>
@@ -716,7 +822,7 @@ Common <code>git push</code> flags
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>If the pull is successful and there are no conflicts, you should see a message like this:</p>
@@ -725,14 +831,14 @@ Common <code>git push</code> flags
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Updating</span> abc123..def456</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Fast-forward</span> file.txt <span class="kw">|</span> <span class="ex">2</span> +- 1 file changed, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">1</span> insertion<span class="pp">(</span><span class="ss">+</span><span class="pp">)</span>, 1 deletion<span class="op">(-)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Updating</span> abc123..def456</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Fast-forward</span> file.txt <span class="kw">|</span> <span class="ex">2</span> +- 1 file changed, </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">1</span> insertion<span class="pp">(</span><span class="ss">+</span><span class="pp">)</span>, 1 deletion<span class="op">(-)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>The first part of the message indicates the range of commits that were fetched and merged. In this example, it suggests that Git is updating from commit <code>abc123</code> to commit <code>def456</code>. The “Fast-forward” message indicates that the local branch could be updated by moving the branch pointer forward, incorporating the new commits from the remote branch. This is possible when the local branch has not diverged from the remote branch, and there are no local commits that the remote branch does not have. The next line shows changes in the file <code>file.txt</code>. The <code>2 +-</code> indicates that two lines were changed with one insertion and one deletion. The <code>+</code> represents an addition, and the <code>-</code> represents a deletion. The last line of the message provides a summary of the changes. It states that one file was changed, with one line inserted and one line deleted.</p>
 <div class="callout callout-style-default callout-warning callout-titled" title="Be aware which branch you are pulling!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -741,14 +847,14 @@ Be aware which branch you are pulling!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>A regular <code>git pull</code> incorporates changes from a remote repository into the <strong>current</strong> branch. You can use the <code>git branch</code> command to verify which branch you are currently on (for details, see the <a href="../chapters/branches.html">branches</a> chapter). If the current branch is behind the remote, then by default it will fast-forward the current branch to match the remote. If the current branch and the remote have diverged, the user needs to specify how to reconcile the divergent branches.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git pull` command flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -757,7 +863,7 @@ Find out more: Common <code>git pull</code> command flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--ff-only</code>: Perform a fast-forward merge only. If the remote branch has new changes, Git will only update your local branch if a fast-forward merge is possible. Otherwise, it will abort the pull.</p>
 <p><code>--no-commit</code>: Perform the pull, but do not create an automatic commit after merging. This allows you to review the changes before committing manually.</p>
