@@ -328,8 +328,12 @@ div.csl-indent {
   </ul></li>
   <li><a href="#unsetting-configuration" id="toc-unsetting-configuration" class="nav-link" data-scroll-target="#unsetting-configuration"><span class="header-section-number">4.5</span> Unsetting configuration</a></li>
   <li><a href="#the-.gitconfig-file" id="toc-the-.gitconfig-file" class="nav-link" data-scroll-target="#the-.gitconfig-file"><span class="header-section-number">4.6</span> The <code>.gitconfig</code> file</a></li>
-  <li><a href="#acknowledgements-and-further-reading" id="toc-acknowledgements-and-further-reading" class="nav-link" data-scroll-target="#acknowledgements-and-further-reading"><span class="header-section-number">4.7</span> Acknowledgements and further reading</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">4.8</span> Cheatsheet</a></li>
+  <li><a href="#helpful-guardrails" id="toc-helpful-guardrails" class="nav-link" data-scroll-target="#helpful-guardrails"><span class="header-section-number">4.7</span> Helpful guardrails</a>
+  <ul class="collapse">
+  <li><a href="#preventing-a-git-repository-in-your-home-directory" id="toc-preventing-a-git-repository-in-your-home-directory" class="nav-link" data-scroll-target="#preventing-a-git-repository-in-your-home-directory"><span class="header-section-number">4.7.1</span> Preventing a Git repository in your home directory</a></li>
+  </ul></li>
+  <li><a href="#acknowledgements-and-further-reading" id="toc-acknowledgements-and-further-reading" class="nav-link" data-scroll-target="#acknowledgements-and-further-reading"><span class="header-section-number">4.8</span> Acknowledgements and further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">4.9</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -790,8 +794,49 @@ Mini Exercise: View the contents of <code>.gitconfig</code> with one command fro
 </div>
 <p>You can manually edit the <code>.gitconfig</code> file to customize your Git environment, but it’s often more convenient to use Git commands like <code>git config</code> to manage these settings.</p>
 </section>
-<section id="acknowledgements-and-further-reading" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="acknowledgements-and-further-reading"><span class="header-section-number">4.7</span> Acknowledgements and further reading</h2>
+<section id="helpful-guardrails" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="helpful-guardrails"><span class="header-section-number">4.7</span> Helpful guardrails</h2>
+<p>Especially if you are new to Git (but not only then!), you might be worried that something will go terribly wrong, that you will lose files beyond recovery, or that you will break your computer. While we won’t assure you that this will <em>not</em> happen (if you try really hard, you can always break stuff), it’s quite unlikely that something bad will happen. In this section, we therefore collect pieces of advice and other tricks to make your Git journey as smoothly as possible.</p>
+<section id="preventing-a-git-repository-in-your-home-directory" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="preventing-a-git-repository-in-your-home-directory"><span class="header-section-number">4.7.1</span> Preventing a Git repository in your home directory</h3>
+<p>In the next chapter, you will take your <a href="../chapters/first-steps-git.html">first steps with Git</a>. This will involve creating your first Git repository in a folder on your computer. It is then possible to track changes in the files in that folder.</p>
+<p>We strongly recommend that you <strong>don’t create a Git repository in your home directory!</strong> Otherwise, you might start tracking changes in all files in your home directory, which usually means all the files that you have saved under your user name, including applications and system files. Always remember that you need to navigate to the folder first where you want to create a new Git repository or work on an existing one <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>To <strong>prevent accidentally creating a Git repository in your home directory</strong>, you can run the following command:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> ~/.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Mini Exercise: What does the `touch` command do in this case?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mini Exercise: What does the <code>touch</code> command do in this case?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p>This command creates an empty file called <code>.git</code> in your home directory. The path <code>~/</code> specifies the path to your home directory. If you then run the <code>git init</code> command to initialize a new Git repository (find out more about this in the <a href="../chapters/first-steps-git.html">next chapter</a>), the following (desired) error will appear and no Git repository is created in your home directory:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> invalid gitfile format: /Users/user/.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Thanks to <a href="https://social.coop/@eamon/112434377857903339">Eamon Caddigan</a> for this tip!</p>
+</section>
+</section>
+<section id="acknowledgements-and-further-reading" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="acknowledgements-and-further-reading"><span class="header-section-number">4.8</span> Acknowledgements and further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="caption-top table">
 <thead>
@@ -835,8 +880,8 @@ Mini Exercise: View the contents of <code>.gitconfig</code> with one command fro
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">4.8</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">4.9</span> Cheatsheet</h2>
 <p>In this chapter, we have learned about the following commands:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -896,6 +941,12 @@ Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://
 Koziar, Katherine E., Madicken Munk, Andrew Greene, Annajiat Alim Rasel, Ed Bennett, Sarah LR Stevens, Ece Turnator, et al. 2023. <em>Swcarpentry/Git-Novice: Software Carpentry: Version Control with Git 2023-05</em>. Zenodo. <a href="https://doi.org/10.5281/ZENODO.7908089">https://doi.org/10.5281/ZENODO.7908089</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/swcarpentry/git-novice" class="uri">https://github.com/swcarpentry/git-novice</a>. Website: <a href="https://swcarpentry.github.io/git-novice/" class="uri">https://swcarpentry.github.io/git-novice/</a>.
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Use <code>cd</code> (details <a href="../chapters/command-line.html#navigating-the-file-system">here</a>)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
