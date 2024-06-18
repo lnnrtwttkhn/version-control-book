@@ -2,7 +2,7 @@
 categories: [intermediate, github, gitlab remote]
 image: ../static/githubchapter.png
 abstract: |
-  This chapter will introduce you to remote repositories, in particular GitHub and GitLab.
+  This chapter will introduce you to remote repository platforms, in particular GitHub and GitLab.
 ---
 
 # Remote repositories: Introduction
@@ -45,7 +45,11 @@ This ensures that the project's progress is not dependent on a single person's c
 ## GitLab
 1. Open [GitLab](https://gitlab.com) in your browser.
 2. Click the **Sign in** and the **Register** button.
-3. Enter the required personal details.
+3. Enter the required personal details or create an account using e.g. your google account.
+
+After creating an account you will be asked **why** you want to sign up and what your **role** is.
+You will also have to either **create a new project** or **join a project**.
+If you do not already have a project prepared it makes sense to select **join a project** to first gain access to GitLab. (You can create a new project anyway)
 
 :::
 
@@ -228,7 +232,43 @@ In the "Collaborators" tab of the settings, it is possible to add accounts which
 
 ### GitLab 
 
-Coming Soon
+Creating a new repository in GitLab is quite similar to GitHub.
+GitLab calls *repositories* mostly *projects*, but you can use these terms interchangeably. 
+
+After logging into your GitLab account, you need to follow these steps:
+
+1. Click on the **New Project** button, usually found in the dashboard. 
+
+Here you can choose to **create a blank project**. 
+Alternatively you can also create one **from template** or **import a project**.
+. 
+
+2. Fill in **Project Details**:
+
+If you create a **blank project** you will have to fill in the following details.
+
+ - **Project Name**: 
+Enter a name for your project. Avoid spaces and use hyphens (-) or underscores (_) instead.
+
+- **Project Slug**: This is the end of the URL of your project.
+It will be auto-filled based on your project name, but you can edit it. 
+It should be URL-friendly.
+
+- **Description** (Optional): Add a description to explain the purpose of your project.
+
+- **Visibility Level**: Choose the visibility of your project:
+Public: Accessible by anyone.
+Internal: Accessible by any logged-in user.
+Private: Accessible only by you and your collaborators.
+
+3. **Initialize Repository**:
+
+Like on GitHub, you can choose to initialize the repository with a `README file`, a .`gitignore` template, and a license file.
+If you plan to push an existing local repository, do not initialize with a `README` or other files to avoid conflicts.
+
+4. **Create Project**:
+
+Click the "Create project" button to create your new repository.
 
 :::
 
