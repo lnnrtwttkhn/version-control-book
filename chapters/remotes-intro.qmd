@@ -1,15 +1,15 @@
 ---
-categories: [intermediate, github, remote]
+categories: [intermediate, remotes, github, gitlab]
 image: ../static/githubchapter.png
 abstract: |
-  This chapter will introduce you to remote repositories, in particular GitHub.
+  This chapter will introduce you to remote repositories, in particular GitHub and GitLab.
 ---
 
-# GitHub: Introduction
+# Remotes: Introduction
 
 ::: {.callout-tip appearance="minimal"}
 <h5>Learning Objectives</h5>
-{{< include ../objectives/_objectives-github-intro.qmd >}}
+{{< include ../objectives/_objectives-remotes-intro.qmd >}}
 :::
 
 ## What are remote repositories?
@@ -17,7 +17,7 @@ abstract: |
 A remote repository is **a version of your Git repository that is hosted on a server**, usually on the internet.
 Unlike your local repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. 
 These remote repositories could be hosted on platforms like [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/), [Codeberg](https://codeberg.org/) or a private server.
-In this chapter, we will introduce the repository hosting platform [GitHub](https://github.com/), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)).
+In this chapter, we will mainly focus on the repository hosting platforms [GitHub](https://github.com/), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)) and [GitLab](https://gitlab.com), since it is a very popular alternative and offered by many academic institutions.
 
 ### Why use remote repositories?
 
@@ -27,49 +27,82 @@ Remote repositories provide a central location where team members can collective
 Whether contributors are across the room or across the globe, remote repositories make it possible for everyone to access the same set of project files and contribute to the development process.
 
 Hosting a project on a remote repository also serves as a **backup mechanism**.
-If a contributor's computer fails or their files get corrupted, they can always clone a fresh copy of the project from the remote repository.
+If a contributor's computer fails or their files get corrupted, they can always download (or "clone") a fresh copy of the project from the remote repository.
 This ensures that the project's progress is not dependent on a single person's computer.
 @fig-git-in-case-of-fire jokingly illustrates this point.
 
 !["In case of fire" by [Louis-Michel Couture](https://github.com/louim) (License: [MIT](https://github.com/louim/in-case-of-fire/blob/master/LICENSE); [Source on GitHub](https://github.com/louim/in-case-of-fire))](../static/git-in-case-of-fire){#fig-git-in-case-of-fire width="60%"}
 
-## What is GitHub?
+## Creating an account
 
-GitHub is a popular web-based platform that hosts Git repositories remotely. 
-You can use it in your browser without installing any software on your computer. 
-It's a collaborative environment for software development, allowing developers to work together, manage code, and track changes.
-GitHub also offers project management and code review tools, making it great for open-source development and team collaboration.
+::: {.panel-tabset}
 
-## Creating a GitHub account
+## {{< fa brands github >}} GitHub
 
-To be able to use GitHub, you need to create an account:
+1. Open [github.com](https://github.com) in your browser.
+1. Click the **Sign up** button.
+1. Enter the required personal details and select the free plan.
 
-1.  Open <https://github.com> in your browser.
-2.  Click the `Sign up` button.
-3.  Enter the required personal details.
-4.  In step 2, select the free plan.
-
-::: {.callout-tip title="Find out more: Choosing a GitHub username" collapse="true"}
-GitHub will ask you to choose a username.
-Here are some tips for choosing a GitHub username:
-
--   Incorporate your real name.
--   Adapt your username from other platforms.
--   Choose a professional username.
-    Your future boss might look at your GitHub profile.
--   Opt for a short username.
--   Be unique and concise.
--   Avoid references to specific institutions.
--   Use all lowercase and hyphens for word separation.
-:::
-
-::: {.callout-tip title="Tip: Sign-up for the GitHub Student Developer Pack" collapse="true"}
+::: {.callout-tip title="Tip: Are you a student? Sign-up for the GitHub Student Developer Pack" collapse="true"}
 The [GitHub Student Developer Pack](https://education.github.com/pack) is a program offered by GitHub to students, providing them with free access to a collection of valuable developer tools and services.
 To benefit from the pack, visit the [GitHub Education website](https://github.com/edu) and sign up with your student email to verify your academic status.
 Once verified, you gain access to various resources, including [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) with unlimited private repositories, free domain names, cloud credits, coding courses, and more.
 :::
 
-## Connecting to GitHub
+## {{< fa brands gitlab >}} GitLab
+
+1. Open [gitlab.com](https://gitlab.com) in your browser.
+1. Click the **Sign in** and the **Register** button.
+1. Enter the required personal details or create an account using e.g., Google.
+
+After creating an account you will be asked **why** you want to sign up and what your **role** is.
+You will also have to either **create a new project** or **join a project**.
+
+## {{< fa brands gitlab >}} MPIB GitLab
+
+1. Open [git.mpib-berlin.mpg.de](https://git.mpib-berlin.mpg.de/) in your browser.
+1. Enter your MPIB credentials to sign-in.
+:::
+
+::: {.callout-tip title="Find out more: Choosing a  username" collapse="true"}
+Both GitHub and GitLab will ask you to choose a username.
+Here are some tips for choosing a username:
+
+- Incorporate your real name.
+- Adapt a username that you use on other platforms.
+- Choose a professional username.
+Your future boss might look at your GitHub / GitLab profile.
+- Opt for a short username.
+- Be unique and concise.
+- Avoid references to specific institutions.
+You might not always be affiliated with them.
+- Use all lowercase and hyphens for word separation.
+:::
+
+## Connecting to a remote repository hosting service
+
+### Authentication
+
+In order to connect your local Git repository with a remote repository, you need to establish an authentication method.
+Depending on the platform there are different authentication methods available.
+We introduce the most common authentication methods below, separately for each platform.
+
+#### Secure Shell Protocol (SSH)
+
+The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.
+Its most notable applications are remote login and command-line execution.
+For more details on SSH, see [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell).
+
+You can read and write data in remote repositories like GitHub and GitLab using SSH.
+When you connect with SSH, you verify your identity using a private key file stored on your computer.
+We provide basic instructions below.
+For more detailed instructions, see the [GitHub Documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh).
+
+::: {.panel-tabset}
+
+## {{< fa brands github >}} GitHub
+
+### Connecting to GitHub {.unnumbered}
 
 GitHub authentication is needed to access and work with repositories that are stored on GitHub.
 It is kind of like showing your ID to prove who you are before entering a restricted area.
@@ -81,7 +114,7 @@ In this section, we will briefly introduce one of the two most common authentica
 
 If you would rather use the [SSH](https://de.wikipedia.org/wiki/Secure_Shell) protocol for authentication, check out the [SSH documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
-### Personal Access Token (PAT)
+### Personal Access Token (PAT) {.unnumbered}
 
 Follow these steps to set a Personal Access Token (PAT; see @fig-pat):
 
@@ -161,16 +194,7 @@ Provides permission to delete repositories.
 Offers administrative access to the entire organization, including managing teams and repositories.
 :::
 
-### Secure Shell Protocol (SSH)
-
-The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.
-Its most notable applications are remote login and command-line execution.
-For more details on SSH, see [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell).
-
-You can read and write data in remote repositories like GitHub and GitLab using SSH.
-When you connect with SSH, you verify your identity using a private key file stored on your computer.
-We provide basic instructions below.
-For more detailed instructions, see the [GitHub Documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh).
+### Secure Shell Protocol (SSH) {.unnumbered}
 
 #### Generating a new SSH key
 
@@ -264,9 +288,110 @@ Usually, you want to select "authentication" here.
 8. Click **Add SSH key**.
 9. If prompted, confirm access to your GitHub account.
 
-## GitHub repositories
+## {{< fa brands gitlab >}} MPIB GitLab
 
-### Creating a GitHub repository
+### Secure Shell Protocol (SSH) {.unnumbered}
+
+#### Generating a new SSH key {.unnumbered}
+
+1. Open the Terminal.
+2. Insert the text below, changing the example email to your MPIB email address (or the email address that you use for MPIB GitLab):
+
+```{zsh filename="Code"}
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+This will result into an output similar to this:
+
+```{zsh filename="Output"}
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/user/.ssh/id_ed25519): 
+```
+
+3. When asked to "Enter a file in which to save the key," you can just press Enter to use the default location.
+
+::: {.callout-caution title="SSH key already exists?" collapse="true"}
+
+If the SSH key already exists, you will get an output similar to this:
+
+```{zsh filename="Code"}
+/Users/user/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? n
+```
+
+If you don't want to overwrite the existing key, type `n` and hit Enter.
+You can now use the existing key and move on with the next step.
+
+:::
+
+4. When prompted, enter a secure passphrase.
+
+```{zsh filename="Code"}
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+```
+
+::: {.callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
+If someone gets into your computer, they can use your SSH keys to access all systems that use those keys.
+Adding a passphrase to your SSH key makes it more secure.
+To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent.
+For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
+:::
+
+#### Adding a new SSH key to your MPIB GitLab account {.unnumbered}
+
+1. Copy the SSH public key to your clipboard.
+The following command will copy the contents of the `id_ed25519.pub` file to your clipboard.
+
+::: {.panel-tabset}
+
+## {{< fa brands apple >}} macOS
+
+```{zsh filename="Code"}
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+If the `pbcopy` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+## {{< fa brands windows >}} Windows
+
+```{zsh filename="Code"}
+clip < ~/.ssh/id_ed25519.pub
+```
+
+If the `clip` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+## {{< fa brands linux >}} Linux
+
+```{zsh filename="Code"}
+cat ~/.ssh/id_ed25519.pub
+```
+
+Then select and copy the contents of the `id_ed25519.pub` file displayed in the terminal to your clipboard.
+
+Alternatively, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+:::
+
+2. In the upper-left on MPIB GitLab, click your profile photo, then click **Preferences**.
+3. In the sidebar, click **SSH Keys**.
+4. On the right-hand side, click **Add new key**.
+5. In the "Key" field, paste your public key.
+6. In the "Title" field, add a descriptive label for the new key.
+For example, if you're using a personal laptop, you might call it "Personal laptop".
+6. Choose the "Usage type" for key.
+Usually, you want to select "Authentication" here.
+7. Optionally (and recommended), set an expriation date.
+For example, this could be the date when your contract ends at MPIB.
+7. Finally, click **Add key**.
+
+:::
+
+## Creating a remote repository
+
+::: {.panel-tabset}
+
+## {{< fa brands github >}} GitHub
 
 To create a new repository on GitHub, click on the "**+**" sign in the top-right corner of the GitHub page.
 From the drop down menu, select "**New repository**".
@@ -289,15 +414,6 @@ For more details about public vs. private repositories, see the box below.
 
 1. Finally, click the green **"Create repository"** button at the bottom of the page to create a new repository with these settings.
 
-::: {.callout-warning title="Don't initialize the GitHub repository with any files, if you want to upload a local repository!" collapse="false"}
-If you want to upload your local repository to GitHub, make sure that you create the GitHub repository **without initializing it with a `README` file** or any other files.
-Initializing the repository with a `README` or any other files creates a commit in the GitHub repository. 
-When you try to push your local repository, you will encounter conflicts because the histories of your local and remote repositories will differ.
-
-To avoid this, create the GitHub repository empty.
-You can add a `README.md` and other files after pushing your local repository.
-:::
-
 ::: {.callout-tip title="Find out more: Public or private repository?" collapse="true"}
 When you create a new repository on GitHub, you can **control who can see it** by choosing if it's public or private.
 
@@ -311,7 +427,7 @@ This means you can later still make a public repository private and private repo
 
 ![Screenshot of creating a new repository](../static/github-newrepository.png){#fig-newrepo}
 
-### Repository settings
+#### Repository settings
 
 To access the settings of a GitHub repository, go to the main page of the GitHub repository you want to configure and look for the "Settings" tab, usually located towards the right side of the repository's navigation bar.
 Once you're on the repository settings page, you'll find various sections on the left sidebar that allow you to configure different aspects of the repository, such as "General," "Branches," or "Collaborators".
@@ -323,23 +439,114 @@ For a detailed guide on the repository settings, you can check out the [GitHub d
 
 In the "Collaborators" tab of the settings, it is possible to add accounts which can view or add changes your repository, even if it is private by entering their GitHub username or email address. 
 
-## Managing remotes
+## {{< fa brands gitlab >}} GitLab
 
-### Adding a remote to your local repository
+Creating a new repository in GitLab is quite similar to GitHub.
+GitLab calls *repositories* mostly *projects*, but you can use these terms interchangeably. 
+After logging into your GitLab account, you need to follow these steps:
 
-Let's assume that you have a local Git repository on your computer that you want to upload to GitHub.
-To initialize an existing repository as a GitHub repository, you first need to create a new repository on GitHub, as explained above.
+#### Create new project {.unnumbered}
+
+Click on the **New Project** button, usually found in the dashboard.
+Here you can choose to **create a blank project**.
+Alternatively you can also create one **from template** or **import a project**.
+
+#### Fill in project details {.unnumbered}
+
+Next, fill in project details:
+If you create a **blank project** you will have to fill in the following details.
+
+- **Project Name**:
+Enter a name for your project.
+Avoid spaces and use hyphens (`-`) or underscores (`_`) instead.
+
+- **Project Slug**:
+This is the end of the URL of your project.
+It will be auto-filled based on your project name, but you can edit it. 
+It should be URL-friendly.
+We recommend to use your project name to avoid confusion.
+
+- **Description** (Optional):
+Add a description to explain the purpose of your project.
+
+- **Visibility Level**:
+Choose the visibility of your project:
+
+    - **Public**: Accessible by anyone (worldwide).
+    - **Internal**: Accessible by any logged-in user.
+    At institutional instances, this means everyone at your institute can see your repository.
+    - **Private**: Accessible only by you and invited collaborators.
+
+#### Initialize the repository {.unnumbered}
+
+Like on GitHub, you can choose to initialize the repository with a `README file`, a .`gitignore` template, and a license file.
+If you plan to push an existing local repository, do not initialize with a `README` or other files to avoid conflicts.
+
+#### Create the project {.unnumbered}
+
+Click the "Create project" button to create your new repository.
+
+:::
+
+::: {.callout-warning title="Don't initialize a remote repository with any files, if you want to upload a local repository!" collapse="false"}
+If you want to upload your local repository to an remote repository, make sure that you create the repository **without initializing it with a `README` file** or any other files.
+Initializing the repository with a `README` or any other files creates a commit in the repository. 
+When you try to push your local repository, you will encounter conflicts because the histories of your local and remote repositories will differ.
+
+To avoid this, create the remote repository empty.
+You can add a `README.md` and other files after pushing your local repository.
+:::
+
+## Adding a remote to your local repository
+
+Let's assume that you have a local Git repository on your computer that you want to upload to a remote repository hosting service.
+To initialize an existing repository as a remote repository, you first need to create a new repository on your chosen hosting service (e.g., GitHub, GitLab, Bitbucket), as explained above.
 
 To add a remote repository to your local Git repository, navigate to your repository using the command line ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#moving-between-folders))] and use the `git remote` command:
 
-```{zsh filename="Code"}
-git remote add origin https://github.com/yourusername/repositoryname.git
+::: {.panel-tabset}
+
+## {{< fa brands github >}} GitHub
+
+```{zsh filename="Code (HTTPS)"}
+git remote add origin https://github.com/user-name/repo-name.git
 ```
 
-This command is essentially telling Git: "Add a remote repository named `origin` with the location (URL) `https://github.com/yourusername/repositoryname.git`".
-After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository on GitHub.
+```{zsh filename="Code (SSH)"}
+git remote add origin git@github.com:user-name/repo-name.git
+```
+
+Replace `user-name` with the repository's user name and `repo-name` with the name of the repository.
+
+## {{< fa brands gitlab >}} MPIB GitLab
+
+```{zsh filename="Code (HTTPS)"}
+git remote add origin https://git.mpib-berlin.mpg.de/user-name/repo-name.git
+```
+
+```{zsh filename="Code (SSH)"}
+git remote add origin git@git.mpib-berlin.mpg.de:user-name/repo-name.git
+```
+
+Replace `user-name` with the repository's user name and `repo-name` with the name of the repository.
+
+:::
+
+::: {.callout-important collapse="false" title="HTTPS vs. SSH: Different remote URL!"}
+Note, that depending on whether you are connecting to the remote repository via HTTPS or SSH, you have to use a different URL for your remote repository!
+:::
+
+Replace `<remote-repository-URL>` with the URL of your remote repository (HTTPS or SSH).
+This command is essentially telling Git: 
+“Add a remote repository named origin with the specified location (URL).”
+After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository.
+
+::: {.callout-tip collapse="false" title="What is `origin`?"}
 The term "origin" is a conventionally used name for the default remote repository.
-It's a standard name and we recommend to use it, but you could also choose any another name (for example, `github`) if you prefer. 
+It's a standard name and we recommend using it, but you could also choose another name if you prefer.
+For example, if you are connecting to GitHub, you could also replace `origin` with `github`
+Specifying different names for the remote repository is useful (or even necessary) when you are configuring multiple remote repositories.
+:::
 
 ### Checking configured remotes
 
@@ -352,12 +559,13 @@ git remote -v
 Below is an example output, in this case for the Git repository for this book.
 This output basically tells you that one remote called `origin` is configured, it shows the URL for the remote repository on GitHub, and indicated that this remote is used both to fetch changes from and push changes to GitHub.
 
-```{zsh filename="Code"}
+```{zsh filename="Output"}
 #| code-copy: false
 origin  git@github.com:lnnrtwttkhn/version-control-book.git (fetch)
 origin  git@github.com:lnnrtwttkhn/version-control-book.git (push)
 ```
 
+You can tell from the URL that in this case the remote was configured using SHH.
 
 ### Editing the remote URL
 
@@ -374,7 +582,7 @@ git remote rm origin
 2. Add the remote again with a different URL:
 
 ```{zsh filename="Code"}
-git remote add origin https://github.com/yourusername/newrepositoryname.git
+git remote add origin <remote-repository-URL>
 ```
 
 #### Set a new URL
@@ -382,7 +590,7 @@ git remote add origin https://github.com/yourusername/newrepositoryname.git
 You can also directly update the URL:
 
 ```{zsh filename="Code"}
-git remote set-url origin https://github.com/yourusername/newrepositoryname.git
+git remote set-url origin <remote-repository-URL>
 ```
 
 There is no feedback following this command.
@@ -462,43 +670,44 @@ This syntax allows you to push a specific local branch to a specific remote bran
 Example: `git push origin my_local_branch:my_remote_branch`
 :::
 
-## Committing changes on GitHub directly
-
-You can add or edit files directly on GitHub. 
-This is particularly useful if you need to make quick changes without accessing your local repository.
-
-### Adding a new file on GitHub
-
-1. Navigate to the desired repository on GitHub.
-1. Click on the "Add file" button and select "Create new file".
-1. Enter a name for your new file, including the appropriate file extension (for example, `example.txt`).
-1. Add your content in the text editor provided.
-1. Write a commit message describing the changes you are making.
-1. Click on the green "Commit new file" button to save the new file to the repository.
-
-### Editing an existing file
-
-1. Navigate to the desired repository on GitHub and locate the file you want to edit.
-1. Click on the file name to view its contents.
-1. In the top-right corner of the file view, click on the pencil icon ("Edit this file") to start editing.
-1. Make the necessary changes to the file in the in-browser editor.
-1. Provide a brief description of the changes in the "Commit changes" section at the bottom of the page.
-1. Click on the green "Commit changes" button to save your modifications.
-
 ## Cloning
 
-Cloning refers to **creating a local copy of a repository from GitHub on your computer**.
+Cloning refers to **creating a local copy of a repository from a remote hosting service on your computer**.
 When you clone a repository, you download all of its files, commit history, and branches to your local computer.
 Cloning allows you to work with the repository locally, make changes, and upload those changes back to the original repository (if you have write access).
 Cloning is commonly used when you want to contribute to a project or work on it independently.
-To clone a repository, you need the repository's URL from GitHub.
+To clone a repository, you need the repository's URL from your chosen hosting service
 You can find the repository's HTTPS URL on the repository page, if you click on the green **Code** button.
 Then use the command line to navigate to the directory where you want to clone the repository.
 Then use the `git clone` command followed by the URL of the remote repository:
 
-```{zsh filename="Code"}
-git clone https://github.com/username/repository.git
+::: {.panel-tabset}
+
+## {{< fa brands github >}} GitHub
+
+```{zsh filename="Code (HTTPS)"}
+git clone https://github.com/user-name/repo-name.git
 ```
+
+```{zsh filename="Code (SSH)"}
+git clone git@github.com:user-name/repo-name.git
+```
+
+Replace `user-name` with the repository's user name and `repo-name` with the name of the repository.
+
+## {{< fa brands gitlab >}} MPIB GitLab
+
+```{zsh filename="Code (HTTPS)"}
+git clone https://git.mpib-berlin.mpg.de/user-name/repo-name.git
+```
+
+```{zsh filename="Code (SSH)"}
+git clone git@git.mpib-berlin.mpg.de:user-name/repo-name.git
+```
+
+Replace `user-name` with the repository's user name and `repo-name` with the name of the repository.
+
+:::
 
 Once the cloning process is complete, you will have a local copy of the Git repository in the directory you specified.
 You can now work with the files in the repository, make changes, and commit your modifications locally.
@@ -512,7 +721,7 @@ Forgetting to do so may lead to confusion, as any Git commands you run will not 
 To clone the repository into a different folder, you can specify the new folder name as an additional "argument" in the `git clone` command:
 
 ```{zsh filename="Code"}
-git clone https://github.com/username/repository.git new-folder
+git clone https://your-remote-repo-url.git new-folder
 ```
 
 This will create a directory named `new-folder` and clone the repository into it. 
@@ -596,6 +805,39 @@ If you want to integrate the changes into your local branch, you can either now 
 `git fetch` is arguably the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 This allows you to review the changes fetched from the remote repository before integrating them with your local branch.
 
+## Committing changes on the remote directly
+
+::: {.panel-tabset}
+
+## {{< fa brands github >}} GitHub
+
+You can add or edit files directly on GitHub. 
+This is particularly useful if you need to make quick changes without accessing your local repository.
+
+#### Adding a new file on GitHub {.unnumbered}
+
+1. Navigate to the desired repository on GitHub.
+1. Click on the "Add file" button and select "Create new file".
+1. Enter a name for your new file, including the appropriate file extension (for example, `example.txt`).
+1. Add your content in the text editor provided.
+1. Write a commit message describing the changes you are making.
+1. Click on the green "Commit new file" button to save the new file to the repository.
+
+#### Editing an existing file {.unnumbered}
+
+1. Navigate to the desired repository on GitHub and locate the file you want to edit.
+1. Click on the file name to view its contents.
+1. In the top-right corner of the file view, click on the pencil icon ("Edit this file") to start editing.
+1. Make the necessary changes to the file in the in-browser editor.
+1. Provide a brief description of the changes in the "Commit changes" section at the bottom of the page.
+1. Click on the green "Commit changes" button to save your modifications.
+
+## {{< fa brands gitlab >}} GitLab
+
+Coming soon!
+
+:::
+
 ## Acknowledgements
 
 ```{r}
@@ -615,5 +857,5 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 #| echo: false
 #| message: false
 #| warning: false
-knitr::kable(table_cheatsheet(name = "github_intro"), format = "markdown", row.names = FALSE)
+knitr::kable(table_cheatsheet(name = "remote_intro"), format = "markdown", row.names = FALSE)
 ```
