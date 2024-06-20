@@ -113,7 +113,7 @@ In this section, we will briefly introduce one of the two most common authentica
 
 If you would rather use the [SSH](https://de.wikipedia.org/wiki/Secure_Shell) protocol for authentication, check out the [SSH documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
-##### Personal Access Token (PAT)
+### Personal Access Token (PAT)
 
 Follow these steps to set a Personal Access Token (PAT; see @fig-pat):
 
@@ -192,6 +192,100 @@ Provides permission to delete repositories.
 `admin:org`: 
 Offers administrative access to the entire organization, including managing teams and repositories.
 :::
+
+### Secure Shell Protocol (SSH)
+
+#### Generating a new SSH key
+
+1. Open the Terminal.
+2. Insert the text below, changing the example email to your email address:
+
+```{zsh filename="Code"}
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+This will result into an output similar to this:
+
+```{zsh filename="Output"}
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/user/.ssh/id_ed25519): 
+```
+
+3. When asked to "Enter a file in which to save the key," you can just press Enter to use the default location.
+
+::: {.callout-caution title="SSH key already exists?" collapse="true"}
+
+If the SSH key already exists, you will get an output similar to this:
+
+```{zsh filename="Code"}
+/Users/user/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? n
+```
+
+If you don't want to overwrite the existing key, type `n` and hit Enter.
+You can now use the existing key and move on with the next step.
+
+:::
+
+4. When prompted, enter a secure passphrase.
+
+```{zsh filename="Code"}
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+```
+
+::: {.callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
+If someone gets into your computer, they can use your SSH keys to access all systems that use those keys.
+Adding a passphrase to your SSH key makes it more secure.
+To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent.
+For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
+:::
+
+#### Adding a new SSH key to your GitHub account
+
+1. Copy the SSH public key to your clipboard.
+The following command will copy the contents of the `id_ed25519.pub` file to your clipboard.
+
+::: {.panel-tabset}
+
+## {{< fa brands apple >}} macOS
+
+```{zsh filename="Code"}
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+If the `pbcopy` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+## {{< fa brands windows >}} Windows
+
+```{zsh filename="Code"}
+clip < ~/.ssh/id_ed25519.pub
+```
+
+If the `clip` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+## {{< fa brands linux >}} Linux
+
+```{zsh filename="Code"}
+cat ~/.ssh/id_ed25519.pub
+```
+
+Then select and copy the contents of the `id_ed25519.pub` file displayed in the terminal to your clipboard.
+
+Alternatively, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+:::
+
+2. In the upper-right corner of any page on GitHub, click your profile photo, then click **Settings**.
+3. In the "Access" section of the sidebar, click **SSH and GPG keys**.
+4. Click **New SSH key** or **Add SSH key**.
+5. In the "Title" field, add a descriptive label for the new key.
+For example, if you're using a personal laptop, you might call it "Personal laptop".
+6. Choose the type of key, either authentication or signing.
+Usually, you want to select "authentication" here.
+7. In the "Key" field, paste your public key.
+8. Click **Add SSH key**.
+9. If prompted, confirm access to your GitHub account.
 
 ## {{< fa brands gitlab >}} MPIB GitLab
 
