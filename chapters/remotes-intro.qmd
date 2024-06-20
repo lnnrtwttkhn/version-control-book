@@ -98,10 +98,11 @@ When you connect with SSH, you verify your identity using a private key file sto
 We provide basic instructions below.
 For more detailed instructions, see the [GitHub Documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh).
 
-
 ::: {.panel-tabset}
 
 ## {{< fa brands github >}} GitHub
+
+### Connecting to GitHub {.unnumbered}
 
 GitHub authentication is needed to access and work with repositories that are stored on GitHub.
 It is kind of like showing your ID to prove who you are before entering a restricted area.
@@ -113,7 +114,7 @@ In this section, we will briefly introduce one of the two most common authentica
 
 If you would rather use the [SSH](https://de.wikipedia.org/wiki/Secure_Shell) protocol for authentication, check out the [SSH documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
-### Personal Access Token (PAT)
+### Personal Access Token (PAT) {.unnumbered}
 
 Follow these steps to set a Personal Access Token (PAT; see @fig-pat):
 
@@ -193,7 +194,7 @@ Provides permission to delete repositories.
 Offers administrative access to the entire organization, including managing teams and repositories.
 :::
 
-### Secure Shell Protocol (SSH)
+### Secure Shell Protocol (SSH) {.unnumbered}
 
 #### Generating a new SSH key
 
@@ -289,7 +290,9 @@ Usually, you want to select "authentication" here.
 
 ## {{< fa brands gitlab >}} MPIB GitLab
 
-### Generating a new SSH key
+### Secure Shell Protocol (SSH) {.unnumbered}
+
+#### Generating a new SSH key {.unnumbered}
 
 1. Open the Terminal.
 2. Insert the text below, changing the example email to your MPIB email address (or the email address that you use for MPIB GitLab):
@@ -335,7 +338,7 @@ To avoid typing the passphrase each time you connect, you can securely store it 
 For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
 :::
 
-### Adding a new SSH key to your MPIB GitLab account
+#### Adding a new SSH key to your MPIB GitLab account {.unnumbered}
 
 1. Copy the SSH public key to your clipboard.
 The following command will copy the contents of the `id_ed25519.pub` file to your clipboard.
