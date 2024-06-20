@@ -83,7 +83,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/github-intro.html" rel="next">
+<link href="../chapters/remotes-intro.html" rel="next">
 <link href="../chapters/first-steps-git.html" rel="prev">
 <link href="../static/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -228,8 +228,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/github-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub: Introduction</span></span></a>
+  <a href="../chapters/remotes-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -377,7 +377,7 @@ Learning Objectives
 <p>In short, branches in Git allow you to keep different versions of your repository content in parallel, develop them independently, and integrate them when they are ready. Before we explain the concept of branches in more detail, let’s look at a few scenarios that illustrate why branches are useful <span class="citation" data-cites="community2022">(taken from <a href="../misc/references.html#ref-community2022" role="doc-biblioref">The Turing Way Community 2022</a>)</span>:</p>
 <ol type="1">
 <li><p>You want to add a new feature to your project (for example, a new analysis) but while doing so, you run the risk of accidentally breaking your working code as you test the new feature. You may want to quickly go back to your previous working version while working on the new feature but keep the as yet unfinished progress on the new feature.</p></li>
-<li><p>If you collaborate with others on the same Git repository (we will look at collaboration with Git in the <a href="../chapters/github-intro.html">chapter on GitHub</a>) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.</p></li>
+<li><p>If you collaborate with others on the same Git repository (we will look at collaboration with Git in the <a href="github-intro.qmd">chapter on GitHub</a>) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.</p></li>
 </ol>
 </section>
 <section id="what-are-branches" class="level2" data-number="6.2">
@@ -472,7 +472,7 @@ Common <code>git branch</code> flags
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><code>-a</code> or <code>--all</code>: Lists both local and remote branches. (Remote branches will be introduced in the <a href="../chapters/github-intro.html">GitHub Intro</a> chapter )</p>
+<p><code>-a</code> or <code>--all</code>: Lists both local and remote branches. (Remote branches will be introduced in the <a href="github-intro.qmd">GitHub Intro</a> chapter )</p>
 <p><code>-r or --remote</code>: Lists only remote branches.</p>
 <p><code>-d</code> or <code>--delete</code>: Deletes a specified branch. For example, <code>git branch -d feature</code>.</p>
 <p><code>-D</code> or <code>--force</code>: Force deletes a branch, even if it has unmerged changes.</p>
@@ -622,7 +622,7 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <p>Merge conflicts occur when Git is unable to automatically resolve differences between two branches during a merge. This happens when both branches include conflicting changes to the same part of a file. Git simply can’t determine which version of the code should be favored, and as a result, it requests manual intervention from you, the developer. It’s similar to when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep. Merge conflicts are more likely to occur in collaborative projects, where multiple people modify the same files. However, they can also happen in projects where you work on your own.</p>
 <section id="avoiding-merge-conflicts" class="level3" data-number="6.7.1">
 <h3 data-number="6.7.1" class="anchored" data-anchor-id="avoiding-merge-conflicts"><span class="header-section-number">6.7.1</span> Avoiding merge conflicts</h3>
-<p>Merge conflicts can be a bit of a headache. If you only work locally on your computer, without a remote repository (for example, an online version of your repository on <a href="../chapters/github-intro.html">GitHub</a>), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches. However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts. That being said, employing good development practices can minimize the occurrence of merge conflicts. Regularly pulling changes from the remote repository into your local branch (using <code>git pull</code>) and keeping your branch up-to-date can help identify and resolve conflicts early. You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on <a href="../chapters/github-intro.html">GitHub</a>.</p>
+<p>Merge conflicts can be a bit of a headache. If you only work locally on your computer, without a remote repository (for example, an online version of your repository on <a href="github-intro.qmd">GitHub</a>), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches. However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts. That being said, employing good development practices can minimize the occurrence of merge conflicts. Regularly pulling changes from the remote repository into your local branch (using <code>git pull</code>) and keeping your branch up-to-date can help identify and resolve conflicts early. You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on <a href="github-intro.qmd">GitHub</a>.</p>
 </section>
 <section id="example-merge-conflict" class="level3" data-number="6.7.2">
 <h3 data-number="6.7.2" class="anchored" data-anchor-id="example-merge-conflict"><span class="header-section-number">6.7.2</span> Example merge conflict</h3>
@@ -1444,8 +1444,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/github-intro.html" class="pagination-link" aria-label="GitHub: Introduction">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">GitHub: Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/remotes-intro.html" class="pagination-link" aria-label="Remotes: Introduction">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
