@@ -29,9 +29,9 @@
   },
   "config": {
     "git config": "Get an overview of Git config commands",
-    "git config --global user.name": "Sets Git username",
-    "git config --global user.email": "Sets Git email address",
-    "git config --global core.editor": "Sets Git text editor",
+    "git config --global \"user.name\"": "Sets Git username",
+    "git config --global \"user.email\"": "Sets Git email address",
+    "git config --global core.editor \"editorname\"": "Sets Git text editor",
     "git config --global init.defaultBranch main": "Sets default branch name to `main`",
     "git config --list": "Views set Git configurations"
   },
@@ -40,6 +40,7 @@
     "git status": "Views Git tracking status of files in the repository",
     "git add": "Adds file(s) to the staging area",
     "git commit": "Commits staged files",
+    "git commit -m \"commit message\"": "Commits staged files with a commit message",
     "git log": "Views past commits",
     "git diff": "Views made changes compared to the last commit"
   },
@@ -64,7 +65,7 @@
   },
   "stashing": {
     "git stash": "Stores made changes for later use",
-    "git stash -m stashing message": "Stashes your changes and includes a message",
+    "git stash -m \"stashing message\"": "Stashes your changes and includes a message",
     "git stash list":"Shows all of your stored stashes", 
     "git stash apply": "Applies your latest stash",
     "git stash apply stash@{n}": "Applies a specific stash",
