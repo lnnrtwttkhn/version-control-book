@@ -60,16 +60,26 @@
     "git merge": "Merges branches",
     "git merge --abort": "Aborts a merge",
     "git merge --squash": "Squaches commits on branch into a single commit and merge",
-    "git branch -d feature": "Deletes the `feature` branch"
-  },
-  "stashing": {
+    "git branch -d feature": "Deletes the `feature` branch",
     "git stash": "Stores made changes for later use",
     "git stash -m stashing message": "Stashes your changes and includes a message",
     "git stash list":"Shows all of your stored stashes", 
     "git stash apply": "Applies your latest stash",
     "git stash apply stash@{n}": "Applies a specific stash",
     "git stash pop": "Applies your latest stash and removes it from stash list",
-    "git stash pop stash@{n}": "Applies a specific stash and removes it from stash list",
+    "git stash pop stash@{n}": "Applies a specific stash and removes it from stash list"
+  },
+  "Tags and Releases": {
+    "git tag": "Lists all tags",
+    "git tag v1.0": "Creates a tag on the basis of your current commit named v1.0",
+    "git tag v1.1 <commit-hash>": "Creates a tag on the basis of a specific commit hash named v1.1",
+    "git tag -a v1.0 -m Release version 1.0": "Creates an annotated tag on the basis of your current commit hash named v1.0 with the tagging message Release version 1.0",
+    "git push origin <tag-name>": "Pushes a specific tag to remote",
+    "git push origin --tags": "Pushes all created tags to remote",
+    "git fetch --tags": "Fetches all created tags from remote",
+    "git pull --tags": "Pulls all created tags from remote"
+  },
+  "rewriting_history": {
     "git restore <FILE>": "Reverts `<FILE>` back to the state of your last commit",
     "git restore .": "Reverts all files in your repository back to the state of your last commit",
     "git restore --staged <FILE>": "Removes `<FILE>` from your staging area",
@@ -82,19 +92,7 @@
     "git reset --hard <commithash>": "Resets the branch to a specified commit",
     "git cherry-pick <commithash>": "Applies changes from `<commithash>`",
     "git clean": "Deletes untracked files from your directory",
-    "git rebase": "Different way of integrating changes from two branches"
-  },
-  "Tags and Releases": {
-    "git tag": "Lists all tags",
-    "git tag v1.0": "Creates a tag on the basis of your current commit named `v1.0`",
-    "git tag v1.1 <commit-hash>": "Creates a tag on the basis of a specific commit hash named `v1.1`",
-    'git tag -a v1.0 -m "Release version 1.0"': "Creates an annotated tag on the basis of your current commit hash named `v1.0` with the tagging message `Release version 1.0`",
-    "git push origin <tag-name>": "Pushes a specific tag to remote",
-    "git push origin --tags": "Pushes all created tags to remote",
-    "git fetch --tags": "Fetches all created tags from remote",
-    "git pull --tags": "Pulls all created tags from remote"
-  },
-  "rewriting_history": {
+    "git rebase": "Different way of integrating changes from two branches",
     "git filter-repo --invert-paths --path < PATH-TO-FILE-YOU-WANT-TO-REMOVE >": "Remove specified file from your repository history",
     "brew install git-filter-repo": "Installs git filter-repo using brew"
   }
