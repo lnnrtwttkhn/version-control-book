@@ -132,7 +132,6 @@ For example, `git branch -c existing-branch new-branch`
 ## Switching branches
 
 To switch to another branch, you can use `git checkout` or `git switch`.
-
 For example, enter the following command to switch to the newly created `feature` branch:
 
 ```{zsh, filename="Code"}
@@ -155,7 +154,7 @@ This requirement ensures that there's a baseline history in your repository, all
 
 :::
 
-::: {.callout-tip title="What is the difference between `git checkout` and `git switch`?" collapse="true"}
+::: {.callout-tip title="Find out more: What is the difference between `git checkout` and `git switch`?" collapse="true"}
 Prior to Git version 2.23, the `git checkout` command was the primary way to switch branches. 
 It allows you to move to a different branch and update your working directory to reflect the state of that branch. 
 In Git 2.23 and later versions, the `git switch` command was introduced as a safer and more intuitive alternative to `git checkout`. 
@@ -168,8 +167,8 @@ It can be used for branch switching, but it may have some ambiguity in its synta
 ### Switching branches with uncommitted changes
 
 ::: {.callout-caution collapse="false" appearance="simple"}
-This section references some more advanced Git commits.
-If you're facing the issue that Git prevents you from switching branches, read on.
+This section references more advanced Git commands.
+If you're facing the issue that **Git prevents you from switching branches**, read on.
 If you're just learning about branches and switching branches worked without any problems, feel free to skip this section for now.
 :::
 
@@ -184,27 +183,29 @@ If you try to switch branches with uncommitted changes you will get an error mes
 ```{zsh, filename="Output"}
 #| code-copy: false
 error: Your local changes to the following files would be overwritten by checkout:
-        chapters/branches.qmd
+        example.txt
 Please commit your changes or stash them before you switch branches.
 Aborting
 ```
 
-The message specifies the file with modifications, and indicates an aborted branch switch due to uncommitted changes.
+The message specifies the file with modifications (here, `example.txt`), and indicates an aborted branch switch due to uncommitted changes.
 To resolve this and switch branches safely, you have a few options:
 
 1. **Commit your changes:**
-Use the commit process to save your work on the current branch.
+Use the stage and commit process to save your work on the current branch.
 This involves staging your changes with `git add` and then committing them with `git commit`.
 This workflow is explained in detail in the chapter on [basic Git commands](first-steps-git.qmd).
 
 2. **Stash your changes:**
 If you're not ready to commit, you can use `git stash` to temporarily shelve your changes.
 This clears your working directory, allowing you to switch branches. 
-Your stashed changes can be reapplied later. 
+Your stashed changes can be reapplied later.
+Stashing is covered in more detail in the [section below](#stashing).
 
 3. **Discard your changes:** 
 If the changes are not needed, you can remove them using `git reset` to unstage all changes. 
 This action should be used with caution as it will erase your modifications. 
+This command is covered in the chapter ["Rewriting history"](rewriting-history.qmd).
 
 ## Merging branches
 
@@ -446,7 +447,13 @@ Deleted branch feature.
 
 You can only delete a branch, you are *not* currently on.
 
-## Stashing changes for later use
+::: {.callout-caution collapse="false" appearance="simple"}
+This section concludes the most important Git commands for working with branches for new learners.
+The following sections will dive into more advanced Git commands that become relevant once you start using branches more extensively.
+If you're just learning about branches and the commands above worked without any problems, feel free to skip to the next chapter for now.
+:::
+
+## Stashing
 
 `git stash` is a valuable command in Git that allows you to save your current changes temporarily without committing them.
 This is useful when you need to switch branches or work on something else without creating a commit for unfinished work.
@@ -456,16 +463,17 @@ The working directory is then reverted to the last committed state, providing a 
 
 ### Stashing changes
 
-To demonstrate the usefulness of `git stash`, you can edit one or more files in your repository, stage or don't stage your changes, but don't commit them.
-Now use `git status` to look at your working directory.
+To demonstrate the usefulness of `git stash`, you can edit one or more files in your repository, stage (or don't stage) your changes, but don't commit them.
+Now use `git status` to look at the current state of your working directory.
 
-```{bash}
+```{zsh, filename="Code"}
 git status
 ```
 
-Yo should get an output similar to:
+You should get an output similar to:
 
-```{bash}
+```{zsh, filename="Output"}
+#| code-copy: false
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
@@ -482,19 +490,21 @@ In this example, there are changes on two tracked files, one staged and one not 
 Just like when committing, it is possible to add a message when stashing using the `-m` flag.
 It makes sense to add a message because it serves as a reminder of what changes were stashed, making it easier to identify the purpose of the stash when you later list or apply stashes.
 
-```{bash}
+```{zsh, filename="Code"}
 git stash -m "feature X WIP"
 ```
 
 You should get an output similar to:
 
-```{bash}
+```{zsh, filename="Output"}
+#| code-copy: false
 Saved working directory and index state On feature: "feature X WIP"
 ```
 
 You can now use `git status` to look at your working directory again and should see an output similar to:
 
-```{bash}
+```{zsh, filename="Output"}
+#| code-copy: false
 On branch main
 nothing to commit, working directory clean
 ```
@@ -503,31 +513,36 @@ Now you can switch branches and work on something else or stop working on the pr
 
 ### Retrieving stashed changes
 
-If you want to reapply your changes, you can use `git stash apply`. 
-To look at all your stored stashes, you can use `git stash list`.
+To look at all your stored stashes, you can use `git stash list`:
 
-```{bash}
+```{zsh, filename="Code"}
 git stash list
 ```
 
 You should get an output similar to:
 
-```{bash}
+```{zsh, filename="Output"}
+#| code-copy: false
 stash@{0}: On feature: feature X WIP
 ```
 
 All of your stored stashes should show up, with the most recent on top.
 Every stash should have a number, applied chronologically.
-`git stash apply` automatically applies your latest stash.
-You can also specify a stored stash, for example `git stash apply stash@{3}`
 
-```{bash}
-git stash apply stash@{3}
+### Applying stashed changes
+
+If you want to reapply your stashed changes, you can use `git stash apply`. 
+This command automatically applies your latest stash.
+You can also specify a stored stash, for example `git stash apply stash@{0}`
+
+```{zsh, filename="Code"}
+git stash apply stash@{0}
 ```
 
 You should get an output similar to:
 
-```{bash}
+```{zsh, filename="Output"}
+#| code-copy: false
 On branch main
 Changes not staged for commit:
   (use "git add <file>.. ." to update what will be committed)
