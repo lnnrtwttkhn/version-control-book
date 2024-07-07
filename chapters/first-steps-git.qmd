@@ -585,21 +585,22 @@ This method keeps your Git history useful and looking good, making sure your com
 
 This workflow can be useful when you're working on a new feature or a significant change and you might make several small adjustments to get it right. Instead of cluttering your history with numerous tiny commits for each tweak, you can use the "repeated amend" to gradually build up a well-polished commit that includes the entire feature.
 
-## Partial commits
+### Partial commits
 
-Git allows you to make partial commits by staging only specific parts of your file before committing. 
-This can be achieved using `git add`  with the `-p` or `--patch` option, which allows you to interactively choose which changes to stage. 
+Git allows you to make partial commits by staging only specific parts of your file before committing.
+This can be achieved using `git add` with the `-p` or `--patch` option, which allows you to interactively choose which changes to stage. 
 
 To try this make some changes to your file(s) and use:
 
-```{bash}
+```{zsh filename="Code"}
 git add -p
 ```
 
 This will prompt you with each change, giving you options to stage, skip, or split the changes.
 You'll see a series of prompts like this:
 
-```{bash}
+```{zsh filename="Output"}
+#| code-copy: false
 + Example text ...
 +
 +
@@ -607,7 +608,7 @@ You'll see a series of prompts like this:
 (1/x) Stage this hunk [y,n,q,a,d,e,?]?
 ```
 
-These prompt option respectively stand for:
+These prompt options respectively stand for:
 
 -   `y`: Stage this hunk.
 -   `n`: Do not stage this hunk.
@@ -620,7 +621,7 @@ These prompt option respectively stand for:
 
 Type one of the symbols in the command line to proceed in the desired manner.
 
-::: {.callout-tip title='What is a "hunk"?' collapse="true"}
+::: {.callout-tip title='Find our more: What is a "hunk"?' collapse="true"}
 In Git, a "hunk" refers to a distinct block of code changes within a file.
 It represents a cohesive set of added, modified, or deleted lines in a specific location.
 Git automatically divides changes into hunks to facilitate easier review, selective staging, and conflict resolution during version control operations.
@@ -628,8 +629,8 @@ Git automatically divides changes into hunks to facilitate easier review, select
 
 ::: {.callout-tip title="Our recommendation: Use a GUI for partial commits" collapse="false"}
 In our opinion, using partial commits on the command line is a bit of a hassle.
-This would be a good usecase for a Git GUI. 
-To checkout how to do partial commit using [GitKraken](https://www.gitkraken.com) checkout the [GUI chapter](gui.qmd) in this book.
+This would be a good use case for a Git Graphical User Interface (GUI). 
+To checkout how to do partial commits using [GitKraken](https://www.gitkraken.com) checkout the [GUI chapter](gui.qmd) in this book.
 :::
 
 ## What files can/should I track with Git?
