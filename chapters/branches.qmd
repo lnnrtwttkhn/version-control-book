@@ -26,7 +26,7 @@ Before we explain the concept of branches in more detail, let's look at a few sc
 1. You want to add a new feature to your project (for example, a new analysis) but while doing so, you run the risk of accidentally breaking your working code as you test the new feature.
 You may want to quickly go back to your previous working version while working on the new feature but keep the as yet unfinished progress on the new feature.
 
-2. If you collaborate with others on the same Git repository (we will look at collaboration with Git in the [chapter on GitHub](github-intro.qmd)) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.
+2. If you collaborate with others on the same Git repository (we will look at collaboration with Git in the [chapter on Git remotes](remotes-intro.qmd)) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.
 
 ## What are branches?
 
@@ -111,7 +111,7 @@ You could also call your branch `banana`, if you want.
 Find out more about naming convention for Git branches in the [section on best practices](#best-practices) below.
 
 ::: {.callout-tip title="Common `git branch` flags" collapse="false"}
-`-a` or `--all`: Lists both local and remote branches. (Remote branches will be introduced in the [GitHub Intro](github-intro.qmd) chapter )
+`-a` or `--all`: Lists both local and remote branches. (Remote branches will be introduced in the [Remotes: Introduction](remotes-intro.qmd) chapter )
 
 `-r or --remote`: Lists only remote branches.
 
@@ -261,11 +261,11 @@ However, they can also happen in projects where you work on your own.
 ### Avoiding merge conflicts
 
 Merge conflicts can be a bit of a headache. 
-If you only work locally on your computer, without a remote repository (for example, an online version of your repository on [GitHub](github-intro.qmd)), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches.
+If you only work locally on your computer, without a remote repository (for example, an online version of your repository on [GitHub or GitLab](remotes-intro.qmd)), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches.
 However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts.
 That being said, employing good development practices can minimize the occurrence of merge conflicts.
 Regularly pulling changes from the remote repository into your local branch (using `git pull`) and keeping your branch up-to-date can help identify and resolve conflicts early.
-You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on [GitHub](github-intro.qmd).
+You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on [remote repositories](remotes-intro.qmd).
 
 ### Example merge conflict
 
@@ -647,14 +647,15 @@ This means, you can pick and apply specific commits to your current branch witho
 This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in @fig-cherry-pick.
 You will need the hash of the commit you want to "cherry-pick" and then use the command:
 
-```{bash}
+```{zsh, filename="Code"}
 git cherry-pick <commithash>
 ```
 
 Again, you might have to resolve merge conflicts.
 The default commit message will be: 
 
-```{bash}
+```{zsh, filename="Output"}
+#| code-copy: false
 Cherry-pick commit <commit-hash>
 This commit was cherry-picked from <source-branch> at <source-commit-hash>
 ```
@@ -677,11 +678,11 @@ Useful when you want to provide a custom message for the cherry-picked commit.
 `git rebase` is a different way compared to a standard merge to integrate changes from one branch into another. 
 For example, when you rebase the `feature` branch onto the `main` branch you "rearrange" the commits. 
 It's like taking your changes, applying them on top of the latest `main` branch, and making it all look like a smooth line. 
-The new commits you made in the feature branch are still there, but they appear as if they were created after the latest changes in the main branch. 
+The new commits you made in the `feature` branch are still there, but they appear as if they were created after the latest changes in the `main` branch. 
 It's like picking up your changes and placing them on the latest code, resulting in a linear history.
 For an illustration, see @fig-rebasing.
 
-```{bash}
+```{zsh, filename="Code"}
 git rebase main
 ```
 
