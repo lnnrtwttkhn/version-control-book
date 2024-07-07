@@ -507,7 +507,7 @@ What is a Digital Object Identifier (DOI)?
 </div>
 <section id="creating-a-zenodo-account" class="level3" data-number="9.3.1">
 <h3 data-number="9.3.1" class="anchored" data-anchor-id="creating-a-zenodo-account"><span class="header-section-number">9.3.1</span> Creating a Zenodo account</h3>
-<p>To upload a Git repository to Zenodo, you first create a Zenodo account. On the Zenodo <a href="https://zenodo.org">start page</a>, you can click on “<strong>Sign Up</strong>” in the top right corner. Here you either can directly use your <strong>GitHub account</strong> to sign up, or sign up using <strong>your email</strong> (or other accounts) and link your GitHub account later on. To <strong>link your GitHub account</strong>, you can click on the arrow, next to your email, on the start page and select “GitHub”.</p>
+<p>To upload a Git repository to Zenodo, you first create a Zenodo account. On the Zenodo <a href="https://zenodo.org">start page</a>, you can click on “<strong>Sign Up</strong>” in the top right corner. Here you either can directly use your <strong>GitHub account</strong> to sign up, or sign up using <strong>your email</strong> (or other accounts) and link your GitHub account later on. To <strong>link your GitHub account</strong>, you can click on the arrow, next to your email, on the start page and select “GitHub”. If you create an account on the <a href="https://zenodo.org">regular Zenodo site</a>, you will have to create a new account to use the <a href="https://sandbox.zenodo.org">Zenodo Sandbox</a>, since the accounts do not synchronize.</p>
 </section>
 <section id="uploading-a-git-repository" class="level3" data-number="9.3.2">
 <h3 data-number="9.3.2" class="anchored" data-anchor-id="uploading-a-git-repository"><span class="header-section-number">9.3.2</span> Uploading a Git repository</h3>
@@ -523,8 +523,15 @@ What is a Digital Object Identifier (DOI)?
 </div>
 </div>
 <p>To upload an older release, you have to download your repository as a <code>.zip</code> file from GitHub and uploading it manually at <a href="https://sandbox.zenodo.org/uploads/new">https://sandbox.zenodo.org/uploads/new</a></p>
-<p>To upload a new release, visit the <a href="https://sandbox.zenodo.org/account/settings/github/">Zenodo GitHub settings</a>. Here you should see all your uploaded repositories, with the option to sync them by selecting the “on” button. If you now create a release, as discussed earlier, it will show up and be associated with a DOI.</p>
+<p>To upload a new release, visit the <a href="https://sandbox.zenodo.org/account/settings/github/">Zenodo GitHub settings</a>. Here you should see all your uploaded repositories, with the option to sync them by selecting the “on” button. If you now create a release, as discussed earlier, it will show up and be associated with a DOI. Please note that if you have created a release <em>before</em> syncing your repository, the release will not show up. You can delete the GitHub release without deleting your tag and create a new release, which is the going to appear on Zenodo.</p>
 <p>For a pictured guide on how to upload a GitHub repository to Zenodo, you check out <a href="https://coderefinery.github.io/github-without-command-line/doi/">this guide</a> from the <a href="https://coderefinery.org">Code Refinery</a>.</p>
+<section id="markdown-doi-badge" class="level4" data-number="9.3.2.1">
+<h4 data-number="9.3.2.1" class="anchored" data-anchor-id="markdown-doi-badge"><span class="header-section-number">9.3.2.1</span> Markdown DOI badge</h4>
+<p>After you have created a release in your synced repo, a DOI badge should show up in your <a href="https://sandbox.zenodo.org/account/settings/github/">Zenodo GitHub settings</a> next to the repository name. When you click on it there should be a section called <strong>Markdown</strong> with Markdown syntax below, for example:</p>
+<pre><code>[![DOI](https://sandbox.zenodo.org/badge/731953735.svg)](https://sandbox.zenodo.org/doi/10.5072/zenodo.71301)
+</code></pre>
+<p>You can copy and paste this syntax into your <code>README.md</code> file on GitHub to create a clickable DOI badge.</p>
+</section>
 </section>
 </section>
 <section id="acknowledgements-and-further-reading" class="level2" data-number="9.4">
