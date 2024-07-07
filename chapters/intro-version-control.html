@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Version Control Book - 1&nbsp; Introduction</title>
+<title>1&nbsp; Introduction – The Version Control Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,13 +102,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro-version-control.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -345,7 +345,7 @@ Learning Objectives
 <blockquote class="blockquote">
 <p>“Version control is an approach to <strong>record changes</strong> made in a file or set of files <strong>over time</strong> so that you and your collaborators can track their history, review any changes, and revert or go back to earlier versions.” – <span class="citation" data-cites="community2022">The Turing Way Community (<a href="../misc/references.html#ref-community2022" role="doc-biblioref">2022</a>)</span>, chapter on <a href="https://the-turing-way.netlify.app/reproducible-research/vcs.html">Version Control</a>.</p>
 </blockquote>
-<div id="fig-turing-way-version-control" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-turing-way-version-control" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-turing-way-version-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/version-control-turing-way.svg" class="img-fluid figure-img">
@@ -379,7 +379,7 @@ Figure&nbsp;1.1: This illustration is created by <a href="https://www.scriberia.
 <section id="versions-in-multiple-files" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="versions-in-multiple-files"><span class="header-section-number">1.4</span> Versions in multiple files</h2>
 <p>If you are a student or researcher you might be familiar with the situation illustrated in <a href="#fig-phd-comic-final-doc" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>: You are writing a paper and you are really excited because you finally have a full draft. To mark this, you call the file <code>FINAL.docx</code> and send it off to your advisor. Your advisor has a few comments, so you integrate those changes into a new version that you call <code>FINAL_rev2.doc</code>. You show your draft to your advisor again and again they have even more comments. So as there are more and more rounds of feedback your file naming system an get out of hand very easily.</p>
-<div id="fig-phd-comic-final-doc" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-phd-comic-final-doc" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-phd-comic-final-doc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/phd-comic-final-doc.gif" class="img-fluid figure-img">
@@ -397,7 +397,7 @@ Figure&nbsp;1.2: “notFinal.doc” - originally published 10/12/2012. “Piled 
 <li><code>draft.docx</code> to <code>draft_comments_LW_final_edited.docx</code>, etc.</li>
 </ul>
 <p>Every time you make a critical change to a file, you duplicate it, rename it according to your versioning scheme and continue working in the duplicated file. While this approach might be manageable for a single file or user, it likely becomes messy when dealing with numerous files, repeated revisions, and multiple users, especially for large, long-term projects, as illustrated in <a href="#fig-phd-comic-final-doc" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>, <a href="#fig-xkcd-documents" class="quarto-xref">Figure&nbsp;<span>1.3</span></a> and <a href="#fig-phd-comic-story-told-in-file-names" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>. In such cases, more advanced version control systems may be necessary.</p>
-<div id="fig-xkcd-documents" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-xkcd-documents" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-xkcd-documents-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/xkcd-documents.png" class="img-fluid figure-img">
@@ -413,7 +413,7 @@ Figure&nbsp;1.3: “Documents” by xkcd (<a href="https://xkcd.com/">xkcd.com</
 <figcaption>This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/">The Turing Way</a> community. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 licence</a>. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3695300</a> (Version 3, <a href="https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1">direct download link</a>).</figcaption>
 </figure>
 </div>
-<div id="fig-phd-comic-story-told-in-file-names" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-phd-comic-story-told-in-file-names" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-phd-comic-story-told-in-file-names-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/phd-comic-story-told-in-file-names.gif" class="img-fluid figure-img">
@@ -484,7 +484,7 @@ Disadvantages of Version Control using Dropbox and Google Drive compared to Git
 </div>
 </div>
 </div>
-<div id="fig-versions-single-file" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-versions-single-file" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-versions-single-file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/versions-single-file.png" class="img-fluid figure-img">
@@ -509,7 +509,7 @@ Figure&nbsp;1.5: Image from <a href="https://mozillascience.github.io/study-grou
 </section>
 <section id="git" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="git"><span class="header-section-number">1.5</span> Git</h2>
-<div id="fig-git-logo-full-color" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-git-logo-full-color" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-git-logo-full-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/git-logo-full-color.svg" class="img-fluid figure-img">
@@ -723,18 +723,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -766,7 +755,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
@@ -774,7 +785,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

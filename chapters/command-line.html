@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Version Control Book - 2&nbsp; Command Line</title>
+<title>2&nbsp; Command Line – The Version Control Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -136,13 +136,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/command-line.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Command Line</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -413,7 +413,7 @@ Learning Objectives
 <p>The <strong>terminal</strong>, short for “terminal emulator”, is the application or program that you open on your computer to access the command-line interface. Terminals were used to connect to mainframe computers in the early days of computing. The terminal program creates a window in which you can type commands and see the output from these commands..</p>
 <p>The <strong>shell</strong> is a software that interprets the commands you type into the terminal. It acts as a layer between you and the operating system. The shell processes the commands and communicates with the computer’s operating system to execute them. It allows you to perform various tasks that your operating system offers, such as managing files, running and stopping programs, and changing system settings, all through text commands. Examples of popular shells include Bash on Linux and macOS, and PowerShell on Windows.</p>
 <p>In combination, in a typical scenario, you would open a terminal (the window), use the shell within that terminal to understand and process your commands, and interact with your computer through the command line interface provided by the terminal. That being said, the terms “shell”, “command line”, “command-line interface (CLI)”, and “terminal” are often used interchangeably and roughly refer to the same thing: a simple window showing a prompt and a blinking cursor (see <a href="#fig-cli" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>). In movies, when people hack into computers, they often type rapidly in this window.</p>
-<div id="fig-cli" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-cli" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/command-line-bash.png" class="img-fluid figure-img">
@@ -451,7 +451,7 @@ FAQ: Which programming language does the command line use?
 <p>For an installation guide, you can check out the chapters on <a href="../chapters/installation.html">installation</a> and <a href="../chapters/setup.html">setup</a>. Once you have installed Git for Windows, you can open a terminal by launching the program called “Git Bash” from the Windows start menu.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div id="fig-terminal" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-terminal" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/terminal-icon.png" class="img-fluid figure-img" style="width:20.0%">
@@ -536,7 +536,7 @@ FAQ: How can I customize the look of my shell?
 <p><a href="https://code.min.uni-hamburg.de" class="uri">https://code.min.uni-hamburg.de</a></p>
 <p>Simply click on the link and log in.</p>
 <p>Once you are logged in, you should be able to view the remote environment and create files using different programs like <i class="fa-brands fa-r-project" aria-label="r-project"></i>, Python <i class="fa-brands fa-python" aria-label="python"></i> or Java <i class="fa-brands fa-java" aria-label="java"></i>.</p>
-<div id="fig-jupyter" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-jupyter" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-jupyter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/cli_jupyter.png" class="img-fluid figure-img">
@@ -547,7 +547,7 @@ Figure&nbsp;2.3: Screenshot of JupyterHub, showing the start screen.
 </figure>
 </div>
 <p>If you scroll down in the “launcher” window, there should be the option to open a terminal window. Your remote environment will be mostly empty, but you can move around and manage files just like you could on your own computer.</p>
-<div id="fig-jupyter_2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-jupyter_2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-jupyter_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/cli_jupyter_2.png" class="img-fluid figure-img">
@@ -1081,51 +1081,51 @@ FAQ: Is Bash case sensitive?
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 336K</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 14 runner docker 4.0K Jun 20 22:17 .</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Jun 20 22:09 ..</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Jun 20 22:09 .Renviron</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Jun 20 22:09 .Rprofile</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.6K Jun 20 22:09 .all-contributorsrc</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Jun 20 22:09 .codespellrc</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Jun 20 22:17 .git</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Jun 20 22:09 .github</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   82 Jun 20 22:09 .gitignore</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Jun 20 22:17 .quarto</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Jun 20 22:09 .zenodo.json</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Jun 20 22:09 CITATION.cff</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Jun 20 22:09 LICENSE</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  517 Jun 20 22:09 Makefile</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.8K Jun 20 22:09 README.md</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.1K Jun 20 22:09 _affiliations.yml</span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  362 Jun 20 22:09 _authors.yml</span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jun 20 22:17 _book</span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  943 Jun 20 22:09 _courses.yml</span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Jun 20 22:09 _extensions</span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   86 Jun 20 22:09 _metadata.yml</span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.6K Jun 20 22:09 _quarto.yml</span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Jun 20 22:09 _variables.yml</span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jun 20 22:17 chapters</span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.0K Jun 20 22:09 cheatsheet.json</span>
-<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Jun 20 22:09 chicago-author-date-note.csl</span>
-<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  514 Jun 20 22:17 contents-listing.json</span>
-<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  56K Jun 20 22:17 contents.html</span>
-<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  671 Jun 20 22:09 contents.qmd</span>
-<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Jun 20 22:09 custom.scss</span>
-<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jun 20 22:09 exercises</span>
-<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Jun 20 22:09 functions.R</span>
-<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  145 Jun 20 22:09 github-buttons.html</span>
-<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  41K Jun 20 22:17 index.html</span>
-<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.5K Jun 20 22:09 index.qmd</span>
-<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jun 20 22:17 misc</span>
-<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jun 20 22:09 objectives</span>
-<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Jun 20 22:09 plausible.html</span>
-<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Jun 20 22:09 references.bib</span>
-<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Jun 20 22:10 renv</span>
-<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  16K Jun 20 22:09 renv.lock</span>
-<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Jun 20 22:17 site_libs</span>
-<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jun 20 22:17 static</span>
-<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Jun 20 22:09 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 340K</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 14 runner docker 4.0K Jul  7 19:19 .</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Jul  7 19:11 ..</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Jul  7 19:11 .Renviron</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Jul  7 19:11 .Rprofile</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 1.8K Jul  7 19:11 .all-contributorsrc</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Jul  7 19:11 .codespellrc</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Jul  7 19:19 .git</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Jul  7 19:11 .github</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   82 Jul  7 19:11 .gitignore</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Jul  7 19:19 .quarto</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Jul  7 19:11 .zenodo.json</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Jul  7 19:11 CITATION.cff</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Jul  7 19:11 LICENSE</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  517 Jul  7 19:11 Makefile</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 7.2K Jul  7 19:11 README.md</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.1K Jul  7 19:11 _affiliations.yml</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  362 Jul  7 19:11 _authors.yml</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jul  7 19:19 _book</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  943 Jul  7 19:11 _courses.yml</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Jul  7 19:11 _extensions</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   86 Jul  7 19:11 _metadata.yml</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.6K Jul  7 19:11 _quarto.yml</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Jul  7 19:11 _variables.yml</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jul  7 19:19 chapters</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.1K Jul  7 19:11 cheatsheet.json</span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Jul  7 19:11 chicago-author-date-note.csl</span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  514 Jul  7 19:19 contents-listing.json</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  57K Jul  7 19:19 contents.html</span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  671 Jul  7 19:11 contents.qmd</span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Jul  7 19:11 custom.scss</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jul  7 19:11 exercises</span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Jul  7 19:11 functions.R</span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  145 Jul  7 19:11 github-buttons.html</span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  41K Jul  7 19:19 index.html</span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.5K Jul  7 19:11 index.qmd</span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jul  7 19:19 misc</span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jul  7 19:11 objectives</span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Jul  7 19:11 plausible.html</span>
+<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Jul  7 19:11 references.bib</span>
+<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Jul  7 19:12 renv</span>
+<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  16K Jul  7 19:11 renv.lock</span>
+<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Jul  7 19:19 site_libs</span>
+<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Jul  7 19:19 static</span>
+<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Jul  7 19:11 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1352,12 +1352,12 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.1K Jun 20 22:09 _affiliations.yml</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  362 Jun 20 22:09 _authors.yml</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  943 Jun 20 22:09 _courses.yml</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker   86 Jun 20 22:09 _metadata.yml</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.6K Jun 20 22:09 _quarto.yml</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 2.4K Jun 20 22:09 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.1K Jul  7 19:11 _affiliations.yml</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  362 Jul  7 19:11 _authors.yml</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  943 Jul  7 19:11 _courses.yml</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker   86 Jul  7 19:11 _metadata.yml</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 3.6K Jul  7 19:11 _quarto.yml</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 2.4K Jul  7 19:11 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What does this output mean?">
@@ -1398,8 +1398,8 @@ What does this output mean?
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  41K Jun 20 22:17 index.html</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 6.5K Jun 20 22:09 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker  41K Jul  7 19:19 index.html</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 runner docker 6.5K Jul  7 19:11 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1459,7 +1459,7 @@ What does this output mean?
 <li>We acquired familiarity with several essential shell commands.</li>
 </ol>
 <p>It’s important to note that what we covered here only scratches the surface of what can be accomplished using the shell. The primary aim was to provide useful concepts that help when learning Git. If you’re interested in delving deeper, you may find a more comprehensive introduction at one of the following resource.</p>
-<div id="fig-meme" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-meme" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-meme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/cli_meme.jpg" class="img-fluid figure-img">
@@ -1597,15 +1597,15 @@ Figure&nbsp;2.5: “Hackerman” meme found on <a href="https://www.reddit.com/r
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>start &lt;FILE&gt;</code></td>
-<td style="text-align: left;">Opens the file called <code>&lt;FILE&gt;</code> (On Windows)</td>
+<td style="text-align: left;">Opens the file called <code>&lt;FILE&gt;</code> (on Windows)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>echo 'example text' &gt;&gt; file.txt</code></td>
-<td style="text-align: left;">Writes ‘example text’ into <code>file.txt</code></td>
+<td style="text-align: left;"><code>echo "example text" &gt;&gt; file.txt</code></td>
+<td style="text-align: left;">Writes “example text” into <code>file.txt</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>cat &lt;FILE&gt;</code></td>
-<td style="text-align: left;">Displays the content of <file></file></td>
+<td style="text-align: left;">Displays the content of <code>&lt;FILE&gt;</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>mv FILE.txt &lt;FOLDER&gt;</code></td>
@@ -1629,11 +1629,11 @@ Figure&nbsp;2.5: “Hackerman” meme found on <a href="https://www.reddit.com/r
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>history &gt; history.txt</code></td>
-<td style="text-align: left;">Saves the entire command history to a file named ‘history.txt’</td>
+<td style="text-align: left;">Saves the entire command history to a file named <code>history.txt</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>history &gt;&gt; history.txt</code></td>
-<td style="text-align: left;">Adds the entire command history to the end of the file named ‘history.txt’</td>
+<td style="text-align: left;">Adds the entire command history to the end of the file named <code>history.txt</code></td>
 </tr>
 </tbody>
 </table>
@@ -1694,18 +1694,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1737,7 +1726,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
@@ -1745,7 +1756,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

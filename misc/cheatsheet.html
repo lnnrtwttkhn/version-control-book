@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
 
-<title>The Version Control Book - Cheatsheet</title>
+<title>Cheatsheet – The Version Control Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,13 +83,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../misc/cheatsheet.html">Cheatsheet</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -368,17 +368,17 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;">cli</td>
 <td style="text-align: left;"><code>start &lt;FILE&gt;</code></td>
-<td style="text-align: left;">Opens the file called <code>&lt;FILE&gt;</code> (On Windows)</td>
+<td style="text-align: left;">Opens the file called <code>&lt;FILE&gt;</code> (on Windows)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cli</td>
-<td style="text-align: left;"><code>echo 'example text' &gt;&gt; file.txt</code></td>
-<td style="text-align: left;">Writes ‘example text’ into <code>file.txt</code></td>
+<td style="text-align: left;"><code>echo "example text" &gt;&gt; file.txt</code></td>
+<td style="text-align: left;">Writes “example text” into <code>file.txt</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">cli</td>
 <td style="text-align: left;"><code>cat &lt;FILE&gt;</code></td>
-<td style="text-align: left;">Displays the content of <file></file></td>
+<td style="text-align: left;">Displays the content of <code>&lt;FILE&gt;</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cli</td>
@@ -408,12 +408,12 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;">cli</td>
 <td style="text-align: left;"><code>history &gt; history.txt</code></td>
-<td style="text-align: left;">Saves the entire command history to a file named ‘history.txt’</td>
+<td style="text-align: left;">Saves the entire command history to a file named <code>history.txt</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cli</td>
 <td style="text-align: left;"><code>history &gt;&gt; history.txt</code></td>
-<td style="text-align: left;">Adds the entire command history to the end of the file named ‘history.txt’</td>
+<td style="text-align: left;">Adds the entire command history to the end of the file named <code>history.txt</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">config</td>
@@ -422,17 +422,17 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td style="text-align: left;">config</td>
-<td style="text-align: left;"><code>git config --global user.name</code></td>
+<td style="text-align: left;"><code>git config --global "user.name"</code></td>
 <td style="text-align: left;">Sets Git username</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">config</td>
-<td style="text-align: left;"><code>git config --global user.email</code></td>
+<td style="text-align: left;"><code>git config --global "user.email"</code></td>
 <td style="text-align: left;">Sets Git email address</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">config</td>
-<td style="text-align: left;"><code>git config --global core.editor</code></td>
+<td style="text-align: left;"><code>git config --global core.editor "editorname"</code></td>
 <td style="text-align: left;">Sets Git text editor</td>
 </tr>
 <tr class="odd">
@@ -467,225 +467,230 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">basic</td>
+<td style="text-align: left;"><code>git commit -m "commit message"</code></td>
+<td style="text-align: left;">Commits staged files with a commit message</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">basic</td>
 <td style="text-align: left;"><code>git log</code></td>
 <td style="text-align: left;">Views past commits</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">basic</td>
 <td style="text-align: left;"><code>git diff</code></td>
 <td style="text-align: left;">Views made changes compared to the last commit</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">remote_intro</td>
 <td style="text-align: left;"><code>git remote</code></td>
 <td style="text-align: left;">Manages remote repositories</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">remote_intro</td>
 <td style="text-align: left;"><code>git clone</code></td>
 <td style="text-align: left;">Creates a local copy of a repository</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">remote_intro</td>
 <td style="text-align: left;"><code>git pull</code></td>
-<td style="text-align: left;">Fetches and merges the latest changes from a remote repository into your current branch</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">remote_intro</td>
-<td style="text-align: left;"><code>git fetch</code></td>
-<td style="text-align: left;">Updates your remote tracking branches</td>
+<td style="text-align: left;">Fetches and merges the latest changes from a remote repository into the current branch</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">remote_intro</td>
-<td style="text-align: left;"><code>git push</code></td>
-<td style="text-align: left;">Uploads your local commits to a remote repository</td>
+<td style="text-align: left;"><code>git fetch</code></td>
+<td style="text-align: left;">Updates remote tracking branches</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">remote_intro</td>
+<td style="text-align: left;"><code>git push</code></td>
+<td style="text-align: left;">Uploads local commits to a remote repository</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">github_advanced</td>
 <td style="text-align: left;"><code>git blame</code></td>
 <td style="text-align: left;">Shows the authorship and commit information of each line in a file</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">branches</td>
 <td style="text-align: left;"><code>git branch</code></td>
 <td style="text-align: left;">Lists / creates and deletes branches</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">branches</td>
 <td style="text-align: left;"><code>git switch</code></td>
 <td style="text-align: left;">Switches between branches</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">branches</td>
 <td style="text-align: left;"><code>git checkout</code></td>
 <td style="text-align: left;">Switches between branches</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">branches</td>
 <td style="text-align: left;"><code>git merge</code></td>
 <td style="text-align: left;">Merges branches</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">branches</td>
 <td style="text-align: left;"><code>git merge --abort</code></td>
 <td style="text-align: left;">Aborts a merge</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">branches</td>
 <td style="text-align: left;"><code>git merge --squash</code></td>
 <td style="text-align: left;">Squaches commits on branch into a single commit and merge</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">branches</td>
 <td style="text-align: left;"><code>git branch -d feature</code></td>
 <td style="text-align: left;">Deletes the <code>feature</code> branch</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash</code></td>
 <td style="text-align: left;">Stores made changes for later use</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
-<td style="text-align: left;"><code>git stash -m stashing message</code></td>
+<td style="text-align: left;"><code>git stash -m "stashing message"</code></td>
 <td style="text-align: left;">Stashes your changes and includes a message</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash list</code></td>
 <td style="text-align: left;">Shows all of your stored stashes</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash apply</code></td>
 <td style="text-align: left;">Applies your latest stash</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash apply stash@{n}</code></td>
 <td style="text-align: left;">Applies a specific stash</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash pop</code></td>
 <td style="text-align: left;">Applies your latest stash and removes it from stash list</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git stash pop stash@{n}</code></td>
 <td style="text-align: left;">Applies a specific stash and removes it from stash list</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git restore &lt;FILE&gt;</code></td>
 <td style="text-align: left;">Reverts <code>&lt;FILE&gt;</code> back to the state of your last commit</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git restore .</code></td>
 <td style="text-align: left;">Reverts all files in your repository back to the state of your last commit</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git restore --staged &lt;FILE&gt;</code></td>
 <td style="text-align: left;">Removes <code>&lt;FILE&gt;</code> from your staging area</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git restore --staged .</code></td>
 <td style="text-align: left;">Removes all files in your repository from your staging area</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git rm &lt;FILE&gt;</code></td>
 <td style="text-align: left;">Deletes <code>&lt;FILE&gt;</code> from your repository</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git rm --cached &lt;FILE&gt;</code></td>
 <td style="text-align: left;">Removes <code>&lt;FILE&gt;</code> from your repository but keeps <code>&lt;FILE&gt;</code> on your system</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git revert &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Creates a new commit which reverts your repository back to <code>&lt;commithash&gt;</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git reflog</code></td>
 <td style="text-align: left;">Logs recent branch changes</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git reset &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Resets the branch to a specified commit, keeping changes in the working directory</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git reset --hard &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Resets the branch to a specified commit</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git cherry-pick &lt;commithash&gt;</code></td>
 <td style="text-align: left;">Applies changes from <code>&lt;commithash&gt;</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git clean</code></td>
 <td style="text-align: left;">Deletes untracked files from your directory</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">stashing</td>
 <td style="text-align: left;"><code>git rebase</code></td>
 <td style="text-align: left;">Different way of integrating changes from two branches</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Tags and Releases</td>
 <td style="text-align: left;"><code>git tag</code></td>
 <td style="text-align: left;">Lists all tags</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Tags and Releases</td>
 <td style="text-align: left;"><code>git tag v1.0</code></td>
 <td style="text-align: left;">Creates a tag on the basis of your current commit named <code>v1.0</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Tags and Releases</td>
 <td style="text-align: left;"><code>git tag v1.1 &lt;commit-hash&gt;</code></td>
 <td style="text-align: left;">Creates a tag on the basis of a specific commit hash named <code>v1.1</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Tags and Releases</td>
-<td style="text-align: left;"><code>git tag -a v1.0 -m Release version 1.0</code></td>
+<td style="text-align: left;"><code>git tag -a v1.0 -m "Release version 1.0"</code></td>
 <td style="text-align: left;">Creates an annotated tag on the basis of your current commit hash named <code>v1.0</code> with the tagging message <code>Release version 1.0</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Tags and Releases</td>
 <td style="text-align: left;"><code>git push origin &lt;tag-name&gt;</code></td>
 <td style="text-align: left;">Pushes a specific tag to remote</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Tags and Releases</td>
 <td style="text-align: left;"><code>git push origin --tags</code></td>
 <td style="text-align: left;">Pushes all created tags to remote</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Tags and Releases</td>
 <td style="text-align: left;"><code>git fetch --tags</code></td>
 <td style="text-align: left;">Fetches all created tags from remote</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Tags and Releases</td>
 <td style="text-align: left;"><code>git pull --tags</code></td>
 <td style="text-align: left;">Pulls all created tags from remote</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">rewriting_history</td>
 <td style="text-align: left;"><code>git filter-repo --invert-paths --path &lt; PATH-TO-FILE-YOU-WANT-TO-REMOVE &gt;</code></td>
 <td style="text-align: left;">Remove specified file from your repository history</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">rewriting_history</td>
 <td style="text-align: left;"><code>brew install git-filter-repo</code></td>
 <td style="text-align: left;">Installs git filter-repo using brew</td>
@@ -734,18 +739,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -777,7 +771,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/lennartwittkuhn\.com\/version-control-book");
@@ -785,7 +801,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
