@@ -258,14 +258,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intermediate-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1227,7 +1221,7 @@ Common <code>git push</code> flags
 </section>
 <section id="pulling" class="level2" data-number="7.8">
 <h2 data-number="7.8" class="anchored" data-anchor-id="pulling"><span class="header-section-number">7.8</span> Pulling</h2>
-<p>The <code>git pull</code> command is used to <strong>retrieve the latest changes from a remote repository</strong> <em>and</em> merge them into your local branch. Effectively, <code>git pull</code> first runs <code>git fetch</code> (see below) to fetch the latest changes from the remote repository and then integrates these changes into the local branch, either using <code>git merge</code> (for details, see the <a href="../chapters/branches.html">branches</a> chapter) or <code>git rebase</code> (for details, see the section on <a href="../chapters/intermediate-commands.html">rebasing</a>), depending on the configuration. In other words, <code>git pull</code> is a <code>git fetch</code> followed by a <code>git merge</code>.</p>
+<p>The <code>git pull</code> command is used to <strong>retrieve the latest changes from a remote repository</strong> <em>and</em> merge them into your local branch. Effectively, <code>git pull</code> first runs <code>git fetch</code> (see below) to fetch the latest changes from the remote repository and then integrates these changes into the local branch, either using <code>git merge</code> (for details, see the <a href="../chapters/branches.html">branches</a> chapter) or <code>git rebase</code> (for details, see the section on <a href="intermediate-commands.qmd">rebasing</a>), depending on the configuration. In other words, <code>git pull</code> is a <code>git fetch</code> followed by a <code>git merge</code>.</p>
 <p>You can test this function by editing a file in your repository on GitHub and then use <code>git pull</code> to update your local file with the change made on GitHub. To edit a file, first click on it, in the repository. In the top-right corner of the file view, click on the pencil icon (“Edit this file”) to start editing. Make the necessary changes to the file in the in-browser editor. You can add, modify, or delete content as needed. As you make changes, GitHub automatically tracks your modifications in the editor, displaying them as “changes not staged for commit”. Provide a brief description of the changes in the “Commit changes” section at the bottom of the page.</p>
 <p>Now you can open up your command line once again, and in the relevant directory use the <code>git pull</code> command to update your local file with the change made on GitHub.</p>
 <div class="cell">

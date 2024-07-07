@@ -258,14 +258,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intermediate-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -340,8 +334,19 @@ div.csl-indent {
   <li><a href="#keep-branches-specific-and-short-lived" id="toc-keep-branches-specific-and-short-lived" class="nav-link" data-scroll-target="#keep-branches-specific-and-short-lived"><span class="header-section-number">6.9.3</span> Keep branches specific and short-lived</a></li>
   <li><a href="#avoiding-merge-conflicts-1" id="toc-avoiding-merge-conflicts-1" class="nav-link" data-scroll-target="#avoiding-merge-conflicts-1"><span class="header-section-number">6.9.4</span> Avoiding merge conflicts</a></li>
   </ul></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">6.10</span> Acknowledgements &amp; further reading</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.11</span> Cheatsheet</a></li>
+  <li><a href="#stashing" id="toc-stashing" class="nav-link" data-scroll-target="#stashing"><span class="header-section-number">6.10</span> Stashing</a>
+  <ul class="collapse">
+  <li><a href="#stashing-changes" id="toc-stashing-changes" class="nav-link" data-scroll-target="#stashing-changes"><span class="header-section-number">6.10.1</span> Stashing changes</a></li>
+  <li><a href="#retrieving-stashed-changes" id="toc-retrieving-stashed-changes" class="nav-link" data-scroll-target="#retrieving-stashed-changes"><span class="header-section-number">6.10.2</span> Retrieving stashed changes</a></li>
+  <li><a href="#applying-stashed-changes" id="toc-applying-stashed-changes" class="nav-link" data-scroll-target="#applying-stashed-changes"><span class="header-section-number">6.10.3</span> Applying stashed changes</a></li>
+  </ul></li>
+  <li><a href="#alternatives-to-standard-merging" id="toc-alternatives-to-standard-merging" class="nav-link" data-scroll-target="#alternatives-to-standard-merging"><span class="header-section-number">6.11</span> Alternatives to standard merging</a>
+  <ul class="collapse">
+  <li><a href="#cherrypicking" id="toc-cherrypicking" class="nav-link" data-scroll-target="#cherrypicking"><span class="header-section-number">6.11.1</span> Cherrypicking</a></li>
+  <li><a href="#rebasing" id="toc-rebasing" class="nav-link" data-scroll-target="#rebasing"><span class="header-section-number">6.11.2</span> Rebasing</a></li>
+  </ul></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">6.12</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.13</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/branches.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -377,7 +382,7 @@ Learning Objectives
 <p>In short, branches in Git allow you to keep different versions of your repository content in parallel, develop them independently, and integrate them when they are ready. Before we explain the concept of branches in more detail, let’s look at a few scenarios that illustrate why branches are useful <span class="citation" data-cites="community2022">(taken from <a href="../misc/references.html#ref-community2022" role="doc-biblioref">The Turing Way Community 2022</a>)</span>:</p>
 <ol type="1">
 <li><p>You want to add a new feature to your project (for example, a new analysis) but while doing so, you run the risk of accidentally breaking your working code as you test the new feature. You may want to quickly go back to your previous working version while working on the new feature but keep the as yet unfinished progress on the new feature.</p></li>
-<li><p>If you collaborate with others on the same Git repository (we will look at collaboration with Git in the <a href="github-intro.qmd">chapter on GitHub</a>) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.</p></li>
+<li><p>If you collaborate with others on the same Git repository (we will look at collaboration with Git in the <a href="../chapters/remotes-intro.html">chapter on Git remotes</a>) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.</p></li>
 </ol>
 </section>
 <section id="what-are-branches" class="level2" data-number="6.2">
@@ -472,7 +477,7 @@ Common <code>git branch</code> flags
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><code>-a</code> or <code>--all</code>: Lists both local and remote branches. (Remote branches will be introduced in the <a href="github-intro.qmd">GitHub Intro</a> chapter )</p>
+<p><code>-a</code> or <code>--all</code>: Lists both local and remote branches. (Remote branches will be introduced in the <a href="../chapters/remotes-intro.html">Remotes: Introduction</a> chapter )</p>
 <p><code>-r or --remote</code>: Lists only remote branches.</p>
 <p><code>-d</code> or <code>--delete</code>: Deletes a specified branch. For example, <code>git branch -d feature</code>.</p>
 <p><code>-D</code> or <code>--force</code>: Force deletes a branch, even if it has unmerged changes.</p>
@@ -485,8 +490,7 @@ Common <code>git branch</code> flags
 </section>
 <section id="switching-branches" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="switching-branches"><span class="header-section-number">6.5</span> Switching branches</h2>
-<p>To switch to another branch, you can use <code>git checkout</code> or <code>git switch</code>.</p>
-<p>For example, enter the following command to switch to the newly created <code>feature</code> branch:</p>
+<p>To switch to another branch, you can use <code>git checkout</code> or <code>git switch</code>. For example, enter the following command to switch to the newly created <code>feature</code> branch:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -521,13 +525,13 @@ Help: I just created a new Git repository but can’t switch the branch! What is
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="What is the difference between `git checkout` and `git switch`?">
+<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: What is the difference between `git checkout` and `git switch`?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What is the difference between <code>git checkout</code> and <code>git switch</code>?
+Find out more: What is the difference between <code>git checkout</code> and <code>git switch</code>?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -546,7 +550,7 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>This section references some more advanced Git commits. If you’re facing the issue that Git prevents you from switching branches, read on. If you’re just learning about branches and switching branches worked without any problems, feel free to skip this section for now.</p>
+<p>This section references more advanced Git commands. If you’re facing the issue that <strong>Git prevents you from switching branches</strong>, read on. If you’re just learning about branches and switching branches worked without any problems, feel free to skip this section for now.</p>
 </div>
 </div>
 </div>
@@ -558,16 +562,16 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <pre><strong>Output</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">error:</span> Your local changes to the following files would be overwritten by checkout:</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="ex">chapters/branches.qmd</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="ex">example.txt</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Please</span> commit your changes or stash them before you switch branches.</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Aborting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>The message specifies the file with modifications, and indicates an aborted branch switch due to uncommitted changes. To resolve this and switch branches safely, you have a few options:</p>
+<p>The message specifies the file with modifications (here, <code>example.txt</code>), and indicates an aborted branch switch due to uncommitted changes. To resolve this and switch branches safely, you have a few options:</p>
 <ol type="1">
-<li><p><strong>Commit your changes:</strong> Use the commit process to save your work on the current branch. This involves staging your changes with <code>git add</code> and then committing them with <code>git commit</code>. This workflow is explained in detail in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p></li>
-<li><p><strong>Stash your changes:</strong> If you’re not ready to commit, you can use <code>git stash</code> to temporarily shelve your changes. This clears your working directory, allowing you to switch branches. Your stashed changes can be reapplied later. The process of stashing, and other techniques to manage uncommitted changes, are covered in the <a href="../chapters/intermediate-commands.html">Stashing and Co.&nbsp;chapter</a>.</p></li>
-<li><p><strong>Discard your changes:</strong> If the changes are not needed, you can remove them using <code>git reset</code> to unstage all changes. This action should be used with caution as it will erase your modifications. This command is also explained in the <a href="../chapters/intermediate-commands.html">Stashing and Co.&nbsp;chapter</a>.</p></li>
+<li><p><strong>Commit your changes:</strong> Use the stage and commit process to save your work on the current branch. This involves staging your changes with <code>git add</code> and then committing them with <code>git commit</code>. This workflow is explained in detail in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p></li>
+<li><p><strong>Stash your changes:</strong> If you’re not ready to commit, you can use <code>git stash</code> to temporarily shelve your changes. This clears your working directory, allowing you to switch branches. Your stashed changes can be reapplied later. Stashing is covered in more detail in the <a href="#stashing">section below</a>.</p></li>
+<li><p><strong>Discard your changes:</strong> If the changes are not needed, you can remove them using <code>git reset</code> to unstage all changes. This action should be used with caution as it will erase your modifications. This command is covered in the chapter <a href="../chapters/rewriting-history.html">“Rewriting history”</a>.</p></li>
 </ol>
 </section>
 </section>
@@ -622,7 +626,7 @@ What is the difference between <code>git checkout</code> and <code>git switch</c
 <p>Merge conflicts occur when Git is unable to automatically resolve differences between two branches during a merge. This happens when both branches include conflicting changes to the same part of a file. Git simply can’t determine which version of the code should be favored, and as a result, it requests manual intervention from you, the developer. It’s similar to when two people try to edit the same part of a file at the same time, and Git gets confused about whose changes to keep. Merge conflicts are more likely to occur in collaborative projects, where multiple people modify the same files. However, they can also happen in projects where you work on your own.</p>
 <section id="avoiding-merge-conflicts" class="level3" data-number="6.7.1">
 <h3 data-number="6.7.1" class="anchored" data-anchor-id="avoiding-merge-conflicts"><span class="header-section-number">6.7.1</span> Avoiding merge conflicts</h3>
-<p>Merge conflicts can be a bit of a headache. If you only work locally on your computer, without a remote repository (for example, an online version of your repository on <a href="github-intro.qmd">GitHub</a>), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches. However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts. That being said, employing good development practices can minimize the occurrence of merge conflicts. Regularly pulling changes from the remote repository into your local branch (using <code>git pull</code>) and keeping your branch up-to-date can help identify and resolve conflicts early. You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on <a href="github-intro.qmd">GitHub</a>.</p>
+<p>Merge conflicts can be a bit of a headache. If you only work locally on your computer, without a remote repository (for example, an online version of your repository on <a href="../chapters/remotes-intro.html">GitHub or GitLab</a>), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches. However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts. That being said, employing good development practices can minimize the occurrence of merge conflicts. Regularly pulling changes from the remote repository into your local branch (using <code>git pull</code>) and keeping your branch up-to-date can help identify and resolve conflicts early. You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on <a href="../chapters/remotes-intro.html">remote repositories</a>.</p>
 </section>
 <section id="example-merge-conflict" class="level3" data-number="6.7.2">
 <h3 data-number="6.7.2" class="anchored" data-anchor-id="example-merge-conflict"><span class="header-section-number">6.7.2</span> Example merge conflict</h3>
@@ -873,10 +877,253 @@ Tip&nbsp;6.1: Find out more: Naming conventions for Git branches
 <section id="avoiding-merge-conflicts-1" class="level3" data-number="6.9.4">
 <h3 data-number="6.9.4" class="anchored" data-anchor-id="avoiding-merge-conflicts-1"><span class="header-section-number">6.9.4</span> Avoiding merge conflicts</h3>
 <p>The best way to deal with merge conflicts, is to try and avoid them in the first place. You can reduce the chances of conflicts by keeping branches tidy, concentrating on one task, and involving fewer files. In addition, it’s good practice to merge each other’s changes into your work frequently. Before merging, understand the content in both branches. If multiple people have worked on the same branches, open communication and good project management can also help to stay informed about each other’s changes.</p>
+<div class="callout callout-style-simple callout-caution">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This section concludes the most important Git commands for working with branches for new learners. The following sections will dive into more advanced Git commands that become relevant once you start using branches more extensively. If you’re just learning about branches and the commands above worked without any problems, feel free to skip to the next chapter for now.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="acknowledgements-further-reading" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">6.10</span> Acknowledgements &amp; further reading</h2>
+<section id="stashing" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="stashing"><span class="header-section-number">6.10</span> Stashing</h2>
+<p><code>git stash</code> is a valuable command in Git that allows you to save your current changes temporarily without committing them. This is useful when you need to switch branches or work on something else without creating a commit for unfinished work. For example, when you’re working on a feature and you need to switch to a different task quickly or your work gets interrupted unexpectedly, you may not want to commit your unfinished changes. When you run <code>git stash</code>, Git stores the changes in your working directory and staged changes in a special stash commit. The working directory is then reverted to the last committed state, providing a clean slate for your next task.</p>
+<section id="stashing-changes" class="level3" data-number="6.10.1">
+<h3 data-number="6.10.1" class="anchored" data-anchor-id="stashing-changes"><span class="header-section-number">6.10.1</span> Stashing changes</h3>
+<p>To demonstrate the usefulness of <code>git stash</code>, you can edit one or more files in your repository, stage (or don’t stage) your changes, but don’t commit them. Now use <code>git status</code> to look at the current state of your working directory.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You should get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Changes</span> to be committed:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git reset HEAD &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   example.html</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Changes</span> not staged for commit:</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git checkout -- &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   example.txt   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>In this example, there are changes on two tracked files, one staged and one not staged, that we want to stash. Just like when committing, it is possible to add a message when stashing using the <code>-m</code> flag. It makes sense to add a message because it serves as a reminder of what changes were stashed, making it easier to identify the purpose of the stash when you later list or apply stashes.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash <span class="at">-m</span> <span class="st">"feature X WIP"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You should get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Saved</span> working directory and index state On feature: <span class="st">"feature X WIP"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You can now use <code>git status</code> to look at your working directory again and should see an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit, working directory clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Now you can switch branches and work on something else or stop working on the project altogether.</p>
+</section>
+<section id="retrieving-stashed-changes" class="level3" data-number="6.10.2">
+<h3 data-number="6.10.2" class="anchored" data-anchor-id="retrieving-stashed-changes"><span class="header-section-number">6.10.2</span> Retrieving stashed changes</h3>
+<p>To look at all your stored stashes, you can use <code>git stash list</code>:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You should get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">stash@</span>{0}<span class="ex">:</span> On feature: feature X WIP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>All of your stored stashes should show up, with the most recent on top. Every stash should have a number, applied chronologically.</p>
+</section>
+<section id="applying-stashed-changes" class="level3" data-number="6.10.3">
+<h3 data-number="6.10.3" class="anchored" data-anchor-id="applying-stashed-changes"><span class="header-section-number">6.10.3</span> Applying stashed changes</h3>
+<p>If you want to reapply your stashed changes, you can use <code>git stash apply</code>. This command automatically applies your latest stash. You can also specify a stored stash, for example <code>git stash apply stash@{0}</code></p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash apply stash@{0}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You should get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Changes</span> not staged for commit:</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;.. ."</span> to update what will be committed<span class="kw">)</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git checkout -- &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   example.html</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   example.txt</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="ex">no</span> changes added to commit <span class="op">(us</span>e <span class="st">"git add"</span> and/or <span class="st">"git commit -a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>The changes made in your stored stashed are now applied again in your working directory. Note that already staged files are not automatically staged again.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git stash` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common <code>git stash</code> flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>git stash -m "message"</code>: Save your changes in a stash with a message.</p>
+<p><code>git stash apply stash@{n}</code>: Apply the changes from the specified stash (identified by its index <code>n</code>) to your working directory.</p>
+<p><code>git stash pop stash@{n}</code>: Apply the changes from the specified stash (identified by its index <code>n</code>) to your working directory and remove the stash from the stash list.</p>
+<p><code>git stash list</code>: List all the stashes you have created, showing their reference numbers and stash messages.</p>
+<p><code>git stash drop stash@{n}</code>: Remove the specified stash (identified by its index <code>n</code>) from the stash list.</p>
+<p><code>git stash branch &lt;branchname&gt;</code>: Create a new branch named <code>&lt;branchname&gt;</code> from the commit where you originally stashed your changes and apply the stash to the new branch.</p>
+<p><code>git stash show stash@{n}</code>: Show the diff of the changes stored in the specified stash (identified by its index <code>n</code>).</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="alternatives-to-standard-merging" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="alternatives-to-standard-merging"><span class="header-section-number">6.11</span> Alternatives to standard merging</h2>
+<section id="cherrypicking" class="level3" data-number="6.11.1">
+<h3 data-number="6.11.1" class="anchored" data-anchor-id="cherrypicking"><span class="header-section-number">6.11.1</span> Cherrypicking</h3>
+<p><code>git cherry-pick</code> allows you to apply the changes from a specific commit from one branch to another. This means, you can pick and apply specific commits to your current branch without merging the entire branch. This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in <a href="#fig-cherry-pick" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>. You will need the hash of the commit you want to “cherry-pick” and then use the command:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="op">&lt;</span>commithash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Again, you might have to resolve merge conflicts. The default commit message will be:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Cherry-pick</span> commit <span class="op">&lt;</span>commit-hash<span class="op">&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> commit was cherry-picked from <span class="op">&lt;</span>source-branch<span class="op">&gt;</span> at <span class="op">&lt;</span>source-commit-hash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="fig-cherry-pick" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cherry-pick-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/cherry-pick.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cherry-pick-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: Image from <a href="https://dev.to/0xkoji/what-is-git-cherry-pick-3fka">Blogpost “What IS git cherry-pick?”</a> by <a href="https://dev.to/0xkoji">0xkoji</a>
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git cherry-pick` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common <code>git cherry-pick</code> flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>-n</code> or <code>--no commit</code>: Prevents Git from automatically creating a new commit after cherry-picking. It stages the changes, allowing you to make additional modifications or review them before committing.</p>
+<p><code>-e</code> or <code>--edit</code>: Opens the default text editor to edit the commit message of the new cherry-picked commit. Useful when you want to provide a custom message for the cherry-picked commit.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="rebasing" class="level3" data-number="6.11.2">
+<h3 data-number="6.11.2" class="anchored" data-anchor-id="rebasing"><span class="header-section-number">6.11.2</span> Rebasing</h3>
+<p><code>git rebase</code> is a different way compared to a standard merge to integrate changes from one branch into another. For example, when you rebase the <code>feature</code> branch onto the <code>main</code> branch you “rearrange” the commits. It’s like taking your changes, applying them on top of the latest <code>main</code> branch, and making it all look like a smooth line. The new commits you made in the <code>feature</code> branch are still there, but they appear as if they were created after the latest changes in the <code>main</code> branch. It’s like picking up your changes and placing them on the latest code, resulting in a linear history. For an illustration, see <a href="#fig-rebasing" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for team members.</p>
+<div id="fig-rebasing" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rebasing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/rebasing.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rebasing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Image from <a href="https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05">Blogpost “Deep dive into Git Rebase”</a> by <a href="https://dev.to/_mohanmurali">Mohan Murali</a>
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git rebase` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common <code>git rebase</code> flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>--interactive</code> or <code>-i</code>: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.</p>
+<p><code>--continue</code>: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.</p>
+<p><code>--abort</code>: Abort the current rebase operation and return the branch to its original state before the rebase.</p>
+<p><code>--skip</code>: Skip the current commit during an interactive rebase.</p>
+<p><code>-p</code> or <code>--preserve-merges</code>: Preserve merge commits during the rebase.</p>
+<p><code>--autosquash</code>: Automatically squash commits marked with “squash” or “fixup” in their commit message during an interactive rebase.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="acknowledgements-further-reading" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">6.12</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="caption-top table">
 <thead>
@@ -920,14 +1167,14 @@ Tip&nbsp;6.1: Find out more: Naming conventions for Git branches
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.11</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.13</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 29%">
-<col style="width: 70%">
+<col style="width: 36%">
+<col style="width: 63%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -963,6 +1210,42 @@ Tip&nbsp;6.1: Find out more: Naming conventions for Git branches
 <tr class="odd">
 <td style="text-align: left;"><code>git branch -d feature</code></td>
 <td style="text-align: left;">Deletes the <code>feature</code> branch</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git stash</code></td>
+<td style="text-align: left;">Stores made changes for later use</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git stash -m "stashing message"</code></td>
+<td style="text-align: left;">Stashes your changes and includes a message</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git stash list</code></td>
+<td style="text-align: left;">Shows all of your stored stashes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git stash apply</code></td>
+<td style="text-align: left;">Applies your latest stash</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git stash apply stash@{n}</code></td>
+<td style="text-align: left;">Applies a specific stash</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git stash pop</code></td>
+<td style="text-align: left;">Applies your latest stash and removes it from stash list</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git stash pop stash@{n}</code></td>
+<td style="text-align: left;">Applies a specific stash and removes it from stash list</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git cherry-pick &lt;commithash&gt;</code></td>
+<td style="text-align: left;">Applies changes from <code>&lt;commithash&gt;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git rebase</code></td>
+<td style="text-align: left;">Different way of integrating changes from two branches</td>
 </tr>
 </tbody>
 </table>

@@ -258,14 +258,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intermediate-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stashing and Co.</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -331,6 +325,7 @@ div.csl-indent {
   <li><a href="#good-commits" id="toc-good-commits" class="nav-link" data-scroll-target="#good-commits"><span class="header-section-number">5.2.7</span> Good commits</a></li>
   <li><a href="#commit-message-etiquette" id="toc-commit-message-etiquette" class="nav-link" data-scroll-target="#commit-message-etiquette"><span class="header-section-number">5.2.8</span> Commit message etiquette</a></li>
   <li><a href="#amending-a-commit" id="toc-amending-a-commit" class="nav-link" data-scroll-target="#amending-a-commit"><span class="header-section-number">5.2.9</span> Amending a commit</a></li>
+  <li><a href="#partial-commits" id="toc-partial-commits" class="nav-link" data-scroll-target="#partial-commits"><span class="header-section-number">5.2.10</span> Partial commits</a></li>
   </ul></li>
   <li><a href="#what-files-canshould-i-track-with-git" id="toc-what-files-canshould-i-track-with-git" class="nav-link" data-scroll-target="#what-files-canshould-i-track-with-git"><span class="header-section-number">5.3</span> What files can/should I track with Git?</a>
   <ul class="collapse">
@@ -1007,6 +1002,76 @@ Find our more: Commit messages examples
 <p>This workflow can be useful when you’re working on a new feature or a significant change and you might make several small adjustments to get it right. Instead of cluttering your history with numerous tiny commits for each tweak, you can use the “repeated amend” to gradually build up a well-polished commit that includes the entire feature.</p>
 </section>
 </section>
+<section id="partial-commits" class="level3" data-number="5.2.10">
+<h3 data-number="5.2.10" class="anchored" data-anchor-id="partial-commits"><span class="header-section-number">5.2.10</span> Partial commits</h3>
+<p>Git allows you to make partial commits by staging only specific parts of your file before committing. This can be achieved using <code>git add</code> with the <code>-p</code> or <code>--patch</code> option, which allows you to interactively choose which changes to stage.</p>
+<p>To try this make some changes to your file(s) and use:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This will prompt you with each change, giving you options to stage, skip, or split the changes. You’ll see a series of prompts like this:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span> Example text ...</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">1/x</span><span class="kw">)</span> <span class="ex">Stage</span> this hunk <span class="pp">[</span><span class="st">y,n,q,a,d,e,?</span><span class="pp">]?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>These prompt options respectively stand for:</p>
+<ul>
+<li><code>y</code>: Stage this hunk.</li>
+<li><code>n</code>: Do not stage this hunk.</li>
+<li><code>q</code>: Quit. Do not stage this hunk or any remaining hunks.</li>
+<li><code>a</code>: Stage this hunk and all later hunks in the file.</li>
+<li><code>d</code>: Do not stage this hunk or any later hunks in the file.</li>
+<li><code>/</code>: Search for a hunk matching the given regex.</li>
+<li><code>e</code>: Manually edit the current hunk.</li>
+<li><code>?</code>: Print help.</li>
+</ul>
+<p>Type one of the symbols in the command line to proceed in the desired manner.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Find our more: What is a &quot;hunk&quot;?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Find our more: What is a “hunk”?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In Git, a “hunk” refers to a distinct block of code changes within a file. It represents a cohesive set of added, modified, or deleted lines in a specific location. Git automatically divides changes into hunks to facilitate easier review, selective staging, and conflict resolution during version control operations.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Our recommendation: Use a GUI for partial commits">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Our recommendation: Use a GUI for partial commits
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In our opinion, using partial commits on the command line is a bit of a hassle. This would be a good use case for a Git Graphical User Interface (GUI). To checkout how to do partial commits using <a href="https://www.gitkraken.com">GitKraken</a> checkout the <a href="../chapters/gui.html">GUI chapter</a> in this book.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="what-files-canshould-i-track-with-git" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="what-files-canshould-i-track-with-git"><span class="header-section-number">5.3</span> What files can/should I track with Git?</h2>
@@ -1036,7 +1101,7 @@ Find our more: Commit messages examples
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p><code>.gitignore</code> will be a hidden file, so to make it show up in the command line, you will have to use the <code>-a</code> flag in the <code>ls</code> command. For details on listing of files and folders, see the chapter on the <a href="../chapters/command-line.html">command line</a>.</p>
@@ -1045,14 +1110,14 @@ Find our more: Commit messages examples
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Now you can write a filename or folder name inside it, to prevent Git from tracking it.</p>
 <p>It’s recommended to add a project-specific <code>.gitignore</code> file to your repository using the regular stage-commit workflow that you learned about in this chapter, for example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .gitignore</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add .gitignore"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .gitignore</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add .gitignore"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="global-.gitignore-file" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="global-.gitignore-file"><span class="header-section-number">5.4.1</span> Global <code>.gitignore</code> file</h3>
@@ -1062,12 +1127,12 @@ Find our more: Commit messages examples
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.excludesfile ~/.gitignore_global</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.excludesfile ~/.gitignore_global</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>After this setup, you can add common files to this list, that you want to ignore. These rules will apply across to <em>all</em> Git repositories on your computer.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common wildcards">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1076,7 +1141,7 @@ Find out more: Common wildcards
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>As discussed in the <a href="../chapters/command-line.html">command line chapter</a> wildcards are special characters that represent patterns of filenames or directory names. They can be used to specify multiple files or directories that should be ignored by Git when tracking changes. Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.</p>
 <p><code>*</code>: Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.</p>
@@ -1088,7 +1153,7 @@ Find out more: Common wildcards
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find our more: Common files to ignore in scientific settings">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1097,7 +1162,7 @@ Find our more: Common files to ignore in scientific settings
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Temporary files and output:</strong> Ignore files generated during analysis, like log files, temporary files, or intermediate data files.</li>
@@ -1112,7 +1177,7 @@ Find our more: Common files to ignore in scientific settings
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Example `.gitignore` file for an R project">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1121,46 +1186,46 @@ Example <code>.gitignore</code> file for an R project
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># R-specific</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="ex">*.Rproj.user/</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="ex">*.Rhistory</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.RData</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># R package specific</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rcheck/</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="ex">man/*.Rd</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="ex">NAMESPACE</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Temporary files</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="ex">*.bak</span></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="ex">*.csv~</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="ex">*.html</span></span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="ex">*.pdf</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="co"># RMarkdown-specific</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="ex">*.knit.md</span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="ex">*_cache/</span></span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="ex">*_files/</span></span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="co"># R Markdown Notebook</span></span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="ex">*.nb.html</span></span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudio Project Files</span></span>
-<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="ex">*.Rproj</span></span>
-<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="co"># R Environment Variables</span></span>
-<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="ex">.Renviron</span></span>
-<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="co"># R dcf file</span></span>
-<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a><span class="ex">DESCRIPTION.meta</span></span>
-<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Mac-specific</span></span>
-<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># R-specific</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="ex">*.Rproj.user/</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="ex">*.Rhistory</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.RData</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rproj</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># R package specific</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="ex">.Rcheck/</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="ex">man/*.Rd</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="ex">NAMESPACE</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Temporary files</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="ex">*.bak</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="ex">*.csv~</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="ex">*.html</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="ex">*.pdf</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co"># RMarkdown-specific</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="ex">*.knit.md</span></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="ex">*_cache/</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="ex">*_files/</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a><span class="co"># R Markdown Notebook</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a><span class="ex">*.nb.html</span></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudio Project Files</span></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a><span class="ex">*.Rproj</span></span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a><span class="co"># R Environment Variables</span></span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a><span class="ex">.Renviron</span></span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a><span class="co"># R dcf file</span></span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a><span class="ex">DESCRIPTION.meta</span></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Mac-specific</span></span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1172,7 +1237,7 @@ Example <code>.gitignore</code> file for an R project
 <p>Normally, Git does not track empty folders in a repository. However, tracking an empty directory in a Git repository can be useful in some scenarios. For example, you want to track an empty folder as a placeholder for future content or as a way to organize the project more clearly.</p>
 <p>A workaround, to get Git to track your empty folder, is adding a hidden <code>.gitkeep</code> file in this folder<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. This not an official Git feature but rather a convention adopted by software developers. That means you could name this file anything, but <code>.gitkeep</code> is used by convention to explicitly state its purpose for keeping otherwise empty folders in Git.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Use-cases for empty folders in Git repositories for scientific projects">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1181,7 +1246,7 @@ Find out more: Use-cases for empty folders in Git repositories for scientific pr
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>As discussed above, Git is not suitable for tracking a lot of large files, as is often the case when working with research data. Imagine that you use Git for your code that you use to analyze data from a research project. Usually, your analysis code needs access to the research data but you think that the research data is too large to be tracked with Git.</p>
 <p>Here is what you could do:</p>
