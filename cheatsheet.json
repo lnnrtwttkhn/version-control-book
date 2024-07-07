@@ -16,22 +16,22 @@
     "mkdir <FOLDER1> <FOLDER2>": "Creates two separate folders called `<FOLDER1>` and `<FOLDER2>`",
     "touch <FILE>": "Creates a new empty file called `<FILE>`",
     "open <FILE>": "Opens the file called `<FILE>` (on macOS)",
-    "start <FILE>": "Opens the file called `<FILE>` (On Windows)",
-    "echo 'example text' >> file.txt": "Writes 'example text' into `file.txt`",
-    "cat <FILE>": "Displays the content of <FILE>",
+    "start <FILE>": "Opens the file called `<FILE>` (on Windows)",
+    "echo \"example text\" >> file.txt": "Writes \"example text\" into `file.txt`",
+    "cat <FILE>": "Displays the content of `<FILE>`",
     "mv FILE.txt <FOLDER>": "Move `FILE.txt` into `<FOLDER>`",
     "mv <FOLDER_OLD> <FOLDER_NEW>": "Renames `<FOLDER_OLD>` to `<FOLDER_NEW>`",
     "ls -alh *.csv": "Uses a wildcard to list all `.csv` files in the current working directory",
     "rm -r <FOLDER>": "Removes the folder `<FOLDER>`",
     "history": "Display the command history of the current terminal session",
-    "history > history.txt": "Saves the entire command history to a file named 'history.txt'",
-    "history >> history.txt": "Adds the entire command history to the end of the file named 'history.txt'"
+    "history > history.txt": "Saves the entire command history to a file named `history.txt`",
+    "history >> history.txt": "Adds the entire command history to the end of the file named `history.txt`"
   },
   "config": {
     "git config": "Get an overview of Git config commands",
-    "git config --global user.name": "Sets Git username",
-    "git config --global user.email": "Sets Git email address",
-    "git config --global core.editor": "Sets Git text editor",
+    "git config --global \"user.name\"": "Sets Git username",
+    "git config --global \"user.email\"": "Sets Git email address",
+    "git config --global core.editor \"editorname\"": "Sets Git text editor",
     "git config --global init.defaultBranch main": "Sets default branch name to `main`",
     "git config --list": "Views set Git configurations"
   },
@@ -40,18 +40,19 @@
     "git status": "Views Git tracking status of files in the repository",
     "git add": "Adds file(s) to the staging area",
     "git commit": "Commits staged files",
+    "git commit -m \"commit message\"": "Commits staged files with a commit message",
     "git log": "Views past commits",
     "git diff": "Views made changes compared to the last commit"
   },
   "remote_intro": {
     "git remote": "Manages remote repositories",
     "git clone": "Creates a local copy of a repository",
-    "git pull": "Fetches and merges the latest changes from a remote repository into your current branch",
-    "git fetch": "Updates your remote tracking branches",
-    "git push": "Uploads your local commits to a remote repository"
+    "git pull": "Fetches and merges the latest changes from a remote repository into the current branch",
+    "git fetch": "Updates remote tracking branches",
+    "git push": "Uploads local commits to a remote repository"
   },
   "github_advanced": { 
-      "git blame": "Shows the authorship and commit information of each line in a file"
+    "git blame": "Shows the authorship and commit information of each line in a file"
   },
   "branches": {
     "git branch": "Lists / creates and deletes branches",
@@ -64,7 +65,7 @@
   },
   "stashing": {
     "git stash": "Stores made changes for later use",
-    "git stash -m stashing message": "Stashes your changes and includes a message",
+    "git stash -m \"stashing message\"": "Stashes your changes and includes a message",
     "git stash list":"Shows all of your stored stashes", 
     "git stash apply": "Applies your latest stash",
     "git stash apply stash@{n}": "Applies a specific stash",
@@ -75,7 +76,7 @@
     "git restore --staged <FILE>": "Removes `<FILE>` from your staging area",
     "git restore --staged .": "Removes all files in your repository from your staging area",
     "git rm <FILE>": "Deletes `<FILE>` from your repository",
-    "git rm --cached <FILE>": "Removes `<FILE>` from your repository but keeps  `<FILE>` on your system",
+    "git rm --cached <FILE>": "Removes `<FILE>` from your repository but keeps `<FILE>` on your system",
     "git revert <commithash>": "Creates a new commit which reverts your repository back to `<commithash>`",
     "git reflog": "Logs recent branch changes",
     "git reset <commithash>": "Resets the branch to a specified commit, keeping changes in the working directory",
@@ -88,7 +89,7 @@
     "git tag": "Lists all tags",
     "git tag v1.0": "Creates a tag on the basis of your current commit named `v1.0`",
     "git tag v1.1 <commit-hash>": "Creates a tag on the basis of a specific commit hash named `v1.1`",
-    'git tag -a v1.0 -m "Release version 1.0"': "Creates an annotated tag on the basis of your current commit hash named `v1.0` with the tagging message `Release version 1.0`",
+    "git tag -a v1.0 -m \"Release version 1.0\"": "Creates an annotated tag on the basis of your current commit hash named `v1.0` with the tagging message `Release version 1.0`",
     "git push origin <tag-name>": "Pushes a specific tag to remote",
     "git push origin --tags": "Pushes all created tags to remote",
     "git fetch --tags": "Fetches all created tags from remote",
