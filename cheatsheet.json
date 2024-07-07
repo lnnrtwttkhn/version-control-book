@@ -61,9 +61,7 @@
     "git merge": "Merges branches",
     "git merge --abort": "Aborts a merge",
     "git merge --squash": "Squaches commits on branch into a single commit and merge",
-    "git branch -d feature": "Deletes the `feature` branch"
-  },
-  "stashing": {
+    "git branch -d feature": "Deletes the `feature` branch",
     "git stash": "Stores made changes for later use",
     "git stash -m \"stashing message\"": "Stashes your changes and includes a message",
     "git stash list":"Shows all of your stored stashes", 
@@ -71,18 +69,7 @@
     "git stash apply stash@{n}": "Applies a specific stash",
     "git stash pop": "Applies your latest stash and removes it from stash list",
     "git stash pop stash@{n}": "Applies a specific stash and removes it from stash list",
-    "git restore <FILE>": "Reverts `<FILE>` back to the state of your last commit",
-    "git restore .": "Reverts all files in your repository back to the state of your last commit",
-    "git restore --staged <FILE>": "Removes `<FILE>` from your staging area",
-    "git restore --staged .": "Removes all files in your repository from your staging area",
-    "git rm <FILE>": "Deletes `<FILE>` from your repository",
-    "git rm --cached <FILE>": "Removes `<FILE>` from your repository but keeps `<FILE>` on your system",
-    "git revert <commithash>": "Creates a new commit which reverts your repository back to `<commithash>`",
-    "git reflog": "Logs recent branch changes",
-    "git reset <commithash>": "Resets the branch to a specified commit, keeping changes in the working directory",
-    "git reset --hard <commithash>": "Resets the branch to a specified commit",
     "git cherry-pick <commithash>": "Applies changes from `<commithash>`",
-    "git clean": "Deletes untracked files from your directory",
     "git rebase": "Different way of integrating changes from two branches"
   },
   "Tags and Releases": {
@@ -96,6 +83,17 @@
     "git pull --tags": "Pulls all created tags from remote"
   },
   "rewriting_history": {
+    "git restore <FILE>": "Reverts `<FILE>` back to the state of your last commit",
+    "git restore .": "Reverts all files in your repository back to the state of your last commit",
+    "git restore --staged <FILE>": "Removes `<FILE>` from your staging area",
+    "git restore --staged .": "Removes all files in your repository from your staging area",
+    "git rm <FILE>": "Deletes `<FILE>` from your repository",
+    "git rm --cached <FILE>": "Removes `<FILE>` from your repository but keeps `<FILE>` on your system",
+    "git revert <commithash>": "Creates a new commit which reverts your repository back to `<commithash>`",
+    "git reflog": "Logs recent branch changes",
+    "git reset <commithash>": "Resets the branch to a specified commit, keeping changes in the working directory",
+    "git reset --hard <commithash>": "Resets the branch to a specified commit",
+    "git clean": "Deletes untracked files from your directory",
     "git filter-repo --invert-paths --path < PATH-TO-FILE-YOU-WANT-TO-REMOVE >": "Remove specified file from your repository history",
     "brew install git-filter-repo": "Installs git filter-repo using brew"
   }
