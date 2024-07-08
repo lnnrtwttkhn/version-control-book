@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
 
 <title>Contributing – The Version Control Book</title>
 <style>
@@ -357,9 +356,21 @@ div.csl-indent {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header">
-<h1 class="title display-7">Contributing</h1>
-<p class="author"></p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Contributing</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
 
 </header>
 
@@ -370,7 +381,7 @@ div.csl-indent {
 <p><a href="#sec-quarto" class="quarto-xref"><span>Quarto</span></a>: This section explains how to <strong>use Quarto</strong> to work on this project.</p>
 <p><a href="#sec-dependency-management" class="quarto-xref"><span>Dependency Management</span></a>: This section explains how this project <strong>manages package dependencies</strong> using <code>renv</code>.</p>
 <p><a href="#sec-code" class="quarto-xref"><span>Code</span></a>: This section explains how to <strong>add code snippets</strong>.</p>
-<p><a href="#sec-images" class="quarto-xref"><span>Images</span></a>: This section explains how to <strong>add images</strong>.</p>
+<p><a href="#sec-images" class="quarto-xref"><span>Images</span></a>: This section e explains how to <strong>add images</strong>.</p>
 <p><a href="#sec-references" class="quarto-xref"><span>References</span></a>: This section explains how to <strong>add references</strong>.</p>
 <p><a href="#sec-variables" class="quarto-xref"><span>Variables</span></a>: This section explains how to <strong>use variables</strong>.</p>
 <p><a href="#sec-icons" class="quarto-xref"><span>Fontawesome Icons</span></a>: This section explains how to <strong>add icons</strong>.</p>
@@ -579,7 +590,7 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <span id="cb4-92"><a href="#cb4-92"></a>    <span class="co"># layout (https://quarto.org/docs/reference/formats/html.html#layout):</span></span>
 <span id="cb4-93"><a href="#cb4-93"></a>    <span class="ex">fig-cap-location:</span> bottom</span>
 <span id="cb4-94"><a href="#cb4-94"></a>    <span class="ex">page-layout:</span> full</span>
-<span id="cb4-95"><a href="#cb4-95"></a>    <span class="co"># title-block-style: default</span></span>
+<span id="cb4-95"><a href="#cb4-95"></a>    <span class="ex">title-block-style:</span> default</span>
 <span id="cb4-96"><a href="#cb4-96"></a>    <span class="co"># code (https://quarto.org/docs/reference/formats/html.html#code):</span></span>
 <span id="cb4-97"><a href="#cb4-97"></a>    <span class="ex">code-fold:</span> false</span>
 <span id="cb4-98"><a href="#cb4-98"></a>    <span class="ex">code-overflow:</span> wrap</span>
@@ -602,9 +613,7 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <span id="cb4-115"><a href="#cb4-115"></a>    <span class="ex">include-in-header:</span> github-buttons.html</span>
 <span id="cb4-116"><a href="#cb4-116"></a></span>
 <span id="cb4-117"><a href="#cb4-117"></a><span class="ex">metadata-files:</span></span>
-<span id="cb4-118"><a href="#cb4-118"></a>  <span class="co"># - _authors.yml</span></span>
-<span id="cb4-119"><a href="#cb4-119"></a>  <span class="co"># - _affiliations.yml</span></span>
-<span id="cb4-120"><a href="#cb4-120"></a>  <span class="ex">-</span> _metadata.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-118"><a href="#cb4-118"></a>  <span class="ex">-</span> _metadata.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1770,12 +1779,12 @@ Example: Click here for the YAML header of the current document.
 <div class="code-with-filename-file">
 <pre><strong>misc/contributing.qmd</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1"></a><span class="pp">---</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">title-block-style</span><span class="kw">:</span><span class="at"> none</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="pp">---</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a></span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="at">```{r}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1"></a><span class="at">```{r}</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co">#| eval: true</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co">#| include: false</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="at">library("magrittr")</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="at">library("data.table")</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="at">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
