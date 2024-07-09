@@ -12,11 +12,6 @@ abstract: |
 {{< include ../objectives/_objectives-setup.qmd >}}
 :::
 
-::: {.callout-note appearance="minimal"}
-<h5>Exercises</h5>
-{{< include ../exercises/_exercises-setup.qmd >}}
-:::
-
 ## Configuring Git
 
 Once you [installed Git](installation.qmd), it's time to set it up.
@@ -372,6 +367,43 @@ This command will result in an output similar to this:
 :::
 
 You can manually edit the `.gitconfig` file to customize your Git environment, but it's often more convenient to use Git commands like `git config` to manage these settings.
+
+## Helpful guardrails
+
+Especially if you are new to Git (but not only then!), you might be worried that something will go terribly wrong, that you will lose files beyond recovery, or that you will break your computer.
+While we won't assure you that this will *not* happen (if you try really hard, you can always break stuff), it's quite unlikely that something bad will happen.
+In this section, we therefore collect pieces of advice and other tricks to make your Git journey as smoothly as possible.
+
+### Preventing a Git repository in your home directory
+
+In the next chapter, you will take your [first steps with Git](first-steps-git.qmd).
+This will involve creating your first Git repository in a folder on your computer.
+It is then possible to track changes in the files in that folder.
+
+We strongly recommend that you **don't create a Git repository in your home directory!**
+Otherwise, you might start tracking changes in all files in your home directory, which usually means all the files that you have saved under your user name, including applications and system files.
+Always remember that you need to navigate to the folder first where you want to create a new Git repository or work on an existing one
+^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#navigating-the-file-system))].
+
+To **prevent accidentally creating a Git repository in your home directory**, you can run the following command:
+
+```{zsh filename="Code"}
+touch ~/.git
+```
+
+::: {.callout-caution title="Mini Exercise: What does the `touch` command do in this case?"}
+:::
+
+This command creates an empty file called `.git` in your home directory.
+The path `~/` specifies the path to your home directory.
+If you then run the `git init` command to initialize a new Git repository (find out more about this in the [next chapter](first-steps-git.qmd)), the following (desired) error will appear and no Git repository is created in your home directory:
+
+```{zsh filename="Output"}
+#| code-copy: false
+fatal: invalid gitfile format: /Users/user/.git
+```
+
+Thanks to [Eamon Caddigan](https://social.coop/@eamon/112434377857903339) for this tip!
 
 ## Acknowledgements and further reading
 
