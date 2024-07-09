@@ -74,7 +74,7 @@ For instance:
 
 ```
 
-Instead of using `git config` you can also edit this file directly to make changes.
+Instead of using `git config` you could also edit this file directly to make changes.
 
 ### `description` file
 
@@ -106,9 +106,9 @@ Git uses predefined names for hook scripts.
 You cannot choose arbitrary names; instead, you must use the names that Git recognizes for the various hooks. 
 Git hooks are typically written in bash, but can be in any programming language, provided the scripts are executable on your system. 
 
-::: {.callout-tip title="Example Hook " collapse="false"}
+::: {.callout-tip title="Example Hook script " collapse="false"}
 
-#### Commit message hook:
+**Commit message hook**:
 
 This hook would run after a commit message is entered but before the commit is finalized.
 To ensure that Git recognizes it, you have to place it inside `.git/hooks` and name it: `commit-msg` (without any file ending)
@@ -136,14 +136,58 @@ If the word is not found, it prints an error message and prevents the commit.
 
 There are many more ways to use hooks (e.g. pre-commit, pre-push etc..). 
 
-Link to Ressource?
+You can check out the [Git documentation about hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) for more information.
 :::
 
 ### `info` folder
 
-The `info` folder contains information and configurations 
+The `info` folder within the `.git` directory contains information and configurations which manages it´s behavior.
+The two important files in this folder are the `exclude` file and the `refs` file.
+
+#### `exclude` file
+
+The `exclude` file allows you to specify file patterns to be ignored by Git, similar to a `.gitignore` file.
+The file is not intended to be committed to the repository, since it is located in the `.git` folder, which is saved locally in your system. 
+It is used to define ignore patterns that are specific to your local repository environment.
+The patterns defined in the `exclude` file are not shared with other collaborators, making it useful for ignoring files that are specific to your local development environment and should not affect others working on the same repository.
+To edit the `exclude` file, navigate to the info directory within your `.git` folder using `cd .git/info` and then open the exclude file with a text editor of your choice.
+The exclude file syntax follows the same rules as `.gitignore` files, enabling you to specify patterns for files and directories that Git should ignore.
+
+#### `refs` file
+
+The `refs` file within the info folder provides references to commits in the repository. 
+This file is part of Git's internal mechanism for keeping track of different branches and tags within the repository. 
+It contains pointers to the commit objects, helping Git manage the repository’s history and branching structure.
+
+E.g., in the repository of this book the `refs` file looks like this:
+
+```
+ad24067d74f0196bb2c07cb6389220d6c9217737	refs/heads/GUI
+a7049cab0d3092be2bcb16042ac782acd57e969c	refs/heads/README.md
+89a9f0a57297f5febe31b2b83f535f5717e735e5	refs/heads/branches_ss24
+334d7149901dff1cb44829d9017a9504eaf8c62d	refs/heads/chapter/git_internals
+460601f061240a2b536a7251aab1fd18fb816545	refs/heads/cheatsheet
+37904c94d20e843e12aac118a06a7a4d48ee71c2	refs/heads/cheatsheet_branches
+c7781e284971ea8e2c61c8366ed323c9d9a7d176	refs/heads/cli
+a7d83248280c708d14ce27ad840eaeaaa0796ff0	refs/heads/commonmistakes
+ed85342fef5e40d991f8dd67ef0a63f972c631f8	refs/heads/content/branches
+d01f7626e9a67a57778002b4d028b0c52b6cc10b	refs/heads/content/first_steps
+6c421e034c3354fa07f9e13c53df8e89bfc87cb6	refs/heads/content/setup
+d5a6080b59cfc924fb2c11b69941ecad3bd07437	refs/heads/contributing
+a5cd2f53e1ddfc467d280a766453092dcd898ce7	refs/heads/draft
+c662cdf6e838ab86f59483c12b68ba24d6598412	refs/heads/editexisting
+03156e5568ee8b1db4ccc67ee7d0116a17e34b48	refs/heads/editpreface
+```
+To view or edit the refs file, navigate to the info directory within your `.git` folder using `cd .git/info` and open the refs file with a text editor. 
+It is not recommended that you edit this file by hand, as incorrect modifications can lead to issues with the repository’s references and history.
 
 ### `objects` folder
+
+The objects folder within the `.git` directory is a fundamental part of Git’s internal storage system.
+This folder contains all the objects that Git uses to track the history and state of your repository. 
+When you first explore the objects folder, you will see a series of subfolders, each named with two hexadecimal characters (e.g.,`d6`, `e9`, `fa`)
+
+
 
 ### `refs` folder
 
