@@ -835,6 +835,16 @@ To move the `recipes.txt` file to the `/vegan` subfolder, the command would look
 mv recipes.txt vegan
 ```
 
+#### Moving files to the parent directory
+
+Let's assume that you moved the `recipes.txt` file to the `/vegan` subfolder, as shown above.
+Now let's move the `recipes.txt` file back to the parent `recipes` folder.
+To do this, you can first `cd` into the `/vegan` subfolder and then use the `..` shortcut (for details on `..`, see the [section above](#dot-dot-..)) in combination with the `mv` command:
+
+```{zsh filename="Code"}
+mv recipes.txt ..
+```
+
 ### Renaming files and folders
 
 Suppose we don't like the folder name `vegan` because `recipes.txt` actually contains recipes with meat.
