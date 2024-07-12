@@ -126,7 +126,7 @@ However, the change to Zsh was not a drastic shift for most users, since there a
 
 To verify if your machine is configured to use a shell other than Bash, you can type the following command in your Terminal window (you will learn about the command that is used here, `echo`, in this chapter):
 
-```{zsh, filename="Code"}
+```{zsh filename="Code"}
 echo $SHELL
 ```
 
@@ -192,7 +192,7 @@ Your remote environment will be mostly empty, but you can move around and manage
 When you open the shell, you'll see a prompt that tells you that the shell is ready for input.
 Your terminal interface will usually show a message similar to the following prompt:
 
-```{zsh, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 $
 ```
@@ -212,7 +212,7 @@ Keep in mind that your prompt may look slightly different.
 Usually, in popular shell environments, your username and the host name appear before the `$` symbol.
 For example, your prompt might look like this:
 
-```{zsh, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 wittkuhn@lip-osx-005509:~$
 ```
@@ -240,7 +240,7 @@ In the context of file systems, a "parent directory" and a "child directory" des
 - **Child Directory:** A child directory is located "inside" or "below" a parent directory.
 It is contained within the parent directory and is considered subordinate to it, much like a child in a family is part of the larger family unit.
 
-```{zsh, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 parent $ tree
 .
@@ -261,7 +261,7 @@ While the fundamental concepts of directories and files are consistent across op
 
 #### {{< fa brands microsoft >}} Windows
 
-In Windows operating systems, each drive, such as `C:` or `D:`, has its own root directory, denoted by the drive letter followed by a backslash, like `C:\`. 
+On Windows operating systems, each drive, such as `C:` or `D:`, has its own root directory, denoted by the drive letter followed by a backslash, like `C:\`. 
 Windows uses the backslash (`\`) as the directory separator.
 The `Users` folder, which typically contains the personal folders of all users on the system, is usually located in the root directory of the drive where Windows is installed. 
 The standard path to the `Users` folder is `C:\Users`.
@@ -276,7 +276,7 @@ If your present working directory (use `pwd`) is at the root (`C:\`), you can di
 Alternatively, if you are not sure which drive you are currently on, you can switch to the `C:` drive by typing `cd C:` and then navigate to the `Users`folder with `cd Users`.
 An example path to a file within the `Users` directory on Windows might be:
 
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 C:\Users\username\Documents\file.txt
 ```
@@ -287,7 +287,7 @@ On macOS the root directory is denoted by `/`, which is also used as the directo
 The home directory for a user is typically `/Users/username/`.
 An example path on macOS could be:
 
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 /Users/username/Documents/file.txt
 ```
@@ -297,18 +297,18 @@ An example path on macOS could be:
 ### Current working directory
 
 The current **working directory** is the location within your file system where a user or an application is presently performing file operations or running commands.
-The command `pwd` (short for "print working directory") will display the current directory that the shell is currently focused on in your file system.
+The command `pwd` (short for "print working directory") will display the directory that the shell is currently focused on in your file system.
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 pwd
 ```
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of this command executed in the project directory of this guide.</summary>
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| eval: true
 #| echo: false
-#| class.output: bash
+#| class.output: zsh
 #| code-copy: false
 pwd
 ```
@@ -320,7 +320,7 @@ If the shell cannot find the program you typed as a command, it will show an err
 This can happen if you made a mistake when typing the command or if the program for that command is not installed on your system.
 For example, if you made a mistake when typing the `pwd` command, and accidentally entered `pws`, the following error message might appear:
 
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 pws: command not found
 ```
@@ -333,14 +333,14 @@ The path can be either *absolute* or *relative*.
 
 For example, if you are on macOS and your current working directory is your home directory (for example, `/Users/user`), you can switch to the `/Downloads` folder by using either an absolute or relative path with the `cd` command:
 
-```{bash, filename="Absolute path (Output)"}
+```{zsh filename="Absolute path (Output)"}
 #| code-copy: false
 ~$ cd /Users/user/Downloads
 ~/Downloads$ pwd
 /Users/user/Downloads
 ```
 
-```{bash, filename="Relative path (Output)"}
+```{zsh filename="Relative path (Output)"}
 #| code-copy: false
 ~$ cd Downloads
 ~/Downloads$ pwd
@@ -351,19 +351,32 @@ You may notice that the prompt has been updated to show the new working director
 If a path starts with a forward slash (`/`), it is considered an *absolute* path.
 Paths that do not start with a forward slash are considered *relative* to the current working directory.
 
-::: {.callout-tip collapse="true" title="FAQ: Is Bash case sensitive?"}
+::: {.callout-tip title="Is Bash case sensitive?" collapse="true"}
 
 Yes, in general Bash is case sensitive.
 This means that it distinguishes between uppercase and lowercase letters in commands and filenames.
 For example, if you created a file like `banana.txt` and then listed files that start with the letter `B`, the command line would tell you that there is `No such file or directory`.
 If you then listed files that start with the letter `b`, the command line would find the file.
 
-```{bash, filename="Output"}
-#| code-copy: false
+```{zsh filename="Code"}
 touch banana.txt
+```
+
+```{zsh filename="Code"}
 ls B*
-ls: B*: No such file or directory
+```
+  
+```{zsh filename="Output"}
+#| code-copy: false
+ls: B* No such file or directory
+```
+
+```{zsh filename="Code"}
 ls b*
+```
+  
+```{zsh filename="Output"}
+#| code-copy: false
 banana.txt
 ```
 
@@ -380,14 +393,14 @@ Additionally, some configurations or filesystem options can affect this behavior
 Note, that if a path contains a space, it needs to be enclosed in quotation marks to be recognized by the command line.
 Here is an example of a path with a space:
 
-```{bash}
+```{zsh filename="Output"}
 /Users/User/Downloads/Directory with space/
 ```
 
 If you attempt to use this path in a command without quotes, the command interpreter would understand it as three separate arguments since in command-line interfaces, spaces are typically used to separate different arguments or parameters.
 Navigating to this absolute path with spaces would look like this:
 
-```{bash}
+```{zsh filename="Code"}
 cd '/Users/User/Downloads/Directory with space/'
 ```
 
@@ -400,7 +413,13 @@ While the command line can handle paths (or files) with spaces in this way, we *
 The tilde symbol (`~`) provides a convenient and abbreviated way to refer to the user's home directory, enabling us to easily construct paths relative to that directory.
 To quickly change the current working directory to your user's home directory anywhere on your file system, we can use `cd ~` which will transport us back to the user's home directory.
 
-```{bash, filename="Output"}
+```{zsh filename="Code"}
+cd ~
+```
+
+For example:
+
+```{zsh filename="Output"}
 #| code-copy: false
 ~/Downloads$ cd ~
 ~$ 
@@ -411,7 +430,7 @@ To quickly change the current working directory to your user's home directory an
 Another symbol with a special meaning in paths, aside from `~`, is the dot (`.`).
 It serves as a shorthand representation for the current working directory, and using it in a path means the reference remains within the same directory.
 
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 ~$ cd .
 ~$
@@ -419,25 +438,25 @@ It serves as a shorthand representation for the current working directory, and u
 
 In turn, these two commands are equivalent:
 
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 ~$ cd ./Downloads
 ```
 
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 ~$ cd Downloads
 ```
 
 #### Dot Dot: `..`
 
-The `..` symbol is a shorthand representation for the parent directory of the current working directory.
+The `..` symbol is a shorthand representation for the parent directory of the current working directory (for a reminder about "parent" and "child" directories, see @tip-parent-child-directories).
 It can be used repeatedly, allowing `cd ..` to move up one folder and ``cd ../..` to move up two folders.
 This is useful for creating relative paths to other branches within a directory tree.
 
 For instance, by executing the following sequence of commands, we will navigate horizontally (or sideways) to a folder located at the same hierarchical level as the current working directory:
 
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| code-copy: false
 ~$ cd ~ # <1>
 ~$ cd Downloads # <2>
@@ -456,25 +475,25 @@ In this section, we provide some tips and tricks to help you become more efficie
 
 ### Autocompletion
 
-While using the command line, instead of typing out the full command or path, you can press the <kbd>⇥ Tab</kbd> key to automatically complete the rest.
+While using the command line, instead of typing out the full command or path, you can press the {{< kbd ⇥ Tab >}} key to automatically complete the rest of the command.
 Begin typing a command or the initial letters of a file or directory, for example:
 
-```{bash}
+```{zsh filename="Code"}
 cd ~/Doc
 ```
 
-Once you've typed a portion of the command or path, press the <kbd>⇥ Tab</kbd> key.
-The command-line interface will attempt to autocomplete the command or path based on what matches your input.
+Once you've typed a portion of the command or path, press the {{< kbd ⇥ Tab >}} key.
+The command-line interface will attempt to auto-complete the command or path based on what matches your input.
 In this case for example:
 
-```{bash}
+```{zsh filename="Code"}
 cd ~/Documents/
 ```
 
-If there are multiple possibilities, pressing <kbd>⇥ Tab</kbd> again will cycle through the available options.
-Autocompletion also works for system commands. 
-For example, typing `ls` (you will find out more about this command below) and pressing <kbd>⇥ Tab</kbd> might complete it to `ls -l` or `ls -a`.
-Autocompletion also works for the Git commands, that will be introduced in the following chapters of this book.
+If there are multiple possibilities, pressing {{< kbd ⇥ Tab >}} again will cycle through the available options.
+Auto-completion also works for system commands. 
+For example, typing `ls` (you will find out more about this command [below](#list-files-and-folders)) and pressing {{< kbd ⇥ Tab >}} might complete it to `ls -l` or `ls -a`.
+Auto-completion also works for the Git commands that will be introduced in the following chapters of this book.
 
 ### Command history
 
@@ -495,13 +514,13 @@ And it's also [the reason](https://www.commitstrip.com/en/2017/02/28/definitely-
 The `clear` command is used to clear the content of your terminal, providing a clean and empty slate. 
 It helps improve visibility by removing previous commands, outputs, and clutter from your terminal window.
 
-To clear the content of the terminal screen, simply type and execute the `clear` command:
+To clear the content of the terminal screen, type and execute the `clear` command:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 clear
 ```
 
-Press `Enter` and the terminal screen will be cleared, leaving only a new prompt at the top of the window.
+Press {{< kbd Enter >}} and the terminal screen will be cleared, leaving only a new prompt at the top of the window.
 After using `clear`, you can continue working in a fresh and uncluttered terminal window.
 
 ### Saving command line history
@@ -511,7 +530,7 @@ To review the commands you've used, you can use the `history` command, which wor
 
 If you're interested in keeping your command history for documentation or learning purposes, you can easily save either your current session's history or the entire history stored by your terminal to a text file using the following command: 
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 history > history.txt
 ```
 
@@ -523,16 +542,16 @@ You can then view this file directly from the command line or through your usual
 The `ls` command is used to list the files and folders in a specified directory or the current working directory.
 If you run this command, you will see the contents of your current working directory.
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 ls
 ```
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of the `ls` executed in the project directory of this guide.</summary>
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| eval: true
 #| echo: false
-#| class.output: bash
+#| class.output: markdown
 #| code-copy: false
 ls
 ```
@@ -543,47 +562,78 @@ To provide additional instructions to a command, we can pass flags and arguments
 
 ### List files in a specific directory
 
-For example, we can list the contents of the `/chapters` folder in the project directory of this guide:
+To list files in a specific folder (*relative* to the current working directory), we use the `ls` command followed by the name of the folder.
+For example, we can list the contents of the `chapters` folder in the project directory of this guide.
+In this case, `chapters` is a so-called "argument" to the `ls` command.
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 ls chapters
 ```
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of this command executed in the project directory of this guide.</summary>
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| eval: true
 #| echo: false
-#| class.output: bash
+#| class.output: markdown
 #| code-copy: false
 ls chapters
 ```
 </details>
 
-In this case, `chapters` is a a so-called "argument" to the `ls` command.
 
 ### Listing hidden files
 
-Hidden files, often starting with a dot in their names, are files that remain mostly hidden from the regular view in GUIs.
+Hidden files, often starting with a dot (`.`) in their names, are files that remain mostly hidden from the regular view in GUIs.
 They can serve different purposes, such as storing configuration settings, sensitive data, or temporary files.
 Hidden files can be accessed through the command line or by changing settings in the file manager to make them visible.
+
+::: {.callout-warning title="Be cautios when modifying hidden files!"}
 It's important to **be cautious when modifying or deleting hidden files**, as they can impact the proper functioning of the operating system and applications.
 This is also typically the reason why these files are hidden.
-To view hidden files, we can use the `-a` (for "all") flag in the `ls` command.
-For example, we can list hidden files in the project directory:
+Only listing hidden files (as explained in this section) does not modify them, so it's generally safe to execute the `ls -a` command to view hidden files.
+:::
 
-```{bash, filename="Code"}
+To view hidden files, we can use the `-a` (for "all") flag in the `ls` command:
+
+```{zsh filename="Code"}
 ls -a
 ```
 
 <details>
-<summary>{{< fa eye >}} Click here to see the output of `ls -a` executed in the `/chapters` directory of this guide.</summary>
-```{bash, filename="Output"}
+<summary>{{< fa eye >}} Click here to see the output of `ls -a` executed in the project directory of this guide.</summary>
+```{zsh filename="Output"}
 #| eval: true
 #| echo: false
-#| class.output: bash
+#| class.output: markdown
 #| code-copy: false
 ls -a
+```
+</details>
+
+To list *only* hidden files, see the command in @tip-only-hidden.
+
+::: {#tip-only-hidden .callout-tip title="How can I list *only* hidden files?" collapse="true"}
+
+To list *only* hidden files, you can run the following command:
+
+```{zsh filename="Code"}
+ls -d .?*
+```
+
+The `-d` (or `--directory`) flag lists directory entries instead of contents and does not dereference symbolic links.
+The `.?*` argument will only state hidden files.
+
+:::
+
+<details>
+<summary>{{< fa eye >}} Click here to see the output of `ls -d .?*` executed in the project directory of this guide.</summary>
+```{zsh filename="Output"}
+#| eval: true
+#| echo: false
+#| class.output: markdown
+#| code-copy: false
+ls -d .?*
 ```
 </details>
 
@@ -608,13 +658,13 @@ Arguments are often positioned after the command and any flags, and they can be 
 You can combine multiple single-letter flags by using a single dash.
 For example, to instruct the `ls` command to list *all* files (including hidden files) in a *long* format that is easy to read for *humans*, you can use the following combination of flags:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 ls -alh
 ```
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of `ls -alh` executed in the project directory of this guide.</summary>
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| eval: true
 #| echo: false
 #| class.output: bash
@@ -625,6 +675,9 @@ ls -alh
 
 #### Getting help
 
+Getting help with commands can differ between operating systems.
+See the instructions for Windows and macOS below.
+
 ::: {.panel-tabset}
 
 #### {{< fa brands microsoft >}} Windows
@@ -632,7 +685,7 @@ ls -alh
 If you want to know what flags and arguments a command supports, most commands provide usage information when you use the flag `--help`.
 For example, you can use the `ls` command together with the `--help` flag:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 ls --help
 ```
 
@@ -646,7 +699,7 @@ This will display the manual page for a specified command.
 You can navigate through the manual pages using the arrow keys, and you can exit by pressing `q`. 
 For example:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 man ls
 ```
 
@@ -661,25 +714,22 @@ The command line offers commands for creating, moving, and deleting folders and 
 Let's use the command line to create a new project folder as an example:
 To make a directory, we'll use the `mkdir` command.
 
-**Note:** 
+::: {.callout-warning title="Be aware where you are creating new directories!"}
 When creating new directories, consider their location carefully. 
 If you are experimenting, consider deleting the newly created directories afterwards to avoid clutter.
+:::
 
 The path of the directory we want to create is given as an argument to the command.
 If we want to create a directory in the current folder, we just need to use its name, as the path is assumed to be relative.
 For example, to create a new folder for your favorite recipes, we can use the following command:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 mkdir recipes
 ```
 
-Make sure the project folder is present by using the `ls` command, and then move into it by using the `cd` command.
+Make sure that the project folder is present by using the `ls` command, and then move into it by using the `cd` command.
 
-```{bash, filename="Code"}
-ls
-```
-
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 cd recipes
 ```
 
@@ -689,7 +739,7 @@ Next, we will proceed to create multiple additional folders within the `recipes`
 The `mkdir` command allows us to create multiple directories simultaneously by providing multiple arguments, each representing a separate folder.
 For example, we might create the following three folders:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 mkdir vegetarian vegan glutenfree
 ```
 
@@ -701,19 +751,19 @@ In the command line, you can use the `touch` command to create a new empty file.
 The file doesn't need to contain anything.
 For example, to create an empty file called `recipes.txt`, we can use the following command:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 touch recipes.txt
 ```
 
 ### Opening files
 
 To open files, you can use your preferred text editor but also the command line. 
-On the command line, you can use the `start` command on Windows using Gitbash or the `open` command on macOS.
+On the command line, you can use the `start` command on Windows (using Git Bash) or the `open` command on macOS.
 These commands will open the specified file in the default application associated with the file type.
 
 ::: {.panel-tabset}
 
-#### {{< fa brands microsoft >}} Windows (GitBash)
+#### {{< fa brands microsoft >}} Windows (Git Bash)
 
 ```{bash, filename="Code"}
 start recipes.txt
@@ -734,16 +784,17 @@ The `echo` command can be used to write text to a file, directly from the comman
 Using `echo` in combination with `>>` adds content to an existing file. 
 For example, to add text to the `recipes.txt` file using the command line:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 echo "This is a list of all my favorite recipes." >> recipes.txt 
 ```
 
-This adds the provided text *to the existing content* of `recipes.txt `.
+This adds the provided text *to the existing content* of `recipes.txt`.
 
 ::: {.callout-warning collapse="false" title="Difference between using `>>` or `>` with `echo` when writing short text into files"}
 
-When you use the command `echo "Git is cool" >> file.txt`, it will append the text "Git is cool" to the end of the file `file.txt`.
+When you use the command `echo "Git is cool" >> file.txt`, it will **append the text** "Git is cool" to the end of the file `file.txt`.
 If the file does not exist, it will be created and the text "Git is cool" will be added.
+If the file already contains other text, the "Git is cool" text will be added after the existing text at the end of the file.
 
 On the other hand, when you use the command `echo "Git is cool" > file.txt`, it will write the text "Git is cool" to a file named `file.txt`.
 **If the file already exists, it will overwrite its contents** with the new text "Git is cool".
@@ -756,7 +807,7 @@ If you want to quickly view the content of a file without opening it, you can do
 To display the content of a file, simply use `cat` followed by the file name. 
 For example:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 cat recipes.txt 
 ```
 
@@ -764,10 +815,10 @@ This command will output the entire content of the `recipes.txt` file to the ter
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of the `cat` command applied to the `.gitignore` file in the project directory of this guide.</summary>
-```{bash, filename="Output"}
+```{zsh filename="Output"}
 #| eval: true
 #| echo: false
-#| class.output: bash
+#| class.output: markdown
 #| code-copy: false
 cat .gitignore
 ```
@@ -780,35 +831,35 @@ We can use the `mv` command to move files and folders.
 The `mv` command requires two arguments: the first is the files or folders to be moved, and the second is the path where they should be moved.
 To move the `recipes.txt` file to the `/vegan` subfolder, the command would look like this:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 mv recipes.txt vegan
 ```
 
 ### Renaming files and folders
 
-Suppose we don't like the folder name `vegan` because `recipes.txt` actually contains recipes with meat
+Suppose we don't like the folder name `vegan` because `recipes.txt` actually contains recipes with meat.
 We can use the `mv` command to rename files and folders by moving them to a different location in the file system, for example `meat`, like this:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 mv vegan meat
 ```
 
 ### Wildcards
 
-Now, let's learn how to use wildcards to perform actions on multiple files or folders at the same time.
-A wildcard is denoted by the symbol `*`, and it helps us select file system arguments that match certain patterns.
+Now let's learn how to use so-called wildcards to perform actions on multiple files or folders at the same time.
+A wildcard is denoted by the symbol `*`, and it helps us **select file system arguments that match certain patterns**.
 For example, suppose we wish to display a list of all files of a certain file type (here, all files with the `.yml` file extension) in the current directory:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 ls -alh *.yml
 ```
 
 <details>
-<summary>{{< fa eye >}} Click here to see the output of this command executed in the project directory of this guide.</summary>
-```{bash, filename="Output"}
+<summary>{{< fa eye >}} Click here to see the output of the `ls -alh *.yml` command executed in the project directory of this guide.</summary>
+```{zsh filename="Output"}
 #| eval: true
 #| echo: false
-#| class.output: bash
+#| class.output: markdown
 #| code-copy: false
 ls -alh *.yml
 ```
@@ -839,16 +890,16 @@ The last column (for example, `_affiliations.yml` etc.) shows the name of each f
 By using the wildcard `*`, we can generate a list of all files ending with `.yml`.
 Similarly, we can apply the wildcard at the end of a path to match items starting with a specific letter, such as folders beginning with `i`:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 ls -alh i*
 ```
 
 <details>
-<summary>{{< fa eye >}} Click here to see the output of this command executed in the project directory of this guide.</summary>
-```{bash, filename="Output"}
+<summary>{{< fa eye >}} Click here to see the output of the command `ls -alh i*` executed in the project directory of this guide.</summary>
+```{zsh filename="Output"}
 #| eval: true
 #| echo: false
-#| class.output: bash
+#| class.output: markdown
 #| code-copy: false
 ls -alh i*
 ```
@@ -860,13 +911,13 @@ To delete files and folders, you can use the `rm` command.
 Provide the path of the files or folders that you want to delete as the argument.
 However, if you want to remove a folder, you need to include the `-r` (or `--recursive`) flag.
 
-::: {.callout-warning title="**Warning: Be careful when using the `rm` command!**" collapse="false"}
+::: {.callout-important title="Warning: Be careful when using the `rm` command!" collapse="false"}
 When you use the `rm` command to delete files, they are **removed entirely (!!!)** from your system and cannot be retrieved from a "Recycle Bin" or "Trash" as when you delete files using the file browser!
 :::
 
 For example, to remove the `glutenfree` folder, you would use the following command:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 rm -r glutenfree
 ```
 
@@ -878,7 +929,7 @@ Each command is separated by a semicolon, and they are executed one after the ot
 For example, let's say you want to (1) create a new directory, (2) move into that directory, and then (3) list the files in that directory, all in one go.
 You can use semicolons to combine these commands like this:
 
-```{bash, filename="Code"}
+```{zsh filename="Code"}
 mkdir new_directory ; cd new_directory ; ls
 ```
 
@@ -891,12 +942,12 @@ In this lesson, we have achieved the following:
 1. We clarified some of the technical terms associated with the command line.
 1. We explored the components of command-line commands: paths, arguments, and flags.
 1. We gained knowledge about relative and absolute paths, including convenient shortcuts like `~`, `.` and `..`.
-1. We experience the functionality of wildcards.
+1. We experienced the functionality of wildcards.
 1. We acquired familiarity with several essential shell commands.
 
 It's important to note that what we covered here only scratches the surface of what can be accomplished using the shell.
 The primary aim was to provide useful concepts that help when learning Git.
-If you're interested in delving deeper, you may find a more comprehensive introduction at one of the following resource.
+If you're interested in delving deeper, you may find a more comprehensive introduction at one of the following resources.
 
 !["Hackerman" meme found on [Reddit.com](https://www.reddit.com/r/meme/comments/fu9f3b/command_prompt/)](../static/cli_meme.jpg){#fig-meme}
 
