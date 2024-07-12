@@ -403,6 +403,19 @@ If you then run the `git init` command to initialize a new Git repository (find 
 fatal: invalid gitfile format: /Users/user/.git
 ```
 
+::: {.callout-tip title="Use this guardrail *shortly before* you create your first Git repository." collapse="false"}
+When you implement this guardrail but haven't created your first Git repository yet, commands like `git config` will stop working as expected.
+To prevent this, we recommend the following procedure:
+
+1. Use `git config` to configure Git.
+1. Create the guardrail as explained in this section.
+1. Create your first Git repository (see [next chapter](#first-steps-git.qmd)).
+
+You can also set up this guardrail *after* you created your first Git repository in a suitable location.
+There is no required order, we only want to make sure Git works as expected and prevent you from creating a Git repository in your home directory.
+
+:::
+
 Thanks to [Eamon Caddigan](https://social.coop/@eamon/112434377857903339) for this tip!
 
 ## Acknowledgements and further reading
