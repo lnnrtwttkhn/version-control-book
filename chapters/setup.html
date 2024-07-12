@@ -494,7 +494,7 @@ FAQ: Which username should I use for Git?
 </section>
 <section id="configuring-the-default-name-of-the-initial-branch" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="configuring-the-default-name-of-the-initial-branch"><span class="header-section-number">4.1.2</span> Configuring the default name of the initial branch</h3>
-<p>Git uses a concept called “branches” to allow working on different versions of the same project. Branches will be introduced in a <a href="chapters.qmd">later chapter</a> of this book. For now, you can think of branches as parallel versions of your repository contents.</p>
+<p>Git uses a concept called “branches” to allow working on different versions of the same project. Branches will be introduced in a <a href="../chapters/branches.html">later chapter</a> of this book. For now, you can think of branches as parallel versions of your repository contents.</p>
 <p>On most installations of Git, by default, the name “master” is used for the initial branch when creating a new Git repository. However, there has been a growing movement to transition to using “main” as the default branch name instead. One of the main motivations behind this change is to promote inclusivity and remove offensive terminology from the default Git workflow (you can read more about the reasons <a href="https://sfconservancy.org/news/2020/jun/23/gitbranchname/">here</a> or <a href="https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/">here</a>). To configure the default branch name to “main” in Git, you can use the following command:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -844,6 +844,28 @@ Mini Exercise: What does the <code>touch</code> command do in this case?
 <pre><strong>Output</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> invalid gitfile format: /Users/user/.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Use this guardrail *shortly before* you create your first Git repository.">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use this guardrail <em>shortly before</em> you create your first Git repository.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>When you implement this guardrail but haven’t created your first Git repository yet, commands like <code>git config</code> will stop working as expected. To prevent this, we recommend the following procedure:</p>
+<ol type="1">
+<li>Use <code>git config</code> to configure Git.</li>
+<li>Create the guardrail as explained in this section.</li>
+<li>Create your first Git repository (see <a href="#first-steps-git.qmd">next chapter</a>).</li>
+</ol>
+<p>You can also set up this guardrail <em>after</em> you created your first Git repository in a suitable location. There is no required order, we only want to make sure Git works as expected and prevent you from creating a Git repository in your home directory.</p>
+</div>
 </div>
 </div>
 <p>Thanks to <a href="https://social.coop/@eamon/112434377857903339">Eamon Caddigan</a> for this tip!</p>
