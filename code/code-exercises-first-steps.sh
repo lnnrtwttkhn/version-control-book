@@ -21,7 +21,7 @@ echo "6. Enjoy!" >> recipes.txt # <8>
 git add recipes.txt # <9>
 git commit --amend --no-edit # <10>
 # Create a .gitignore file:
-wget  -O pasta.jpg https://upload.wikimedia.org/wikipedia/commons/8/84/Rigatoni.jpg # <10>
-echo "*.jpg" > .gitignore # <11>
-git add --all # <12>
-git commit -m "Add .gitignore and ignore all files that end with .jpg" # <13>
+wget -O pasta.jpg https://upload.wikimedia.org/wikipedia/commons/8/84/Rigatoni.jpg # <11>
+echo "*.jpg" > .gitignore # <12>
+git add --all # <13>
+git commit -m "Add .gitignore and ignore all files that end with .jpg" # <14>
