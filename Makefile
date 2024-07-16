@@ -26,3 +26,7 @@ static:
 .PHONY: clean
 clean:
 	rm -rf $(STATIC_DIR)* _book/
+	
+.PHONY: zips
+zips:
+	sh code/code-zip.sh
