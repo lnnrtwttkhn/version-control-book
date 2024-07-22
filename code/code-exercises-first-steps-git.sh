@@ -1,9 +1,8 @@
-# Initialize a Git repository:
-mkdir recipes # <1>
-cd recipes # <2>
-git init # <3>
+# Navigate to the existing 'recipes' directory
+cd recipes # <1>
+
 # Add content and commit changes:
-touch recipes.txt # <4>
+touch recipes.txt # <2>
 cat > recipes.txt <<- EOM
 Pasta
 
@@ -13,15 +12,15 @@ Pasta
 4. Cook the pasta according to packet instructions until it's "al dente".
 5. Drain the pasta in a colander.
 EOM
-# <5>
-git add recipes.txt # <6>
-git commit -m "Add pasta recipe to recipes.txt" # <7>
+# <3>
+git add recipes.txt # <4>
+git commit -m "Add pasta recipe to recipes.txt" # <5>
 # Amend a commit:
-echo "6. Enjoy!" >> recipes.txt # <8>
-git add recipes.txt # <9>
-git commit --amend --no-edit # <10>
+echo "6. Enjoy!" >> recipes.txt # <6>
+git add recipes.txt # <7>
+git commit --amend --no-edit # <8>
 # Create a .gitignore file:
-wget -O pasta.jpg https://upload.wikimedia.org/wikipedia/commons/8/84/Rigatoni.jpg # <11>
-echo "*.jpg" > .gitignore # <12>
-git add --all # <13>
-git commit -m "Add .gitignore and ignore all files that end with .jpg" # <14>
+wget -O pasta.jpg https://upload.wikimedia.org/wikipedia/commons/8/84/Rigatoni.jpg # <9>
+echo "*.jpg" > .gitignore # <10>
+git add --all # <11>
+git commit -m "Add .gitignore and ignore all files that end with .jpg" # <12>
