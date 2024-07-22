@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Create a new directory called recipes
-mkdir recipes
+# Navigate into the recipes folder
 cd recipes # <1>
 
 # Initialize a new Git repository

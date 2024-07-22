@@ -2,7 +2,7 @@
 cd recipes # <1>
 
 # Add content and commit changes:
-touch recipes.txt # <2>
+# <2>
 cat > recipes.txt <<- EOM
 Pasta
 
