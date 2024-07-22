@@ -1,6 +1,12 @@
 #!/bin/bash
 mkdir -p zips
 
+# Run the cli script and zip its output
+sh code/code-exercises-cli.sh
+cp -r recipes-cli recipes-cli
+zip -r zips/recipes-cli.zip recipes-cli
+rm -rf recipes-cli
+
 # Run the setup script and zip its output
 sh code/code-exercises-setup.sh
 cp -r recipes-setup recipes-setup
