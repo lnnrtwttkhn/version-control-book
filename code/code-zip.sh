@@ -1,4 +1,5 @@
 #!/bin/bash
+
 mkdir -p zips
 
 # Run the cli script and zip its output
