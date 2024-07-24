@@ -3,7 +3,7 @@ mkdir -p zips
 
 # Run the cli script and zip its output
 sh code/code-exercises-cli.sh
-cp -r recipes-cli recipes-cli
+cp -r recipes recipes-cli
 zip -r zips/recipes-cli.zip recipes-cli
 rm -rf recipes-cli
 
