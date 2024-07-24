@@ -15,6 +15,9 @@ git config user.email "your.email@example.com" # <4>
 # Change the default name of the initial branch to `main`
 git config init.defaultBranch main # <5>
 
+# List the Git configuration
+git config --list --local # <6>
+
 # Optional: Change your default text editor (uncomment the line that corresponds to your preferred editor) # <6>
 
 # Change to nano
