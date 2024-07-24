@@ -7,13 +7,13 @@ cd recipes # <1>
 git init # <2>
 
 # Set your Git username
-git config --global user.name "Your Name" # <3>
+git config user.name "Your Name" # <3>
 
 # Set your Git email address
-git config --global user.email "your.email@example.com" # <4>
+git config user.email "your.email@example.com" # <4>
 
 # Change the default name of the initial branch to `main`
-git config --global init.defaultBranch main # <5>
+git config init.defaultBranch main # <5>
 
 # Optional: Change your default text editor (uncomment the line that corresponds to your preferred editor) # <6>
 
