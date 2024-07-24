@@ -8,7 +8,7 @@
 # cd /path/to/your/chosen/directory # <1> 
 
 # Step 3: Use the command line to display the path of your chosen directory
-# pwd # <2> 
+pwd # <2> 
 
 # Step 1: Within your chosen folder, create a new subfolder and name it `recipes`
 mkdir recipes # <3> 
