@@ -1,8 +1,7 @@
 # Navigate to the existing 'recipes' directory
 cd recipes # <1>
 
-# Add content and commit changes:
-# <2>
+# Add content:
 cat > recipes.txt <<- EOM
 Pasta
 
@@ -12,15 +11,15 @@ Pasta
 4. Cook the pasta according to packet instructions until it's "al dente".
 5. Drain the pasta in a colander.
 EOM
-# <3>
-git add recipes.txt # <4>
-git commit -m "Add pasta recipe to recipes.txt" # <5>
+# <2>
+git add recipes.txt # <3>
+git commit -m "Add pasta recipe to recipes.txt" # <4>
 # Amend a commit:
-echo "6. Enjoy!" >> recipes.txt # <6>
-git add recipes.txt # <7>
-git commit --amend --no-edit # <8>
+echo "6. Enjoy!" >> recipes.txt # <5>
+git add recipes.txt # <6>
+git commit --amend --no-edit # <7>
 # Create a .gitignore file:
-wget -O pasta.jpg https://upload.wikimedia.org/wikipedia/commons/8/84/Rigatoni.jpg # <9>
-echo "*.jpg" > .gitignore # <10>
-git add --all # <11>
-git commit -m "Add .gitignore and ignore all files that end with .jpg" # <12>
+wget -O pasta.jpg https://upload.wikimedia.org/wikipedia/commons/8/84/Rigatoni.jpg # <8>
+echo "*.jpg" > .gitignore # <9>
+git add --all # <10>
+git commit -m "Add .gitignore and ignore all files that end with .jpg" # <11>
