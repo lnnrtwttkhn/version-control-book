@@ -10,7 +10,7 @@ rm -rf recipes-cli
 
 # Run the setup script and zip its output
 sh code/code-exercises-setup.sh
-cp -r recipes-setup recipes-setup
+cp -r recipes recipes-setup
 zip -r zips/recipes-setup.zip recipes-setup
 rm -rf recipes-setup
 
