@@ -4,24 +4,16 @@ mkdir -p zips
 
 # Run the cli script and zip its output
 sh code/code-exercises-cli.sh
-cp -r recipes recipes-cli
-zip -r zips/recipes-cli.zip recipes-cli
-rm -rf recipes-cli
+zip -r zips/recipes-cli.zip recipes
 
 # Run the setup script and zip its output
 sh code/code-exercises-setup-run.sh
-cp -r recipes recipes-setup
-zip -r zips/recipes-setup.zip recipes-setup
-rm -rf recipes-setup
+zip -r zips/recipes-setup.zip recipes
 
 # Run the first steps script and zip its output
 sh code/code-exercises-first-steps-git.sh
-cp -r recipes recipes-first-steps
-zip -r zips/recipes-first-steps.zip recipes-first-steps
-rm -rf recipes-first-steps
+zip -r zips/recipes-first-steps.zip recipes
 
 # Run the branches script and zip its output
 sh code/code-exercises-branches.sh
-cp -r recipes recipes-branches
-zip -r zips/recipes-branches.zip recipes-branches
-rm -rf recipes-branches
+zip -r zips/recipes-branches.zip recipes
