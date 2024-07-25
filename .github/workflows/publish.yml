@@ -36,9 +36,9 @@ jobs:
         run: |
           make static
 
-      - name: Create repository .zip files
+      - name: Create repositories implementing the exercises
         run: |
-          make zips
+          make exercises
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
