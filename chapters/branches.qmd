@@ -81,6 +81,10 @@ nothing to commit, working tree clean
 
 ## Creating a new branch
 
+::: {.panel-tabset}
+
+#### Command Line {{< fa terminal >}}
+
 To create a new branch, use `git branch` followed by a branch name.
 For example, to create a new branch called `feature` run the following command:
 
@@ -126,7 +130,33 @@ For example, `git branch -c existing-branch new-branch`
 `-v` or `--verbose`: Shows more information when listing branches, including the last commit message.
 :::
 
+#### RStudio {{< fa brands r-project >}}
+
+To create a new branch using the RStudio GUI, follow these steps:
+
+1. **Access the Git Pane**:
+Locate the Git pane, usually found in the top-right corner of the RStudio interface.
+
+2. **Create a New Branch**:
+On the top of the pane, on the left side to the name of the branch you are currently on, there is a purple branch symbol.
+Click on it.
+
+3. **Name the New Branch**:
+A prompt will appear asking you to name the new branch.
+Enter the desired name for your new branch, for example, `feature`.
+You can also choose to setup a remote branch with the same name.
+
+4. **Create and Switch to the New Branch**:
+After naming the new branch, click "Create" to create the branch.
+RStudio will create the new branch and automatically switch to it.
+You should see a confirmation message indicating the successful creation and switch to the new branch.
+:::
+
 ## Switching branches
+
+::: {.panel-tabset}
+
+#### Command Line {{< fa terminal >}}
 
 To switch to another branch, you can use `git checkout` or `git switch`.
 For example, enter the following command to switch to the newly created `feature` branch:
@@ -159,6 +189,27 @@ It simplifies the branch-switching process and provides clearer feedback in case
 
 `git checkout` is a versatile and powerful command that, among other things, was traditionally used for switching branches. However, it has other use cases like checking out specific files or commits.
 It can be used for branch switching, but it may have some ambiguity in its syntax, especially when used for other purposes.
+:::
+
+#### RStudio {{< fa brands r-project >}}
+
+To switch to another branch using the RStudio GUI, follow these steps:
+
+1. **Access the Git Pane**:
+Locate the Git pane, usually found in the top-right corner of the RStudio interface.
+
+2. **View Branches**:
+In the Git pane, you should see the name of the branch you are currently on.
+E.g. "Main" or "Master".
+Click on the name of your current branch.
+This will open a dialog showing the current branch and available branches.
+
+3. **Switch to Another Branch**:
+In the branches dialog, you will see a list of branches. Locate the branch you want to switch to, for example, feature.
+Click on the branch name (e.g., feature) to select it.
+After clicking on it, RStudio will switch to the selected branch.
+You should see a confirmation message indicating the successful switch, similar to the command line output: Switched to branch 'feature'
+
 :::
 
 ### Switching branches with uncommitted changes

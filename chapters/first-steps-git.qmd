@@ -210,6 +210,10 @@ As further introduction to the basic workflow of Git you can check out the last 
 
 ### Staging
 
+::: {.panel-tabset}
+
+#### Command Line {{< fa terminal >}}
+
 You can use `git add` to place new or modified files in the staging area. 
 The staging area acts as a space for gathering changes you plan to commit shortly. 
 It bridges between your modified files and the next commit.
@@ -258,6 +262,25 @@ Adds modifications and deletions, but not new files.
 Ignores errors when adding files, allowing the command to continue even if some files cannot be added.
 :::
 
+#### RStudio {{< fa brands r-project >}}
+
+In RStudio, you can use the built-in Git interface to stage your changes without using the command line:
+
+1. **Open the Git tab**: 
+In RStudio, go to the top right pane where you can find the "Git" tab.
+Click on it to open the Git interface.
+
+2. **View changed files**: 
+Under the Git tab, you will see a list of files that have been changed or are new. 
+These are equivalent to the files that you would see if you ran git status in the command line.
+
+3. **Stage specific files**:
+To stage a specific file, check the box next to the file you want to stage. 
+This action is equivalent to running `git add filename.txt` in the command line.
+The files you check are now in the staging area and ready to be committed.
+
+:::
+
 ### Committing
 
 Now that the changes to your file(s) are staged, you are ready to **create a commit**.
@@ -269,6 +292,10 @@ Each commit in Git includes a record of the changes you've made, a description o
 Commits are like milestones in your project's history, and they allow you to keep track of all the different versions of your work over time.
 You can go back to any commit to see what your project looked like at that point or even undo changes if needed.
 Commits help you manage and document the history of your project.
+
+::: {.panel-tabset}
+
+#### Command Line {{< fa terminal >}}
 
 To create a commit, use the `git commit` command followed by the flag `-m` and a commit message *in quotes* that describes the changes you made.
 The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
@@ -294,6 +321,44 @@ Commits are the core elements of version control and the "commit history" of you
 They allow you to track the history of your project and easily revert changes if needed.
 
 You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
+
+#### RStudio {{< fa brands r-project >}}
+
+You can also create commits using the Git Interface in RStudio:
+
+1. **Stage your changes**: 
+Before committing, make sure you have staged the changes you want to include in the commit.
+You can do this by checking the boxes next to the files in the "Git" tab, as explained in the previous instructions.
+
+2. **Open the commit dialog**:
+Once you have staged your change(s), click the “Commit” button on top of the Git tab. 
+This will open a new window where you can enter your commit message.
+
+3. **Enter a commit message**:
+In the commit dialog window, you will see a text box where you can type your commit message. 
+The commit message should be short yet informative, providing enough detail to understand the purpose of the commit.
+For example, you might type: `Add filename.txt file`
+
+4. **Review the staged changes**:
+Below the commit message box, you will see a list of the changes that are staged for the commit.
+You can review these changes to make sure everything you want to commit is included.
+
+5. **Create the commit**:
+
+After entering your commit message and reviewing the staged changes, click the “Commit” button at the bottom of the commit dialog window. This will create the commit with the specified message.
+
+6. **View the output**:
+After committing, you will see output in the Git tab similar to the following:
+
+```
+[main (root-commit) e9ea807] Add filename.txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 filename.txt
+```
+You have now successfully created a commit in the Git repository!
+
+:::
+
 
 #### Rock climbing analogy
 
@@ -359,6 +424,10 @@ It allows you to add new changes to the previous commit or modify its commit mes
 
 ### Logging commits
 
+::: {.panel-tabset}
+
+#### Command Line {{< fa terminal >}}
+
 To look at the history of your past commits, you can use the `git log` command.
 
 ```{zsh filename="Code"}
@@ -406,6 +475,24 @@ When you switch branches with a command like `git switch`, `HEAD` moves to point
 For example, `git reset HEAD` is a command used to unstage changes by moving the current branch's tip back to `HEAD`, without altering the working directory.
 Similarly, `git checkout HEAD~1` will move `HEAD` back one commit as a way to look at or revert to a previous state of the project without making any changes to the branch itself.
 
+:::
+
+#### RStudio {{< fa brands r-project >}}
+
+To look at the history of your past commits using Git in RStudio, follow these steps:
+
+1. **Open the Git tab**: 
+In RStudio, navigate to the top right pane where you can find the "Git" tab. Click on it to open the Git interface.
+
+2. **View commit history**:
+In the Git tab, click on the "History" button. 
+(The button looks like a little clock.) 
+This will open a new window displaying the commit history for your project.
+
+3. **Review commit details**:
+The commit history window will show a list of past commits. 
+Each commit will display details such as the commit hash, author, date, and commit message, similar to the output of the git log command in the terminal.
+You can also choose to only look at commits which include changes to a specific directory or file.
 :::
 
 ### Comparing versions
@@ -552,6 +639,10 @@ Some examples for commit messages, which stick to the etiquette:
 
 ### Amending a commit
 
+::: {.panel-tabset}
+
+#### Command Line {{< fa terminal >}}
+
 The `git commit --amend` command is used to modify (or "amend") your most recent Git commit in your repository.
 It allows you to edit the commit message, add more changes to the commit, or simply adjust the last commit without creating a new commit.
 This flag can be useful if you forgot to include something in your last commit, made a typo or want to change your commit message.
@@ -571,6 +662,21 @@ git commit --amend --no-edit
 ```
 
 The `--no-edit` flag, lets you keep the commit message of your most recent commit.
+
+#### RStudio {{< fa brands r-project >}}
+
+In RStudio, you can also amend your most recent commit without needing to use the command line_
+
+1. **Stage your new changes**: 
+In the "Git" tab, check the boxes next to the files you want to include in the amended commit.
+
+2. **Amend the commit**:
+After staging the new changes, click the "Commit" button.
+In the commit dialog window, you will see an option to "Amend previous Commit".
+Ensure the "Amend previous Commit" option is selected.
+You can also change the commit message here.
+Click the "Commit" button to finalize the changes
+:::
 
 #### The repeated `--amend` workflow
 
