@@ -865,31 +865,20 @@ Command history
 <pre><strong>Output</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">+</span> cd recipes</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="ex">+</span> git init</span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="ex">hint:</span> Using <span class="st">'master'</span> as the name for the initial branch. This default branch name</span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="ex">hint:</span> is subject to change. To configure the initial branch name to use in all</span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="ex">hint:</span> of your new repositories, which will suppress this warning, call:</span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="ex">hint:</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="ex">hint:</span>   git config <span class="at">--global</span> init.defaultBranch <span class="op">&lt;</span>name<span class="op">&gt;</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="ex">hint:</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="ex">hint:</span> Names commonly chosen instead of <span class="st">'master'</span> are <span class="st">'main'</span>, <span class="st">'trunk'</span> and</span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="ex">hint:</span> <span class="st">'development'</span>. The just-created branch can be renamed via this command:</span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="ex">hint:</span></span>
-<span id="cb12-12"><a href="#cb12-12"></a><span class="ex">hint:</span>   git branch <span class="at">-m</span> <span class="op">&lt;</span>name<span class="op">&gt;</span></span>
-<span id="cb12-13"><a href="#cb12-13"></a><span class="ex">Initialized</span> empty Git repository in /home/runner/work/version-control-book/version-control-book/recipes/.git/</span>
-<span id="cb12-14"><a href="#cb12-14"></a><span class="ex">+</span> git config user.name Your Name</span>
-<span id="cb12-15"><a href="#cb12-15"></a><span class="ex">+</span> git config user.email your.email@example.com</span>
-<span id="cb12-16"><a href="#cb12-16"></a><span class="ex">+</span> git config init.defaultBranch main</span>
-<span id="cb12-17"><a href="#cb12-17"></a><span class="ex">+</span> git config core.editor vim</span>
-<span id="cb12-18"><a href="#cb12-18"></a><span class="ex">+</span> git config <span class="at">--list</span> <span class="at">--local</span></span>
-<span id="cb12-19"><a href="#cb12-19"></a><span class="ex">core.repositoryformatversion=0</span></span>
-<span id="cb12-20"><a href="#cb12-20"></a><span class="ex">core.filemode=true</span></span>
-<span id="cb12-21"><a href="#cb12-21"></a><span class="ex">core.bare=false</span></span>
-<span id="cb12-22"><a href="#cb12-22"></a><span class="ex">core.logallrefupdates=true</span></span>
-<span id="cb12-23"><a href="#cb12-23"></a><span class="ex">core.editor=vim</span></span>
-<span id="cb12-24"><a href="#cb12-24"></a><span class="ex">user.name=Your</span> Name</span>
-<span id="cb12-25"><a href="#cb12-25"></a><span class="ex">user.email=your.email@example.com</span></span>
-<span id="cb12-26"><a href="#cb12-26"></a><span class="ex">init.defaultbranch=main</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="ex">+</span> git config user.name Your Name</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="ex">+</span> git config user.email your.email@example.com</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="ex">+</span> git config init.defaultBranch main</span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="ex">+</span> git config core.editor vim</span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="ex">+</span> git config <span class="at">--list</span> <span class="at">--local</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="ex">core.repositoryformatversion=0</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="ex">core.filemode=true</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="ex">core.bare=false</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="ex">core.logallrefupdates=true</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="ex">core.editor=vim</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="ex">user.name=Your</span> Name</span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="ex">user.email=your.email@example.com</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="ex">init.defaultbranch=main</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="ex">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1093,20 +1082,20 @@ Command history
 <span id="cb13-5"><a href="#cb13-5"></a><span class="ex">+</span> cat</span>
 <span id="cb13-6"><a href="#cb13-6"></a><span class="ex">+</span> git add recipes.txt</span>
 <span id="cb13-7"><a href="#cb13-7"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add pasta recipe to recipes.txt</span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="ex">[master</span> <span class="op">(root-co</span>mm<span class="op">it)</span> 92e7cb4] Add pasta recipe to recipes.txt</span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="ex">[main</span> <span class="op">(root-co</span>mm<span class="op">it)</span> d098f20] Add pasta recipe to recipes.txt</span>
 <span id="cb13-9"><a href="#cb13-9"></a> <span class="ex">1</span> file changed, 7 insertions<span class="op">(+)</span></span>
 <span id="cb13-10"><a href="#cb13-10"></a> <span class="ex">create</span> mode 100644 recipes.txt</span>
 <span id="cb13-11"><a href="#cb13-11"></a><span class="ex">+</span> echo 6. Enjoy!</span>
 <span id="cb13-12"><a href="#cb13-12"></a><span class="ex">+</span> git add recipes.txt</span>
 <span id="cb13-13"><a href="#cb13-13"></a><span class="ex">+</span> git commit <span class="at">--amend</span> <span class="at">--no-edit</span></span>
-<span id="cb13-14"><a href="#cb13-14"></a><span class="ex">[master</span> e1e0ad1] Add pasta recipe to recipes.txt</span>
-<span id="cb13-15"><a href="#cb13-15"></a> <span class="ex">Date:</span> Tue Jul 30 15:15:47 2024 +0000</span>
+<span id="cb13-14"><a href="#cb13-14"></a><span class="ex">[main</span> 3d29ac3] Add pasta recipe to recipes.txt</span>
+<span id="cb13-15"><a href="#cb13-15"></a> <span class="ex">Date:</span> Tue Jul 30 15:36:56 2024 +0000</span>
 <span id="cb13-16"><a href="#cb13-16"></a> <span class="ex">1</span> file changed, 8 insertions<span class="op">(+)</span></span>
 <span id="cb13-17"><a href="#cb13-17"></a> <span class="ex">create</span> mode 100644 recipes.txt</span>
 <span id="cb13-18"><a href="#cb13-18"></a><span class="ex">+</span> wget <span class="at">-nv</span> <span class="at">-O</span> pasta.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg</span>
-<span id="cb13-19"><a href="#cb13-19"></a><span class="ex">2024-07-30</span> 15:15:47 URL:https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg <span class="pp">[</span><span class="st">22640/22640</span><span class="pp">]</span> <span class="at">-</span><span class="op">&gt;</span> <span class="st">"pasta.jpg"</span> <span class="pp">[</span><span class="st">1</span><span class="pp">]</span></span>
+<span id="cb13-19"><a href="#cb13-19"></a><span class="ex">2024-07-30</span> 15:36:56 URL:https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg <span class="pp">[</span><span class="st">22640/22640</span><span class="pp">]</span> <span class="at">-</span><span class="op">&gt;</span> <span class="st">"pasta.jpg"</span> <span class="pp">[</span><span class="st">1</span><span class="pp">]</span></span>
 <span id="cb13-20"><a href="#cb13-20"></a><span class="ex">+</span> git status</span>
-<span id="cb13-21"><a href="#cb13-21"></a><span class="ex">On</span> branch master</span>
+<span id="cb13-21"><a href="#cb13-21"></a><span class="ex">On</span> branch main</span>
 <span id="cb13-22"><a href="#cb13-22"></a><span class="ex">Untracked</span> files:</span>
 <span id="cb13-23"><a href="#cb13-23"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="kw">)</span></span>
 <span id="cb13-24"><a href="#cb13-24"></a>    <span class="ex">pasta.jpg</span></span>
@@ -1115,7 +1104,7 @@ Command history
 <span id="cb13-27"><a href="#cb13-27"></a>+ touch .gitignore</span>
 <span id="cb13-28"><a href="#cb13-28"></a>+ echo *.jpg</span>
 <span id="cb13-29"><a href="#cb13-29"></a>+ git <span class="op">status</span></span>
-<span id="cb13-30"><a href="#cb13-30"></a>On branch master</span>
+<span id="cb13-30"><a href="#cb13-30"></a>On branch main</span>
 <span id="cb13-31"><a href="#cb13-31"></a>Untracked files:</span>
 <span id="cb13-32"><a href="#cb13-32"></a>  (use <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed)</span>
 <span id="cb13-33"><a href="#cb13-33"></a>    .gitignore</span>
@@ -1123,7 +1112,7 @@ Command history
 <span id="cb13-35"><a href="#cb13-35"></a>nothing added to commit but untracked files present (use <span class="st">"git add"</span> to track)</span>
 <span id="cb13-36"><a href="#cb13-36"></a>+ git add --all</span>
 <span id="cb13-37"><a href="#cb13-37"></a>+ git commit -m Add .gitignore and ignore all files that end with .jpg</span>
-<span id="cb13-38"><a href="#cb13-38"></a>[master 453a12f] Add .gitignore and ignore all files that end with .jpg</span>
+<span id="cb13-38"><a href="#cb13-38"></a>[main ce4b4d0] Add .gitignore and ignore all files that end with .jpg</span>
 <span id="cb13-39"><a href="#cb13-39"></a> 1 file changed, 1 insertion(+)</span>
 <span id="cb13-40"><a href="#cb13-40"></a> create mode 100644 .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1311,25 +1300,26 @@ Command history
 <span id="cb14-5"><a href="#cb14-5"></a><span class="ex">+</span> cat</span>
 <span id="cb14-6"><a href="#cb14-6"></a><span class="ex">+</span> git add recipes.txt</span>
 <span id="cb14-7"><a href="#cb14-7"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add chocolate cake recipe to recipes.txt</span>
-<span id="cb14-8"><a href="#cb14-8"></a><span class="ex">[feature</span> 7032445] Add chocolate cake recipe to recipes.txt</span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="ex">[feature</span> 84a9a2c] Add chocolate cake recipe to recipes.txt</span>
 <span id="cb14-9"><a href="#cb14-9"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
 <span id="cb14-10"><a href="#cb14-10"></a><span class="ex">+</span> git checkout main</span>
-<span id="cb14-11"><a href="#cb14-11"></a><span class="ex">error:</span> pathspec <span class="st">'main'</span> did not match any file<span class="op">(s)</span> known to git</span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span>
 <span id="cb14-12"><a href="#cb14-12"></a><span class="ex">+</span> cat</span>
 <span id="cb14-13"><a href="#cb14-13"></a><span class="ex">+</span> git add recipes.txt</span>
 <span id="cb14-14"><a href="#cb14-14"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add vanilla cake recipe to recipes.txt</span>
-<span id="cb14-15"><a href="#cb14-15"></a><span class="ex">[feature</span> 6d6e7d8] Add vanilla cake recipe to recipes.txt</span>
+<span id="cb14-15"><a href="#cb14-15"></a><span class="ex">[main</span> d54a454] Add vanilla cake recipe to recipes.txt</span>
 <span id="cb14-16"><a href="#cb14-16"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
 <span id="cb14-17"><a href="#cb14-17"></a><span class="ex">+</span> git merge feature</span>
-<span id="cb14-18"><a href="#cb14-18"></a><span class="ex">Already</span> up to date.</span>
-<span id="cb14-19"><a href="#cb14-19"></a><span class="ex">+</span> sed <span class="at">-i</span>  <span class="at">-e</span> /<span class="pp">^</span><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> /d <span class="at">-e</span> /<span class="pp">^</span>=======/d <span class="at">-e</span> /<span class="pp">^</span><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> /d recipes.txt</span>
-<span id="cb14-20"><a href="#cb14-20"></a><span class="ex">sed:</span> can<span class="st">'t read : No such file or directory</span></span>
-<span id="cb14-21"><a href="#cb14-21"></a><span class="st">+ git add recipes.txt</span></span>
-<span id="cb14-22"><a href="#cb14-22"></a><span class="st">+ git commit -m Resolve merge conflict by adding both chocolate and vanilla cake recipes</span></span>
-<span id="cb14-23"><a href="#cb14-23"></a><span class="st">On branch feature</span></span>
-<span id="cb14-24"><a href="#cb14-24"></a><span class="st">nothing to commit, working tree clean</span></span>
-<span id="cb14-25"><a href="#cb14-25"></a><span class="st">+ git branch -d feature</span></span>
-<span id="cb14-26"><a href="#cb14-26"></a><span class="st">error: cannot delete branch '</span>feature<span class="st">' used by worktree at '</span>/home/runner/work/version-control-book/version-control-book/recipes<span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-18"><a href="#cb14-18"></a><span class="ex">Auto-merging</span> recipes.txt</span>
+<span id="cb14-19"><a href="#cb14-19"></a><span class="ex">CONFLICT</span> <span class="pp">(</span><span class="ss">content</span><span class="pp">)</span>: Merge conflict in recipes.txt</span>
+<span id="cb14-20"><a href="#cb14-20"></a><span class="ex">Automatic</span> merge failed<span class="kw">;</span> <span class="ex">fix</span> conflicts and then commit the result.</span>
+<span id="cb14-21"><a href="#cb14-21"></a><span class="ex">+</span> sed <span class="at">-i</span>  <span class="at">-e</span> /<span class="pp">^</span><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> /d <span class="at">-e</span> /<span class="pp">^</span>=======/d <span class="at">-e</span> /<span class="pp">^</span><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> /d recipes.txt</span>
+<span id="cb14-22"><a href="#cb14-22"></a><span class="ex">sed:</span> can<span class="st">'t read : No such file or directory</span></span>
+<span id="cb14-23"><a href="#cb14-23"></a><span class="st">+ git add recipes.txt</span></span>
+<span id="cb14-24"><a href="#cb14-24"></a><span class="st">+ git commit -m Resolve merge conflict by adding both chocolate and vanilla cake recipes</span></span>
+<span id="cb14-25"><a href="#cb14-25"></a><span class="st">[main d684133] Resolve merge conflict by adding both chocolate and vanilla cake recipes</span></span>
+<span id="cb14-26"><a href="#cb14-26"></a><span class="st">+ git branch -d feature</span></span>
+<span id="cb14-27"><a href="#cb14-27"></a><span class="st">Deleted branch feature (was 84a9a2c).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
