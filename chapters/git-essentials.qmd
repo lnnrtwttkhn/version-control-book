@@ -2,7 +2,8 @@
 categories: [beginner, basics]
 image: ../static/xkcd-git-commit.png
 abstract: |
-  In this chapter, we are continuing to look into basic git commands
+  In this chapter, you will learn how to explore the commit history, compare different commits and let Git ignore certain files.
+  You will also learn more about which files can (not) be tracked well with Git and why.
 ---
 
 # Git Essentials
@@ -14,7 +15,6 @@ abstract: |
 :::
 
 [{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.basics >}}){.btn .btn-outline-secondary role="button"}
-
 
 ## Logging commits
 
@@ -28,17 +28,23 @@ You should see output similar to the following:
 
 ```{zsh filename="Output"}
 #| code-copy: false
-commit e9ea80781ceed7cc3d6bff0c7bfa71f320ec1f60 (HEAD -> main)
-Author: Jane Doe <jane@example.com>
-Date:   Thu Jun 29 12:23:53 2023 +0200
+commit e9ea80781ceed7cc3d6bff0c7bfa71f320ec1f60 (HEAD -> main) # <1>
+Author: Jane Doe <jane@example.com> # <2>
+Date:   Thu Jun 29 12:23:53 2023 +0200 # <3>
 
-    Add filename.txt file
+    Add filename.txt file # <4>
 ```
+1. This line shows the unique identifier (commit hash) for this specific change in the code.
+The `HEAD -> main` part indicates that this commit is the latest one on the `main` branch of the repository.
+1. This line tells us who made the change and the email address of the author.
+This is the information specified using `git config` (for details, see the [setup](setup.qmd) chapter).
+1. This line provides the date and time when the change was made.
+1. This line is the commit message provided by the author, which briefly describes what this change does.
 
 `git log` is a very useful command because it provides a clear and organized view of a repository's commit history. 
-It allows you to understand the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps. 
+It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps. 
 
-::: {.callout-tip title="Find out more: Common `git log` flags" collapse="true"}
+::: {.callout-tip title="Common `git log` flags" collapse="true"}
 `--oneline`: 
 Provides a condensed output with each commit displayed on a single line, showing the abbreviated commit hash and commit message.
 
@@ -55,7 +61,7 @@ Shows commits made before the specified <date>.
 Filters commits by the author's name or email using a specified <pattern>.
 :::
 
-::: {.callout-tip title="Find out more: What is `HEAD`?" collapse="true"}
+::: {.callout-tip title="What is `HEAD`?" collapse="true"}
 
 `HEAD` can be thought as the current spot in your project's timeline, like a bookmark.
 When you see `HEAD -> main`, it means your bookmark is on the `main` branch, usually at the most recent update.
@@ -75,7 +81,7 @@ It allows you to **compare two different versions of your file(s)**.
 By default it shows you any uncommitted changes since the last commit.
 You can explore this by pasting any additional text in your `.txt` file, for example:
 
-```{zsh filename="Code"}
+```{markdown filename="Code"}
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
 Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -111,10 +117,9 @@ You can also use `git diff` to **compare two specific commits**.
 For example, if you want to compare the current state of your file with a commit from a few commits ago:
 
 ```{zsh filename="Code"}
-git diff <commit-A> <commit-B>
+git diff <commit-A> <commit-B> # <1>
 ```
-
-Instead of `<commit-A>` and `<commit-B>`, you use the commit hashes, that you can see when using `git log`.
+1. Instead of `<commit-A>` and `<commit-B>`, you use the commit hashes, that you can see when using `git log`.
 
 If you've staged some changes using `git add`, you can **compare the staged changes to your last commit**.
 
@@ -131,7 +136,7 @@ git diff <filename> # <1>
 
 This command can also be combined with additional flags and options.
 
-::: {.callout-tip title="Find out more: Common `git diff` flags" collapse="true"}
+::: {.callout-tip title="Common `git diff` flags" collapse="true"}
 
 `--cached` or `--staged`: 
 Shows the changes that are staged (added) but not yet committed.
@@ -197,7 +202,7 @@ An example of commit messages, which are not really optimal, are illustrated in 
 !["Git Commit" by [xkcd](https://xkcd.com/1296/) (License: [CC BY-NC 2.5](https://xkcd.com/license.html))](../static/xkcd-git-commit.png){#fig-bad_commits_comic}
 
 
-::: {.callout-tip title="Find our more: Commit messages examples" collapse="true"}
+::: {.callout-tip title="Commit messages examples" collapse="true"}
 Some examples for commit messages, which stick to the etiquette:
 
 - `"Add 'favourites.txt' to the project"`
@@ -218,10 +223,9 @@ You can also combine `--amend` with other flags.
 To change the commit message of your last commit (without opening an editor) try:
 
 ```{zsh filename="Code"}
-git commit --amend -m "changed commit message"
+git commit --amend -m "changed commit message" # <1>
 ```
-
-Replace `"changed commit message"` with your actual improved commit message.
+1. Replace `"changed commit message"` with your actual improved commit message.
 
 If you want to to keep your commit message but include new changes to your file(s) in you last commit, you can use:
 
@@ -280,7 +284,7 @@ These prompt options respectively stand for:
 
 Type one of the symbols in the command line to proceed in the desired manner.
 
-::: {.callout-tip title='Find our more: What is a "hunk"?' collapse="true"}
+::: {.callout-tip title='What is a "hunk"?' collapse="true"}
 In Git, a "hunk" refers to a distinct block of code changes within a file.
 It represents a cohesive set of added, modified, or deleted lines in a specific location.
 Git automatically divides changes into hunks to facilitate easier review, selective staging, and conflict resolution during version control operations.
@@ -297,7 +301,7 @@ To checkout how to do partial commits using [GitKraken](https://www.gitkraken.co
 In principle, any file can be tracked with Git.
 However, to make use of the full potential of Git, it is recommended to mainly track plain text files with Git.
 
-### {{< fa code >}} Code files
+### Code files
 
 Tracking code files is the most common and original use case for version control with Git.
 Git is well-suited for tracking changes in source code, and it's widely used by developers and teams for this purpose.
@@ -365,7 +369,6 @@ git add .gitignore
 git commit -m "Add .gitignore"
 ```
 
-
 ### Global `.gitignore` file
 
 Instead of specifying files you want Git to ignore for each folder, you can also create global `.gitignore` file.
@@ -379,7 +382,7 @@ git config --global core.excludesfile ~/.gitignore_global
 After this setup, you can add common files to this list, that you want to ignore.
 These rules will apply across to *all* Git repositories on your computer.
 
-::: {.callout-tip title="Find out more: Common wildcards" collapse="true"}
+::: {.callout-tip title="Common wildcards" collapse="true"}
 
 As discussed in the [command line chapter](command-line.qmd) wildcards are special characters that represent patterns of filenames or directory names.
 They can be used to specify multiple files or directories that should be ignored by Git when tracking changes.
@@ -401,7 +404,7 @@ Matches any single character within the brackets. For example, file\[123\].txt w
 Negates a pattern and includes files that would otherwise be ignored. For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
 :::
 
-::: {.callout-tip title="Find our more: Common files to ignore in scientific settings" collapse="true"}
+::: {.callout-tip title="Common files to ignore in scientific settings" collapse="true"}
 - **Temporary files and output:** 
 Ignore files generated during analysis, like log files, temporary files, or intermediate data files.
 - **Data folders:** 
@@ -417,7 +420,6 @@ Ignore `.pyc` (Python compiled) files and `pycache` folders.
 - **LaTeX:**
 Ignore auxiliary files like `.aux`, `.log`, `.bbl`, and `.blg` files generated during LaTeX compilation.
 :::
-
 
 ::: {.callout-tip title="Example `.gitignore` file for an R project" collapse="true"}
 
@@ -495,11 +497,11 @@ Normally, Git does not track empty folders in a repository.
 However, tracking an empty directory in a Git repository can be useful in some scenarios.
 For example, you want to track an empty folder as a placeholder for future content or as a way to organize the project more clearly.
 
-A workaround, to get Git to track your empty folder, is adding a hidden `.gitkeep` file in this folder^[:bulb: Tip: Use `touch .gitkeep` (details [here](command-line.qmd#creating-files))].
+A workaround, to get Git to track your empty folder, is adding a hidden `.gitkeep` file in this folder ^[:bulb: Tip: Use `touch .gitkeep` (details [here](command-line.qmd#creating-files))].
 This not an official Git feature but rather a convention adopted by software developers.
 That means you could name this file anything, but `.gitkeep` is used by convention to explicitly state its purpose for keeping otherwise empty folders in Git.
 
-::: {.callout-tip collapse="true" title="Find out more: Use-cases for empty folders in Git repositories for scientific projects"}
+::: {.callout-tip collapse="true" title="Use-cases for empty folders in Git repositories for scientific projects"}
 
 As discussed above, Git is not suitable for tracking a lot of large files, as is often the case when working with research data.
 Imagine that you use Git for your code that you use to analyze data from a research project.

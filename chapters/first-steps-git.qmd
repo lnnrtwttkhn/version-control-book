@@ -3,6 +3,7 @@ categories: [beginner, basics]
 image: ../static/xkcd-git-commit.png
 abstract: |
   In this chapter, we are exploring the most important basic Git commands that you will need in your everyday workflow.
+  This includes initializing Git repositories as well as adding and committing files to Git.
 ---
 
 # First steps with Git
@@ -59,7 +60,7 @@ Git can now track every file you move, create or change in this folder.
 You can use this folder like any other normal folder on you computer.
 The only difference is the tiny but powerful folder called `.git` within it, which stores the full history of files and relevant metadata of your project, thereby enabling the tracking of your project progress.
 
-::: {.callout-tip title="Find out more: `.git` folder?" collapse="true"}
+::: {.callout-tip title="`.git` folder?" collapse="true"}
 If you want to verify that Git is tracking your folder, you can look for the `.git` folder.
 To do this navigate to the correct folder and use `ls -a` to receive a list of hidden files.
 If the folder has been initialized as a Git repository, you should see a folder called `.git`.
@@ -143,7 +144,7 @@ Once you've added files with `git add`, you can then commit those changes to sav
 As you can see `git status` gives you an overview, which files Git is tracking for you. 
 The `git status` command is helpful for understanding the current state of your Git repository and we recommend to use it frequently, especially before adding or committing changes in files to the Git history (see below for more details).
 
-::: {.callout-tip title="Find out more: Common `git status` flags" collapse="true"}
+::: {.callout-tip title="Common `git status` flags" collapse="true"}
 `-s`: 
 Provides a more compact and simplified output, showing only the file status in a short format.
 
@@ -245,7 +246,7 @@ Git might start to track files that you are actually not interested in tracking.
 We recommend to use `git status` frequently to check which files are in the staging area and will therefore be added to the next commit.
 :::
 
-::: {.callout-tip title="Find out more: Common `git add` flags" collapse="true"}
+::: {.callout-tip title="Common `git add` flags" collapse="true"}
 `-A`: 
 Adds all changes, including modifications, deletions, and new files, in the entire working tree.
 
@@ -335,7 +336,7 @@ To add an additional description directly in the command line, add an extra `-m`
 git commit -m "Message" -m "Description"
 ```
 
-::: {.callout-tip title="Find out more: Common `git commit` flags" collapse="true"}
+::: {.callout-tip title="Common `git commit` flags" collapse="true"}
 `-m` <message>: 
 Specifies the commit message inline.
 For example, `git commit -m "Fix typo"` allows you to provide a short commit message directly in the command.
