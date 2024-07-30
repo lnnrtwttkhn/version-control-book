@@ -1,8 +1,9 @@
 #!/bin/bash
 
-cd recipes
 # git init is needed to set local Git configuration:
-git init
+git config --global init.defaultBranch main
+git init recipes
+cd recipes
 git config user.name "Your Name"
 git config user.email "your.email@example.com"
 git config init.defaultBranch main
