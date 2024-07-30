@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -286,66 +286,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#command-line" id="toc-command-line" class="nav-link active" data-scroll-target="#command-line">Command Line</a>
-  <ul class="collapse">
-  <li><a href="#navigate-the-file-system" id="toc-navigate-the-file-system" class="nav-link" data-scroll-target="#navigate-the-file-system">Navigate the file system</a></li>
-  <li><a href="#create-files-and-folders" id="toc-create-files-and-folders" class="nav-link" data-scroll-target="#create-files-and-folders">Create files and folders</a></li>
-  <li><a href="#write-and-opening-files" id="toc-write-and-opening-files" class="nav-link" data-scroll-target="#write-and-opening-files">Write and opening files</a></li>
-  <li><a href="#create-multiple-files" id="toc-create-multiple-files" class="nav-link" data-scroll-target="#create-multiple-files">Create multiple files</a></li>
-  <li><a href="#use-wildcards" id="toc-use-wildcards" class="nav-link" data-scroll-target="#use-wildcards">Use wildcards</a></li>
-  <li><a href="#bonus-exercise" id="toc-bonus-exercise" class="nav-link" data-scroll-target="#bonus-exercise">Bonus exercise</a></li>
-  </ul></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
-  <ul class="collapse">
-  <li><a href="#configure-git" id="toc-configure-git" class="nav-link" data-scroll-target="#configure-git">Configure Git</a></li>
-  </ul></li>
-  <li><a href="#first-steps-with-git" id="toc-first-steps-with-git" class="nav-link" data-scroll-target="#first-steps-with-git">First steps with Git</a>
-  <ul class="collapse">
-  <li><a href="#initialize-a-git-repository" id="toc-initialize-a-git-repository" class="nav-link" data-scroll-target="#initialize-a-git-repository">Initialize a Git repository</a></li>
-  <li><a href="#add-content-and-commit-changes" id="toc-add-content-and-commit-changes" class="nav-link" data-scroll-target="#add-content-and-commit-changes">Add content and commit changes</a></li>
-  <li><a href="#amend-a-commit" id="toc-amend-a-commit" class="nav-link" data-scroll-target="#amend-a-commit">Amend a commit</a></li>
-  <li><a href="#create-a-.gitignore-file" id="toc-create-a-.gitignore-file" class="nav-link" data-scroll-target="#create-a-.gitignore-file">Create a <code>.gitignore</code> file</a></li>
-  </ul></li>
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a>
-  <ul class="collapse">
-  <li><a href="#create-and-merge-a-new-branch" id="toc-create-and-merge-a-new-branch" class="nav-link" data-scroll-target="#create-and-merge-a-new-branch">Create and merge a new branch</a></li>
-  <li><a href="#create-and-resolve-a-merge-conflict" id="toc-create-and-resolve-a-merge-conflict" class="nav-link" data-scroll-target="#create-and-resolve-a-merge-conflict">Create and resolve a merge conflict</a></li>
-  </ul></li>
-  <li><a href="#github-intro" id="toc-github-intro" class="nav-link" data-scroll-target="#github-intro">GitHub: Intro</a>
-  <ul class="collapse">
-  <li><a href="#connect-to-github" id="toc-connect-to-github" class="nav-link" data-scroll-target="#connect-to-github">Connect to GitHub</a></li>
-  <li><a href="#upload-your-local-repository-to-github" id="toc-upload-your-local-repository-to-github" class="nav-link" data-scroll-target="#upload-your-local-repository-to-github">Upload your local repository to GitHub</a></li>
-  <li><a href="#create-a-readme.md-file-on-github" id="toc-create-a-readme.md-file-on-github" class="nav-link" data-scroll-target="#create-a-readme.md-file-on-github">Create a <code>README.md</code> file on GitHub</a></li>
-  <li><a href="#fetch-and-merge-your-changes" id="toc-fetch-and-merge-your-changes" class="nav-link" data-scroll-target="#fetch-and-merge-your-changes">Fetch and merge your changes</a></li>
-  <li><a href="#private-collaboration-with-pull-requests-using-github-flow" id="toc-private-collaboration-with-pull-requests-using-github-flow" class="nav-link" data-scroll-target="#private-collaboration-with-pull-requests-using-github-flow">“Private” collaboration with pull requests (using “GitHub Flow”)</a></li>
-  <li><a href="#manage-branches" id="toc-manage-branches" class="nav-link" data-scroll-target="#manage-branches">Manage branches</a></li>
-  <li><a href="#clean-up-your-repository-on-github" id="toc-clean-up-your-repository-on-github" class="nav-link" data-scroll-target="#clean-up-your-repository-on-github">Clean up your repository on GitHub</a></li>
-  <li><a href="#clone-and-sync-your-repo" id="toc-clone-and-sync-your-repo" class="nav-link" data-scroll-target="#clone-and-sync-your-repo">Clone and sync your repo</a></li>
-  </ul></li>
-  <li><a href="#github-advanced" id="toc-github-advanced" class="nav-link" data-scroll-target="#github-advanced">GitHub: Advanced</a>
-  <ul class="collapse">
-  <li><a href="#public-collaboration-with-pull-requests-using-a-fork-and-github-flow" id="toc-public-collaboration-with-pull-requests-using-a-fork-and-github-flow" class="nav-link" data-scroll-target="#public-collaboration-with-pull-requests-using-a-fork-and-github-flow">“Public” collaboration with pull requests (using a fork and GitHub flow)</a></li>
-  <li><a href="#review-pull-requests-in-your-repository" id="toc-review-pull-requests-in-your-repository" class="nav-link" data-scroll-target="#review-pull-requests-in-your-repository">Review pull requests in your repository</a></li>
-  <li><a href="#practice-collaborative-workflows-on-github" id="toc-practice-collaborative-workflows-on-github" class="nav-link" data-scroll-target="#practice-collaborative-workflows-on-github">Practice collaborative workflows on GitHub</a></li>
-  <li><a href="#protect-your-branch" id="toc-protect-your-branch" class="nav-link" data-scroll-target="#protect-your-branch">Protect your branch</a></li>
-  </ul></li>
-  <li><a href="#tags-and-releases" id="toc-tags-and-releases" class="nav-link" data-scroll-target="#tags-and-releases">Tags and Releases</a>
-  <ul class="collapse">
-  <li><a href="#create-a-tag" id="toc-create-a-tag" class="nav-link" data-scroll-target="#create-a-tag">Create a tag</a></li>
-  <li><a href="#create-a-github-release" id="toc-create-a-github-release" class="nav-link" data-scroll-target="#create-a-github-release">Create a GitHub Release</a></li>
-  <li><a href="#link-a-zenodo-record" id="toc-link-a-zenodo-record" class="nav-link" data-scroll-target="#link-a-zenodo-record">Link a Zenodo record</a></li>
-  </ul></li>
-  <li><a href="#graphical-user-interfaces" id="toc-graphical-user-interfaces" class="nav-link" data-scroll-target="#graphical-user-interfaces">Graphical User Interfaces</a>
-  <ul class="collapse">
-  <li><a href="#install-a-git-gui" id="toc-install-a-git-gui" class="nav-link" data-scroll-target="#install-a-git-gui">Install a Git GUI</a></li>
-  <li><a href="#open-a-git-repository-in-rstudio" id="toc-open-a-git-repository-in-rstudio" class="nav-link" data-scroll-target="#open-a-git-repository-in-rstudio">Open a Git repository in RStudio</a></li>
-  </ul></li>
-  <li><a href="#stashing-and-co." id="toc-stashing-and-co." class="nav-link" data-scroll-target="#stashing-and-co.">Stashing and Co.</a>
-  <ul class="collapse">
-  <li><a href="#stashing" id="toc-stashing" class="nav-link" data-scroll-target="#stashing">Stashing</a></li>
-  <li><a href="#reverting" id="toc-reverting" class="nav-link" data-scroll-target="#reverting">Reverting</a></li>
-  <li><a href="#rebasing" id="toc-rebasing" class="nav-link" data-scroll-target="#rebasing">Rebasing</a></li>
-  </ul></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#command-line" id="toc-command-line" class="nav-link" data-scroll-target="#command-line">Command Line</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#first-steps-with-git" id="toc-first-steps-with-git" class="nav-link" data-scroll-target="#first-steps-with-git">First steps with Git</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#github-intro" id="toc-github-intro" class="nav-link" data-scroll-target="#github-intro">GitHub: Intro</a></li>
+  <li><a href="#github-advanced" id="toc-github-advanced" class="nav-link" data-scroll-target="#github-advanced">GitHub: Advanced</a></li>
+  <li><a href="#tags-and-releases" id="toc-tags-and-releases" class="nav-link" data-scroll-target="#tags-and-releases">Tags and Releases</a></li>
+  <li><a href="#graphical-user-interfaces" id="toc-graphical-user-interfaces" class="nav-link" data-scroll-target="#graphical-user-interfaces">Graphical User Interfaces</a></li>
+  <li><a href="#stashing-and-co." id="toc-stashing-and-co." class="nav-link" data-scroll-target="#stashing-and-co.">Stashing and Co.</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/exercises.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/exercises.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -371,7 +322,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Here is a collection of exercises to complement the Version Control book. These exercises can be used flexibly throughout a course about Git.</p>
+<p>Here is a collection of hands-on exercises to complement the chapters in the Version Control Book. These exercises can be used flexibly throughout a course about Git but also when you are learning on your own.</p>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>You can view the exercises by clicking on the boxes in the individual sections that correspond to one of the chapters. Try to solve the exercises on your own first before looking at the solutions. Please note that the solutions do not always implement the tasks exactly, but can also use variations to show that different approaches are possible. If you want to start each exercise with a clean repository, you can download the repository of the previous solution as a <code>.zip</code> file and start the exercises in this repository.</p>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <ul>
 <li><a href="#command-line">Command Line</a></li>
 <li><a href="#first-steps-with-git">First Steps with Git</a></li>
@@ -382,17 +339,160 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#graphical-user-interfaces">Graphical User Interfaces</a></li>
 <li><a href="#stashing-and-co.">Stashing and Co.</a></li>
 </ul>
+</section>
 <section id="command-line" class="level2">
 <h2 class="anchored" data-anchor-id="command-line">Command Line</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="navigate-the-file-system" class="level3">
 <h3 class="anchored" data-anchor-id="navigate-the-file-system">Navigate the file system</h3>
+<p>Identify a folder on your computer where you (want to) keep course-related files. If you don’t have one, choose a suitable location in your file system.</p>
+<ol type="1">
+<li>Navigate into the chosen location.</li>
+<li>Use the command line to display the path of your chosen folder.</li>
+</ol>
+</section>
+<section id="create-files-and-folders" class="level3">
+<h3 class="anchored" data-anchor-id="create-files-and-folders">Create files and folders</h3>
+<ol start="3" type="1">
+<li>Create a new subfolder and name it <code>recipes</code>.</li>
+<li>Navigate into the <code>recipes</code> subfolder.</li>
+<li>Create a new file and name it <code>recipes.txt</code>.</li>
+<li>Confirm that the files was created by listing the contents of the folder.</li>
+</ol>
+</section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode numberSource zsh code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode zsh"><a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1"></a><span class="bu">cd</span> /path/to/your/chosen/directory</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">Navigate into the chosen location. Replace <code>/path/to/your/chosen/directory</code> with a path on your computer. A good location might be within your <code>/Documents</code> folder or a dedicated <code>/Projects</code> or <code>/University</code> folder. This can help to easily find course-related files on your computer.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource zsh code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode zsh"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3"></a><span class="bu">pwd</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4"></a><span class="fu">mkdir</span> recipes</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5"></a><span class="bu">cd</span> recipes</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6"></a><span class="fu">touch</span> recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7"></a><span class="fu">ls</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="2">Use <code>pwd</code> to display the path of your chosen folder.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="3">Use <code>mkdir</code> to create a new subfolder and name it <code>recipes</code>, within your chosen folder.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="4">Use <code>cd recipes</code> to navigate into the <code>recipes</code> subfolder.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="6" data-code-annotation="5">Use <code>touch recipes.txt</code> to create a new file and name it <code>recipes.txt</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="6">Use <code>ls</code> to confirm that the files was created by listing the contents of the folder.</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Command history">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Command history
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">+</span> pwd</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">/home/runner/work/version-control-book/version-control-book</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">+</span> mkdir recipes</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="ex">+</span> cd recipes</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">+</span> touch recipes.txt</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="ex">+</span> ls</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="ex">recipes.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="Variation - Longer version + Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variation - Longer version + Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="navigate-the-file-system-1" class="level3">
+<h3 class="anchored" data-anchor-id="navigate-the-file-system-1">Navigate the file system</h3>
 <ol type="1">
 <li>Identify a folder on your computer where you (want to) keep course-related files. If you don’t have one, choose a suitable location in your file system.</li>
 <li><strong>Navigate into the chosen location</strong> using the command line.</li>
 <li>Use the command line to <strong>display the path</strong> of your chosen directory. What is the output?</li>
 </ol>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -401,7 +501,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For folder navigation, use <code>cd</code>. To display the contents of a folder, use <code>ls</code>. To display the path of the current working directory, use <code>pwd</code>. For example, on macOS if you navigated to the <code>Documents</code> folder and used <code>pwd</code>, the path looks like this:</p>
 <div class="cell" data-code-copy="false">
@@ -409,14 +509,14 @@ Solution
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/myusername/Documents</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">/Users/myusername/Documents</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-simple callout-note callout-titled" title="Variation 1">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -425,7 +525,7 @@ Variation 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Open your terminal.</li>
@@ -438,8 +538,8 @@ Variation 1
 </div>
 </div>
 </section>
-<section id="create-files-and-folders" class="level3">
-<h3 class="anchored" data-anchor-id="create-files-and-folders">Create files and folders</h3>
+<section id="create-files-and-folders-1" class="level3">
+<h3 class="anchored" data-anchor-id="create-files-and-folders-1">Create files and folders</h3>
 <ol type="1">
 <li>Within your chosen folder, create a new subfolder and name it <code>recipes</code>.</li>
 <li>Navigate into the <code>recipes</code> folder.</li>
@@ -448,7 +548,7 @@ Variation 1
 </ol>
 <p><strong>Which commands did you use?</strong></p>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -457,7 +557,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Create a folder called <code>recipes</code>:</li>
@@ -467,7 +567,7 @@ Solution
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">mkdir</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="2" type="1">
@@ -478,7 +578,7 @@ Solution
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="3" type="1">
@@ -489,7 +589,7 @@ Solution
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">touch</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="4" type="1">
@@ -500,14 +600,14 @@ Solution
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-simple callout-note callout-titled" title="Variation 1">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -516,7 +616,7 @@ Variation 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>In your home directory, create a new directory called projects.</li>
@@ -532,89 +632,6 @@ Variation 1
 <h3 class="anchored" data-anchor-id="write-and-opening-files">Write and opening files</h3>
 <p><strong>Add the title</strong> “My Favorite Recipes” to <code>recipes.txt</code>. Which command or method did you use?</p>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>I added the title to <code>recipes.txt</code> by using the following command:</p>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Code</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"My Favorite Recipes"</span> <span class="op">&gt;</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<p>This command writes “My Favorite Recipes” to the file, overwriting any existing content.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="create-multiple-files" class="level3">
-<h3 class="anchored" data-anchor-id="create-multiple-files">Create multiple files</h3>
-<p>Go back to your main course-related folder. Using the command line, <strong>create three new files:</strong> <code>notes.txt</code>, <code>assignments.txt</code>, and <code>schedule.txt</code>. Provide the command you used.</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Code</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> notes.txt assignments.txt schedule.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="use-wildcards" class="level3">
-<h3 class="anchored" data-anchor-id="use-wildcards">Use wildcards</h3>
-<p>Use a wildcard pattern to <strong>list all <code>.txt</code> files</strong> in your folder. Which command did you use?</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Code</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="bonus-exercise" class="level3">
-<h3 class="anchored" data-anchor-id="bonus-exercise">Bonus exercise</h3>
-<p>Imagine, that you are in a folder containing multiple text files with various extensions, including <code>.txt</code>, <code>.md</code>, and <code>.docx</code>. You want to move all the <code>.txt</code> files to a subfolder named “text_files” while keeping the other file types in the current directory. Write a series of command-line commands to accomplish this task, including creating the “text_files” subdirectory. Explain each step in your solution.</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -626,6 +643,89 @@ Solution
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>I added the title to <code>recipes.txt</code> by using the following command:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1"></a><span class="bu">echo</span> <span class="st">"My Favorite Recipes"</span> <span class="op">&gt;</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This command writes “My Favorite Recipes” to the file, overwriting any existing content.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="create-multiple-files" class="level3">
+<h3 class="anchored" data-anchor-id="create-multiple-files">Create multiple files</h3>
+<p>Go back to your main course-related folder. Using the command line, <strong>create three new files:</strong> <code>notes.txt</code>, <code>assignments.txt</code>, and <code>schedule.txt</code>. Provide the command you used.</p>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">touch</span> notes.txt assignments.txt schedule.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-wildcards" class="level3">
+<h3 class="anchored" data-anchor-id="use-wildcards">Use wildcards</h3>
+<p>Use a wildcard pattern to <strong>list all <code>.txt</code> files</strong> in your folder. Which command did you use?</p>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ls</span> <span class="pp">*</span>.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="bonus-exercise" class="level3">
+<h3 class="anchored" data-anchor-id="bonus-exercise">Bonus exercise</h3>
+<p>Imagine, that you are in a folder containing multiple text files with various extensions, including <code>.txt</code>, <code>.md</code>, and <code>.docx</code>. You want to move all the <code>.txt</code> files to a subfolder named “text_files” while keeping the other file types in the current directory. Write a series of command-line commands to accomplish this task, including creating the “text_files” subdirectory. Explain each step in your solution.</p>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>Creating the “text_files” subfolder:</li>
 </ol>
@@ -634,7 +734,7 @@ Solution
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> text_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">mkdir</span> text_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="2" type="1">
@@ -645,50 +745,186 @@ Solution
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>.txt text_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">mv</span> <span class="pp">*</span>.txt text_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
+</div>
+</div>
+</div>
+<p><a href="../exercises-repos/recipes-cli.zip" class="btn btn-outline-primary" role="button">Download the folder</a></p>
 </section>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<section id="configure-git" class="level3">
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<section id="configure-git" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="configure-git">Configure Git</h3>
 <ol type="1">
-<li>Open your terminal.</li>
+<li>Navigate into the <code>recipes</code> folder.</li>
 <li>Set your Git username.</li>
 <li>Set your Git email address.</li>
 <li>Change the default name of the initial branch to <code>main</code></li>
 <li><span class="emoji" data-emoji="rocket">🚀</span> Optional: Change your default text editor.</li>
+<li>List the Git configuration settings.</li>
 </ol>
 </section>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-25"><pre class="sourceCode numberSource zsh code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode zsh"><span id="annotated-cell-25-1"><a href="#annotated-cell-25-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="annotated-cell-25-2"><a href="#annotated-cell-25-2"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-25-3" class="code-annotation-target"><a href="#annotated-cell-25-3"></a><span class="bu">cd</span> recipes</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-25-4" class="code-annotation-target"><a href="#annotated-cell-25-4"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-25-5" class="code-annotation-target"><a href="#annotated-cell-25-5"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your.email@example.com"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-25-6" class="code-annotation-target"><a href="#annotated-cell-25-6"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-25-7" class="code-annotation-target"><a href="#annotated-cell-25-7"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"vim"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-25-8" class="code-annotation-target"><a href="#annotated-cell-25-8"></a><span class="fu">git</span> config <span class="at">--list</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-25" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="3" data-code-annotation="1">Use <code>cd recipes</code> (or a similar path) to navigate into the <code>recipes</code> subfolder.</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="4" data-code-annotation="2">Set your global Git username using <code>git config --global user.name "Your Name"</code>. Replace <code>Your Name</code> with your name and don’t remove the quotation marks.</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="5" data-code-annotation="3">Set your global Git email address using <code>git config --global user.email "your.email@example.com"</code>. Replace <code>your.email@example.com</code> with your email address and don’t remove the quotation marks.</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="6" data-code-annotation="4">Change the default name of the initial branch to <code>main</code> using <code>git config --global init.defaultBranch main</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="7" data-code-annotation="5">Optional: Change your default text editor. In this example, the default text editor is changed to Vim using <code>git config --global core.editor "vim"</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="8" data-code-annotation="6">List the Git configuration.</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Command history">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Command history
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">+</span> cd recipes</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="ex">+</span> git init</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="ex">hint:</span> Using <span class="st">'master'</span> as the name for the initial branch. This default branch name</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="ex">hint:</span> is subject to change. To configure the initial branch name to use in all</span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="ex">hint:</span> of your new repositories, which will suppress this warning, call:</span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="ex">hint:</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="ex">hint:</span>   git config <span class="at">--global</span> init.defaultBranch <span class="op">&lt;</span>name<span class="op">&gt;</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="ex">hint:</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="ex">hint:</span> Names commonly chosen instead of <span class="st">'master'</span> are <span class="st">'main'</span>, <span class="st">'trunk'</span> and</span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="ex">hint:</span> <span class="st">'development'</span>. The just-created branch can be renamed via this command:</span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="ex">hint:</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="ex">hint:</span>   git branch <span class="at">-m</span> <span class="op">&lt;</span>name<span class="op">&gt;</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="ex">Initialized</span> empty Git repository in /home/runner/work/version-control-book/version-control-book/recipes/.git/</span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="ex">+</span> git config user.name Your Name</span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="ex">+</span> git config user.email your.email@example.com</span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="ex">+</span> git config init.defaultBranch main</span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="ex">+</span> git config core.editor vim</span>
+<span id="cb12-18"><a href="#cb12-18"></a><span class="ex">+</span> git config <span class="at">--list</span> <span class="at">--local</span></span>
+<span id="cb12-19"><a href="#cb12-19"></a><span class="ex">core.repositoryformatversion=0</span></span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="ex">core.filemode=true</span></span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="ex">core.bare=false</span></span>
+<span id="cb12-22"><a href="#cb12-22"></a><span class="ex">core.logallrefupdates=true</span></span>
+<span id="cb12-23"><a href="#cb12-23"></a><span class="ex">core.editor=vim</span></span>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="ex">user.name=Your</span> Name</span>
+<span id="cb12-25"><a href="#cb12-25"></a><span class="ex">user.email=your.email@example.com</span></span>
+<span id="cb12-26"><a href="#cb12-26"></a><span class="ex">init.defaultbranch=main</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><a href="../exercises-repos/recipes-setup.zip" class="btn btn-outline-primary" role="button">Download the repository</a></p>
 </section>
 <section id="first-steps-with-git" class="level2">
 <h2 class="anchored" data-anchor-id="first-steps-with-git">First steps with Git</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="initialize-a-git-repository" class="level3">
 <h3 class="anchored" data-anchor-id="initialize-a-git-repository">Initialize a Git repository</h3>
 <ol type="1">
-<li>Create a folder called <code>recipes</code>.</li>
-<li>Navigate to the <code>recipes</code> folder in your terminal.</li>
+<li>Navigate to the <code>recipes</code> folder using the command line.</li>
 <li>Initialize a new Git repository in the <code>recipes</code> folder.</li>
 </ol>
 </section>
 <section id="add-content-and-commit-changes" class="level3">
 <h3 class="anchored" data-anchor-id="add-content-and-commit-changes">Add content and commit changes</h3>
-<ol type="1">
+<ol start="3" type="1">
 <li>Create a new file called <code>recipes.txt</code>.</li>
 <li>Add a <em>short</em> recipe to <code>recipes.txt</code> (any favorite or an intriguing AI-generated one).</li>
 <li>Stage the new <code>recipes.txt</code> file.</li>
 <li>Commit the changes in <code>recipes.txt</code> with a descriptive commit message.</li>
-<li><span class="emoji" data-emoji="rocket">🚀</span> Optional: Commit at least three additional changes in <code>recipes.txt</code>.</li>
 </ol>
+<p><span class="emoji" data-emoji="rocket">🚀</span> Optional: Commit at least three additional changes in <code>recipes.txt</code>.</p>
 </section>
 <section id="amend-a-commit" class="level3">
 <h3 class="anchored" data-anchor-id="amend-a-commit">Amend a commit</h3>
-<ol type="1">
+<ol start="7" type="1">
 <li>Make additional changes to your <code>recipes.txt</code> file.</li>
 <li>Stage the changes.</li>
 <li>Amend the previous commit to include the new changes.</li>
@@ -697,24 +933,222 @@ Solution
 </section>
 <section id="create-a-.gitignore-file" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-.gitignore-file">Create a <code>.gitignore</code> file</h3>
-<ol type="1">
+<ol start="10" type="1">
+<li>Create a random file that you want to ignore, for example <code>random-file.docx</code> or download an image from the internet.</li>
+<li>Check the state of your repository to see that Git detects the untracked file.</li>
 <li>Create a <code>.gitignore</code> file.</li>
-<li>Create a random file that you want to ignore, for example <code>random-file.docx</code>.</li>
-<li>Add the random file to the <code>.gitignore</code> file, stage and commit your changes.</li>
-<li>Save, stage and commit the <code>.gitignore</code> file.</li>
-<li><span class="emoji" data-emoji="rocket">🚀</span> All macOS users: Let your repository ignore <code>.DS_Store</code>.</li>
+<li>Add the random file to the <code>.gitignore</code> file so that it is ignored by Git and save the file.</li>
+<li>Check the state of your repository again to see that Git does not list the file as untracked anymore.</li>
+<li>Stage the changes in the <code>.gitignore</code> file.</li>
+<li>Commit the changes in <code>.gitignore</code>.</li>
 </ol>
+<p><span class="emoji" data-emoji="rocket">🚀</span> Optional (for macOS users): Let your repository ignore <code>.DS_Store</code>.</p>
 </section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-28"><pre class="sourceCode numberSource zsh code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode zsh"><span id="annotated-cell-28-1"><a href="#annotated-cell-28-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="annotated-cell-28-2"><a href="#annotated-cell-28-2"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-28-3" class="code-annotation-target"><a href="#annotated-cell-28-3"></a><span class="bu">cd</span> recipes</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-28-4" class="code-annotation-target"><a href="#annotated-cell-28-4"></a><span class="fu">git</span> init</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-28-5" class="code-annotation-target"><a href="#annotated-cell-28-5"></a><span class="fu">touch</span> recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-28-6" class="code-annotation-target"><a href="#annotated-cell-28-6"></a><span class="fu">cat</span> <span class="op">&gt;</span> recipes.txt <span class="op">&lt;&lt;- EOM</span></span>
+<span id="annotated-cell-28-7"><a href="#annotated-cell-28-7"></a><span class="st">Pasta</span></span>
+<span id="annotated-cell-28-8"><a href="#annotated-cell-28-8"></a></span>
+<span id="annotated-cell-28-9"><a href="#annotated-cell-28-9"></a><span class="st">1. Bring water to the boil in a large saucepan.</span></span>
+<span id="annotated-cell-28-10"><a href="#annotated-cell-28-10"></a><span class="st">2. Once the water is boiling, add a good pinch of salt.</span></span>
+<span id="annotated-cell-28-11"><a href="#annotated-cell-28-11"></a><span class="st">3. Add the pasta.</span></span>
+<span id="annotated-cell-28-12"><a href="#annotated-cell-28-12"></a><span class="st">4. Cook the pasta according to packet instructions until it's "al dente".</span></span>
+<span id="annotated-cell-28-13"><a href="#annotated-cell-28-13"></a><span class="st">5. Drain the pasta in a colander.</span></span>
+<span id="annotated-cell-28-14"><a href="#annotated-cell-28-14"></a><span class="op">EOM</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-28-15" class="code-annotation-target"><a href="#annotated-cell-28-15"></a><span class="fu">git</span> add recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-28-16" class="code-annotation-target"><a href="#annotated-cell-28-16"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add pasta recipe to recipes.txt"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-28-17" class="code-annotation-target"><a href="#annotated-cell-28-17"></a><span class="bu">echo</span> <span class="st">"6. Enjoy!"</span> <span class="op">&gt;&gt;</span> recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-28-18" class="code-annotation-target"><a href="#annotated-cell-28-18"></a><span class="fu">git</span> add recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-28-19" class="code-annotation-target"><a href="#annotated-cell-28-19"></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">--no-edit</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-28-20" class="code-annotation-target"><a href="#annotated-cell-28-20"></a><span class="fu">wget</span> <span class="at">-nv</span> <span class="at">-O</span> pasta.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-28-21" class="code-annotation-target"><a href="#annotated-cell-28-21"></a><span class="fu">git</span> status</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-28-22" class="code-annotation-target"><a href="#annotated-cell-28-22"></a><span class="fu">touch</span> .gitignore</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-28-23" class="code-annotation-target"><a href="#annotated-cell-28-23"></a><span class="bu">echo</span> <span class="st">"*.jpg"</span> <span class="op">&gt;</span> .gitignore</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-28-24" class="code-annotation-target"><a href="#annotated-cell-28-24"></a><span class="fu">git</span> status</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-28-25" class="code-annotation-target"><a href="#annotated-cell-28-25"></a><span class="fu">git</span> add <span class="at">--all</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-28" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-28-26" class="code-annotation-target"><a href="#annotated-cell-28-26"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add .gitignore and ignore all files that end with .jpg"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-28" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="3" data-code-annotation="1">Navigate into the <code>recipes</code> subfolder using <code>cd recipes</code> (or a similar path).</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="4" data-code-annotation="2">Initialize a new Git repository in the <code>recipes</code> folder using <code>git init</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="5" data-code-annotation="3">Create a new file called <code>recipes.txt</code> using <code>touch</code>. Note that you can also use a regular text editor to do this.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="6" data-code-annotation="4">Add a <em>short</em> recipe to <code>recipes.txt</code>. In this example, <code>cat</code> is used to add text to <code>recipes.txt</code>. This command would also create the file if <code>recipes.txt</code> wouldn’t exist yet. Note that you can also use a regular text editor to do this.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="15" data-code-annotation="5">Stage the new <code>recipes.txt</code> file using <code>git add</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="16" data-code-annotation="6">Commit the changes in <code>recipes.txt</code> with a descriptive commit message using <code>git commit</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="17" data-code-annotation="7">Make an additional change to the <code>recipes.txt</code> file. In this example, <code>echo</code> is used to append text to <code>recipes.txt</code>. Note that you can also use a regular text editor to do this.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="18" data-code-annotation="8">Stage the changes using <code>git add</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="19" data-code-annotation="9">Amend the previous commit to include the new changes using <code>git commit --amend</code>. In this example, the <code>--no-edit</code> flag is used to amend the commit without changing the commit message.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="20" data-code-annotation="10">Download an image from the internet using <code>wget</code>. This command download a picture of pasta from the internet and saves the output <code>-O</code> as <code>pasta.jpg</code>. The <code>-nv</code> (or <code>--no-verbose</code>) argument makes the command output less text.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="21" data-code-annotation="11">Check the state of your repository using <code>git status</code>. Git will notice the new file and list it as untracked.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="22" data-code-annotation="12">Create a <code>.gitignore</code> file using <code>touch</code>. Note that you can also use a regular text editor to do this.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="23" data-code-annotation="13">Add <code>*.jpg</code> to the <code>.gitignore</code> file to ignore all files that end with the <code>.jpg</code> file extension. This command would also create the file if <code>.gitignore</code> wouldn’t exist yet.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="14">14</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="24" data-code-annotation="14">Check the state of your repository again using <code>git status</code>. The new file should disappear from the output and is not listed as untracked anymore.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="15">15</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="25" data-code-annotation="15">Stage all changes using <code>git add --all</code>. This command should generally be avoided as it may lead to staging and committing changes that should not added to the repository’s history. Here, we use it to demonstrate that only the <code>.gitignore</code> will be staged but not the pasta image file because it is ignored.</span>
+</dd>
+<dt data-target-cell="annotated-cell-28" data-target-annotation="16">16</dt>
+<dd>
+<span data-code-cell="annotated-cell-28" data-code-lines="26" data-code-annotation="16">Commit the changes in <code>.gitignore</code> with a descriptive commit message using <code>git commit</code>.</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Command history">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Command history
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1"></a><span class="ex">+</span> cd recipes</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="ex">+</span> git init</span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="ex">Reinitialized</span> existing Git repository in /home/runner/work/version-control-book/version-control-book/recipes/.git/</span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="ex">+</span> touch recipes.txt</span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="ex">+</span> cat</span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="ex">+</span> git add recipes.txt</span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add pasta recipe to recipes.txt</span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="ex">[master</span> <span class="op">(root-co</span>mm<span class="op">it)</span> ae064a4] Add pasta recipe to recipes.txt</span>
+<span id="cb13-9"><a href="#cb13-9"></a> <span class="ex">1</span> file changed, 7 insertions<span class="op">(+)</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a> <span class="ex">create</span> mode 100644 recipes.txt</span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="ex">+</span> echo 6. Enjoy!</span>
+<span id="cb13-12"><a href="#cb13-12"></a><span class="ex">+</span> git add recipes.txt</span>
+<span id="cb13-13"><a href="#cb13-13"></a><span class="ex">+</span> git commit <span class="at">--amend</span> <span class="at">--no-edit</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a><span class="ex">[master</span> ced8a99] Add pasta recipe to recipes.txt</span>
+<span id="cb13-15"><a href="#cb13-15"></a> <span class="ex">Date:</span> Tue Jul 30 14:39:18 2024 +0000</span>
+<span id="cb13-16"><a href="#cb13-16"></a> <span class="ex">1</span> file changed, 8 insertions<span class="op">(+)</span></span>
+<span id="cb13-17"><a href="#cb13-17"></a> <span class="ex">create</span> mode 100644 recipes.txt</span>
+<span id="cb13-18"><a href="#cb13-18"></a><span class="ex">+</span> wget <span class="at">-nv</span> <span class="at">-O</span> pasta.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg</span>
+<span id="cb13-19"><a href="#cb13-19"></a><span class="ex">2024-07-30</span> 14:39:18 URL:https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg <span class="pp">[</span><span class="st">22640/22640</span><span class="pp">]</span> <span class="at">-</span><span class="op">&gt;</span> <span class="st">"pasta.jpg"</span> <span class="pp">[</span><span class="st">1</span><span class="pp">]</span></span>
+<span id="cb13-20"><a href="#cb13-20"></a><span class="ex">+</span> git status</span>
+<span id="cb13-21"><a href="#cb13-21"></a><span class="ex">On</span> branch master</span>
+<span id="cb13-22"><a href="#cb13-22"></a><span class="ex">Untracked</span> files:</span>
+<span id="cb13-23"><a href="#cb13-23"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="kw">)</span></span>
+<span id="cb13-24"><a href="#cb13-24"></a>    <span class="ex">pasta.jpg</span></span>
+<span id="cb13-25"><a href="#cb13-25"></a></span>
+<span id="cb13-26"><a href="#cb13-26"></a><span class="ex">nothing</span> added to commit but untracked files present <span class="op">(us</span>e <span class="st">"git add"</span> to track)</span>
+<span id="cb13-27"><a href="#cb13-27"></a>+ touch .gitignore</span>
+<span id="cb13-28"><a href="#cb13-28"></a>+ echo *.jpg</span>
+<span id="cb13-29"><a href="#cb13-29"></a>+ git <span class="op">status</span></span>
+<span id="cb13-30"><a href="#cb13-30"></a>On branch master</span>
+<span id="cb13-31"><a href="#cb13-31"></a>Untracked files:</span>
+<span id="cb13-32"><a href="#cb13-32"></a>  (use <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed)</span>
+<span id="cb13-33"><a href="#cb13-33"></a>    .gitignore</span>
+<span id="cb13-34"><a href="#cb13-34"></a></span>
+<span id="cb13-35"><a href="#cb13-35"></a>nothing added to commit but untracked files present (use <span class="st">"git add"</span> to track)</span>
+<span id="cb13-36"><a href="#cb13-36"></a>+ git add --all</span>
+<span id="cb13-37"><a href="#cb13-37"></a>+ git commit -m Add .gitignore and ignore all files that end with .jpg</span>
+<span id="cb13-38"><a href="#cb13-38"></a>[master 052b2ee] Add .gitignore and ignore all files that end with .jpg</span>
+<span id="cb13-39"><a href="#cb13-39"></a> 1 file changed, 1 insertion(+)</span>
+<span id="cb13-40"><a href="#cb13-40"></a> create mode 100644 .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><a href="../exercises-repos/recipes-first-steps.zip" class="btn btn-outline-primary" role="button">Download the repository</a></p>
 </section>
 <section id="branches" class="level2">
 <h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="create-and-merge-a-new-branch" class="level3">
 <h3 class="anchored" data-anchor-id="create-and-merge-a-new-branch">Create and merge a new branch</h3>
 <ol type="1">
+<li>Navigate to the <code>recipes</code> repository using the command line.</li>
 <li>Create a new branch called <code>feature</code>.</li>
-<li>Switch to your new branch.</li>
+<li>Switch to the new branch.</li>
 <li>Add a new recipe to your <code>recipes.txt</code> file.</li>
-<li>Stage and commit the changes to your <code>recipes.txt</code> file on the <code>feature</code> branch.</li>
+<li>Stage and commit the changes to <code>recipes.txt</code> file on the <code>feature</code> branch.</li>
 <li>Switch back to the default branch (<code>main</code> or <code>master</code>).</li>
 <li>Merge the <code>feature</code> branch with your default branch.</li>
 <li>Delete the <code>feature</code> branch.</li>
@@ -728,9 +1162,189 @@ Solution
 <li>Delete the feature branch afterwards.</li>
 </ol>
 </section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-31"><pre class="sourceCode numberSource zsh code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode zsh"><span id="annotated-cell-31-1"><a href="#annotated-cell-31-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="annotated-cell-31-2"><a href="#annotated-cell-31-2"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-31-3" class="code-annotation-target"><a href="#annotated-cell-31-3"></a><span class="bu">cd</span> recipes</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-31-4" class="code-annotation-target"><a href="#annotated-cell-31-4"></a><span class="fu">git</span> branch feature</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-31-5" class="code-annotation-target"><a href="#annotated-cell-31-5"></a><span class="fu">git</span> switch feature</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-31-6" class="code-annotation-target"><a href="#annotated-cell-31-6"></a><span class="fu">cat</span> <span class="op">&gt;&gt;</span> recipes.txt <span class="op">&lt;&lt;- EOM</span></span>
+<span id="annotated-cell-31-7"><a href="#annotated-cell-31-7"></a></span>
+<span id="annotated-cell-31-8"><a href="#annotated-cell-31-8"></a><span class="st">Chocolate Cake</span></span>
+<span id="annotated-cell-31-9"><a href="#annotated-cell-31-9"></a></span>
+<span id="annotated-cell-31-10"><a href="#annotated-cell-31-10"></a><span class="st">1. Preheat the oven to 350°F (175°C).</span></span>
+<span id="annotated-cell-31-11"><a href="#annotated-cell-31-11"></a><span class="st">2. Mix flour, sugar, cocoa powder, baking powder, and salt in a bowl.</span></span>
+<span id="annotated-cell-31-12"><a href="#annotated-cell-31-12"></a><span class="st">3. Add eggs, milk, oil, and vanilla extract, and mix well.</span></span>
+<span id="annotated-cell-31-13"><a href="#annotated-cell-31-13"></a><span class="st">4. Pour the batter into a greased baking pan.</span></span>
+<span id="annotated-cell-31-14"><a href="#annotated-cell-31-14"></a><span class="st">5. Bake for 30-35 minutes.</span></span>
+<span id="annotated-cell-31-15"><a href="#annotated-cell-31-15"></a></span>
+<span id="annotated-cell-31-16"><a href="#annotated-cell-31-16"></a><span class="op">EOM</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-31-17" class="code-annotation-target"><a href="#annotated-cell-31-17"></a><span class="fu">git</span> add recipes.txt</span>
+<span id="annotated-cell-31-18"><a href="#annotated-cell-31-18"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add chocolate cake recipe to recipes.txt"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-31-19" class="code-annotation-target"><a href="#annotated-cell-31-19"></a><span class="fu">git</span> checkout main</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-31-20" class="code-annotation-target"><a href="#annotated-cell-31-20"></a><span class="fu">cat</span> <span class="op">&gt;&gt;</span> recipes.txt <span class="op">&lt;&lt;- EOM</span></span>
+<span id="annotated-cell-31-21"><a href="#annotated-cell-31-21"></a></span>
+<span id="annotated-cell-31-22"><a href="#annotated-cell-31-22"></a><span class="st">Vanilla Cake</span></span>
+<span id="annotated-cell-31-23"><a href="#annotated-cell-31-23"></a></span>
+<span id="annotated-cell-31-24"><a href="#annotated-cell-31-24"></a><span class="st">1. Preheat the oven to 350°F (175°C).</span></span>
+<span id="annotated-cell-31-25"><a href="#annotated-cell-31-25"></a><span class="st">2. Mix flour, sugar, baking powder, and salt in a bowl.</span></span>
+<span id="annotated-cell-31-26"><a href="#annotated-cell-31-26"></a><span class="st">3. Add eggs, milk, oil, and vanilla extract, and mix well.</span></span>
+<span id="annotated-cell-31-27"><a href="#annotated-cell-31-27"></a><span class="st">4. Pour the batter into a greased baking pan. </span></span>
+<span id="annotated-cell-31-28"><a href="#annotated-cell-31-28"></a><span class="st">5. Bake for 25-30 minutes.</span></span>
+<span id="annotated-cell-31-29"><a href="#annotated-cell-31-29"></a></span>
+<span id="annotated-cell-31-30"><a href="#annotated-cell-31-30"></a><span class="op">EOM</span></span>
+<span id="annotated-cell-31-31"><a href="#annotated-cell-31-31"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-31-32" class="code-annotation-target"><a href="#annotated-cell-31-32"></a><span class="fu">git</span> add recipes.txt</span>
+<span id="annotated-cell-31-33"><a href="#annotated-cell-31-33"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add vanilla cake recipe to recipes.txt"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-31-34" class="code-annotation-target"><a href="#annotated-cell-31-34"></a><span class="fu">git</span> merge feature</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-31-35" class="code-annotation-target"><a href="#annotated-cell-31-35"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="st">''</span> <span class="at">-e</span> <span class="st">'/^&lt;&lt;&lt;&lt;&lt;&lt;&lt; /d'</span> <span class="at">-e</span> <span class="st">'/^=======/d'</span> <span class="at">-e</span> <span class="st">'/^&gt;&gt;&gt;&gt;&gt;&gt;&gt; /d'</span> recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-31-36" class="code-annotation-target"><a href="#annotated-cell-31-36"></a><span class="fu">git</span> add recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-31-37" class="code-annotation-target"><a href="#annotated-cell-31-37"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict by adding both chocolate and vanilla cake recipes"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-31-38" class="code-annotation-target"><a href="#annotated-cell-31-38"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-31" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="3" data-code-annotation="1">Navigate into the <code>recipes</code> repository using <code>cd</code> (or a similar path).</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="4" data-code-annotation="2">Create a new branch called <code>feature</code> using <code>git branch feature</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="5" data-code-annotation="3">Switch to the new branch using <code>git switch feature</code>. You can also create and switch the branch in one step using <code>git checkout -b feature</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="6" data-code-annotation="4">Add a new recipe to your <code>recipes.txt</code> file using <code>cat</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="17,18" data-code-annotation="5">Stage and commit the changes to <code>recipes.txt</code> using <code>git add</code> and <code>git commit</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="19" data-code-annotation="6">Switch back to the default branch (<code>main</code> in this example) using <code>git checkout main</code>. You can also use <code>git switch main</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="20" data-code-annotation="7">Make conflicting changes in the <code>main</code> branch to <code>recipes.txt</code> using <code>cat</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="32,33" data-code-annotation="8">Stage and commit the conflicting changes to <code>recipes.txt</code> using <code>git add</code> and <code>git commit</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="34" data-code-annotation="9">Attempt to merge the <code>feature</code> branch with the default branch to create a merge conflict using <code>git merge feature</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="35" data-code-annotation="10">Resolve the merge conflict by editing <code>recipes.txt</code>. You can use a regular text editor to do this. In this example, we remove the conflict markers that Git added to <code>recipes.txt</code> using <code>sed</code> which results in keeping both recipes. This is not a recommended way to resolve merge conflicts and we only do it here to resolve the merge conflict without manual intervention. Merge conflicts usually always require manual resolution by the user.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="36" data-code-annotation="11">Stage the resolved changes to <code>recipes.txt</code> using <code>git add</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="37" data-code-annotation="12">Commit the resolved changes in <code>recipes.txt</code> with a descriptive commit message using <code>git commit</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-31" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-31" data-code-lines="38" data-code-annotation="13">Delete the merged <code>feature</code> branch using <code>git branch -d feature</code>.</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Command history">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Command history
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">+</span> cd recipes</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="ex">+</span> git branch feature</span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="ex">+</span> git switch feature</span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="ex">Switched</span> to branch <span class="st">'feature'</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="ex">+</span> cat</span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="ex">+</span> git add recipes.txt</span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add chocolate cake recipe to recipes.txt</span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="ex">[feature</span> 0800844] Add chocolate cake recipe to recipes.txt</span>
+<span id="cb14-9"><a href="#cb14-9"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="ex">+</span> git checkout main</span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="ex">error:</span> pathspec <span class="st">'main'</span> did not match any file<span class="op">(s)</span> known to git</span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="ex">+</span> cat</span>
+<span id="cb14-13"><a href="#cb14-13"></a><span class="ex">+</span> git add recipes.txt</span>
+<span id="cb14-14"><a href="#cb14-14"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add vanilla cake recipe to recipes.txt</span>
+<span id="cb14-15"><a href="#cb14-15"></a><span class="ex">[feature</span> 7b7b39e] Add vanilla cake recipe to recipes.txt</span>
+<span id="cb14-16"><a href="#cb14-16"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
+<span id="cb14-17"><a href="#cb14-17"></a><span class="ex">+</span> git merge feature</span>
+<span id="cb14-18"><a href="#cb14-18"></a><span class="ex">Already</span> up to date.</span>
+<span id="cb14-19"><a href="#cb14-19"></a><span class="ex">+</span> sed <span class="at">-i</span>  <span class="at">-e</span> /<span class="pp">^</span><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> /d <span class="at">-e</span> /<span class="pp">^</span>=======/d <span class="at">-e</span> /<span class="pp">^</span><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> /d recipes.txt</span>
+<span id="cb14-20"><a href="#cb14-20"></a><span class="ex">sed:</span> can<span class="st">'t read : No such file or directory</span></span>
+<span id="cb14-21"><a href="#cb14-21"></a><span class="st">+ git add recipes.txt</span></span>
+<span id="cb14-22"><a href="#cb14-22"></a><span class="st">+ git commit -m Resolve merge conflict by adding both chocolate and vanilla cake recipes</span></span>
+<span id="cb14-23"><a href="#cb14-23"></a><span class="st">On branch feature</span></span>
+<span id="cb14-24"><a href="#cb14-24"></a><span class="st">nothing to commit, working tree clean</span></span>
+<span id="cb14-25"><a href="#cb14-25"></a><span class="st">+ git branch -d feature</span></span>
+<span id="cb14-26"><a href="#cb14-26"></a><span class="st">error: cannot delete branch '</span>feature<span class="st">' used by worktree at '</span>/home/runner/work/version-control-book/version-control-book/recipes<span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><a href="../exercises-repos/recipes-branches.zip" class="btn btn-outline-primary" role="button">Download the repository</a></p>
 </section>
 <section id="github-intro" class="level2">
 <h2 class="anchored" data-anchor-id="github-intro">GitHub: Intro</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="connect-to-github" class="level3">
 <h3 class="anchored" data-anchor-id="connect-to-github">Connect to GitHub</h3>
 <ol type="1">
@@ -803,9 +1417,239 @@ Solution
 <li>Delete your newly cloned repository.</li>
 </ol>
 </section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="connect-to-github-1" class="level3">
+<h3 class="anchored" data-anchor-id="connect-to-github-1">Connect to GitHub</h3>
+<ol type="1">
+<li>Generate a personal access token (PAT) on GitHub.</li>
+</ol>
+<ul>
+<li>Go to GitHub.</li>
+<li>Click on your profile picture in the upper-right corner and select Settings.</li>
+<li>In the left sidebar, click Developer settings.</li>
+<li>In the left sidebar, click Personal access tokens.</li>
+<li>Click Generate new token.</li>
+<li>Give your token a descriptive name.</li>
+<li>Select the scopes or permissions you’d like to grant this token. For uploading a repository, select the repo scope.</li>
+<li>Click Generate token.</li>
+<li>Copy the token and store it in a secure place. You won’t be able to see it again.</li>
+</ul>
+<ol start="2" type="1">
+<li>Use the PAT for GitHub authentication.</li>
+</ol>
+<ul>
+<li>When prompted for a username and password for GitHub operations (like git push), use your GitHub username as the username and the generated PAT as the password.</li>
+</ul>
+</section>
+<section id="upload-your-local-repository-to-github-1" class="level3">
+<h3 class="anchored" data-anchor-id="upload-your-local-repository-to-github-1">Upload your local repository to GitHub</h3>
+<ol type="1">
+<li>Create an empty repository on GitHub (do not initialize the repository with any files).</li>
+</ol>
+<ul>
+<li>Go to GitHub and click the + icon in the upper-right corner, then select New repository.</li>
+<li>Name your repository.</li>
+<li>Do not select Initialize this repository with a README.</li>
+<li>Click Create repository.</li>
+</ul>
+<ol start="2" type="1">
+<li>Set the remote URL of your local repository to your GitHub repository.</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># In your local repository</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">git</span> remote add origin https://github.com/your-username/your-repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Push the changes on your main branch to GitHub.</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="create-a-readme.md-file-on-github-1" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-readme.md-file-on-github-1">Create a README.md file on GitHub</h3>
+<ol type="1">
+<li>Navigate to your repository on GitHub, click “Add file”, and select “Create new file”.</li>
+</ol>
+<ul>
+<li>Go to your repository on GitHub.</li>
+<li>Click Add file and select Create new file.</li>
+</ul>
+<ol start="2" type="1">
+<li>Name the file README.md, add a brief description, and provide a commit message.</li>
+</ol>
+<ul>
+<li>Name the file README.md.</li>
+<li>Add a brief description of your project.</li>
+<li>Provide a commit message at the bottom.</li>
+<li>Click the green Commit new file button.</li>
+</ul>
+</section>
+<section id="pull-the-changes-to-your-local-repository" class="level3">
+<h3 class="anchored" data-anchor-id="pull-the-changes-to-your-local-repository">Pull the changes to your local repository</h3>
+<ol type="1">
+<li>Fetch and merge your changes.</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">git</span> fetch</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">git</span> merge origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Verify that your local repository now includes the changes made on GitHub.</li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="private-collaboration-with-pull-requests-using-github-flow-1" class="level3">
+<h3 class="anchored" data-anchor-id="private-collaboration-with-pull-requests-using-github-flow-1">“Private” collaboration with pull requests (using “GitHub Flow”)</h3>
+<ol type="1">
+<li>Add your partner (desk neighbor) as a collaborator to your recipes repository.</li>
+</ol>
+<ul>
+<li>Go to your repository on GitHub.</li>
+<li>Click on Settings.</li>
+<li>Click on Manage access in the left sidebar.</li>
+<li>Click Invite a collaborator and enter your partner’s GitHub username.</li>
+</ul>
+<ol start="2" type="1">
+<li>Clone your partner’s repository.</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">git</span> clone https://github.com/partner-username/partner-repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Create a new branch in your partner’s repository.</li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> new-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Add a recipe to your partner’s recipe.txt file.</li>
+</ol>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="bu">echo</span> <span class="st">"New Recipe"</span> <span class="op">&gt;&gt;</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Add and commit the changes.</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">git</span> add recipes.txt</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add new recipe to recipes.txt"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>Push the changes on the new branch to GitHub.</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">git</span> push origin new-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Create a Pull Request.</li>
+</ol>
+<ul>
+<li>Go to your partner’s repository on GitHub.</li>
+<li>Click Compare &amp; pull request for your branch.</li>
+<li>Provide a title and description, then click Create pull request.</li>
+</ul>
+<ol start="8" type="1">
+<li>Review the PR your partner made in your repository.</li>
+</ol>
+<ul>
+<li>Go to your repository on GitHub.</li>
+<li>Click on the Pull requests tab.</li>
+<li>Click on the PR made by your partner.</li>
+<li>Review the changes and provide feedback.</li>
+</ul>
+<ol start="9" type="1">
+<li>Merge the PR into your repository.</li>
+</ol>
+<ul>
+<li>After reviewing, click the green Merge pull request button.</li>
+<li>Click Confirm merge.</li>
+</ul>
+</section>
+<section id="manage-branches-1" class="level3">
+<h3 class="anchored" data-anchor-id="manage-branches-1">Manage branches</h3>
+<ol type="1">
+<li>Push another branch (other than the default branch) with changes to GitHub.</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">git</span> checkout <span class="at">-b</span> another-branch</span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="bu">echo</span> <span class="st">"Some changes"</span> <span class="op">&gt;</span> newfile.txt</span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="fu">git</span> add newfile.txt</span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add newfile.txt"</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="fu">git</span> push origin another-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Delete any unused or merged branches.</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="ex">Code</span> kopieren</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="co"># e.g. local:</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">git</span> branch <span class="at">-d</span> branch-name</span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="co"># e.g. remote:</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="fu">git</span> push origin <span class="at">--delete</span> branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="clean-up-your-repository-on-github-1" class="level3">
+<h3 class="anchored" data-anchor-id="clean-up-your-repository-on-github-1">Clean up your repository on GitHub</h3>
+<ol type="1">
+<li>Delete unnecessary files or add a new recipe directly on GitHub.</li>
+</ol>
+<ul>
+<li>Navigate to the file you want to delete or modify on GitHub.</li>
+<li>Click the file name to open it.</li>
+<li>Click the trash can icon to delete the file or edit the content directly.</li>
+</ul>
+<ol start="2" type="1">
+<li>Commit changes on GitHub with a message.</li>
+</ol>
+<ul>
+<li>After editing or deleting a file, provide a commit message at the bottom and click Commit changes.</li>
+</ul>
+<ol start="3" type="1">
+<li>Pull the changes to your local repository.</li>
+</ol>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="clone-and-sync-your-repo-1" class="level3">
+<h3 class="anchored" data-anchor-id="clone-and-sync-your-repo-1">Clone and sync your repo</h3>
+<ol type="1">
+<li>Clone your repository from GitHub to a different location on your computer.</li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">git</span> clone https://github.com/your-username/your-repo-name.git /new/location/for/repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Stage and commit changes in the new location (consider using a new branch).</li>
+</ol>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="bu">cd</span> /new/location/for/repo</span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">git</span> checkout <span class="at">-b</span> new-branch</span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="bu">echo</span> <span class="st">"More changes"</span> <span class="op">&gt;</span> anotherfile.txt</span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="fu">git</span> add anotherfile.txt</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add anotherfile.txt"</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="fu">git</span> push origin new-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Pull these new changes to the repository in the original location.</li>
+</ol>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="bu">cd</span> /original/location/for/repo</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Delete your newly cloned repository.</li>
+</ol>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="ex">Code</span> kopieren</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">rm</span> <span class="at">-rf</span> /new/location/for/repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="github-advanced" class="level2">
 <h2 class="anchored" data-anchor-id="github-advanced">GitHub: Advanced</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="public-collaboration-with-pull-requests-using-a-fork-and-github-flow" class="level3">
 <h3 class="anchored" data-anchor-id="public-collaboration-with-pull-requests-using-a-fork-and-github-flow">“Public” collaboration with pull requests (using a fork and GitHub flow)</h3>
 <ol type="1">
@@ -846,9 +1690,129 @@ Solution
 <li>Enable the desired protection options (for example, require pull request reviews) and click “Create” to save the rule.</li>
 </ol>
 </section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="public-collaboration-with-pull-requests-using-a-fork-and-github-flow-1" class="level3">
+<h3 class="anchored" data-anchor-id="public-collaboration-with-pull-requests-using-a-fork-and-github-flow-1">Public Collaboration with Pull Requests (Using a Fork and GitHub Flow)</h3>
+<ol type="1">
+<li>Find out what forking is</li>
+</ol>
+<ul>
+<li>Forking is a process where you create a copy of someone else’s repository under your own GitHub account. It allows you to freely experiment with changes without affecting the original project.</li>
+</ul>
+<ol start="2" type="1">
+<li>Fork the recipes repository of another course participant (who is not your partner from the previous exercise)</li>
+</ol>
+<ul>
+<li>Go to the GitHub repository you want to fork.</li>
+<li>Click the Fork button at the top-right corner of the repository page.</li>
+<li>Select your GitHub account to fork the repository.</li>
+</ul>
+<ol start="3" type="1">
+<li>Create an issue, suggesting a missing recipe</li>
+</ol>
+<ul>
+<li>Go to the Issues tab of your partner’s repository on GitHub.</li>
+<li>Click New issue.</li>
+<li>Provide a title and description for the issue, suggesting a missing recipe.</li>
+<li>Click Submit new issue.</li>
+</ul>
+<ol start="4" type="1">
+<li>Clone the forked repository into a sensible location on your computer</li>
+</ol>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">git</span> clone https://github.com/your-username/forked-repo-name.git /path/to/your/forked/directory</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="bu">cd</span> /path/to/your/forked/directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Create a new branch and create one or multiple commits “fixing” the issue that you opened</li>
+</ol>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> issue-fix-branch</span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="bu">echo</span> <span class="st">"New Recipe Content"</span> <span class="op">&gt;&gt;</span> recipes.txt</span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="fu">git</span> add recipes.txt</span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add new recipe to fix issue #1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>Push your changes to GitHub</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">git</span> push origin issue-fix-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Create a pull request with your changes ( from the fork to the original repo) and refer to the issue in your pull request</li>
+</ol>
+<ul>
+<li>Go to your forked repository on GitHub.</li>
+<li>Click the Compare &amp; pull request button.</li>
+<li>Ensure the base repository is the original and the base branch is main.</li>
+<li>Provide a title and description for your pull request.</li>
+<li>Refer to the issue by adding “Fixes #issue-number” in the description.</li>
+<li>Click Create pull request.</li>
+<li>Review Pull Requests in Your Repository</li>
+</ul>
+</section>
+<section id="review-pull-requests-that-are-created-in-your-recipes-repository." class="level3">
+<h3 class="anchored" data-anchor-id="review-pull-requests-that-are-created-in-your-recipes-repository.">Review pull requests that are created in your recipes repository.</h3>
+<ul>
+<li>Go to your repository on GitHub.</li>
+<li>Click on the Pull requests tab.</li>
+<li>Review the code and files changed.</li>
+<li>Use the comment section in the pull request to discuss and request any additional changes.</li>
+</ul>
+<ol start="2" type="1">
+<li>Close the pull request by merging the proposed changes.</li>
+</ol>
+<ul>
+<li>Once satisfied with the changes, click the green Merge pull request button.</li>
+<li>Click Confirm merge.</li>
+<li>Practice Collaborative Workflows on GitHub</li>
+</ul>
+</section>
+<section id="protect-your-branch-1" class="level3">
+<h3 class="anchored" data-anchor-id="protect-your-branch-1">Protect Your Branch</h3>
+<ol type="1">
+<li>Go to your repository’s “Settings” and select “Branches”.</li>
+</ol>
+<ul>
+<li>Navigate to your repository on GitHub.</li>
+<li>Click on Settings.</li>
+<li>Select Branches from the left sidebar.</li>
+</ul>
+<ol start="2" type="1">
+<li>Under “Branch protection rules”, click “Add rule” and enter “main” in the “Branch name pattern” field.</li>
+</ol>
+<ul>
+<li>Click Add rule.</li>
+<li>Enter main in the Branch name pattern field.</li>
+<li>Enable the desired protection options (for example, require pull request reviews) and click “Create” to save the rule.</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="tags-and-releases" class="level2">
 <h2 class="anchored" data-anchor-id="tags-and-releases">Tags and Releases</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="create-a-tag" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-tag">Create a tag</h3>
 <ol type="1">
@@ -858,29 +1822,93 @@ Solution
 <section id="create-a-github-release" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-github-release">Create a GitHub Release</h3>
 <ol type="1">
-<li>Go to your repository on GitHub.</li>
-<li>Click on “Releases” then “Draft a new release”.</li>
-<li>Choose the tag <code>v1.0.0</code> from the list or create a new tag.</li>
-<li>Fill in the release title and description.</li>
-<li>Click “Publish release”.</li>
+<li>Go to your repository on GitHub and create a release of the tag <code>v1.0.0</code>.</li>
 </ol>
 </section>
 <section id="link-a-zenodo-record" class="level3">
 <h3 class="anchored" data-anchor-id="link-a-zenodo-record">Link a Zenodo record</h3>
 <ol type="1">
 <li>Connect your GitHub repository to Zenodo.</li>
-<li>Follow Zenodo’s instructions to link your repository:
-<ul>
-<li>Go to Zenodo and log in.</li>
-<li>Go to the “GitHub” tab in your Zenodo settings.</li>
-<li>Enable the repository for Zenodo integration.</li>
-</ul></li>
-<li>Create a new release on GitHub to trigger Zenodo to archive your repository and mint a DOI.</li>
 </ol>
 </section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="create-a-lightweight-or-an-annotated-tag-named-v1.0.0." class="level3">
+<h3 class="anchored" data-anchor-id="create-a-lightweight-or-an-annotated-tag-named-v1.0.0.">Create a lightweight or an annotated tag named v1.0.0.</h3>
+<ol type="1">
+<li>For a lightweight tag:</li>
+</ol>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">git</span> tag v1.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For an annotated tag:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0.0 <span class="at">-m</span> <span class="st">"Release version 1.0.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Push the tag to GitHub:</li>
+</ol>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">git</span> push origin v1.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="create-a-github-release-1" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-github-release-1">Create a GitHub Release</h3>
+<ol type="1">
+<li>Go to your repository on GitHub.</li>
+<li>Click on “Releases” then “Draft a new release”.</li>
+<li>Choose the tag <code>v1.0.0</code> from the list</li>
+<li>Fill in the release title and description.</li>
+<li>Click “Publish release”.</li>
+</ol>
+</section>
+<section id="link-a-zenodo-record-1" class="level3">
+<h3 class="anchored" data-anchor-id="link-a-zenodo-record-1">Link a Zenodo Record</h3>
+<ol type="1">
+<li>Connect your GitHub repository to Zenodo.</li>
+</ol>
+<ul>
+<li>Go to Zenodo and log in.</li>
+</ul>
+<ol start="2" type="1">
+<li>Follow Zenodo’s instructions to link your repository:</li>
+</ol>
+<ol type="a">
+<li><p>Go to the “GitHub” tab in your Zenodo settings. Navigate to Settings in Zenodo. Click on the GitHub tab.</p></li>
+<li><p>Enable the repository for Zenodo integration. Find your GitHub repository in the list and toggle the switch to enable it for Zenodo integration.</p></li>
+</ol>
+<ol start="3" type="1">
+<li>Create a new release on GitHub to trigger Zenodo to archive your repository and mint a DOI.</li>
+</ol>
+<ul>
+<li>Go back to GitHub and create a new release (as described in the Create a GitHub Release section). This will trigger Zenodo to archive your repository and mint a DOI for the release.</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="graphical-user-interfaces" class="level2">
 <h2 class="anchored" data-anchor-id="graphical-user-interfaces">Graphical User Interfaces</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="install-a-git-gui" class="level3">
 <h3 class="anchored" data-anchor-id="install-a-git-gui">Install a Git GUI</h3>
 <ol type="1">
@@ -897,9 +1925,40 @@ Solution
 <li>Commit your changes using RStudio’s Git interface.</li>
 </ol>
 </section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
 </section>
 <section id="stashing-and-co." class="level2">
 <h2 class="anchored" data-anchor-id="stashing-and-co.">Stashing and Co.</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="stashing" class="level3">
 <h3 class="anchored" data-anchor-id="stashing">Stashing</h3>
 <ol type="1">
@@ -927,9 +1986,28 @@ Solution
 <li>Rebase the <code>feature/rebase-example</code> branch onto the <code>main</code> branch using <code>git rebase main</code>.</li>
 <li>Check the commit history with <code>git log</code> to see the updated order of commits.</li>
 </ol>
-
-
 </section>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
