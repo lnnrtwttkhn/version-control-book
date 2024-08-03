@@ -25,7 +25,7 @@ jobs:
       - name: Install additional Ubuntu packages
         run: |
           sudo apt-get update
-          sudo apt -y install libcurl4-openssl-dev unzip wget
+          sudo apt -y install libcurl4-openssl-dev unzip wget zip
           
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
@@ -35,6 +35,10 @@ jobs:
       - name: Download static
         run: |
           make static
+
+      - name: Create repositories implementing the exercises
+        run: |
+          make exercises
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

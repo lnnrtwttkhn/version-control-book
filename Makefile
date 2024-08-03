@@ -26,3 +26,7 @@ static:
 .PHONY: clean
 clean:
 	rm -rf $(STATIC_DIR)* _book/
+	
+.PHONY: exercises
+exercises:
+	sh code/code-exercises.sh
