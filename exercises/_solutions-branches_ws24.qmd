@@ -1,0 +1,99 @@
+### Create and Merge a New Branch
+
+1. **Navigate to the Rotterdam/Hamburg guide repository:**
+   - Use the command line to move to the directory containing your Rotterdam/Hamburg guide repository.
+
+2. **Create a new branch:**
+   - Create a new branch called `feature` using:
+     ```sh
+     git branch feature
+     ```
+
+3. **Switch to the new branch:**
+   - Switch to the `feature` branch using:
+     ```sh
+     git switch feature
+     ```
+
+4. **Add new content to `placeholder.qmd`:**
+   - Add a new section, for example:
+     ```markdown
+     ## Another Favorite Café in Rotterdam
+     Hopper Coffee: A modern café located in the center, known for its excellent pastries and spacious seating.
+     ```
+
+5. **Stage and commit the changes:**
+   - Stage the changes using:
+     ```sh
+     git add placeholder.qmd
+     ```
+   - Commit the changes with:
+     ```sh
+     git commit -m "Add new café section to Rotterdam guide"
+     ```
+
+6. **Switch back to the default branch:**
+   - Switch to the main branch:
+     ```sh
+     git switch main
+     ```
+
+7. **Merge the `feature` branch with the default branch:**
+   - Merge the `feature` branch:
+     ```sh
+     git merge feature
+     ```
+
+8. **Delete the `feature` branch:**
+   - Delete the branch as it's no longer needed:
+     ```sh
+     git branch -d feature
+     ```
+
+### Create and Resolve a Merge Conflict
+
+1. **Create a merge conflict:**
+   - On the `feature` branch, add or change content in `placeholder.qmd`.
+   - Example change:
+     ```markdown
+     ## Best Spot for Breakfast in Hamburg
+     Café Paris: A beautiful café near the Rathaus, perfect for a luxurious breakfast.
+     ```
+
+   - On the main branch, make conflicting changes to the same section:
+     ```markdown
+     ## Best Spot for Breakfast in Hamburg
+     Nord Coast Coffee Roastery: Known for its freshly roasted coffee and artisanal breakfast options.
+     ```
+
+2. **Attempt to merge the branches:**
+   - Try merging the `feature` branch into the main branch, resulting in a conflict:
+     ```sh
+     git merge feature
+     ```
+
+3. **Resolve the merge conflict:**
+   - Open `placeholder.qmd` and manually edit the file to resolve the conflict:
+     ```markdown
+     ## Best Spot for Breakfast in Hamburg
+     Café Paris: A beautiful café near the Rathaus, perfect for a luxurious breakfast.
+     Nord Coast Coffee Roastery: Known for its freshly roasted coffee and artisanal breakfast options.
+     ```
+
+4. **Stage the resolved changes:**
+   - Stage the changes:
+     ```sh
+     git add placeholder.qmd
+     ```
+
+5. **Commit the resolved changes:**
+   - Commit the resolved conflict:
+     ```sh
+     git commit -m "Resolve merge conflict by including both café recommendations"
+     ```
+
+6. **Delete the `feature` branch:**
+   - Finally, delete the branch:
+     ```sh
+     git branch -d feature
+     ```
