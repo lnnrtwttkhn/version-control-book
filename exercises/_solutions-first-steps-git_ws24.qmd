@@ -1,6 +1,34 @@
-1. Add a *short* recipe to `recipes.txt`.
-In this example, `cat` is used to add text to `recipes.txt`.
-This command would also create the file if `recipes.txt` wouldn't exist yet.
-Note that you can also use a regular text editor to do this.
-1. Stage the new `recipes.txt` file using `git add`.
-1. Commit the changes in `recipes.txt` with a descriptive commit message using `git commit`.
+### Add Content and Commit Changes
+
+1. **Open the folder in RStudio as a new project**:
+    - Open RStudio.
+    - Click on `File` -> `New Project` -> `Existing Directory`.
+    - Navigate to the cloned repository folder and select it.
+    - Click `Create Project`.
+
+2. **Open `placeholder.qmd`**:
+    - In the RStudio File Explorer, navigate to the cloned repository and open `placeholder.qmd`.
+
+3. **Ask your partner for their favorite café in Hamburg or Rotterdam and write it down in `placeholder.qmd`**:
+    - Add the café name and a short description in `placeholder.qmd`.
+    - Save the file by clicking on `File` -> `Save` or pressing `Ctrl + S`.
+
+4. **Stage the changes**:
+    - **Using RStudio**:
+        - In the RStudio Git pane, check the box next to `placeholder.qmd` to stage the changes.
+    - **Using the Command Line**:
+        - Run the command:
+          ```sh
+          git add placeholder.qmd
+          ```
+
+5. **Commit the changes in `placeholder.qmd` with a descriptive commit message**:
+    - **Using RStudio**:
+        - Click on `Commit` in the Git pane.
+        - Enter a descriptive commit message, such as "Add favorite café in Hamburg/Rotterdam".
+        - Click `Commit` to finalize the commit.
+    - **Using the Command Line**:
+        - Run the command:
+          ```sh
+          git commit -m "Add favorite café in Hamburg/Rotterdam"
+          ```
