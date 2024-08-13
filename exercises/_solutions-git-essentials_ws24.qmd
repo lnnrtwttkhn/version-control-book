@@ -1,0 +1,72 @@
+###: Amend a Commit
+
+-  **Edit `placeholder.qmd`:**
+   - Initially, you add the following content to `placeholder.qmd`:
+     ```markdown
+     ## Favorite Café in Rotterdam
+     De Matroos en Het Meisje: A cozy spot known for its excellent coffee and welcoming atmosphere.
+     ```
+
+ - Stage this change using RStudio or the command line:
+     ```sh
+     git add placeholder.qmd
+     ```
+
+ - Commit this change:
+     ```sh
+     git commit -m "Add favorite café in Rotterdam"
+     ```
+
+ - Realizing that you forgot to mention the neighborhood, you update the file:
+     ```markdown
+     ## Favorite Café in Rotterdam
+     De Matroos en Het Meisje: A cozy spot in Katendrecht known for its excellent coffee and welcoming atmosphere.
+     ```
+
+ - Amend the previous commit:
+     ```sh
+     git add placeholder.qmd
+     git commit --amend -m "Add favorite café in Rotterdam with neighborhood details"
+     ```
+
+#### Solution 2: Create a `.gitignore` File
+
+1. **Create `random-file.docx`:**
+   - Download or create a file named `random-file.docx` in the root of your repository.
+
+2. **Check the state of your repository:**
+   - Run the following command to check for untracked files:
+     ```sh
+     git status
+     ```
+   - You should see `random-file.docx` listed as an untracked file.
+
+3. **Create a `.gitignore` file:**
+   - Create a new file named `.gitignore` in the root of your repository.
+
+4. **Add the file to `.gitignore`:**
+   - Open `.gitignore` and add the following line:
+     ```
+     random-file.docx
+     ```
+
+   - Save the `.gitignore` file.
+
+5. **Check the state of your repository again:**
+   - Run `git status` again and confirm that `random-file.docx` is no longer listed as untracked.
+
+6. **Stage and commit the changes:**
+   - Stage the `.gitignore` file:
+     ```sh
+     git add .gitignore
+     ```
+
+   - Commit the changes:
+     ```sh
+     git commit -m "Add .gitignore to ignore random-file.docx"
+     ```
+
+   - 🚀 **Optional:** For macOS users, also add `.DS_Store` to `.gitignore`:
+     ```
+     .DS_Store
+     ```
