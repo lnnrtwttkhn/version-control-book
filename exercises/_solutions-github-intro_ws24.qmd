@@ -1,0 +1,168 @@
+### Upload your local repository to GitHub
+
+1. Create an empty repository on GitHub (do not initialize the repository with any files).
+
+- Go to GitHub and click the + icon in the upper-right corner, then select New repository.
+- Name your repository.
+- Do not select Initialize this repository with a README.
+- Click Create repository.
+
+2. Set the remote URL of your local repository to your GitHub repository.
+
+```bash
+# In your local repository
+git remote add origin https://github.com/your-username/your-repo-name.git
+```
+3. Push the changes on your main branch to GitHub.
+
+```bash
+git push -u origin main
+``` 
+
+### Create a README.md file on GitHub
+1. Navigate to your repository on GitHub, click “Add file”, and select “Create new file”.
+- Go to your repository on GitHub.
+- Click Add file and select Create new file.
+
+2. Name the file README.md, add a brief description, and provide a commit message.
+- Name the file README.md.
+- Add a brief description of your project.
+- Provide a commit message at the bottom.
+- Click the green Commit new file button.
+
+### Pull the changes to your local repository
+1. Fetch and merge your changes.
+
+```bash
+git fetch
+git merge origin/main
+```
+
+2. Verify that your local repository now includes the changes made on GitHub.
+
+```bash
+git pull
+```
+
+### “Private” collaboration with pull requests (using “GitHub Flow”)
+1. Add your partner (desk neighbor) as a collaborator to your repository.
+- Go to your repository on GitHub.
+- Click on Settings.
+- Click on Manage access in the left sidebar.
+- Click Invite a collaborator and enter your partner's GitHub username.
+
+2. Clone your partner’s repository.
+
+```bash
+git clone https://github.com/partner-username/partner-repo-name.git
+```
+
+3. Create a new branch in your partner’s repository.
+
+```bash
+git checkout -b new-branch-name
+```
+
+4. Add your favourite bar to your partner’s placeholder.qmd file.
+
+```bash
+echo "My favourite bar: ... " >> recipes.txt
+```
+5. Add and commit the changes.
+
+```bash
+git add recipes.txt
+git commit -m "Add my favoutite bar to placeholder.qmd"
+```
+6. Push the changes on the new branch to GitHub.
+
+```bash
+git push origin new-branch-name
+```
+
+7. Create a Pull Request.
+- Go to your partner's repository on GitHub.
+- Click Compare & pull request for your branch.
+- Provide a title and description, then click Create pull request.
+
+8. Review the PR your partner made in your repository.
+
+- Go to your repository on GitHub.
+- Click on the Pull requests tab.
+- Click on the PR made by your partner.
+- Review the changes and provide feedback.
+
+9. Merge the PR into your repository.
+- After reviewing, click the green Merge pull request button.
+- Click Confirm merge.
+
+### Manage branches
+
+1. Push another branch (other than the default branch) with changes to GitHub.
+
+```bash
+
+git checkout -b another-branch
+echo "Some changes" > newfile.txt
+git add newfile.txt
+git commit -m "Add newfile.txt"
+git push origin another-branch
+```
+
+2. Delete any unused or merged branches.
+
+```bash
+Code kopieren
+# e.g. local:
+git branch -d branch-name
+# e.g. remote:
+git push origin --delete branch-name
+```
+
+### Clean up your repository on GitHub
+
+1. Delete unnecessary files or add a new recipe directly on GitHub.
+- Navigate to the file you want to delete or modify on GitHub.
+- Click the file name to open it.
+- Click the trash can icon to delete the file or edit the content directly.
+
+2. Commit changes on GitHub with a message.
+- After editing or deleting a file, provide a commit message at the bottom and click Commit changes.
+
+3. Pull the changes to your local repository.
+
+```bash
+git pull
+```
+
+### Clone and sync your repo
+1. Clone your repository from GitHub to a different location on your computer.
+
+```bash
+
+git clone https://github.com/your-username/your-repo-name.git /new/location/for/repo
+```
+
+2. Stage and commit changes in the new location (consider using a new branch).
+
+```bash
+cd /new/location/for/repo
+git checkout -b new-branch
+echo "More changes" > anotherfile.txt
+git add anotherfile.txt
+git commit -m "Add anotherfile.txt"
+git push origin new-branch
+```
+3. Pull these new changes to the repository in the original location.
+
+```bash
+cd /original/location/for/repo
+git pull
+```
+
+4. Delete your newly cloned repository.
+
+```bash
+Code kopieren
+rm -rf /new/location/for/repo
+```
