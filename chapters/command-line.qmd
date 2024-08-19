@@ -113,6 +113,9 @@ There are (at least) three different ways to get there:
 
 You may want to keep the Terminal in your [Dock](https://support.apple.com/guide/mac-help/open-apps-from-the-dock-mh35859/mac) to find it more easily.
 
+![Terminal icon in the macOS dock](../static/mac-dock.png){#fig-terminal width="60%"}
+
+
 On new Apple computers, especially those running recent versions of macOS, you might have to allow the Terminal access to certain files and folders after your initial commands.
 If a prompt appears asking for permission, you will need to confirm it to continue using Terminal with access to these files.
 
@@ -252,6 +255,13 @@ parent $ tree
 3 directories
 ```
 
+To visualize this hierarchy, you can use the `tree` command in the command line. 
+The `tree` command generates a graphical representation of the directory structure, displaying the parent directory along with its child directories and files in a tree-like format. 
+This makes it easier to understand the organization of files and directories within a specific directory.
+
+**Note:** 
+The tree command is natively available on Windows. 
+For Linux and macOS users, you can install it via your package manager (e.g., brew install tree on Mac, if Homebrew is installed) to achieve similar functionality
 :::
 
 The **root directory** is the highest level in the hierarchy.
@@ -792,9 +802,27 @@ open recipes.txt
 
 ### Writing short text into files
 
-The `echo` command can be used to write text to a file, directly from the command line.
-Using `echo` in combination with `>>` adds content to an existing file. 
+The `echo` command is a simple and versatile tool used to display text or output it to files. 
+It is commonly used in shell scripts and command-line operations to print messages, display variable values, or generate simple text files.
+
+**General Information about echo:**
+
+- **Basic Usage:** 
+The `echo` command outputs the text that follows it. 
+For example, `echo "Hello, World!"` will display `Hello, World!` in the terminal.
+
+**Using Variables:**
+You can use echo to display the values of variables.
+For instance, `echo $HOME` will print the path of the home directory.
+
+**Special Characters:**
+To include special characters or commands in the text output, use quotes around the text. 
+For example, `echo "Current date: $(date)"` will display the current date.
+
+The echo command can also be used to write text to a file directly from the command line. 
+By combining echo with the `>>` operator, you can add content to an existing file.
 For example, to add text to the `recipes.txt` file using the command line:
+
 
 ```{zsh filename="Code"}
 echo "This is a list of all my favorite recipes." >> recipes.txt 
@@ -959,17 +987,41 @@ This will (1) create a new directory called `new_directory`, (2) change the curr
 
 ## Summary
 
-In this lesson, we have achieved the following:
+**Understanding the Command Line:**
+The command line is a  text-based interface for interacting with your computer.
+It's fundamental for using Git and offers advantages like automation, flexibility, and access to advanced features.
 
-1. We clarified some of the technical terms associated with the command line.
-1. We explored the components of command-line commands: paths, arguments, and flags.
-1. We gained knowledge about relative and absolute paths, including convenient s like `~`, `.` and `..`.
-1. We experienced the functionality of wildcards.
-1. We acquired familiarity with several essential shell commands.
+**Terminology:** 
+Key terms include:
 
-It's important to note that what we covered here only scratches the surface of what can be accomplished using the shell.
-The primary aim was to provide useful concepts that help when learning Git.
-If you're interested in delving deeper, you may find a more comprehensive introduction at one of the following resources.
+**File**: A unit of data storage, identified by a name and extension (e.g., `file.txt`).
+
+**Folder/Directory:**
+Containers that organize files in a hierarchical structure.
+
+**CLI (Command-Line Interface):**
+The text-based interface for entering commands.
+
+**Terminal:** 
+The program that provides access to the CLI.
+
+**Shell:**
+The software that interprets commands typed into the terminal.
+
+**Navigating the File System:**
+You can use commands to move between directories, list contents, and understand the directory structure. 
+The command line allows for precise and efficient file management.
+
+**Managing Files and Folders:**
+The command line lets you create, move, rename, and delete files and folders with simple commands. 
+It supports operations on multiple files using wildcards and other powerful tools.
+
+**Writing and Viewing Text:**
+You can write text directly into files or display file content in the terminal. 
+This is useful for quickly updating or viewing file data without opening a separate text editor.
+
+**Efficiency Tools:**
+The command line offers tools like autocompletion, command history, and shortcuts (`~`, `.`) to speed up your workflow. It also supports combining commands for more complex operations.
 
 !["Hackerman" meme found on [Reddit.com](https://www.reddit.com/r/meme/comments/fu9f3b/command_prompt/)](../static/cli_meme.jpg){#fig-meme}
 
