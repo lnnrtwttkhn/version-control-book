@@ -92,7 +92,9 @@ Click on the tab for your operating system or computer environment for detailed 
 
 ![Logo of the Git Bash program on Windows (Source: [Git for Windows on GitHub](https://avatars.githubusercontent.com/u/4571183?s=200&v=4))](../static/git-for-windows-logo.png){#fig-git-for-windows width="20%"}
 
-By default, Windows operating systems do not come with a pre-installed Unix Shell program.
+To use Git effectively on Windows, you need access to a Unix Shell environment, which is not natively available on Windows systems.
+Unix Shells, such as Bash, provide the most comprehensive access to Git’s features and are the standard tool for interacting with Git. 
+This is why installing an emulator like Git Bash is necessary.
 In this guide, we recommend using an emulator provided by [Git for Windows]({{< var links.git-for-windows >}}), which grants you access to both the Bash shell and Git commands.
 
 For an installation guide, you can check out the chapters on [Installation](installation.qmd) and [Setup](setup.qmd).
@@ -163,7 +165,7 @@ In addition, if you want to add syntax highlighting (similar to the code chunks 
 
 ## {{< fa brands linux >}} Linux
 
-To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing {{< kbd Ctrl >}} + {{< kbd Alt >}} + {{< kbd T >}} simultaneously. If this shortcut does not work, you can find the terminal application in your system's applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.
+To open a fresh terminal window on Linux, you can usually use a keyboard , which often involves pressing {{< kbd Ctrl >}} + {{< kbd Alt >}} + {{< kbd T >}} simultaneously. If this  does not work, you can find the terminal application in your system's applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.
 
 ## {{< fa rocket >}} UHH JupyterHub
 
@@ -406,7 +408,7 @@ cd '/Users/User/Downloads/Directory with space/'
 
 While the command line can handle paths (or files) with spaces in this way, we **recommend to avoid spaces** in folder and file names altogether, especially if you use the command line frequently.
 
-### Taking shortcuts
+### Taking s
 
 #### Tilde: `~`
 
@@ -424,6 +426,16 @@ For example:
 ~/Downloads$ cd ~
 ~$ 
 ```
+
+::: {.callout-tip collapse="true" title="Finding the Tilde (~)"}
+- **macOS**: 
+You can type the tilde (`~`) symbol by pressing the `option` key and the `N` key simultaneously, then pressing the `spacebar`.
+
+**Windows (German Keyboard Layout)**:
+On a Windows PC with a German keyboard layout, you can type the tilde (`~`) by holding the `Alt Gr` key and pressing the `+` key.
+:::
+
+
 
 #### Dot: `.`
 
@@ -839,7 +851,7 @@ mv recipes.txt vegan
 
 Let's assume that you moved the `recipes.txt` file to the `/vegan` subfolder, as shown above.
 Now let's move the `recipes.txt` file back to the parent `recipes` folder.
-To do this, you can first `cd` into the `/vegan` subfolder and then use the `..` shortcut (for details on `..`, see the [section above](#dot-dot-..)) in combination with the `mv` command:
+To do this, you can first `cd` into the `/vegan` subfolder and then use the `..`  (for details on `..`, see the [section above](#dot-dot-..)) in combination with the `mv` command:
 
 ```{zsh filename="Code"}
 mv recipes.txt ..
@@ -951,7 +963,7 @@ In this lesson, we have achieved the following:
 
 1. We clarified some of the technical terms associated with the command line.
 1. We explored the components of command-line commands: paths, arguments, and flags.
-1. We gained knowledge about relative and absolute paths, including convenient shortcuts like `~`, `.` and `..`.
+1. We gained knowledge about relative and absolute paths, including convenient s like `~`, `.` and `..`.
 1. We experienced the functionality of wildcards.
 1. We acquired familiarity with several essential shell commands.
 
