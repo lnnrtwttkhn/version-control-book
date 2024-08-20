@@ -1,0 +1,40 @@
+### Create a lightweight or an annotated tag named v1.0.0.
+
+1. For a lightweight tag:
+
+```bash
+git tag v1.0.0
+```
+
+For an annotated tag:
+
+```bash
+git tag -a v1.0.0 -m "Release version 1.0.0"
+```
+2. Push the tag to GitHub:
+
+```bash
+git push origin v1.0.0
+```
+
+### Create a GitHub Release
+1. Go to your repository on GitHub.
+2. Click on “Releases” then “Draft a new release”.
+3. Choose the tag `v1.0.0` from the list
+4. Fill in the release title and description.
+5. Click “Publish release”.
+
+### Link a Zenodo Record
+1. Connect your GitHub repository to Zenodo.
+- Go to Zenodo and log in.
+2. Follow Zenodo’s instructions to link your repository:
+a. Go to the “GitHub” tab in your Zenodo settings.
+Navigate to Settings in Zenodo.
+Click on the GitHub tab.
+
+b. Enable the repository for Zenodo integration.
+Find your GitHub repository in the list and toggle the switch to enable it for Zenodo integration.
+
+3. Create a new release on GitHub to trigger Zenodo to archive your repository and mint a DOI.
+- Go back to GitHub and create a new release (as described in the Create a GitHub Release section).
+This will trigger Zenodo to archive your repository and mint a DOI for the release.
