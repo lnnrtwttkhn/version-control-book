@@ -12,7 +12,7 @@ execute:
  
 ::: {.callout-tip appearance="minimal"}
 <h5>Learning Objectives</h5>
-{{< include ../objectives/_objectives-internals.qmd >}}
+{{< include ../objectives/_objectives-git-internals.qmd >}}
 :::
 
 ## Introduction
@@ -53,7 +53,7 @@ objects/
 refs/
 ```
 
-This chapter is going to explain all files and folders of these down below.
+This chapter is going to explain the most relevant files and folders of these down below.
 
 ### `config` file
 
@@ -70,17 +70,6 @@ For instance:
 ```
 
 Instead of using `git config` you could also edit this file directly to make changes.
-
-### `description` file
-
-The `description` file within the `.git` directory plays a minor but specific role in the context of Git repositories.
-The `description` file is most commonly used in bare repositories.
-In bare repositories, Git web interfaces and hosting services use the content of this file to display information about the repository to users.
-It should contain a contain a simple, plain-text description of the repository.
-
-A bare repository is a special repository without a working directory, meaning you can not directly edit files in this repository as it *only* contains the `.git` folder.
-This type of repository can be created using `git init --bare` or `git clone --bare`.
-It is typically used in software devolopments for collaboration.
 
 ### `HEAD` file
 
@@ -178,35 +167,109 @@ It is not recommended that you edit this file by hand, as incorrect modification
 
 ### `objects` folder
 
-The objects folder within the `.git` directory is a fundamental part of Git’s internal storage system.
+The `objects` folder within the `.git` directory is a fundamental part of Git's internal storage  system. 
 This folder contains all the objects that Git uses to track the history and state of your repository. 
-When you first explore the objects folder, you will see a series of subfolders, each named with two hexadecimal characters (e.g.,`d6`, `e9`, `fa`)
 
+When you explore the `objects` folder, you will see a series of subfolders, each named with two hexadecimal characters (e.g., d6, e9, fa). 
+These subfolders contain files whose names are the remaining 38 characters of a 40-character SHA-1 hash. 
+Each file represents a Git object, and the full 40-character hash is used as the unique identifier for the object.
 
+Whenever you create a new commit, Git calculates the SHA-1 hash for each object (blob, tree, commit, or tag) and stores it in the appropriate subfolder within the objects directory. 
+These objects are stored in a compressed format to save space. 
+The unique hash ensures that each object is stored only once, even if the same file or commit appears multiple times in the repository's history.
+For example, if you modify a file and commit the changes, Git creates a new blob for the modified file's contents, a new tree to reflect the updated directory structure, and a new commit object that points to the new tree. 
+All these objects are stored in the objects folder, and their SHA-1 hashes link them together.
 
-### `refs` folder
+You can explore the contents of the objects folder by navigating to it using the command line (`cd .git/objects`) and listing its contents with `ls -a`. 
+However, it's important to note that the files within the objects folder are not human-readable in their raw form, as they are stored in a compressed and encoded format.
 
-### `logs` folder
+Although you can inspect individual objects using Git commands (e.g., `git cat-file -p <hash>`), it is generally not necessary to interact with the objects folder directly.
 
-## How Git stores data
+Understanding the objects folder can give you insight into how Git efficiently tracks and stores every change in your repository.
+Objects in Git fall into four main types:
 
-### Hashes
+#### Blobs:
+A blob (binary large object) is used to store the contents of a file. 
+Blobs contain the raw data of a file but do not include any metadata like filenames or file modes. 
+Each unique version of a file in your repository is stored as a separate blob, identified by its SHA-1 hash.
 
-### Blobs
+#### Trees:
+A tree object represents a directory and serves as a snapshot of the contents of a directory at a particular point in time. A tree contains references (hashes) to blobs (representing files) and other trees (representing subdirectories). This structure allows Git to represent the entire file hierarchy of a repository.
 
-### Commits
+#### Commits:
+A commit object is a snapshot of the entire repository at a specific point in time.
+It includes a reference to a tree object, metadata about the commit (such as the author, date, and commit message), and references to parent commits (if any).
+Commits are the building blocks of Git's history, linking together to form a directed acyclic graph (DAG).
 
-### Pack files
+#### Tags:
+A tag object is used to mark a specific commit as significant, such as a release point (e.g., `v1.0`). 
+There are two types of tags in Git: lightweight tags (which are simply pointers to a commit) and annotated tags (which are full objects that can store metadata like the tagger's name and a message).
 
-### Garbage Collection
 
 ## Practical Tips
 
+In this section, we will explore some practical tips for working with the `.git` folder. 
+These tips will help you maintain your repository's health, and troubleshoot common issues.
+
 ### Inspect Objects
+
+Inspecting objects within the `.gi`t folder can provide  insights into how Git stores and manages your data. 
+it offers  commands to explore and examine the four different types of objects (blobs, trees, commits, and tags) that are stored in the objects directory.
+
+To inspect an object, you can use the `git cat-file command`.
+This command allows you to view the content of an object by specifying its type and SHA-1 hash.
+The `-p` flag in the git cat-file command stands for "pretty-print."
+When you use this flag, `git cat-file` outputs the content of the specified Git object in a human-readable form.
+
+```{zsh filename="Code"}
+git cat-file -p <object-hash>
+```
+
+### Garbage Collection
+
+Over time, your Git repository may accumulate unnecessary objects, such as unreachable commits, that can bloat the size of the `.git` folder. 
+Git includes a built-in mechanism called garbage collection to clean up these unused objects and optimize the repository's storage.
+You can trigger garbage collection manually using the following command:
+
+```{zsh filename="Code"}
+git gc
+```
+
+This command compresses file revisions to reduce storage space and removes objects that are no longer reachable from any branch or tag.
+Running `git gc` regularly helps keep your repository clean and ensures that it remains efficient as your project grows.+
 
 ### Repairing `.git` folder
 
-### Exploring `.git` folder
+In some cases, your Git repository might become corrupted or experience issues that prevent you from using it. Understanding how to repair the `.git` folder can help you recover from these situations without losing valuable data.
+
+#### Corrupted Objects
+
+The `git fsck` command checks the integrity of your repository and identifies corrupted objects. 
+If you encounter an error indicating that an object is corrupted, you can attempt to recover it by re-fetching it from a remote repository:
+
+```{zsh filename="Code"}
+git fetch --all
+git fsck --full
+```
+
+If the issue persists, consider recovering the object from another clone of the repository.
+
+#### Lost commits or branches
+
+If you accidentally delete a branch or commit, you can often recover it using Git's reflog:
+
+```{zsh filename="Code"}
+git reflog
+```
+
+This command shows a log of all changes made to `HEAD` and branches, allowing you to find the commit hash before the deletion.
+Once identified, you can restore the branch:
+
+```{zsh filename="Code"}
+git checkout -b <branch-name> <commit-hash>
+```
+
+By familiarizing yourself with these repair techniques, you can address and resolve issues that might otherwise hinder you working with Git.
 
 ```{r}
 #| eval: true
@@ -225,4 +288,5 @@ knitr::kable(ref_table(bibtexkeys), format = "markdown")
 #| echo: false
 #| message: false
 #| warning: false
-knitr::kable(table_cheatsheet(name = "branches"), format = "markdown", row.names = FALSE)
+knitr::kable(table_cheatsheet(name = "internals"), format = "markdown", row.names = FALSE)
+```
