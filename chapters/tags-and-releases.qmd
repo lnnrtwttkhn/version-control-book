@@ -147,6 +147,38 @@ git pull --tags
 When you pull or fetch tags, Git fetches tag references, but it does not automatically switch to the state of a specific tag.
 If you want to work on a specific tag after pulling, use `git checkout` to switch to that tag.
 
+### Tagging a Specific (Old) Commit
+Sometimes, you may want to create a tag for a commit that is not the most recent one, such as tagging a significant point in your project's history that was missed earlier. 
+You can easily do this in Git by specifying the commit hash when creating the tag.
+
+Here’s how you can tag a specific (old) commit:
+
+**1. Find the Commit Hash:**
+First, you need to identify the commit you want to tag. You can do this by listing the commits using:
+```{bash}
+git log --oneline
+````
+This command will show a list of commits along with their short hashes. 
+Find the commit you want to tag and copy its hash.
+
+**2. Create the Tag:**
+Once you have the commit hash, you can create a tag for it.
+You can create either a lightweight or an annotated tag as discussed earlier. 
+For example:
+
+Lightweight Tag:
+```{bash}
+git tag v1.0 <commit-hash>
+```
+
+Annotated Tag:
+```{bash}
+git tag -a v1.0 -m "Tagging version 1.0 for the old commit" <commit-hash>
+```
+
+Replace `<commit-hash>`with the actual hash of the commit you want to tag.
+By following these steps, you can easily tag any commit in your repository, even if it’s an older one. 
+
 ## GitHub Releases
 
 Releases represent specific versions of your repository, that you can package and share with a broader audience for download and usage.
