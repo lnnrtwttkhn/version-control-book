@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -343,8 +343,15 @@ div.csl-indent {
   <li><a href="#issues-for-bug-reporting-and-feature-requests" id="toc-issues-for-bug-reporting-and-feature-requests" class="nav-link" data-scroll-target="#issues-for-bug-reporting-and-feature-requests"><span class="header-section-number">11.6.1</span> Issues for bug reporting and feature requests</a></li>
   <li><a href="#issues-for-internal-conversations" id="toc-issues-for-internal-conversations" class="nav-link" data-scroll-target="#issues-for-internal-conversations"><span class="header-section-number">11.6.2</span> Issues for internal conversations</a></li>
   </ul></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">11.7</span> Further Reading</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">11.8</span> Acknowledgements</a></li>
+  <li><a href="#scientific-use-cases-for-issues" id="toc-scientific-use-cases-for-issues" class="nav-link" data-scroll-target="#scientific-use-cases-for-issues"><span class="header-section-number">11.7</span> Scientific use cases for Issues</a>
+  <ul class="collapse">
+  <li><a href="#organizing-tasks" id="toc-organizing-tasks" class="nav-link" data-scroll-target="#organizing-tasks"><span class="header-section-number">11.7.1</span> Organizing tasks</a></li>
+  <li><a href="#tracking-reviewer-comments-and-changes" id="toc-tracking-reviewer-comments-and-changes" class="nav-link" data-scroll-target="#tracking-reviewer-comments-and-changes"><span class="header-section-number">11.7.2</span> Tracking reviewer comments and changes</a></li>
+  <li><a href="#labeling-for-busy-pis" id="toc-labeling-for-busy-pis" class="nav-link" data-scroll-target="#labeling-for-busy-pis"><span class="header-section-number">11.7.3</span> Labeling for busy PIs</a></li>
+  <li><a href="#facilitating-peer-review" id="toc-facilitating-peer-review" class="nav-link" data-scroll-target="#facilitating-peer-review"><span class="header-section-number">11.7.4</span> Facilitating peer review</a></li>
+  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">11.8</span> Further Reading</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">11.9</span> Acknowledgements</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/issues.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/issues.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -688,15 +695,48 @@ Figure&nbsp;11.9: “Issue Project” taken from the GitHub Docs (<a href="https
 <p>If you’re using Issues for internal conversations (for example, discussions within a research group), you might want to keep the repository private at first. But here’s something to consider: Do you plan to make the project public when you’re ready to share your research with the world? Changing a project from private to public (or the other way around, which you can do in the project’s settings) not only makes the code and files public but also all the discussions in the Issues. That’s okay, but it adds some things to think about in terms of what’s being talked about in those discussions.</p>
 </section>
 </section>
-<section id="further-reading" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">11.7</span> Further Reading</h2>
+<section id="scientific-use-cases-for-issues" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="scientific-use-cases-for-issues"><span class="header-section-number">11.7</span> Scientific use cases for Issues</h2>
+<p>Issues aren’t just for software development - they can also be very useful in various situations of scientific research. Here are some ways Issues can help in a research context:</p>
+<section id="organizing-tasks" class="level3" data-number="11.7.1">
+<h3 data-number="11.7.1" class="anchored" data-anchor-id="organizing-tasks"><span class="header-section-number">11.7.1</span> Organizing tasks</h3>
+<p>Researchers can use Issues to break down complex research projects into smaller, manageable tasks. For example, you can create an Issue for each experiment, analysis, or data collection task. By labeling and assigning these tasks, you ensure that all team members are aware of what needs to be done and who is responsible for each task.</p>
+</section>
+<section id="tracking-reviewer-comments-and-changes" class="level3" data-number="11.7.2">
+<h3 data-number="11.7.2" class="anchored" data-anchor-id="tracking-reviewer-comments-and-changes"><span class="header-section-number">11.7.2</span> Tracking reviewer comments and changes</h3>
+<p>When preparing a paper for publication, you often receive comments from multiple reviewers. You can use Issues to track these comments by creating a separate Issue for each set of reviewer comments. Each comment can be linked to specific changes in the manuscript, making it easy to ensure that all feedback is addressed. For instance, you can link a commit or pull request to a specific reviewer’s Issue, providing a clear record of how and when their feedback was incorporated.</p>
+</section>
+<section id="labeling-for-busy-pis" class="level3" data-number="11.7.3">
+<h3 data-number="11.7.3" class="anchored" data-anchor-id="labeling-for-busy-pis"><span class="header-section-number">11.7.3</span> Labeling for busy PIs</h3>
+<p>Research group leaders (or principal investigators, PIs) who work with multiple researchers across multiple projects can use labels to quickly categorize Issues based on their priority or type. For example, labels like <code>urgent</code> or <code>needs-review</code> can help PIs prioritize their time and ensure that critical tasks are addressed promptly.</p>
+</section>
+<section id="facilitating-peer-review" class="level3" data-number="11.7.4">
+<h3 data-number="11.7.4" class="anchored" data-anchor-id="facilitating-peer-review"><span class="header-section-number">11.7.4</span> Facilitating peer review</h3>
+<p>In collaborative projects, especially in academic or scientific settings, Issues can be used to manage peer review. Different reviewers can be assigned to specific Issues, and labels can be used to track the progress of each review. For instance, you might have labels like <code>in-review</code>, <code>approved</code>, or <code>revisions-needed</code> to indicate the status of each task.</p>
+<section id="example-linking-reviewer-comments-to-changes-in-a-paper" class="level4" data-number="11.7.4.1">
+<h4 data-number="11.7.4.1" class="anchored" data-anchor-id="example-linking-reviewer-comments-to-changes-in-a-paper"><span class="header-section-number">11.7.4.1</span> Example: Linking reviewer comments to changes in a paper</h4>
+<p>Imagine you’re revising a manuscript based on reviewer comments. You can create an Issue for each reviewer’s comments and link specific comments to corresponding changes in the manuscript. This might look like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Issue #12: Reviewer 1 Comments</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Comment 1: "Clarify the methodology section."</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Action: <span class="co">[</span><span class="ot">Link to commit that updates the methodology section</span><span class="co">]</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Issue #13: Reviewer 2 Comments</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Comment 2: "Add more references to related work."</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Action: <span class="co">[</span><span class="ot">Link to commit that adds additional references</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This approach ensures that all reviewer comments are addressed and provides a clear history of how the manuscript was revised in response to feedback.</p>
+</section>
+</section>
+</section>
+<section id="further-reading" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">11.8</span> Further Reading</h2>
 <ul>
 <li><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues">GitHub Docs: Tracking your work with issues</a></li>
 <li><a href="https://openscapes.github.io/series/core-lessons/github/github-issues.html">GitHub for project management - openscapes</a></li>
 </ul>
 </section>
-<section id="acknowledgements" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">11.8</span> Acknowledgements</h2>
+<section id="acknowledgements" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">11.9</span> Acknowledgements</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">

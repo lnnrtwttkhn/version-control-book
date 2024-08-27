@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -321,6 +321,7 @@ div.csl-indent {
   <li><a href="#annotated-tags" id="toc-annotated-tags" class="nav-link" data-scroll-target="#annotated-tags"><span class="header-section-number">10.1.3</span> Annotated Tags</a></li>
   <li><a href="#tags-workflow" id="toc-tags-workflow" class="nav-link" data-scroll-target="#tags-workflow"><span class="header-section-number">10.1.4</span> Tags workflow</a></li>
   <li><a href="#pushing-and-pulling-tags" id="toc-pushing-and-pulling-tags" class="nav-link" data-scroll-target="#pushing-and-pulling-tags"><span class="header-section-number">10.1.5</span> Pushing and pulling tags</a></li>
+  <li><a href="#tagging-a-previous-commit" id="toc-tagging-a-previous-commit" class="nav-link" data-scroll-target="#tagging-a-previous-commit"><span class="header-section-number">10.1.6</span> Tagging a previous commit</a></li>
   </ul></li>
   <li><a href="#github-releases" id="toc-github-releases" class="nav-link" data-scroll-target="#github-releases"><span class="header-section-number">10.2</span> GitHub Releases</a></li>
   <li><a href="#zenodo" id="toc-zenodo" class="nav-link" data-scroll-target="#zenodo"><span class="header-section-number">10.3</span> Zenodo</a>
@@ -402,21 +403,17 @@ Learning Objectives
 </dl>
 </div>
 </div>
-<p>This creates a lightweight tag named <code>v1.0</code> that points to the current commit at the time of creating the tag. If you create a lightweight tag in this way (without specifying another commit), it is created at the current commit (<code>HEAD</code>) in your working directory. If you want to tag another specific commit, you include the commit hash when creating the tag:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag v1.1 <span class="op">&lt;</span>commit-hash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Replace <code>commit-hash</code> with the actual hash of the commit that you want to tag.</p>
+<p>This creates a lightweight tag named <code>v1.0</code> that points to the current commit at the time of creating the tag. If you create a lightweight tag in this way (without specifying another commit), it is created at the current commit (<code>HEAD</code>) in your working directory.</p>
 <p>You can verify that the tag has been created by listing all the tags. To do this, use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="annotated-tags" class="level3" data-number="10.1.3">
 <h3 data-number="10.1.3" class="anchored" data-anchor-id="annotated-tags"><span class="header-section-number">10.1.3</span> Annotated Tags</h3>
 <p>Annotated tags in Git are tags that include <strong>additional metadata</strong> beyond a reference to a specific commit. When you create an annotated tag, Git stores information such as the tagger’s <strong>name</strong>, <strong>email</strong>, the <strong>date</strong> the tag was created, and a <strong>tagging message</strong>. This additional information provides context and details about the tag, making annotated tags more informative compared to lightweight tags. To create an annotated tag, you use <code>git tag</code> with the <code>-a</code> flag. To include a tagging message, the <code>-m</code> flag is used If you do not use the <code>-m</code> flag, your text editor of choice will open up. The tagging message can be a detailed description of the tag, such as release notes or significant changes. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0 <span class="at">-m</span> <span class="st">"Release version 1.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0 <span class="at">-m</span> <span class="st">"Release version 1.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Annotated tags are larger in size compared to lightweight tags due to the additional metadata.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git tag` flags">
@@ -444,7 +441,7 @@ Common <code>git tag</code> flags
 <h3 data-number="10.1.4" class="anchored" data-anchor-id="tags-workflow"><span class="header-section-number">10.1.4</span> Tags workflow</h3>
 <p>Once you created a lightweight or annotated tag, it will show up if you use <code>git tag</code> or <code>git tag -l</code>. To switch to a tag, you can use <code>git checkout</code> followed by the name of the tag:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout v1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout v1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now you are “on the tag” and your working directory reflects the state of the code of the commit the tag is pointing to.</p>
 <p>In general, it’s not advisable to make changes directly after switching to a tag. When you switch to a tag in Git, you enter a “detached <code>HEAD</code>” state, meaning that you’re not on any branch. In this state, any new commits you make won’t belong to any branch, and you might lose those changes if you switch away from the tag. If you need to make changes based on a specific tag, it’s often better to create a new branch from the tag and then make your changes on that branch.</p>
@@ -452,24 +449,50 @@ Common <code>git tag</code> flags
 </section>
 <section id="pushing-and-pulling-tags" class="level3" data-number="10.1.5">
 <h3 data-number="10.1.5" class="anchored" data-anchor-id="pushing-and-pulling-tags"><span class="header-section-number">10.1.5</span> Pushing and pulling tags</h3>
-<p>Pushing and pulling tags in Git involves syncing tags between your local repository and a remote repository, such as GitHub, as discussed in the <a href="github-intro.qmd">GitHub chapter</a>. To push a specific tag to the remote repository, use:</p>
+<p>Pushing and pulling tags in Git involves syncing tags between your local repository and a remote repository, such as GitHub, as discussed in the <a href="../chapters/remotes-intro.html">chapter about remote repositories</a>. To push a specific tag to the remote repository, use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>tag-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>tag-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Replace <code>&lt;tag-name&gt;</code> with the name of the tag you want to push.</p>
 <p>To push all tags to the remote repository, use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To fetch all tags from the remote repository (without merging), use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Alternatively, you can combine fetching and merging using:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When you pull or fetch tags, Git fetches tag references, but it does not automatically switch to the state of a specific tag. If you want to work on a specific tag after pulling, use <code>git checkout</code> to switch to that tag.</p>
+</section>
+<section id="tagging-a-previous-commit" class="level3" data-number="10.1.6">
+<h3 data-number="10.1.6" class="anchored" data-anchor-id="tagging-a-previous-commit"><span class="header-section-number">10.1.6</span> Tagging a previous commit</h3>
+<p>Sometimes, you may want to create a tag for a commit that is not the most recent one, such as tagging a significant point in your project’s history that was missed earlier. You can easily do this in Git by specifying the commit hash when creating the tag.</p>
+<p>Here’s how you can tag a specific (previous) commit:</p>
+<p><strong>1. Find the commit hash:</strong> First, you need to identify the commit you want to tag <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p><strong>2. Create the tag:</strong> Once you have the commit hash, you can create a tag for it. You can create either a lightweight or an annotated tag as discussed earlier. For example:</p>
+<p>Lightweight Tag:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode zsh code-annotation-code code-with-copy"><code class="sourceCode zsh"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag v1.0 <span class="op">&lt;</span>commit-hash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Annotated Tag:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode zsh code-annotation-code code-with-copy"><code class="sourceCode zsh"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0 <span class="at">-m</span> <span class="st">"Tagging version 1.0 for the old commit"</span> <span class="op">&lt;</span>commit-hash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Replace <code>&lt;commit-hash&gt;</code>with the actual hash of the commit you want to tag. By following these steps, you can tag any commit in your repository, even if it’s an older one.</p>
 </section>
 </section>
 <section id="github-releases" class="level2" data-number="10.2">
@@ -647,6 +670,12 @@ Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://
 coderefinery. 2023. <em>GitHub Without the Command Line</em>. coderefinery. <a href="https://coderefinery.github.io/github-without-command-line/">https://coderefinery.github.io/github-without-command-line/</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://github.com/coderefinery/github-without-command-line/tree/master" class="uri">https://github.com/coderefinery/github-without-command-line/tree/master</a>. Website: <a href="https://coderefinery.github.io/github-without-command-line/" class="uri">https://coderefinery.github.io/github-without-command-line/</a>.
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: Use <code>git log --oneline</code> to receive a list of previous commits along with their short hashes. Find the commit you want to tag and copy its hash (details <a href="../chapters/git-essentials.html#logging-commits">here</a>.)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
