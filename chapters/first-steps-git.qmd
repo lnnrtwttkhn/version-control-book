@@ -1,78 +1,70 @@
 ---
 categories: [beginner, basics]
+image: ../static/xkcd-git-commit.png
 abstract: |
-  Exploring the most important basic commands you will need.
+  In this chapter, we are exploring the most important basic Git commands that you will need in your everyday workflow.
+  This includes initializing Git repositories as well as adding and committing files to Git.
 ---
 
 # First steps with Git
 
-[{{< fa question-circle >}} Take the quiz!]({{< var quiz.basics >}}){.btn .btn-outline-secondary role="button"}
-[{{< fa desktop >}} UHH WS 23/24]({{< var uhh-ws23.basics >}}){.btn .btn-outline-secondary role="button"} 
 
 ::: {.callout-tip appearance="minimal"}
 <h5>Learning Objectives</h5>
 {{< include ../objectives/_objectives-firststeps.qmd >}}
 :::
 
-::: {.callout-note appearance="minimal"}
-<h5>Exercises</h5>
-{{< include ../exercises/_exercises-firststeps.qmd >}}
-:::
-
 ## Creating a Git repository 
 
-First, we will create a so-called "repository" (or "repo", for short).
+Let's *git* started!
+First, we will create a so-called **repository** (or **repo**, for short).
 A repository is a regular folder on your computer that is tracked by Git.
-The full history of commits of a project and information about who changed what, when is also stored by Git in this folder.
+The full history of changes of a project and information about who changed what and when is also stored by Git in this folder.
 
-To create your first Git repository, you need to initialize a folder as a Git repository.
+To create a new Git repository, you need to initialize a folder as a Git repository.
+First, let's create an empty folder using the command line^[:bulb: Tip: Use `mkdir FOLDER_NAME` (details [here](command-line.qmd#creating-a-folder))].
+Alternatively, you can create a new folder using the graphical user interface of your file browser.
 
-First, create an empty folder, for example using the [command line](command-line.qmd):
+Next, use the command line to navigate to the folder which you want to initialize as a Git repository
+^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#navigating-the-file-system))].
+Once you are in the desired folder, run the `git init` command to initialize the folder as a Git repository:
 
-```{bash}
-mkdir foldername
-```
-
-Alternatively, you can create a folder using the graphical user interface of your file browser.
-
-Next, navigate, using the Terminal, to the folder which you want to initialize as a Git repository.
-You can use the `cd` command to change directories.
-Once you are in the desired folder, run the `git init` command to initialize the folder as a Git repository.
-
-```{bash}
+```{zsh filename="Code"}
 git init
 ```
 
 You should see an output similar to:
 
-```{bash}
+```{zsh filename="Output"}
+#| code-copy: false
 Initialized empty Git repository in /foldername/.git/
 ```
 
 Congratulations on successfully initializing your first Git repository! :tada:
 
-Git is now able to track your file(s) and the changes you make to them in this folder.
+Git is now able to track your file(s) and the changes you make in this folder.
 You only need to use `git init` once per folder.
 
 You can also skip creating a folder manually and only use the `git init` command:
 
-```{bash}
-git init /Users/yourusername/Desktop/foldername
+```{zsh filename="Code"}
+git init /Users/yourusername/Desktop/foldername # <1>
 ```
+1. Replace `/Users/yourusername/Desktop/foldername` with the (absolute or relative) path to the folder which you want to initialize as a Git repository.
 
 Git will create an already initialized folder at the path and with the name you use.
-Check your current working directory to be sure that you create the Git repository in the desired location.
-You can use both absolute and relative paths as arguments to the `git init` command to specify the location of your Git repository.
+Check your current working directory to be sure that you create the Git repository in the desired location ^[:bulb: Tip: Use `pwd` (details [here](command-line.qmd#current-working-directory))].
+You can use both absolute and relative paths as arguments to the `git init` command to specify the location of your Git repository ^[:bulb: Tip: Details about absolute and relative paths [here](command-line.qmd#moving-between-folders)].
 
 Git can now track every file you move, create or change in this folder.
-You can use this folder, like any other normal folder on you computer.
+You can use this folder like any other normal folder on you computer.
 The only difference is the tiny but powerful folder called `.git` within it, which stores the full history of files and relevant metadata of your project, thereby enabling the tracking of your project progress.
 
 ::: {.callout-tip title="`.git` folder?" collapse="true"}
 If you want to verify that Git is tracking your folder, you can look for the `.git` folder.
 To do this navigate to the correct folder and use `ls -a` to receive a list of hidden files.
 If the folder has been initialized as a Git repository, you should see a folder called `.git`.
-You probably should not manually modify this folder, since doing so can corrupt your repository.
+Generally, you should not manually modify the `.git` folder, since doing so can corrupt your repository.
 :::
 
 ::: {.callout-warning title="Don't mess with the `.git` folder!" collapse="true"}
@@ -82,17 +74,45 @@ It's essential to only modify Git repositories through Git commands and establis
 In short: Don't mess with the `.git` folder.
 :::
 
+::: {.callout-warning title="Undoing `git init`" collapse="true"}
+
+Short version (if you know what you are doing): To remove Git from a folder run:
+
+```{zsh filename="Code"}
+rm -rf .git
+```
+
+Long version: You may find yourself in a situation where you want to undo the initialization of a Git repository.
+For example, you initialized the wrong folder as a Git repository.
+Undoing an initialization is straightforward but should be approached with caution.
+To completely remove the Git setup from a folder, you can delete the `.git` directory within it.
+This is where Git stores all the information about the repository, including the history of commits and configurations. 
+To do this, navigate to the directory of your Git project in the terminal and run the command `rm -rf .git`.
+This command forcefully (`-f`) removes (`rm`) the `.git` directory and all of its contents recursively (`-r`), effectively undoing the `git init` command. 
+Be aware that this action is irreversible and will permanently delete the repository's history and configurations, leaving you with just the working directory files (the files currently in your project folder).
+:::
+
+### Subfolders in a Git repository
+
+Generally, you can organize your Git-initialized project folder in any way you want (just like a regular folder on your computer), for example by creating subfolders within your repository.
+This allows for better organization of your files and directories, making it easier to manage larger projects.
+Git will also track the changes in these subfolders.
+Git commands are designed to work recursively from the parent directory in which `git init` was executed ^[:bulb: Tip: Details about parent and child directories [here](command-line.qmd##directory-and-file-structure)]. 
+This means that if you use Git commands within any of the child directories (subfolders) of the repository, those commands will still apply to the entire repository context. 
+For example, if you make changes to a file within a subfolder and commit those changes, Git will process this action in the context of the parent repository, ensuring that the entire project's history is maintained cohesively.
+
 ### Checking the status of the Git repository
 
 After you initialized a Git repository, you can use `git status` to receive the current file tracking status from Git.
 
-```{bash}
+```{zsh filename="Code"}
 git status
 ```
 
-You should see output similar to the following:
+If you initialized a new Git repository, you should see an output similar to the following:
 
-```{bash}
+```{zsh filename="Output"}
+#| code-copy: false
 On branch main
 
 No commits yet
@@ -102,14 +122,24 @@ nothing to commit (create/copy files and use "git add" to track)
 
 Let's unpack what this output means:
 
-- `On branch main` tell you that you are currently working on the "main" branch of your Git repository.
+###### `On branch main` {.unnumbered}
+
+This tells you that you are currently working on the `main` branch of your Git repository.
 A branch is like a separate line of development in your project.
 The default branch is often configured during the [setup](setup.qmd) of Git.
-- `No commits yet` means that there haven't been any changes or updates made to the repository yet.
+You can find out more about branches in a [later chapter](branches.qmd).
+
+###### `No commits yet` {.unnumbered}
+
+This  means that there haven't been any changes or updates made to the repository yet.
 You haven't created or saved any new versions of your project.
-- `nothing to commit (create/copy files and use "git add" to track)` indicates that there are no new changes to save or "commit" to the repository at this moment.
+The term "commit" will be introduced below.
+
+###### `nothing to commit (create/copy files and use "git add" to track)` {.unnumbered} 
+
+This indicates that there are no new changes to save or "commit" to the repository at this moment.
 Git is suggesting that if you want to start tracking changes, you should create or copy some files into the repository's directory and then use the `git add` command to tell Git to start keeping track of those files.
-Once you've added files with `git add`, you can then commit those changes to save them in your project's history.
+Once you've added files with `git add`, you can then commit those changes to save them in your project's history (for more details, see below).
 
 As you can see `git status` gives you an overview, which files Git is tracking for you. 
 The `git status` command is helpful for understanding the current state of your Git repository and we recommend to use it frequently, especially before adding or committing changes in files to the Git history (see below for more details).
@@ -136,9 +166,9 @@ For example, `git status -s -b` will display a short and concise output along wi
 
 ### Adding files to the Git repository
 
-In the next step, please create an empty text file within your repository, for example using the `touch` command:
+In the next step, please create an empty text file within your repository ^[:bulb: Tip: Use `touch` (details [here](command-line.qmd#creating-files))].
 
-```{bash}
+```{zsh filename="Code"}
 touch filename.txt
 ```
 
@@ -149,9 +179,10 @@ You can also use any other method or application for creating files.
 ### Checking the status of your Git repository again
 
 After you initialized a Git repository and added a file, you can use `git status` to receive the current file tracking status from Git again.
-This time, you should see output similar to the following:
+This time, you should see an output similar to the following:
 
-```{bash}
+```{zsh filename="Output"}
+#| code-copy: false
 On branch main
 
 No commits yet
@@ -166,14 +197,15 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ### Introduction to staging and committing
 
+We will now introduce central concepts of Git that might not be super intuitive if you learn about them for the first time, so read carefully.
 After initializing a folder with Git, it's capable of recording changes in your files, but it won't do so automatically. 
-In Git, the process of saving changes involves two steps: the staging area and commits.
-The **staging area** is like a preparation area where you gather and organize your changes before saving them.
+In Git, the process of saving changes involves two steps: the *staging area* and *commits*.
+The **staging area** is like a preparation area where you gather and organize your changes before saving them as a snapshot.
 You can choose which changes to include in a snapshot by adding them to the staging area using `git add`.
 Once you are happy with the changes in the staging area, you create a commit with `git commit`. 
 A **commit** is like taking a snapshot of your project at a specific moment, capturing all changes in the staging area and saving them as a new version of your project.
 Commits serve as milestones to track your project's progress and allow you to revert to previous versions if needed.
-As further introduction to the basic workflow of Git you can check out the last two minutes of the Youtube video: [Version control for reproducible research](https://www.youtube.com/watch?v=HMqUFlu0gFc&t=228s) from [BERD Academy](https://www.berd-nfdi.de/berd-academy/), which explains the process very vividly.
+As further introduction to the basic workflow of Git you can check out the last two minutes of the YouTube video: [Version control for reproducible research](https://www.youtube.com/watch?v=HMqUFlu0gFc&t=228s) from [BERD Academy](https://www.berd-nfdi.de/berd-academy/), which explains the process very vividly.
 
 ### Staging
 
@@ -183,13 +215,14 @@ It bridges between your modified files and the next commit.
 
 For example, you can stage a specific file like this:
 
-```{bash}
+```{zsh filename="Code"}
 git add filename.txt
 ```
 
-If you use `git status` again, your file(s) should now show up under "changes to be committed".
+If you use `git status` again, your file(s) should now show up under "Changes to be committed".
 
-```{bash}
+```{zsh filename="Output"}
+#| code-copy: false
 On branch main
 
 No commits yet
@@ -200,10 +233,10 @@ Changes to be committed:
 ```
 
 Your change to the file (or the addition of it to the project directory) is now **staged**.
-You do not have to add every file one by one, you can simply use the `-A` flag.
+Especially if you have many files, you don't have to add every file one by one, but you can simply use the `-A` flag.
 This means if you want to stage every file in your project for preparation of your next commit, you can use:
 
-```{bash}
+```{zsh filename="Code"}
 git add -A
 ```
 
@@ -228,7 +261,7 @@ Ignores errors when adding files, allowing the command to continue even if some 
 
 Now that the changes to your file(s) are staged, you are ready to **create a commit**.
 
-In simple terms, **a "commit" in Git is like taking a snapshot of your project** at a specific moment in time.
+In simple terms, **a commit in Git is like taking a snapshot of your project** at a specific moment in time.
 It's a way to save the changes you've made to your files.
 When you make a commit, you're saying, "I want to remember what my project looks like right now".
 Each commit in Git includes a record of the changes you've made, a description of what you did, and a unique identifier.
@@ -236,17 +269,18 @@ Commits are like milestones in your project's history, and they allow you to kee
 You can go back to any commit to see what your project looked like at that point or even undo changes if needed.
 Commits help you manage and document the history of your project.
 
-To create a commit, use the `git commit` command followed by the flag `-m` and a commit message **in quotes** that describes the changes you made.
+To create a commit, use the `git commit` command followed by the flag `-m` and a commit message *in quotes* that describes the changes you made.
 The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. 
-If you just use `git commit` without adding a commit massage, the editor of [your choosing](setup.qmd), opens up and lets you type in a commit message.
+If you just use `git commit` without adding a commit massage, the text editor of [your choosing](setup.qmd), opens up and lets you type in a commit message.
 
-```{bash}
+```{zsh filename="Code"}
 git commit -m "Add filename.txt file"
 ```
 
 You should see output similar to the following:
 
-```{bash}
+```{zsh filename="Output"}
+#| code-copy: false
 [main (root-commit) e9ea807] Add filename.txt file
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 filename.txt
@@ -254,20 +288,52 @@ You should see output similar to the following:
 
 Congratulations!
 You have successfully created your first commit in the Git repository. :tada:
+
 Commits are the core elements of version control and the "commit history" of your Git repository.
 They allow you to track the history of your project and easily revert changes if needed.
 
 You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
 
+#### Rock climbing analogy
+
+> Using a Git commit is like using anchors and other protection when climbing.
+If you’re crossing a dangerous rock face you want to make sure you’ve used protection to catch you if you fall.
+Commits play a similar role: if you make a mistake, you can’t fall past the previous commit.
+Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high!
+Like rock climbing protection, you want to be judicious in your use of commits.
+Committing too frequently will slow your progress; use more commits when you’re in uncertain or dangerous territory.
+Commits are also helpful to others, because they show your journey, not just the destination. 
+
+from [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html#git-commit)
+
+::: {.callout-tip collapse="true" title='FAQ: "I forgot to close the quotation marks of my commit message! What do I do?"'}
+
+In this situation, you command line probably looks like this:
+
+```{zsh, filename="Output"}
+#| code-copy: false
+git commit -m "Add filename.txt
+>
+>
+>
+```
+
+You can try one of the following solutions:
+
+1. Close the quotation marks by entering another `"`.
+1. Abort the `git commit` command by typing <kbd>Ctrl</kbd> + <kbd>C</kbd> simultaneously and repeat it (now with quotation marks closed).
+
+:::
+
 #### Commit description
 
-Though it's not required, it can be a good idea to add a more thorough description to the commit, in addition to the (shorter) commit message.
-While the commit message is usually a single short (less than 50 character) line summarizing the change, a more through description can be used to add more background information or helpful links that may help to understand the changes of the commit.
+Although it's not required, it can be a good idea to add a more thorough description to the commit, in addition to the (shorter) commit message.
+While the commit message is usually a single short (less than 50 character) line summarizing the change, a more thorough description can be used to add more background information or helpful links that may help to understand the changes of the commit.
 
 To add an additional description directly in the command line, add an extra `-m` after the commit message, followed by the description in quotes:
 
-```{bash}
-git commit -m "Title" -m "Description"
+```{zsh filename="Code"}
+git commit -m "Message" -m "Description"
 ```
 
 ::: {.callout-tip title="Common `git commit` flags" collapse="true"}
@@ -290,372 +356,6 @@ Modifies the previous commit.
 It allows you to add new changes to the previous commit or modify its commit message.
 :::
 
-### Logging commits
-
-To look at your past commits you can use the `git log` command.
-
-```{bash}
-git log
-```
-
-You should see output similar to the following:
-
-```{bash}
-commit e9ea80781ceed7cc3d6bff0c7bfa71f320ec1f60 (HEAD -> main)
-Author: Jane Doe <jane@example.com>
-Date:   Thu Jun 29 12:23:53 2023 +0200
-
-    Add filename.txt file
-```
-
-`git log` is useful because it provides a clear and organized view of a repository's commit history. 
-It allows you to track the evolution of a project over time by displaying detailed information about each commit, including changes made, authors, and timestamps. 
-The command can help identifying the source of bugs or issues by pinpointing the commit that introduced them.
-
-::: {.callout-tip title="Common `git log` flags" collapse="true"}
-`--oneline`: 
-Provides a condensed output with each commit displayed on a single line, showing the abbreviated commit hash and commit message.
-
-`-n` <number> or `--max-count=`<number>: 
-Limits the number of commits shown to the specified <number>. For example, git log -n 5 will display the latest 5 commits.
-
-`--since=`<date>: 
-Shows commits made after the specified <date>. You can use various date formats, such as specific dates or relative expressions like "2 weeks ago" or "yesterday".
-
-`--until=`<date>:
-Shows commits made before the specified <date>.
-
-`--author=`<pattern>: 
-Filters commits by the author's name or email using a specified <pattern>.
-:::
-
-### Comparing versions
-
-Another very handy feature is the `git diff` command.
-It allows you to **compare two different versions of your file(s)**.
-By default it shows you any uncommitted changes since the last commit.
-You can explore this by pasting text in your `.txt` file, for example:
-
-```{tex}
-Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. 
-Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-```
-
-You can then look at the changes using:
-
-```{bash}
-git diff
-```
-
-You should see output similar to the following:
-
-```{bash}
-+++ b/filename.txt
-@@ -0,0 +1 @@
-+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\ No newline at end of file
-```
-
-The output of `git diff` includes several pieces of information:
-
-- `+++` and `---` indicate the paths to the files being compared.
-- `@@ -0,0 +1 @@` is a unified diff header.
-It shows where the changes occurred.
-Note, that this line will look different for each change or commit.
-- `+` indicates added lines and `-` indicates removed lines.
-Lines that are identical between the two versions are not explicitly shown.
-
-You can also use `git diff` to **compare two specific commits**. 
-For example, if you want to compare the current state of your file with a commit from a few commits ago:
-
-```{bash}
-git diff <commit-A> <commit-B>
-```
-
-Instead of `<commit-A>` and `<commit-B>`, you use the commit hashes, that you can see when using `git log`.
-
-If you've staged some changes using `git add`, you can **compare the staged changes to your last commit**.
-
-```{bash}
-git diff --staged
-```
-
-If you only want to look at the changes of a specific file, you can specify that file.
-
-```{bash}
-git diff <filename>
-```
-
-This command can also be combined with additional flags and options.
-
-::: {.callout-tip title="Common `git diff` flags" collapse="true"}
-
-`--cached` or `--staged`: 
-Shows the changes that are staged (added) but not yet committed.
-
-`<commit>`:
-Displays the difference between the current working directory and a specific commit.
-For example, `git diff abc123` shows the changes compared to commit `abc123`.
-
-`<commit> .. <commit>`:
-Shows the difference between two specific commits.
-For example, `git diff abc123 def456` displays the changes between commit `abc123` and commit `def456`.
-
-`--name-only`:
-Outputs only the names of the files that have differences, without showing the actual changes.
-
-`--name-status`:
-Displays the names of files along with a status identifier that indicates if a file was added, modified, or deleted.
-
-`--color-words`:
-Highlights the differences at the word level, providing more granular detail.
-:::
-
-### Good commits
-
-You should not consider a commit as a general `Save` button, that you use to save all your recent changes in one go.
-Instead, each commit should ideally contain one isolated and complete change.
-For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
-
-This approach to commits, helps you down the line. 
-For example, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
-If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
-
-### Commit messages etiquette
-
-Git allows for a title or commit message with a 72 character limit and a description without such a limit.
-In general you should aim to write clear and short commit messages.
-There are different conventions across projects/persons but also some general guidelines, you can stick to. 
-
-It is standard to start the title with an **imperative verb** to indicate the purpose of the commit, for examople, "add", "fix" or "improve".
-It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary).
-Here is an example:
-
-```{bash}
-git commit -m "Implement user registration feature
-
-This commit adds the user registration functionality to the application. It includes the following changes:
-- Created a new 'register' route and view for user registration.
-- Added form validation for user input."
-```
-
-::: {.callout-tip title="Commit messages examples" collapse="true"}
-Some examples for commit messages, which stick to the etiquette:
-
-- `"Add 'favourites.txt' to the project"`
-- `"Fix typo in first recipe"`
-- `"Improve code comments for clarity"`
-- `"Fix critical security vulnerability (CVE-2022-1234)"`
-- `"Refactor database query functions for efficiency"`
-- `"Update installation instructions in README"`
-
-:::
-
-### Amending a commit
-
-The `git commit --amend` command is used to modify (or "amend") your most recent Git commit in your repository.
-It allows you to edit the commit message, add more changes to the commit, or simply adjust the last commit without creating a new commit.
-This flag can be useful if you forgot to include something in your last commit, made a typo or want to change your commit message.
-You can also combine `--amend` with other flags.
-To change the commit message of your last commit (without opening an editor) try:
-
-```{bash}
-git commit --amend -m "changed commit message"
-```
-
-Replace `"changed commit message"` with your actual improved commit message.
-
-If you want to to keep your commit message but include new changes to your file(s) in you last commit, you can use:
-
-```{bash}
-git commit --amend --no-edit
-```
-
-The `--no-edit` flag, lets you keep the commit message of your most recent commit.
-
-#### The repeated `--amend` workflow
-
-The "repeated amend" is a Git workflow where you avoid cluttering your history with numerous tiny commits.
-Instead, you gradually build up a "good" commit by amending it repeatedly. 
-Continue making small changes and amending the existing commit, refining it over time.
-This method keeps your Git history useful and looking good, making sure your commits tell a straightforward story of how your project evolved.
-
-This workflow can be useful when you're working on a new feature or a significant change and you might make several small adjustments to get it right. Instead of cluttering your history with numerous tiny commits for each tweak, you can use the "repeated amend" to gradually build up a well-polished commit that includes the entire feature.
-
-## What files can/should I track with Git?
-
-In principle, any file can be tracked with Git.
-However, to make use of the full potential of Git, it is recommended to mainly track plain text files with Git.
-
-### Code files
-
-Tracking code files is the most common and original use case for version control with Git.
-Git is well-suited for tracking changes in source code, and it's widely used by developers and teams for this purpose.
-Whether it's a single developer maintaining a personal project or a large team collaborating on a complex software system, Git excels at tracking code files throughout the development lifecycle.
-
-### Plain textfiles
-
-Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup that uses emails or shared Dropbox folders for "version control" (see the [introduction](intro-version-control.qmd) chapter). 
-However, to really be able to use the full set of features of Git, you should rely on plain text files for your project.
-This is because `.docx` files are saved as binary files, which makes meaningful outputs of the text inside it impossible for Git.
-"Plain textfiles" does not mean you have to use `.txt` files.
-Instead you can use formattable Markdown (`.md`) files.
-Markdown (`.md`) files are plain text files that contain formatting elements, making them more versatile than plain .txt files.
-Markdown allows you to add simple formatting like headings, lists, links, and images.
-
-### Microsoft office files
-As said earlier, it is not recommended to track Microsoft office files using Git, since Git treats `.docx` files as binary files.
-Binary files lack the inherent structure that allows Git to capture and display changes effectively.
-Git relies on understanding the differences between versions of files.
-With binary files, you won't benefit from the ability to view detailed textual differences (`git diff`) or effectively use [branches](branches.qmd).
-Collaborative work on binary files, such as simultaneous editing of a Word document, may result in complex [merge conflicts](branches.qmd) that are challenging to resolve.
-
-So while it is possible to track `.docx` files with Git, you will not be able to use the many features of Git, which rely on Git being able to display the file, since Git can only output the "zeros and ones" and not the text inside the `.docx` files.
-
-If you ever choose to track them regardless, you should use detailed commit messages, since you will not be able to easily look at the text content of past versions.
-You will also need to know about temporary word files. 
-For it's own version control system, Word creates temporary files in the folder of your word file.
-You should not track these files using Git, since Word creates a lot of them.
-To not stage or commit these files by accident, you can use the `.gitignore` file.
-
-## Ignoring files and folders: `.gitignore`
-
-`.gitignore` is a special file.
-It is used in Git to specify files and directories that should be ignored and not tracked.
-When you create a `.gitignore` file, place it inside your Git repository and specify filenames inside it.
-Git will then exclude these files and directories from being staged or committed, e.g. when using `git add -A`. which normally stages all your files.
-
-The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
-Files that can recreated from the code, like for example `.png` plots from R code, should also be included in your project's `.gitignore` file.
-Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project fules without distractions from unnecessary files.
-`.gitignore` can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches.
-Huge files, like big data files should also not be committed, since they can slow down working with your repository.
-To version control files with a big size, toolsl like [DataLad](https://www.datalad.org) are more appropriate.
-
-To create a `.gitignore` file from the command line, navigate to your repository and use the `touch` command.
-Alternatively, create the file in your favorite text editor.
-
-```{bash}
-touch .gitignore
-```
-
-`.gitignore` will be a hidden file, to make it show up in the terminal, you will have to use the `-a` flag in the `ls` command.
-For details on listing of files and folders, see the chapter on the [command line](command-line.qmd).
-
-```{bash}
-ls -a
-```
-
-Now you can write a filename or folder name inside it, to prevent Git from tracking it.
-
-### Global `.gitignore` file
-
-Instead of specifying files you want Git to ignore for each folder, you can also create global `.gitignore` file.
-To do this, you create a file named `.gitignore_global` (or any name you prefer) in your users's home directory (located, for example, at `/Users/yourusername`). 
-Then, you configure Git to use this global file by running:
-
-```{bash}
-git config --global core.excludesfile ~/.gitignore_global
-```
-
-After this setup, you can add common files to this list, that you want to ignore.
-These rules will apply across to *all* Git repositories on your computer.
-
-::: {.callout-tip title="Common wildcards" collapse="true"}
-
-As discussed in the [command line chapter](command-line.qmd) wildcards are special characters that represent patterns of filenames or directory names.
-They can be used to specify multiple files or directories that should be ignored by Git when tracking changes.
-Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.
-
-`*`: 
-Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.
-
-`?`:
-Matches a single character within a filename. For example, image?.png will match files like image1.png or imageA.png.
-
-`/`:
-Matches the root directory of the repository. For example, /config will match a directory named config only in the root of the repository.
-
-`[]` (Square Brackets):
-Matches any single character within the brackets. For example, file\[123\].txt will match file1.txt, file2.txt, or file3.txt.
-
-`!`:
-Negates a pattern and includes files that would otherwise be ignored. For example, !important.txt will exclude important.txt from being ignored, even if there's a wildcard pattern that matches it.
-:::
-
-::: {.callout-tip title="Common files to ignore in scientific settings" collapse="true"}
-- **Temporary files and output:** 
-Ignore files generated during analysis, like log files, temporary files, or intermediate data files.
-- **Data folders:** 
-Exclude large datasets or data stored locally.
-- **Environment-specific files:** 
-Exclude environment-specific files like `.env` files or `venv` folders used for local development setups.
-- **System-specific files:** 
-In macOS, ignore `.DS_Store` files, and in Windows, ignore `Thumbs.db` files.
-- **R:** 
-Ignore `.Rdata` files and `/Rplots.pdf` generated by R for plotting.
-- **Python:** 
-Ignore `.pyc` (Python compiled) files and `pycache` folders.
-- **LaTeX:**
-Ignore auxiliary files like `.aux`, `.log`, `.bbl`, and `.blg` files generated during LaTeX compilation.
-:::
-
-
-::: {.callout-tip title="Example `.gitignore` file for an R project" collapse="true"}
-
-```{bash} 
-
-# R-specific
-*.Rproj.user/
-*.Rhistory
-.RData
-.Rproj
-
-# R package specific
-.Rcheck/
-man/*.Rd
-NAMESPACE
-
-# Temporary files
-*.bak
-*.csv~
-*.html
-*.pdf
-
-# RMarkdown-specific
-*.knit.md
-*_cache/
-*_files/
-
-# R Markdown Notebook
-*.nb.html
-
-# RStudio Project Files
-*.Rproj
-
-# R Environment Variables
-.Renviron
-
-# R dcf file
-DESCRIPTION.meta
-
-# Mac-specific
-.DS_Store
-
-```
-:::
-
-## Bonus exercises
-
-Besides generally playing around with staging, committing, `git log` and `git diff`, you can also do these tasks:
-
-- Add a recipe to your project using the repeated `--amend` workflow
-- Initialize a new Git repository and create a `.docx` file in it. 
-Check out the results of `git diff` after writing in the file.
-- Use `ls -a` to see the temporary files.
-- Create a `.gitignore` file, where you put all temporary files Word creates. 
 
 ## Cheatsheet
 

@@ -13,11 +13,10 @@ project:
     navigate: true
 
 book:
-  title: "Version Control of Code and Data"
+  title: "The Version Control Book"
   subtitle: "Track, organize and share your work: An introduction to Git for research"
-  author:
-    - "Lennart Wittkuhn [{{< fa envelope >}}](mailto:lennart.wittkuhn@uni-hamburg.de) [{{< fa globe >}}](https://lennartwittkuhn.com/)"
-    - "Konrad Pagenstedt [{{< fa envelope >}}](mailto:konrad@pagenstedt.de)"
+  date: today
+  doi: 10.25592/uhhfdm.14148
   search: true
   repo-url: https://github.com/lnnrtwttkhn/version-control-book/
   repo-branch: main
@@ -35,16 +34,18 @@ book:
     - chapters/installation.qmd
     - chapters/setup.qmd
     - chapters/first-steps-git.qmd
+    - chapters/git-essentials.qmd
     - chapters/branches.qmd
-    - chapters/github-intro.qmd
+    - chapters/remotes-intro.qmd
+    - chapters/github-advanced.qmd
     - chapters/tags-and-releases.qmd
     # - chapters/project-management.qmd
     - chapters/issues.qmd
     - chapters/gui.qmd
-    - chapters/intermediate-commands.qmd
     - chapters/rewriting-history.qmd
     - misc/exercises.qmd
     - misc/cheatsheet.qmd
+    - misc/courses.qmd
     - misc/references.qmd
     - misc/acknowledgements.qmd
     - misc/contributing.qmd
@@ -53,8 +54,7 @@ book:
   # side navigation (https://quarto.org/docs/websites/website-navigation.html#side-navigation):
   sidebar:
     id: sidebar
-    title: "Version Control of Code and Data"
-    subtitle: "An introduction to Git for research"
+    title: "{{< var project.title >}}"
     logo: static/logo.svg
     search: true
     tools:
@@ -70,9 +70,9 @@ book:
     pinned: true
   page-footer:
     left: |
-      &copy; {{< var years >}} The Version Control Book Team
+      &copy; {{< var project.duration >}} [The {{< var project.title >}} Team]({{< var project.contributors >}})
     center:
-      - text: "Funded by the Digital and Data Literacy in Teaching Lab"
+      - text: "Acknowledgements"
         href: misc/acknowledgements.qmd
     right: |
       License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
@@ -81,7 +81,8 @@ book:
 
 format:
   html:
-    theme: default
+    theme: [default, custom.scss]
+    monofont: Fira Mono
     from: markdown+emoji
     link-external-newwindow: true
     toc: true
@@ -92,14 +93,14 @@ format:
     # layout (https://quarto.org/docs/reference/formats/html.html#layout):
     fig-cap-location: bottom
     page-layout: full
-    # title-block-style: default
+    title-block-style: default
     # code (https://quarto.org/docs/reference/formats/html.html#code):
     code-fold: false
     code-overflow: wrap
     code-line-numbers: false
     code-copy: true
     code-link: false
-    code-annotations: hover
+    code-annotations: below
     code-tools: false
     highlight-style: monokai
     # references:
@@ -112,6 +113,8 @@ format:
     footnotes-hover: true
     # includes:
     include-after-body: plausible.html
+    include-in-header: github-buttons.html
+    published-title: "Last updated"
     default-image-extension: svg
 
   pdf:
@@ -161,6 +164,4 @@ format:
     default-image-extension: png
     
 metadata-files:
-  # - _authors.yml
-  # - _affiliations.yml
   - _metadata.yml

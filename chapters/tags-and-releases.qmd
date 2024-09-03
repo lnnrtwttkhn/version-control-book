@@ -13,11 +13,6 @@ abstract: |
 {{< include ../objectives/_objectives-tags-releases.qmd >}}
 :::
 
-::: {.callout-note appearance="minimal"}
-<h5>Exercises</h5>
-{{< include ../exercises/_exercises-tags-releases.qmd >}}
-:::
-
 ## Tags
 
 ### Importance of Tags
@@ -226,6 +221,7 @@ To upload a Git repository to Zenodo, you first create a Zenodo account.
 On the Zenodo [start page](https://zenodo.org), you can click on "**Sign Up**" in the top right corner.
 Here you either can directly use your **GitHub account** to sign up, or sign up using **your email** (or other accounts) and link your GitHub account later on.
 To **link your GitHub account**, you can click on the arrow, next to your email, on the start page and select "GitHub".
+If you create an account on the [regular Zenodo site](https://zenodo.org), you will have to create a new account to use the [Zenodo Sandbox](https://sandbox.zenodo.org), since the accounts do not synchronize.
 
 ### Uploading a Git repository
 
@@ -241,8 +237,21 @@ To upload an older release, you have to download your repository as a `.zip` fil
 To upload a new release, visit the [Zenodo GitHub settings](https://sandbox.zenodo.org/account/settings/github/).
 Here you should see all your uploaded repositories, with the option to sync them by selecting the "on" button.
 If you now create a release, as discussed earlier, it will show up and be associated with a DOI.
+Please note that if you have created a release *before* syncing your repository, the release will not show up.
+You can delete the GitHub release without deleting your tag and create a new release, which is the going to appear on Zenodo. 
 
 For a pictured guide on how to upload a GitHub repository to Zenodo, you check out [this guide](https://coderefinery.github.io/github-without-command-line/doi/) from the [Code Refinery](https://coderefinery.org).
+
+#### Markdown DOI badge
+
+After you have created a release in your synced repo, a DOI badge should show up in your [Zenodo GitHub settings](https://sandbox.zenodo.org/account/settings/github/) next to the repository name.
+When you click on it there should be a section called **Markdown** with Markdown syntax below, for example:
+```
+[![DOI](https://sandbox.zenodo.org/badge/731953735.svg)](https://sandbox.zenodo.org/doi/10.5072/zenodo.71301)
+
+```
+
+You can copy and paste this syntax into your `README.md` file on GitHub to create a clickable DOI badge.
 
 ## Acknowledgements and further reading
 

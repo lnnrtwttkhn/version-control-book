@@ -42,4 +42,19 @@ table_cheatsheet <- function(name = "all") {
   return(df)
 }
 
-
+table_courses <- function() {
+  library("yaml")
+  library("here")
+  library("magrittr")
+  library("data.table")
+  dt_input <- data.table::rbindlist(yaml::read_yaml("_courses.yml")$courses, fill = TRUE)
+  dt_output <- dt_input %>%
+    setnames(., old = "name", new = "Course Name") %>%
+    setnames(., old = "number", new = "Number of Participants") %>%
+    setnames(., old = "audience", new = "Target Audience") %>%
+    setnames(., old = "date", new = "Date") %>%
+    setnames(., old = "location", new = "Location") %>%
+    .[, website := sprintf("[{{< fa display >}}](%s)", website)] %>%
+    setnames(., old = "website", new = "Website")
+  return(dt_output)
+}
