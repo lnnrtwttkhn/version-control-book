@@ -98,10 +98,22 @@ This can help a lot in the future when you need to figure out who to talk to abo
 Your username can be your **real name**, your **GitHub username**, or something informative about you.
 :::
 
+::: {.callout-caution title="Important: Consider your privacy preferences!"}
+
+When you set your username and email address in Git, keep in mind that this **information about you will be stored in the Git history** and associated with every change you make. 
+This means your username and email could be visible to anyone who has access to the repository, potentially revealing personal details such as your first and last name.
+
+If privacy is a concern, you might consider using a pseudonym or a dedicated email address for Git, especially if you are contributing to public repositories.
+For example, GitHub allows you to use a [noreply email address](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address) associated with your GitHub account to keep your personal email private.
+
+Always be mindful of the information you share, as it can be difficult to remove or change once it's added to a Git repository.
+
+:::
+
 ### Configuring the default name of the initial branch
 
 Git uses a concept called "branches" to allow working on different versions of the same project.
-Branches will be introduced in a [later chapter](chapters.qmd) of this book.
+Branches will be introduced in a [later chapter](branches.qmd) of this book.
 For now, you can think of branches as parallel versions of your repository contents.
 
 On most installations of Git, by default, the name "master" is used for the initial branch when creating a new Git repository.
@@ -402,6 +414,19 @@ If you then run the `git init` command to initialize a new Git repository (find 
 #| code-copy: false
 fatal: invalid gitfile format: /Users/user/.git
 ```
+
+::: {.callout-tip title="Use this guardrail *shortly before* you create your first Git repository." collapse="false"}
+When you implement this guardrail but haven't created your first Git repository yet, commands like `git config` will stop working as expected.
+To prevent this, we recommend the following procedure:
+
+1. Use `git config` to configure Git.
+1. Create the guardrail as explained in this section.
+1. Create your first Git repository (see [next chapter](#first-steps-git.qmd)).
+
+You can also set up this guardrail *after* you created your first Git repository in a suitable location.
+There is no required order, we only want to make sure Git works as expected and prevent you from creating a Git repository in your home directory.
+
+:::
 
 Thanks to [Eamon Caddigan](https://social.coop/@eamon/112434377857903339) for this tip!
 

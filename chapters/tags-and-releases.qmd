@@ -49,13 +49,6 @@ git tag v1.0 # <1>
 
 This creates a lightweight tag named `v1.0` that points to the current commit at the time of creating the tag.
 If you create a lightweight tag in this way (without specifying another commit), it is created at the current commit (`HEAD`) in your working directory.
-If you want to tag another specific commit, you include the commit hash when creating the tag:
-
-```{bash}
-git tag v1.1 <commit-hash>
-```
-
-Replace `commit-hash` with the actual hash of the commit that you want to tag.
 
 You can verify that the tag has been created by listing all the tags.
 To do this, use:
@@ -117,7 +110,7 @@ They are particularly useful for creating quick links to relevant commits in a m
 
 ### Pushing and pulling tags
 
-Pushing and pulling tags in Git involves syncing tags between your local repository and a remote repository, such as GitHub, as discussed in the [GitHub chapter](github-intro.qmd).
+Pushing and pulling tags in Git involves syncing tags between your local repository and a remote repository, such as GitHub, as discussed in the [chapter about remote repositories](remotes-intro.qmd).
 To push a specific tag to the remote repository, use:
 
 ```{bash}
@@ -146,6 +139,37 @@ git pull --tags
 
 When you pull or fetch tags, Git fetches tag references, but it does not automatically switch to the state of a specific tag.
 If you want to work on a specific tag after pulling, use `git checkout` to switch to that tag.
+
+### Tagging a previous commit
+
+Sometimes, you may want to create a tag for a commit that is not the most recent one, such as tagging a significant point in your project's history that was missed earlier.
+You can easily do this in Git by specifying the commit hash when creating the tag.
+
+Here's how you can tag a specific (previous) commit:
+
+**1. Find the commit hash:**
+First, you need to identify the commit you want to tag
+^[:bulb: Tip: Use `git log --oneline` to receive a list of previous commits along with their short hashes. Find the commit you want to tag and copy its hash (details [here](git-essentials.qmd#logging-commits).)].
+
+**2. Create the tag:**
+Once you have the commit hash, you can create a tag for it.
+You can create either a lightweight or an annotated tag as discussed earlier. 
+For example:
+
+Lightweight Tag:
+
+```{zsh filename="Code"}
+git tag v1.0 <commit-hash> # <1>
+```
+
+Annotated Tag:
+
+```{zsh filename="Code"}
+git tag -a v1.0 -m "Tagging version 1.0 for the old commit" <commit-hash> # <1>
+```
+
+Replace `<commit-hash>`with the actual hash of the commit you want to tag.
+By following these steps, you can tag any commit in your repository, even if it's an older one. 
 
 ## GitHub Releases
 
@@ -221,6 +245,7 @@ To upload a Git repository to Zenodo, you first create a Zenodo account.
 On the Zenodo [start page](https://zenodo.org), you can click on "**Sign Up**" in the top right corner.
 Here you either can directly use your **GitHub account** to sign up, or sign up using **your email** (or other accounts) and link your GitHub account later on.
 To **link your GitHub account**, you can click on the arrow, next to your email, on the start page and select "GitHub".
+If you create an account on the [regular Zenodo site](https://zenodo.org), you will have to create a new account to use the [Zenodo Sandbox](https://sandbox.zenodo.org), since the accounts do not synchronize.
 
 ### Uploading a Git repository
 
@@ -236,8 +261,21 @@ To upload an older release, you have to download your repository as a `.zip` fil
 To upload a new release, visit the [Zenodo GitHub settings](https://sandbox.zenodo.org/account/settings/github/).
 Here you should see all your uploaded repositories, with the option to sync them by selecting the "on" button.
 If you now create a release, as discussed earlier, it will show up and be associated with a DOI.
+Please note that if you have created a release *before* syncing your repository, the release will not show up.
+You can delete the GitHub release without deleting your tag and create a new release, which is the going to appear on Zenodo. 
 
 For a pictured guide on how to upload a GitHub repository to Zenodo, you check out [this guide](https://coderefinery.github.io/github-without-command-line/doi/) from the [Code Refinery](https://coderefinery.org).
+
+#### Markdown DOI badge
+
+After you have created a release in your synced repo, a DOI badge should show up in your [Zenodo GitHub settings](https://sandbox.zenodo.org/account/settings/github/) next to the repository name.
+When you click on it there should be a section called **Markdown** with Markdown syntax below, for example:
+```
+[![DOI](https://sandbox.zenodo.org/badge/731953735.svg)](https://sandbox.zenodo.org/doi/10.5072/zenodo.71301)
+
+```
+
+You can copy and paste this syntax into your `README.md` file on GitHub to create a clickable DOI badge.
 
 ## Acknowledgements and further reading
 

@@ -3,22 +3,14 @@ categories: [intermediate]
 image: ../static/pen-to-square-solid.svg
 abstract: |
   Dive into Git's history-rewriting features for cleaner commits and efficient collaboration.
-engine: knitr
-execute:
-  eval: false
 ---
 
 # Rewriting History
 
-::: {.callout-tip appearance="minimal"}
-<h5>Learning Objectives</h5>
-{{< include ../objectives/_objectives-rewriting-history.qmd >}}
-:::
-
 ## How to avoid accidental commits
 
 Considering rewriting Git history?
-This usually comes into play when there are errors or changes needed in the initial commits.
+This usually comes into play when there are errors or changes needed in previous commits.
 There are a few tricks to avoid committing things you don't want committed:
 
 1. Avoid the catch-all commands `git add .` and `git commit -a`.
@@ -31,6 +23,192 @@ This is the exact diff that `git commit` will produce as long as you don't use t
 
 1. You can use also a visual program like [GitHub Desktop](https://desktop.github.com) or [GitKraken](https://desktop.github.com) to commit changes. 
 Visual programs generally make it easier to see exactly which files will be added, deleted, and modified with each commit.
+
+## Removing changes or files
+
+::: {.callout-warning title="Be careful about data loss!"}
+This section introduces Git commands that may delete changes in your repository beyond recovery.
+Especially if you apply them for the first time, take your time and only execute a command if you are certain about its consequences.
+Better yet, experiment with these commands in a separate test repository, not in a repository where you keep your most important work.
+:::
+
+### Discarding changes in the working directory
+
+Sometimes you might want to revert files back to the state of your last commit.
+For example, this can be useful when you realize that the recent changes you made to a file have introduced an error.
+You can use `git restore` to **discard changes in the working directory** and revert the files to the state they were in when you last committed them.
+
+```{zsh filename="Code"}
+git restore <FILE>
+```
+
+It is also possible to **revert all files in your repository** to the state of your last commit using:
+
+```{zsh filename="Code"}
+git restore .
+```
+
+### Unstaging files
+
+You can also use `git restore` with the `--staged` flag to unstage files, you have previously added to the staging area.
+This can be useful when you accidentally staged files or want to reorganize your commit.
+
+```{zsh filename="Code"}
+git restore --staged <FILE>
+```
+
+To remove all files from the staging area use:
+
+```{zsh filename="Code"}
+git restore --staged .
+```
+
+### Deleting files
+
+If you want to delete files from your computer and your Git repository, you can use the `git rm` command.
+This command removes files from your working directory and automatically stages this change for your next commit.
+The workflow would go like this:
+
+```{zsh filename="Code"}
+git rm <FILE>
+```
+
+```{zsh filename="Code"}
+git commit -m "Delete file <FILE>"
+```
+
+::: {.callout-tip title="Find out more: Common `git rm` flags" collapse="true"}
+
+`-f` or `--force`:
+This flag forces the removal of files, even if they are modified.
+
+`-r` or `--recursive`:
+Use this flag to remove directories and their contents. 
+
+`--cached`:
+This flag removes files from the staging area but preserves them in the working directory. 
+
+`-n` or `--dry-run`:
+With this flag, Git will only show you what would be removed but will not actually perform the deletion. 
+
+:::
+
+### "Untracking" files
+
+Sometimes, you may have files in your Git repository that you no longer want to track or include in future commits, but want to keep in your local filesystem.
+It makes sense to include these files in a `.gitignore` file, as discussed in the chapter on [first steps with Git](first-steps-git.qmd).
+You could also use `git rm` in combination with the `--cached` flag.
+
+```{zsh filename="Code"}
+git rm --cached <FILE>
+```
+
+### Reverting commits
+
+The `git revert` command is used to create a **new commit that undoes the changes made in a previous commit**.
+It's a way to safely reverse the effects of a specific commit without actually removing that commit from the commit history. 
+It requires specifying the commit hash you want to revert.
+To look at the hashes of your commits, you can use the `git log` command, as described in the chapter on [first steps with Git](first-steps-git.qmd).
+If you have a specific commit that you want to revert, you would use a command like:
+
+```{zsh filename="Code"}
+git revert <commithash>
+```
+
+This will create a new commit that effectively undoes the changes made in the specified commit.
+This new commit will have the opposite changes, effectively canceling out the changes from the original commit.
+You might need to resolve a merge conflict, if the changes you want to revert conflict with changes in subsequent commits.
+By default the commit message will be `revert <commit message of reverted commit>`. 
+However, Git will open an editor for you to change this message, if you don't specify it otherwise.
+
+::: {.callout-tip title="Find out more: What are hashes?" collapse="true"}
+In Git, a commit hash, also known as a commit ID or SHA-1 hash, is a unique identifier for a specific commit in a Git repository.
+It's a 40-character hexadecimal string that represents the contents and history of that commit.
+Each commit in a Git repository has a unique hash.
+:::
+
+::: {.callout-tip title="Find out more: Common `git revert` flags" collapse="true"}
+
+`-n` or `--no commit`:
+Prevents Git from automatically creating a new commit after reverting changes. 
+It stages the changes, allowing you to make additional modifications or review them before committing.
+
+`-m <parent-number>`:
+When dealing with a merge commit, this flag specifies which parent commit to use as the source for reverting. 
+By default, Git uses the first parent (main branch), but you can specify another parent by providing its number.
+
+`--no-edit`:
+This flag prevents the text editor from opening for editing the commit message, making it useful when you want to keep the default commit message.
+:::
+
+### Resetting to a commit
+
+If you want to reset your repository to a commit that was made in the past, you can use the `git reset` command.
+
+To get an overview of your past commits you can either use `git log` or `git reflog`.
+Both commands should get you an overview of your past commits. 
+For example:
+
+```{zsh filename="Code"}
+git log --oneline
+```
+
+will give you an output like:
+
+```{zsh filename="Output"}
+#| code-copy: false
+25a51e8 Update README.md
+b7f3a12 Add new feature X
+8d76a45 Merge branch 'feature-branch'
+2f0e73b Implement new functionality
+```
+
+Using `git reset <commit>` will **undo all the changes you made after the specific commit** you picked.
+Your "branch pointer" will move to the specified commit, and changes after that commit will be uncommitted and moved back to the working directory. For example:
+
+```{zsh filename="Code"}
+git reset 8d76a45
+```
+
+However, these changes are still present in your working directory, so if you want to discard them completely, you can use add the `--hard` flag:
+
+```{zsh filename="Code"}
+git reset --hard <commithash>
+```
+
+This will not only reset your "branch pointer" but also discard all changes in your working directory and staging area since the specified commit. 
+It effectively resets your working directory to the state of the chosen commit.
+
+::: {.callout-warning title="Be careful about data loss!"}
+Please be careful when using the `git reset --hard` command!
+This command reset your working directory to the state of the chosen previous commit.
+This will delete changes beyond recovery, unless you can retrieve these changes from another location, for example a remote repository like GitHub.
+:::
+
+::: {.callout-tip title="Find out more: `git log` vs. `git reflog`" collapse="true"}
+`git log` shows the commit history, while `git reflog` shows a log of all changes to branches, including resets and other adjustments. 
+Think of `git log` as a timeline of commits, and `git reflog` as a detailed diary of all recent changes, even those that alter commit history, providing a safety net for recovery.
+:::
+
+::: {.callout-tip title="Find out more: Common `git reset` flags" collapse="true"}
+`--soft`: 
+Resets the branch pointer to the specified commit but keeps changes staged. This allows you to rework the changes and create a new commit.
+
+`--mixed` (default): 
+Resets the branch pointer to the specified commit and unstages changes. Changes are kept in your working directory, allowing you to modify them before committing.
+
+`--hard`: 
+Resets the branch pointer to the specified commit, unstages changes, and discards changes in your working directory. Use with caution, as it can lead to data loss.
+
+`--merge`:
+Resets the branch pointer and the index to the specified commit, but keeps changes in your working directory. This is useful in aborting a merge.
+
+`--keep`: 
+Resets the branch pointer and index to the specified commit but refuses to do so if there are uncommitted changes in the working directory.
+
+`--patch` or `-p`: 
+Allows you to interactively choose changes to reset, similar to the `git add -p` command for staging changes.
+:::
 
 ## Purging a file from your repository's history
 
