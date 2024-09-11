@@ -79,19 +79,7 @@ By associating your changes with your username and email, it allows others (incl
 You will be able to connect Git to remote repositories like GitHub using this email address. 
 So it makes sense to set your email address to the one you use (or will use) to create a GitHub account.
 
-Setting your username and email address is a one-time setup process on a new computer, but you can always update them later, if needed. 
-To perform this configuration using the command line, use the following command:
-
-```{bash filename="Code"}
-git config --global user.name "Jane Doe" # <1>
-git config --global user.email jane@example.com # <2>
-```
-1. Replace `"Jane Doe"` with your own username.
-1. Replace `jane@example.com` with your own email address.
-
-Make sure to replace `"Jane Doe"` with your own username and `jane@example.com` with your own email address.
-
-::: {.callout-tip title="FAQ: Which username should I use for Git?" collapse="true"}
+::: {#tip-setup-username .callout-tip title="Which username should I use for Git?" collapse="true"}
 Your username will be attached to the changes you track with Git, so **choose something that is meaningful and informative** for others and yourself in the future.
 After all, one main purpose of Git is to be able to track of *who* made which changes and when.
 This can help a lot in the future when you need to figure out who to talk to about a particular change.
@@ -109,6 +97,16 @@ For example, GitHub allows you to use a [noreply email address](https://docs.git
 Always be mindful of the information you share, as it can be difficult to remove or change once it's added to a Git repository.
 
 :::
+
+Setting your username and email address is a one-time setup process on a new computer, but you can always update them later, if needed. 
+To perform this configuration using the command line, use the following command:
+
+```{zsh filename="Code"}
+git config --global user.name "Jane Doe" # <1>
+git config --global user.email jane@example.com # <2>
+```
+1. Replace `"Jane Doe"` with your own username.
+1. Replace `jane@example.com` with your own email address.
 
 ### Configuring the default name of the initial branch
 
