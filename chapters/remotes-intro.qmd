@@ -450,13 +450,22 @@ You can still add a `README.md` and other files through the GitHub interface aft
 ## Adding a remote to your local repository
 
 Let's assume that you have a local Git repository on your computer that you want to upload to a remote repository hosting service.
-To initialize an existing repository as a remote repository, you first need to create a new repository on your chosen hosting service (e.g., GitHub, GitLab, Bitbucket), as explained above.
+To initialize an existing repository as a remote repository, you first need to create a new repository on your chosen hosting service (for example, GitHub or GitLab), as explained above.
+In the next step, you will need the URL of your remote repository.
 
-To add a remote repository to your local Git repository, navigate to your repository using the command line ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#moving-between-folders))] and use the `git remote` command:
+::: {#imp-authentication-url .callout-important title="HTTPS vs. SSH: Different remote URL!" collapse="false"}
+Depending on your authentication method (SSH or PAT), you need to use a different URL when adding a remote repository to your local Git project.
+When you authenticate by providing a Personal Access Token (PAT) or (formerly) a username and password, you use the HTTPS (`https://`) URL of your remote repository.
+When you authenticate using SSH keys, you use the SSH (`git@github.com`) URL of your remote repository.
+:::
+
+To add a remote repository to your local Git repository, navigate to your repository using the command line ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#moving-between-folders))] and use the `git remote` command in combination with the URL of your remote repository.
 
 ::: {.panel-tabset}
 
 ## {{< fa brands github >}} GitHub
+
+Note the different URLs for HTTPS and SSH here (see @imp-authentication-url):
 
 ```{zsh filename="Code (HTTPS)"}
 git remote add origin https://github.com/user-name/repo-name.git
@@ -468,27 +477,26 @@ git remote add origin git@github.com:user-name/repo-name.git
 
 Replace `user-name` with the repository's user name and `repo-name` with the name of the repository.
 
-## {{< fa brands gitlab >}} MPIB GitLab
+## {{< fa brands gitlab >}} GitLab
+
+Note the different URLs for HTTPS and SSH here (see @imp-authentication-url):
 
 ```{zsh filename="Code (HTTPS)"}
-git remote add origin https://git.mpib-berlin.mpg.de/user-name/repo-name.git
+git remote add origin https://gitlab.com/user-name/repo-name.git
 ```
 
 ```{zsh filename="Code (SSH)"}
-git remote add origin git@git.mpib-berlin.mpg.de:user-name/repo-name.git
+git remote add origin git@gitlab.com:user-name/repo-name.git
 ```
 
 Replace `user-name` with the repository's user name and `repo-name` with the name of the repository.
 
 :::
 
-::: {.callout-important collapse="false" title="HTTPS vs. SSH: Different remote URL!"}
-Note, that depending on whether you are connecting to the remote repository via HTTPS or SSH, you have to use a different URL for your remote repository!
-:::
+This command is essentially telling Git:
 
-Replace `<remote-repository-URL>` with the URL of your remote repository (HTTPS or SSH).
-This command is essentially telling Git: 
-“Add a remote repository named origin with the specified location (URL).”
+> "Add a remote repository named `origin` with the specified location (URL)."
+
 After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository.
 
 ::: {.callout-tip collapse="false" title="What is `origin`?"}
@@ -508,14 +516,13 @@ git remote -v
 
 Below is an example output, in this case for the Git repository for this book.
 This output basically tells you that one remote called `origin` is configured, it shows the URL for the remote repository on GitHub, and indicated that this remote is used both to fetch changes from and push changes to GitHub.
+Can you tell from the URL if HTTPS or SSH is used? ^[:bulb: Solution: It's SSH. The URL typically starts with `git@`.]
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 origin  git@github.com:lnnrtwttkhn/version-control-book.git (fetch)
 origin  git@github.com:lnnrtwttkhn/version-control-book.git (push)
 ```
-
-You can tell from the URL that in this case the remote was configured using SHH.
 
 ### Editing the remote URL
 
@@ -532,16 +539,18 @@ git remote rm origin
 2. Add the remote again with a different URL:
 
 ```{zsh filename="Code"}
-git remote add origin <remote-repository-URL>
+git remote add origin <remote-repository-URL> # <1>
 ```
+1. Replace `<remote-repository-URL>` with the URL of your remote repository.
 
 #### Set a new URL
 
 You can also directly update the URL:
 
 ```{zsh filename="Code"}
-git remote set-url origin <remote-repository-URL>
+git remote set-url origin <remote-repository-URL> # <1>
 ```
+1. Replace `<remote-repository-URL>` with the URL of your remote repository.
 
 There is no feedback following this command.
 To check if the new URL was set as expected, you can enter `git remote -v`.
