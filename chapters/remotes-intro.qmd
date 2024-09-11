@@ -336,6 +336,9 @@ Offers administrative access to the entire organization, including managing team
 
 ## Creating a remote repository
 
+To synchronize the Git repository on your computer with a remote repository on a repository hosting service like GitHub or GitLab, you first need to create a remote repository on the platform, usually through the browser.
+In this section, you will find detailed instructions on how to create a remote repository on GitHub or GitLab.
+
 ::: {.panel-tabset}
 
 ## {{< fa brands github >}} GitHub
@@ -355,13 +358,13 @@ The description will be shown on the main page of your GitHub repository and can
 A public repository can be viewed by anyone worldwide even if they don't have a GitHub account.
 It's like a public website on the internet.
 A private repository can only be viewed by you and any collaborators that you specifically invite to your repository.
-For more details about public vs. private repositories, see the box below.
+For more details about public vs. private repositories, see @tip-public-private below.
 
 1. At last, you can choose to initialize your repository with a few files, specifically a **README** file (find out more in the [next chapter](github-advanced.qmd#readme-file)), a template **`.gitignore`** file (see the chapter on ["First steps with Git"](first-steps-git.qmd)), or a **license** file.
 
 1. Finally, click the green **"Create repository"** button at the bottom of the page to create a new repository with these settings.
 
-::: {.callout-tip title="Find out more: Public or private repository?" collapse="true"}
+::: {#tip-public-private .callout-tip title="Find out more: Public or private repository?" collapse="true"}
 When you create a new repository on GitHub, you can **control who can see it** by choosing if it's public or private.
 
 If it's public, anyone on the internet can access it.
@@ -372,7 +375,7 @@ If you have admin permissions for a repository, you can change its visibility.
 This means you can later still make a public repository private and private repository public, if needed.
 :::
 
-![Screenshot of creating a new repository](../static/github-newrepository.png){#fig-newrepo}
+![Screenshot of creating a new repository on GitHub](../static/github-newrepository.png){#fig-newrepo}
 
 #### Repository settings
 
@@ -388,7 +391,7 @@ In the "Collaborators" tab of the settings, it is possible to add accounts which
 
 ## {{< fa brands gitlab >}} GitLab
 
-Creating a new repository in GitLab is quite similar to GitHub.
+Creating a new repository on GitLab is quite similar to GitHub.
 GitLab calls *repositories* mostly *projects*, but you can use these terms interchangeably. 
 After logging into your GitLab account, you need to follow these steps:
 
@@ -436,12 +439,12 @@ Click the "Create project" button to create your new repository.
 :::
 
 ::: {.callout-warning title="Don't initialize a remote repository with any files, if you want to upload a local repository!" collapse="false"}
-If you want to upload your local repository to an remote repository, make sure that you create the repository **without initializing it with a `README` file** or any other files.
+If you want to upload your local repository to a remote repository, make sure that you create the repository **without initializing it with a `README` file** or any other files.
 Initializing the repository with a `README` or any other files creates a commit in the repository. 
 When you try to push your local repository, you will encounter conflicts because the histories of your local and remote repositories will differ.
 
-To avoid this, create the remote repository empty.
-You can add a `README.md` and other files after pushing your local repository.
+To avoid this, **create the remote repository empty**.
+You can still add a `README.md` and other files through the GitHub interface after pushing your local repository.
 :::
 
 ## Adding a remote to your local repository
