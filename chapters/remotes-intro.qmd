@@ -103,11 +103,14 @@ You might not always be affiliated with them.
 
 ### Authentication
 
-In order to connect your local Git repository with a remote repository, you need to establish an authentication method.
+In order to connect your local Git repository to a remote repository, you need to establish an authentication method.
+Authentication is needed to access and work with repositories that are stored on remote repositories.
+It's kind of like showing your ID to prove who you are before entering a restricted area.
+It's necessary to make sure only the right people or programs can access and do things on GitHub, keeping everything safe and organized.
 Depending on the platform there are different authentication methods available.
 We introduce the most common authentication methods below, separately for each platform.
 
-#### Secure Shell Protocol (SSH)
+### Secure Shell Protocol (SSH)
 
 The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.
 Its most notable applications are remote login and command-line execution.
@@ -115,26 +118,141 @@ For more details on SSH, see [Wikipedia](https://en.wikipedia.org/wiki/Secure_Sh
 
 You can read and write data in remote repositories like GitHub and GitLab using SSH.
 When you connect with SSH, you verify your identity using a private key file stored on your computer.
-We provide basic instructions below.
+We provide basic instructions that are applicable to both GitHub and GitLab below.
 For more detailed instructions, see the [GitHub Documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh).
+The most basic SSH key setup works like this:
+
+1. Generating a new SSH key
+1. Copying the SSH key to your clipboard
+1. Adding the SSH key to your GitHub or GitLab account
+
+#### Generating a new SSH key
+
+1. Open the Terminal.
+2. Insert the code below, changing the example email to your email address.
+
+```{zsh filename="Code"}
+ssh-keygen -t ed25519 -C "your_email@example.com" # <1>
+```
+1. Replace `your_email@example.com` with your email address.
+
+This will result into an output similar to this:
+
+```{markdown filename="Output"}
+#| code-copy: false
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/user/.ssh/id_ed25519): 
+```
+
+3. When asked to "Enter a file in which to save the key", we recommend to just press {{< kbd Enter >}} to use the default location.
+
+::: {.callout-caution title="SSH key already exists?" collapse="true"}
+
+If the SSH key already exists, you will get an output similar to this:
+
+```{markdown filename="Output"}
+#| code-copy: false
+/Users/user/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? n
+```
+
+If you don't want to overwrite the existing key, type `n` and hit {{< kbd Enter >}}.
+You can now use the existing key and move on with the next step (adding the SSH key to your remote repository hosting service).
+
+:::
+
+4. When prompted, enter a secure passphrase.
+If you don't want to provide a passphrase, just hit {{< kbd Enter >}} twice.
+
+```{zsh filename="Code"}
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+```
+
+::: {.callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
+If someone gets into your computer, they can use your SSH keys to access all systems that use those keys.
+Adding a passphrase to your SSH key makes it more secure.
+To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent.
+For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
+:::
+
+#### Copying the SSH key to your clipboard
+
+Now copy the SSH public key to your clipboard.
+The following command will copy the contents of the `id_ed25519.pub` file to your clipboard (assuming your SSH key is in the default location).
+Select the right command for your operating system and enter it into the Terminal.
+
+::: {.panel-tabset}
+
+## {{< fa brands apple >}} macOS
+
+```{zsh filename="Code"}
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+If the `pbcopy` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+## {{< fa brands windows >}} Windows
+
+```{zsh filename="Code"}
+clip < ~/.ssh/id_ed25519.pub
+```
+
+If the `clip` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+## {{< fa brands linux >}} Linux
+
+```{zsh filename="Code"}
+cat ~/.ssh/id_ed25519.pub
+```
+
+Then select and copy the contents of the `id_ed25519.pub` file displayed in the terminal to your clipboard.
+
+Alternatively, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
+
+:::
+
+#### Adding the SSH key to your account
+
+Finally, copy the public SSH key your account on the remote repository hosting service.
 
 ::: {.panel-tabset}
 
 ## {{< fa brands github >}} GitHub
 
-### Connecting to GitHub {.unnumbered}
+1. In the upper-right corner of any page on GitHub, click your profile photo, then click **Settings**.
+1. In the "Access" section of the sidebar, click **SSH and GPG keys**.
+1. Click **New SSH key** or **Add SSH key**.
+1. In the "Title" field, add a descriptive label for the new key.
+For example, if you're using a personal laptop, you might call it "Personal laptop".
+1. Choose the type of key, either authentication or signing.
+Usually, you want to select "authentication" here.
+1. In the "Key" field, paste your public key.
+1. Click **Add SSH key**.
+1. If prompted, confirm access to your GitHub account.
 
-GitHub authentication is needed to access and work with repositories that are stored on GitHub.
-It is kind of like showing your ID to prove who you are before entering a restricted area.
-It's necessary to make sure only the right people or programs can access and do things on GitHub, keeping everything safe and organized.
+## {{< fa brands gitlab >}} MPIB GitLab
 
-For security reasons it is no longer possible to authenticate yourself using only your GitHub email and password.
-There are multiple authentication methods which offer different advantages and drawbacks.
-In this section, we will briefly introduce one of the two most common authentication methods: Personal Access Tokens.
+1. In the upper-left on GitLab, click your profile avatar, then click **Preferences**.
+1. In the sidebar, click **{{< fa key >}} SSH Keys**.
+1. On the right-hand side, click **Add new key**.
+1. In the "Key" field, **paste your public SSH key** (the part of the SSH key that copied to your clipboard in the previous step).
+1. In the "Title" field, **add a descriptive label** for the new key.
+For example, if you're using a personal laptop, you might call it "Personal laptop".
+1. **Choose the "Usage type"** for the key.
+Usually, you want to select only "Authentication" here.
+1. Optionally (and recommended), **set an expiration date**.
+For example, for an institutional or company GitLab instance, this could be the date when your contract ends.
+Otherwise, you could set an expiration date in a year or something else that seems reasonable to you.
+1. Finally, click **Add key**.
 
-If you would rather use the [SSH](https://de.wikipedia.org/wiki/Secure_Shell) protocol for authentication, check out the [SSH documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
+:::
 
-### Personal Access Token (PAT) {.unnumbered}
+### Personal Access Token (PAT)
+
+::: {.panel-tabset}
+
+## {{< fa brands github >}} GitHub
 
 Follow these steps to set a Personal Access Token (PAT; see @fig-pat):
 
@@ -213,197 +331,6 @@ Provides permission to delete repositories.
 `admin:org`: 
 Offers administrative access to the entire organization, including managing teams and repositories.
 :::
-
-### Secure Shell Protocol (SSH) {.unnumbered}
-
-#### Generating a new SSH key
-
-1. Open the Terminal.
-2. Insert the text below, changing the example email to your email address:
-
-```{zsh filename="Code"}
-ssh-keygen -t ed25519 -C "your_email@example.com"
-```
-
-This will result into an output similar to this:
-
-```{zsh filename="Output"}
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/Users/user/.ssh/id_ed25519): 
-```
-
-3. When asked to "Enter a file in which to save the key," you can just press Enter to use the default location.
-
-::: {.callout-caution title="SSH key already exists?" collapse="true"}
-
-If the SSH key already exists, you will get an output similar to this:
-
-```{zsh filename="Code"}
-/Users/user/.ssh/id_ed25519 already exists.
-Overwrite (y/n)? n
-```
-
-If you don't want to overwrite the existing key, type `n` and hit Enter.
-You can now use the existing key and move on with the next step.
-
-:::
-
-4. When prompted, enter a secure passphrase.
-
-```{zsh filename="Code"}
-Enter passphrase (empty for no passphrase): [Type a passphrase]
-Enter same passphrase again: [Type passphrase again]
-```
-
-::: {.callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
-If someone gets into your computer, they can use your SSH keys to access all systems that use those keys.
-Adding a passphrase to your SSH key makes it more secure.
-To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent.
-For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
-:::
-
-#### Adding a new SSH key to your GitHub account
-
-1. Copy the SSH public key to your clipboard.
-The following command will copy the contents of the `id_ed25519.pub` file to your clipboard.
-
-::: {.panel-tabset}
-
-## {{< fa brands apple >}} macOS
-
-```{zsh filename="Code"}
-pbcopy < ~/.ssh/id_ed25519.pub
-```
-
-If the `pbcopy` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
-
-## {{< fa brands windows >}} Windows
-
-```{zsh filename="Code"}
-clip < ~/.ssh/id_ed25519.pub
-```
-
-If the `clip` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
-
-## {{< fa brands linux >}} Linux
-
-```{zsh filename="Code"}
-cat ~/.ssh/id_ed25519.pub
-```
-
-Then select and copy the contents of the `id_ed25519.pub` file displayed in the terminal to your clipboard.
-
-Alternatively, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
-
-:::
-
-2. In the upper-right corner of any page on GitHub, click your profile photo, then click **Settings**.
-3. In the "Access" section of the sidebar, click **SSH and GPG keys**.
-4. Click **New SSH key** or **Add SSH key**.
-5. In the "Title" field, add a descriptive label for the new key.
-For example, if you're using a personal laptop, you might call it "Personal laptop".
-6. Choose the type of key, either authentication or signing.
-Usually, you want to select "authentication" here.
-7. In the "Key" field, paste your public key.
-8. Click **Add SSH key**.
-9. If prompted, confirm access to your GitHub account.
-
-## {{< fa brands gitlab >}} MPIB GitLab
-
-### Secure Shell Protocol (SSH) {.unnumbered}
-
-#### Generating a new SSH key {.unnumbered}
-
-1. Open the Terminal.
-2. Insert the text below, changing the example email to your MPIB email address (or the email address that you use for MPIB GitLab):
-
-```{zsh filename="Code"}
-ssh-keygen -t ed25519 -C "your_email@example.com"
-```
-
-This will result into an output similar to this:
-
-```{zsh filename="Output"}
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/Users/user/.ssh/id_ed25519): 
-```
-
-3. When asked to "Enter a file in which to save the key," you can just press Enter to use the default location.
-
-::: {.callout-caution title="SSH key already exists?" collapse="true"}
-
-If the SSH key already exists, you will get an output similar to this:
-
-```{zsh filename="Code"}
-/Users/user/.ssh/id_ed25519 already exists.
-Overwrite (y/n)? n
-```
-
-If you don't want to overwrite the existing key, type `n` and hit Enter.
-You can now use the existing key and move on with the next step.
-
-:::
-
-4. When prompted, enter a secure passphrase.
-
-```{zsh filename="Code"}
-Enter passphrase (empty for no passphrase): [Type a passphrase]
-Enter same passphrase again: [Type passphrase again]
-```
-
-::: {.callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
-If someone gets into your computer, they can use your SSH keys to access all systems that use those keys.
-Adding a passphrase to your SSH key makes it more secure.
-To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent.
-For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
-:::
-
-#### Adding a new SSH key to your MPIB GitLab account {.unnumbered}
-
-1. Copy the SSH public key to your clipboard.
-The following command will copy the contents of the `id_ed25519.pub` file to your clipboard.
-
-::: {.panel-tabset}
-
-## {{< fa brands apple >}} macOS
-
-```{zsh filename="Code"}
-pbcopy < ~/.ssh/id_ed25519.pub
-```
-
-If the `pbcopy` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
-
-## {{< fa brands windows >}} Windows
-
-```{zsh filename="Code"}
-clip < ~/.ssh/id_ed25519.pub
-```
-
-If the `clip` command isn't working, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
-
-## {{< fa brands linux >}} Linux
-
-```{zsh filename="Code"}
-cat ~/.ssh/id_ed25519.pub
-```
-
-Then select and copy the contents of the `id_ed25519.pub` file displayed in the terminal to your clipboard.
-
-Alternatively, find the hidden `.ssh` folder in your home directory, open the `id_ed25519.pub` file in your favorite text editor, and copy the contents to your clipboard.
-
-:::
-
-2. In the upper-left on MPIB GitLab, click your profile photo, then click **Preferences**.
-3. In the sidebar, click **SSH Keys**.
-4. On the right-hand side, click **Add new key**.
-5. In the "Key" field, paste your public key.
-6. In the "Title" field, add a descriptive label for the new key.
-For example, if you're using a personal laptop, you might call it "Personal laptop".
-6. Choose the "Usage type" for key.
-Usually, you want to select "Authentication" here.
-7. Optionally (and recommended), set an expriation date.
-For example, this could be the date when your contract ends at MPIB.
-7. Finally, click **Add key**.
 
 :::
 
