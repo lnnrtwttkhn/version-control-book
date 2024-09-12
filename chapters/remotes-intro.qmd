@@ -580,7 +580,7 @@ To check if the new URL was set as expected, you can enter `git remote -v`.
 ## Pushing
 
 After you added a remote to your local repository, you are now able to "upload" your files to the remote repository using the command `git push`.
-This command is used to "upload" your local commits to the remote repository.
+This command is used to *push* your local commits to the remote repository.
 When you run `git push`, Git examines your local branch and its commits, and then pushes those commits to the corresponding branch on the remote repository.
 
 ```{zsh filename="Code"}
@@ -592,7 +592,7 @@ The command above "uploads" the local branch named "main" to a remote repository
 It tells Git to remember the remote branch to which your local branch should be uploaded in the future.
 After a successful push, you will get a message like this:
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 Enumerating objects: 17, done.
 Counting objects: 100% (17/17), done.
@@ -607,14 +607,14 @@ To https://github.com/username/repository.git
 
 The `git push` operation involves enumerating, compressing, and writing objects to the remote repository. 
 The output indicates the progress of these steps, including delta compression, and concludes with a summary of the pushed branch and commit range.
-In this specific example, changes from the local main branch (commit `fb3efef`) were pushed to the remote main branch (commit `8f50685`).
+In this specific example, changes from the local `main` branch (commit `fb3efef`) were pushed to the remote `main` branch (commit `8f50685`).
 
 It's important to note that you need appropriate access and permissions to push to a remote repository. 
 If you do not have write access, you won't be able to push your changes.
-If you do not specify a branch and just run `git push`, Git will push the one "you are on" in the moment.
+If you do not specify a branch and just run `git push`, Git will push the branch that "you are on" in the moment.
 
 Git will verify if your local branch is up to date with the remote branch. 
-If there are new commits on the remote branch that you don't have locally, Git may reject the push and ask you to first pull the latest changes and merge them into your local branch to prevent overwriting or conflicts (find out more about [pulling](#pulling) below).
+If there are new commits on the remote branch that you don't have locally, Git may reject the push and ask you to first *pull* (or "download") the latest changes and merge them into your local branch to prevent overwriting or conflicts (find out more about [pulling](#pulling) below).
 
 ::: {.callout-tip title="Common `git push` flags" collapse="true"}
 `-u` or `--set-upstream`:
