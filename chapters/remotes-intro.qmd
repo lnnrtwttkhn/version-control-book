@@ -476,6 +476,7 @@ git remote add origin git@github.com:user-name/repo-name.git
 ```
 
 Replace `user-name` with the repository's user name and `repo-name` with the name of the repository.
+For details about the term `origin`, see @nte-origin.
 
 ## {{< fa brands gitlab >}} GitLab
 
@@ -490,6 +491,7 @@ git remote add origin git@gitlab.com:user-name/repo-name.git
 ```
 
 Replace `user-name` with the repository's user name and `repo-name` with the name of the repository.
+For details about the term `origin`, see @nte-origin.
 
 :::
 
@@ -499,11 +501,12 @@ This command is essentially telling Git:
 
 After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository.
 
-::: {.callout-tip collapse="false" title="What is `origin`?"}
-The term "origin" is a conventionally used name for the default remote repository.
-It's a standard name and we recommend using it, but you could also choose another name if you prefer.
+::: {#nte-origin .callout-note collapse="false" title="What is `origin`?"}
+The term `origin` is a conventionally used name for the default remote repository.
+It's a standard name and we recommend using it, but you could also choose any another name if you prefer.
 For example, if you are connecting to GitHub, you could also replace `origin` with `github`
 Specifying different names for the remote repository is useful (or even necessary) when you are configuring multiple remote repositories.
+For example, if you want to connect your local repository to both a GitHub and a GitLab remote repository, you could call those remotes `github` and `gitlab`, respectively.
 :::
 
 ### Checking configured remotes
@@ -514,9 +517,9 @@ If you want to check which remotes are configured for a local repository, run th
 git remote -v
 ```
 
-Below is an example output, in this case for the Git repository for this book.
-This output basically tells you that one remote called `origin` is configured, it shows the URL for the remote repository on GitHub, and indicated that this remote is used both to fetch changes from and push changes to GitHub.
-Can you tell from the URL if HTTPS or SSH is used? ^[:bulb: Solution: It's SSH. The URL typically starts with `git@`.]
+Below is an example output, in this case for the Git repository of this book.
+This output basically tells you that one remote called `origin` is configured, it shows the URL for the remote repository on GitHub, and indicates that this remote is used to both *fetch changes from* and *push changes* to GitHub.
+Can you tell from the URL if HTTPS or SSH is used? ^[:bulb: Solution: It's SSH. The SSH URL typically starts with `git@`.]
 
 ```{markdown filename="Output"}
 #| code-copy: false
@@ -525,6 +528,10 @@ origin  git@github.com:lnnrtwttkhn/version-control-book.git (push)
 ```
 
 ### Editing the remote URL
+
+You might get into a situation where you want to change the URL of the remote repository.
+For example, you want to move your repository from an institutional GitLab repository to a remote repository on GitHub.
+In research, this could be the case when you developed the project in a private repository on your institution's GitLab instance but now want to move the repository to a public repository to publish your code or data alongside a paper.
 
 If you need to change the URL of an existing remote repository, you have two options: removing the remote and re-adding it, or setting a new URL directly.
 
