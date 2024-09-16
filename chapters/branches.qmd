@@ -26,11 +26,12 @@ Before we explain the concept of branches in more detail, let's look at a few sc
 1. You want to add a new feature to your project (for example, a new analysis) but while doing so, you run the risk of accidentally breaking your working code as you test the new feature.
 You may want to quickly go back to your previous working version while working on the new feature but keep the as yet unfinished progress on the new feature.
 
-2. If you collaborate with others on the same Git repository (we will look at collaboration with Git in the [chapter on Git remotes](remotes-intro.qmd)) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.
+2. If you collaborate with others on the same Git repository (we will look at collaboration with Git in the [chapter on Git remotes](remotes-intro.qmd)) and everyone would work on the default branch simultaneously, this could cause a lot of confusion and conflicting changes.
 
 ## What are branches?
 
 By default, every Git repository has one default branch, typically called `main` or `master`.
+If you have just recently started using Git, your repository likely has only one branch (`main` or `master`) with one commit after another (see they gray dots in @fig-branches).
 Git branches are like separate versions or workspaces within the same Git repository.
 Branching allows to create a copy of a project and continue to make commits without integrating them into the default branch right away.
 Branches let you work on a parallel version of your repository's contents without changing the content on your default branch (your `main` or `master` branch). 
@@ -50,8 +51,7 @@ With branches, you can work independently and keep your code organized.
 ## Checking your branches
 
 By default, your work is on the default branch, usually called `main` (or `master`). 
-We recommend changing your default branch name to `main`, as discussed in the [setup](setup.qmd) chapter.
-If you have not yet done so, you can also use: `git branch -m master main` to rename your branch.
+We recommend changing your default branch name to `main`, as discussed in the [setup](setup.qmd) chapter ^[:bulb: Tip: If your default branch is called `master`, you can use `git branch -m master main` to rename your default branch to `main` (for details, see the [setup](setup.qmd) chapter).].
 You can list the available branches in your repository by using `git branch`:
 
 ```{zsh, filename="Code"}
@@ -72,12 +72,12 @@ In Git, you can have multiple branches in your project, and the `git branch` hel
 The one with the asterisk is the branch where your working directory is currently positioned. 
 In this case, `main` is the active branch.
 If there were other branches listed without an asterisk, it means they exist, but you are not currently "on" those branches.
-You are currently "on main".
+You are currently "on `main`".
 
 You can also use `git status` to check which branch you are on.
 `git status` will return an output similar to the following:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 #| code-copy: false
 On branch main
 nothing to commit, working tree clean
@@ -111,7 +111,7 @@ Note that `feature` is just a name.
 You could also call your branch `banana`, if you want.
 Find out more about naming convention for Git branches in the [section on best practices](#best-practices) below.
 
-::: {.callout-tip title="Common `git branch` flags" collapse="false"}
+::: {.callout-tip title="Common `git branch` flags" collapse="true"}
 `-a` or `--all`: Lists both local and remote branches. (Remote branches will be introduced in the [Remotes: Introduction](remotes-intro.qmd) chapter )
 
 `-r or --remote`: Lists only remote branches.
@@ -132,16 +132,23 @@ For example, `git branch -c existing-branch new-branch`
 
 ## Switching branches
 
-To switch to another branch, you can use `git checkout` or `git switch`.
+To switch to another branch, you can use `git switch`.
 For example, enter the following command to switch to the newly created `feature` branch:
 
 ```{zsh, filename="Code"}
 git switch feature
 ```
 
+Alternatively, you can also use `git checkout` to switch branches.
+For details about the differences between `git switch` and `git checkout`, see @nte-switch-checkout.
+
+```{zsh, filename="Code"}
+git checkout feature
+```
+
 If you switched branches successfully, you should receive an output similar to this:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 #| code-copy: false
 Switched to branch 'feature'
 ```
@@ -155,7 +162,7 @@ This requirement ensures that there's a baseline history in your repository, all
 
 :::
 
-::: {.callout-tip title="Find out more: What is the difference between `git checkout` and `git switch`?" collapse="true"}
+::: {#nte-switch-checkout .callout-tip title="Find out more: What is the difference between `git checkout` and `git switch`?" collapse="true"}
 Prior to Git version 2.23, the `git checkout` command was the primary way to switch branches. 
 It allows you to move to a different branch and update your working directory to reflect the state of that branch. 
 In Git 2.23 and later versions, the `git switch` command was introduced as a safer and more intuitive alternative to `git checkout`. 
@@ -224,7 +231,7 @@ For example, if you want to merge changes *into* the `main` branch *from* the `f
 
 If you have not yet made any changes on the `feature` branch you should get the following output:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 #| code-copy: false
 Already up to date.
 ```
@@ -265,14 +272,14 @@ Merge conflicts can be a bit of a headache.
 If you only work locally on your computer, without a remote repository (for example, an online version of your repository on [GitHub or GitLab](remotes-intro.qmd)), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches.
 However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts.
 That being said, employing good development practices can minimize the occurrence of merge conflicts.
-Regularly pulling changes from the remote repository into your local branch (using `git pull`) and keeping your branch up-to-date can help identify and resolve conflicts early.
+**Regularly pulling changes** from the remote repository into your local branch (using `git pull`) and **keeping your branch up-to-date** can help identify and resolve conflicts early.
 You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on [remote repositories](remotes-intro.qmd).
 
 ### Example merge conflict
 
 Let's look at an example merge conflict.
 You can recreate this example yourself by following the instructions below. 
-(You need to have atleast one previous commit on the `main` branch.)
+In order for this example to work, you need to have at least one previous commit on the `main` branch.
 
 1. Create a new file, for example called `example.txt`.
 1. Create and switch to a new branch, for example called `feature`.
@@ -364,7 +371,7 @@ git commit -m "Resolve merge conflict"
 
 Your branches should now be merged and your conflict resolved.
 The feature branch itself remains unchanged unless you delete it. 
-You can continue using it or delete it if it’s no longer needed
+You can continue using it or delete it if it's no longer needed.
 
 Before you try to fix more complex merge conflicts, make sure you understand the changes that don't match up to avoid making things more complicated.
 Resolving conflicts can be tricky, especially when merging branches with many differences.
@@ -420,7 +427,7 @@ git merge --no-ff
 
 #### Squash and merge
 
-When you squash a branch, Git combines all commits of the branch into a single commit.
+When you squash a branch, Git **combines all commits of the branch into a single commit**.
 This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately.
 Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.
 
@@ -428,9 +435,11 @@ Instead, the squashed commit represents the collective changes made in the branc
 git merge --squash
 ```
 
-Squashing commits can be desirable in a situation where you don't want others to see the history of individual commits made on the merged branch.
+::: {.callout-tip title="When is squashing useful?" collapse="false"}
+Squashing commits can be desirable in a situation where **you don't want others to see the full history of individual commits** made on the merged branch.
 For example, if you wrote a script and only want your collaborators to see the end result and not all the tiny changes you made on the way.
 In this situation, you could squash all previous commits and only merge the latest version of your script.
+:::
 
 ## Deleting Branches
 
@@ -444,15 +453,18 @@ git branch -d feature
 
 This should yield an output similar to:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 #| code-copy: false
 Deleted branch feature (was 2cb61c2).
 ```
 
-The addition "(was 2cb61c2)" represents the last commit hash of the branch you deleted.
+The addition `(was 2cb61c2)` represents the last commit hash of the branch you deleted.
 You can only delete a branch, you are *not* currently on.
-Since git treats the `main` like any other branch, you can also delete the `main` branch if you want.
-This is however not recommended to avoid confusion.
+
+::: {.callout-tip title="Can I delete the default branch (`main` or `master`)?" collapse="false"}
+Since Git treats the default branch (`main` or `master`) branch like any other branch, **you *can* also delete the default branch** if you want.
+This is however not recommended to avoid confusion and might even be forbidden or not possible in some projects.
+:::
 
 ## Best practices
 
@@ -498,9 +510,9 @@ For more recommendations on branch naming conventions, see for example @amin2023
 ### Keep branches specific and short-lived
 
 Create branches with a **specific goal or task** in mind, and aim to **keep them short-lived**.
-As for your main branch, you should try to keep individual branches clean by focusing on adding one new feature per branch.
+As for your default branch, you should try to keep individual branches clean by focusing on adding one new feature per branch.
 Long-lived branches can lead to conflicts and make it harder to merge changes.
-Once the task is complete or the feature is integrated, don´t forget to delete the branch to avoid clutter.
+Once the task is complete or the feature is integrated, don't forget to delete the branch to avoid clutter.
 
 ### Avoiding merge conflicts
 
@@ -719,29 +731,26 @@ Automatically squash commits marked with "squash" or "fixup" in their commit mes
 
 ## Visualizing branches
 
-Git also offers an option for rudementary visualization of branches inside the command line.
-For that you can use `git log` with four flags:
-
-`--oneline`: Displays each commit on a single line, providing a concise overview of the commit history.
-
-`--graph`: 
-Draws a text-based graph showing the relationships between commits and branches.
-
-`--all`: 
-Includes commits from all branches (both local and remote).
-
-`--decorate`: 
-Adds labels to commits showing which branches or tags they belong to.
-
-To put them all together, run:
+Git also offers an option for rudimentary visualization of branches inside the command line.
+For that you can use `git log` (introduced in the previous chapter on [Git Essentials](git-essentials.qmd#logging-commits)) with four flags:
 
 ```{zsh, filename="Code"}
 git log --oneline --graph --all --decorate
 ```
 
+The flags to this `git log` command do the following:
+
+- `--oneline`: Displays each commit on a single line, providing a concise overview of the commit history.
+- `--graph`: 
+Draws a text-based graph showing the relationships between commits and branches.
+- `--all`: 
+Includes commits from all branches (both local and remote).
+- `--decorate`: 
+Adds labels to commits showing which branches or tags they belong to.
+
 The output might look something like this:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 * f5a433d (HEAD -> feature) Add new feature
 * 1b672d3 Merge branch 'main' into feature
 |\
@@ -751,9 +760,9 @@ The output might look something like this:
 
 ```
 
-In this example, the graph shows that the feature branch has diverged from the main branch and is currently ahead of main by two commits. 
+In this example, the graph shows that the `feature` branch has diverged from the `main` branch and is currently ahead of `main` by two commits. 
 The asterisk (`*`) represents commits, while the lines (`|`) show the relationships between these commits and branches.
-The `\` indicates that two branches (in this case, main and feature) have joined after being separate.
+The `\` indicates that two branches (in this case, `main` and `feature`) have joined after being separate.
 
 ## Acknowledgements & further reading
 
