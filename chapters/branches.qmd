@@ -493,9 +493,8 @@ For more recommendations on branch naming conventions, see for example @amin2023
 
 Create branches with a **specific goal or task** in mind, and aim to **keep them short-lived**.
 As for your main branch, you should try to keep individual branches clean by focusing on adding one new feature per branch.
-This approach ensures that completed features can be merged into the main branch independently of those that are still in progress.
 Long-lived branches can lead to conflicts and make it harder to merge changes.
-Once the task is complete or the feature is integrated, consider deleting the branch.
+Once the task is complete or the feature is integrated, don´t forget to delete the branch to avoid clutter.
 
 ### Avoiding merge conflicts
 
@@ -711,6 +710,44 @@ Preserve merge commits during the rebase.
 `--autosquash`: 
 Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
 :::
+
+## Visualizing branches
+
+Git also offers an option for rudementary visualization of branches inside the command line.
+For that you can use `git log` with four flags:
+
+`--oneline`: Displays each commit on a single line, providing a concise overview of the commit history.
+
+`--graph`: 
+Draws a text-based graph showing the relationships between commits and branches.
+
+`--all`: 
+Includes commits from all branches (both local and remote).
+
+`--decorate`: 
+Adds labels to commits showing which branches or tags they belong to.
+
+To put them all together, run:
+
+```{zsh, filename="Code"}
+git log --oneline --graph --all --decorate
+```
+
+The output might look something like this:
+
+```{zsh, filename="Output"}
+* f5a433d (HEAD -> feature) Add new feature
+* 1b672d3 Merge branch 'main' into feature
+|\
+| * d5a7342 (main) Update README
+| * 3f672c4 Initial commit
+* 7a1d5d1 Fix typo in feature
+
+```
+
+In this example, the graph shows that the feature branch has diverged from the main branch and is currently ahead of main by two commits. 
+The asterisk (`*`) represents commits, while the lines (`|`) show the relationships between these commits and branches.
+The `\` indicates that two branches (in this case, main and feature) have joined after being separate.
 
 ## Acknowledgements & further reading
 
