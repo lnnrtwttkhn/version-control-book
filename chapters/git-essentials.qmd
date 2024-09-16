@@ -338,6 +338,7 @@ To not stage or commit these files by accident, you can use the `.gitignore` fil
 ## Ignoring files and folders: `.gitignore`
 
 `.gitignore` is a special file.
+It does not have a file extension like e.g. `txt` and is simply named `.gitignore`.
 It is used to specify files and folders that should be ignored and not tracked by Git.
 When you create a `.gitignore` file, place it inside your Git repository and specify names of files or folders inside it.
 Git will then exclude these files and directories from being staged or committed, for example when using `git add -A` which normally stages all your files.
@@ -364,6 +365,7 @@ ls -a
 ```
 
 Now you can write a filename or folder name inside it, to prevent Git from tracking it.
+If you specify a folder, git will also start to ignore every subfolder in it.
 
 It's recommended to add a project-specific `.gitignore` file to your repository using the regular stage-commit workflow that you learned about in this chapter, for example:
 
