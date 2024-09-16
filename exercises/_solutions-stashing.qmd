@@ -1,76 +1,12 @@
-### Stashing
-
-1. **Create a new branch called `feature/stash-exercise`**:
-    - Run the commands:
-      ```sh
-      git branch feature/stash-exercise
-      git switch feature/stash-exercise
-      ```
-
-2. **Make changes to two different files in your project directory**:
-    - Edit two files of your choice in the project directory.
-
-3. **Stash your changes without adding a message**:
-    - Run the command: `git stash`
-
-4. **Use `git status` to verify that your working directory is clean**:
-    - Run the command: `git status`
-    - Ensure that the output indicates a clean working directory.
-
-5. **Apply the stash to your working directory and verify that your changes are restored**:
-    - Run the command: `git stash apply`
-    - Verify your changes are restored by checking the modified files.
-
-### Reverting
-
-1. **Create a new branch called `feature/revert-exercise`**:
-    - Run the commands:
-      ```sh
-      git branch feature/revert-exercise
-      git switch feature/revert-exercise
-      ```
-
-2. **Make changes and commit these to your file**:
-    - Edit a file of your choice in the project directory.
-    - Stage and commit the changes with:
-      ```sh
-      git add <file>
-      git commit -m "Your commit message"
-      ```
-
-3. **Use `git revert` to revert the most recent commit, specifying its hash**:
-    - Find the hash of the most recent commit with: `git log -1`
-    - Run the command: `git revert <commit-hash>`
-
-### Rebasing
-
-1. **Create a new branch called `feature/rebase-exercise`**:
-    - Run the commands:
-      ```sh
-      git branch feature/rebase-exercise
-      git switch feature/rebase-exercise
-      ```
-
-2. **Make three commits with minor changes on the `feature/rebase-exercise` branch**:
-    - Make a minor change to a file, then stage and commit it with:
-      ```sh
-      git add <file>
-      git commit -m "Commit message 1"
-      ```
-    - Repeat the above step two more times with different minor changes and commit messages.
-
-3. **Switch to the `main` branch and make additional changes**:
-    - Run the command: `git switch main`
-    - Make a change to a file, then stage and commit it with:
-      ```sh
-      git add <file>
-      git commit -m "Commit message on main"
-      ```
-
-4. **Rebase the `feature/rebase-exercise` branch onto the `main` branch using `git rebase main`**:
-    - Run the command: `git switch feature/rebase-exercise`
-    - Run the command: `git rebase main`
-
-5. **Check the commit history with `git log` to see the updated order of commits**:
-    - Run the command: `git log`
-    - Verify that the commits from `feature/rebase-exercise` are now on top of the commits from `main`.
+1. Navigate into the `recipes` repository using `cd` (or a similar path).
+1. Create a new branch called `feature/stash-exercise` using `git branch`.
+1. Switch to the new branch using `git switch`.
+Alternatively, you could have also done the two last steps with one command using `git checkout -b feature/stash-exercise`.
+1. Make any change to any of the files in your project directory.
+Here, we use the `echo` command to append text to the end of `recipes.txt`.
+1. Stash your changes without adding a message using `git stash`.
+1. Verify that the working directory is clean using `git status`.
+Check that the output indeed indicates a clean working directory.
+1. Apply the stash to your working directory using `git stash apply`.
+1. Verify that your changes are restored.
+Here, we use `tail -1 recipes.txt` to print the last line of `recipes.txt`.

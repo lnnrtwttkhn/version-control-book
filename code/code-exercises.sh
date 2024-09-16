@@ -17,3 +17,7 @@ zip -r exercises-repos/recipes-first-steps.zip recipes
 # Run the branches script and zip its output
 sh -x code/code-exercises-branches.sh > "exercises-repos/history-branches.txt" 2>&1
 zip -r exercises-repos/recipes-branches.zip recipes
+
+# Run the stashing script and zip its output
+sh -x code/code-exercises-stashing.sh > "exercises-repos/history-stashing.txt" 2>&1
+zip -r exercises-repos/recipes-stashing.zip recipes
