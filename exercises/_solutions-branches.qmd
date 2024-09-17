@@ -2,18 +2,15 @@
 1. Create a new branch called `feature` using `git branch feature`.
 1. Switch to the new branch using `git switch feature`.
 You can also create and switch the branch in one step using `git checkout -b feature`.
-1. Add a new recipe to your `recipes.txt` file using `cat`.
+1. Add a new recipe to your `recipes.txt` file.
+You can use your regular text editor.
+Here, we add a new recipe from the command line using `cat`.
 1. Stage and commit the changes to `recipes.txt` using `git add` and `git commit`.
-1. Switch back to the default branch (`main` in this example) using `git checkout main`.
-You can also use `git switch main`.
-1. Make conflicting changes in the `main` branch to `recipes.txt` using `cat`.
-1. Stage and commit the conflicting changes to `recipes.txt` using `git add` and `git commit`.
-1. Attempt to merge the `feature` branch with the default branch to create a merge conflict using `git merge feature`.
-1. Resolve the merge conflict by editing `recipes.txt`.
-You can use a regular text editor to do this.
-In this example, we remove the conflict markers that Git added to `recipes.txt` using `sed` which results in keeping both recipes.
-This is not a recommended way to resolve merge conflicts and we only do it here to resolve the merge conflict without manual intervention.
-Merge conflicts usually always require manual resolution by the user.
-1. Stage the resolved changes to `recipes.txt` using `git add`.
-1. Commit the resolved changes in `recipes.txt` with a descriptive commit message using `git commit`.
+1. View the contents of `recipes.txt` to verify your changes.
+Here, we use the `cat` command again.
+1. Switch back to the default branch (`main` in this example).
+Here, we use `git checkout main` but you can also use `git switch main`.
+1. View the contents of `recipes.txt` again to confirm that the previous changes do not exist on the `main` branch.
+1. Merge the changes `feature` branch into the `main` branch.
 1. Delete the merged `feature` branch using `git branch -d feature`.
+1. View the contents of `recipes.txt` yet again to confirm that the previous changes have been merged into the `main` branch.
