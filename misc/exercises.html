@@ -297,7 +297,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#command-line" id="toc-command-line" class="nav-link" data-scroll-target="#command-line">Command Line</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#first-steps-with-git" id="toc-first-steps-with-git" class="nav-link" data-scroll-target="#first-steps-with-git">First steps with Git</a></li>
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a>
+  <ul class="collapse">
+  <li><a href="#create-and-merge-a-new-branch" id="toc-create-and-merge-a-new-branch" class="nav-link" data-scroll-target="#create-and-merge-a-new-branch">Create and merge a new branch</a></li>
+  <li><a href="#create-and-resolve-a-merge-conflict" id="toc-create-and-resolve-a-merge-conflict" class="nav-link" data-scroll-target="#create-and-resolve-a-merge-conflict">Create and resolve a merge conflict</a></li>
+  </ul></li>
   <li><a href="#github-intro" id="toc-github-intro" class="nav-link" data-scroll-target="#github-intro">GitHub: Intro</a></li>
   <li><a href="#github-advanced" id="toc-github-advanced" class="nav-link" data-scroll-target="#github-advanced">GitHub: Advanced</a></li>
   <li><a href="#tags-and-releases" id="toc-tags-and-releases" class="nav-link" data-scroll-target="#tags-and-releases">Tags and Releases</a></li>
@@ -1082,18 +1086,18 @@ Command history
 <span id="cb13-5"><a href="#cb13-5"></a><span class="ex">+</span> cat</span>
 <span id="cb13-6"><a href="#cb13-6"></a><span class="ex">+</span> git add recipes.txt</span>
 <span id="cb13-7"><a href="#cb13-7"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add pasta recipe to recipes.txt</span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="ex">[main</span> <span class="op">(root-co</span>mm<span class="op">it)</span> 03a052f] Add pasta recipe to recipes.txt</span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="ex">[main</span> <span class="op">(root-co</span>mm<span class="op">it)</span> 8a62669] Add pasta recipe to recipes.txt</span>
 <span id="cb13-9"><a href="#cb13-9"></a> <span class="ex">1</span> file changed, 7 insertions<span class="op">(+)</span></span>
 <span id="cb13-10"><a href="#cb13-10"></a> <span class="ex">create</span> mode 100644 recipes.txt</span>
 <span id="cb13-11"><a href="#cb13-11"></a><span class="ex">+</span> echo 6. Enjoy!</span>
 <span id="cb13-12"><a href="#cb13-12"></a><span class="ex">+</span> git add recipes.txt</span>
 <span id="cb13-13"><a href="#cb13-13"></a><span class="ex">+</span> git commit <span class="at">--amend</span> <span class="at">--no-edit</span></span>
-<span id="cb13-14"><a href="#cb13-14"></a><span class="ex">[main</span> 717122d] Add pasta recipe to recipes.txt</span>
-<span id="cb13-15"><a href="#cb13-15"></a> <span class="ex">Date:</span> Wed Sep 11 19:09:34 2024 +0000</span>
+<span id="cb13-14"><a href="#cb13-14"></a><span class="ex">[main</span> 6cfd74a] Add pasta recipe to recipes.txt</span>
+<span id="cb13-15"><a href="#cb13-15"></a> <span class="ex">Date:</span> Tue Sep 17 17:59:50 2024 +0000</span>
 <span id="cb13-16"><a href="#cb13-16"></a> <span class="ex">1</span> file changed, 8 insertions<span class="op">(+)</span></span>
 <span id="cb13-17"><a href="#cb13-17"></a> <span class="ex">create</span> mode 100644 recipes.txt</span>
 <span id="cb13-18"><a href="#cb13-18"></a><span class="ex">+</span> wget <span class="at">-nv</span> <span class="at">-O</span> pasta.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg</span>
-<span id="cb13-19"><a href="#cb13-19"></a><span class="ex">2024-09-11</span> 19:09:35 URL:https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg <span class="pp">[</span><span class="st">22640/22640</span><span class="pp">]</span> <span class="at">-</span><span class="op">&gt;</span> <span class="st">"pasta.jpg"</span> <span class="pp">[</span><span class="st">1</span><span class="pp">]</span></span>
+<span id="cb13-19"><a href="#cb13-19"></a><span class="ex">2024-09-17</span> 17:59:50 URL:https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg <span class="pp">[</span><span class="st">22640/22640</span><span class="pp">]</span> <span class="at">-</span><span class="op">&gt;</span> <span class="st">"pasta.jpg"</span> <span class="pp">[</span><span class="st">1</span><span class="pp">]</span></span>
 <span id="cb13-20"><a href="#cb13-20"></a><span class="ex">+</span> git status</span>
 <span id="cb13-21"><a href="#cb13-21"></a><span class="ex">On</span> branch main</span>
 <span id="cb13-22"><a href="#cb13-22"></a><span class="ex">Untracked</span> files:</span>
@@ -1112,7 +1116,7 @@ Command history
 <span id="cb13-35"><a href="#cb13-35"></a>nothing added to commit but untracked files present (use <span class="st">"git add"</span> to track)</span>
 <span id="cb13-36"><a href="#cb13-36"></a>+ git add --all</span>
 <span id="cb13-37"><a href="#cb13-37"></a>+ git commit -m Add .gitignore and ignore all files that end with .jpg</span>
-<span id="cb13-38"><a href="#cb13-38"></a>[main a373433] Add .gitignore and ignore all files that end with .jpg</span>
+<span id="cb13-38"><a href="#cb13-38"></a>[main b9999ce] Add .gitignore and ignore all files that end with .jpg</span>
 <span id="cb13-39"><a href="#cb13-39"></a> 1 file changed, 1 insertion(+)</span>
 <span id="cb13-40"><a href="#cb13-40"></a> create mode 100644 .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1124,6 +1128,8 @@ Command history
 </section>
 <section id="branches" class="level2">
 <h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<section id="create-and-merge-a-new-branch" class="level3">
+<h3 class="anchored" data-anchor-id="create-and-merge-a-new-branch">Create and merge a new branch</h3>
 <div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1136,27 +1142,19 @@ Exercises
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<section id="create-and-merge-a-new-branch" class="level3">
-<h3 class="anchored" data-anchor-id="create-and-merge-a-new-branch">Create and merge a new branch</h3>
 <ol type="1">
 <li>Navigate to the <code>recipes</code> repository using the command line.</li>
 <li>Create a new branch called <code>feature</code>.</li>
 <li>Switch to the new branch.</li>
 <li>Add a new recipe to your <code>recipes.txt</code> file.</li>
-<li>Stage and commit the changes to <code>recipes.txt</code> file on the <code>feature</code> branch.</li>
+<li>Stage and commit the changes to the <code>recipes.txt</code> file on the <code>feature</code> branch.</li>
+<li>View the contents of <code>recipes.txt</code> to verify your changes.</li>
 <li>Switch back to the default branch (<code>main</code> or <code>master</code>).</li>
-<li>Merge the <code>feature</code> branch with your default branch.</li>
+<li>View the contents of <code>recipes.txt</code> again to confirm that the previous changes do not exist on the default branch.</li>
+<li>Merge the <code>feature</code> branch into your default branch.</li>
 <li>Delete the <code>feature</code> branch.</li>
+<li>View the contents of <code>recipes.txt</code> yet again to confirm that the previous changes have been merged into the default branch.</li>
 </ol>
-</section>
-<section id="create-and-resolve-a-merge-conflict" class="level3">
-<h3 class="anchored" data-anchor-id="create-and-resolve-a-merge-conflict">Create and resolve a merge conflict</h3>
-<ol type="1">
-<li>Deliberately create a merge conflict by editing the same section of a file on two separate branches and attempting to merge them. An example can be found in the <a href="../chapters/branches.html">branches</a> chapter.</li>
-<li>Resolve the merge conflict.</li>
-<li>Delete the feature branch afterwards.</li>
-</ol>
-</section>
 </div>
 </div>
 </div>
@@ -1184,37 +1182,23 @@ Solutions
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-31-5" class="code-annotation-target"><a href="#annotated-cell-31-5"></a><span class="fu">git</span> switch feature</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-31-6" class="code-annotation-target"><a href="#annotated-cell-31-6"></a><span class="fu">cat</span> <span class="op">&gt;&gt;</span> recipes.txt <span class="op">&lt;&lt;- EOM</span></span>
 <span id="annotated-cell-31-7"><a href="#annotated-cell-31-7"></a></span>
-<span id="annotated-cell-31-8"><a href="#annotated-cell-31-8"></a><span class="st">Chocolate Cake</span></span>
+<span id="annotated-cell-31-8"><a href="#annotated-cell-31-8"></a><span class="st">Potatoes</span></span>
 <span id="annotated-cell-31-9"><a href="#annotated-cell-31-9"></a></span>
-<span id="annotated-cell-31-10"><a href="#annotated-cell-31-10"></a><span class="st">1. Preheat the oven to 350°F (175°C).</span></span>
-<span id="annotated-cell-31-11"><a href="#annotated-cell-31-11"></a><span class="st">2. Mix flour, sugar, cocoa powder, baking powder, and salt in a bowl.</span></span>
-<span id="annotated-cell-31-12"><a href="#annotated-cell-31-12"></a><span class="st">3. Add eggs, milk, oil, and vanilla extract, and mix well.</span></span>
-<span id="annotated-cell-31-13"><a href="#annotated-cell-31-13"></a><span class="st">4. Pour the batter into a greased baking pan.</span></span>
-<span id="annotated-cell-31-14"><a href="#annotated-cell-31-14"></a><span class="st">5. Bake for 30-35 minutes.</span></span>
-<span id="annotated-cell-31-15"><a href="#annotated-cell-31-15"></a></span>
+<span id="annotated-cell-31-10"><a href="#annotated-cell-31-10"></a><span class="st">1. Wash the potatoes and cut them into evenly sized chunks.</span></span>
+<span id="annotated-cell-31-11"><a href="#annotated-cell-31-11"></a><span class="st">2. Bring water to the boil in a large saucepan.</span></span>
+<span id="annotated-cell-31-12"><a href="#annotated-cell-31-12"></a><span class="st">3. Once the water is boiling, add a good pinch of salt.</span></span>
+<span id="annotated-cell-31-13"><a href="#annotated-cell-31-13"></a><span class="st">3. Add the potatoes.</span></span>
+<span id="annotated-cell-31-14"><a href="#annotated-cell-31-14"></a><span class="st">4. Cook the potatoes for 15 - 20 minutes or until fork-tender.</span></span>
+<span id="annotated-cell-31-15"><a href="#annotated-cell-31-15"></a><span class="st">5. Drain the pasta in a colander.</span></span>
 <span id="annotated-cell-31-16"><a href="#annotated-cell-31-16"></a><span class="op">EOM</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-31-17" class="code-annotation-target"><a href="#annotated-cell-31-17"></a><span class="fu">git</span> add recipes.txt</span>
-<span id="annotated-cell-31-18"><a href="#annotated-cell-31-18"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add chocolate cake recipe to recipes.txt"</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-31-19" class="code-annotation-target"><a href="#annotated-cell-31-19"></a><span class="fu">git</span> checkout main</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-31-20" class="code-annotation-target"><a href="#annotated-cell-31-20"></a><span class="fu">cat</span> <span class="op">&gt;&gt;</span> recipes.txt <span class="op">&lt;&lt;- EOM</span></span>
-<span id="annotated-cell-31-21"><a href="#annotated-cell-31-21"></a></span>
-<span id="annotated-cell-31-22"><a href="#annotated-cell-31-22"></a><span class="st">Vanilla Cake</span></span>
-<span id="annotated-cell-31-23"><a href="#annotated-cell-31-23"></a></span>
-<span id="annotated-cell-31-24"><a href="#annotated-cell-31-24"></a><span class="st">1. Preheat the oven to 350°F (175°C).</span></span>
-<span id="annotated-cell-31-25"><a href="#annotated-cell-31-25"></a><span class="st">2. Mix flour, sugar, baking powder, and salt in a bowl.</span></span>
-<span id="annotated-cell-31-26"><a href="#annotated-cell-31-26"></a><span class="st">3. Add eggs, milk, oil, and vanilla extract, and mix well.</span></span>
-<span id="annotated-cell-31-27"><a href="#annotated-cell-31-27"></a><span class="st">4. Pour the batter into a greased baking pan. </span></span>
-<span id="annotated-cell-31-28"><a href="#annotated-cell-31-28"></a><span class="st">5. Bake for 25-30 minutes.</span></span>
-<span id="annotated-cell-31-29"><a href="#annotated-cell-31-29"></a></span>
-<span id="annotated-cell-31-30"><a href="#annotated-cell-31-30"></a><span class="op">EOM</span></span>
-<span id="annotated-cell-31-31"><a href="#annotated-cell-31-31"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-31-32" class="code-annotation-target"><a href="#annotated-cell-31-32"></a><span class="fu">git</span> add recipes.txt</span>
-<span id="annotated-cell-31-33"><a href="#annotated-cell-31-33"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add vanilla cake recipe to recipes.txt"</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-31-34" class="code-annotation-target"><a href="#annotated-cell-31-34"></a><span class="fu">git</span> merge feature</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-31-35" class="code-annotation-target"><a href="#annotated-cell-31-35"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="st">''</span> <span class="at">-e</span> <span class="st">'/^&lt;&lt;&lt;&lt;&lt;&lt;&lt; /d'</span> <span class="at">-e</span> <span class="st">'/^=======/d'</span> <span class="at">-e</span> <span class="st">'/^&gt;&gt;&gt;&gt;&gt;&gt;&gt; /d'</span> recipes.txt</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-31-36" class="code-annotation-target"><a href="#annotated-cell-31-36"></a><span class="fu">git</span> add recipes.txt</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-31-37" class="code-annotation-target"><a href="#annotated-cell-31-37"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict by adding both chocolate and vanilla cake recipes"</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-31-38" class="code-annotation-target"><a href="#annotated-cell-31-38"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-31-18"><a href="#annotated-cell-31-18"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add potatoes recipe to recipes.txt"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-31-19" class="code-annotation-target"><a href="#annotated-cell-31-19"></a><span class="fu">cat</span> recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-31-20" class="code-annotation-target"><a href="#annotated-cell-31-20"></a><span class="fu">git</span> checkout main</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-31-21" class="code-annotation-target"><a href="#annotated-cell-31-21"></a><span class="fu">cat</span> recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-31-22" class="code-annotation-target"><a href="#annotated-cell-31-22"></a><span class="fu">git</span> merge feature</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-31-23" class="code-annotation-target"><a href="#annotated-cell-31-23"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-31" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-31-24" class="code-annotation-target"><a href="#annotated-cell-31-24"></a><span class="fu">cat</span> recipes.txt</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
@@ -1232,7 +1216,7 @@ Solutions
 </dd>
 <dt data-target-cell="annotated-cell-31" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="6" data-code-annotation="4">Add a new recipe to your <code>recipes.txt</code> file using <code>cat</code>.</span>
+<span data-code-cell="annotated-cell-31" data-code-lines="6" data-code-annotation="4">Add a new recipe to your <code>recipes.txt</code> file. You can use your regular text editor. Here, we add a new recipe from the command line using <code>cat</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-31" data-target-annotation="5">5</dt>
 <dd>
@@ -1240,35 +1224,27 @@ Solutions
 </dd>
 <dt data-target-cell="annotated-cell-31" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="19" data-code-annotation="6">Switch back to the default branch (<code>main</code> in this example) using <code>git checkout main</code>. You can also use <code>git switch main</code>.</span>
+<span data-code-cell="annotated-cell-31" data-code-lines="19" data-code-annotation="6">View the contents of <code>recipes.txt</code> to verify your changes. Here, we use the <code>cat</code> command again.</span>
 </dd>
 <dt data-target-cell="annotated-cell-31" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="20" data-code-annotation="7">Make conflicting changes in the <code>main</code> branch to <code>recipes.txt</code> using <code>cat</code>.</span>
+<span data-code-cell="annotated-cell-31" data-code-lines="20" data-code-annotation="7">Switch back to the default branch (<code>main</code> in this example). Here, we use <code>git checkout main</code> but you can also use <code>git switch main</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-31" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="32,33" data-code-annotation="8">Stage and commit the conflicting changes to <code>recipes.txt</code> using <code>git add</code> and <code>git commit</code>.</span>
+<span data-code-cell="annotated-cell-31" data-code-lines="21" data-code-annotation="8">View the contents of <code>recipes.txt</code> again to confirm that the previous changes do not exist on the <code>main</code> branch.</span>
 </dd>
 <dt data-target-cell="annotated-cell-31" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="34" data-code-annotation="9">Attempt to merge the <code>feature</code> branch with the default branch to create a merge conflict using <code>git merge feature</code>.</span>
+<span data-code-cell="annotated-cell-31" data-code-lines="22" data-code-annotation="9">Merge the changes <code>feature</code> branch into the <code>main</code> branch.</span>
 </dd>
 <dt data-target-cell="annotated-cell-31" data-target-annotation="10">10</dt>
 <dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="35" data-code-annotation="10">Resolve the merge conflict by editing <code>recipes.txt</code>. You can use a regular text editor to do this. In this example, we remove the conflict markers that Git added to <code>recipes.txt</code> using <code>sed</code> which results in keeping both recipes. This is not a recommended way to resolve merge conflicts and we only do it here to resolve the merge conflict without manual intervention. Merge conflicts usually always require manual resolution by the user.</span>
+<span data-code-cell="annotated-cell-31" data-code-lines="23" data-code-annotation="10">Delete the merged <code>feature</code> branch using <code>git branch -d feature</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-31" data-target-annotation="11">11</dt>
 <dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="36" data-code-annotation="11">Stage the resolved changes to <code>recipes.txt</code> using <code>git add</code>.</span>
-</dd>
-<dt data-target-cell="annotated-cell-31" data-target-annotation="12">12</dt>
-<dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="37" data-code-annotation="12">Commit the resolved changes in <code>recipes.txt</code> with a descriptive commit message using <code>git commit</code>.</span>
-</dd>
-<dt data-target-cell="annotated-cell-31" data-target-annotation="13">13</dt>
-<dd>
-<span data-code-cell="annotated-cell-31" data-code-lines="38" data-code-annotation="13">Delete the merged <code>feature</code> branch using <code>git branch -d feature</code>.</span>
+<span data-code-cell="annotated-cell-31" data-code-lines="24" data-code-annotation="11">View the contents of <code>recipes.txt</code> yet again to confirm that the previous changes have been merged into the <code>main</code> branch.</span>
 </dd>
 </dl>
 </div>
@@ -1299,27 +1275,63 @@ Command history
 <span id="cb14-4"><a href="#cb14-4"></a><span class="ex">Switched</span> to branch <span class="st">'feature'</span></span>
 <span id="cb14-5"><a href="#cb14-5"></a><span class="ex">+</span> cat</span>
 <span id="cb14-6"><a href="#cb14-6"></a><span class="ex">+</span> git add recipes.txt</span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add chocolate cake recipe to recipes.txt</span>
-<span id="cb14-8"><a href="#cb14-8"></a><span class="ex">[feature</span> cbc751e] Add chocolate cake recipe to recipes.txt</span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add potatoes recipe to recipes.txt</span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="ex">[feature</span> f29a420] Add potatoes recipe to recipes.txt</span>
 <span id="cb14-9"><a href="#cb14-9"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
-<span id="cb14-10"><a href="#cb14-10"></a><span class="ex">+</span> git checkout main</span>
-<span id="cb14-11"><a href="#cb14-11"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span>
-<span id="cb14-12"><a href="#cb14-12"></a><span class="ex">+</span> cat</span>
-<span id="cb14-13"><a href="#cb14-13"></a><span class="ex">+</span> git add recipes.txt</span>
-<span id="cb14-14"><a href="#cb14-14"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add vanilla cake recipe to recipes.txt</span>
-<span id="cb14-15"><a href="#cb14-15"></a><span class="ex">[main</span> 2fce614] Add vanilla cake recipe to recipes.txt</span>
-<span id="cb14-16"><a href="#cb14-16"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
-<span id="cb14-17"><a href="#cb14-17"></a><span class="ex">+</span> git merge feature</span>
-<span id="cb14-18"><a href="#cb14-18"></a><span class="ex">Auto-merging</span> recipes.txt</span>
-<span id="cb14-19"><a href="#cb14-19"></a><span class="ex">CONFLICT</span> <span class="pp">(</span><span class="ss">content</span><span class="pp">)</span>: Merge conflict in recipes.txt</span>
-<span id="cb14-20"><a href="#cb14-20"></a><span class="ex">Automatic</span> merge failed<span class="kw">;</span> <span class="ex">fix</span> conflicts and then commit the result.</span>
-<span id="cb14-21"><a href="#cb14-21"></a><span class="ex">+</span> sed <span class="at">-i</span>  <span class="at">-e</span> /<span class="pp">^</span><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> /d <span class="at">-e</span> /<span class="pp">^</span>=======/d <span class="at">-e</span> /<span class="pp">^</span><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> /d recipes.txt</span>
-<span id="cb14-22"><a href="#cb14-22"></a><span class="ex">sed:</span> can<span class="st">'t read : No such file or directory</span></span>
-<span id="cb14-23"><a href="#cb14-23"></a><span class="st">+ git add recipes.txt</span></span>
-<span id="cb14-24"><a href="#cb14-24"></a><span class="st">+ git commit -m Resolve merge conflict by adding both chocolate and vanilla cake recipes</span></span>
-<span id="cb14-25"><a href="#cb14-25"></a><span class="st">[main c3aed7b] Resolve merge conflict by adding both chocolate and vanilla cake recipes</span></span>
-<span id="cb14-26"><a href="#cb14-26"></a><span class="st">+ git branch -d feature</span></span>
-<span id="cb14-27"><a href="#cb14-27"></a><span class="st">Deleted branch feature (was cbc751e).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="ex">+</span> cat recipes.txt</span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="ex">Pasta</span></span>
+<span id="cb14-12"><a href="#cb14-12"></a></span>
+<span id="cb14-13"><a href="#cb14-13"></a><span class="ex">1.</span> Bring water to the boil in a large saucepan.</span>
+<span id="cb14-14"><a href="#cb14-14"></a><span class="ex">2.</span> Once the water is boiling, add a good pinch of salt.</span>
+<span id="cb14-15"><a href="#cb14-15"></a><span class="ex">3.</span> Add the pasta.</span>
+<span id="cb14-16"><a href="#cb14-16"></a><span class="ex">4.</span> Cook the pasta according to packet instructions until it<span class="st">'s "al dente".</span></span>
+<span id="cb14-17"><a href="#cb14-17"></a><span class="st">5. Drain the pasta in a colander.</span></span>
+<span id="cb14-18"><a href="#cb14-18"></a><span class="st">6. Enjoy!</span></span>
+<span id="cb14-19"><a href="#cb14-19"></a></span>
+<span id="cb14-20"><a href="#cb14-20"></a><span class="st">Potatoes</span></span>
+<span id="cb14-21"><a href="#cb14-21"></a></span>
+<span id="cb14-22"><a href="#cb14-22"></a><span class="st">1. Wash the potatoes and cut them into evenly sized chunks.</span></span>
+<span id="cb14-23"><a href="#cb14-23"></a><span class="st">2. Bring water to the boil in a large saucepan.</span></span>
+<span id="cb14-24"><a href="#cb14-24"></a><span class="st">3. Once the water is boiling, add a good pinch of salt.</span></span>
+<span id="cb14-25"><a href="#cb14-25"></a><span class="st">3. Add the potatoes.</span></span>
+<span id="cb14-26"><a href="#cb14-26"></a><span class="st">4. Cook the potatoes for 15 - 20 minutes or until fork-tender.</span></span>
+<span id="cb14-27"><a href="#cb14-27"></a><span class="st">5. Drain the pasta in a colander.</span></span>
+<span id="cb14-28"><a href="#cb14-28"></a><span class="st">+ git checkout main</span></span>
+<span id="cb14-29"><a href="#cb14-29"></a><span class="st">Switched to branch '</span>main<span class="st">'</span></span>
+<span id="cb14-30"><a href="#cb14-30"></a><span class="st">+ cat recipes.txt</span></span>
+<span id="cb14-31"><a href="#cb14-31"></a><span class="st">Pasta</span></span>
+<span id="cb14-32"><a href="#cb14-32"></a></span>
+<span id="cb14-33"><a href="#cb14-33"></a><span class="st">1. Bring water to the boil in a large saucepan.</span></span>
+<span id="cb14-34"><a href="#cb14-34"></a><span class="st">2. Once the water is boiling, add a good pinch of salt.</span></span>
+<span id="cb14-35"><a href="#cb14-35"></a><span class="st">3. Add the pasta.</span></span>
+<span id="cb14-36"><a href="#cb14-36"></a><span class="st">4. Cook the pasta according to packet instructions until it'</span>s <span class="st">"al dente"</span>.</span>
+<span id="cb14-37"><a href="#cb14-37"></a><span class="ex">5.</span> Drain the pasta in a colander.</span>
+<span id="cb14-38"><a href="#cb14-38"></a><span class="ex">6.</span> Enjoy!</span>
+<span id="cb14-39"><a href="#cb14-39"></a><span class="ex">+</span> git merge feature</span>
+<span id="cb14-40"><a href="#cb14-40"></a><span class="ex">Updating</span> b9999ce..f29a420</span>
+<span id="cb14-41"><a href="#cb14-41"></a><span class="ex">Fast-forward</span></span>
+<span id="cb14-42"><a href="#cb14-42"></a> <span class="ex">recipes.txt</span> <span class="kw">|</span> <span class="ex">9</span> +++++++++</span>
+<span id="cb14-43"><a href="#cb14-43"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
+<span id="cb14-44"><a href="#cb14-44"></a><span class="ex">+</span> git branch <span class="at">-d</span> feature</span>
+<span id="cb14-45"><a href="#cb14-45"></a><span class="ex">Deleted</span> branch feature <span class="pp">(</span><span class="ss">was f29a420</span><span class="pp">)</span>.</span>
+<span id="cb14-46"><a href="#cb14-46"></a><span class="ex">+</span> cat recipes.txt</span>
+<span id="cb14-47"><a href="#cb14-47"></a><span class="ex">Pasta</span></span>
+<span id="cb14-48"><a href="#cb14-48"></a></span>
+<span id="cb14-49"><a href="#cb14-49"></a><span class="ex">1.</span> Bring water to the boil in a large saucepan.</span>
+<span id="cb14-50"><a href="#cb14-50"></a><span class="ex">2.</span> Once the water is boiling, add a good pinch of salt.</span>
+<span id="cb14-51"><a href="#cb14-51"></a><span class="ex">3.</span> Add the pasta.</span>
+<span id="cb14-52"><a href="#cb14-52"></a><span class="ex">4.</span> Cook the pasta according to packet instructions until it<span class="st">'s "al dente".</span></span>
+<span id="cb14-53"><a href="#cb14-53"></a><span class="st">5. Drain the pasta in a colander.</span></span>
+<span id="cb14-54"><a href="#cb14-54"></a><span class="st">6. Enjoy!</span></span>
+<span id="cb14-55"><a href="#cb14-55"></a></span>
+<span id="cb14-56"><a href="#cb14-56"></a><span class="st">Potatoes</span></span>
+<span id="cb14-57"><a href="#cb14-57"></a></span>
+<span id="cb14-58"><a href="#cb14-58"></a><span class="st">1. Wash the potatoes and cut them into evenly sized chunks.</span></span>
+<span id="cb14-59"><a href="#cb14-59"></a><span class="st">2. Bring water to the boil in a large saucepan.</span></span>
+<span id="cb14-60"><a href="#cb14-60"></a><span class="st">3. Once the water is boiling, add a good pinch of salt.</span></span>
+<span id="cb14-61"><a href="#cb14-61"></a><span class="st">3. Add the potatoes.</span></span>
+<span id="cb14-62"><a href="#cb14-62"></a><span class="st">4. Cook the potatoes for 15 - 20 minutes or until fork-tender.</span></span>
+<span id="cb14-63"><a href="#cb14-63"></a><span class="st">5. Drain the pasta in a colander.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1327,8 +1339,8 @@ Command history
 </div>
 <p><a href="../exercises-repos/recipes-branches.zip" class="btn btn-outline-primary" role="button">Download the repository</a></p>
 </section>
-<section id="github-intro" class="level2">
-<h2 class="anchored" data-anchor-id="github-intro">GitHub: Intro</h2>
+<section id="create-and-resolve-a-merge-conflict" class="level3">
+<h3 class="anchored" data-anchor-id="create-and-resolve-a-merge-conflict">Create and resolve a merge conflict</h3>
 <div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1340,6 +1352,196 @@ Exercises
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Deliberately create a merge conflict by editing the same section of a file on two separate branches and attempting to merge them. An example can be found in the <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html">branches</a> chapter.</li>
+<li>Resolve the merge conflict.</li>
+<li>Delete the merged branch afterwards.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-34"><pre class="sourceCode numberSource zsh code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode zsh"><span id="annotated-cell-34-1"><a href="#annotated-cell-34-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="annotated-cell-34-2"><a href="#annotated-cell-34-2"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-34-3" class="code-annotation-target"><a href="#annotated-cell-34-3"></a><span class="bu">cd</span> recipes</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-34-4" class="code-annotation-target"><a href="#annotated-cell-34-4"></a><span class="fu">git</span> branch feature</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-34-5" class="code-annotation-target"><a href="#annotated-cell-34-5"></a><span class="fu">git</span> switch feature</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-34-6" class="code-annotation-target"><a href="#annotated-cell-34-6"></a><span class="fu">cat</span> <span class="op">&gt;&gt;</span> recipes.txt <span class="op">&lt;&lt;- EOM</span></span>
+<span id="annotated-cell-34-7"><a href="#annotated-cell-34-7"></a></span>
+<span id="annotated-cell-34-8"><a href="#annotated-cell-34-8"></a><span class="st">Chocolate Cake</span></span>
+<span id="annotated-cell-34-9"><a href="#annotated-cell-34-9"></a></span>
+<span id="annotated-cell-34-10"><a href="#annotated-cell-34-10"></a><span class="st">1. Preheat the oven to 350°F (175°C).</span></span>
+<span id="annotated-cell-34-11"><a href="#annotated-cell-34-11"></a><span class="st">2. Mix flour, sugar, cocoa powder, baking powder, and salt in a bowl.</span></span>
+<span id="annotated-cell-34-12"><a href="#annotated-cell-34-12"></a><span class="st">3. Add eggs, milk, oil, and vanilla extract, and mix well.</span></span>
+<span id="annotated-cell-34-13"><a href="#annotated-cell-34-13"></a><span class="st">4. Pour the batter into a greased baking pan.</span></span>
+<span id="annotated-cell-34-14"><a href="#annotated-cell-34-14"></a><span class="st">5. Bake for 30-35 minutes.</span></span>
+<span id="annotated-cell-34-15"><a href="#annotated-cell-34-15"></a></span>
+<span id="annotated-cell-34-16"><a href="#annotated-cell-34-16"></a><span class="op">EOM</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-34-17" class="code-annotation-target"><a href="#annotated-cell-34-17"></a><span class="fu">git</span> add recipes.txt</span>
+<span id="annotated-cell-34-18"><a href="#annotated-cell-34-18"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add chocolate cake recipe to recipes.txt"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-34-19" class="code-annotation-target"><a href="#annotated-cell-34-19"></a><span class="fu">git</span> checkout main</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-34-20" class="code-annotation-target"><a href="#annotated-cell-34-20"></a><span class="fu">cat</span> <span class="op">&gt;&gt;</span> recipes.txt <span class="op">&lt;&lt;- EOM</span></span>
+<span id="annotated-cell-34-21"><a href="#annotated-cell-34-21"></a></span>
+<span id="annotated-cell-34-22"><a href="#annotated-cell-34-22"></a><span class="st">Vanilla Cake</span></span>
+<span id="annotated-cell-34-23"><a href="#annotated-cell-34-23"></a></span>
+<span id="annotated-cell-34-24"><a href="#annotated-cell-34-24"></a><span class="st">1. Preheat the oven to 350°F (175°C).</span></span>
+<span id="annotated-cell-34-25"><a href="#annotated-cell-34-25"></a><span class="st">2. Mix flour, sugar, baking powder, and salt in a bowl.</span></span>
+<span id="annotated-cell-34-26"><a href="#annotated-cell-34-26"></a><span class="st">3. Add eggs, milk, oil, and vanilla extract, and mix well.</span></span>
+<span id="annotated-cell-34-27"><a href="#annotated-cell-34-27"></a><span class="st">4. Pour the batter into a greased baking pan. </span></span>
+<span id="annotated-cell-34-28"><a href="#annotated-cell-34-28"></a><span class="st">5. Bake for 25-30 minutes.</span></span>
+<span id="annotated-cell-34-29"><a href="#annotated-cell-34-29"></a></span>
+<span id="annotated-cell-34-30"><a href="#annotated-cell-34-30"></a><span class="op">EOM</span></span>
+<span id="annotated-cell-34-31"><a href="#annotated-cell-34-31"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-34-32" class="code-annotation-target"><a href="#annotated-cell-34-32"></a><span class="fu">git</span> add recipes.txt</span>
+<span id="annotated-cell-34-33"><a href="#annotated-cell-34-33"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add vanilla cake recipe to recipes.txt"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-34-34" class="code-annotation-target"><a href="#annotated-cell-34-34"></a><span class="fu">git</span> merge feature</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-34-35" class="code-annotation-target"><a href="#annotated-cell-34-35"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="st">''</span> <span class="at">-e</span> <span class="st">'/^&lt;&lt;&lt;&lt;&lt;&lt;&lt; /d'</span> <span class="at">-e</span> <span class="st">'/^=======/d'</span> <span class="at">-e</span> <span class="st">'/^&gt;&gt;&gt;&gt;&gt;&gt;&gt; /d'</span> recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-34-36" class="code-annotation-target"><a href="#annotated-cell-34-36"></a><span class="fu">git</span> add recipes.txt</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-34-37" class="code-annotation-target"><a href="#annotated-cell-34-37"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict by adding both chocolate and vanilla cake recipes"</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-34" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-34-38" class="code-annotation-target"><a href="#annotated-cell-34-38"></a><span class="fu">git</span> branch <span class="at">-d</span> feature</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-34" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="3" data-code-annotation="1">Navigate into the <code>recipes</code> repository using <code>cd</code> (or a similar path).</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="4" data-code-annotation="2">Create a new branch called <code>feature</code> using <code>git branch feature</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="5" data-code-annotation="3">Switch to the new branch using <code>git switch feature</code>. You can also create and switch the branch in one step using <code>git checkout -b feature</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="6" data-code-annotation="4">Add a new recipe to your <code>recipes.txt</code> file using <code>cat</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="17,18" data-code-annotation="5">Stage and commit the changes to <code>recipes.txt</code> using <code>git add</code> and <code>git commit</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="19" data-code-annotation="6">Switch back to the default branch (<code>main</code> in this example) using <code>git checkout main</code>. You can also use <code>git switch main</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="20" data-code-annotation="7">Make conflicting changes in the <code>main</code> branch to <code>recipes.txt</code> using <code>cat</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="32,33" data-code-annotation="8">Stage and commit the conflicting changes to <code>recipes.txt</code> using <code>git add</code> and <code>git commit</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="34" data-code-annotation="9">Attempt to merge the <code>feature</code> branch with the default branch to create a merge conflict using <code>git merge feature</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="35" data-code-annotation="10">Resolve the merge conflict by editing <code>recipes.txt</code>. You can use a regular text editor to do this. In this example, we remove the conflict markers that Git added to <code>recipes.txt</code> using <code>sed</code> which results in keeping both recipes. This is not a recommended way to resolve merge conflicts and we only do it here to resolve the merge conflict without manual intervention. Merge conflicts usually always require manual resolution by the user.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="36" data-code-annotation="11">Stage the resolved changes to <code>recipes.txt</code> using <code>git add</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="37" data-code-annotation="12">Commit the resolved changes in <code>recipes.txt</code> with a descriptive commit message using <code>git commit</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-34" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-34" data-code-lines="38" data-code-annotation="13">Delete the merged <code>feature</code> branch using <code>git branch -d feature</code>.</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Command history">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Command history
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource zsh number-lines code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">+</span> cd recipes</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="ex">+</span> git branch feature</span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="ex">+</span> git switch feature</span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="ex">Switched</span> to branch <span class="st">'feature'</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="ex">+</span> cat</span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="ex">+</span> git add recipes.txt</span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add chocolate cake recipe to recipes.txt</span>
+<span id="cb15-8"><a href="#cb15-8"></a><span class="ex">[feature</span> dc2ee2f] Add chocolate cake recipe to recipes.txt</span>
+<span id="cb15-9"><a href="#cb15-9"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a><span class="ex">+</span> git checkout main</span>
+<span id="cb15-11"><a href="#cb15-11"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a><span class="ex">+</span> cat</span>
+<span id="cb15-13"><a href="#cb15-13"></a><span class="ex">+</span> git add recipes.txt</span>
+<span id="cb15-14"><a href="#cb15-14"></a><span class="ex">+</span> git commit <span class="at">-m</span> Add vanilla cake recipe to recipes.txt</span>
+<span id="cb15-15"><a href="#cb15-15"></a><span class="ex">[main</span> 8974dd5] Add vanilla cake recipe to recipes.txt</span>
+<span id="cb15-16"><a href="#cb15-16"></a> <span class="ex">1</span> file changed, 9 insertions<span class="op">(+)</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a><span class="ex">+</span> git merge feature</span>
+<span id="cb15-18"><a href="#cb15-18"></a><span class="ex">Auto-merging</span> recipes.txt</span>
+<span id="cb15-19"><a href="#cb15-19"></a><span class="ex">CONFLICT</span> <span class="pp">(</span><span class="ss">content</span><span class="pp">)</span>: Merge conflict in recipes.txt</span>
+<span id="cb15-20"><a href="#cb15-20"></a><span class="ex">Automatic</span> merge failed<span class="kw">;</span> <span class="ex">fix</span> conflicts and then commit the result.</span>
+<span id="cb15-21"><a href="#cb15-21"></a><span class="ex">+</span> sed <span class="at">-i</span>  <span class="at">-e</span> /<span class="pp">^</span><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> /d <span class="at">-e</span> /<span class="pp">^</span>=======/d <span class="at">-e</span> /<span class="pp">^</span><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> /d recipes.txt</span>
+<span id="cb15-22"><a href="#cb15-22"></a><span class="ex">sed:</span> can<span class="st">'t read : No such file or directory</span></span>
+<span id="cb15-23"><a href="#cb15-23"></a><span class="st">+ git add recipes.txt</span></span>
+<span id="cb15-24"><a href="#cb15-24"></a><span class="st">+ git commit -m Resolve merge conflict by adding both chocolate and vanilla cake recipes</span></span>
+<span id="cb15-25"><a href="#cb15-25"></a><span class="st">[main 3903ae9] Resolve merge conflict by adding both chocolate and vanilla cake recipes</span></span>
+<span id="cb15-26"><a href="#cb15-26"></a><span class="st">+ git branch -d feature</span></span>
+<span id="cb15-27"><a href="#cb15-27"></a><span class="st">Deleted branch feature (was dc2ee2f).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><a href="../exercises-repos/recipes-branches-merge-conflict.zip" class="btn btn-outline-primary" role="button">Download the repository</a></p>
+</section>
+</section>
+<section id="github-intro" class="level2">
+<h2 class="anchored" data-anchor-id="github-intro">GitHub: Intro</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="connect-to-github" class="level3">
 <h3 class="anchored" data-anchor-id="connect-to-github">Connect to GitHub</h3>
@@ -1417,7 +1619,7 @@ Exercises
 </div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1426,7 +1628,7 @@ Solutions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="connect-to-github-1" class="level3">
 <h3 class="anchored" data-anchor-id="connect-to-github-1">Connect to GitHub</h3>
@@ -1465,12 +1667,12 @@ Solutions
 <ol start="2" type="1">
 <li>Set the remote URL of your local repository to your GitHub repository.</li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># In your local repository</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">git</span> remote add origin https://github.com/your-username/your-repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># In your local repository</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">git</span> remote add origin https://github.com/your-username/your-repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Push the changes on your main branch to GitHub.</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="create-a-readme.md-file-on-github-1" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-readme.md-file-on-github-1">Create a README.md file on GitHub</h3>
@@ -1496,12 +1698,12 @@ Solutions
 <ol type="1">
 <li>Fetch and merge your changes.</li>
 </ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">git</span> fetch</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">git</span> merge origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">git</span> fetch</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">git</span> merge origin/main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Verify that your local repository now includes the changes made on GitHub.</li>
 </ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="private-collaboration-with-pull-requests-using-github-flow-1" class="level3">
 <h3 class="anchored" data-anchor-id="private-collaboration-with-pull-requests-using-github-flow-1">“Private” collaboration with pull requests (using “GitHub Flow”)</h3>
@@ -1517,24 +1719,24 @@ Solutions
 <ol start="2" type="1">
 <li>Clone your partner’s repository.</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">git</span> clone https://github.com/partner-username/partner-repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">git</span> clone https://github.com/partner-username/partner-repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Create a new branch in your partner’s repository.</li>
 </ol>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> new-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> new-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li>Add a recipe to your partner’s recipe.txt file.</li>
 </ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="bu">echo</span> <span class="st">"New Recipe"</span> <span class="op">&gt;&gt;</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="bu">echo</span> <span class="st">"New Recipe"</span> <span class="op">&gt;&gt;</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="5" type="1">
 <li>Add and commit the changes.</li>
 </ol>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">git</span> add recipes.txt</span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add new recipe to recipes.txt"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">git</span> add recipes.txt</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add new recipe to recipes.txt"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="6" type="1">
 <li>Push the changes on the new branch to GitHub.</li>
 </ol>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">git</span> push origin new-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">git</span> push origin new-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="7" type="1">
 <li>Create a Pull Request.</li>
 </ol>
@@ -1565,20 +1767,20 @@ Solutions
 <ol type="1">
 <li>Push another branch (other than the default branch) with changes to GitHub.</li>
 </ol>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">git</span> checkout <span class="at">-b</span> another-branch</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="bu">echo</span> <span class="st">"Some changes"</span> <span class="op">&gt;</span> newfile.txt</span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="fu">git</span> add newfile.txt</span>
-<span id="cb24-5"><a href="#cb24-5"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add newfile.txt"</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a><span class="fu">git</span> push origin another-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">git</span> checkout <span class="at">-b</span> another-branch</span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="bu">echo</span> <span class="st">"Some changes"</span> <span class="op">&gt;</span> newfile.txt</span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="fu">git</span> add newfile.txt</span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add newfile.txt"</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="fu">git</span> push origin another-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Delete any unused or merged branches.</li>
 </ol>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="ex">Code</span> kopieren</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="co"># e.g. local:</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">git</span> branch <span class="at">-d</span> branch-name</span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="co"># e.g. remote:</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="fu">git</span> push origin <span class="at">--delete</span> branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="ex">Code</span> kopieren</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="co"># e.g. local:</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">git</span> branch <span class="at">-d</span> branch-name</span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="co"># e.g. remote:</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="fu">git</span> push origin <span class="at">--delete</span> branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="clean-up-your-repository-on-github-1" class="level3">
 <h3 class="anchored" data-anchor-id="clean-up-your-repository-on-github-1">Clean up your repository on GitHub</h3>
@@ -1599,34 +1801,34 @@ Solutions
 <ol start="3" type="1">
 <li>Pull the changes to your local repository.</li>
 </ol>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="clone-and-sync-your-repo-1" class="level3">
 <h3 class="anchored" data-anchor-id="clone-and-sync-your-repo-1">Clone and sync your repo</h3>
 <ol type="1">
 <li>Clone your repository from GitHub to a different location on your computer.</li>
 </ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">git</span> clone https://github.com/your-username/your-repo-name.git /new/location/for/repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">git</span> clone https://github.com/your-username/your-repo-name.git /new/location/for/repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Stage and commit changes in the new location (consider using a new branch).</li>
 </ol>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="bu">cd</span> /new/location/for/repo</span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">git</span> checkout <span class="at">-b</span> new-branch</span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="bu">echo</span> <span class="st">"More changes"</span> <span class="op">&gt;</span> anotherfile.txt</span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="fu">git</span> add anotherfile.txt</span>
-<span id="cb28-5"><a href="#cb28-5"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add anotherfile.txt"</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a><span class="fu">git</span> push origin new-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="bu">cd</span> /new/location/for/repo</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">git</span> checkout <span class="at">-b</span> new-branch</span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="bu">echo</span> <span class="st">"More changes"</span> <span class="op">&gt;</span> anotherfile.txt</span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="fu">git</span> add anotherfile.txt</span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add anotherfile.txt"</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="fu">git</span> push origin new-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Pull these new changes to the repository in the original location.</li>
 </ol>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="bu">cd</span> /original/location/for/repo</span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="bu">cd</span> /original/location/for/repo</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li>Delete your newly cloned repository.</li>
 </ol>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="ex">Code</span> kopieren</span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">rm</span> <span class="at">-rf</span> /new/location/for/repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="ex">Code</span> kopieren</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">rm</span> <span class="at">-rf</span> /new/location/for/repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div>
 </div>
@@ -1635,7 +1837,7 @@ Solutions
 <section id="github-advanced" class="level2">
 <h2 class="anchored" data-anchor-id="github-advanced">GitHub: Advanced</h2>
 <div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1644,7 +1846,7 @@ Exercises
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="public-collaboration-with-pull-requests-using-a-fork-and-github-flow" class="level3">
 <h3 class="anchored" data-anchor-id="public-collaboration-with-pull-requests-using-a-fork-and-github-flow">“Public” collaboration with pull requests (using a fork and GitHub flow)</h3>
@@ -1690,7 +1892,7 @@ Exercises
 </div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1699,7 +1901,7 @@ Solutions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="public-collaboration-with-pull-requests-using-a-fork-and-github-flow-1" class="level3">
 <h3 class="anchored" data-anchor-id="public-collaboration-with-pull-requests-using-a-fork-and-github-flow-1">Public Collaboration with Pull Requests (Using a Fork and GitHub Flow)</h3>
@@ -1729,19 +1931,19 @@ Solutions
 <ol start="4" type="1">
 <li>Clone the forked repository into a sensible location on your computer</li>
 </ol>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">git</span> clone https://github.com/your-username/forked-repo-name.git /path/to/your/forked/directory</span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="bu">cd</span> /path/to/your/forked/directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">git</span> clone https://github.com/your-username/forked-repo-name.git /path/to/your/forked/directory</span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="bu">cd</span> /path/to/your/forked/directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="5" type="1">
 <li>Create a new branch and create one or multiple commits “fixing” the issue that you opened</li>
 </ol>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> issue-fix-branch</span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="bu">echo</span> <span class="st">"New Recipe Content"</span> <span class="op">&gt;&gt;</span> recipes.txt</span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="fu">git</span> add recipes.txt</span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add new recipe to fix issue #1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> issue-fix-branch</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="bu">echo</span> <span class="st">"New Recipe Content"</span> <span class="op">&gt;&gt;</span> recipes.txt</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="fu">git</span> add recipes.txt</span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add new recipe to fix issue #1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="6" type="1">
 <li>Push your changes to GitHub</li>
 </ol>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">git</span> push origin issue-fix-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">git</span> push origin issue-fix-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="7" type="1">
 <li>Create a pull request with your changes ( from the fork to the original repo) and refer to the issue in your pull request</li>
 </ol>
@@ -1798,7 +2000,7 @@ Solutions
 <section id="tags-and-releases" class="level2">
 <h2 class="anchored" data-anchor-id="tags-and-releases">Tags and Releases</h2>
 <div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1807,7 +2009,7 @@ Exercises
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="create-a-tag" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-tag">Create a tag</h3>
@@ -1831,7 +2033,7 @@ Exercises
 </div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1840,20 +2042,20 @@ Solutions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="create-a-lightweight-or-an-annotated-tag-named-v1.0.0." class="level3">
 <h3 class="anchored" data-anchor-id="create-a-lightweight-or-an-annotated-tag-named-v1.0.0.">Create a lightweight or an annotated tag named v1.0.0.</h3>
 <ol type="1">
 <li>For a lightweight tag:</li>
 </ol>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">git</span> tag v1.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">git</span> tag v1.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For an annotated tag:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0.0 <span class="at">-m</span> <span class="st">"Release version 1.0.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">git</span> tag <span class="at">-a</span> v1.0.0 <span class="at">-m</span> <span class="st">"Release version 1.0.0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Push the tag to GitHub:</li>
 </ol>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">git</span> push origin v1.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">git</span> push origin v1.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="create-a-github-release-1" class="level3">
 <h3 class="anchored" data-anchor-id="create-a-github-release-1">Create a GitHub Release</h3>
@@ -1894,7 +2096,7 @@ Solutions
 <section id="graphical-user-interfaces" class="level2">
 <h2 class="anchored" data-anchor-id="graphical-user-interfaces">Graphical User Interfaces</h2>
 <div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1903,7 +2105,7 @@ Exercises
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="install-a-git-gui" class="level3">
 <h3 class="anchored" data-anchor-id="install-a-git-gui">Install a Git GUI</h3>
@@ -1925,7 +2127,7 @@ Exercises
 </div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1934,7 +2136,7 @@ Solutions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 
 </div>
@@ -1944,7 +2146,7 @@ Solutions
 <section id="stashing-and-co." class="level2">
 <h2 class="anchored" data-anchor-id="stashing-and-co.">Stashing and Co.</h2>
 <div class="callout callout-style-simple callout-note callout-titled" title="Exercises">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1953,7 +2155,7 @@ Exercises
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="stashing" class="level3">
 <h3 class="anchored" data-anchor-id="stashing">Stashing</h3>
@@ -1987,7 +2189,7 @@ Exercises
 </div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Solutions">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1996,7 +2198,7 @@ Solutions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 
 </div>

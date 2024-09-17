@@ -392,7 +392,7 @@ Learning Objectives
 <p><a href="https://version-control-github.formr.org" class="btn btn-outline-secondary" role="button"><i class="fa-circle-question fa-regular" aria-label="regular"></i> Take the quiz!</a></p>
 <section id="forking" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="forking"><span class="header-section-number">9.1</span> Forking</h2>
-<p>In the <a href="github-intro.qmd">previous chapter</a>, you learned that you can invite other people as collaborators to your repository. However, this usually comes with a few privileges in administering your project that you might not want to share with any random person who would like to contribute to your project. At the same, a central idea of open-source development is that even people who don’t know each other can collaborate together on open-source code. This is where forking comes in: Forking a repository on GitHub allows you to <strong>create a personal copy of <em>someone else’s</em> project</strong> under your GitHub account and contributing to that project without direct access to the original repository.</p>
+<p>In the <a href="../chapters/remotes-intro.html">previous chapter</a>, you learned that you can invite other people as collaborators to your repository. However, this usually comes with a few privileges in administering your project that you might not want to share with any random person who would like to contribute to your project. At the same, a central idea of open-source development is that even people who don’t know each other can collaborate together on open-source code. This is where forking comes in: Forking a repository on GitHub allows you to <strong>create a personal copy of <em>someone else’s</em> project</strong> under your GitHub account and contributing to that project without direct access to the original repository.</p>
 <p>This copy of the repository includes all files, commit history, and branches and also keeps a reference to the repository it was copied from. Forking is commonly used when you want to contribute to a project but you don’t have direct access to the original repository. It enables you to make changes independently, create new branches, and push modifications to your forked repository. You can also submit changes to the original repository through so-called <a href="#pull-requests">pull requests</a> which will be explained in more detail below.</p>
 <section id="creating-a-fork" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="creating-a-fork"><span class="header-section-number">9.1.1</span> Creating a fork</h3>
@@ -407,7 +407,23 @@ Figure&nbsp;9.1: Screenshot of a repository with fork button
 </figcaption>
 </figure>
 </div>
-<p>Once the forking process is complete, you can clone the repository to your local machine using the <code>git clone</code> command (for more details on <code>git clone</code>, see the <a href="github-intro.qmd#cloning">previous chapter</a>).</p>
+<p>Once the forking process is complete, you can clone the repository to your local machine using the <code>git clone</code> command (for more details on <code>git clone</code>, see the <a href="../chapters/remotes-intro.html#cloning">previous chapter</a>).</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Should I create a new branch after forking a repository?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Should I create a new branch after forking a repository?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>While it is not strictly necessary to create a new branch after forking a repository, it is considered a best practice for most workflows, particularly when contributing to a project. By default, your fork will create a copy of the original repository’s default branch (usually <code>main</code>), and you can make changes directly on this branch. However, doing so without creating a new branch to work on can complicate the process of keeping your fork up to date with the original project and managing contributions.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="pull-requests" class="level2" data-number="9.2">
@@ -475,7 +491,7 @@ Figure&nbsp;9.2: Screenshot of a Pull Request on GitHub
 <li><p><strong>Contributing</strong>: If you welcome contributions, specify how others can contribute to your project. Here, you can also include guidelines for submitting bug reports, feature requests, or pull requests.</p></li>
 </ul>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Adding a `CONTRIBUTING.md` file to a repository">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -484,7 +500,7 @@ Adding a <code>CONTRIBUTING.md</code> file to a repository
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For larger or more complex projects where contributions may involve setting up a specific development environment or adhering to specific workflows, it is standard practice to create a file called <code>CONTRIBUTING.md</code>. GitHub recognizes the presence of a <code>CONTRIBUTING.md</code> file in a repository and, for example, automatically includes a link to the <code>CONTRIBUTING.md</code> file when users open a new issue or pull request.</p>
 </div>
@@ -495,7 +511,7 @@ Adding a <code>CONTRIBUTING.md</code> file to a repository
 <li><p><strong>License</strong>: Choose a license that aligns with your project’s goals. You can use <a href="https://choosealicense.com">choosealicense.com</a> for guidance. The chosen license influences contributions to your project.</p></li>
 </ul>
 <div class="callout callout-style-simple callout-tip callout-titled" title="Find out more: View the `README.md` file of this project.">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -504,7 +520,7 @@ Find out more: View the <code>README.md</code> file of this project.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <section id="the-version-control-book" class="level1 callout-body-container callout-body" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> The Version Control Book</h1>
 <p><a href="https://zenodo.org/doi/10.5281/zenodo.10724424"><img src="https://zenodo.org/badge/648830079.svg" class="img-fluid" alt="DOI"></a> <a href="https://doi.org/10.25592/uhhfdm.14149"><img src="https://www.fdr.uni-hamburg.de/badge/DOI/10.25592/uhhfdm.14149.svg" class="img-fluid" alt="DOI"></a> <a href="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml"><img src="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg" class="img-fluid" alt="Quarto Publish"></a> <a href="#contributors"><img src="https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&amp;style=flat-square.png" class="img-fluid" alt="All Contributors"></a> <a href="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml"><img src="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg" class="img-fluid" alt="Codespell"></a></p>
@@ -559,6 +575,9 @@ Find out more: View the <code>README.md</code> file of this project.
 <td align="center" valign="top" width="14.28%">
 <a href="https://anamartinovici.com/"><img src="https://avatars.githubusercontent.com/u/20222657?v=4?s=100" width="100px;" alt="Ana Martinovici"><br><sub><b>Ana Martinovici</b></sub></a><br><a href="#ideas-anamartinovici" title="Ideas, Planning, &amp; Feedback">🤔</a>
 </td>
+<td align="center" valign="top" width="14.28%">
+<a href="https://github.com/justus-reihs"><img src="https://avatars.githubusercontent.com/u/180428105?v=4?s=100" width="100px;" alt="Justus Johannes Reihs"><br><sub><b>Justus Johannes Reihs</b></sub></a><br><a href="https://github.com/lnnrtwttkhn/version-control-book/issues?q=author%3Ajustus-reihs" title="Bug reports">🐛</a> <a href="#ideas-justus-reihs" title="Ideas, Planning, &amp; Feedback">🤔</a>
+</td>
 </tr>
 </tbody>
 </table>
@@ -587,7 +606,7 @@ Find out more: View the <code>README.md</code> file of this project.
 </div>
 <p>If you are working solo on a text file, the result should not be very interesting. However, if you collaborate on code, this command can be very useful (for blame <strong>or</strong> praise!)</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git blame` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -596,7 +615,7 @@ Find out more: Common <code>git blame</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-L &lt;start&gt;,&lt;end&gt;</code>: Specifies a line range to blame. For example, <code>git blame -L 10,20 file.txt</code> will blame lines 10 to 20 of the file.</p>
 <p><code>-M</code>: Detects lines that were moved within the file and shows the original author’s information.</p>
