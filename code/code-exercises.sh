@@ -21,3 +21,7 @@ zip -r exercises-repos/recipes-branches.zip recipes
 # Run the stashing script and zip its output
 sh -x code/code-exercises-stashing.sh > "exercises-repos/history-stashing.txt" 2>&1
 zip -r exercises-repos/recipes-stashing.zip recipes
+
+# Run the reverting script and zip its output
+sh -x code/code-exercises-reverting.sh > "exercises-repos/history-reverting.txt" 2>&1
+zip -r exercises-repos/recipes-reverting.zip recipes
