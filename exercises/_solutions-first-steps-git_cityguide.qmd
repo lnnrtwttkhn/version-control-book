@@ -1,0 +1,76 @@
+### Connect to GitHub
+
+1. Generate a personal access token (PAT) on GitHub.
+
+- Go to GitHub.
+- Click on your profile picture in the upper-right corner and select Settings.
+- In the left sidebar, click Developer settings.
+- In the left sidebar, click Personal access tokens.
+- Click Generate new token.
+- Give your token a descriptive name.
+- Select the scopes or permissions you'd like to grant this token. For uploading a repository, select the repo scope.
+- Click Generate token.
+- Copy the token and store it in a secure place. You won’t be able to see it again.
+
+2. Use the PAT for GitHub authentication.
+
+- When prompted for a username and password for GitHub operations (like git push), use your GitHub username as the username and the generated PAT as the password.
+
+### "Download" the repository for this course
+
+### Solution: "Download" the Repository for This Course
+
+1. **Navigate into an appropriate place on your system:**
+   - Open your terminal or command line interface.
+   - Use the `cd` command to navigate to the directory where you want to download the repository. For example:
+     ```sh
+     cd ~/Documents/Projects
+     ```
+
+2. **Go to GitHub and copy the URL of the course repository:**
+   - Open your web browser and go to the GitHub page of the course repository.
+   - Click on the "Code" button and copy the repository URL
+   (usually it will be something like `https://github.com/username/repository.git`).
+
+3. **Use `git clone` to download the repository:**
+   - In your terminal, use the `git clone` command followed by the URL you copied. For example:
+     ```sh
+     git clone https://github.com/username/repository.git
+     ```
+   - This will download the entire repository into the directory you navigated to earlier.
+
+
+### Add Content and Commit Changes
+
+1. **Open the folder in RStudio as a new project**:
+    - Open RStudio.
+    - Click on `File` -> `New Project` -> `Existing Directory`.
+    - Navigate to the cloned repository folder and select it.
+    - Click `Create Project`.
+
+2. **Open `placeholder.qmd`**:
+    - In the RStudio File Explorer, navigate to the cloned repository and open `placeholder.qmd`.
+
+3. **Ask your partner for their favorite café in their city and write it down in `placeholder.qmd`**:
+    - Add the café name and a short description in `placeholder.qmd`.
+    - Save the file by clicking on `File` -> `Save` or pressing `Ctrl + S`.
+
+4. **Stage the changes**:
+    - **Using RStudio**:
+        - In the RStudio Git pane, check the box next to `placeholder.qmd` to stage the changes.
+    - **Using the Command Line**:
+        - Run the command:
+          ```sh
+          git add placeholder.qmd
+          ```
+
+5. **Commit the changes in `placeholder.qmd` with a descriptive commit message**:
+    - **Using RStudio**:
+        - Click on `Commit` in the Git pane.
+        - Enter a descriptive commit message, such as "Add favorite café in city X".
+        - Click `Commit` to finalize the commit.
+    - **Using the Command Line**:
+        - Run the command:
+          ```sh
+          git commit -m "Add favorite café in city X"
+          ```

@@ -1,0 +1,69 @@
+### Public Collaboration with Pull Requests (Using a Fork and GitHub Flow)
+1. Find out what forking is
+- Forking is a process where you create a copy of someone else’s repository under your own GitHub account. 
+It allows you to freely experiment with changes without affecting the original project.
+
+2. Fork the repository of another course participant (who is not your partner from the previous exercise)
+- Go to the GitHub repository you want to fork.
+- Click the Fork button at the top-right corner of the repository page.
+- Select your GitHub account to fork the repository.
+
+3. Create an issue, suggesting a missing activity
+- Go to the Issues tab of your partner's repository on GitHub.
+- Click New issue.
+- Provide a title and description for the issue, suggesting a missing activity.
+- Click Submit new issue.
+
+
+4. Clone the forked repository into a sensible location on your computer
+
+```bash
+git clone https://github.com/your-username/forked-repo-name.git /path/to/your/forked/directory
+cd /path/to/your/forked/directory
+```
+
+5. Create a new branch and create one or multiple commits “fixing” the issue that you opened
+
+```bash
+git checkout -b issue-fix-branch
+echo "New Content" >> placeholder.qmd
+git add placeholder.qmd
+git commit -m "Add new activity to fix issue #1"
+```
+
+6. Push your changes to GitHub
+
+```bash
+git push origin issue-fix-branch
+```
+
+7. Create a pull request with your changes ( from the fork to the original repo) and refer to the issue in your pull request
+- Go to your forked repository on GitHub.
+- Click the Compare & pull request button.
+- Ensure the base repository is the original and the base branch is main.
+- Provide a title and description for your pull request.
+- Refer to the issue by adding “Fixes #issue-number” in the description.
+- Click Create pull request.
+- Review Pull Requests in Your Repository
+
+### Review pull requests that are created in your repository.
+- Go to your repository on GitHub.
+- Click on the Pull requests tab.
+- Review the code and files changed.
+- Use the comment section in the pull request to discuss and request any additional changes.
+
+2. Close the pull request by merging the proposed changes.
+- Once satisfied with the changes, click the green Merge pull request button.
+- Click Confirm merge.
+- Practice Collaborative Workflows on GitHub
+
+### Protect Your Branch
+1. Go to your repository’s “Settings” and select “Branches”.
+- Navigate to your repository on GitHub.
+- Click on Settings.
+- Select Branches from the left sidebar.
+
+2. Under “Branch protection rules”, click “Add rule” and enter “main” in the “Branch name pattern” field.
+- Click Add rule.
+- Enter main in the Branch name pattern field.
+- Enable the desired protection options (for example, require pull request reviews) and click “Create” to save the rule.
