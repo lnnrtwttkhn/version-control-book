@@ -1,0 +1,35 @@
+1. Forking is a process where you create a copy of someone else's repository under your own account.
+It allows you to freely experiment with changes without affecting the original project.
+2. To fork the `recipes` repository of another course participant: (1) Go to the GitHub repository you want to fork. (2) Click the `Fork` button at the top-right corner of the repository page. (3) Select your GitHub account to fork the repository.
+3. Create an Issue, suggesting a missing recipe: (1) Go to the Issues tab of your partner's repository on GitHub. (2) Click `New issue`. Provide a title and description for the Issue, suggesting a missing recipe. (3) Click `Submit new issue`.
+4. Clone the forked repository into a sensible location on your computer.
+
+```{zsh filename="Code"}
+git clone https://github.com/your-username/forked-repo-name.git /path/to/your/forked/directory
+cd /path/to/your/forked/directory
+```
+
+5. Create a new branch and create one or multiple commits "fixing" the Issue that you opened.
+
+```{zsh filename="Code"}
+git checkout -b issue-fix-branch
+echo "New Recipe Content" >> recipes.txt
+git add recipes.txt
+git commit -m "Add new recipe to fix #1"
+```
+
+6. Push your changes to the remote repository:
+
+```{zsh filename="Code"}
+git push origin issue-fix-branch
+```
+
+7. Create a pull request with your changes (from the forked to the original repo) and refer to the issue in your pull request:
+
+    1. Go to your forked repository in your browser.
+    1. Click the `Compare & pull request` button.
+    1. Ensure that the base repository is the original and the base branch is `main`.
+    1. Provide a title and description for your pull request.
+    1. Refer to the issue by adding `Fixes #issue-number` in the description.
+    1. Click `Create pull request`.
+    1. Review any pull requests in your repository.
