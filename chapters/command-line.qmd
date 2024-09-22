@@ -3,7 +3,7 @@ image: ../static/terminal-computer.jpg
 image-alt: "https://commons.wikimedia.org/wiki/File:DEC_VT100_terminal.jpg"
 categories: [beginner, basics, command line]
 abstract: |
-  In this session, we will explore the concept of the command line and discover some commands that work well alongside Git.
+  In this chapter, we will explore the command line and discover some commands that work well alongside Git.
 ---
 
 # Command Line
@@ -20,10 +20,11 @@ abstract: |
 You are most likely used to interacting with programs on your computer through graphical user interfaces (GUIs) where you can select options through graphical icons and visual indicators using the computer mouse.
 However, computers have historically been controlled through text-based commands typed into command-line interfaces (CLIs) using the computer keyboard.
 To this day, the command line has persisted as a reliable (and sometimes the only) way to interact effectively with computer programs.
-Similarly, even though many GUIs for Git exist (for an overview, see the chapter on [Graphical User Interfaces](gui.qmd)), Git is fundamentally a command-line tool.
+Similarly, even though many GUIs for Git exist (for an overview, see the chapter on [Graphical User Interfaces](gui.qmd)), **Git is fundamentally a command-line tool**.
 This is why comfort with the command line is a good basis for learning Git.
+For more general advantages of the command line, see @tip-cli-advantages.
 
-**General advantages** of the command line include:
+::: {#tip-cli-advantages .callout-tip title="More general advantages of the command line" collapse="true"}
 
 1. **Longevity:** The command line has stood the test of time, remaining relevant and widely used even as new technologies emerge.
 1. **Power:** The command line is a robust and powerful tool, enabling users to accomplish intricate tasks efficiently.
@@ -35,26 +36,27 @@ This is why comfort with the command line is a good basis for learning Git.
 1. **Extensive Online Support:** When looking for help or troubleshooting Git-related issues online, you will often find valuable assistance in the form of command line instructions.
 Platforms like [Stack Overflow](https://stackoverflow.com/questions/tagged/git) frequently provide guidance and solutions based on command line usage.
 
+:::
+
 ## Terminology
 
 Before we begin with the basics of the command line, let's start by defining some key terms that you will frequently encounter throughout this book:
 
-A **file** is an unit of digital data storage that can contain a variety of information, such as text, images or even programs. 
-It is identified by a unique name and a file extension, which indicates the file's format or type (for example, `file.txt`). 
+A **file** is a unit of digital data storage that can contain a variety of information, such as text, images or even programs. 
+It is identified by a unique name and a file extension, which indicates the file's format or type (for example, `file.txt` for a plain text file). 
 Files are organized within a file system, allowing users to create, access, modify, and delete them.
 
 A **folder** is a container used in file systems to store and organize files and other folders.
 Folders provide a hierarchical structure that allows users to group and manage files, making it easier to locate and navigate through data.
 
-A **directory** is a more technical term, while **folder** is a user-friendly term for the same concept. 
+A **directory** is a more technical term for a folder, while **folder** is a user-friendly term for the same concept. 
 In practice, the two terms are often used interchangeably and many operating systems have adopted the term "folder".
 
 The **command-line interface (CLI)** is a text-based way to interact with computer programs.
 Specifically, the term "command line" refers to the interface where users input text commands to communicate with the computer.
 Most people primarily use a Graphical User Interface (GUI) to work with programs on their computer, but historically, text-based interfaces were more common.
 Often, the GUI can only access a limited set of features available through the CLI and some programs don't even have a GUI and can only be used through the command line.
-For many years, the command line was the primary way to interact with computers.
-This text-based interaction allows to perform various tasks, from running programs to managing files and directories.
+This text-based interaction allows to perform various tasks, from running programs to managing files and folders.
 
 The **terminal**, short for "terminal emulator", is the application or program that you open on your computer to access the command-line interface.
 Terminals were used to connect to mainframe computers in the early days of computing.
@@ -64,7 +66,7 @@ The **shell** is a software that interprets the commands you type into the termi
 It acts as a layer between you and the operating system.
 The shell processes the commands and communicates with the computer's operating system to execute them.
 It allows you to perform various tasks that your operating system offers, such as managing files, running and stopping programs, and changing system settings, all through text commands.
-Examples of popular shells include Bash on Linux and macOS, and PowerShell on Windows.
+Examples of popular shells include [Bash]({{< var links.gnu-bash >}}) on Linux and macOS, and [PowerShell]({{< var links.power-shell >}}) on Windows.
 
 In combination, in a typical scenario, you would open a terminal (the window), use the shell within that terminal to understand and process your commands, and interact with your computer through the command line interface provided by the terminal.
 That being said, the terms "shell", "command line", "command-line interface (CLI)", and "terminal" are often used interchangeably and roughly refer to the same thing: a simple window showing a prompt and a blinking cursor (see @fig-cli).
@@ -92,11 +94,13 @@ Click on the tab for your operating system or computer environment for detailed 
 
 ![Logo of the Git Bash program on Windows (Source: [Git for Windows on GitHub](https://avatars.githubusercontent.com/u/4571183?s=200&v=4))](../static/git-for-windows-logo.png){#fig-git-for-windows width="20%"}
 
-By default, Windows operating systems do not come with a pre-installed Unix Shell program.
+To use Git effectively on Windows, you need access to a Unix Shell environment, which is not natively available on Windows systems.
+Unix Shells, such as Bash, provide the most comprehensive access to Git's features and are the standard tool for interacting with Git. 
+This is why installing an emulator like Git Bash is necessary.
 In this guide, we recommend using an emulator provided by [Git for Windows]({{< var links.git-for-windows >}}), which grants you access to both the Bash shell and Git commands.
 
 For an installation guide, you can check out the chapters on [Installation](installation.qmd) and [Setup](setup.qmd).
-Once you have installed Git for Windows, you can open a terminal by launching the program called "Git Bash" from the Windows start menu.
+Once you have installed [Git for Windows]({{< var links.git-for-windows >}}), you can open a terminal by launching the program called "Git Bash" from the Windows start menu.
 
 ## {{< fa brands apple >}} macOS
 
@@ -109,7 +113,9 @@ There are (at least) three different ways to get there:
 1.    In the Finder, select the `Go` menu > `Utilities` > `Terminal.app`
 1.    Activate the Mac `Spotlight` search function, type `Terminal` in the search bar, and press the {{< kbd Enter >}} key.
 
-You may want to keep the Terminal in your [Dock](https://support.apple.com/guide/mac-help/open-apps-from-the-dock-mh35859/mac) to find it more easily.
+You may want to keep the Terminal in your [Dock](https://support.apple.com/guide/mac-help/open-apps-from-the-dock-mh35859/mac) to find it more easily, as shown in @fig-terminal-dock.
+
+![Terminal icon in the Dock on macOS](../static/mac-dock.png){#fig-terminal-dock width="60%"}
 
 On new Apple computers, especially those running recent versions of macOS, you might have to allow the Terminal access to certain files and folders after your initial commands.
 If a prompt appears asking for permission, you will need to confirm it to continue using Terminal with access to these files.
@@ -118,7 +124,7 @@ If a prompt appears asking for permission, you will need to confirm it to contin
 
 On an Apple computer running macOS Mojave or earlier versions, the default Unix Shell is Bash.
 Unix is a family of operating systems serving as the basis for Linux and macOS with the inclusion of a command line interface (or Unix Shell) as a key feature.
-For a Mac computer operating on macOS Catalina or later releases, the default Unix Shell is Zsh.
+For an Apple computer operating on macOS Catalina or later releases, the default Unix Shell is Zsh.
 Bash and Zsh are both programs, which are command-line interfaces for interacting with an operating system.
 Zsh is often considered better than Bash for its more advanced features and improved scripting capabilities.
 It also has extensive community-contributed plugins and themes.
@@ -163,7 +169,9 @@ In addition, if you want to add syntax highlighting (similar to the code chunks 
 
 ## {{< fa brands linux >}} Linux
 
-To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing {{< kbd Ctrl >}} + {{< kbd Alt >}} + {{< kbd T >}} simultaneously. If this shortcut does not work, you can find the terminal application in your system's applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.
+To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing {{< kbd Ctrl >}} (`control`) + {{< kbd Alt >}} + {{< kbd T >}} simultaneously.
+If this shortcut does not work, you can find the terminal application in your system's applications menu and click on it to open a new window.
+Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.
 
 ## {{< fa rocket >}} UHH JupyterHub
 
@@ -189,7 +197,7 @@ Your remote environment will be mostly empty, but you can move around and manage
 
 ## Opening the command line
 
-When you open the shell, you'll see a prompt that tells you that the shell is ready for input.
+When you open the command line, you'll see a prompt that tells you that the shell is ready for input.
 Your terminal interface will usually show a message similar to the following prompt:
 
 ```{zsh filename="Output"}
@@ -238,7 +246,7 @@ In the context of file systems, a "parent directory" and a "child directory" des
 
 - **Parent Directory:** This is the directory that is "higher up" in the directory hierarchy and contains one or more "child directories".
 - **Child Directory:** A child directory is located "inside" or "below" a parent directory.
-It is contained within the parent directory and is considered subordinate to it, much like a child in a family is part of the larger family unit.
+It is contained within the parent directory and is considered subordinate to it, like a child in a family is part of the larger family unit.
 
 ```{zsh filename="Output"}
 #| code-copy: false
@@ -250,12 +258,21 @@ parent $ tree
 3 directories
 ```
 
+To visualize this hierarchy, you can use the `tree` command in the command line. 
+The `tree` command generates a graphical representation of the directory structure, displaying the parent directory along with its child directories and files in a tree-like format. 
+This makes it easier to understand the organization of files and directories within a specific directory.
+
+**Note:** 
+The tree command is natively available on Windows. 
+For Linux and macOS users, you can install it via your package manager (for example, `brew install tree`, if [Homebrew](https://brew.sh) is installed) to achieve the same.
 :::
 
 The **root directory** is the highest level in the hierarchy.
 On Unix-based systems (including macOS and Linux), the root directory is denoted by `/`.
 On Windows, it is typically denoted by a drive letter followed by `\` (for example, `C:\`).
-While the fundamental concepts of directories and files are consistent across operating systems, there are some differences in folder structures between macOS (Unix-based) and Windows:
+While the fundamental concepts of directories and files are consistent across operating systems, there are some differences in folder structures between macOS (Unix-based) and Windows (for details, see @tip-folder-os-diff)
+
+::: {#tip-folder-os-diff .callout-tip title="Differences in folder structures between macOS and Windows" collapse="true"}
 
 ::: {.panel-tabset}
 
@@ -268,11 +285,11 @@ The standard path to the `Users` folder is `C:\Users`.
 
 To find or navigate to the `Users` folder in Windows, you can:
 
-1. Use the tilde symbol (`~`; for more details, see below): 
+1. Use the tilde symbol (`~`; for more details, [see below](#tilde)): 
 In Git Bash, you can use `~` to represent the home directory of the current user, which is typically `C:\Users\<username>`.
 
-2. Directly navigate using the command prompt:
-If your present working directory (use `pwd`) is at the root (`C:\`), you can directly navigate to the `Users"` folder by entering the command: `cd Users`.
+2. Navigate directly using the command prompt.
+If your present working directory (use `pwd`; for details, see below) is at the root (`C:\`), you can directly navigate to the `Users` folder by entering the command: `cd Users`.
 Alternatively, if you are not sure which drive you are currently on, you can switch to the `C:` drive by typing `cd C:` and then navigate to the `Users`folder with `cd Users`.
 An example path to a file within the `Users` directory on Windows might be:
 
@@ -294,9 +311,11 @@ An example path on macOS could be:
 
 :::
 
+:::
+
 ### Current working directory
 
-The current **working directory** is the location within your file system where a user or an application is presently performing file operations or running commands.
+The current working directory is the location within your file system where a user or an application is presently performing file operations or running commands.
 The command `pwd` (short for "print working directory") will display the directory that the shell is currently focused on in your file system.
 
 ```{zsh filename="Code"}
@@ -390,14 +409,14 @@ Additionally, some configurations or filesystem options can affect this behavior
 
 ### Paths with spaces
 
-Note, that if a path contains a space, it needs to be enclosed in quotation marks to be recognized by the command line.
+If a path contains a space, it needs to be enclosed in quotation marks to be recognized by the command line.
 Here is an example of a path with a space:
 
 ```{zsh filename="Output"}
 /Users/User/Downloads/Directory with space/
 ```
 
-If you attempt to use this path in a command without quotes, the command interpreter would understand it as three separate arguments since in command-line interfaces, spaces are typically used to separate different arguments or parameters.
+If you attempt to use this path in a command without quotation marks, the command interpreter would understand it as three separate arguments since in command-line interfaces, spaces are typically used to separate different arguments or parameters.
 Navigating to this absolute path with spaces would look like this:
 
 ```{zsh filename="Code"}
@@ -405,12 +424,13 @@ cd '/Users/User/Downloads/Directory with space/'
 ```
 
 While the command line can handle paths (or files) with spaces in this way, we **recommend to avoid spaces** in folder and file names altogether, especially if you use the command line frequently.
+For example, change the name of a directory called `my folder` to `my_folder`, using an underscore instead of a space.
 
 ### Taking shortcuts
 
 #### Tilde: `~`
 
-The tilde symbol (`~`) provides a convenient and abbreviated way to refer to the user's home directory, enabling us to easily construct paths relative to that directory.
+The tilde symbol (`~`) provides a convenient and abbreviated way to refer to the user's home directory, allowing us to easily construct paths relative to that directory.
 To quickly change the current working directory to your user's home directory anywhere on your file system, we can use `cd ~` which will transport us back to the user's home directory.
 
 ```{zsh filename="Code"}
@@ -424,6 +444,19 @@ For example:
 ~/Downloads$ cd ~
 ~$ 
 ```
+
+::: {.callout-tip collapse="true" title="Finding the tilde (`~`) on your keyboard"}
+::: {.panel-tabset}
+
+#### {{< fa brands apple >}} Apple
+
+On an Apple computer you can type the tilde (`~`) symbol by pressing the {{< kbd option >}} (`option`) key and the {{< kbd N >}} key simultaneously, then pressing {{< kbd Space >}}.
+
+#### {{< fa brands windows >}} Windows (German keyboard layout)
+On a Windows PC with a German keyboard layout, you can type the tilde (`~`) by holding the {{< kbd AltGr >}} key and pressing the {{< kbd + >}} key.
+
+:::
+:::
 
 #### Dot: `.`
 
@@ -451,7 +484,7 @@ In turn, these two commands are equivalent:
 #### Dot Dot: `..`
 
 The `..` symbol is a shorthand representation for the parent directory of the current working directory (for a reminder about "parent" and "child" directories, see @tip-parent-child-directories).
-It can be used repeatedly, allowing `cd ..` to move up one folder and ``cd ../..` to move up two folders.
+It can be used repeatedly, allowing `cd ..` to move up one folder and `cd ../..` to move up two folders.
 This is useful for creating relative paths to other branches within a directory tree.
 
 For instance, by executing the following sequence of commands, we will navigate horizontally (or sideways) to a folder located at the same hierarchical level as the current working directory:
@@ -475,14 +508,14 @@ In this section, we provide some tips and tricks to help you become more efficie
 
 ### Autocompletion
 
-While using the command line, instead of typing out the full command or path, you can press the {{< kbd ⇥ Tab >}} key to automatically complete the rest of the command.
+While using the command line, instead of typing out the full command or path, you can press the {{< kbd ⇥ >}} (`Tab`) key to automatically complete the rest of the command.
 Begin typing a command or the initial letters of a file or directory, for example:
 
 ```{zsh filename="Code"}
 cd ~/Doc
 ```
 
-Once you've typed a portion of the command or path, press the {{< kbd ⇥ Tab >}} key.
+Once you've typed a portion of the command or path, press the {{< kbd ⇥ >}} key.
 The command-line interface will attempt to auto-complete the command or path based on what matches your input.
 In this case for example:
 
@@ -502,12 +535,12 @@ Using the `Up` and `Down` arrow keys on your keyboard allows you to quickly acce
 After executing one or multiple commands, pressing the `Up` arrow key retrieves the most recent command.
 If you've navigated back using the `Up` arrow, pressing the `Down` arrow key moves you forward through the command history.
 You can continue to press `Up` and `Down` to cycle through the executed commands.
-To execute a command, hit Enter, or you can edit it as needed before execution.
+To execute a command, hit {{< kbd Enter >}}, or you can edit it as needed before execution.
 
 The main benefit of this is time efficiency. 
 Instead of typing out the entire command, especially for lengthy or complex commands, you can retrieve and modify previous commands quickly.
 It also minimizes the chances of introducing typos or syntax errors when reusing commands.
-And it's also [the reason](https://www.commitstrip.com/en/2017/02/28/definitely-not-lazy/?) why the up arrow key is among the earliest that needs replacement on software developers' keyboards.
+And it's also [the reason](https://www.commitstrip.com/en/2017/02/28/definitely-not-lazy/?) why the `Up` arrow key is among the earliest that needs replacement on software developers' keyboards.
 
 ### Clearing the command line
 
@@ -521,7 +554,6 @@ clear
 ```
 
 Press {{< kbd Enter >}} and the terminal screen will be cleared, leaving only a new prompt at the top of the window.
-After using `clear`, you can continue working in a fresh and uncluttered terminal window.
 
 ### Saving command line history
 
@@ -537,7 +569,7 @@ history > history.txt
 This command will capture your entire command history and save it to a file named `history.txt` in your current directory.
 You can then view this file directly from the command line or through your usual file viewer.
 
-## List files and folders
+## Listing files and folders
 
 The `ls` command is used to list the files and folders in a specified directory or the current working directory.
 If you run this command, you will see the contents of your current working directory.
@@ -547,7 +579,7 @@ ls
 ```
 
 <details>
-<summary>{{< fa eye >}} Click here to see the output of the `ls` executed in the project directory of this guide.</summary>
+<summary>{{< fa eye >}} Click here to see the output of the `ls` command executed in the project directory of this guide.</summary>
 ```{bash filename="Output"}
 #| eval: true
 #| echo: false
@@ -557,10 +589,10 @@ ls
 ```
 </details>
 
-However, the `ls` command provides various options, such as flags and arguments, to enhance its functionality beyond simple file listing.
+However, the `ls` command provides various options, such as flags and arguments, to extend its functionality beyond simple file listing.
 To provide additional instructions to a command, we can pass flags and arguments by typing them after the command name.
 
-### List files in a specific directory
+### Listing files in a specific directory
 
 To list files in a specific folder (*relative* to the current working directory), we use the `ls` command followed by the name of the folder.
 For example, we can list the contents of the `chapters` folder in the project directory of this guide.
@@ -588,12 +620,6 @@ Hidden files, often starting with a dot (`.`) in their names, are files that rem
 They can serve different purposes, such as storing configuration settings, sensitive data, or temporary files.
 Hidden files can be accessed through the command line or by changing settings in the file manager to make them visible.
 
-::: {.callout-warning title="Be cautios when modifying hidden files!"}
-It's important to **be cautious when modifying or deleting hidden files**, as they can impact the proper functioning of the operating system and applications.
-This is also typically the reason why these files are hidden.
-Only listing hidden files (as explained in this section) does not modify them, so it's generally safe to execute the `ls -a` command to view hidden files.
-:::
-
 To view hidden files, we can use the `-a` (for "all") flag in the `ls` command:
 
 ```{zsh filename="Code"}
@@ -611,8 +637,6 @@ ls -a
 ```
 </details>
 
-To list *only* hidden files, see the command in @tip-only-hidden.
-
 ::: {#tip-only-hidden .callout-tip title="How can I list *only* hidden files?" collapse="true"}
 
 To list *only* hidden files, you can run the following command:
@@ -623,8 +647,6 @@ ls -d .?*
 
 The `-d` (or `--directory`) flag lists directory entries instead of contents and does not dereference symbolic links.
 The `.?*` argument will only state hidden files.
-
-:::
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of `ls -d .?*` executed in the project directory of this guide.</summary>
@@ -637,8 +659,17 @@ ls -d .?*
 ```
 </details>
 
-### What is the difference between a flag and an argument?
+:::
 
+::: {.callout-warning title="Be cautious when modifying hidden files!"}
+It's important to **be cautious when modifying or deleting hidden files**, as they can impact the proper functioning of the operating system and applications.
+This is also typically the reason why these files are hidden.
+Only listing hidden files (as explained in this section) does not modify them, so it's generally safe to execute the `ls -a` command to view hidden files.
+:::
+
+### Flags and arguments
+
+Command-line commands can be extended using so-called flags and arguments.
 The difference between a flag and an argument is that a **flag is used to modify the behavior** of a command, while an **argument provides additional input** or information to the command.
 
 #### What is a flag?
@@ -646,12 +677,22 @@ The difference between a flag and an argument is that a **flag is used to modify
 A flag is typically a single character or a combination of characters preceded by a hyphen (`-`) or double hyphen (`--`).
 It is used to enable or disable specific options or features of a command.
 Flags are optional and are used to customize the behavior of the command.
+An example for a flag is the `-a` flag in the `ls -a` command that is used to list all files in a folder.
+
+```{zsh filename="Code"}
+ls -a
+```
 
 #### What is an argument?
 
 An argument is the actual input or information that is passed to a command to perform a specific action.
 It can be a value, a file name, a directory path, or any other data required by the command to complete its task.
 Arguments are often positioned after the command and any flags, and they can be mandatory or optional depending on the command's requirements.
+An example for an argument is the path that is provided with the `cd` command to navigate to it.
+
+```{zsh filename="Code"}
+ls ~/Desktop
+```
 
 #### Multiple single-letter flags
 
@@ -693,7 +734,7 @@ This will list all possible flags you can use together with the `ls` command.
 
 #### {{< fa brands apple >}} macOS
 
-On macOS you can not use the `--help` flag.
+On macOS you can't use the `--help` flag.
 Instead you can use the `man` command, in combination with your desired command.
 This will display the manual page for a specified command. 
 You can navigate through the manual pages using the arrow keys, and you can exit by pressing `q`. 
@@ -707,14 +748,14 @@ man ls
 
 ## Manipulating the file system
 
-The command line offers commands for creating, moving, and deleting folders and files.
+The command line offers various commands for creating, moving, and deleting folders and files.
 
 ### Creating a folder
 
-Let's use the command line to create a new project folder as an example:
-To make a directory, we'll use the `mkdir` command.
+Let's use the command line to create a new project folder.
+To make a new directory, we'll use the `mkdir` command.
 
-::: {.callout-warning title="Be aware where you are creating new directories!"}
+::: {.callout-warning title="Be aware *where* you are creating new directories!"}
 When creating new directories, consider their location carefully. 
 If you are experimenting, consider deleting the newly created directories afterwards to avoid clutter.
 :::
@@ -727,7 +768,7 @@ For example, to create a new folder for your favorite recipes, we can use the fo
 mkdir recipes
 ```
 
-Make sure that the project folder is present by using the `ls` command, and then move into it by using the `cd` command.
+Make sure that the new folder is present by using the `ls` command, and then move into it by using the `cd` command.
 
 ```{zsh filename="Code"}
 cd recipes
@@ -778,10 +819,66 @@ open recipes.txt
 
 :::
 
-### Writing short text into files
+### Outputting text
 
-The `echo` command can be used to write text to a file, directly from the command line.
-Using `echo` in combination with `>>` adds content to an existing file. 
+The `echo` command is a simple and versatile command used to display text or output it to files. 
+It is commonly used in shell scripts and command-line operations to print messages, display variable values, or generate simple text files.
+
+#### Basic use of `echo`
+
+The `echo` command outputs the text that follows it. 
+For example, `echo "Hello, World!"` will display `Hello, World!` in the terminal.
+
+```{zsh filename="Code"}
+echo "Hello, World!"
+```
+
+```{markdown filename="Output"}
+#| code-copy: false
+Hello, World!
+```
+
+#### Using variables with `echo`
+
+You can use `echo` to display the values of variables.
+For instance, `echo $HOME` will print the path of the home directory.
+
+```{zsh filename="Code"}
+echo $HOME
+```
+
+<details>
+<summary>{{< fa eye >}} Click here to see the output of `echo $HOME` executed in the project directory of this guide.</summary>
+```{bash filename="Output"}
+#| eval: true
+#| echo: false
+#| class.output: bash
+#| code-copy: false
+echo $HOME
+```
+</details>
+
+#### Using special characters with `echo`
+
+To include special characters or commands in the text output, use quotes around the text. 
+For example, the following command will display the current date:
+
+```{zsh filename="Code"}
+echo "Current date: $(date)"
+```
+
+```{bash filename="Output"}
+#| eval: true
+#| echo: false
+#| class.output: markdown
+#| code-copy: false
+echo "Current date: $(date)"
+```
+
+#### Writing short text into files
+
+The `echo` command can also be used to write text to a file directly from the command line. 
+By combining echo with the `>>` operator, you can add content to an existing file.
 For example, to add text to the `recipes.txt` file using the command line:
 
 ```{zsh filename="Code"}
@@ -842,6 +939,7 @@ Now let's move the `recipes.txt` file back to the parent `recipes` folder.
 To do this, you can first `cd` into the `/vegan` subfolder and then use the `..` shortcut (for details on `..`, see the [section above](#dot-dot-..)) in combination with the `mv` command:
 
 ```{zsh filename="Code"}
+cd vegan
 mv recipes.txt ..
 ```
 
@@ -853,6 +951,31 @@ We can use the `mv` command to rename files and folders by moving them to a diff
 ```{zsh filename="Code"}
 mv vegan meat
 ```
+
+### Downloading files
+
+There are various ways how you can download files from the internet using the command line.
+Here, we present a simple approach using the tool `wget`.
+
+#### Using `wget`
+
+The `wget` command is a powerful tool used to download files from the web directly through the command line.
+This is particularly useful for retrieving files from a remote server or downloading large datasets.
+
+To download a file into your current directory, simply use the following syntax:
+
+```{zsh filename="Code"}
+wget <URL> # <1>
+```
+1. Replace `URL` with the URL of the files(s) that you want to download.
+
+For example, if you want to download the logo of this project, you could use the following command:
+
+```{zsh filename="Code"}
+wget https://lennartwittkuhn.com/version-control-book/static/logo.svg
+```
+
+This command will download `logo.svg` from the specified URL and save it in the current working directory.
 
 ### Wildcards
 
