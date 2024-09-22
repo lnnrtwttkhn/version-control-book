@@ -14,13 +14,3 @@ Pasta
 EOM
 git add recipes.txt # <5>
 git commit -m "Add pasta recipe to recipes.txt" # <6>
-echo "6. Enjoy!" >> recipes.txt # <7>
-git add recipes.txt # <8>
-git commit --amend --no-edit # <9>
-wget -nv -O pasta.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rigatoni.jpg/320px-Rigatoni.jpg # <10>
-git status # <11>
-touch .gitignore # <12>
-echo "*.jpg" > .gitignore # <13>
-git status # <14>
-git add --all # <15>
-git commit -m "Add .gitignore and ignore all files that end with .jpg" # <16>
