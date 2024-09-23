@@ -589,6 +589,7 @@ ls
 ```
 </details>
 
+
 However, the `ls` command provides various options, such as flags and arguments, to extend its functionality beyond simple file listing.
 To provide additional instructions to a command, we can pass flags and arguments by typing them after the command name.
 
@@ -660,6 +661,20 @@ ls -d .?*
 </details>
 
 :::
+
+::: {#tip-only-hidden .callout-tip title="What are does . and .. mean?" collapse="true"}
+
+In the output of `ls -a`, you will see both `.` and `..` listed, alongside other files in your directory.
+These represent directories and can help you navigate through your file system.
+
+For example, if you are in `/Users/user/Documents`:
+
+`.` refers to `/Users/user/Documents`.
+
+`..` refers to `/Users/user`, which is the parent directory.
+
+:::
+
 
 ::: {.callout-warning title="Be cautious when modifying hidden files!"}
 It's important to **be cautious when modifying or deleting hidden files**, as they can impact the proper functioning of the operating system and applications.
