@@ -18,7 +18,7 @@ These exercises can be used flexibly throughout a course about Git but also when
 
 You can view the exercises by clicking on the boxes in the individual sections that correspond to one of the chapters.
 Try to solve the exercises on your own first before looking at the solutions.
-Please note that the solutions do not always implement the tasks exactly, but can also use variations to show that different approaches are possible.
+Please note that the solutions do not always implement the tasks exactly, but can also use variations to show that different approaches are possible or so it works automatically.
 If you want to start each exercise with a clean repository, you can download the repository of the previous solution as a `.zip` file and start the exercises in this repository.
 
 ## Overview
@@ -71,6 +71,8 @@ This can help to easily find course-related files on your computer.
 
 ## Setup
 
+### Configure Git
+
 ::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
 {{< include ../exercises/_exercises-setup.qmd >}}
 :::
@@ -117,7 +119,57 @@ This can help to easily find course-related files on your computer.
 
 [Download the repository](../exercises-repos/recipes-first-steps.zip){.btn .btn-outline-primary role="button"}
 
+### Amend a commit
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-essentials-amend.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-essentials-amend.sh
+```
+{{< include ../exercises/_solutions-essentials-amend.qmd >}}
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-essentials-amend.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-essentials-amend.zip){.btn .btn-outline-primary role="button"}
+
+### Create a `.gitignore` file
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-essentials-gitignore.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-essentials-gitignore.sh
+```
+{{< include ../exercises/_solutions-essentials-gitignore.qmd >}}
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-essentials-gitignore.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-essentials-gitignore.zip){.btn .btn-outline-primary role="button"}
+
 ## Branches
+
+### Create and merge a new branch
 
 ::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
 {{< include ../exercises/_exercises-branches.qmd >}}
@@ -141,25 +193,124 @@ This can help to easily find course-related files on your computer.
 
 [Download the repository](../exercises-repos/recipes-branches.zip){.btn .btn-outline-primary role="button"}
 
-
-## GitHub: Intro
+### Create and resolve a merge conflict
 
 ::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
-{{< include ../exercises/_exercises-github-intro.qmd >}}
+{{< include ../exercises/_exercises-branches-merge-conflict.qmd >}}
 :::
 
 ::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
-{{< include ../exercises/_solutions-github-intro.qmd >}}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-branches-merge-conflict.sh
+```
+{{< include ../exercises/_solutions-branches-merge-conflict.qmd >}}
 :::
 
-## GitHub: Advanced
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-branches-merge-conflict.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-branches-merge-conflict.zip){.btn .btn-outline-primary role="button"}
+
+## Remotes: Intro
+
+### Connect to remote repositories using SSH
 
 ::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
-{{< include ../exercises/_exercises-github-advanced.qmd >}}
+{{< include ../exercises/_exercises-remotes-ssh.qmd >}}
 :::
 
 ::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
-{{< include ../exercises/_solutions-github-advanced.qmd >}}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-remotes-ssh.sh
+```
+{{< include ../exercises/_solutions-remotes-ssh.qmd >}}
+:::
+
+### Connect to GitHub using a PAT
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-pat.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+{{< include ../exercises/_solutions-remotes-pat.qmd >}}
+:::
+
+### Upload your local repository to a remote repository
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-push.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-remotes-push.sh
+```
+{{< include ../exercises/_solutions-remotes-push.qmd >}}
+:::
+
+### Add a `README.md`
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-readme.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+{{< include ../exercises/_solutions-remotes-readme.qmd >}}
+:::
+
+### "Private" collaboration with pull requests (using GitHub Flow)
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-collaboration.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-remotes-collaboration.sh
+```
+{{< include ../exercises/_solutions-remotes-collaboration.qmd >}}
+:::
+
+### Clone and sync your repository
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-clone.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-remotes-clone.sh
+```
+{{< include ../exercises/_solutions-remotes-clone.qmd >}}
+:::
+
+## Remotes: Advanced
+
+### "Public" collaboration with pull requests (using a fork and GitHub Flow)
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-forking.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+{{< include ../exercises/_solutions-remotes-forking.qmd >}}
+:::
+
+### Reviewing pull requests
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-pr-review.qmd >}}
 :::
 
 ## Tags and Releases
@@ -182,12 +333,75 @@ This can help to easily find course-related files on your computer.
 {{< include ../exercises/_solutions-gui.qmd >}}
 :::
 
-## Stashing and Co.
+## Stashing
 
 ::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
 {{< include ../exercises/_exercises-stashing.qmd >}}
 :::
 
 ::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-stashing.sh
+```
 {{< include ../exercises/_solutions-stashing.qmd >}}
 :::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-stashing.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-stashing.zip){.btn .btn-outline-primary role="button"}
+
+## Reverting
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-reverting.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-reverting.sh
+```
+{{< include ../exercises/_solutions-reverting.qmd >}}
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-reverting.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-reverting.zip){.btn .btn-outline-primary role="button"}
+
+## Rebasing
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-rebasing.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-rebasing.sh
+```
+{{< include ../exercises/_solutions-rebasing.qmd >}}
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-rebasing.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-rebasing.zip){.btn .btn-outline-primary role="button"}
+
