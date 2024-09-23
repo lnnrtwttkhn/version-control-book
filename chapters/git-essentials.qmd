@@ -500,6 +500,19 @@ This will ensure that any `.DS_Store` files in the project directory and its sub
 
 :::
 
+## Renaming Files with Git
+
+Renaming files in Git  can be done using the `git mv command`.
+This command not only renames the file but also stages the change for you, so the rename is ready to be committed. 
+This method is preferable to renaming the file manually, as it allows Git to track the change seamlessly and avoids the need for you to stage both the removal of the old file and the addition of the new file separately.
+
+For Example:
+
+```{zsh filename="Code"}
+git mv old_filename.txt new_filename.txt
+```
+After running this command, Git stages the file rename, and you can commit the change like any other.
+
 ## Tracking empty folders
 
 Normally, Git does not track empty folders in a repository.
