@@ -294,18 +294,6 @@ They allow you to track the history of your project and easily revert changes if
 
 You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
 
-#### Rock climbing analogy
-
-> Using a Git commit is like using anchors and other protection when climbing.
-If you’re crossing a dangerous rock face you want to make sure you’ve used protection to catch you if you fall.
-Commits play a similar role: if you make a mistake, you can’t fall past the previous commit.
-Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high!
-Like rock climbing protection, you want to be judicious in your use of commits.
-Committing too frequently will slow your progress; use more commits when you’re in uncertain or dangerous territory.
-Commits are also helpful to others, because they show your journey, not just the destination. 
-
-from [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html#git-commit)
-
 ::: {.callout-tip collapse="true" title='FAQ: "I forgot to close the quotation marks of my commit message! What do I do?"'}
 
 In this situation, you command line probably looks like this:
@@ -355,78 +343,6 @@ Opens the commit message editor, allowing you to edit the commit message before 
 Modifies the previous commit.
 It allows you to add new changes to the previous commit or modify its commit message.
 :::
-
-## Best Practices for Working with Git
-
-Now that you know how to create a Git repository, stage files, and make commits, it's time to discuss some essential best practices.
-
-**1. Commit Often**
-
-Creating frequent commits helps to capture your work progress. 
-This makes it easier to track changes, identify when errors were introduced, or revert to a previous version of your project if something goes wrong.
-Youz can of committing like saving your game in a video game. You want to create saves (commits) regularly so that if you encounter an issue, you don't lose too much progress.
-
-**2. Keep Commits Small**
-
-Each commit should represent a single, logical change. 
-This makes your project history easier to follow. 
-For example, if you're fixing an issue, create a commit specifically for that fix, and don’t mix it with unrelated changes like styling updates.
-Small commits make it easier to revert or modify specific changes without affecting the rest of your project.
-
-**3. Use Meaningful Commit Messages**
-
-When writing a commit message, keep it short (ideally under 50 characters for the first line), yet descriptive enough to clarify the purpose of the commit. 
-It’s helpful to think about future you or others looking at this project later. 
-Will they understand what this commit was about without having to look at the actual changes?
-
-For example: `Fix typo in readme` would be more descriptive as a commit message than `Update files`.
-If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed earlier).
-
-**4. Stage Changes Selectively**
-
-Only stage and commit files you actually want Git to track.
-You can use `git status` to double-check what files you have staged. 
-You can stage files selectively using `git add` to avoid committing unnecessary files (like temporary files or configuration files specific to your system).
-Using a `.gitignore` file to prevent certain files from being tracked by Git is also a good idea. You’ll learn more about this in the [Git Essentials chapter](git-essentials.qmd).
-
-**5. Review Your Changes Before Committing**
-
-Before committing your changes, it’s a good habit to review the differences between your working directory and the staged files using `git diff` (explained in the [Git Essentials chapter](git-essentials.qmd)).
-This ensures that you’re aware of every change you’re about to commit.
-
-**6. Write Commits that Explain Why Changes Were Made**
-
-Instead of describing what you did in a commit, but it’s even more useful to explain why you made those changes. The "why" provides context, which is crucial when revisiting older commits.
-
-For example: `Adjust participant exclusion criteria to improve data quality` instead of `Change participant exclusion criteria`.
-
-**7. Reference Issue Numbers (When Relevant)**
-
-If your project is connected to an issue tracker system (like GitHub Issues), it’s helpful to reference issue numbers in your commit messages. 
-This makes it easy to trace which commit fixed a particular issue.
-For an intro about GitHub Issues, refer to our [Issues chapter](issues.qmd).
-
-For example:
-
-```{zsh filename="Code"}
-git commit -m "Fix login bug (fixes #42)"
-```
-
-This message indicates that the commit addresses issue number 42 in your issue tracker.
-
-**8. Avoid Committing Sensitive Information**
-
-Be careful not to commit sensitive information such as passwords or personal data. 
-Once something is committed, it becomes part of the repository’s history, making it difficult to completely remove later.
-
-You can use `.gitignore` files to exclude sensitive files from being tracked (more on `.gitignore` files in the [ Git Essentials chapter](git-essentials.qmd).
-
-**9. Use Branches for New Features**
-
-For more complex projects, it’s a good idea to use Git branches. 
-For an introduction check out our [Branches chapter](branches.qmd).
-Branches allow you to work on new features or fixes without interfering with the main project. 
-Once the work is done and tested, you can merge the branch back into the main project. 
 
 ## Cheatsheet
 
