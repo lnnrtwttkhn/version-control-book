@@ -661,6 +661,24 @@ ls -d .?*
 
 :::
 
+::: {.callout-note title="What do `.` and `..` mean in the output of `ls -a`?" collapse="true"}
+
+In the output of `ls -a`, you will see both `.` and `..` listed, alongside other files in your directory:
+
+```{markdown filename="Output"}
+#| code-copy: false
+.
+..
+```
+
+As introduce above, `.` (single dot) represents the current directory while `..` (double dot) represents the parent directory.
+For example, if you are in `/Users/user/Documents`, `.` refers to `/Users/user/Documents` and `..` refers to `/Users/user`.
+
+These entries are always present in every directory, which is why they show up when you use `ls -a` to display all files.
+They aren't actual files or directories you can see normally, but rather are system references that help with navigation.
+
+:::
+
 ::: {.callout-warning title="Be cautious when modifying hidden files!"}
 It's important to **be cautious when modifying or deleting hidden files**, as they can impact the proper functioning of the operating system and applications.
 This is also typically the reason why these files are hidden.
