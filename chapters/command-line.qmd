@@ -589,7 +589,6 @@ ls
 ```
 </details>
 
-
 However, the `ls` command provides various options, such as flags and arguments, to extend its functionality beyond simple file listing.
 To provide additional instructions to a command, we can pass flags and arguments by typing them after the command name.
 
@@ -662,19 +661,23 @@ ls -d .?*
 
 :::
 
-::: {#tip-only-hidden .callout-tip title="What are does . and .. mean?" collapse="true"}
+::: {.callout-note title="What do `.` and `..` mean in the output of `ls -a`?" collapse="true"}
 
-In the output of `ls -a`, you will see both `.` and `..` listed, alongside other files in your directory.
-These represent directories and can help you navigate through your file system.
+In the output of `ls -a`, you will see both `.` and `..` listed, alongside other files in your directory:
 
-For example, if you are in `/Users/user/Documents`:
+```{markdown filename="Output"}
+#| code-copy: false
+.
+..
+```
 
-`.` refers to `/Users/user/Documents`.
+As introduce above, `.` (single dot) represents the current directory while `..` (double dot) represents the parent directory.
+For example, if you are in `/Users/user/Documents`, `.` refers to `/Users/user/Documents` and `..` refers to `/Users/user`.
 
-`..` refers to `/Users/user`, which is the parent directory.
+These entries are always present in every directory, which is why they show up when you use `ls -a` to display all files.
+They aren't actual files or directories you can see normally, but rather are system references that help with navigation.
 
 :::
-
 
 ::: {.callout-warning title="Be cautious when modifying hidden files!"}
 It's important to **be cautious when modifying or deleting hidden files**, as they can impact the proper functioning of the operating system and applications.

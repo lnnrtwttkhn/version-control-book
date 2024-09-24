@@ -445,7 +445,7 @@ In this situation, you could squash all previous commits and only merge the late
 
 Once a branch has served its purpose and is no longer needed, it can be deleted.
 Removing branches that are no longer active helps maintain a clean and manageable branch structure.
-To delete a branch you can use the `git branch` command, followed by a `-d` flag.
+To delete a branch, you can use the `git branch` command, followed by a `-d` flag.
 
 ```{zsh, filename="Code"}
 git branch -d feature
@@ -460,8 +460,6 @@ Deleted branch feature (was 2cb61c2).
 
 The addition `(was 2cb61c2)` represents the last commit hash of the branch you deleted.
 You can only delete a branch, you are *not* currently on.
-Since git treats the `main` like any other branch, you can also delete the `main` branch if you want.
-This is however not recommended to avoid confusion.
 
 ::: {.callout-tip title="Can I delete the default branch (`main` or `master`)?" collapse="false"}
 Since Git treats the default branch (`main` or `master`) branch like any other branch, **you *can* also delete the default branch** if you want.

@@ -42,11 +42,10 @@ This is the information specified using `git config` (for details, see the [setu
 1. This line is the commit message provided by the author, which briefly describes what this change does.
 
 `git log` is a very useful command because it provides a clear and organized view of a repository's commit history. 
-It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps. 
-To exit the Git log view and return to the regular terminal, simply press the `q` key. 
+It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps.
+
+To exit the `git log`view and return to the regular Terminal, press the {{< kbd q >}} key. 
 This applies to both macOS and Windows systems.
-
-
 
 ::: {.callout-tip title="Common `git log` flags" collapse="true"}
 `--oneline`: 
@@ -189,10 +188,8 @@ Git allows for a commit message with a 72 character limit and a description with
 In general, you should aim to write clear and short commit messages.
 There are different conventions across projects/persons but also some general guidelines, you can stick to. 
 
-It is standard to start the title with an **imperative verb** to indicate the purpose of the commit, for example, "add", "fix" or "improve" instead "added", "fixed" and "improved".
-This is standard practice since writing in the present tense tells someone what applying the commit will do, rather than what you did.
-Of course yopu can also choose to use the past sense, if you think it makes more sense for your project.
-It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary).
+Start commit messages with an **imperative verb** like "Add", "Fix", or "Improve", instead of past tense ("Added" or "Fixed").
+This helps explain what the commit does, not what was done.
 
 Here is an example:
 
@@ -342,10 +339,10 @@ To not stage or commit these files by accident, you can use the `.gitignore` fil
 ## Ignoring files and folders: `.gitignore`
 
 `.gitignore` is a special file.
-It does not have a file extension like e.g. `txt` and is simply named `.gitignore`.
 It is used to specify files and folders that should be ignored and not tracked by Git.
 When you create a `.gitignore` file, place it inside your Git repository and specify names of files or folders inside it.
 Git will then exclude these files and directories from being staged or committed, for example when using `git add -A` which normally stages all your files.
+The `.gitignore` file does not have a file extension like `.txt` and is simply named `.gitignore`.
 
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
 Files that can recreated from the code, like for example `.png` plots from R code, should also be included in your project's `.gitignore` file.
@@ -500,18 +497,18 @@ This will ensure that any `.DS_Store` files in the project directory and its sub
 
 :::
 
-## Renaming Files with Git
+## Renaming files with Git
 
-Renaming files in Git  can be done using the `git mv command`.
-This command not only renames the file but also stages the change for you, so the rename is ready to be committed. 
-This method is preferable to renaming the file manually, as it allows Git to track the change seamlessly and avoids the need for you to stage both the removal of the old file and the addition of the new file separately.
-
-For Example:
+To rename files in Git, use the `git mv` command.
+This command not only renames the file but also stages the change for you, so the renaming is ready to be committed.
+This method is preferable to renaming the file manually, as it allows Git to track the change seamlessly and eliminates the need to stage both the removal of the old file and the addition of the new file separately.
+Here is an example:
 
 ```{zsh filename="Code"}
 git mv old_filename.txt new_filename.txt
 ```
-After running this command, Git stages the file rename, and you can commit the change like any other.
+
+After running this command, Git stages the file rename, allowing you to commit the change like any other.
 
 ## Tracking empty folders
 
