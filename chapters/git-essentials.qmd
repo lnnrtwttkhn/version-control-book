@@ -204,7 +204,10 @@ This is the information specified using `git config` (for details, see the [setu
 1. This line is the commit message provided by the author, which briefly describes what this change does.
 
 `git log` is a very useful command because it provides a clear and organized view of a repository's commit history. 
-It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps. 
+It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps.
+
+To exit the `git log`view and return to the regular Terminal, press the {{< kbd q >}} key. 
+This applies to both macOS and Windows systems.
 
 ::: {.callout-tip title="Common `git log` flags" collapse="true"}
 `--oneline`: 
@@ -419,6 +422,7 @@ To checkout how to do partial commits using [GitKraken](https://www.gitkraken.co
 It is used to specify files and folders that should be ignored and not tracked by Git.
 When you create a `.gitignore` file, place it inside your Git repository and specify names of files or folders inside it.
 Git will then exclude these files and directories from being staged or committed, for example when using `git add -A` which normally stages all your files.
+The `.gitignore` file does not have a file extension like `.txt` and is simply named `.gitignore`.
 
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
 Files that can recreated from the code, like for example `.png` plots from R code, should also be included in your project's `.gitignore` file.
@@ -442,6 +446,7 @@ ls -a
 ```
 
 Now you can write a filename or folder name inside it, to prevent Git from tracking it.
+If you specify a folder, git will also start to ignore every subfolder in it.
 
 It's recommended to add a project-specific `.gitignore` file to your repository using the regular stage-commit workflow that you learned about in this chapter, for example:
 
@@ -571,6 +576,19 @@ To add `.DS_Store` to `.gitignore`, you can include the following line in your `
 This will ensure that any `.DS_Store` files in the project directory and its subdirectories are ignored by Git and not tracked in the repository.
 
 :::
+
+## Renaming files with Git
+
+To rename files in Git, use the `git mv` command.
+This command not only renames the file but also stages the change for you, so the renaming is ready to be committed.
+This method is preferable to renaming the file manually, as it allows Git to track the change seamlessly and eliminates the need to stage both the removal of the old file and the addition of the new file separately.
+Here is an example:
+
+```{zsh filename="Code"}
+git mv old_filename.txt new_filename.txt
+```
+
+After running this command, Git stages the file rename, allowing you to commit the change like any other.
 
 ## Tracking empty folders
 
