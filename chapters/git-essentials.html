@@ -97,6 +97,8 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -333,9 +335,10 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#global-.gitignore-file" id="toc-global-.gitignore-file" class="nav-link" data-scroll-target="#global-.gitignore-file"><span class="header-section-number">6.8.1</span> Global <code>.gitignore</code> file</a></li>
   </ul></li>
-  <li><a href="#tracking-empty-folders" id="toc-tracking-empty-folders" class="nav-link" data-scroll-target="#tracking-empty-folders"><span class="header-section-number">6.9</span> Tracking empty folders</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.10</span> Cheatsheet</a></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">6.11</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#renaming-files-with-git" id="toc-renaming-files-with-git" class="nav-link" data-scroll-target="#renaming-files-with-git"><span class="header-section-number">6.9</span> Renaming files with Git</a></li>
+  <li><a href="#tracking-empty-folders" id="toc-tracking-empty-folders" class="nav-link" data-scroll-target="#tracking-empty-folders"><span class="header-section-number">6.10</span> Tracking empty folders</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">6.11</span> Cheatsheet</a></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">6.12</span> Acknowledgements &amp; further reading</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/git-essentials.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/git-essentials.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -430,6 +433,7 @@ Learning Objectives
 </div>
 </div>
 <p><code>git log</code> is a very useful command because it provides a clear and organized view of a repository’s commit history. It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps.</p>
+<p>To exit the <code>git log</code>view and return to the regular Terminal, press the <kbd aria-hidden="true">q</kbd><span class="visually-hidden">q</span> key. This applies to both macOS and Windows systems.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git log` flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -587,7 +591,8 @@ Common <code>git diff</code> flags
 <section id="commit-message-etiquette" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="commit-message-etiquette"><span class="header-section-number">6.4</span> Commit message etiquette</h2>
 <p>Git allows for a commit message with a 72 character limit and a description without such a limit. In general, you should aim to write clear and short commit messages. There are different conventions across projects/persons but also some general guidelines, you can stick to.</p>
-<p>It is standard to start the title with an <strong>imperative verb</strong> to indicate the purpose of the commit, for example, “add”, “fix” or “improve”. It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary). Here is an example:</p>
+<p>Start commit messages with an <strong>imperative verb</strong> like “Add”, “Fix”, or “Improve”, instead of past tense (“Added” or “Fixed”). This helps explain what the commit does, not what was done.</p>
+<p>Here is an example:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -765,7 +770,7 @@ Our recommendation: Use a GUI for partial commits
 </section>
 <section id="ignoring-files-and-folders-.gitignore" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="ignoring-files-and-folders-.gitignore"><span class="header-section-number">6.8</span> Ignoring files and folders: <code>.gitignore</code></h2>
-<p><code>.gitignore</code> is a special file. It is used to specify files and folders that should be ignored and not tracked by Git. When you create a <code>.gitignore</code> file, place it inside your Git repository and specify names of files or folders inside it. Git will then exclude these files and directories from being staged or committed, for example when using <code>git add -A</code> which normally stages all your files.</p>
+<p><code>.gitignore</code> is a special file. It is used to specify files and folders that should be ignored and not tracked by Git. When you create a <code>.gitignore</code> file, place it inside your Git repository and specify names of files or folders inside it. Git will then exclude these files and directories from being staged or committed, for example when using <code>git add -A</code> which normally stages all your files. The <code>.gitignore</code> file does not have a file extension like <code>.txt</code> and is simply named <code>.gitignore</code>.</p>
 <p>The <code>.gitignore</code> file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history. Files that can recreated from the code, like for example <code>.png</code> plots from R code, should also be included in your project’s <code>.gitignore</code> file. Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project files without distractions from unnecessary files. <code>.gitignore</code> can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches. Huge files, like big data files should also not be committed, since they can slow down working with your repository. To version control files with a big size, tools like <a href="https://www.datalad.org">DataLad</a> are more appropriate.</p>
 <p>To create a <code>.gitignore</code> file from the command line, navigate to your repository and use the <code>touch</code> command. Alternatively, create the file in your favorite text editor.</p>
 <div class="cell">
@@ -785,7 +790,7 @@ Our recommendation: Use a GUI for partial commits
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Now you can write a filename or folder name inside it, to prevent Git from tracking it.</p>
+<p>Now you can write a filename or folder name inside it, to prevent Git from tracking it. If you specify a folder, git will also start to ignore every subfolder in it.</p>
 <p>It’s recommended to add a project-specific <code>.gitignore</code> file to your repository using the regular stage-commit workflow that you learned about in this chapter, for example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .gitignore</span>
@@ -935,8 +940,21 @@ What is the <code>.DS_Store</code> file (macOS only)?
 </div>
 </section>
 </section>
-<section id="tracking-empty-folders" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="tracking-empty-folders"><span class="header-section-number">6.9</span> Tracking empty folders</h2>
+<section id="renaming-files-with-git" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="renaming-files-with-git"><span class="header-section-number">6.9</span> Renaming files with Git</h2>
+<p>To rename files in Git, use the <code>git mv</code> command. This command not only renames the file but also stages the change for you, so the renaming is ready to be committed. This method is preferable to renaming the file manually, as it allows Git to track the change seamlessly and eliminates the need to stage both the removal of the old file and the addition of the new file separately. Here is an example:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> mv old_filename.txt new_filename.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>After running this command, Git stages the file rename, allowing you to commit the change like any other.</p>
+</section>
+<section id="tracking-empty-folders" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="tracking-empty-folders"><span class="header-section-number">6.10</span> Tracking empty folders</h2>
 <p>Normally, Git does not track empty folders in a repository. However, tracking an empty directory in a Git repository can be useful in some scenarios. For example, you want to track an empty folder as a placeholder for future content or as a way to organize the project more clearly.</p>
 <p>A workaround, to get Git to track your empty folder, is adding a hidden <code>.gitkeep</code> file in this folder <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This not an official Git feature but rather a convention adopted by software developers. That means you could name this file anything, but <code>.gitkeep</code> is used by convention to explicitly state its purpose for keeping otherwise empty folders in Git.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Use-cases for empty folders in Git repositories for scientific projects">
@@ -965,11 +983,15 @@ Use-cases for empty folders in Git repositories for scientific projects
 </div>
 </div>
 </section>
-<section id="cheatsheet" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.10</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">6.11</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Command</th>
@@ -985,13 +1007,17 @@ Use-cases for empty folders in Git repositories for scientific projects
 <td style="text-align: left;"><code>git diff</code></td>
 <td style="text-align: left;">Views made changes compared to the last commit</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git mv</code></td>
+<td style="text-align: left;">Renames or moves files and automatically stages the changes</td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="acknowledgements-further-reading" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">6.11</span> Acknowledgements &amp; further reading</h2>
+<section id="acknowledgements-further-reading" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">6.12</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="caption-top table">
 <thead>

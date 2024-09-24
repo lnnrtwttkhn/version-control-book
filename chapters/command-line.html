@@ -1270,6 +1270,33 @@ Tip&nbsp;2.4: How can I list <em>only</em> hidden files?
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled" title="What do `.` and `..` mean in the output of `ls -a`?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What do <code>.</code> and <code>..</code> mean in the output of <code>ls -a</code>?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In the output of <code>ls -a</code>, you will see both <code>.</code> and <code>..</code> listed, alongside other files in your directory:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>.</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>As introduce above, <code>.</code> (single dot) represents the current directory while <code>..</code> (double dot) represents the parent directory. For example, if you are in <code>/Users/user/Documents</code>, <code>.</code> refers to <code>/Users/user/Documents</code> and <code>..</code> refers to <code>/Users/user</code>.</p>
+<p>These entries are always present in every directory, which is why they show up when you use <code>ls -a</code> to display all files. They aren’t actual files or directories you can see normally, but rather are system references that help with navigation.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled" title="Be cautious when modifying hidden files!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1295,7 +1322,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1307,7 +1334,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~/Desktop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~/Desktop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1319,7 +1346,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <details>
@@ -1328,54 +1355,54 @@ Be cautious when modifying hidden files!
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 348K</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 17 runner docker 4.0K Sep 22 17:45 .</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Sep 22 17:37 ..</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Sep 22 17:37 .Renviron</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Sep 22 17:37 .Rprofile</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.3K Sep 22 17:37 .all-contributorsrc</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Sep 22 17:37 .codespellrc</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Sep 22 17:44 .git</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Sep 22 17:37 .github</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Sep 22 17:37 .gitignore</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Sep 22 17:45 .quarto</span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Sep 22 17:37 .zenodo.json</span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Sep 22 17:37 CITATION.cff</span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Sep 22 17:37 LICENSE</span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  575 Sep 22 17:37 Makefile</span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 8.0K Sep 22 17:37 README.md</span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  935 Sep 22 17:37 _affiliations.yml</span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  641 Sep 22 17:37 _authors.yml</span>
-<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 22 17:44 _book</span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  939 Sep 22 17:37 _courses.yml</span>
-<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Sep 22 17:37 _extensions</span>
-<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   97 Sep 22 17:37 _metadata.yml</span>
-<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.4K Sep 22 17:37 _quarto.yml</span>
-<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.0K Sep 22 17:37 _variables.yml</span>
-<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 22 17:45 chapters</span>
-<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.5K Sep 22 17:37 cheatsheet.json</span>
-<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Sep 22 17:37 chicago-author-date-note.csl</span>
-<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 22 17:37 code</span>
-<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  507 Sep 22 17:45 contents-listing.json</span>
-<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  56K Sep 22 17:45 contents.html</span>
-<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  636 Sep 22 17:37 contents.qmd</span>
-<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  265 Sep 22 17:37 custom.scss</span>
-<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 22 17:37 exercises</span>
-<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 22 17:44 exercises-repos</span>
-<span id="cb39-35"><a href="#cb39-35" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Sep 22 17:37 functions.R</span>
-<span id="cb39-36"><a href="#cb39-36" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  145 Sep 22 17:37 github-buttons.html</span>
-<span id="cb39-37"><a href="#cb39-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  44K Sep 22 17:44 index.html</span>
-<span id="cb39-38"><a href="#cb39-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.2K Sep 22 17:37 index.qmd</span>
-<span id="cb39-39"><a href="#cb39-39" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 22 17:45 misc</span>
-<span id="cb39-40"><a href="#cb39-40" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 22 17:37 objectives</span>
-<span id="cb39-41"><a href="#cb39-41" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Sep 22 17:37 plausible.html</span>
-<span id="cb39-42"><a href="#cb39-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Sep 22 17:44 recipes</span>
-<span id="cb39-43"><a href="#cb39-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Sep 22 17:37 references.bib</span>
-<span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Sep 22 17:38 renv</span>
-<span id="cb39-45"><a href="#cb39-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  16K Sep 22 17:37 renv.lock</span>
-<span id="cb39-46"><a href="#cb39-46" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Sep 22 17:45 site_libs</span>
-<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 22 17:44 static</span>
-<span id="cb39-48"><a href="#cb39-48" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Sep 22 17:37 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 348K</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 17 runner docker 4.0K Sep 24 19:04 .</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Sep 24 18:56 ..</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Sep 24 18:56 .Renviron</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Sep 24 18:56 .Rprofile</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.3K Sep 24 18:56 .all-contributorsrc</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Sep 24 18:56 .codespellrc</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Sep 24 19:04 .git</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Sep 24 18:56 .github</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Sep 24 18:56 .gitignore</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Sep 24 19:04 .quarto</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Sep 24 18:56 .zenodo.json</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Sep 24 18:56 CITATION.cff</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Sep 24 18:56 LICENSE</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  575 Sep 24 18:56 Makefile</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 8.0K Sep 24 18:56 README.md</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  935 Sep 24 18:56 _affiliations.yml</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  641 Sep 24 18:56 _authors.yml</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 24 19:04 _book</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  939 Sep 24 18:56 _courses.yml</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Sep 24 18:56 _extensions</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   97 Sep 24 18:56 _metadata.yml</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.4K Sep 24 18:56 _quarto.yml</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.0K Sep 24 18:56 _variables.yml</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 24 19:05 chapters</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.6K Sep 24 18:56 cheatsheet.json</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Sep 24 18:56 chicago-author-date-note.csl</span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 24 18:56 code</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  507 Sep 24 19:04 contents-listing.json</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  56K Sep 24 19:04 contents.html</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  636 Sep 24 18:56 contents.qmd</span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  265 Sep 24 18:56 custom.scss</span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 24 18:56 exercises</span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 24 19:04 exercises-repos</span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Sep 24 18:56 functions.R</span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  145 Sep 24 18:56 github-buttons.html</span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  44K Sep 24 19:04 index.html</span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.2K Sep 24 18:56 index.qmd</span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 24 19:04 misc</span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 24 18:56 objectives</span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Sep 24 18:56 plausible.html</span>
+<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Sep 24 19:04 recipes</span>
+<span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Sep 24 18:56 references.bib</span>
+<span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Sep 24 18:57 renv</span>
+<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  16K Sep 24 18:56 renv.lock</span>
+<span id="cb40-46"><a href="#cb40-46" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Sep 24 19:05 site_libs</span>
+<span id="cb40-47"><a href="#cb40-47" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Sep 24 19:04 static</span>
+<span id="cb40-48"><a href="#cb40-48" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Sep 24 18:56 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1393,7 +1420,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This will list all possible flags you can use together with the <code>ls</code> command.</p>
@@ -1405,7 +1432,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1439,7 +1466,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Make sure that the new folder is present by using the <code>ls</code> command, and then move into it by using the <code>cd</code> command.</p>
@@ -1448,7 +1475,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1460,7 +1487,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> vegetarian vegan glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> vegetarian vegan glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1472,7 +1499,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1488,7 +1515,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">start</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">start</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1498,7 +1525,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1516,7 +1543,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, World!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, World!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell" data-code-copy="false">
@@ -1524,7 +1551,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>Hello, World!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>Hello, World!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1536,7 +1563,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$HOME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$HOME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <details>
@@ -1545,7 +1572,7 @@ Be aware <em>where</em> you are creating new directories!
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb51"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/runner</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/runner</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1558,12 +1585,12 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Current date: </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Current date: </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb53"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="an">Current date:</span><span class="co"> Sun Sep 22 17:45:07 UTC 2024</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="an">Current date:</span><span class="co"> Tue Sep 24 19:05:02 UTC 2024</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1575,12 +1602,12 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is a list of all my favorite recipes."</span> <span class="op">&gt;&gt;</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is a list of all my favorite recipes."</span> <span class="op">&gt;&gt;</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This adds the provided text <em>to the existing content</em> of <code>recipes.txt</code>.</p>
 <div class="callout callout-style-default callout-warning callout-titled" title="Difference between using `>>` or `>` with `echo` when writing short text into files">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1589,7 +1616,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>When you use the command <code>echo "Git is cool" &gt;&gt; file.txt</code>, it will <strong>append the text</strong> “Git is cool” to the end of the file <code>file.txt</code>. If the file does not exist, it will be created and the text “Git is cool” will be added. If the file already contains other text, the “Git is cool” text will be added after the existing text at the end of the file.</p>
 <p>On the other hand, when you use the command <code>echo "Git is cool" &gt; file.txt</code>, it will write the text “Git is cool” to a file named <code>file.txt</code>. <strong>If the file already exists, it will overwrite its contents</strong> with the new text “Git is cool”.</p>
@@ -1606,7 +1633,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This command will output the entire content of the <code>recipes.txt</code> file to the terminal.</p>
@@ -1616,18 +1643,18 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb56"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>/.quarto/</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>/_book/</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>.Rproj.user</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>/env/</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>.Rhistory</span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>static</span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>/.luarc.json</span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>.DS_Store</span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>*.html</span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>*.ipynb</span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>/exercises-repos/</span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>/recipes/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>/.quarto/</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>/_book/</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>.Rproj.user</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>/env/</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>.Rhistory</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>static</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>/.luarc.json</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>.DS_Store</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>*.html</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>*.ipynb</span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>/exercises-repos/</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>/recipes/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1640,7 +1667,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt vegan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt vegan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <section id="moving-files-to-the-parent-directory" class="level4" data-number="2.8.7.1">
@@ -1651,8 +1678,8 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> vegan</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> vegan</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1665,7 +1692,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> vegan meat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> vegan meat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1698,7 +1725,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://lennartwittkuhn.com/version-control-book/static/logo.svg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://lennartwittkuhn.com/version-control-book/static/logo.svg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This command will download <code>logo.svg</code> from the specified URL and save it in the current working directory.</p>
@@ -1712,7 +1739,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> <span class="pp">*</span>.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> <span class="pp">*</span>.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <details>
@@ -1721,16 +1748,16 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb62"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  935 Sep 22 17:37 _affiliations.yml</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  641 Sep 22 17:37 _authors.yml</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  939 Sep 22 17:37 _courses.yml</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker   97 Sep 22 17:37 _metadata.yml</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.4K Sep 22 17:37 _quarto.yml</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.0K Sep 22 17:37 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  935 Sep 24 18:56 _affiliations.yml</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  641 Sep 24 18:56 _authors.yml</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  939 Sep 24 18:56 _courses.yml</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker   97 Sep 24 18:56 _metadata.yml</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.4K Sep 24 18:56 _quarto.yml</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.0K Sep 24 18:56 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What does this output mean?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1739,7 +1766,7 @@ What does this output mean?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The first column (<code>-rw-r--r--</code>) represents the file permissions. In Unix-like systems, it shows who can read, write, or execute the file. In this case, the files are readable and writable by the owner (<code>rw-</code>), readable by the group (<code>r--</code>), and readable by others (<code>r--</code>).</p>
 <p>The second column (<code>1</code>) indicates the number of hard links to the file.</p>
@@ -1758,7 +1785,7 @@ What does this output mean?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> i<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> i<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <details>
@@ -1767,8 +1794,8 @@ What does this output mean?
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb64"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  44K Sep 22 17:44 index.html</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 6.2K Sep 22 17:37 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  44K Sep 24 19:04 index.html</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 6.2K Sep 24 18:56 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1777,7 +1804,7 @@ What does this output mean?
 <h3 data-number="2.8.11" class="anchored" data-anchor-id="removing-files-and-folders"><span class="header-section-number">2.8.11</span> Removing files and folders</h3>
 <p>To delete files and folders, you can use the <code>rm</code> command. Provide the path of the files or folders that you want to delete as the argument. However, if you want to remove a folder, you need to include the <code>-r</code> (or <code>--recursive</code>) flag.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Warning: Be careful when using the `rm` command!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1786,7 +1813,7 @@ Warning: Be careful when using the <code>rm</code> command!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>When you use the <code>rm</code> command to delete files, they are <strong>removed entirely (!!!)</strong> from your system and cannot be retrieved from a “Recycle Bin” or “Trash” as when you delete files using the file browser!</p>
 </div>
@@ -1798,7 +1825,7 @@ Warning: Be careful when using the <code>rm</code> command!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1811,7 +1838,7 @@ Warning: Be careful when using the <code>rm</code> command!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> new_directory <span class="kw">;</span> <span class="bu">cd</span> new_directory <span class="kw">;</span> <span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> new_directory <span class="kw">;</span> <span class="bu">cd</span> new_directory <span class="kw">;</span> <span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This will (1) create a new directory called <code>new_directory</code>, (2) change the current working directory to <code>new_directory</code> and (3) list the files in this new directory.</p>
