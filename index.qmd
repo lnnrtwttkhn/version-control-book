@@ -3,6 +3,15 @@ title-block-style: default
 metadata-files:
   - _authors.yml
   - _affiliations.yml
+execute:
+  echo: false
+  eval: true
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 ---
 
 ![This illustration is created by [Scriberia](https://www.scriberia.com/) with [The Turing Way](https://the-turing-way.netlify.app/) community. Used under a [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) licence. DOI: [10.5281/zenodo.3695300](https://doi.org/10.5281/zenodo.3695300) (Version 3, [direct download link](https://zenodo.org/records/3695300/files/BannerWelcome.jpg?download=1)).](static/welcome.jpg){#fig-turing-way-welcome fig-align="center" width="70%"}
@@ -60,11 +69,53 @@ If you find a typo, an unclear explanation, have an idea for a new chapter or wa
 
 ## Testimonials
 
-Testimonials of students enrolled in the course ["An Introduction to Version Control of Code and Data"](https://lennartwittkuhn.com/version-control-course-uhh-ws23/) at University of Hamburg, where this book acted as the primary learning resource:
+```{r}
+library(htmltools)
+library(shiny)
 
-> The online, tailor-made course book and wiki, along with the exercises and quizzes were incredibly helpful and aided my comprehension.
+# Define the testimonials
+testimonials <- list(
+  "The online, tailor-made course book and wiki, along with the exercises and quizzes were incredibly helpful and aided my comprehension.",
+  "All materials are conveniently accessible through a course website and completely open source, thus conveying important principles of good scientific practice beyond version control. I particularly appreciated this open approach.",
+  "The structured course and the provided chapters allowed me to learn step by step how to use Git and GitHub.",
+  "Sensible structure, content explained in an easy-to-understand manner; this allowed one to work through it at their own pace during the sessions or review the content between sessions."
+)
 
-> All materials are conveniently accessible through a course website and completely open source, thus conveying important principles of good scientific practice beyond version control. I particularly appreciated this open approach!
+# Create the carousel with custom CSS for smaller text
+carousel <- tags$div(
+  id = "testimonialCarousel",
+  class = "carousel slide",
+  `data-ride` = "carousel",
+  `data-interval` = "5000",  # Automatically change slides every 5 seconds
+  
+  # Add custom CSS for font size
+  tags$style(HTML("
+    .testimonial p {
+      font-size: 14px;  /* Adjust this value for smaller or larger text */
+    }
+  ")),
+  
+  # Carousel items
+  tags$div(
+    class = "carousel-inner",
+    
+    # Loop through the testimonials and generate carousel items
+    lapply(seq_along(testimonials), function(i) {
+      tags$div(
+        class = ifelse(i == 1, "carousel-item active", "carousel-item"),
+        tags$div(
+          class = "testimonial",
+          tags$blockquote(class = "blockquote", tags$p(testimonials[[i]]))
+        )
+      )
+    })
+  )
+)
+
+# Display the carousel
+browsable(carousel)
+
+```
 
 ## Our logo
 
