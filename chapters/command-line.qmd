@@ -517,16 +517,24 @@ cd ~/Doc
 
 Once you've typed a portion of the command or path, press the {{< kbd ⇥ >}} key.
 The command-line interface will attempt to auto-complete the command or path based on what matches your input.
-In this case for example:
+In this example, it will :
 
 ```{zsh filename="Code"}
-cd ~/Documents/
+$ cd ~/Documents
 ```
 
-If there are multiple possibilities, pressing {{< kbd ⇥ Tab >}} again will cycle through the available options.
+If there are multiple possibilities, pressing {{< kbd ⇥ Tab >}} again will cycle through the available options, for example:
+
+```{markdown filename="Output"}
+#| code-copy: false
+$ cd ~/Do
+Documents/  Downloads/
+```
+
 Auto-completion also works for system commands. 
 For example, typing `ls` (you will find out more about this command [below](#list-files-and-folders)) and pressing {{< kbd ⇥ Tab >}} might complete it to `ls -l` or `ls -a`.
 Auto-completion also works for the Git commands that will be introduced in the following chapters of this book.
+You can also cycle *backwards* through autocompleted options by holding {{< kbd Shift >}} (`Shift`), then pressing {{< kbd ⇥ Tab >}}.
 
 ### Command history
 
