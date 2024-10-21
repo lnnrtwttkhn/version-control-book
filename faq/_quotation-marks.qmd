@@ -1,0 +1,26 @@
+::: {.callout-tip collapse="true" title='FAQ: "I forgot to close the quotation marks of my commit message! What do I do?"'}
+
+In this situation, you command line probably looks like one of these examples:
+
+```{zsh, filename="Output"}
+#| code-copy: false
+echo "Hello World
+>
+>
+>
+```
+
+```{zsh, filename="Output"}
+#| code-copy: false
+git commit -m "Add filename.txt
+>
+>
+>
+```
+
+You can try one of the following solutions:
+
+1. Close the quotation marks by entering another `"`.
+1. Abort the command by typing <kbd>Ctrl</kbd> + <kbd>C</kbd> simultaneously and repeat it (now with quotation marks closed).
+
+:::
