@@ -796,17 +796,31 @@ If you are experimenting, consider deleting the newly created directories afterw
 
 The path of the directory we want to create is given as an argument to the command.
 If we want to create a directory in the current folder, we just need to use its name, as the path is assumed to be relative.
-For example, to create a new folder for your favorite recipes, we can use the following command:
+For example, to create a new folder for your favorite recipes or a city guide, we can use the following command:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
 mkdir recipes
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+mkdir city-guide
+```
+:::
 
 Make sure that the new folder is present by using the `ls` command, and then move into it by using the `cd` command.
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
 cd recipes
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+cd city-guide
+```
+:::
 
 ::: {.callout-note title="Error `File exists`" collapse="false"}
 
@@ -822,25 +836,39 @@ mkdir: recipes: File exists
 
 ### Creating multiple folders
 
-Next, we will proceed to create multiple additional folders within the `recipes` project folder.
+Next, we will proceed to create multiple additional folders within the project folder.
 The `mkdir` command allows us to create multiple directories simultaneously by providing multiple arguments, each representing a separate folder.
 For example, we might create the following three folders:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
 mkdir vegetarian vegan glutenfree
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+mkdir food nature museum
+```
+:::
 
 ### Creating files
 
-Let's create some files in the `recipes` project folder.
+Let's create some files in the project folder.
 To do this, you can use your favorite text editor or the command line.
 In the command line, you can use the `touch` command to create a new empty file.
 The file doesn't need to contain anything.
-For example, to create an empty file called `recipes.txt`, we can use the following command:
+For example, to create an empty file, we can use the following command:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
 touch recipes.txt
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+touch city-guide.txt
+```
+:::
 
 ### Opening files
 
@@ -852,16 +880,29 @@ These commands will open the specified file in the default application associate
 
 #### {{< fa brands microsoft >}} Windows (Git Bash)
 
-```{bash, filename="Code"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh filename="Code"}
 start recipes.txt
 ```
-
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+start city-guide.txt
+```
+:::
 
 #### {{< fa brands apple >}} macOS
 
-```{bash, filename="Code"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh filename="Code"}
 open recipes.txt
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+open city-guide.txt
+```
+:::
 
 :::
 
@@ -918,7 +959,7 @@ echo "Current date: $(date)"
 ```{bash filename="Output"}
 #| eval: true
 #| echo: false
-#| class.output: markdown
+#| class.output: zsh
 #| code-copy: false
 echo "Current date: $(date)"
 ```
@@ -927,13 +968,20 @@ echo "Current date: $(date)"
 
 The `echo` command can also be used to write text to a file directly from the command line. 
 By combining echo with the `>>` operator, you can add content to an existing file.
-For example, to add text to the `recipes.txt` file using the command line:
+For example, to add text to the text file using the command line run the following command:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
 echo "This is a list of all my favorite recipes." >> recipes.txt 
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+echo "This is a list of all my favorite places." >> city-guide.txt
+```
+:::
 
-This adds the provided text *to the existing content* of `recipes.txt`.
+This adds the provided text *to the existing content* of the text file.
 
 ::: {.callout-warning collapse="false" title="Difference between using `>>` or `>` with `echo` when writing short text into files"}
 
@@ -952,11 +1000,18 @@ If you want to quickly view the content of a file without opening it, you can do
 To display the content of a file, simply use `cat` followed by the file name. 
 For example:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
-cat recipes.txt 
+cat recipes.txt
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+cat city-guide.txt
+```
+:::
 
-This command will output the entire content of the `recipes.txt` file to the terminal.
+This command will output the entire content of the text file to the terminal.
 
 <details>
 <summary>{{< fa eye >}} Click here to see the output of the `cat` command applied to the `.gitignore` file in the project directory of this guide.</summary>
@@ -971,52 +1026,83 @@ cat .gitignore
 
 ### Moving folders and files
 
-Let's say we want to move the `recipes.txt` file to the `/vegan` subfolder.
+Let's say we want to move the text file to another subfolder.
 We can use the `mv` command to move files and folders.
 The `mv` command requires two arguments: the first is the files or folders to be moved, and the second is the path where they should be moved.
-To move the `recipes.txt` file to the `/vegan` subfolder, the command would look like this:
+To move the text file to the subfolder, the command would look like this:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
 mv recipes.txt vegan
 ```
-
-#### Moving files to the parent directory
-
-Let's assume that you moved the `recipes.txt` file to the `/vegan` subfolder, as shown above.
-Now let's move the `recipes.txt` file back to the parent `recipes` folder.
-To do this, you can first `cd` into the `/vegan` subfolder and then use the `..` shortcut (for details on `..`, see the [section above](#dot-dot-..)) in combination with the `mv` command:
-
+## {{< fa tree-city >}} City Guide
 ```{zsh filename="Code"}
-cd vegan
-mv recipes.txt ..
+mv city-guide.txt food
 ```
+:::
 
 ### Renaming files and folders
 
-Suppose we don't like the folder name `vegan` because `recipes.txt` actually contains recipes with meat.
-We can use the `mv` command to rename files and folders by moving them to a different location in the file system, for example `meat`, like this:
+Suppose we don't like the subfolders names because the text file actually contains content is more relevant for another subfolder.
+We can use the `mv` command to rename files and folders by moving them to a different location in the file system like this:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
 mv vegan meat
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+mv food attractions
+```
+:::
 
 ::: {.callout-note title="You can't be *inside* a folder when renaming it." collapse="true"}
 
 Note that you can't be *inside* a folder when renaming it (your current working directory is the folder that you want to rename) but you have to be in its parent directory.
-Let's say that you try to rename the `vegan` folder to `meat` but you are *inside* the `vegan` folder (check with `pwd`), you will receive an error like this:
+Let's say that you try to rename the subfolder but you are *inside* the folder (check with `pwd`), you will receive an error like this:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Output"}
 #| code-copy: false
 vegan$ mv vegan meat
 mv: rename vegan to meat: No such file or directory
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Output"}
+#| code-copy: false
+vegan$ mv food attractions
+mv: rename food to attractions: No such file or directory
+```
+:::
 
+:::
+
+#### Moving files to the parent directory
+
+Let's assume that you moved the text file to the subfolder, as shown above.
+Now let's move the text file back to the parent folder.
+To do this, you can first `cd` into the subfolder and then use the `..` shortcut (for details on `..`, see the [section above](#dot-dot-..)) in combination with the `mv` command:
+
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh filename="Code"}
+cd vegan
+mv recipes.txt ..
+```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+cd vegan
+mv city-guide.txt ..
+```
 :::
 
 ### Downloading files
 
 There are various ways how you can download files from the internet using the command line.
-Here, we present two simple approachs using the tools `curl` and `wget`.
+Here, we present two simple approaches using the tools `curl` and `wget`.
 Note, that `wget` is not natively installed on Windows.
 They are both powerful tools used to download files from the web directly through the command line.
 This is particularly useful for retrieving files from a remote server or downloading large datasets.
@@ -1124,11 +1210,18 @@ However, if you want to remove a folder, you need to include the `-r` (or `--rec
 When you use the `rm` command to delete files, they are **removed entirely (!!!)** from your system and cannot be retrieved from a "Recycle Bin" or "Trash" as when you delete files using the file browser!
 :::
 
-For example, to remove the `glutenfree` folder, you would use the following command:
+For example, to remove a specific folder, you would use the following command:
 
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
 rm -r glutenfree
 ```
+## {{< fa tree-city >}} City Guide
+```{zsh filename="Code"}
+rm -r museum
+```
+:::
 
 ### Combining commands 
 
