@@ -800,6 +800,18 @@ Make sure that the new folder is present by using the `ls` command, and then mov
 cd recipes
 ```
 
+::: {.callout-note title="Error `File exists`" collapse="false"}
+
+By default, you can't overwrite existing directories and will receive a warning when run `mkdir` already exists.
+Try repeating the previous `mkdir` command.
+You will receive an error like this: 
+
+```{zsh filename="Output"}
+#| code-copy: false
+mkdir: recipes: File exists
+```
+:::
+
 ### Creating multiple folders
 
 Next, we will proceed to create multiple additional folders within the `recipes` project folder.
