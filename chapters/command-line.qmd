@@ -990,6 +990,19 @@ We can use the `mv` command to rename files and folders by moving them to a diff
 mv vegan meat
 ```
 
+::: {.callout-note title="You can't be *inside* a folder when renaming it." collapse="true"}
+
+Note that you can't be *inside* a folder when renaming it (your current working directory is the folder that you want to rename) but you have to be in its parent directory.
+Let's say that you try to rename the `vegan` folder to `meat` but you are *inside* the `vegan` folder (check with `pwd`), you will receive an error like this:
+
+```{zsh filename="Output"}
+#| code-copy: false
+vegan$ mv vegan meat
+mv: rename vegan to meat: No such file or directory
+```
+
+:::
+
 ### Downloading files
 
 There are various ways how you can download files from the internet using the command line.
