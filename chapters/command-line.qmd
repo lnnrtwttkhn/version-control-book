@@ -1006,25 +1006,40 @@ mv: rename vegan to meat: No such file or directory
 ### Downloading files
 
 There are various ways how you can download files from the internet using the command line.
-Here, we present a simple approach using the tool `wget`.
-
-#### Using `wget`
-
-The `wget` command is a powerful tool used to download files from the web directly through the command line.
+Here, we present two simple approachs using the tools `curl` and `wget`.
+Note, that `wget` is not natively installed on Windows.
+They are both powerful tools used to download files from the web directly through the command line.
 This is particularly useful for retrieving files from a remote server or downloading large datasets.
 
 To download a file into your current directory, simply use the following syntax:
 
+::: {.panel-tabset}
+## `curl`
+```{zsh filename="Code"}
+curl -O <URL> # <1>
+```
+1. Replace `URL` with the URL of the files(s) that you want to download.
+
+## `wget`
 ```{zsh filename="Code"}
 wget <URL> # <1>
 ```
 1. Replace `URL` with the URL of the files(s) that you want to download.
+:::
 
 For example, if you want to download the logo of this project, you could use the following command:
 
+::: {.panel-tabset}
+## `curl`
+```{zsh filename="Code"}
+curl -O https://lennartwittkuhn.com/version-control-book/static/logo.svg
+```
+
+## `wget`
 ```{zsh filename="Code"}
 wget https://lennartwittkuhn.com/version-control-book/static/logo.svg
 ```
+:::
 
 This command will download `logo.svg` from the specified URL and save it in the current working directory.
 
