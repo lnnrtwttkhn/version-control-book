@@ -3,8 +3,10 @@
 mkdir -p exercises-repos
 
 # Run the cli script and zip its output
-sh -x code/code-exercises-cli.sh > "exercises-repos/history-cli.txt" 2>&1
-zip -r exercises-repos/recipes-cli.zip recipes
+sh -x code/code-exercises-cli-recipes.sh > "exercises-repos/history-cli-recipes.txt" 2>&1
+zip -r exercises-repos/city-guide-cli.zip recipes
+sh -x code/code-exercises-cli-city-guide.sh > "exercises-repos/history-cli-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-cli.zip city-guide
 
 # Run the setup script and zip its output
 sh -x code/code-exercises-setup-run.sh > "exercises-repos/history-setup.txt" 2>&1
