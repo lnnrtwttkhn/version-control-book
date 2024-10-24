@@ -230,7 +230,8 @@ wittkuhn@lip-osx-005509:~$
 You are most likely familiar with using your computer mouse to click through folders in your file browser, or perhaps you use arrow keys and clicks in the File Explorer (on Windows) or Finder (on macOS) to manage your files.
 
 The command line offers a different, one could say less intuitive, but very efficient and precise way to interact with your computer's file system.
-Instead of relying on a graphical user interface, you use text-based commands to perform tasks like exploring the contents of folders, creating and deleting files, and moving between folders. 
+Instead of relying on a graphical user interface, you use text-based commands to perform tasks like exploring the contents of folders, creating and deleting files, and moving between folders.
+
 ### Directory and file structure
 
 In a file system, directories (or folders) and files are organized hierarchically to enable the storage and retrieval of data.
@@ -1071,7 +1072,7 @@ mv: rename vegan to meat: No such file or directory
 ## {{< fa tree-city >}} City Guide
 ```{zsh filename="Output"}
 #| code-copy: false
-vegan$ mv food attractions
+food$ mv food attractions
 mv: rename food to attractions: No such file or directory
 ```
 :::
@@ -1087,12 +1088,12 @@ To do this, you can first `cd` into the subfolder and then use the `..` shortcut
 ::: {.panel-tabset}
 ## {{< fa utensils >}} Recipes
 ```{zsh filename="Code"}
-cd vegan
+cd meat
 mv recipes.txt ..
 ```
 ## {{< fa tree-city >}} City Guide
 ```{zsh filename="Code"}
-cd vegan
+cd attractions
 mv city-guide.txt ..
 ```
 :::
