@@ -323,11 +323,12 @@ div.csl-indent {
   <li><a href="#navigating-the-file-system" id="toc-navigating-the-file-system" class="nav-link" data-scroll-target="#navigating-the-file-system"><span class="header-section-number">2.5</span> Navigating the file system</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2.5.1</span> Introduction</a></li>
-  <li><a href="#current-working-directory" id="toc-current-working-directory" class="nav-link" data-scroll-target="#current-working-directory"><span class="header-section-number">2.5.2</span> Current working directory</a></li>
-  <li><a href="#command-not-found" id="toc-command-not-found" class="nav-link" data-scroll-target="#command-not-found"><span class="header-section-number">2.5.3</span> Command not found</a></li>
-  <li><a href="#moving-between-folders" id="toc-moving-between-folders" class="nav-link" data-scroll-target="#moving-between-folders"><span class="header-section-number">2.5.4</span> Moving between folders</a></li>
-  <li><a href="#paths-with-spaces" id="toc-paths-with-spaces" class="nav-link" data-scroll-target="#paths-with-spaces"><span class="header-section-number">2.5.5</span> Paths with spaces</a></li>
-  <li><a href="#taking-shortcuts" id="toc-taking-shortcuts" class="nav-link" data-scroll-target="#taking-shortcuts"><span class="header-section-number">2.5.6</span> Taking shortcuts</a></li>
+  <li><a href="#directory-and-file-structure" id="toc-directory-and-file-structure" class="nav-link" data-scroll-target="#directory-and-file-structure"><span class="header-section-number">2.5.2</span> Directory and file structure</a></li>
+  <li><a href="#current-working-directory" id="toc-current-working-directory" class="nav-link" data-scroll-target="#current-working-directory"><span class="header-section-number">2.5.3</span> Current working directory</a></li>
+  <li><a href="#command-not-found" id="toc-command-not-found" class="nav-link" data-scroll-target="#command-not-found"><span class="header-section-number">2.5.4</span> Command not found</a></li>
+  <li><a href="#moving-between-folders" id="toc-moving-between-folders" class="nav-link" data-scroll-target="#moving-between-folders"><span class="header-section-number">2.5.5</span> Moving between folders</a></li>
+  <li><a href="#paths-with-spaces" id="toc-paths-with-spaces" class="nav-link" data-scroll-target="#paths-with-spaces"><span class="header-section-number">2.5.6</span> Paths with spaces</a></li>
+  <li><a href="#taking-shortcuts" id="toc-taking-shortcuts" class="nav-link" data-scroll-target="#taking-shortcuts"><span class="header-section-number">2.5.7</span> Taking shortcuts</a></li>
   </ul></li>
   <li><a href="#clean-and-efficient-command-line" id="toc-clean-and-efficient-command-line" class="nav-link" data-scroll-target="#clean-and-efficient-command-line"><span class="header-section-number">2.6</span> Clean and efficient command line</a>
   <ul class="collapse">
@@ -410,7 +411,6 @@ Learning Objectives
 </div>
 </div>
 </div>
-<p><a href="https://version-control-cli.formr.org" class="btn btn-outline-secondary" role="button"><i class="fa-circle-question fa-regular" aria-label="regular"></i> Take the quiz!</a></p>
 <section id="why-using-git-from-the-command-line" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="why-using-git-from-the-command-line"><span class="header-section-number">2.1</span> Why using Git from the command line?</h2>
 <p>You are most likely used to interacting with programs on your computer through graphical user interfaces (GUIs) where you can select options through graphical icons and visual indicators using the computer mouse. However, computers have historically been controlled through text-based commands typed into command-line interfaces (CLIs) using the computer keyboard. To this day, the command line has persisted as a reliable (and sometimes the only) way to interact effectively with computer programs. Similarly, even though many GUIs for Git exist (for an overview, see the chapter on <a href="../chapters/gui.html">Graphical User Interfaces</a>), <strong>Git is fundamentally a command-line tool</strong>. This is why comfort with the command line is a good basis for learning Git. For more general advantages of the command line, see <a href="#tip-cli-advantages" class="quarto-xref">Tip&nbsp;<span>2.1</span></a>.</p>
@@ -657,7 +657,10 @@ Figure&nbsp;2.6: Screenshot of JupyterHub, showing the terminal.
 <section id="introduction" class="level3" data-number="2.5.1">
 <h3 data-number="2.5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.5.1</span> Introduction</h3>
 <p>You are most likely familiar with using your computer mouse to click through folders in your file browser, or perhaps you use arrow keys and clicks in the File Explorer (on Windows) or Finder (on macOS) to manage your files.</p>
-<p>The command line offers a different, one could say less intuitive, but very efficient and precise way to interact with your computer’s file system. Instead of relying on a graphical user interface, you use text-based commands to perform tasks like exploring the contents of folders, creating and deleting files, and moving between folders. ### Directory and file structure</p>
+<p>The command line offers a different, one could say less intuitive, but very efficient and precise way to interact with your computer’s file system. Instead of relying on a graphical user interface, you use text-based commands to perform tasks like exploring the contents of folders, creating and deleting files, and moving between folders.</p>
+</section>
+<section id="directory-and-file-structure" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="directory-and-file-structure"><span class="header-section-number">2.5.2</span> Directory and file structure</h3>
 <p>In a file system, directories (or folders) and files are organized hierarchically to enable the storage and retrieval of data. Each level in the hierarchy is called a “level” or “depth”. In the context of file systems, the hierarchy of directories is often described as a parent-child relationship and folders are therefore often referred to as “parent directories” and “child directories” (for details, see <a href="#tip-parent-child-directories" class="quarto-xref">Tip&nbsp;<span>2.2</span></a>).</p>
 <div id="tip-parent-child-directories" class="callout callout-style-default callout-tip callout-titled" title="What are &quot;parent&quot; and &quot;child&quot; directories?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
@@ -743,8 +746,8 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 </div>
 </div>
 </section>
-<section id="current-working-directory" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="current-working-directory"><span class="header-section-number">2.5.2</span> Current working directory</h3>
+<section id="current-working-directory" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="current-working-directory"><span class="header-section-number">2.5.3</span> Current working directory</h3>
 <p>The current working directory is the location within your file system where a user or an application is presently performing file operations or running commands. The command <code>pwd</code> (short for “print working directory”) will display the directory that the shell is currently focused on in your file system.</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -765,8 +768,8 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 </div>
 </details>
 </section>
-<section id="command-not-found" class="level3" data-number="2.5.3">
-<h3 data-number="2.5.3" class="anchored" data-anchor-id="command-not-found"><span class="header-section-number">2.5.3</span> Command not found</h3>
+<section id="command-not-found" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="command-not-found"><span class="header-section-number">2.5.4</span> Command not found</h3>
 <p>If the shell cannot find the program you typed as a command, it will show an error message. This can happen if you made a mistake when typing the command or if the program for that command is not installed on your system. For example, if you made a mistake when typing the <code>pwd</code> command, and accidentally entered <code>pws</code>, the following error message might appear:</p>
 <div class="cell" data-code-copy="false">
 <div class="code-with-filename">
@@ -777,8 +780,8 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 </div>
 </div>
 </section>
-<section id="moving-between-folders" class="level3" data-number="2.5.4">
-<h3 data-number="2.5.4" class="anchored" data-anchor-id="moving-between-folders"><span class="header-section-number">2.5.4</span> Moving between folders</h3>
+<section id="moving-between-folders" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="moving-between-folders"><span class="header-section-number">2.5.5</span> Moving between folders</h3>
 <p>The <code>cd</code> command is used to change the current working directory (or “move” to a different directory in your file system). To use it, type <code>cd</code> followed by an argument, which is the path of the folder you want to navigate to. The path can be either <em>absolute</em> or <em>relative</em>.</p>
 <p>For example, if you are on macOS and your current working directory is your home directory (for example, <code>/Users/user</code>), you can switch to the <code>/Downloads</code> folder by using either an absolute or relative path with the <code>cd</code> command:</p>
 <div class="cell" data-code-copy="false">
@@ -860,8 +863,8 @@ Is Bash case sensitive?
 </div>
 </div>
 </section>
-<section id="paths-with-spaces" class="level3" data-number="2.5.5">
-<h3 data-number="2.5.5" class="anchored" data-anchor-id="paths-with-spaces"><span class="header-section-number">2.5.5</span> Paths with spaces</h3>
+<section id="paths-with-spaces" class="level3" data-number="2.5.6">
+<h3 data-number="2.5.6" class="anchored" data-anchor-id="paths-with-spaces"><span class="header-section-number">2.5.6</span> Paths with spaces</h3>
 <p>If a path contains a space, it needs to be enclosed in quotation marks to be recognized by the command line. Here is an example of a path with a space:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -882,10 +885,10 @@ Is Bash case sensitive?
 </div>
 <p>While the command line can handle paths (or files) with spaces in this way, we <strong>recommend to avoid spaces</strong> in folder and file names altogether, especially if you use the command line frequently. For example, change the name of a directory called <code>my folder</code> to <code>my_folder</code>, using an underscore instead of a space.</p>
 </section>
-<section id="taking-shortcuts" class="level3" data-number="2.5.6">
-<h3 data-number="2.5.6" class="anchored" data-anchor-id="taking-shortcuts"><span class="header-section-number">2.5.6</span> Taking shortcuts</h3>
-<section id="tilde" class="level4" data-number="2.5.6.1">
-<h4 data-number="2.5.6.1" class="anchored" data-anchor-id="tilde"><span class="header-section-number">2.5.6.1</span> Tilde: <code>~</code></h4>
+<section id="taking-shortcuts" class="level3" data-number="2.5.7">
+<h3 data-number="2.5.7" class="anchored" data-anchor-id="taking-shortcuts"><span class="header-section-number">2.5.7</span> Taking shortcuts</h3>
+<section id="tilde" class="level4" data-number="2.5.7.1">
+<h4 data-number="2.5.7.1" class="anchored" data-anchor-id="tilde"><span class="header-section-number">2.5.7.1</span> Tilde: <code>~</code></h4>
 <p>The tilde symbol (<code>~</code>) provides a convenient and abbreviated way to refer to the user’s home directory, allowing us to easily construct paths relative to that directory. To quickly change the current working directory to your user’s home directory anywhere on your file system, we can use <code>cd ~</code> which will transport us back to the user’s home directory.</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -932,8 +935,8 @@ Finding the tilde (<code>~</code>) on your keyboard
 </div>
 </div>
 </section>
-<section id="dot-." class="level4" data-number="2.5.6.2">
-<h4 data-number="2.5.6.2" class="anchored" data-anchor-id="dot-."><span class="header-section-number">2.5.6.2</span> Dot: <code>.</code></h4>
+<section id="dot-." class="level4" data-number="2.5.7.2">
+<h4 data-number="2.5.7.2" class="anchored" data-anchor-id="dot-."><span class="header-section-number">2.5.7.2</span> Dot: <code>.</code></h4>
 <p>Another symbol with a special meaning in paths, aside from <code>~</code>, is the dot (<code>.</code>). It serves as a shorthand representation for the current working directory, and using it in a path means the reference remains within the same directory.</p>
 <div class="cell" data-code-copy="false">
 <div class="code-with-filename">
@@ -962,8 +965,8 @@ Finding the tilde (<code>~</code>) on your keyboard
 </div>
 </div>
 </section>
-<section id="dot-dot-.." class="level4" data-number="2.5.6.3">
-<h4 data-number="2.5.6.3" class="anchored" data-anchor-id="dot-dot-.."><span class="header-section-number">2.5.6.3</span> Dot Dot: <code>..</code></h4>
+<section id="dot-dot-.." class="level4" data-number="2.5.7.3">
+<h4 data-number="2.5.7.3" class="anchored" data-anchor-id="dot-dot-.."><span class="header-section-number">2.5.7.3</span> Dot Dot: <code>..</code></h4>
 <p>The <code>..</code> symbol is a shorthand representation for the parent directory of the current working directory (for a reminder about “parent” and “child” directories, see <a href="#tip-parent-child-directories" class="quarto-xref">Tip&nbsp;<span>2.2</span></a>). It can be used repeatedly, allowing <code>cd ..</code> to move up one folder and <code>cd ../..</code> to move up two folders. This is useful for creating relative paths to other branches within a directory tree.</p>
 <p>For instance, by executing the following sequence of commands, we will navigate horizontally (or sideways) to a folder located at the same hierarchical level as the current working directory:</p>
 <div class="cell" data-code-copy="false">
@@ -1373,55 +1376,55 @@ Be cautious when modifying hidden files!
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
 <div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 356K</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 19 runner docker 4.0K Oct 22 17:47 .</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 22 17:39 ..</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Oct 22 17:39 .Renviron</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Oct 22 17:39 .Rprofile</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.3K Oct 22 17:39 .all-contributorsrc</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Oct 22 17:39 .codespellrc</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Oct 22 17:47 .git</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 22 17:39 .github</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  131 Oct 22 17:39 .gitignore</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Oct 22 17:47 .quarto</span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Oct 22 17:39 .zenodo.json</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Oct 22 17:39 CITATION.cff</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Oct 22 17:39 LICENSE</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  575 Oct 22 17:39 Makefile</span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 8.0K Oct 22 17:39 README.md</span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  935 Oct 22 17:39 _affiliations.yml</span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  641 Oct 22 17:39 _authors.yml</span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:47 _book</span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  939 Oct 22 17:39 _courses.yml</span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 22 17:39 _extensions</span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   97 Oct 22 17:39 _metadata.yml</span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.4K Oct 22 17:39 _quarto.yml</span>
-<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.0K Oct 22 17:39 _variables.yml</span>
-<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:47 chapters</span>
-<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.6K Oct 22 17:39 cheatsheet.json</span>
-<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Oct 22 17:39 chicago-author-date-note.csl</span>
-<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:47 city-guide</span>
-<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:39 code</span>
-<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  507 Oct 22 17:47 contents-listing.json</span>
-<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  56K Oct 22 17:47 contents.html</span>
-<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  636 Oct 22 17:39 contents.qmd</span>
-<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  265 Oct 22 17:39 custom.scss</span>
-<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:39 exercises</span>
-<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:47 exercises-repos</span>
-<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:39 faq</span>
-<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Oct 22 17:39 functions.R</span>
-<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  145 Oct 22 17:39 github-buttons.html</span>
-<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  44K Oct 22 17:47 index.html</span>
-<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.2K Oct 22 17:39 index.qmd</span>
-<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:47 misc</span>
-<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:39 objectives</span>
-<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Oct 22 17:39 plausible.html</span>
-<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 22 17:47 recipes</span>
-<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Oct 22 17:39 references.bib</span>
-<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Oct 22 17:40 renv</span>
-<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  15K Oct 22 17:39 renv.lock</span>
-<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Oct 22 17:47 site_libs</span>
-<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 22 17:47 static</span>
-<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Oct 22 17:39 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 19 runner docker 4.0K Oct 24 19:01 .</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 24 18:52 ..</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Oct 24 18:52 .Renviron</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Oct 24 18:52 .Rprofile</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.3K Oct 24 18:52 .all-contributorsrc</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   76 Oct 24 18:52 .codespellrc</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  8 runner docker 4.0K Oct 24 19:01 .git</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 24 18:52 .github</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  131 Oct 24 18:52 .gitignore</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Oct 24 19:01 .quarto</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Oct 24 18:52 .zenodo.json</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Oct 24 18:52 CITATION.cff</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Oct 24 18:52 LICENSE</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  575 Oct 24 18:52 Makefile</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 8.0K Oct 24 18:52 README.md</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  935 Oct 24 18:52 _affiliations.yml</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  641 Oct 24 18:52 _authors.yml</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 19:01 _book</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  939 Oct 24 18:52 _courses.yml</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 24 18:52 _extensions</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   97 Oct 24 18:52 _metadata.yml</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.4K Oct 24 18:52 _quarto.yml</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.0K Oct 24 18:52 _variables.yml</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 19:01 chapters</span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.6K Oct 24 18:52 cheatsheet.json</span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Oct 24 18:52 chicago-author-date-note.csl</span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 19:01 city-guide</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 18:52 code</span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  507 Oct 24 19:01 contents-listing.json</span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  56K Oct 24 19:01 contents.html</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  636 Oct 24 18:52 contents.qmd</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  265 Oct 24 18:52 custom.scss</span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 18:52 exercises</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 19:01 exercises-repos</span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 18:52 faq</span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Oct 24 18:52 functions.R</span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  145 Oct 24 18:52 github-buttons.html</span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  44K Oct 24 19:01 index.html</span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.2K Oct 24 18:52 index.qmd</span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 19:01 misc</span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 18:52 objectives</span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Oct 24 18:52 plausible.html</span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Oct 24 19:01 recipes</span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Oct 24 18:52 references.bib</span>
+<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Oct 24 18:54 renv</span>
+<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  15K Oct 24 18:52 renv.lock</span>
+<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Oct 24 19:01 site_libs</span>
+<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Oct 24 19:01 static</span>
+<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Oct 24 18:52 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1778,7 +1781,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </div>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb64"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Current</span> date: Tue Oct 22 17:47:32 UTC 2024</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Current</span> date: Thu Oct 24 19:01:50 UTC 2024</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1972,7 +1975,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vegan$</span> mv food attractions</span>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="ex">food$</span> mv food attractions</span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mv:</span> rename food to attractions: No such file or directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -1994,7 +1997,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> vegan</span>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> meat</span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -2005,7 +2008,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> vegan</span>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> attractions</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> city-guide.txt ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -2104,12 +2107,12 @@ You can’t be <em>inside</em> a folder when renaming it.
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb81"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  935 Oct 22 17:39 _affiliations.yml</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  641 Oct 22 17:39 _authors.yml</span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  939 Oct 22 17:39 _courses.yml</span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker   97 Oct 22 17:39 _metadata.yml</span>
-<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.4K Oct 22 17:39 _quarto.yml</span>
-<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.0K Oct 22 17:39 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  935 Oct 24 18:52 _affiliations.yml</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  641 Oct 24 18:52 _authors.yml</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  939 Oct 24 18:52 _courses.yml</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker   97 Oct 24 18:52 _metadata.yml</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.4K Oct 24 18:52 _quarto.yml</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.0K Oct 24 18:52 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What does this output mean?">
@@ -2150,8 +2153,8 @@ What does this output mean?
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb83"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  44K Oct 22 17:47 index.html</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 6.2K Oct 22 17:39 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  44K Oct 24 19:01 index.html</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 6.2K Oct 24 18:52 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
