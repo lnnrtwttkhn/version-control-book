@@ -7,7 +7,7 @@ mkdir -p exercises-repos
 
 # Run the cli script and zip its output
 sh -x code/code-exercises-cli-recipes.sh > "exercises-repos/history-cli-recipes.txt" 2>&1
-zip -r exercises-repos/city-guide-cli.zip recipes
+zip -r exercises-repos/recipes-cli.zip recipes
 sh -x code/code-exercises-cli-city-guide.sh > "exercises-repos/history-cli-city-guide.txt" 2>&1
 zip -r exercises-repos/city-guide-cli.zip city-guide
 
