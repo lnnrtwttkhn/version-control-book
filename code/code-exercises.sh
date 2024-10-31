@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm -rf exercises-repos
+rm -rf recipes
+rn -rf city-guide
 mkdir -p exercises-repos
 
 # Run the cli script and zip its output
