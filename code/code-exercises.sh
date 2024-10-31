@@ -1,20 +1,27 @@
 #!/bin/bash
 
+rm -rf exercises-repos
+rm -rf recipes
+rn -rf city-guide
 mkdir -p exercises-repos
 
 # Run the cli script and zip its output
 sh -x code/code-exercises-cli-recipes.sh > "exercises-repos/history-cli-recipes.txt" 2>&1
-zip -r exercises-repos/city-guide-cli.zip recipes
+zip -r exercises-repos/recipes-cli.zip recipes
 sh -x code/code-exercises-cli-city-guide.sh > "exercises-repos/history-cli-city-guide.txt" 2>&1
 zip -r exercises-repos/city-guide-cli.zip city-guide
 
 # Run the setup script and zip its output
-sh -x code/code-exercises-setup-run.sh > "exercises-repos/history-setup.txt" 2>&1
+sh -x code/code-exercises-setup-run-recipes.sh > "exercises-repos/history-setup-recipes.txt" 2>&1
 zip -r exercises-repos/recipes-setup.zip recipes
+sh -x code/code-exercises-setup-run-city-guide.sh > "exercises-repos/history-setup-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-setup.zip city-guide
 
 # Run the first steps script and zip its output
-sh -x code/code-exercises-first-steps-git.sh > "exercises-repos/history-first-steps-git.txt" 2>&1
+sh -x code/code-exercises-first-steps-git-recipes.sh > "exercises-repos/history-first-steps-git-recipes.txt" 2>&1
 zip -r exercises-repos/recipes-first-steps.zip recipes
+sh -x code/code-exercises-first-steps-git-city-guide.sh > "exercises-repos/history-first-steps-git-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-first-steps.zip city-guide
 
 # Run the amend script and zip its output
 sh -x code/code-exercises-essentials-amend.sh > "exercises-repos/history-essentials-amend.txt" 2>&1
