@@ -9,8 +9,10 @@ sh -x code/code-exercises-cli-city-guide.sh > "exercises-repos/history-cli-city-
 zip -r exercises-repos/city-guide-cli.zip city-guide
 
 # Run the setup script and zip its output
-sh -x code/code-exercises-setup-run.sh > "exercises-repos/history-setup.txt" 2>&1
+sh -x code/code-exercises-setup-run-recipes.sh > "exercises-repos/history-setup-recipes.txt" 2>&1
 zip -r exercises-repos/recipes-setup.zip recipes
+sh -x code/code-exercises-setup-run-city-guide.sh > "exercises-repos/history-setup-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-setup.zip city-guide
 
 # Run the first steps script and zip its output
 sh -x code/code-exercises-first-steps-git.sh > "exercises-repos/history-first-steps-git.txt" 2>&1
