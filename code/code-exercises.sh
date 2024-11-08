@@ -24,8 +24,10 @@ sh -x code/code-exercises-first-steps-git-city-guide.sh > "exercises-repos/histo
 zip -r exercises-repos/city-guide-first-steps.zip city-guide
 
 # Run the amend script and zip its output
-sh -x code/code-exercises-essentials-amend.sh > "exercises-repos/history-essentials-amend.txt" 2>&1
-zip -r exercises-repos/recipes-essentials-amend.zip recipes
+sh -x code/code-exercises-essentials-amend-recipes.sh > "exercises-repos/history-essentials-amend-recipes.txt" 2>&1
+zip -r exercises-repos/recipes-essentials-amend-recipes.zip recipes
+sh -x code/code-exercises-essentials-amend-city-guide.sh > "exercises-repos/history-essentials-amend-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-essentials-amend.zip city-guide
 
 # Run the gitignore script and zip its output
 sh -x code/code-exercises-essentials-gitignore.sh > "exercises-repos/history-essentials-gitignore.txt" 2>&1
