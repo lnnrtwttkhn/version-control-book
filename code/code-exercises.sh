@@ -30,8 +30,10 @@ sh -x code/code-exercises-essentials-amend-city-guide.sh > "exercises-repos/hist
 zip -r exercises-repos/city-guide-essentials-amend.zip city-guide
 
 # Run the gitignore script and zip its output
-sh -x code/code-exercises-essentials-gitignore.sh > "exercises-repos/history-essentials-gitignore.txt" 2>&1
+sh -x code/code-exercises-essentials-gitignore-recipes.sh > "exercises-repos/history-essentials-gitignore-recipes.txt" 2>&1
 zip -r exercises-repos/recipes-essentials-gitignore.zip recipes
+sh -x code/code-exercises-essentials-gitignore-city-guide.sh > "exercises-repos/history-essentials-gitignore-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-essentials-gitignore.zip city-guide
 
 # Run the branches script and zip its output
 sh -x code/code-exercises-branches.sh > "exercises-repos/history-branches.txt" 2>&1
