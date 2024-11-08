@@ -2,7 +2,7 @@
 
 rm -rf exercises-repos
 rm -rf recipes
-rn -rf city-guide
+rm -rf city-guide
 mkdir -p exercises-repos
 
 # Run the cli script and zip its output
@@ -24,12 +24,16 @@ sh -x code/code-exercises-first-steps-git-city-guide.sh > "exercises-repos/histo
 zip -r exercises-repos/city-guide-first-steps.zip city-guide
 
 # Run the amend script and zip its output
-sh -x code/code-exercises-essentials-amend.sh > "exercises-repos/history-essentials-amend.txt" 2>&1
-zip -r exercises-repos/recipes-essentials-amend.zip recipes
+sh -x code/code-exercises-essentials-amend-recipes.sh > "exercises-repos/history-essentials-amend-recipes.txt" 2>&1
+zip -r exercises-repos/recipes-essentials-amend-recipes.zip recipes
+sh -x code/code-exercises-essentials-amend-city-guide.sh > "exercises-repos/history-essentials-amend-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-essentials-amend.zip city-guide
 
 # Run the gitignore script and zip its output
-sh -x code/code-exercises-essentials-gitignore.sh > "exercises-repos/history-essentials-gitignore.txt" 2>&1
+sh -x code/code-exercises-essentials-gitignore-recipes.sh > "exercises-repos/history-essentials-gitignore-recipes.txt" 2>&1
 zip -r exercises-repos/recipes-essentials-gitignore.zip recipes
+sh -x code/code-exercises-essentials-gitignore-city-guide.sh > "exercises-repos/history-essentials-gitignore-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-essentials-gitignore.zip city-guide
 
 # Run the branches script and zip its output
 sh -x code/code-exercises-branches.sh > "exercises-repos/history-branches.txt" 2>&1

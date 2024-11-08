@@ -1,4 +1,4 @@
-1. Navigate into the `recipes` repository using `cd recipes` (or a similar path).
+1. Optional: Navigate into the project repository using `cd` (in combination with an absolute or relative path).
 1. Download an image from the internet using `wget`.
 This command download a picture of pasta from the internet and saves the output `-O` as `pasta.jpg`.
 The `-nv` (or `--no-verbose`) argument makes the command output less text. 
@@ -7,7 +7,7 @@ Git will notice the new file and list it as untracked.
 1. Create a `.gitignore` file using `touch`.
 Note that you can also use a regular text editor to do this.
 1. Add `*.jpg` to the `.gitignore` file to ignore all files that end with the `.jpg` file extension.
-In this example, `echo` is used to append text to `recipes.txt`.
+In this example, `echo` is used to append text to the text file.
 Note that you can also use a regular text editor to do this.
 This command would also create the file if `.gitignore` wouldn't exist yet.
 1. Check the state of your repository again using `git status`.
@@ -17,6 +17,6 @@ This command should generally be avoided as it may lead to staging and committin
 Here, we use it to demonstrate that only the `.gitignore` will be staged but not the pasta image file because it is ignored.
 1. Commit the changes in `.gitignore` with a descriptive commit message using `git commit`.
 1. Add `.DS_Store` to the `.gitignore` file to ignore it.
-Again, `echo` is used to append text to `recipes.txt`.
+Again, `echo` is used to append text to the text file.
 Note that you can also use a regular text editor to do this.
 Stage and commit your changes using a descriptive commit message.
