@@ -30,3 +30,8 @@ clean:
 .PHONY: exercises
 exercises:
 	sh code/code-exercises.sh
+
+# consider running make render before:
+.PHONY: linkcheck
+linkcheck:
+	docker run -v $(CURDIR):/tmp:ro --rm -i --entrypoint /bin/sh ghcr.io/tcort/markdown-link-check:stable -c 'find /tmp -name \*.md -print0 | xargs -0 -n1 markdown-link-check'
