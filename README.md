@@ -67,6 +67,9 @@ under the following terms:
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/justus-reihs"><img src="https://avatars.githubusercontent.com/u/180428105?v=4?s=100" width="100px;" alt="Justus Johannes Reihs"/><br /><sub><b>Justus Johannes Reihs</b></sub></a><br /><a href="https://github.com/lnnrtwttkhn/version-control-book/issues?q=author%3Ajustus-reihs" title="Bug reports">🐛</a> <a href="#ideas-justus-reihs" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/aaronpeikert"><img src="https://avatars.githubusercontent.com/u/29424409?v=4?s=100" width="100px;" alt="Aaron Peikert"/><br /><sub><b>Aaron Peikert</b></sub></a><br /><a href="#question-aaronpeikert" title="Answering Questions">💬</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lieku"><img src="https://avatars.githubusercontent.com/u/167427792?v=4?s=100" width="100px;" alt="lieku"/><br /><sub><b>lieku</b></sub></a><br /><a href="https://github.com/lnnrtwttkhn/version-control-book/commits?author=lieku" title="Code">💻</a> <a href="#content-lieku" title="Content">🖋</a></td>
+    </tr>
   </tbody>
 </table>
 
