@@ -371,7 +371,7 @@ Click here to view the full <code>Makefile</code> of this project.
 <span id="cb2-19"><a href="#cb2-19"></a><span class="co"># download and extract images:</span></span>
 <span id="cb2-20"><a href="#cb2-20"></a><span class="ex">.PHONY:</span> static</span>
 <span id="cb2-21"><a href="#cb2-21"></a><span class="ex">static:</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a>    <span class="fu">wget</span> <span class="va">$(</span><span class="ex">STATIC_URL</span><span class="va">)</span> <span class="at">-O</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a>    <span class="ex">curl</span> <span class="va">$(</span><span class="ex">STATIC_URL</span><span class="va">)</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span></span>
 <span id="cb2-23"><a href="#cb2-23"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">STATIC_DIR</span><span class="va">)</span></span>
 <span id="cb2-24"><a href="#cb2-24"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span></span>
 <span id="cb2-25"><a href="#cb2-25"></a></span>
