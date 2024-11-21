@@ -36,8 +36,10 @@ sh -x code/code-exercises-essentials-gitignore-city-guide.sh > "exercises-repos/
 zip -r exercises-repos/city-guide-essentials-gitignore.zip city-guide
 
 # Run the branches script and zip its output
-sh -x code/code-exercises-branches.sh > "exercises-repos/history-branches.txt" 2>&1
+sh -x code/code-exercises-branches-recipes.sh > "exercises-repos/history-branches-recipes.txt" 2>&1
 zip -r exercises-repos/recipes-branches.zip recipes
+sh -x code/code-exercises-branches-city-guide.sh > "exercises-repos/history-branches-city-guide.txt" 2>&1
+zip -r exercises-repos/city-guide-branches.zip city-guide
 
 # Run the branches merge conflict script and zip its output
 sh -x code/code-exercises-branches-merge-conflict.sh > "exercises-repos/history-branches-merge-conflict.txt" 2>&1
