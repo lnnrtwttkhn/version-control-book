@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,10 +91,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9aa3e7efaa9e7ac3b224e11c8b104a36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7c68c4669a1d5e4ce181a9c35cbf9396.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -385,7 +385,7 @@ Learning Objectives
 <section id="importance-of-tags" class="level3" data-number="10.1.1">
 <h3 data-number="10.1.1" class="anchored" data-anchor-id="importance-of-tags"><span class="header-section-number">10.1.1</span> Importance of Tags</h3>
 <p>At its core, a tag in version control systems like Git is a reference or a label associated with a <strong>specific commit</strong>. Tags are used to mark particular points in a project’s history, usually to signify important <strong>milestones</strong> or <strong>releases</strong>. It acts as a human-readable reference to a particular state of the repository.</p>
-<p>Once created, a tag is generally immutable It doesn’t move or change its associated commit. Tags don’t store changes themselves. They merely point to an existing commit. Tags should be named in a way that is meaningful and easy to understand. Commonly used names include version numbers (for example, <code>v1.0</code>, a practice known as <a href="https://semver.org/">semantic versioning</a>), release names, or other identifiers that convey the purpose of the tag.</p>
+<p>Once created, a tag is generally immutable. It doesn’t move or change its associated commit. Tags don’t store changes themselves. They merely point to an existing commit. Tags should be named in a way that is meaningful and easy to understand. Commonly used names include version numbers (for example, <code>v1.0</code>, a practice known as <a href="https://semver.org/">semantic versioning</a>), release names, or other identifiers that convey the purpose of the tag.</p>
 <p>Tags can also be beneficial for collaboration within a development team, as they provide a <strong>common reference point</strong> for discussing and working on specific versions of the project. Unlike branches, which represent separate lines of development, tags are typically independent of branches. They can be created on any commit, regardless of the branch. Tags are stable references that don’t change even if new commits are added to the repository.</p>
 <p>There are two types of tags: Lightweight and Annotated tags.</p>
 </section>
@@ -762,8 +762,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -879,7 +877,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
