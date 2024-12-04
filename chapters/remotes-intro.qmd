@@ -800,14 +800,21 @@ This is handy when you have changes in progress and want to pull in the latest c
 ## Fetching
 
 The command `git fetch` is used to keep up-to-date with changes in the remote repository, *without* merging them into your local branch.
-Instead, Git will update all your local tracking branches to the remote branch.
+Instead of immediately merging the changes, Git will update all your local tracking branches to the state of the remote branch.
 That means if you have made changes in your remote repository to a branch, for example called `feature`, `git fetch` will leave your local `feature` branch as it is, but will update your remote tracking branch called `origin/feature`.
 To view your remote tracking branches, you can use `git branch -r`.
 After fetching, you can use `git switch` to review the changes on these branches.
 If you want to integrate the changes into your local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
+Essentially: `git pull`= `git fetch` + `git merge`.
 
 `git fetch` is arguably the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 This allows you to review the changes fetched from the remote repository before integrating them with your local branch.
+
+This can be especially useful when, for example, your project collaborators are working on a different bug than you.
+If you want to check their progress and see if it affects your work, you can use `git fetch` to review their changes.
+By doing so, you may discover that their updates could interfere with your own work.
+You can then postpone the merge and adjust your work accordingly to accommodate their changes.
+In contrast, using `git pull` would automatically apply their changes, which could potentially disrupt your progress without prior review.
 
 ## Committing changes on the remote directly
 
