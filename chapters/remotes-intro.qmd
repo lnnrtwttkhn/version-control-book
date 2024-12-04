@@ -800,14 +800,17 @@ This is handy when you have changes in progress and want to pull in the latest c
 ## Fetching
 
 The command `git fetch` is used to keep up-to-date with changes in the remote repository, *without* merging them into your local branch.
-Instead, Git will update all your local tracking branches to the remote branch.
+Instead of immediately merging the changes, Git will update all your local tracking branches to the state of the remote branch.
 That means if you have made changes in your remote repository to a branch, for example called `feature`, `git fetch` will leave your local `feature` branch as it is, but will update your remote tracking branch called `origin/feature`.
 To view your remote tracking branches, you can use `git branch -r`.
 After fetching, you can use `git switch` to review the changes on these branches.
 If you want to integrate the changes into your local branch, you can either now use `git pull` to directly update your local branch, or use `git merge origin/branchname` when you are on your local branch that you want to update.
+Essentially: `git pull`= `git fetch` + `git merge`.
 
 `git fetch` is arguably the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 This allows you to review the changes fetched from the remote repository before integrating them with your local branch.
+
+This can be very useful, when for example, your projects collaborators are working on a different bug than you. Now you want to see what progress they have made and if this affects your own work. You use `git fetch` to see what changes were made and see that these would in fact interfere with your work. You postpone the merge and can now safely readjust your own work to match the changes they've made. Using `git pull` would have meant blindly trusting that the changes won't mess with your own progress.
 
 ## Committing changes on the remote directly
 
