@@ -20,9 +20,9 @@ aliases:
 ## What are remote repositories?
 
 A remote repository is **a version of your Git repository that is hosted on a server**, usually on the internet.
-Unlike your local repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. 
-These remote repositories could be hosted on platforms like [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/), [Codeberg](https://codeberg.org/) or a private server.
-In this chapter, we will mainly focus on the repository hosting platforms [GitHub](https://github.com/), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)) and [GitLab](https://gitlab.com), since it is a very popular alternative and offered by many academic institutions.
+Unlike your local Git repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. 
+These remote repositories could be hosted on platforms like [GitHub]({{< var links.github >}}), [GitLab]({{< var links.gitlab >}}), [Bitbucket]({{< var links.bitbucket >}}) [Codeberg]({{< var links.codeberg >}}), or a private server.
+In this chapter, we will mainly focus on the repository hosting platforms [GitHub]({{< var links.github >}}), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)) and [GitLab]({{< var links.gitlab >}}), since it is a very popular alternative to GitHub and offered by many academic institutions.
 
 ### Why use remote repositories?
 
@@ -32,7 +32,7 @@ Remote repositories provide a central location where team members can collective
 Whether contributors are across the room or across the globe, remote repositories make it possible for everyone to access the same set of project files and contribute to the development process.
 
 Hosting a project on a remote repository also serves as a **backup mechanism**.
-If a contributor's computer fails or their files get corrupted, they can always download (or "clone") a fresh copy of the project from the remote repository.
+If a contributor's computer fails or their files get corrupted, they can always download a fresh copy of the project from the remote repository.
 This ensures that the project's progress is not dependent on a single person's computer.
 @fig-git-in-case-of-fire jokingly illustrates this point.
 
@@ -40,7 +40,7 @@ This ensures that the project's progress is not dependent on a single person's c
 
 ## Creating an account
 
-Please find instructions below on how to create an account / log in to various remote repository hosting services.
+Please find instructions below on how to create an account and log in to various remote repository hosting services.
 Not sure which username to choose?
 Check out @tip-username for some ideas.
 
@@ -52,15 +52,15 @@ Check out @tip-username for some ideas.
 1. Click the **Sign up** button.
 1. Enter the required personal details and select the free plan.
 
-::: {#tip-student-developer-pack .callout-tip title="Are you a student? Sign-up for the GitHub Student Developer Pack" collapse="true"}
-The [GitHub Student Developer Pack]({{< var links.github-student-developer-pack >}}) is a program offered by GitHub to students, providing them with free access to a collection of valuable developer tools and services.
+::: {#tip-student-developer-pack .callout-tip title="Are you a student? Check out the GitHub Student Developer Pack!" collapse="true"}
+The [GitHub Student Developer Pack]({{< var links.github-student-developer-pack >}}) is a program offered by GitHub to students, providing them with free access to a collection of useful developer tools and services.
 To benefit from the pack, visit the [GitHub Education website]({{< var links.github-education >}}) and sign up with your student email to verify your academic status.
 Once verified, you gain access to various resources, including [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) with unlimited private repositories, free domain names, cloud credits, coding courses, and more.
 :::
 
 ## {{< fa brands gitlab >}} GitLab
 
-1. Open [gitlab.com](https://gitlab.com) in your browser.
+1. Open [{{< var links.gitlab >}}]({{< var links.gitlab >}}) in your browser.
 1. Click the **Sign in** and the **Register** button.
 1. Enter the required personal details or create an account using e.g., Google.
 
@@ -73,7 +73,7 @@ Are you a member of the [University of Hamburg]({{< var links.uhh >}})?
 Here's how you can log in to the university's GitLab instance:
 
 1. Open [{{< var links.uhh-gitlab >}}]({{< var links.uhh-gitlab >}}) in your browser.
-1. Enter your UHH credentials to sign-in.
+1. Enter your UHH credentials to sign in.
 
 ## {{< fa brands gitlab >}} MPIB GitLab
 
@@ -94,7 +94,7 @@ Here are some tips for choosing a username:
 - Incorporate your real name.
 - Adapt a username that you use on other platforms.
 - Choose a professional username.
-Your future boss might look at your GitHub / GitLab profile.
+Your future boss might look at your GitHub / GitLab profile (or you want to show it to the world yourself).
 - Opt for a short username.
 - Be unique and concise.
 - Avoid references to specific institutions.
@@ -108,8 +108,8 @@ You might not always be affiliated with them.
 
 In order to connect your local Git repository to a remote repository, you need to establish an authentication method.
 Authentication is needed to access and work with repositories that are stored on remote repositories.
-It's kind of like showing your ID to prove who you are before entering a restricted area.
-It's necessary to make sure only the right people or programs can access and do things on GitHub, keeping everything safe and organized.
+It's like showing your ID to prove who you are before entering a restricted area.
+It's necessary to make sure only the right people or programs can access and do things on the remote repository, keeping everything safe and organized.
 Depending on the platform there are different authentication methods available.
 We introduce the most common authentication methods below, separately for each platform.
 
