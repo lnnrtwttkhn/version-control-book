@@ -117,21 +117,42 @@ We introduce the most common authentication methods below, separately for each p
 
 The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.
 Its most notable applications are remote login and command-line execution.
+You can read and write data in remote repositories like GitHub and GitLab using SSH.
 For more details on SSH, see [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell).
 
-You can read and write data in remote repositories like GitHub and GitLab using SSH.
-When you connect with SSH, you verify your identity using a private key file stored on your computer.
+::: {#nte-ssh .callout-note title="How does SSH work: The key and padlock analogy." collapse="true"}
+When you set up SSH, you generate a **key pair**: the *private key* stays on your device, while the *public key* is copied to the servers you want access to.
+
+Think of your **public key as a padlock**.
+You can make lots of copies of this padlock and distribute them to different places - servers, computers, or anything you want to secure (just like sharing a padlock to secure different lockers). These places install your padlock, but no one can open it because they don't have your key.
+
+Your **private key is the actual key** that opens those padlocks.
+You keep it safe and never share it.
+As long as your key stays secure, it doesn't matter how many padlocks you've distributed.
+
+!["Understanding public key private key concepts" by [Blake Smith](https://blakesmith.me/) (License: Unknown; [Source on GitHub](https://blakesmith.me/2010/02/08/understanding-public-key-private-key-concepts.html))](../static/ssh-key-public-private.png){#fig-ssh-key-public-private width="60%"}
+
+When you try to connect to a server, SSH checks if the padlock (public key) on that server matches your key.
+If they match, the door opens.
+
+This system ensures that only someone with the private key (you) can unlock what's protected by the padlocks (public keys).
+For extra security, you can protect your private key with an additional password.
+Even if someone steals your key, they still need the combination (password) to use it.
+For additional discussion of using an additional password for a private SSH key, see @tip-ssh-password.
+
+:::
+
 We provide basic instructions that are applicable to both GitHub and GitLab below.
 For more detailed instructions, see the [GitHub Documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh).
 The most basic SSH key setup works like this:
 
-1. Generating a new SSH key
-1. Copying the SSH key to your clipboard
-1. Adding the SSH key to your GitHub or GitLab account
+1. Generating a new SSH key.
+1. Copying the SSH key to your clipboard.
+1. Adding the SSH key to your GitHub or GitLab account.
 
 #### Generating a new SSH key
 
-1. Open the Terminal.
+1. Open the Command Line.
 2. Insert the code below, changing the example email to your email address.
 
 ```{zsh filename="Code"}
@@ -172,18 +193,21 @@ Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]
 ```
 
-::: {.callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
+::: {#tip-ssh-password .callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
 If someone gets into your computer, they can use your SSH keys to access all systems that use those keys.
-Adding a passphrase to your SSH key makes it more secure.
+For extra security, you can protect your private key with an additional password.
+Even if someone gets access to your computer and steals your private key, they still need the combination (password) to use it.
+Adding a password to your private SSH key therefore makes it more secure.
+
 To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent.
 For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
 :::
 
-#### Copying the SSH key to your clipboard
+#### Copying the public SSH key to your clipboard
 
 Now copy the SSH public key to your clipboard.
 The following command will copy the contents of the `id_ed25519.pub` file to your clipboard (assuming your SSH key is in the default location).
-Select the right command for your operating system and enter it into the Terminal.
+Select the right command for your operating system and enter it into the Command Line.
 
 ::: {.panel-tabset}
 
@@ -217,7 +241,7 @@ Alternatively, find the hidden `.ssh` folder in your home directory, open the `i
 
 #### Adding the SSH key to your account
 
-Finally, copy the public SSH key your account on the remote repository hosting service.
+Finally, paste the public SSH key your account on the remote repository hosting service.
 
 ::: {.panel-tabset}
 
