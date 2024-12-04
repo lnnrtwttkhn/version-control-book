@@ -810,7 +810,11 @@ Essentially: `git pull`= `git fetch` + `git merge`.
 `git fetch` is arguably the safer option compared to `git pull` since it retrieves the changes from the remote repository without making any changes to your local working directory and staging area.
 This allows you to review the changes fetched from the remote repository before integrating them with your local branch.
 
-This can be very useful, when for example, your projects collaborators are working on a different bug than you. Now you want to see what progress they have made and if this affects your own work. You use `git fetch` to see what changes were made and see that these would in fact interfere with your work. You postpone the merge and can now safely readjust your own work to match the changes they've made. Using `git pull` would have meant blindly trusting that the changes won't mess with your own progress.
+This can be especially useful when, for example, your project collaborators are working on a different bug than you.
+If you want to check their progress and see if it affects your work, you can use `git fetch` to review their changes.
+By doing so, you may discover that their updates could interfere with your own work.
+You can then postpone the merge and adjust your work accordingly to accommodate their changes.
+In contrast, using `git pull` would automatically apply their changes, which could potentially disrupt your progress without prior review.
 
 ## Committing changes on the remote directly
 
