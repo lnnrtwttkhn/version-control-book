@@ -617,6 +617,36 @@ git push -u origin main
 The command above "uploads" the local branch named "main" to a remote repository called "origin" while setting it as the upstream branch.
 `-u` is used to set the upstream branch.
 It tells Git to remember the remote branch to which your local branch should be uploaded in the future.
+
+::: {.callout-note title="The authenticity of host can't be established." collapse="false"}
+
+**TL;DR**: Enter `yet` and hit {{< kbd Enter >}}.
+
+---
+
+The following message might appear when connecting to GitHub for the first time via SSH:
+
+```{markdown filename="Output"}
+#| code-copy: false
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ECDSA key fingerprint is SHA256:nThbg6GUVB7ZdnZ3iXYvgIhXZOL7NXqb7A4s9F8XY7w.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+
+This message indicates that your system is trying to connect to a remote server (in this case, GitHub) over SSH for the first time, but it doesn't yet trust the server's identity.
+
+If you are trusting the server's identity, enter `yet` and hit {{< kbd Enter >}}.
+This will result in the following message:
+
+```{markdown filename="Output"}
+#| code-copy: false
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+```
+
+This message indicates that the GitHub server's public key has been added to your `~/.ssh/known_hosts` file permanently, so you won't be prompted with this warning the next time you connect to GitHub over SSH.
+
+:::
+
 After a successful push, you will get a message like this:
 
 ```{markdown filename="Output"}
