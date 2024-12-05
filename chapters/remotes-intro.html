@@ -372,7 +372,7 @@ div.csl-indent {
 <div>
   <div class="abstract">
     <div class="block-title">About this chapter</div>
-    <p>This chapter will introduce you to so-called <em>remote repositories</em>, versions of your Git repository that are hosted on a server, in particular using popular platforms like GitHub and GitLab.</p>
+    <p>This chapter will introduce you to <strong>remote repositories</strong>. These are versions of your Git repository that are hosted on a server, in particular using popular platforms like GitHub and GitLab. You will learn that remote repositories are useful for collaboration and backup. You will also learn how to create an account and authenticate to the service.</p>
   </div>
 </div>
 
@@ -389,17 +389,17 @@ div.csl-indent {
 <h5 class="anchored">
 Learning Objectives
 </h5>
-<p><span class="emoji" data-emoji="bulb">💡</span> You can create a remote repository.<br> <span class="emoji" data-emoji="bulb">💡</span> You can connect your local Git to a remote repository service.<br> <span class="emoji" data-emoji="bulb">💡</span> You can pull and push changes to and from a remote repository.<br> <span class="emoji" data-emoji="bulb">💡</span> You can clone a repository from a remote repository service.</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You can create a remote repository.<br> <span class="emoji" data-emoji="bulb">💡</span> You can connect your local Git repository to a remote repository service like GitHub or GitLab.<br> <span class="emoji" data-emoji="bulb">💡</span> You can pull and push changes to and from a remote repository.<br> <span class="emoji" data-emoji="bulb">💡</span> You can clone a repository from a remote repository.</p>
 </div>
 </div>
 </div>
 <section id="what-are-remote-repositories" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="what-are-remote-repositories"><span class="header-section-number">8.1</span> What are remote repositories?</h2>
-<p>A remote repository is <strong>a version of your Git repository that is hosted on a server</strong>, usually on the internet. Unlike your local repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. These remote repositories could be hosted on platforms like <a href="https://github.com/">GitHub</a>, <a href="https://about.gitlab.com/">GitLab</a>, <a href="https://bitbucket.org/">Bitbucket</a>, <a href="https://codeberg.org/">Codeberg</a> or a private server. In this chapter, we will mainly focus on the repository hosting platforms <a href="https://github.com/">GitHub</a>, mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, <a href="https://en.wikipedia.org/wiki/GitHub">according to Wikipedia</a>) and <a href="https://gitlab.com">GitLab</a>, since it is a very popular alternative and offered by many academic institutions.</p>
+<p>A remote repository is <strong>a version of your Git repository that is hosted on a server</strong>, usually on the internet. Unlike your local Git repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. These remote repositories could be hosted on platforms like <a href="https://github.com/">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, <a href="https://bitbucket.org/">Bitbucket</a> <a href="https://codeberg.org/">Codeberg</a>, or a private server. In this chapter, we will mainly focus on the repository hosting platforms <a href="https://github.com/">GitHub</a>, mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, <a href="https://en.wikipedia.org/wiki/GitHub">according to Wikipedia</a>) and <a href="https://gitlab.com/">GitLab</a>, since it is a very popular alternative to GitHub and offered by many academic institutions.</p>
 <section id="why-use-remote-repositories" class="level3" data-number="8.1.1">
 <h3 data-number="8.1.1" class="anchored" data-anchor-id="why-use-remote-repositories"><span class="header-section-number">8.1.1</span> Why use remote repositories?</h3>
 <p>One of the main reasons to use remote repositories is for <strong>collaboration</strong>. If your Git repository only exists on your computer, no one else can access it. Remote repositories provide a central location where team members can collectively work on a project. Whether contributors are across the room or across the globe, remote repositories make it possible for everyone to access the same set of project files and contribute to the development process.</p>
-<p>Hosting a project on a remote repository also serves as a <strong>backup mechanism</strong>. If a contributor’s computer fails or their files get corrupted, they can always download (or “clone”) a fresh copy of the project from the remote repository. This ensures that the project’s progress is not dependent on a single person’s computer. <a href="#fig-git-in-case-of-fire" class="quarto-xref">Figure&nbsp;<span>8.1</span></a> jokingly illustrates this point.</p>
+<p>Hosting a project on a remote repository also serves as a <strong>backup mechanism</strong>. If a contributor’s computer fails or their files get corrupted, they can always download a fresh copy of the project from the remote repository. This ensures that the project’s progress is not dependent on a single person’s computer. <a href="#fig-git-in-case-of-fire" class="quarto-xref">Figure&nbsp;<span>8.1</span></a> jokingly illustrates this point.</p>
 <div id="fig-git-in-case-of-fire" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-git-in-case-of-fire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -414,7 +414,7 @@ Figure&nbsp;8.1: “In case of fire” by <a href="https://github.com/louim">Lou
 </section>
 <section id="creating-an-account" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="creating-an-account"><span class="header-section-number">8.2</span> Creating an account</h2>
-<p>Please find instructions below on how to create an account / log in to various remote repository hosting services. Not sure which username to choose? Check out <a href="#tip-username" class="quarto-xref">Tip&nbsp;<span>8.2</span></a> for some ideas.</p>
+<p>Please find instructions below on how to create an account and log in to various remote repository hosting services. Not sure which username to choose? Check out <a href="#tip-username" class="quarto-xref">Tip&nbsp;<span>8.2</span></a> for some ideas.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-brands fa-gitlab" aria-label="gitlab"></i> GitLab</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false"><i class="fa-brands fa-gitlab" aria-label="gitlab"></i> UHH GitLab</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false"><i class="fa-brands fa-gitlab" aria-label="gitlab"></i> MPIB GitLab</a></li></ul>
 <div class="tab-content">
@@ -424,26 +424,26 @@ Figure&nbsp;8.1: “In case of fire” by <a href="https://github.com/louim">Lou
 <li>Click the <strong>Sign up</strong> button.</li>
 <li>Enter the required personal details and select the free plan.</li>
 </ol>
-<div id="tip-student-developer-pack" class="callout callout-style-default callout-tip callout-titled" title="Are you a student? Sign-up for the GitHub Student Developer Pack">
+<div id="tip-student-developer-pack" class="callout callout-style-default callout-tip callout-titled" title="Are you a student? Check out the GitHub Student Developer Pack!">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;8.1: Are you a student? Sign-up for the GitHub Student Developer Pack
+Tip&nbsp;8.1: Are you a student? Check out the GitHub Student Developer Pack!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The <a href="https://education.github.com/pack/">GitHub Student Developer Pack</a> is a program offered by GitHub to students, providing them with free access to a collection of valuable developer tools and services. To benefit from the pack, visit the <a href="https://github.com/edu/">GitHub Education website</a> and sign up with your student email to verify your academic status. Once verified, you gain access to various resources, including <a href="https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro">GitHub Pro</a> with unlimited private repositories, free domain names, cloud credits, coding courses, and more.</p>
+<p>The <a href="https://education.github.com/pack/">GitHub Student Developer Pack</a> is a program offered by GitHub to students, providing them with free access to a collection of useful developer tools and services. To benefit from the pack, visit the <a href="https://github.com/edu/">GitHub Education website</a> and sign up with your student email to verify your academic status. Once verified, you gain access to various resources, including <a href="https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro">GitHub Pro</a> with unlimited private repositories, free domain names, cloud credits, coding courses, and more.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
-<li>Open <a href="https://gitlab.com">gitlab.com</a> in your browser.</li>
+<li>Open <a href="https://gitlab.com/">https://gitlab.com/</a> in your browser.</li>
 <li>Click the <strong>Sign in</strong> and the <strong>Register</strong> button.</li>
 <li>Enter the required personal details or create an account using e.g., Google.</li>
 </ol>
@@ -453,7 +453,7 @@ Tip&nbsp;8.1: Are you a student? Sign-up for the GitHub Student Developer Pack
 <p>Are you a member of the <a href="https://www.uni-hamburg.de/en.html">University of Hamburg</a>? Here’s how you can log in to the university’s GitLab instance:</p>
 <ol type="1">
 <li>Open <a href="https://gitlab.rrz.uni-hamburg.de/users/sign_in">https://gitlab.rrz.uni-hamburg.de/users/sign_in</a> in your browser.</li>
-<li>Enter your UHH credentials to sign-in.</li>
+<li>Enter your UHH credentials to sign in.</li>
 </ol>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
@@ -482,7 +482,7 @@ Tip&nbsp;8.2: Choosing a username for your account
 <ul>
 <li>Incorporate your real name.</li>
 <li>Adapt a username that you use on other platforms.</li>
-<li>Choose a professional username. Your future boss might look at your GitHub / GitLab profile.</li>
+<li>Choose a professional username. Your future boss might look at your GitHub / GitLab profile (or you want to show it to the world yourself).</li>
 <li>Opt for a short username.</li>
 <li>Be unique and concise.</li>
 <li>Avoid references to specific institutions. You might not always be affiliated with them.</li>
@@ -496,21 +496,51 @@ Tip&nbsp;8.2: Choosing a username for your account
 <h2 data-number="8.3" class="anchored" data-anchor-id="connecting-to-a-remote-repository-hosting-service"><span class="header-section-number">8.3</span> Connecting to a remote repository hosting service</h2>
 <section id="authentication" class="level3" data-number="8.3.1">
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="authentication"><span class="header-section-number">8.3.1</span> Authentication</h3>
-<p>In order to connect your local Git repository to a remote repository, you need to establish an authentication method. Authentication is needed to access and work with repositories that are stored on remote repositories. It’s kind of like showing your ID to prove who you are before entering a restricted area. It’s necessary to make sure only the right people or programs can access and do things on GitHub, keeping everything safe and organized. Depending on the platform there are different authentication methods available. We introduce the most common authentication methods below, separately for each platform.</p>
+<p>In order to connect your local Git repository to a remote repository, you need to establish an authentication method. Authentication is needed to access and work with repositories that are stored on remote repositories. It’s like showing your ID to prove who you are before entering a restricted area. It’s necessary to make sure only the right people or programs can access and do things on the remote repository, keeping everything safe and organized. Depending on the platform there are different authentication methods available. We introduce the most common authentication methods below, separately for each platform.</p>
 </section>
 <section id="secure-shell-protocol-ssh" class="level3" data-number="8.3.2">
 <h3 data-number="8.3.2" class="anchored" data-anchor-id="secure-shell-protocol-ssh"><span class="header-section-number">8.3.2</span> Secure Shell Protocol (SSH)</h3>
-<p>The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network. Its most notable applications are remote login and command-line execution. For more details on SSH, see <a href="https://en.wikipedia.org/wiki/Secure_Shell">Wikipedia</a>.</p>
-<p>You can read and write data in remote repositories like GitHub and GitLab using SSH. When you connect with SSH, you verify your identity using a private key file stored on your computer. We provide basic instructions that are applicable to both GitHub and GitLab below. For more detailed instructions, see the <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh">GitHub Documentation</a>. The most basic SSH key setup works like this:</p>
+<p>The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network. Its most notable applications are remote login and command-line execution. You can read and write data in remote repositories like GitHub and GitLab using SSH. For more details on SSH, see <a href="https://en.wikipedia.org/wiki/Secure_Shell">Wikipedia</a>.</p>
+<div id="nte-ssh" class="callout callout-style-default callout-note callout-titled" title="How does SSH work: The key and padlock analogy.">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;8.1: How does SSH work: The key and padlock analogy.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When you set up SSH, you generate a <strong>key pair</strong>: the <em>private key</em> stays on your device, while the <em>public key</em> is copied to the servers you want access to.</p>
+<p>Think of your <strong>public key as a padlock</strong>. You can make lots of copies of this padlock and distribute them to different places - servers, computers, or anything you want to secure (just like sharing a padlock to secure different lockers). These places install your padlock, but no one can open it because they don’t have your key.</p>
+<p>Your <strong>private key is the actual key</strong> that opens those padlocks. You keep it safe and never share it. As long as your key stays secure, it doesn’t matter how many padlocks you’ve distributed.</p>
+<div id="fig-ssh-key-public-private" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ssh-key-public-private-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/ssh-key-public-private.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ssh-key-public-private-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: “Understanding public key private key concepts” by <a href="https://blakesmith.me/">Blake Smith</a> (License: Unknown; <a href="https://blakesmith.me/2010/02/08/understanding-public-key-private-key-concepts.html">Source on GitHub</a>)
+</figcaption>
+</figure>
+</div>
+<p>When you try to connect to a server, SSH checks if the padlock (public key) on that server matches your key. If they match, the door opens.</p>
+<p>This system ensures that only someone with the private key (you) can unlock what’s protected by the padlocks (public keys). For extra security, you can protect your private key with an additional password. Even if someone steals your key, they still need the combination (password) to use it. For additional discussion of using an additional password for a private SSH key, see <a href="#tip-ssh-password" class="quarto-xref">Tip&nbsp;<span>8.3</span></a>.</p>
+</div>
+</div>
+</div>
+<p>We provide basic instructions that are applicable to both GitHub and GitLab below. For more detailed instructions, see the <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh">GitHub Documentation</a>. The most basic SSH key setup works like this:</p>
 <ol type="1">
-<li>Generating a new SSH key</li>
-<li>Copying the SSH key to your clipboard</li>
-<li>Adding the SSH key to your GitHub or GitLab account</li>
+<li>Generating a new SSH key.</li>
+<li>Copying the SSH key to your clipboard.</li>
+<li>Adding the SSH key to your GitHub or GitLab account.</li>
 </ol>
 <section id="generating-a-new-ssh-key" class="level4" data-number="8.3.2.1">
 <h4 data-number="8.3.2.1" class="anchored" data-anchor-id="generating-a-new-ssh-key"><span class="header-section-number">8.3.2.1</span> Generating a new SSH key</h4>
 <ol type="1">
-<li>Open the Terminal.</li>
+<li>Open the Command Line.</li>
 <li>Insert the code below, changing the example email to your email address.</li>
 </ol>
 <div class="cell">
@@ -543,7 +573,7 @@ Tip&nbsp;8.2: Choosing a username for your account
 <li>When asked to “Enter a file in which to save the key”, we recommend to just press <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span> to use the default location.</li>
 </ol>
 <div class="callout callout-style-default callout-caution callout-titled" title="SSH key already exists?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -552,7 +582,7 @@ SSH key already exists?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If the SSH key already exists, you will get an output similar to this:</p>
 <div class="cell" data-code-copy="false">
@@ -580,26 +610,27 @@ SSH key already exists?
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> same passphrase again: <span class="pp">[</span><span class="st">Type passphrase again</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Do I have to provide a password for my SSH key?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div id="tip-ssh-password" class="callout callout-style-default callout-tip callout-titled" title="Do I have to provide a password for my SSH key?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Do I have to provide a password for my SSH key?
+Tip&nbsp;8.3: Do I have to provide a password for my SSH key?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If someone gets into your computer, they can use your SSH keys to access all systems that use those keys. Adding a passphrase to your SSH key makes it more secure. To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent. For more details, see the <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases">GitHub documentation</a>.</p>
+<p>If someone gets into your computer, they can use your SSH keys to access all systems that use those keys. For extra security, you can protect your private key with an additional password. Even if someone gets access to your computer and steals your private key, they still need the combination (password) to use it. Adding a password to your private SSH key therefore makes it more secure.</p>
+<p>To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent. For more details, see the <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases">GitHub documentation</a>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="copying-the-ssh-key-to-your-clipboard" class="level4" data-number="8.3.2.2">
-<h4 data-number="8.3.2.2" class="anchored" data-anchor-id="copying-the-ssh-key-to-your-clipboard"><span class="header-section-number">8.3.2.2</span> Copying the SSH key to your clipboard</h4>
-<p>Now copy the SSH public key to your clipboard. The following command will copy the contents of the <code>id_ed25519.pub</code> file to your clipboard (assuming your SSH key is in the default location). Select the right command for your operating system and enter it into the Terminal.</p>
+<section id="copying-the-public-ssh-key-to-your-clipboard" class="level4" data-number="8.3.2.2">
+<h4 data-number="8.3.2.2" class="anchored" data-anchor-id="copying-the-public-ssh-key-to-your-clipboard"><span class="header-section-number">8.3.2.2</span> Copying the public SSH key to your clipboard</h4>
+<p>Now copy the SSH public key to your clipboard. The following command will copy the contents of the <code>id_ed25519.pub</code> file to your clipboard (assuming your SSH key is in the default location). Select the right command for your operating system and enter it into the Command Line.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false"><i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li></ul>
 <div class="tab-content">
@@ -642,7 +673,7 @@ Do I have to provide a password for my SSH key?
 </section>
 <section id="adding-the-ssh-key-to-your-account" class="level4" data-number="8.3.2.3">
 <h4 data-number="8.3.2.3" class="anchored" data-anchor-id="adding-the-ssh-key-to-your-account"><span class="header-section-number">8.3.2.3</span> Adding the SSH key to your account</h4>
-<p>Finally, copy the public SSH key your account on the remote repository hosting service.</p>
+<p>Finally, paste the public SSH key your account on the remote repository hosting service.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><i class="fa-brands fa-gitlab" aria-label="gitlab"></i> MPIB GitLab</a></li></ul>
 <div class="tab-content">
@@ -680,7 +711,7 @@ Do I have to provide a password for my SSH key?
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<p>Follow these steps to set a Personal Access Token (PAT; see <a href="#fig-pat" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>):</p>
+<p>Follow these steps to set a Personal Access Token (PAT; see <a href="#fig-pat" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>):</p>
 <ol type="1">
 <li><p>Log in to your GitHub account on <a href="https://github.com/">GitHub.com</a></p></li>
 <li><p>Click on your profile picture in the top-right corner and select “<strong>Settings</strong>”.</p></li>
@@ -692,7 +723,7 @@ Do I have to provide a password for my SSH key?
 <li><p>Click “<strong>Generate token</strong>,” and you’ll be presented with your new token.</p></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled" title="Make sure to copy the PAT as it won't be shown again!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -701,7 +732,7 @@ Make sure to copy the PAT as it won’t be shown again!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Make sure to copy the Personal Access Token (PAT) as it won’t be shown again! The first time you try to interact with a remote repository, you will get asked for a password. Paste the PAT as the password into the terminal to proceed.</p>
 <p>If you use Git Bash on Windows, your terminal will open a window where you can choose to authenticate yourself with a PAT.</p>
@@ -709,7 +740,7 @@ Make sure to copy the PAT as it won’t be shown again!
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="FAQ: My PAT is not shown when I enter it into the terminal?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -718,7 +749,7 @@ FAQ: My PAT is not shown when I enter it into the terminal?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>When authenticating with GitHub on macOS, you may notice that the password doesn’t show up in the command line as you type it. This is normal behavior to ensure security. You can still enter your password (or delete what you typed) even though it doesn’t appear on the screen. You can also copy and paste text, for example your PAT from GitHub. When authenticating on Windows, a new window might pop up in which you can enter your PAT.</p>
 </div>
@@ -730,12 +761,12 @@ FAQ: My PAT is not shown when I enter it into the terminal?
 <img src="../static/github-pat.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.2: Screenshot of the personal access token settings
+Figure&nbsp;8.3: Screenshot of the personal access token settings
 </figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: More details about PAT settings">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -744,7 +775,7 @@ Find out more: More details about PAT settings
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Expiration Date:</strong></p>
 <p>When you create a Personal Access Token, you can specify its expiration date. The expiration date is the date and time when the token becomes invalid and cannot be used for authentication anymore. Setting an expiration date is a security measure to limit the time during which the token can be misused if it falls into the wrong hands. Creating an expiration date for a GitHub Personal Access Token (PAT) is not strictly necessary, but it is considered a good security practice.</p>
@@ -773,25 +804,25 @@ Find out more: More details about PAT settings
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><i class="fa-brands fa-gitlab" aria-label="gitlab"></i> GitLab</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<p>To create a new repository on GitHub, click on the “<strong>+</strong>” sign in the top-right corner of the GitHub page. From the drop down menu, select “<strong>New repository</strong>”. On the new repository page, you are asked to enter some details about your repository and select a few options (see <a href="#fig-newrepo" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>):</p>
+<p>To create a new repository on GitHub, click on the “<strong>+</strong>” sign in the top-right corner of the GitHub page. From the drop down menu, select “<strong>New repository</strong>”. On the new repository page, you are asked to enter some details about your repository and select a few options (see <a href="#fig-newrepo" class="quarto-xref">Figure&nbsp;<span>8.4</span></a>):</p>
 <ol type="1">
 <li><p>On the new repository page, as shown in enter a <strong>name for your repository</strong>. If you are planning to upload a local repository (a repository on your computer) to GitHub, it makes sense to choose the same name as on your computer. Also, we recommend to avoid white spaces and use hyphens (<code>-</code>) or underscores (<code>_</code>) to separate words in your repository name.</p></li>
 <li><p>You can also add an additional (optional) <strong>description</strong> to provide more details about the content of your repository. The description will be shown on the main page of your GitHub repository and can help other users to understand the purpose of your repository.</p></li>
-<li><p>Next, you can choose to make the repository <strong>public or private</strong>. A public repository can be viewed by anyone worldwide even if they don’t have a GitHub account. It’s like a public website on the internet. A private repository can only be viewed by you and any collaborators that you specifically invite to your repository. For more details about public vs.&nbsp;private repositories, see <a href="#tip-public-private" class="quarto-xref">Tip&nbsp;<span>8.3</span></a> below.</p></li>
+<li><p>Next, you can choose to make the repository <strong>public or private</strong>. A public repository can be viewed by anyone worldwide even if they don’t have a GitHub account. It’s like a public website on the internet. A private repository can only be viewed by you and any collaborators that you specifically invite to your repository. For more details about public vs.&nbsp;private repositories, see <a href="#tip-public-private" class="quarto-xref">Tip&nbsp;<span>8.4</span></a> below.</p></li>
 <li><p>At last, you can choose to initialize your repository with a few files, specifically a <strong>README</strong> file (find out more in the <a href="../chapters/github-advanced.html#readme-file">next chapter</a>), a template <strong><code>.gitignore</code></strong> file (see the chapter on <a href="../chapters/first-steps-git.html">“First steps with Git”</a>), or a <strong>license</strong> file.</p></li>
 <li><p>Finally, click the green <strong>“Create repository”</strong> button at the bottom of the page to create a new repository with these settings.</p></li>
 </ol>
 <div id="tip-public-private" class="callout callout-style-default callout-tip callout-titled" title="Find out more: Public or private repository?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;8.3: Find out more: Public or private repository?
+Tip&nbsp;8.4: Find out more: Public or private repository?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When you create a new repository on GitHub, you can <strong>control who can see it</strong> by choosing if it’s public or private.</p>
 <p>If it’s public, anyone on the internet can access it. If it’s private, only you, the people you specifically allow, and, for organization repositories, certain members can access it. For further details, see the <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility">chapter “About repository visibility”</a> in the GitHub documentation.</p>
@@ -805,7 +836,7 @@ Tip&nbsp;8.3: Find out more: Public or private repository?
 <img src="../static/github-newrepository.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-newrepo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.3: Screenshot of creating a new repository on GitHub
+Figure&nbsp;8.4: Screenshot of creating a new repository on GitHub
 </figcaption>
 </figure>
 </div>
@@ -852,7 +883,7 @@ Figure&nbsp;8.3: Screenshot of creating a new repository on GitHub
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled" title="Don't initialize a remote repository with any files, if you want to upload a local repository!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -861,7 +892,7 @@ Don’t initialize a remote repository with any files, if you want to upload a l
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you want to upload your local repository to a remote repository, make sure that you create the repository <strong>without initializing it with a <code>README</code> file</strong> or any other files. Initializing the repository with a <code>README</code> or any other files creates a commit in the repository. When you try to push your local repository, you will encounter conflicts because the histories of your local and remote repositories will differ.</p>
 <p>To avoid this, <strong>create the remote repository empty</strong>. You can still add a <code>README.md</code> and other files through the GitHub interface after pushing your local repository.</p>
@@ -873,7 +904,7 @@ Don’t initialize a remote repository with any files, if you want to upload a l
 <h2 data-number="8.5" class="anchored" data-anchor-id="adding-a-remote-to-your-local-repository"><span class="header-section-number">8.5</span> Adding a remote to your local repository</h2>
 <p>Let’s assume that you have a local Git repository on your computer that you want to upload to a remote repository hosting service. To initialize an existing repository as a remote repository, you first need to create a new repository on your chosen hosting service (for example, GitHub or GitLab), as explained above. In the next step, you will need the URL of your remote repository.</p>
 <div id="imp-authentication-url" class="callout callout-style-default callout-important callout-titled" title="HTTPS vs. SSH: Different remote URL!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -882,7 +913,7 @@ Important&nbsp;8.1: HTTPS vs.&nbsp;SSH: Different remote URL!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Depending on your authentication method (SSH or PAT), you need to use a different URL when adding a remote repository to your local Git project. When you authenticate by providing a Personal Access Token (PAT) or (formerly) a username and password, you use the HTTPS (<code>https://</code>) URL of your remote repository. When you authenticate using SSH keys, you use the SSH (<code>git@github.com</code>) URL of your remote repository.</p>
 </div>
@@ -910,7 +941,7 @@ Important&nbsp;8.1: HTTPS vs.&nbsp;SSH: Different remote URL!
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@github.com:user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Replace <code>user-name</code> with the repository’s user name and <code>repo-name</code> with the name of the repository. For details about the term <code>origin</code>, see <a href="#nte-origin" class="quarto-xref">Note&nbsp;<span>8.1</span></a>.</p>
+<p>Replace <code>user-name</code> with the repository’s user name and <code>repo-name</code> with the name of the repository. For details about the term <code>origin</code>, see <a href="#nte-origin" class="quarto-xref">Note&nbsp;<span>8.2</span></a>.</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <p>Note the different URLs for HTTPS and SSH here (see <a href="#imp-authentication-url" class="quarto-xref">Important&nbsp;<span>8.1</span></a>):</p>
@@ -930,7 +961,7 @@ Important&nbsp;8.1: HTTPS vs.&nbsp;SSH: Different remote URL!
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@gitlab.com:user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Replace <code>user-name</code> with the repository’s user name and <code>repo-name</code> with the name of the repository. For details about the term <code>origin</code>, see <a href="#nte-origin" class="quarto-xref">Note&nbsp;<span>8.1</span></a>.</p>
+<p>Replace <code>user-name</code> with the repository’s user name and <code>repo-name</code> with the name of the repository. For details about the term <code>origin</code>, see <a href="#nte-origin" class="quarto-xref">Note&nbsp;<span>8.2</span></a>.</p>
 </div>
 </div>
 </div>
@@ -940,16 +971,16 @@ Important&nbsp;8.1: HTTPS vs.&nbsp;SSH: Different remote URL!
 </blockquote>
 <p>After running this command, your local Git repository will be aware of the remote repository, and you can synchronize changes between your local repository and the remote repository.</p>
 <div id="nte-origin" class="callout callout-style-default callout-note callout-titled" title="What is `origin`?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note&nbsp;8.1: What is <code>origin</code>?
+Note&nbsp;8.2: What is <code>origin</code>?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>The term <code>origin</code> is a conventionally used name for the default remote repository. It’s a standard name and we recommend using it, but you could also choose any another name if you prefer. For example, if you are connecting to GitHub, you could also replace <code>origin</code> with <code>github</code> Specifying different names for the remote repository is useful (or even necessary) when you are configuring multiple remote repositories. For example, if you want to connect your local repository to both a GitHub and a GitLab remote repository, you could call those remotes <code>github</code> and <code>gitlab</code>, respectively.</p>
 </div>
@@ -1035,7 +1066,7 @@ Note&nbsp;8.1: What is <code>origin</code>?
 </div>
 <p>There is no feedback following this command. To check if the new URL was set as expected, you can enter <code>git remote -v</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git remote` commands">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1044,7 +1075,7 @@ Find out more: Common <code>git remote</code> commands
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>git remote</code>: Lists all remote repositories associated with the current local repository.</p>
 <p><code>git remote -v</code>: Lists remote repositories along with their URLs.</p>
@@ -1069,28 +1100,68 @@ Find out more: Common <code>git remote</code> commands
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>The command above “uploads” the local branch named “main” to a remote repository called “origin” while setting it as the upstream branch. <code>-u</code> is used to set the upstream branch. It tells Git to remember the remote branch to which your local branch should be uploaded in the future. After a successful push, you will get a message like this:</p>
+<p>The command above “uploads” the local branch named “main” to a remote repository called “origin” while setting it as the upstream branch. <code>-u</code> is used to set the upstream branch. It tells Git to remember the remote branch to which your local branch should be uploaded in the future.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="The authenticity of host can't be established.">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The authenticity of host can’t be established.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>TL;DR</strong>: Enter <code>yet</code> and hit <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>.</p>
+<hr>
+<p>The following message might appear when connecting to GitHub for the first time via SSH:</p>
 <div class="cell" data-code-copy="false">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="an">Enumerating objects:</span><span class="co"> 17, done.</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="an">Counting objects:</span><span class="co"> 100% (17/17), done.</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>Delta compression using up to 8 threads</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>Compressing objects: 100% (12/12), done.</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>Writing objects: 100% (12/12), 2.11 KiB | 2.11 MiB/s, done.</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>Total 12 (delta 9), reused 0 (delta 0), pack-reused 0</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>remote: Resolving deltas: 100% (9/9), completed with 5 local objects.</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>To https://github.com/username/repository.git</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>   fb3efef..8f50685  main -&gt; main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>The authenticity of host 'github.com (140.82.121.3)' can't be established.</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ECDSA key fingerprint is SHA256:nThbg6GUVB7ZdnZ3iXYvgIhXZOL7NXqb7A4s9F8XY7w.</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>Are you sure you want to continue connecting (yes/no/<span class="co">[</span><span class="ot">fingerprint</span><span class="co">]</span>)?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This message indicates that your system is trying to connect to a remote server (in this case, GitHub) over SSH for the first time, but it doesn’t yet trust the server’s identity.</p>
+<p>If you are trusting the server’s identity, enter <code>yet</code> and hit <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>. This will result in the following message:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="an">Warning:</span><span class="co"> Permanently added 'github.com' (ED25519) to the list of known hosts.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This message indicates that the GitHub server’s public key has been added to your <code>~/.ssh/known_hosts</code> file permanently, so you won’t be prompted with this warning the next time you connect to GitHub over SSH.</p>
+</div>
+</div>
+</div>
+<p>After a successful push, you will get a message like this:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="an">Enumerating objects:</span><span class="co"> 17, done.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="an">Counting objects:</span><span class="co"> 100% (17/17), done.</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>Delta compression using up to 8 threads</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>Compressing objects: 100% (12/12), done.</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>Writing objects: 100% (12/12), 2.11 KiB | 2.11 MiB/s, done.</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>Total 12 (delta 9), reused 0 (delta 0), pack-reused 0</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>remote: Resolving deltas: 100% (9/9), completed with 5 local objects.</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>To https://github.com/username/repository.git</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>   fb3efef..8f50685  main -&gt; main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>The <code>git push</code> operation involves enumerating, compressing, and writing objects to the remote repository. The output indicates the progress of these steps, including delta compression, and concludes with a summary of the pushed branch and commit range. In this specific example, changes from the local <code>main</code> branch (commit <code>fb3efef</code>) were pushed to the remote <code>main</code> branch (commit <code>8f50685</code>).</p>
 <p>It’s important to note that you need appropriate access and permissions to push to a remote repository. If you do not have write access, you won’t be able to push your changes. If you do not specify a branch and just run <code>git push</code>, Git will push the branch that “you are on” in the moment.</p>
 <p>Git will verify if your local branch is up to date with the remote branch. If there are new commits on the remote branch that you don’t have locally, Git may reject the push and ask you to first <em>pull</em> (or “download”) the latest changes and merge them into your local branch to prevent overwriting or conflicts (find out more about <a href="#pulling">pulling</a> below).</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git push` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1099,7 +1170,7 @@ Common <code>git push</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-u</code> or <code>--set-upstream</code>: This flag is used to set the upstream branch for the current branch. It is typically used when pushing a branch for the first time to link the local branch with a remote branch.</p>
 <p><code>--force</code> or <code>-f</code>: Force pushes the local main branch to the origin remote repository, overwriting any changes that may have been made to the main branch in the remote repository.</p>
@@ -1111,7 +1182,7 @@ Common <code>git push</code> flags
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin my_local_branch:my_remote_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin my_local_branch:my_remote_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1120,14 +1191,14 @@ Common <code>git push</code> flags
 </section>
 <section id="cloning" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="cloning"><span class="header-section-number">8.7</span> Cloning</h2>
-<p>Cloning refers to <strong>creating a local copy of a repository from a remote hosting service on your computer</strong>. When you clone a repository, you download all of its files, commit history, and branches to your local computer. Cloning allows you to work with the repository locally, make changes, and upload those changes back to the original repository (if you have write permissions). Cloning is commonly used when you want to contribute to a project or work on it independently. To clone a repository, you need the repository’s URL from the relevant repository hosting service. You can find the repository’s HTTPS or SSH URL on the repository page, if you click on the green <strong>Code</strong> button (see <a href="#fig-github-https-url-clone-cli" class="quarto-xref">Figure&nbsp;<span>8.4</span></a>).</p>
+<p>Cloning refers to <strong>creating a local copy of a repository from a remote hosting service on your computer</strong>. When you clone a repository, you download all of its files, commit history, and branches to your local computer. Cloning allows you to work with the repository locally, make changes, and upload those changes back to the original repository (if you have write permissions). Cloning is commonly used when you want to contribute to a project or work on it independently. To clone a repository, you need the repository’s URL from the relevant repository hosting service. You can find the repository’s HTTPS or SSH URL on the repository page, if you click on the green <strong>Code</strong> button (see <a href="#fig-github-https-url-clone-cli" class="quarto-xref">Figure&nbsp;<span>8.5</span></a>).</p>
 <div id="fig-github-https-url-clone-cli" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-github-https-url-clone-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/github-https-url-clone-cli.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-github-https-url-clone-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.4: Cloning a repository from GitHub (License: <a href="https://github.com/github/docs/blob/main/LICENSE">CC BY 4.0</a>
+Figure&nbsp;8.5: Cloning a repository from GitHub (License: <a href="https://github.com/github/docs/blob/main/LICENSE">CC BY 4.0</a>
 </figcaption>
 </figure>
 </div>
@@ -1142,7 +1213,7 @@ Figure&nbsp;8.4: Cloning a repository from GitHub (License: <a href="https://git
 <div class="code-with-filename-file">
 <pre><strong>Code (HTTPS)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
@@ -1150,7 +1221,7 @@ Figure&nbsp;8.4: Cloning a repository from GitHub (License: <a href="https://git
 <div class="code-with-filename-file">
 <pre><strong>Code (SSH)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Replace <code>user-name</code> with the repository’s user name and <code>repo-name</code> with the name of the repository.</p>
@@ -1162,7 +1233,7 @@ Figure&nbsp;8.4: Cloning a repository from GitHub (License: <a href="https://git
 <div class="code-with-filename-file">
 <pre><strong>Code (HTTPS)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://gitlab.com/user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://gitlab.com/user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
@@ -1170,7 +1241,7 @@ Figure&nbsp;8.4: Cloning a repository from GitHub (License: <a href="https://git
 <div class="code-with-filename-file">
 <pre><strong>Code (SSH)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@gitlab.com:user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@gitlab.com:user-name/repo-name.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Replace <code>user-name</code> with the repository’s user name and <code>repo-name</code> with the name of the repository.</p>
@@ -1186,7 +1257,7 @@ Figure&nbsp;8.4: Cloning a repository from GitHub (License: <a href="https://git
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/lnnrtwttkhn/version-control-book.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/lnnrtwttkhn/version-control-book.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell" data-code-copy="false">
@@ -1194,13 +1265,13 @@ Figure&nbsp;8.4: Cloning a repository from GitHub (License: <a href="https://git
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Cloning into 'version-control-book'...</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>remote: Enumerating objects: 4823, done.</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>remote: Counting objects: 100% (2333/2333), done.</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>remote: Compressing objects: 100% (759/759), done.</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>remote: Total 4823 (delta 1739), reused 1891 (delta 1541), pack-reused 2490 (from 1)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>Receiving objects: 100% (4823/4823), 26.47 MiB | 6.50 MiB/s, done.</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>Resolving deltas: 100% (3336/3336), done.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>Cloning into 'version-control-book'...</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>remote: Enumerating objects: 4823, done.</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>remote: Counting objects: 100% (2333/2333), done.</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>remote: Compressing objects: 100% (759/759), done.</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>remote: Total 4823 (delta 1739), reused 1891 (delta 1541), pack-reused 2490 (from 1)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>Receiving objects: 100% (4823/4823), 26.47 MiB | 6.50 MiB/s, done.</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>Resolving deltas: 100% (3336/3336), done.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1226,7 +1297,7 @@ Don’t forget to <code>cd</code> into the repository after cloning!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/user-name/repo-name.git new-folder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/user-name/repo-name.git new-folder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>This will create a directory named <code>new-folder</code> and clone the repository into it.</p>
@@ -1254,7 +1325,7 @@ Should I use a different name for the local copy of the repository?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>If the pull is successful and there are no conflicts, you should see a message like this:</p>
@@ -1263,13 +1334,13 @@ Should I use a different name for the local copy of the repository?
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>Updating abc123..def456</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>Fast-forward file.txt | 2 +- 1 file changed, </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>1 insertion(+), 1 deletion(-)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Updating abc123..def456</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>Fast-forward file.txt | 2 +- 1 file changed, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>1 insertion(+), 1 deletion(-)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="What does the output of the `git pull` command mean?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1278,14 +1349,14 @@ What does the output of the <code>git pull</code> command mean?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The first part of the message indicates the range of commits that were fetched and merged. In the example above, it shows that Git is updating from commit <code>abc123</code> to commit <code>def456</code>. The “Fast-forward” message indicates that the local branch could be updated by moving the branch pointer forward, incorporating the new commits from the remote branch. This is possible when the local branch has not diverged from the remote branch, and there are no local commits that the remote branch does not have. The next line shows changes in the file <code>file.txt</code>. The <code>2 +-</code> indicates that two lines were changed with one insertion and one deletion. The <code>+</code> represents an addition, and the <code>-</code> represents a deletion. The last line of the message provides a summary of the changes. It states that one file was changed, with one line inserted and one line deleted.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled" title="Be aware which branch you are pulling!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1294,14 +1365,14 @@ Be aware which branch you are pulling!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse show">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>A regular <code>git pull</code> incorporates changes from a remote repository into the <strong>current</strong> branch. You can use the <code>git branch</code> command to verify which branch you are currently on (for details, see the <a href="../chapters/branches.html">branches</a> chapter). If the current branch is behind the remote, then by default it will fast-forward the current branch to match the remote. If the current branch and the remote have diverged, the user needs to specify how to reconcile the divergent branches.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git pull` command flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1310,7 +1381,7 @@ Common <code>git pull</code> command flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--ff-only</code>: Perform a fast-forward merge only. If the remote branch has new changes, Git will only update your local branch if a fast-forward merge is possible. Otherwise, it will abort the pull.</p>
 <p><code>--no-commit</code>: Perform the pull, but do not create an automatic commit after merging. This allows you to review the changes before committing manually.</p>
