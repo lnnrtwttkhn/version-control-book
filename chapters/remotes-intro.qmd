@@ -2,7 +2,10 @@
 categories: [intermediate, remotes, github, gitlab]
 image: ../static/githubchapter.png
 abstract: |
-  This chapter will introduce you to so-called *remote repositories*, versions of your Git repository that are hosted on a server, in particular using popular platforms like GitHub and GitLab.
+  This chapter will introduce you to **remote repositories**.
+  These are versions of your Git repository that are hosted on a server, in particular using popular platforms like GitHub and GitLab.
+  You will learn that remote repositories are useful for collaboration and backup.
+  You will also learn how to create an account and authenticate to the service.
 aliases:
   - github-intro.html
 ---
@@ -17,9 +20,9 @@ aliases:
 ## What are remote repositories?
 
 A remote repository is **a version of your Git repository that is hosted on a server**, usually on the internet.
-Unlike your local repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. 
-These remote repositories could be hosted on platforms like [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/), [Codeberg](https://codeberg.org/) or a private server.
-In this chapter, we will mainly focus on the repository hosting platforms [GitHub](https://github.com/), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)) and [GitLab](https://gitlab.com), since it is a very popular alternative and offered by many academic institutions.
+Unlike your local Git repository, which is on your personal computer, a remote repository can be a shared resource that allows multiple contributors to collaborate on a project. 
+These remote repositories could be hosted on platforms like [GitHub]({{< var links.github >}}), [GitLab]({{< var links.gitlab >}}), [Bitbucket]({{< var links.bitbucket >}}) [Codeberg]({{< var links.codeberg >}}), or a private server.
+In this chapter, we will mainly focus on the repository hosting platforms [GitHub]({{< var links.github >}}), mainly because it is the most popular platform for Git repositories with 100 million users (as of January 2023, [according to Wikipedia](https://en.wikipedia.org/wiki/GitHub)) and [GitLab]({{< var links.gitlab >}}), since it is a very popular alternative to GitHub and offered by many academic institutions.
 
 ### Why use remote repositories?
 
@@ -29,7 +32,7 @@ Remote repositories provide a central location where team members can collective
 Whether contributors are across the room or across the globe, remote repositories make it possible for everyone to access the same set of project files and contribute to the development process.
 
 Hosting a project on a remote repository also serves as a **backup mechanism**.
-If a contributor's computer fails or their files get corrupted, they can always download (or "clone") a fresh copy of the project from the remote repository.
+If a contributor's computer fails or their files get corrupted, they can always download a fresh copy of the project from the remote repository.
 This ensures that the project's progress is not dependent on a single person's computer.
 @fig-git-in-case-of-fire jokingly illustrates this point.
 
@@ -37,7 +40,7 @@ This ensures that the project's progress is not dependent on a single person's c
 
 ## Creating an account
 
-Please find instructions below on how to create an account / log in to various remote repository hosting services.
+Please find instructions below on how to create an account and log in to various remote repository hosting services.
 Not sure which username to choose?
 Check out @tip-username for some ideas.
 
@@ -49,15 +52,15 @@ Check out @tip-username for some ideas.
 1. Click the **Sign up** button.
 1. Enter the required personal details and select the free plan.
 
-::: {#tip-student-developer-pack .callout-tip title="Are you a student? Sign-up for the GitHub Student Developer Pack" collapse="true"}
-The [GitHub Student Developer Pack]({{< var links.github-student-developer-pack >}}) is a program offered by GitHub to students, providing them with free access to a collection of valuable developer tools and services.
+::: {#tip-student-developer-pack .callout-tip title="Are you a student? Check out the GitHub Student Developer Pack!" collapse="true"}
+The [GitHub Student Developer Pack]({{< var links.github-student-developer-pack >}}) is a program offered by GitHub to students, providing them with free access to a collection of useful developer tools and services.
 To benefit from the pack, visit the [GitHub Education website]({{< var links.github-education >}}) and sign up with your student email to verify your academic status.
 Once verified, you gain access to various resources, including [GitHub Pro](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro) with unlimited private repositories, free domain names, cloud credits, coding courses, and more.
 :::
 
 ## {{< fa brands gitlab >}} GitLab
 
-1. Open [gitlab.com](https://gitlab.com) in your browser.
+1. Open [{{< var links.gitlab >}}]({{< var links.gitlab >}}) in your browser.
 1. Click the **Sign in** and the **Register** button.
 1. Enter the required personal details or create an account using e.g., Google.
 
@@ -70,7 +73,7 @@ Are you a member of the [University of Hamburg]({{< var links.uhh >}})?
 Here's how you can log in to the university's GitLab instance:
 
 1. Open [{{< var links.uhh-gitlab >}}]({{< var links.uhh-gitlab >}}) in your browser.
-1. Enter your UHH credentials to sign-in.
+1. Enter your UHH credentials to sign in.
 
 ## {{< fa brands gitlab >}} MPIB GitLab
 
@@ -91,7 +94,7 @@ Here are some tips for choosing a username:
 - Incorporate your real name.
 - Adapt a username that you use on other platforms.
 - Choose a professional username.
-Your future boss might look at your GitHub / GitLab profile.
+Your future boss might look at your GitHub / GitLab profile (or you want to show it to the world yourself).
 - Opt for a short username.
 - Be unique and concise.
 - Avoid references to specific institutions.
@@ -105,8 +108,8 @@ You might not always be affiliated with them.
 
 In order to connect your local Git repository to a remote repository, you need to establish an authentication method.
 Authentication is needed to access and work with repositories that are stored on remote repositories.
-It's kind of like showing your ID to prove who you are before entering a restricted area.
-It's necessary to make sure only the right people or programs can access and do things on GitHub, keeping everything safe and organized.
+It's like showing your ID to prove who you are before entering a restricted area.
+It's necessary to make sure only the right people or programs can access and do things on the remote repository, keeping everything safe and organized.
 Depending on the platform there are different authentication methods available.
 We introduce the most common authentication methods below, separately for each platform.
 
@@ -114,21 +117,42 @@ We introduce the most common authentication methods below, separately for each p
 
 The Secure Shell Protocol (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.
 Its most notable applications are remote login and command-line execution.
+You can read and write data in remote repositories like GitHub and GitLab using SSH.
 For more details on SSH, see [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell).
 
-You can read and write data in remote repositories like GitHub and GitLab using SSH.
-When you connect with SSH, you verify your identity using a private key file stored on your computer.
+::: {#nte-ssh .callout-note title="How does SSH work: The key and padlock analogy." collapse="true"}
+When you set up SSH, you generate a **key pair**: the *private key* stays on your device, while the *public key* is copied to the servers you want access to.
+
+Think of your **public key as a padlock**.
+You can make lots of copies of this padlock and distribute them to different places - servers, computers, or anything you want to secure (just like sharing a padlock to secure different lockers). These places install your padlock, but no one can open it because they don't have your key.
+
+Your **private key is the actual key** that opens those padlocks.
+You keep it safe and never share it.
+As long as your key stays secure, it doesn't matter how many padlocks you've distributed.
+
+!["Understanding public key private key concepts" by [Blake Smith](https://blakesmith.me/) (License: Unknown; [Source on GitHub](https://blakesmith.me/2010/02/08/understanding-public-key-private-key-concepts.html))](../static/ssh-key-public-private.png){#fig-ssh-key-public-private width="60%"}
+
+When you try to connect to a server, SSH checks if the padlock (public key) on that server matches your key.
+If they match, the door opens.
+
+This system ensures that only someone with the private key (you) can unlock what's protected by the padlocks (public keys).
+For extra security, you can protect your private key with an additional password.
+Even if someone steals your key, they still need the combination (password) to use it.
+For additional discussion of using an additional password for a private SSH key, see @tip-ssh-password.
+
+:::
+
 We provide basic instructions that are applicable to both GitHub and GitLab below.
 For more detailed instructions, see the [GitHub Documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh).
 The most basic SSH key setup works like this:
 
-1. Generating a new SSH key
-1. Copying the SSH key to your clipboard
-1. Adding the SSH key to your GitHub or GitLab account
+1. Generating a new SSH key.
+1. Copying the SSH key to your clipboard.
+1. Adding the SSH key to your GitHub or GitLab account.
 
 #### Generating a new SSH key
 
-1. Open the Terminal.
+1. Open the Command Line.
 2. Insert the code below, changing the example email to your email address.
 
 ```{zsh filename="Code"}
@@ -169,18 +193,21 @@ Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]
 ```
 
-::: {.callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
+::: {#tip-ssh-password .callout-tip title="Do I have to provide a password for my SSH key?" collapse="true"}
 If someone gets into your computer, they can use your SSH keys to access all systems that use those keys.
-Adding a passphrase to your SSH key makes it more secure.
+For extra security, you can protect your private key with an additional password.
+Even if someone gets access to your computer and steals your private key, they still need the combination (password) to use it.
+Adding a password to your private SSH key therefore makes it more secure.
+
 To avoid typing the passphrase each time you connect, you can securely store it in an SSH agent.
 For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
 :::
 
-#### Copying the SSH key to your clipboard
+#### Copying the public SSH key to your clipboard
 
 Now copy the SSH public key to your clipboard.
 The following command will copy the contents of the `id_ed25519.pub` file to your clipboard (assuming your SSH key is in the default location).
-Select the right command for your operating system and enter it into the Terminal.
+Select the right command for your operating system and enter it into the Command Line.
 
 ::: {.panel-tabset}
 
@@ -214,7 +241,7 @@ Alternatively, find the hidden `.ssh` folder in your home directory, open the `i
 
 #### Adding the SSH key to your account
 
-Finally, copy the public SSH key your account on the remote repository hosting service.
+Finally, paste the public SSH key your account on the remote repository hosting service.
 
 ::: {.panel-tabset}
 
@@ -590,6 +617,36 @@ git push -u origin main
 The command above "uploads" the local branch named "main" to a remote repository called "origin" while setting it as the upstream branch.
 `-u` is used to set the upstream branch.
 It tells Git to remember the remote branch to which your local branch should be uploaded in the future.
+
+::: {.callout-note title="The authenticity of host can't be established." collapse="false"}
+
+**TL;DR**: Enter `yet` and hit {{< kbd Enter >}}.
+
+---
+
+The following message might appear when connecting to GitHub for the first time via SSH:
+
+```{markdown filename="Output"}
+#| code-copy: false
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ECDSA key fingerprint is SHA256:nThbg6GUVB7ZdnZ3iXYvgIhXZOL7NXqb7A4s9F8XY7w.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+
+This message indicates that your system is trying to connect to a remote server (in this case, GitHub) over SSH for the first time, but it doesn't yet trust the server's identity.
+
+If you are trusting the server's identity, enter `yet` and hit {{< kbd Enter >}}.
+This will result in the following message:
+
+```{markdown filename="Output"}
+#| code-copy: false
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+```
+
+This message indicates that the GitHub server's public key has been added to your `~/.ssh/known_hosts` file permanently, so you won't be prompted with this warning the next time you connect to GitHub over SSH.
+
+:::
+
 After a successful push, you will get a message like this:
 
 ```{markdown filename="Output"}
