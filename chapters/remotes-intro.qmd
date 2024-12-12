@@ -680,6 +680,16 @@ The `git push` operation involves enumerating, compressing, and writing objects 
 The output indicates the progress of these steps, including delta compression, and concludes with a summary of the pushed branch and commit range.
 In this specific example, changes from the local `main` branch (commit `fb3efef`) were pushed to the remote `main` branch (commit `8f50685`).
 
+::: {#tip-push-branches .callout-tip title="How can I push a different branch?" collapse="false"}
+You can push any branch.
+Use the relevant branch name in the `git push` command:
+
+```{zsh filename="Code"}
+git push -u origin <YOUR_BRANCH_NAME> # <1>
+```
+1. Replace `<YOUR_BRANCH_NAME>` with the name of the branch that you want to push.
+:::
+
 It's important to note that you need appropriate access and permissions to push to a remote repository. 
 If you do not have write access, you won't be able to push your changes.
 If you do not specify a branch and just run `git push`, Git will push the branch that "you are on" in the moment.
