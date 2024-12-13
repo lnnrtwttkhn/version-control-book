@@ -14,32 +14,6 @@ abstract: |
 
 [{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.github >}}){.btn .btn-outline-secondary role="button"}
 
-## Forking
-
-In the [previous chapter](remotes-intro.qmd), you learned that you can invite other people as collaborators to your repository.
-However, this usually comes with a few privileges in administering your project that you might not want to share with any random person who would like to contribute to your project.
-At the same, a central idea of open-source development is that even people who don't know each other can collaborate together on open-source code.
-This is where forking comes in: Forking a repository on GitHub allows you to **create a personal copy of *someone else's* project** under your GitHub account and contributing to that project without direct access to the original repository.
-
-This copy of the repository includes all files, commit history, and branches and also keeps a reference to the repository it was copied from.
-Forking is commonly used when you want to contribute to a project but you don't have direct access to the original repository. 
-It enables you to make changes independently, create new branches, and push modifications to your forked repository.
-You can also submit changes to the original repository through so-called [pull requests](#pull-requests) which will be explained in more detail below.
-
-### Creating a fork
-
-By clicking the **Fork** button on a repository page, as shown in @fig-forking, you create an identical copy of the repository in your GitHub account.
-
-![Screenshot of a repository with fork button](../static/github-forking.png){#fig-forking}
-
-Once the forking process is complete, you can clone the repository to your local machine using the `git clone` command (for more details on `git clone`, see the [previous chapter](remotes-intro.qmd#cloning)).
-
-::: {.callout-tip title="Should I create a new branch after forking a repository?" collapse="false"}
-While it is not strictly necessary to create a new branch after forking a repository, it is considered a best practice for most workflows, particularly when contributing to a project. 
-By default, your fork will create a copy of the original repository's default branch (usually `main`), and you can make changes directly on this branch.
-However, doing so without creating a new branch to work on can complicate the process of keeping your fork up to date with the original project and managing contributions.
-:::
-
 ## Pull requests
 
 A **pull request** (PR) serves as a request for code review and integration into a project's codebase, enabling collaboration and ensuring code quality before changes are merged.
@@ -166,6 +140,33 @@ The chosen license influences contributions to your project.
 
 A `README` is typically a Markdown (`.md`) file, which means you can use [Markdown]({{< var links.markdown >}}) syntax in it.
 Markdown allows you to easily format text, create lists, include links, and embed images.
+
+
+## Forking
+
+In the [previous chapter](remotes-intro.qmd), you learned that you can invite other people as collaborators to your repository.
+However, this usually comes with a few privileges in administering your project that you might not want to share with any random person who would like to contribute to your project.
+At the same, a central idea of open-source development is that even people who don't know each other can collaborate together on open-source code.
+This is where forking comes in: Forking a repository on GitHub allows you to **create a personal copy of *someone else's* project** under your GitHub account and contributing to that project without direct access to the original repository.
+
+This copy of the repository includes all files, commit history, and branches and also keeps a reference to the repository it was copied from.
+Forking is commonly used when you want to contribute to a project but you don't have direct access to the original repository. 
+It enables you to make changes independently, create new branches, and push modifications to your forked repository.
+You can also submit changes to the original repository through so-called [pull requests](#pull-requests) which will be explained in more detail below.
+
+### Creating a fork
+
+By clicking the **Fork** button on a repository page, as shown in @fig-forking, you create an identical copy of the repository in your GitHub account.
+
+![Screenshot of a repository with fork button](../static/github-forking.png){#fig-forking}
+
+Once the forking process is complete, you can clone the repository to your local machine using the `git clone` command (for more details on `git clone`, see the [previous chapter](remotes-intro.qmd#cloning)).
+
+::: {.callout-tip title="Should I create a new branch after forking a repository?" collapse="false"}
+While it is not strictly necessary to create a new branch after forking a repository, it is considered a best practice for most workflows, particularly when contributing to a project. 
+By default, your fork will create a copy of the original repository's default branch (usually `main`), and you can make changes directly on this branch.
+However, doing so without creating a new branch to work on can complicate the process of keeping your fork up to date with the original project and managing contributions.
+:::
 
 ## Git blame
 
