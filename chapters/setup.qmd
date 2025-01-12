@@ -380,6 +380,21 @@ This command will result in an output similar to this:
 
 You can manually edit the `.gitconfig` file to customize your Git environment, but it's often more convenient to use Git commands like `git config` to manage these settings.
 
+## Aliases
+
+Aliases are customizable shortcuts for Git commands.
+When having to retype the same commands over and over again, aliases can help save time, nerves and avoid typos in more complex commands.
+Any name can be chosen for an alias.
+They can be set on different configuration levels and thus either stay the same over all your repositories or change between them.^[:bulb: See Tip 4.1 about configuration levels (details [here](setup.qmd#tip-config-levels))]
+Aliases are stored in the `.gitconfig` file and can be changed directly in there or using `git config`.
+For example, to set the command `git ci` as an alias for `git commit` on the global configuration level, use the following:
+
+```{bash filename="Code"}
+git config --global alias.ci "commit"
+```
+
+Both `git ci` and `git commit` can now be used interchangeably and if needed, more aliases can even be set for the same command.
+
 ## Helpful guardrails
 
 Especially if you are new to Git (but not only then!), you might be worried that something will go terribly wrong, that you will lose files beyond recovery, or that you will break your computer.
@@ -441,7 +456,7 @@ We recommend these references for further reading:
 #| message: false
 #| warning: false
 #| output: asis
-bibtexkeys = c("bryan2023", "capes2023", "chacon2014", "koziar2023")
+bibtexkeys = c("bryan2023", "capes2023", "chacon2014", "coderefinery2024", "koziar2023")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
 
