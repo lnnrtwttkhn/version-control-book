@@ -19,7 +19,7 @@ abstract: |
 
 At its core, a tag in version control systems like Git is a reference or a label associated with a **specific commit**.
 Tags are used to mark particular points in a project's history, usually to signify important **milestones** or **releases**.
-It acts as a human-readable reference to a particular state of the repository.
+It acts as a more human-readable reference to a particular state of the repository.
 
 Once created, a tag is generally immutable.
 It doesn't move or change its associated commit.
@@ -42,10 +42,11 @@ Lightweight tags in Git are simple pointers to specific commits in the version c
 Unlike annotated tags, they carry **minimal metadata**, consisting only of the tag name and the hash of the associated commit.
 Lightweight tags are created using `git tag`, followed by the tag name:
 
-```{bash}
+```{zsh filename="Code"}
 git tag v1.0 # <1>
 ```
-1. `v1.0` is only an example. You can choose any other tag name.
+1. `v1.0` is only an example.
+You can choose any other tag name.
 
 This creates a lightweight tag named `v1.0` that points to the current commit at the time of creating the tag.
 If you create a lightweight tag in this way (without specifying another commit), it is created at the current commit (`HEAD`) in your working directory.
@@ -53,7 +54,7 @@ If you create a lightweight tag in this way (without specifying another commit),
 You can verify that the tag has been created by listing all the tags.
 To do this, use:
 
-```{bash}
+```{zsh filename="Code"}
 git tag 
 ```
 
@@ -63,12 +64,12 @@ Annotated tags in Git are tags that include **additional metadata** beyond a ref
 When you create an annotated tag, Git stores information such as the tagger's **name**, **email**, the **date** the tag was created, and a **tagging message**.
 This additional information provides context and details about the tag, making annotated tags more informative compared to lightweight tags.
 To create an annotated tag, you use `git tag` with the `-a` flag.
-To include a tagging message, the `-m` flag is used
+To include a tagging message, the `-m` flag is used.
 If you do not use the `-m` flag, your text editor of choice will open up.
 The tagging message can be a detailed description of the tag, such as release notes or significant changes.
 For example:
 
-```{bash}
+```{zsh filename="Code"}
 git tag -a v1.0 -m "Release version 1.0"
 ```
 
@@ -92,11 +93,12 @@ Useful when creating an annotated tag without opening an editor.
 Once you created a lightweight or annotated tag, it will show up if you use `git tag` or `git tag -l`.
 To switch to a tag, you can use `git checkout` followed by the name of the tag:
 
-```{bash}
+```{zsh filename="Code"}
 git checkout v1.0
 ```
 
 Now you are "on the tag" and your working directory reflects the state of the code of the commit the tag is pointing to.
+This can be useful to get your project back into the state the tag is pointing to.
 
 In general, it's not advisable to make changes directly after switching to a tag.
 When you switch to a tag in Git, you enter a "detached `HEAD`" state, meaning that you're not on any branch.
@@ -105,7 +107,7 @@ If you need to make changes based on a specific tag, it's often better to create
 
 A recommended practice is to treat **annotated tags as suitable for public releases** and **lightweight tags as more appropriate for private use**. 
 Annotated tags include additional metadata such as the tagger's name, email, and date, making them valuable for public releases where comprehensive information is beneficial.
-On the other hand, lightweight tags act as simple "bookmarks" to a commit, serving as efficient pointers without the extra metadata. 
+In contrast, lightweight tags act as simple "bookmarks" to a commit, serving as efficient pointers without the extra metadata. 
 They are particularly useful for creating quick links to relevant commits in a more private or internal context.
 
 ### Pushing and pulling tags
@@ -113,27 +115,26 @@ They are particularly useful for creating quick links to relevant commits in a m
 Pushing and pulling tags in Git involves syncing tags between your local repository and a remote repository, such as GitHub, as discussed in the [chapter about remote repositories](remotes-intro.qmd).
 To push a specific tag to the remote repository, use:
 
-```{bash}
-git push origin <tag-name>
+```{zsh filename="Code"}
+git push origin <tag-name> # <1>
 ```
+1. Replace `<tag-name>` with the name of the tag you want to push.
 
-Replace `<tag-name>` with the name of the tag you want to push.
+To push all available tags to the remote repository, use the following command:
 
-To push all tags to the remote repository, use:
-
-```{bash}
+```{zsh filename="Code"}
 git push origin --tags
 ```
 
 To fetch all tags from the remote repository (without merging), use:
 
-```{bash}
+```{zsh filename="Code"}
 git fetch --tags
 ```
 
 Alternatively, you can combine fetching and merging using:
 
-```{bash}
+```{zsh filename="Code"}
 git pull --tags
 ```
 
@@ -153,22 +154,19 @@ First, you need to identify the commit you want to tag
 
 **2. Create the tag:**
 Once you have the commit hash, you can create a tag for it.
-You can create either a lightweight or an annotated tag as discussed earlier. 
-For example:
+You can create either a lightweight or an annotated tag as discussed earlier.
+See the following code examples for a lightweight and annotated tag:
 
-Lightweight Tag:
-
-```{zsh filename="Code"}
+```{zsh filename="Code (Lightweight Tag)"}
 git tag v1.0 <commit-hash> # <1>
 ```
+1. Replace `<commit-hash>`with the actual hash of the commit you want to tag.
 
-Annotated Tag:
-
-```{zsh filename="Code"}
+```{zsh filename="Code (Annotated Tag)"}
 git tag -a v1.0 -m "Tagging version 1.0 for the old commit" <commit-hash> # <1>
 ```
+1. Replace `<commit-hash>`with the actual hash of the commit you want to tag.
 
-Replace `<commit-hash>`with the actual hash of the commit you want to tag.
 By following these steps, you can tag any commit in your repository, even if it's an older one. 
 
 ## GitHub Releases
@@ -178,29 +176,29 @@ These releases are tied to specific Git tags, which act as markers for specific 
 
 Here's a step-by-step guide:
 
-1.  Go to the **main page** of your GitHub **repository**.
+1. Go to the **main page** of your GitHub **repository**.
 
-2.  Click on "**Create a new release**" under "**Releases**" tab located on the right side of your repository page.
+2. Click on "**Create a new release**" under "**Releases**" tab located on the right side of your repository page.
 Now, you should see a page, similar to @fig-gh_releases.
-    
-3.  Choose an **existing Git tag** or **create a new one**.
-    If you have created and pushed a Tag, it should show up here.
-    Enter the **tag version** in the "Tag version" field.
-    Enter a **meaningful title** for your release.
-    In the "**Describe this release**" field, provide **release notes**.
-    This can include details about new features, bug fixes, and any other relevant information.
-    If you have binary files, installers, or other assets related to the release, you can attach them by clicking on "Attach binaries by dropping them here or selecting them".
 
-4.  If you're creating a draft release, you can save it as a draft by clicking on the "Save draft" button.
-    Draft releases are not visible to the public.
-    If you're ready to make the release public, click on the "**Publish release**" button.
+3.  Choose an **existing Git tag** or **create a new one**.
+If you have created and pushed a tag, it should show up here.
+Enter the **tag version** in the "Choose a tag" field.
+Enter a **meaningful title** for your release.
+In the "**Describe this release**" field, provide **release notes**.
+This can include details about new features, bug fixes, and any other relevant information.
+If you have binary files, installers, or other assets related to the release, you can attach them by clicking on "Attach binaries by dropping them here or selecting them".
+
+4. If you're creating a draft release, you can save it as a draft by clicking on the "Save draft" button.
+Draft releases are not visible to the public.
+If you're ready to make the release public, click on the "**Publish release**" button.
     
 ![Screenshot of GitHub when creating a new release](../static/github-releases.png){#fig-gh_releases}
 
 That's it!
 You've successfully created a GitHub release for your project! :rocket:
 
-After publishing the release, you and others can view it on the **Releases page**.
+After publishing the release, you and others can view it on the **Releases page** of your GitHub repository.
 It will include the release notes, associated Git tag, and any attached assets.
 
 ## Zenodo
@@ -241,19 +239,25 @@ DOIs are typically assigned and managed by registration agencies, such as CrossR
 
 ### Creating a Zenodo account
 
-To upload a Git repository to Zenodo, you first create a Zenodo account.
+::: {.callout-important appearance="simple"}
+Just experimenting?
+Use the [Zenodo Sandbox](https://sandbox.zenodo.org) rather than the "real" [Zenodo](https://zenodo.org)!
+:::
+
+To upload a Git repository to Zenodo, you first need to create a Zenodo account.
 On the Zenodo [start page](https://zenodo.org), you can click on "**Sign Up**" in the top right corner.
 Here you either can directly use your **GitHub account** to sign up, or sign up using **your email** (or other accounts) and link your GitHub account later on.
 To **link your GitHub account**, you can click on the arrow, next to your email, on the start page and select "GitHub".
-If you create an account on the [regular Zenodo site](https://zenodo.org), you will have to create a new account to use the [Zenodo Sandbox](https://sandbox.zenodo.org), since the accounts do not synchronize.
 
 ### Uploading a Git repository
 
-If you are just trying out how to upload a Git repository, we recommend to use the [Zenodo sandbox](https://sandbox.zenodo.org), to not create an unnecessary real DOI which is hard to delete.
-Your Zenodo account should work perfectly fine in the sandbox.
+If you are just trying out how to upload a Git repository, we recommend to use the [Zenodo Sandbox](https://sandbox.zenodo.org), to not create an unnecessary real DOI which is hard to delete.
+If you created an account on the [regular Zenodo site](https://zenodo.org) before, you will have to **create a new account to use the** Zenodo Sandbox, since the accounts do not synchronize.
 
 ::: {.callout-important appearance="simple"}
-**Note that you have to link your Zenodo account and sync your repository *before* you create a new release on GitHub!**
+**Note that you have to link your Zenodo account to GitHub and sync your repository *before* you create a new release on GitHub!**
+
+Again: **First, link GitHub to Zenodo** and sync your repository! *Then* create the release on GitHub.
 :::
 
 To upload an older release, you have to download your repository as a `.zip` file from GitHub and uploading it manually at [https://sandbox.zenodo.org/uploads/new](https://sandbox.zenodo.org/uploads/new)
@@ -262,7 +266,7 @@ To upload a new release, visit the [Zenodo GitHub settings](https://sandbox.zeno
 Here you should see all your uploaded repositories, with the option to sync them by selecting the "on" button.
 If you now create a release, as discussed earlier, it will show up and be associated with a DOI.
 Please note that if you have created a release *before* syncing your repository, the release will not show up.
-You can delete the GitHub release without deleting your tag and create a new release, which is the going to appear on Zenodo. 
+You can delete the GitHub release without deleting your tag and create a new release, which is then going to appear on Zenodo. 
 
 For a pictured guide on how to upload a GitHub repository to Zenodo, you check out [this guide](https://coderefinery.github.io/github-without-command-line/doi/) from the [Code Refinery](https://coderefinery.org).
 
@@ -270,12 +274,16 @@ For a pictured guide on how to upload a GitHub repository to Zenodo, you check o
 
 After you have created a release in your synced repo, a DOI badge should show up in your [Zenodo GitHub settings](https://sandbox.zenodo.org/account/settings/github/) next to the repository name.
 When you click on it there should be a section called **Markdown** with Markdown syntax below, for example:
+
 ```
 [![DOI](https://sandbox.zenodo.org/badge/731953735.svg)](https://sandbox.zenodo.org/doi/10.5072/zenodo.71301)
-
 ```
 
 You can copy and paste this syntax into your `README.md` file on GitHub to create a clickable DOI badge.
+This badge will then show up in your `README.md` file on GitHub as shown below.
+Now visitors of your GitHub repository only need to click on the badge to get to the release on Zenodo!
+
+[![](https://sandbox.zenodo.org/badge/731953735.svg)](https://sandbox.zenodo.org/doi/10.5072/zenodo.71301)
 
 ## Acknowledgements and further reading
 
