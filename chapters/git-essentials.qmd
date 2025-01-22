@@ -61,7 +61,7 @@ It's helpful to think about future you or others looking at this project later.
 Will they understand what this commit was about without having to look at the actual changes?
 
 For example, `Fix typo in README` would be more descriptive as a commit message than `Update files`.
-If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed earlier).
+If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed in the [previous chapter](first-steps-git.qmd)).
 
 ### Write commits that explain *why* changes were made
 
@@ -75,7 +75,7 @@ For example, use `Adjust participant exclusion criteria to improve data quality`
 It is standard to **start the commit message with an imperative verb** to indicate the purpose of the commit, for example, "Add", "Fix" or "Improve".
 Here is an example:
 
-```{zsh filename="Example"}
+```{markdown filename="Example"}
 git commit -m "Implement user registration feature
 
 This commit adds the user registration functionality to the application. It includes the following changes:
@@ -160,7 +160,7 @@ This ensures that you're aware of every change you're about to commit.
 
 If your project is connected to an issue tracker system (like GitHub Issues), it's helpful to reference issue numbers in your commit messages. 
 This makes it easy to trace which commit addressed a particular issue.
-For an intro about GitHub Issues, refer to our [Issues chapter](issues.qmd).
+For an introduction to GitHub Issues, refer to our [Issues chapter](issues.qmd).
 For example:
 
 ```{zsh filename="Code"}
@@ -173,7 +173,6 @@ This message indicates that the commit addresses issue number 42 in your issue t
 
 Be careful not to commit sensitive information such as passwords or personal data. 
 Once something is committed, it becomes part of the repository's history, making it difficult to completely remove later.
-
 You can use `.gitignore` files to exclude sensitive files from being tracked (details below).
 
 ## Logging commits
@@ -204,7 +203,7 @@ This is the information specified using `git config` (for details, see the [setu
 `git log` is a very useful command because it provides a clear and organized view of a repository's commit history. 
 It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps.
 
-To exit the `git log`view and return to the regular Terminal, press the {{< kbd q >}} key. 
+To exit the `git log` view and return to the regular Terminal, press the {{< kbd q >}} key. 
 This applies to both macOS and Windows systems.
 
 ::: {.callout-tip title="Common `git log` flags" collapse="true"}
@@ -242,7 +241,7 @@ Another very handy feature is the `git diff` command.
 It allows you to **compare two different versions of your file(s)**.
 
 By default it shows you any uncommitted changes since the last commit.
-You can explore this by pasting any additional text in your `.txt` file, for example:
+You can explore this by pasting any additional text in a `.txt` file, for example:
 
 ```{markdown filename="Code"}
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
@@ -259,7 +258,7 @@ git diff
 
 You should see an output similar to the following:
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 +++ b/filename.txt
 @@ -0,0 +1 @@
@@ -275,6 +274,8 @@ It shows where the changes occurred.
 Note, that this line will look different for each change or commit.
 - `+` indicates added lines and `-` indicates removed lines.
 Lines that are identical between the two versions are not explicitly shown.
+
+### Comparing commits
 
 You can also use `git diff` to **compare two specific commits**. 
 For example, if you want to compare the current state of your file with a commit from a few commits ago:
