@@ -95,10 +95,10 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-af3c1b81cc829c308077203dae7d16b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/kbd/kbd.js"></script>
 <link href="../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -329,7 +329,10 @@ div.csl-indent {
   <li><a href="#avoid-committing-sensitive-information" id="toc-avoid-committing-sensitive-information" class="nav-link" data-scroll-target="#avoid-committing-sensitive-information"><span class="header-section-number">6.1.9</span> Avoid committing sensitive information</a></li>
   </ul></li>
   <li><a href="#logging-commits" id="toc-logging-commits" class="nav-link" data-scroll-target="#logging-commits"><span class="header-section-number">6.2</span> Logging commits</a></li>
-  <li><a href="#comparing-versions" id="toc-comparing-versions" class="nav-link" data-scroll-target="#comparing-versions"><span class="header-section-number">6.3</span> Comparing versions</a></li>
+  <li><a href="#comparing-versions" id="toc-comparing-versions" class="nav-link" data-scroll-target="#comparing-versions"><span class="header-section-number">6.3</span> Comparing versions</a>
+  <ul class="collapse">
+  <li><a href="#comparing-commits" id="toc-comparing-commits" class="nav-link" data-scroll-target="#comparing-commits"><span class="header-section-number">6.3.1</span> Comparing commits</a></li>
+  </ul></li>
   <li><a href="#commit-hashes" id="toc-commit-hashes" class="nav-link" data-scroll-target="#commit-hashes"><span class="header-section-number">6.4</span> Commit hashes</a></li>
   <li><a href="#amending-a-commit" id="toc-amending-a-commit" class="nav-link" data-scroll-target="#amending-a-commit"><span class="header-section-number">6.5</span> Amending a commit</a></li>
   <li><a href="#partial-commits" id="toc-partial-commits" class="nav-link" data-scroll-target="#partial-commits"><span class="header-section-number">6.6</span> Partial commits</a></li>
@@ -385,11 +388,10 @@ div.csl-indent {
 <h5 class="anchored">
 Learning Objectives
 </h5>
-<p><span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file<br> <span class="emoji" data-emoji="bulb">💡</span> You can discuss which files can (not) be tracked well with Git and why<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to track empty folders in Git repositories</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history.<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits.<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file.<br> <span class="emoji" data-emoji="bulb">💡</span> You can discuss which files can (not) be tracked well with Git and why.<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to track empty folders in Git repositories.</p>
 </div>
 </div>
 </div>
-<p><a href="https://version-control-basics.formr.org" class="btn btn-outline-secondary" role="button"><i class="fa-circle-question fa-regular" aria-label="regular"></i> Take the quiz!</a></p>
 <section id="good-commits" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="good-commits"><span class="header-section-number">6.1</span> Good commits</h2>
 <p>Now that you know how to create a Git repository, stage files, and make commits, it’s time to discuss some good practices for Git commits.</p>
@@ -424,7 +426,7 @@ Note&nbsp;6.1: The rock climbing analogy of Git commits
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="use-meaningful-commit-messages"><span class="header-section-number">6.1.3</span> Use <em>meaningful</em> commit messages</h3>
 <p>Git allows for a commit message with a 72 character limit and a description without such a limit. In general, you should aim to write clear and short commit messages (ideally under 50 characters), yet descriptive enough to clarify the purpose of the commit. There are different conventions across projects/persons but also some general guidelines, you can stick to.</p>
 <p>It’s helpful to think about future you or others looking at this project later. Will they understand what this commit was about without having to look at the actual changes?</p>
-<p>For example, <code>Fix typo in README</code> would be more descriptive as a commit message than <code>Update files</code>. If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed earlier).</p>
+<p>For example, <code>Fix typo in README</code> would be more descriptive as a commit message than <code>Update files</code>. If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed in the <a href="../chapters/first-steps-git.html">previous chapter</a>).</p>
 </section>
 <section id="write-commits-that-explain-why-changes-were-made" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="write-commits-that-explain-why-changes-were-made"><span class="header-section-number">6.1.4</span> Write commits that explain <em>why</em> changes were made</h3>
@@ -439,11 +441,11 @@ Note&nbsp;6.1: The rock climbing analogy of Git commits
 <div class="code-with-filename-file">
 <pre><strong>Example</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Implement user registration feature</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git commit -m "Implement user registration feature</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st">This commit adds the user registration functionality to the application. It includes the following changes:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">- Created a new 'register' route and view for user registration.</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">- Added form validation for user input."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>This commit adds the user registration functionality to the application. It includes the following changes:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Created a new 'register' route and view for user registration.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Added form validation for user input."</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>An example of commit messages, which are not really optimal, are illustrated in <a href="#fig-bad_commits_comic" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>.</p>
@@ -535,7 +537,7 @@ Tip&nbsp;6.2: Which files should I <em>not</em> track with Git?
 </section>
 <section id="reference-issue-numbers" class="level3" data-number="6.1.8">
 <h3 data-number="6.1.8" class="anchored" data-anchor-id="reference-issue-numbers"><span class="header-section-number">6.1.8</span> Reference issue numbers</h3>
-<p>If your project is connected to an issue tracker system (like GitHub Issues), it’s helpful to reference issue numbers in your commit messages. This makes it easy to trace which commit addressed a particular issue. For an intro about GitHub Issues, refer to our <a href="../chapters/issues.html">Issues chapter</a>. For example:</p>
+<p>If your project is connected to an issue tracker system (like GitHub Issues), it’s helpful to reference issue numbers in your commit messages. This makes it easy to trace which commit addressed a particular issue. For an introduction to GitHub Issues, refer to our <a href="../chapters/issues.html">Issues chapter</a>. For example:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -548,8 +550,7 @@ Tip&nbsp;6.2: Which files should I <em>not</em> track with Git?
 </section>
 <section id="avoid-committing-sensitive-information" class="level3" data-number="6.1.9">
 <h3 data-number="6.1.9" class="anchored" data-anchor-id="avoid-committing-sensitive-information"><span class="header-section-number">6.1.9</span> Avoid committing sensitive information</h3>
-<p>Be careful not to commit sensitive information such as passwords or personal data. Once something is committed, it becomes part of the repository’s history, making it difficult to completely remove later.</p>
-<p>You can use <code>.gitignore</code> files to exclude sensitive files from being tracked (details below).</p>
+<p>Be careful not to commit sensitive information such as passwords or personal data. Once something is committed, it becomes part of the repository’s history, making it difficult to completely remove later. You can use <code>.gitignore</code> files to exclude sensitive files from being tracked (details below).</p>
 </section>
 </section>
 <section id="logging-commits" class="level2" data-number="6.2">
@@ -597,7 +598,7 @@ Tip&nbsp;6.2: Which files should I <em>not</em> track with Git?
 </div>
 </div>
 <p><code>git log</code> is a very useful command because it provides a clear and organized view of a repository’s commit history. It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps.</p>
-<p>To exit the <code>git log</code>view and return to the regular Terminal, press the <kbd aria-hidden="true">q</kbd><span class="visually-hidden">q</span> key. This applies to both macOS and Windows systems.</p>
+<p>To exit the <code>git log</code> view and return to the regular Terminal, press the <kbd aria-hidden="true">q</kbd><span class="visually-hidden">q</span> key. This applies to both macOS and Windows systems.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git log` flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -638,7 +639,7 @@ What is <code>HEAD</code>?
 <section id="comparing-versions" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="comparing-versions"><span class="header-section-number">6.3</span> Comparing versions</h2>
 <p>Another very handy feature is the <code>git diff</code> command. It allows you to <strong>compare two different versions of your file(s)</strong>.</p>
-<p>By default it shows you any uncommitted changes since the last commit. You can explore this by pasting any additional text in your <code>.txt</code> file, for example:</p>
+<p>By default it shows you any uncommitted changes since the last commit. You can explore this by pasting any additional text in a <code>.txt</code> file, for example:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -665,10 +666,10 @@ What is <code>HEAD</code>?
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">+++</span> b/filename.txt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">@@</span> <span class="at">-0,0</span> +1 @@</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">+Lorem</span> ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">\ No</span> newline at end of file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>+++ b/filename.txt</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>@@ -0,0 +1 @@</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>\ No newline at end of file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>The output of <code>git diff</code> includes several pieces of information:</p>
@@ -677,6 +678,8 @@ What is <code>HEAD</code>?
 <li><code>@@ -0,0 +1 @@</code> is a unified diff header. It shows where the changes occurred. Note, that this line will look different for each change or commit.</li>
 <li><code>+</code> indicates added lines and <code>-</code> indicates removed lines. Lines that are identical between the two versions are not explicitly shown.</li>
 </ul>
+<section id="comparing-commits" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="comparing-commits"><span class="header-section-number">6.3.1</span> Comparing commits</h3>
 <p>You can also use <code>git diff</code> to <strong>compare two specific commits</strong>. For example, if you want to compare the current state of your file with a commit from a few commits ago:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -742,6 +745,7 @@ Common <code>git diff</code> flags
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="commit-hashes" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="commit-hashes"><span class="header-section-number">6.4</span> Commit hashes</h2>
