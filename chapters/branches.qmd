@@ -764,6 +764,13 @@ In this example, the graph shows that the `feature` branch has diverged from the
 The asterisk (`*`) represents commits, while the lines (`|`) show the relationships between these commits and branches.
 The `\` indicates that two branches (in this case, `main` and `feature`) have joined after being separate.
 
+Creating an [alias](setup.qmd#aliases) for this visualization command can be a good idea, as it will likely be used often and it's easy to forget to add some flags.
+After running the code below, you can simply use `git graph` instead of `git log --oneline --graph --all --decorate` for the same result ^[This alias was adopted from [coderefinery 2024](https://coderefinery.github.io/git-intro/aliases).].
+
+```{zsh, filename="Code"}
+git config --global alias.graph "log --oneline --graph --all --decorate"
+```
+
 ## Acknowledgements & further reading
 
 We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
@@ -775,7 +782,7 @@ We recommend these references for further reading:
 #| message: false
 #| warning: false
 #| output: asis
-bibtexkeys = c("GitHub2023", "chacon2014", "community2022", "amin2023")
+bibtexkeys = c("GitHub2023", "chacon2014", "community2022", "amin2023", "coderefinery2024")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
 
