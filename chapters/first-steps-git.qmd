@@ -43,7 +43,7 @@ git init
 
 You should see an output similar to:
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 Initialized empty Git repository in /foldername/.git/
 ```
@@ -82,7 +82,7 @@ It's essential to only modify Git repositories through Git commands and establis
 In short: Don't mess with the `.git` folder.
 :::
 
-::: {.callout-warning title="Undoing `git init`" collapse="true"}
+::: {.callout-warning title="Removing Git from a folder / undoing `git init`" collapse="true"}
 
 Short version (if you know what you are doing): To remove Git from a folder run:
 
@@ -119,7 +119,7 @@ git status
 
 If you initialized a new Git repository, you should see an output similar to the following:
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 On branch main
 
@@ -182,6 +182,14 @@ touch filename.txt
 
 You can also use any other method or application for creating files.
 
+::: {.callout-note title="Editing files while using Git"}
+Even though we are using Git from the command line, this does not mean that we have to do everything else from the command line as well.
+No matter if you are working on simple text files, analysis code, research data, or anything else in your Git repository, you can use any application you want.
+In the chapters on [command line](command-line.qmd) and [setup](setup.qmd), you learned a few ways to edit text files directly from the command line.
+While you are free to edit your files this way, it is absolutely not necessary just because we are using Git from the command line.
+More concretely, you can edit your files with any program you like and then go to the Terminal only to execute Git commands.
+:::
+
 ## Status, staging and committing 
 
 ### Checking the status of your Git repository again
@@ -189,7 +197,7 @@ You can also use any other method or application for creating files.
 After you initialized a Git repository and added a file, you can use `git status` to receive the current file tracking status from Git again.
 This time, you should see an output similar to the following:
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 On branch main
 
@@ -203,16 +211,22 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
+Git has noticed that you added a file to the repository and lists this file as an untracked file, meaning that it is not yet tracked by Git.
+Git also tells you what you can do about this, specifically using "`git add <file>`..." to include it in what will be committed.
+
 ### Introduction to staging and committing
 
 We will now introduce central concepts of Git that might not be super intuitive if you learn about them for the first time, so read carefully.
-After initializing a folder with Git, it's capable of recording changes in your files, but it won't do so automatically. 
+After initializing a folder with Git, it's capable of recording changes in your files, but it won't do so automatically.
 In Git, the process of saving changes involves two steps: the *staging area* and *commits*.
+
 The **staging area** is like a preparation area where you gather and organize your changes before saving them as a snapshot.
 You can choose which changes to include in a snapshot by adding them to the staging area using `git add`.
 Once you are happy with the changes in the staging area, you create a commit with `git commit`. 
+
 A **commit** is like taking a snapshot of your project at a specific moment, capturing all changes in the staging area and saving them as a new version of your project.
 Commits serve as milestones to track your project's progress and allow you to revert to previous versions if needed.
+
 As further introduction to the basic workflow of Git you can check out the last two minutes of the YouTube video: [Version control for reproducible research](https://www.youtube.com/watch?v=HMqUFlu0gFc&t=228s) from [BERD Academy](https://www.berd-nfdi.de/berd-academy/), which explains the process very vividly.
 
 ### Staging
@@ -220,7 +234,6 @@ As further introduction to the basic workflow of Git you can check out the last 
 You can use `git add` to place new or modified files in the staging area. 
 The staging area acts as a space for gathering changes you plan to commit shortly. 
 It bridges between your modified files and the next commit.
-
 For example, you can stage a specific file like this:
 
 ```{zsh filename="Code"}
@@ -229,7 +242,7 @@ git add filename.txt
 
 If you use `git status` again, your file(s) should now show up under "Changes to be committed".
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 On branch main
 
@@ -241,6 +254,15 @@ Changes to be committed:
 ```
 
 Your change to the file (or the addition of it to the project directory) is now **staged**.
+
+#### Staging all changes
+
+::: {.callout-warning title="Be careful when staging *all* files!" collapse="false"}
+Especially for existing project folders that have a lot of files in them, be careful when you stage and / or commit all files in the project directory.
+Git might start to track files that you are actually not interested in tracking or even sensitive files that should not be tracked by Git at all.
+We recommend to use `git status` frequently to check which files are in the staging area and will therefore be added to the next commit.
+:::
+
 Especially if you have many files, you don't have to add every file one by one, but you can simply use the `-A` flag.
 This means if you want to stage every file in your project for preparation of your next commit, you can use:
 
@@ -248,11 +270,11 @@ This means if you want to stage every file in your project for preparation of yo
 git add -A
 ```
 
-::: {.callout-warning title="Be careful when staging *all* files!" collapse="true"}
-Especially for existing project folders that have a lot of files in them, be careful when you stage and / or commit all files in the project directory.
-Git might start to track files that you are actually not interested in tracking.
-We recommend to use `git status` frequently to check which files are in the staging area and will therefore be added to the next commit.
-:::
+As an alternative, this command will also stage all changes:
+
+```{zsh filename="Code"}
+git add .
+```
 
 ::: {.callout-tip title="Common `git add` flags" collapse="true"}
 `-A`: 
@@ -287,7 +309,7 @@ git commit -m "Add filename.txt file"
 
 You should see output similar to the following:
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 [main (root-commit) e9ea807] Add filename.txt file
  1 file changed, 0 insertions(+), 0 deletions(-)
@@ -295,11 +317,10 @@ You should see output similar to the following:
 ```
 
 Congratulations!
-You have successfully created your first commit in the Git repository. :tada:
+You have successfully created your first commit in the Git repository! :tada:
 
 Commits are the core elements of version control and the "commit history" of your Git repository.
 They allow you to track the history of your project and easily revert changes if needed.
-
 You can use the same workflow of `git add` and `git commit` for every file you add or make changes in.
 
 {{< include ../faq/_quotation-marks.qmd >}}
