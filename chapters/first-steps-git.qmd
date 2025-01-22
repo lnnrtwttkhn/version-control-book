@@ -22,11 +22,19 @@ A repository is a regular folder on your computer that is tracked by Git.
 The full history of changes of a project and information about who changed what and when is also stored by Git in this folder.
 
 To create a new Git repository, you need to initialize a folder as a Git repository.
-First, let's create an empty folder using the command line^[:bulb: Tip: Use `mkdir FOLDER_NAME` (details [here](command-line.qmd#creating-a-folder))].
-Alternatively, you can create a new folder using the graphical user interface of your file browser.
-
-Next, use the command line to navigate to the folder which you want to initialize as a Git repository
+First, let's create an empty folder using the command line ^[:bulb: Tip: Use `mkdir FOLDER_NAME` (details [here](command-line.qmd#creating-a-folder))].
+Alternatively, you can create a new folder using the graphical user interface of your computer's file browser.
+Then use the command line to navigate to the folder which you want to initialize as a Git repository
 ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#navigating-the-file-system))].
+
+::: {.callout-warning title="Remember to always `cd` into your Git repository first!"}
+A Git repository is a regular folder on your computer that is tracked by Git.
+Git repositories can be located anywhere on your computer, depending on where *you* placed them.
+To run Git commands in a specific repository from the command line, always remember to navigate to the relevant folder on your computer first.
+When you open a new terminal, it usually starts in your home directory (at `Users/username`).
+As explained in the [command line](command-line.qmd) chapter, you can check your current working directory using the `pwd` ("print working directory") command and navigate to other folders using `cd` ("change directory").
+:::
+
 Once you are in the desired folder, run the `git init` command to initialize the folder as a Git repository:
 
 ```{zsh filename="Code"}
