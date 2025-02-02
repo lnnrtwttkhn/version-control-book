@@ -1,30 +1,520 @@
 ---
-author: ""
-title-block-style: none
+engine: knitr
+execute:
+  eval: false
+  echo: true
+format:
+  html:
+    code-overflow: scroll
+    code-line-numbers: true
 ---
 
 # Exercises {.unnumbered}
 
+Here is a collection of hands-on exercises to complement the chapters in the Version Control Book.
+These exercises can be used flexibly throughout a course about Git but also when you are learning on your own.
+
+## Instructions
+
+You can view the exercises by clicking on the boxes in the individual sections that correspond to one of the chapters.
+Try to solve the exercises on your own first before looking at the solutions.
+Please note that the solutions do not always implement the tasks exactly, but can also use variations to show that different approaches are possible or so it works automatically.
+If you want to start each exercise with a clean repository, you can download the repository of the previous solution as a `.zip` file and start the exercises in this repository.
+
+## Overview
+
+- [Command Line](#command-line)
+- [First Steps with Git](#first-steps-with-git)
+- [Branches](#branches)
+- [GitHub: Intro](#github-intro)
+- [GitHub: Advanced](#github-advanced)
+- [Tags and Releases](#tags-and-releases)
+- [Graphical User Interfaces](#graphical-user-interfaces)
+- [Stashing and Co.](#stashing-and-co.)
+
+## Command Line
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-cli.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+
+```{zsh filename="Code"}
+cd /path/to/your/chosen/directory # <1>
+```
+1. Navigate into the chosen location.
+Replace `/path/to/your/chosen/directory` with a path on your computer.
+A good location might be within your `/Documents` folder or a dedicated `/Projects` or `/University` folder.
+This can help to easily find course-related files on your computer.
+
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-cli-recipes.sh
+```
+{{< include ../exercises/_solutions-cli.qmd >}}
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-cli-city-guide.sh
+```
+{{< include ../exercises/_solutions-cli.qmd >}}
+:::
+
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-cli-recipes.txt
+```
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-cli-city-guide.txt
+```
+:::
+:::
+
+[Download `recipes` folder](../exercises-repos/recipes-cli.zip){.btn .btn-outline-primary role="button"}
+[Download `city-guide` folder](../exercises-repos/recipes-cli.zip){.btn .btn-outline-primary role="button"}
+
+## Setup
+
+### Configure Git
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-setup.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-setup-recipes.sh
+```
+{{< include ../exercises/_solutions-setup.qmd >}}
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-setup-city-guide.sh
+```
+{{< include ../exercises/_solutions-setup.qmd >}}
+:::
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Output", echo = seq(4, 18)}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-setup-recipes.txt
+```
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Output", echo = seq(4, 18)}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-setup-city-guide.txt
+```
+:::
+:::
+
+[Download `recipes` folder](../exercises-repos/recipes-setup.zip){.btn .btn-outline-primary role="button"}
+[Download `city-guide` folder](../exercises-repos/city-guide-setup.zip){.btn .btn-outline-primary role="button"}
+
 ## First steps with Git
 
-{{< include ../exercises/_exercises-firststeps.qmd >}}
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-first-steps-git.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-first-steps-git-recipes.sh
+```
+{{< include ../exercises/_solutions-first-steps-git-recipes.qmd >}}
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-first-steps-git-city-guide.sh
+```
+{{< include ../exercises/_solutions-first-steps-git-city-guide.qmd >}}
+:::
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-first-steps-git-recipes.txt
+```
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-first-steps-git-city-guide.txt
+```
+:::
+:::
+
+[Download `recipes` folder](../exercises-repos/recipes-first-steps.zip){.btn .btn-outline-primary role="button"}
+[Download `city-guide` folder](../exercises-repos/city-guide-first-steps.zip){.btn .btn-outline-primary role="button"}
+
+## Git Essentials
+
+### Amend a commit
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-essentials-amend.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-essentials-amend-recipes.sh
+```
+{{< include ../exercises/_solutions-essentials-amend.qmd >}}
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-essentials-amend-city-guide.sh
+```
+{{< include ../exercises/_solutions-essentials-amend.qmd >}}
+:::
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-essentials-amend-recipes.txt
+```
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-essentials-amend-city-guide.txt
+```
+:::
+:::
+
+[Download `recipes` folder](../exercises-repos/recipes-essentials-amend.zip){.btn .btn-outline-primary role="button"}
+[Download `city-guide` folder](../exercises-repos/city-guide-essentials-amend.zip){.btn .btn-outline-primary role="button"}
+
+### Create a `.gitignore` file
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-essentials-gitignore.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-essentials-gitignore-recipes.sh
+```
+{{< include ../exercises/_solutions-essentials-gitignore.qmd >}}
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-essentials-gitignore-city-guide.sh
+```
+{{< include ../exercises/_solutions-essentials-amend.qmd >}}
+:::
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-essentials-gitignore-recipes.txt
+```
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-essentials-gitignore-city-guide.txt
+```
+:::
+:::
+
+[Download `recipes` folder](../exercises-repos/recipes-essentials-gitignore.zip){.btn .btn-outline-primary role="button"}
+[Download `city-guide` folder](../exercises-repos/city-guide-essentials-gitignore.zip){.btn .btn-outline-primary role="button"}
 
 ## Branches
 
+### Create and merge a new branch
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
 {{< include ../exercises/_exercises-branches.qmd >}}
+:::
 
-## GitHub
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-branches-recipes.sh
+```
+{{< include ../exercises/_solutions-branches.qmd >}}
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-branches-city-guide.sh
+```
+{{< include ../exercises/_solutions-branches.qmd >}}
+:::
+:::
 
-{{< include ../exercises/_exercises-github.qmd >}}
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+::: {.panel-tabset}
+## {{< fa utensils >}} Recipes
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-branches-recipes.txt
+```
+## {{< fa tree-city >}} City Guide
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-branches-city-guide.txt
+```
+:::
+:::
+
+[Download the repository](../exercises-repos/recipes-branches.zip){.btn .btn-outline-primary role="button"}
+
+### Create and resolve a merge conflict
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-branches-merge-conflict.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-branches-merge-conflict.sh
+```
+{{< include ../exercises/_solutions-branches-merge-conflict.qmd >}}
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-branches-merge-conflict.txt
+```
+:::
+
+[Download `recipes` folder](../exercises-repos/recipes-branches.zip){.btn .btn-outline-primary role="button"}
+[Download `city-guide` folder](../exercises-repos/city-guide-branches.zip){.btn .btn-outline-primary role="button"}
+
+## Remotes: Intro
+
+### Connect to remote repositories using SSH
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-ssh.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-remotes-ssh.sh
+```
+{{< include ../exercises/_solutions-remotes-ssh.qmd >}}
+:::
+
+### Connect to GitHub using a PAT
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-pat.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+{{< include ../exercises/_solutions-remotes-pat.qmd >}}
+:::
+
+### Upload your local repository to a remote repository
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-push.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-remotes-push.sh
+```
+{{< include ../exercises/_solutions-remotes-push.qmd >}}
+:::
+
+### Add a `README.md`
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-readme.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+{{< include ../exercises/_solutions-remotes-readme.qmd >}}
+:::
+
+### "Private" collaboration with pull requests (using GitHub Flow)
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-collaboration.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-remotes-collaboration.sh
+```
+{{< include ../exercises/_solutions-remotes-collaboration.qmd >}}
+:::
+
+### Clone and sync your repository
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-clone.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-remotes-clone.sh
+```
+{{< include ../exercises/_solutions-remotes-clone.qmd >}}
+:::
+
+## Remotes: Advanced
+
+### "Public" collaboration with pull requests (using a fork and GitHub Flow)
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-forking.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+{{< include ../exercises/_solutions-remotes-forking.qmd >}}
+:::
+
+### Reviewing pull requests
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-remotes-pr-review.qmd >}}
+:::
 
 ## Tags and Releases
 
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
 {{< include ../exercises/_exercises-tags-releases.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+{{< include ../exercises/_solutions-tags-releases.qmd >}}
+:::
 
 ## Graphical User Interfaces
 
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
 {{< include ../exercises/_exercises-gui.qmd >}}
+:::
 
-## Stashing and Co.
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+{{< include ../exercises/_solutions-gui.qmd >}}
+:::
 
+## Stashing
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
 {{< include ../exercises/_exercises-stashing.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-stashing.sh
+```
+{{< include ../exercises/_solutions-stashing.qmd >}}
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-stashing.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-stashing.zip){.btn .btn-outline-primary role="button"}
+
+## Reverting
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-reverting.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-reverting.sh
+```
+{{< include ../exercises/_solutions-reverting.qmd >}}
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-reverting.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-reverting.zip){.btn .btn-outline-primary role="button"}
+
+## Rebasing
+
+::: {.callout-note title="Exercises" collapse="true" appearance="simple"}
+{{< include ../exercises/_exercises-rebasing.qmd >}}
+:::
+
+::: {.callout-tip title="Solutions" collapse="true" appearance="simple"}
+```{zsh, filename="Code"}
+#| eval: false
+#| file: code/code-exercises-rebasing.sh
+```
+{{< include ../exercises/_solutions-rebasing.qmd >}}
+:::
+
+::: {.callout-tip title="Command history" collapse="true" appearance="simple"}
+```{zsh, filename="Output"}
+#| code-copy: false
+#| eval: false
+#| file: exercises-repos/history-rebasing.txt
+```
+:::
+
+[Download the repository](../exercises-repos/recipes-rebasing.zip){.btn .btn-outline-primary role="button"}
+

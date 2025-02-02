@@ -14,29 +14,35 @@ abstract: |
 {{< include ../objectives/_objectives-gui.qmd >}}
 :::
 
-::: {.callout-note appearance="minimal"}
-<h5>Exercises</h5>
-{{< include ../exercises/_exercises-gui.qmd >}}
-:::
-
 ## Introduction to Git GUIs
 
-Graphical User Interfaces (GUIs) offer a more user-friendly way to work with Git compared to the [command-line](command-line.qmd), using visuals instead of text commands.
+Graphical User Interfaces (GUIs) offer a more user-friendly way to work with Git compared to the [command-line](command-line.qmd), using visual buttons and indicators instead of text commands.
 They show your project's history, branches, and changes in a more colorful and easy-to-understand manner.
 
-They make Git seem less scary and more accessible to everyone, helping you manage your code, without the hassle of remembering complex commands.
+GUIs make Git appear less scary and more accessible to everyone, helping you manage your code, without the hassle of remembering complex text-based commands in the command-line.
 While Git GUIs offer a user-friendly approach to version control, they come with a few limitations.
 One notable drawback is their reduced flexibility compared to the command-line interface.
 GUIs are designed to simplify common tasks, but more advanced or customized operations may be challenging to perform within a graphical environment.
 Despite their user-friendly design, understanding the underlying Git concepts and the specific workflow of a GUI is still very important.
 
-As this book primarily emphasizes teaching Git through the [command line](command-line.qmd) interface, it will only feature a short introduction, not extensive tutorials for GUI tools.
+As this book primarily emphasizes learning Git through the [command line](command-line.qmd) interface, this chapter will only feature a short introduction, but not extensive tutorials for GUI tools.
 
 ## Popular Git GUIs
 
-There is a wide variety of Git GUIs available, each of them offers its own set of features and benefits, catering to different preferences and workflows.
+There is a wide variety of Git GUIs available, and each of them offers its own set of features and benefits, catering to different preferences and workflows.
 In this section, we will focus on [GitHub Desktop](https://desktop.github.com) and [GitKraken](https://www.gitkraken.com), although many more options exist.
 For a more comprehensive overview, you can explore the [official Git website](https://git-scm.com/downloads/guis/).
+
+::: {.callout-tip title="How do GitHub Desktop and GitKraken differ and which should I choose?" collapse="true"}
+Whilst it is possible to switch between different GUIs or use multiple at the same time, you might just want to focus on one.
+If that's the case, here are some considerations regarding GitHub Desktop and GitKraken that could help you decide which one is a better fit for you and your projects.  
+First of all, for Linux users, GitHub Desktop simply doesn't offer an official version. 
+Another factor can be cost, as GitHub Desktop is free to use, while GitKraken is only free for students or during a 7-day trial period. 
+Overall, GitHub Desktop offers a simpler interface, making it more intuitive for beginners.
+However, this simplicity comes at the cost of having fewer features compared to GitKraken, which could be limiting if you want to perform more complex tasks.
+GitHub Desktop is very well integrated with GitHub, but can be restricting if you want to work with repositories hosted on other platforms. 
+In that case, GitKraken offers better support for a wider range of Git hosting services.
+:::
 
 ### {{< fa brands github >}} GitHub Desktop
 
@@ -61,16 +67,15 @@ This setup makes it easy to dive into version control tasks like handling branch
 
 For a more extensive GitHub Desktop tutorial, you can check out the [GitHub documentation](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop).
 
-In general, GitHub Desktop's primary advantage lies in its integration with [github.com](github.com).
-The interface is simple and user-friendly.
-A significant drawback of relying on GitHub Desktop is its strong tie to the GitHub platform.
-This dependency can be limiting if you're looking to work with repositories on alternative Git hosting services.
+GitHub Desktop's interface is simple and user-friendly.
+Its primary advantage lies in its integration with [GitHub](github.com).
+However, this dependency can also be limiting if you're looking to work with repositories on alternative Git hosting services.
 
 ### {{< fa brands gitkraken >}} GitKraken
 
 #### Download
 
-GitKraken is a third-party program and another very popular git GUI client for Windows, macOS and Linux.
+GitKraken is a third-party program and another very popular Git GUI for Windows, macOS and Linux.
 You can download it from the [official website](https://www.gitkraken.com).
 Normally, GitKraken only offers a free seven-day trial period.
 However, if you are a student, you can get it for free, through the [GitHub Student Developer Pack](https://www.gitkraken.com/github-student-developer-pack).
@@ -106,9 +111,9 @@ If you hover over the changed lines you will see the option to "Stage this Line"
 To stage multiple lines at the same time, highlight the ones you want to stage, do a right-click and select "Stage selected lines".
 You can also stage the whole file or "hunk" and unstage specific changes.
 
-![Screenshot of Rstudio. Showing staging an example file.](../static/gitkraken-staging.png){#fig-GK_staging}
+![Screenshot of GitKraken. Showing staging an example file.](../static/gitkraken-staging.png){#fig-GK_staging}
 
-::: {.callout-tip title="What is a hunk?" collapse="true"}
+::: {.callout-tip title="Find out more: What is a hunk?" collapse="true"}
 In Git, a "hunk" refers to a distinct block of code changes within a file.
 It represents a cohesive set of added, modified, or deleted lines in a specific location.
 Git automatically divides changes into hunks to facilitate easier review, selective staging, and conflict resolution during version control operations.
@@ -145,10 +150,10 @@ After cloning a remote repository or opening a local Git repository folder, you 
 The Git tab within the upper right panel enables you to stage, commit, push and pull changes.
 The branches tab in the Git pane displays a list of available branches, making it straightforward to switch between them.
 
-![Screenshot of Rstudio. Showing an example repository.](../static/rstudio-panels.png){#fig-Rstudio_window}
+![Screenshot of RStudio. Showing an example repository.](../static/rstudio-panels.png){#fig-Rstudio_window}
 
 Clicking "Commit" will open up a window, where you see your changes marked with colors.
-You also easily write commit message and have the option to amend your last command.
+You can also easily write a commit message and have the option to amend your last command.
 It is also possible to stage specific lines.
 
 ![Screenshot of Rstudio. Showing an example commit.](../static/rstudio-commit.png){#fig-Rstudio_commit}

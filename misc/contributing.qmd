@@ -1,8 +1,3 @@
----
-author: ""
-title-block-style: none
----
-
 ```{r}
 #| eval: true
 #| include: false
@@ -22,7 +17,7 @@ library("data.table")
 
 @sec-code: This section explains how to **add code snippets**.
 
-@sec-images: This section explains how to **add images**.
+@sec-images: This section e explains how to **add images**.
 
 @sec-references: This section explains how to **add references**.
 
@@ -443,14 +438,14 @@ You need to install the following packages:
 
 ```{bash}
 brew install wget
-````
+```
 
 [GNU Make](https://www.gnu.org/software/make/) should already be installed.
 Try by entering the following command into the Terminal:
 
 ```{bash}
 make --version
-````
+```
 
 ## {{< fa brands windows >}}
 
@@ -468,7 +463,7 @@ TBA
 After you installed all the required software, run this command:
 
 ```{bash}
-make download-images
+make static
 ```
 
 ::: {.callout-tip title="What's a Makefile and what does it do?" collapse="true"}
@@ -494,8 +489,8 @@ Please use `-` to separate word in the filename.
 
 ### Download images in pre-render command
 
-It's also possible to include the `make download-images` as a project script in the `pre-render` script.
-This would re-execute `make download-images` before every render.
+It's also possible to include the `make static` as a project script in the `pre-render` script.
+This would re-execute `make static` before every render.
 For the moment, we disabled this option, but it can be enabled in `_quarto.yml`.
 
 ## Variables {#sec-variables}
