@@ -1,0 +1,16 @@
+1. Navigate into the `recipes` repository using `cd` (or a similar path).
+1. Create a new branch called `feature/revert-exercise` using `git branch`.
+1. Switch to the new branch using `git switch`.
+Alternatively, you could have also done the two last steps with one command using `git checkout -b feature/revert-exercise`.
+1. Make any change to any of the files in your project directory.
+Here, we use the `echo` command to append text to the end of `recipes.txt`.
+1. Stage your change using `git add <filename>`.
+1. Commit your changes using `git commit -m "Commit message"`.
+1. Retrieve the commit hash of the last commit using `git log`.
+Here, we save the commit hash as variable and use this variable in the next step.
+Normally, you would just run `git log` and find the hash of the commit that you want to revert.
+(This code does this differently for automation) 
+You can also use `git log -1` to only see your most recent commit.
+1. Revert the commit using `git revert <commithash>`.
+This will open your editor where you can specify a commit message for the revert.
+If you use the `--no-edit` flag, Git will use a default commit message.
