@@ -1009,7 +1009,20 @@ Finding the tilde (<code>~</code>) on your keyboard
 <p>In this section, we provide some tips and tricks to help you become more efficient when using the command line and execute commands cleanly.</p>
 <section id="autocompletion" class="level3" data-number="2.6.1">
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="autocompletion"><span class="header-section-number">2.6.1</span> Autocompletion</h3>
-<p>While using the command line, instead of typing out the full command or path, you can press the <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> (<code>Tab</code>) key to automatically complete the rest of the command. Begin typing a command or the initial letters of a file or directory, for example:</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Autocompletion options depend on your shell!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Autocompletion options depend on your shell!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unfortunately this feature is not available in all basic Shell versions. In Zsh and Powershell the autocompletion feature described here is available by default. In Bash, extensions have to be installed to get the same effect.</p>
+</div>
+</div>
+<p>While using the command line in Zsh or Powershell, instead of typing out the full command or path, you can press the <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> (<code>Tab</code>) key to automatically complete the rest of the command. Begin typing a command or the initial letters of a file or directory, for example:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -1037,7 +1050,8 @@ Finding the tilde (<code>~</code>) on your keyboard
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>Documents/  Downloads/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Auto-completion also works for system commands. For example, typing <code>ls</code> (you will find out more about this command <a href="#list-files-and-folders">below</a>) and pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> might complete it to <code>ls -l</code> or <code>ls -a</code>. Auto-completion also works for the Git commands that will be introduced in the following chapters of this book. You can also cycle <em>backwards</em> through autocompleted options by holding <kbd aria-hidden="true">Shift</kbd><span class="visually-hidden">Shift</span> (<code>Shift</code>), then pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span>.</p>
+<p>Similarly, in Bash, when pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> twice, it will return a list of the possible options, but won’t cycle through them.</p>
+<p>For Zsh and Powershell, autocompletion also works for system commands. For example, typing <code>ls</code> (you will find out more about this command <a href="#list-files-and-folders">below</a>) and pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> might complete it to <code>ls -l</code> or <code>ls -a</code>. Auto-completion also works for the Git commands that will be introduced in the following chapters of this book. You can also cycle <em>backwards</em> through autocompleted options by holding <kbd aria-hidden="true">Shift</kbd><span class="visually-hidden">Shift</span> (<code>Shift</code>), then pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span>.</p>
 </section>
 <section id="command-history" class="level3" data-number="2.6.2">
 <h3 data-number="2.6.2" class="anchored" data-anchor-id="command-history"><span class="header-section-number">2.6.2</span> Command history</h3>
@@ -1247,7 +1261,7 @@ Finding the tilde (<code>~</code>) on your keyboard
 </div>
 </details>
 <div id="tip-only-hidden" class="callout callout-style-default callout-tip callout-titled" title="How can I list *only* hidden files?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1256,7 +1270,7 @@ Tip&nbsp;2.4: How can I list <em>only</em> hidden files?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To list <em>only</em> hidden files, you can run the following command:</p>
 <div class="cell">
@@ -1290,7 +1304,7 @@ Tip&nbsp;2.4: How can I list <em>only</em> hidden files?
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="What do `.` and `..` mean in the output of `ls -a`?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1299,7 +1313,7 @@ What do <code>.</code> and <code>..</code> mean in the output of <code>ls -a</co
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In the output of <code>ls -a</code>, you will see both <code>.</code> and <code>..</code> listed, alongside other files in your directory:</p>
 <div class="cell" data-code-copy="false">
@@ -1375,55 +1389,55 @@ Be cautious when modifying hidden files!
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
 <div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 364K</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 19 runner docker 4.0K Feb  2 00:49 .</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  2 00:40 ..</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Feb  2 00:40 .Renviron</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Feb  2 00:40 .Rprofile</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.7K Feb  2 00:40 .all-contributorsrc</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   81 Feb  2 00:40 .codespellrc</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Feb  2 00:49 .git</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  2 00:40 .github</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  193 Feb  2 00:40 .gitignore</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Feb  2 00:49 .quarto</span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Feb  2 00:40 .zenodo.json</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Feb  2 00:40 CITATION.cff</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Feb  2 00:40 LICENSE</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  575 Feb  2 00:40 Makefile</span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  11K Feb  2 00:40 README.md</span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  935 Feb  2 00:40 _affiliations.yml</span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  863 Feb  2 00:40 _authors.yml</span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:49 _book</span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  939 Feb  2 00:40 _courses.yml</span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  2 00:40 _extensions</span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   97 Feb  2 00:40 _metadata.yml</span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.4K Feb  2 00:40 _quarto.yml</span>
-<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.1K Feb  2 00:40 _variables.yml</span>
-<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:50 chapters</span>
-<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.6K Feb  2 00:40 cheatsheet.json</span>
-<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Feb  2 00:40 chicago-author-date-note.csl</span>
-<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  2 00:49 city-guide</span>
-<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:40 code</span>
-<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  507 Feb  2 00:49 contents-listing.json</span>
-<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  56K Feb  2 00:49 contents.html</span>
-<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  636 Feb  2 00:40 contents.qmd</span>
-<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  265 Feb  2 00:40 custom.scss</span>
-<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:40 exercises</span>
-<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:49 exercises-repos</span>
-<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:40 faq</span>
-<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Feb  2 00:40 functions.R</span>
-<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  145 Feb  2 00:40 github-buttons.html</span>
-<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  45K Feb  2 00:49 index.html</span>
-<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.2K Feb  2 00:40 index.qmd</span>
-<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:49 misc</span>
-<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:40 objectives</span>
-<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Feb  2 00:40 plausible.html</span>
-<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  2 00:49 recipes</span>
-<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Feb  2 00:40 references.bib</span>
-<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Feb  2 00:42 renv</span>
-<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  15K Feb  2 00:40 renv.lock</span>
-<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Feb  2 00:49 site_libs</span>
-<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  2 00:49 static</span>
-<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Feb  2 00:40 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 19 runner docker 4.0K Feb  4 06:26 .</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  4 06:15 ..</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   36 Feb  4 06:15 .Renviron</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   48 Feb  4 06:15 .Rprofile</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.7K Feb  4 06:15 .all-contributorsrc</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   81 Feb  4 06:15 .codespellrc</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Feb  4 06:26 .git</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  4 06:15 .github</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  193 Feb  4 06:15 .gitignore</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner docker 4.0K Feb  4 06:26 .quarto</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  925 Feb  4 06:15 .zenodo.json</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  992 Feb  4 06:15 CITATION.cff</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  20K Feb  4 06:15 LICENSE</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  575 Feb  4 06:15 Makefile</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  11K Feb  4 06:15 README.md</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  935 Feb  4 06:15 _affiliations.yml</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  863 Feb  4 06:15 _authors.yml</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:26 _book</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  939 Feb  4 06:15 _courses.yml</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  4 06:15 _extensions</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker   97 Feb  4 06:15 _metadata.yml</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.4K Feb  4 06:15 _quarto.yml</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 3.1K Feb  4 06:15 _variables.yml</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:26 chapters</span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.6K Feb  4 06:15 cheatsheet.json</span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  23K Feb  4 06:15 chicago-author-date-note.csl</span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  4 06:26 city-guide</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:15 code</span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  507 Feb  4 06:26 contents-listing.json</span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  56K Feb  4 06:26 contents.html</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  636 Feb  4 06:15 contents.qmd</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  265 Feb  4 06:15 custom.scss</span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:15 exercises</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:26 exercises-repos</span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:15 faq</span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 2.4K Feb  4 06:15 functions.R</span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  145 Feb  4 06:15 github-buttons.html</span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  45K Feb  4 06:26 index.html</span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker 6.2K Feb  4 06:15 index.qmd</span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:26 misc</span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:15 objectives</span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  118 Feb  4 06:15 plausible.html</span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner docker 4.0K Feb  4 06:26 recipes</span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  12K Feb  4 06:15 references.bib</span>
+<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner docker 4.0K Feb  4 06:18 renv</span>
+<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  15K Feb  4 06:15 renv.lock</span>
+<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner docker 4.0K Feb  4 06:26 site_libs</span>
+<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner docker 4.0K Feb  4 06:26 static</span>
+<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner docker  211 Feb  4 06:15 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -1534,7 +1548,7 @@ Be aware <em>where</em> you are creating new directories!
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Error `File exists`">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1543,7 +1557,7 @@ Error <code>File exists</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>By default, you can’t overwrite existing directories and will receive a warning when run <code>mkdir</code> already exists. Try repeating the previous <code>mkdir</code> command. You will receive an error like this:</p>
 <div class="cell" data-code-copy="false">
@@ -1702,7 +1716,7 @@ Error <code>File exists</code>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="FAQ: &quot;I forgot to close the quotation marks of my commit message! What do I do?&quot;">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1711,7 +1725,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In this situation, you command line probably looks like one of these examples:</p>
 <div class="cell" data-code-copy="false">
@@ -1780,7 +1794,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </div>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb64"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Current</span> date: Sun Feb  2 00:50:01 UTC 2025</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Current</span> date: Tue Feb  4 06:26:51 UTC 2025</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1814,7 +1828,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </div>
 <p>This adds the provided text <em>to the existing content</em> of the text file.</p>
 <div class="callout callout-style-default callout-warning callout-titled" title="Difference between using `>>` or `>` with `echo` when writing short text into files">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1823,7 +1837,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>When you use the command <code>echo "Git is cool" &gt;&gt; file.txt</code>, it will <strong>append the text</strong> “Git is cool” to the end of the file <code>file.txt</code>. If the file does not exist, it will be created and the text “Git is cool” will be added. If the file already contains other text, the “Git is cool” text will be added after the existing text at the end of the file.</p>
 <p>On the other hand, when you use the command <code>echo "Git is cool" &gt; file.txt</code>, it will write the text “Git is cool” to a file named <code>file.txt</code>. <strong>If the file already exists, it will overwrite its contents</strong> with the new text “Git is cool”.</p>
@@ -1946,7 +1960,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="You can't be *inside* a folder when renaming it.">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1955,7 +1969,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Note that you can’t be <em>inside</em> a folder when renaming it (your current working directory is the folder that you want to rename) but you have to be in its parent directory. Let’s say that you try to rename the subfolder but you are <em>inside</em> the folder (check with <code>pwd</code>), you will receive an error like this:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -2110,16 +2124,16 @@ You can’t be <em>inside</em> a folder when renaming it.
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb81"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  935 Feb  2 00:40 _affiliations.yml</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  863 Feb  2 00:40 _authors.yml</span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  939 Feb  2 00:40 _courses.yml</span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker   97 Feb  2 00:40 _metadata.yml</span>
-<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.4K Feb  2 00:40 _quarto.yml</span>
-<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.1K Feb  2 00:40 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  935 Feb  4 06:15 _affiliations.yml</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  863 Feb  4 06:15 _authors.yml</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  939 Feb  4 06:15 _courses.yml</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker   97 Feb  4 06:15 _metadata.yml</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.4K Feb  4 06:15 _quarto.yml</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 3.1K Feb  4 06:15 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What does this output mean?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2128,7 +2142,7 @@ What does this output mean?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The first column (<code>-rw-r--r--</code>) represents the file permissions. In Unix-like systems, it shows who can read, write, or execute the file. In this case, the files are readable and writable by the owner (<code>rw-</code>), readable by the group (<code>r--</code>), and readable by others (<code>r--</code>).</p>
 <p>The second column (<code>1</code>) indicates the number of hard links to the file.</p>
@@ -2156,8 +2170,8 @@ What does this output mean?
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb83"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  45K Feb  2 00:49 index.html</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 6.2K Feb  2 00:40 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker  45K Feb  4 06:26 index.html</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner docker 6.2K Feb  4 06:15 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>
@@ -2166,7 +2180,7 @@ What does this output mean?
 <h3 data-number="2.8.11" class="anchored" data-anchor-id="removing-files-and-folders"><span class="header-section-number">2.8.11</span> Removing files and folders</h3>
 <p>To delete files and folders, you can use the <code>rm</code> command. Provide the path of the files or folders that you want to delete as the argument. However, if you want to remove a folder, you need to include the <code>-r</code> (or <code>--recursive</code>) flag.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Warning: Be careful when using the `rm` command!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2175,7 +2189,7 @@ Warning: Be careful when using the <code>rm</code> command!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse show">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>When you use the <code>rm</code> command to delete files, they are <strong>removed entirely (!!!)</strong> from your system and cannot be retrieved from a “Recycle Bin” or “Trash” as when you delete files using the file browser!</p>
 </div>
