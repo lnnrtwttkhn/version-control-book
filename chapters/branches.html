@@ -1221,6 +1221,18 @@ Common <code>git rebase</code> flags
 </div>
 </div>
 <p>In this example, the graph shows that the <code>feature</code> branch has diverged from the <code>main</code> branch and is currently ahead of <code>main</code> by two commits. The asterisk (<code>*</code>) represents commits, while the lines (<code>|</code>) show the relationships between these commits and branches. The <code>\</code> indicates that two branches (in this case, <code>main</code> and <code>feature</code>) have joined after being separate.</p>
+<section id="creating-an-alias" class="level4" data-number="7.12.0.1">
+<h4 data-number="7.12.0.1" class="anchored" data-anchor-id="creating-an-alias"><span class="header-section-number">7.12.0.1</span> Creating an alias</h4>
+<p>Creating an <a href="../chapters/setup.html#aliases">alias</a> for this visualization command can be a good idea, as it will likely be used often, and it’s easy to forget to add some flags. After running the command below, you can simply use <code>git graph</code> instead of <code>git log --oneline --graph --all --decorate</code> for the same result <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> alias.graph <span class="st">"log --oneline --graph --all --decorate"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
 </section>
 <section id="acknowledgements-further-reading" class="level2" data-number="7.13">
 <h2 data-number="7.13" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">7.13</span> Acknowledgements &amp; further reading</h2>
@@ -1258,6 +1270,13 @@ Common <code>git rebase</code> flags
 <td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-nc/4.0/%7D%7BCC%20BY-NC%204.0%7D.%20Source:%20\href%7Bhttps://docs.github.com/en%7D%7Bhttps://docs.github.com/en%7D"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="coderefinery2024">CodeRefinery (<a href="../misc/references.html#ref-coderefinery2024" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;">Introduction to Version Control with Git. Aliases and Configuration</td>
+<td style="text-align: left;"><a href="https://coderefinery.github.io/git-intro/aliases"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/coderefinery/git-intro"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;"><span class="citation" data-cites="amin2023">Amin (<a href="../misc/references.html#ref-amin2023" role="doc-biblioref">2023</a>)</span></td>
 <td style="text-align: left;">Naming conventions for Git Branches — a Cheatsheet</td>
 <td style="text-align: left;"><a href="https://medium.com/@abhay.pixolo/naming-conventions-for-git-branches-a-cheatsheet-8549feca2534"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
@@ -1376,6 +1395,9 @@ Amin, Abhay. 2023. <span>“Naming Conventions for Git Branches — a Cheatsheet
 <div id="ref-chacon2014" class="csl-entry" role="listitem">
 Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
 </div>
+<div id="ref-coderefinery2024" class="csl-entry" role="listitem">
+CodeRefinery. 2024. <em>Introduction to Version Control with Git. Aliases and Configuration</em>. coderefinery. <a href="https://coderefinery.github.io/git-intro/aliases">https://coderefinery.github.io/git-intro/aliases</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/coderefinery/git-intro" class="uri">https://github.com/coderefinery/git-intro</a>. Website: <a href="https://coderefinery.github.io/git-intro/aliases" class="uri">https://coderefinery.github.io/git-intro/aliases</a>.
+</div>
 <div id="ref-GitHub2023" class="csl-entry" role="listitem">
 GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en">https://docs.github.com/en</a>.
 </div>
@@ -1388,6 +1410,7 @@ The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible,
 <hr>
 <ol>
 <li id="fn1"><p><span class="emoji" data-emoji="bulb">💡</span> Tip: If your default branch is called <code>master</code>, you can use <code>git branch -m master main</code> to rename your default branch to <code>main</code> (for details, see the <a href="../chapters/setup.html">setup</a> chapter).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This alias was adopted from <a href="https://coderefinery.github.io/git-intro/aliases">CodeRefinery 2024</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
