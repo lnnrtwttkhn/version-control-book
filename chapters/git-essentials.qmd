@@ -566,6 +566,11 @@ Should `.DS_Store` be tracked by Git, this can lead to unnecessary version confl
 3. **Irrelevant for collaborators with another operating system**: Anyone else who is not using macOS (for example, Windows or Linux users) do not need these files and they serve no purpose for them.
 Including `.DS_Store` in the repository could confuse contributors who are not using macOS.
 
+4. **Possible Privacy Concerns**: Whilst rare, there can be information included in `.DS_Store` files, that could be considered private.
+However, if one didn't specifically put private information into the `.DS_Store` files, this should not be an issue, as usually no private information is included in them.
+If one is only sharing a `.DS_Store` file and not the repository, the names of subfolders and files are listed there and can reveal information about the repository.
+Whilst good to know, this concern is likely not the main reason for keeping `.DS_Store` out of repositories.
+
 To add `.DS_Store` to `.gitignore`, you can include the following line in your `.gitignore` file:
 
 ```{zsh filename="Code"}
