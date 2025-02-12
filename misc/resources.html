@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Courses – The Version Control Book</title>
+<title>Resources – The Version Control Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -29,8 +49,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../misc/references.html" rel="next">
-<link href="../misc/resources.html" rel="prev">
+<link href="../misc/courses.html" rel="next">
+<link href="../misc/cheatsheet.html" rel="prev">
 <link href="../static/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../misc/courses.html">Courses</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../misc/resources.html">Resources</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -228,13 +248,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../misc/resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../misc/resources.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../misc/courses.html" class="sidebar-item-text sidebar-link active">
+  <a href="../misc/courses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Courses</span></a>
   </div>
 </li>
@@ -261,20 +281,44 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#git-for-beginners" id="toc-git-for-beginners" class="nav-link active" data-scroll-target="#git-for-beginners">Git for beginners</a>
+  <ul class="collapse">
+  <li><a href="#the-turing-way-version-control" id="toc-the-turing-way-version-control" class="nav-link" data-scroll-target="#the-turing-way-version-control">The Turing Way: Version Control</a></li>
+  <li><a href="#software-carprentry-version-control-with-git" id="toc-software-carprentry-version-control-with-git" class="nav-link" data-scroll-target="#software-carprentry-version-control-with-git">Software Carprentry: Version Control with Git</a></li>
+  <li><a href="#pro-git" id="toc-pro-git" class="nav-link" data-scroll-target="#pro-git">Pro Git</a></li>
+  </ul></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a>
+  <ul class="collapse">
+  <li><a href="#official-github-documentation" id="toc-official-github-documentation" class="nav-link" data-scroll-target="#official-github-documentation">Official GitHub documentation</a></li>
+  </ul></li>
+  <li><a href="#git-with-r" id="toc-git-with-r" class="nav-link" data-scroll-target="#git-with-r">Git with R</a>
+  <ul class="collapse">
+  <li><a href="#happy-git-with-r" id="toc-happy-git-with-r" class="nav-link" data-scroll-target="#happy-git-with-r">Happy Git with R</a></li>
+  </ul></li>
+  <li><a href="#version-control-of-data" id="toc-version-control-of-data" class="nav-link" data-scroll-target="#version-control-of-data">Version Control of Data</a>
+  <ul class="collapse">
+  <li><a href="#datalad" id="toc-datalad" class="nav-link" data-scroll-target="#datalad">DataLad</a></li>
+  <li><a href="#the-datalad-handbook" id="toc-the-datalad-handbook" class="nav-link" data-scroll-target="#the-datalad-handbook">The DataLad Handbook</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/resources.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Courses</h1>
+<h1 class="title">Resources</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -286,64 +330,188 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Have you used the Version Control Book in a course?">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Have you used the Version Control Book in a course?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Have you used this online guide as a learning resource for your course? We would love to hear from you! Let us know via <a href="mailto:">email</a>, open a <a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new">new issue</a> or create a pull request that is editing the content of this site and let us know about your course!</p>
-</div>
-</div>
-<p>Here is a list of courses that have used this online book as a learning resource:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<section id="git-for-beginners" class="level2">
+<h2 class="anchored" data-anchor-id="git-for-beginners">Git for beginners</h2>
+<section id="the-turing-way-version-control" class="level3">
+<h3 class="anchored" data-anchor-id="the-turing-way-version-control">The Turing Way: Version Control</h3>
+<p>The <a href="https://www.turing.ac.uk/research/research-projects/turing-way">Turing Way</a> is a community-driven, open-source project developed by <a href="https://www.turing.ac.uk">The Alan Turing Institute</a>. Its primary goal is to provide guidance on conducting reproducible, ethical, and collaborative data science. The project aims to make data science accessible and inclusive by offering a set of resources, guidelines, and best practices. The Turing Way Handbook is organized into multiple chapters, each focusing on different aspects of data science and research methodology. The chapter on Version Control in The Turing Way Handbook is dedicated to teaching users the fundamentals and benefits of using version control systems, with a particular focus on Git. It not only teaches the technical aspects of version control but also embeds these practices within the broader context of reproducibility and collaboration in research.</p>
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Course Name</th>
-<th style="text-align: right;">Number of Participants</th>
-<th style="text-align: left;">Target Audience</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
 <th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Effective Progress Tracking and Collaboration: An Introduction to Version Control of Code and Data</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">Master + PhD students</td>
-<td style="text-align: left;">Winter semester 23/24</td>
-<td style="text-align: left;">Universität Hamburg</td>
-<td style="text-align: left;"><a href="https://lennartwittkuhn.com/version-control-course-uhh-ws23/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Track, organize and share your work: An introduction to Git for psychological research</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: left;">Master Students</td>
-<td style="text-align: left;">Summer semester 24</td>
-<td style="text-align: left;">Universität Hamburg</td>
-<td style="text-align: left;"><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Track, organize and share your work: An introduction to Git for research</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">Research staff</td>
-<td style="text-align: left;">2024-06-21</td>
-<td style="text-align: left;">Max Planck Institute for Human Development Berlin</td>
-<td style="text-align: left;"><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><span class="citation" data-cites="community2022">The Turing Way Community (<a href="references.html#ref-community2022" role="doc-biblioref">2022</a>)</span></td>
+<td style="text-align: left;">The Turing Way: A handbook for reproducible, ethical and collaborative research</td>
+<td style="text-align: left;"><a href="https://book.the-turing-way.org/reproducible-research/vcs"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/the-turing-way/the-turing-way"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+<section id="software-carprentry-version-control-with-git" class="level3">
+<h3 class="anchored" data-anchor-id="software-carprentry-version-control-with-git">Software Carprentry: Version Control with Git</h3>
+<p><a href="https://carpentries.org">The Carpentries</a> is a non-profit organization that teaches foundational coding, data science, and computational skills to researchers, scientists, educators, and data professionals. The Carpentries organizes and runs workshops around the world, focusing on teaching foundational skills in programming, version control, data analysis, and more. <a href="https://software-carpentry.org/lessons/index.html">Software Carpentry</a> is one of the key programs under the broader Carpentries umbrella, focused on teaching researchers and professionals foundational software skills that are essential for effective and reproducible computational research. The “Software Carpentry: Version Control” with Git session is a good, comprehensive and beginner-friendly introduction to Git. However, topics like branching strategies, rebasing, stashing, and cherry-picking, which are crucial for more complex workflows, are not covered.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="koziar2023">Koziar et al. (<a href="references.html#ref-koziar2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">Software Carpentry: Version Control with Git</td>
+<td style="text-align: left;"><a href="https://swcarpentry.github.io/git-novice/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/swcarpentry/git-novice"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pro-git" class="level3">
+<h3 class="anchored" data-anchor-id="pro-git">Pro Git</h3>
+<p>The Pro Git book is a standard resource for learning Git, offering a comprehensive and in-depth guide to version control with Git. Written by Scott Chacon and Ben Straub, the book covers everything from the basics of Git to advanced topics like branching strategies, workflows, and Git internals. The book is available for free online, making it an excellent resource for anyone looking to deepen their understanding of Git. However, the Pro Git book can be dense, and some sections may feel overwhelming for newcomers. Additionally, while it’s very thorough, users looking for quick, specific answers might find the book’s extensive coverage a bit too detailed. Despite these drawbacks, the Pro Git book is one of the best resources available for mastering Git.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="chacon2014">Chacon and Straub (<a href="references.html#ref-chacon2014" role="doc-biblioref">2014</a>)</span></td>
+<td style="text-align: left;">Pro Git</td>
+<td style="text-align: left;"><a href="https://git-scm.com/book/en/v2"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a></td>
+<td style="text-align: left;"><a href="https://github.com/progit/progit2"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="github" class="level2">
+<h2 class="anchored" data-anchor-id="github">GitHub</h2>
+<section id="official-github-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="official-github-documentation">Official GitHub documentation</h3>
+<p>The official GitHub resources are essential for anyone working with Git and GitHub. They offer clear, detailed guidance on using GitHub for version control, collaboration, and project management, covering everything from basic Git commands to advanced features like Actions, Pull Requests, and Issues. The documentation is well-organized and comprehensive. A downside is that the documentation can sometimes be overwhelming due to its depth and the wide range of topics it covers.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="GitHub2023">GitHub (<a href="references.html#ref-GitHub2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">GitHub Docs</td>
+<td style="text-align: left;"><a href="https://docs.github.com/en"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
+<td style="text-align: left;"><a href="https://docs.github.com/en"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="git-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="git-with-r">Git with R</h2>
+<section id="happy-git-with-r" class="level3">
+<h3 class="anchored" data-anchor-id="happy-git-with-r">Happy Git with R</h3>
+<p><a href="https://jennybryan.org">Jennifer Bryan</a> is a prominent figure in the data science and statistics community, particularly known for her work in the R programming language. She is a statistician, data scientist, educator, and open-source advocate with a record in the fields of data analysis, data visualization, and reproducible research. “Happy Git with R” is a user-friendly guide authored by her that focuses on helping R users integrate Git and GitHub into their data science workflows. The guide is particularly useful for those working in data science and using R, providing clear, step-by-step instructions on how to use version control and collaboration tools.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="bryan2023">Bryan (<a href="references.html#ref-bryan2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">Happy Git and GitHub for the useR</td>
+<td style="text-align: left;"><a href="https://happygitwithr.com/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/jennybc/happy-git-with-r"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="version-control-of-data" class="level2">
+<h2 class="anchored" data-anchor-id="version-control-of-data">Version Control of Data</h2>
+<section id="datalad" class="level3">
+<h3 class="anchored" data-anchor-id="datalad">DataLad</h3>
+<p><a href="https://www.datalad.org">DataLad</a> is an open-source tool designed for the management, sharing, and reproducibility of large-scale data and code, particularly in research environments. It builds on top of Git and <a href="https://git-annex.branchable.com">Git-annex</a> to provide a version control system for data, making it easier for researchers to handle datasets that are too large to be efficiently managed by Git alone.</p>
+</section>
+<section id="the-datalad-handbook" class="level3">
+<h3 class="anchored" data-anchor-id="the-datalad-handbook">The DataLad Handbook</h3>
+<p>The DataLad Handbook is a comprehensive resource that provides users with guidance on how to use DataLad for managing, sharing, and reproducibly analyzing data. It is available online for free and is designed to be a practical, user-friendly guide for both beginners and advanced users of DataLad.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Authors</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Website</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="wagner2021">Community (<a href="references.html#ref-wagner2021" role="doc-biblioref">2021</a>)</span></td>
+<td style="text-align: left;">The DataLad Handbook</td>
+<td style="text-align: left;"><a href="License:%20\href%7Bhttps://creativecommons.org/licenses/by-sa/4.0/%7D%7BCC%20BY-SA%204.0%7D.%20Source:%20\url%7Bhttps://github.com/datalad-handbook/book?tab%20=%20License-1-ov-file%7D"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
+<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+<td style="text-align: left;"><a href="https://github.com/datalad-handbook/book?tab%20=%20License-1-ov-file"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
+</tr>
+</tbody>
+</table>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-bryan2023" class="csl-entry" role="listitem">
+Bryan, Jenny. 2023. <em>Happy Git and GitHub for the useR</em>. Jenny Bryan. <a href="https://happygitwithr.com">https://happygitwithr.com</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://github.com/jennybc/happy-git-with-r" class="uri">https://github.com/jennybc/happy-git-with-r</a>. Website: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a>.
+</div>
+<div id="ref-chacon2014" class="csl-entry" role="listitem">
+Chacon, Scott, and Ben Straub. 2014. <em>Pro Git</em>. Apress. <a href="https://doi.org/10.1007/978-1-4842-0076-6">https://doi.org/10.1007/978-1-4842-0076-6</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>. Source: <a href="https://github.com/progit/progit2" class="uri">https://github.com/progit/progit2</a>. Website: <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.
+</div>
+<div id="ref-wagner2021" class="csl-entry" role="listitem">
+Community, DataLad. 2021. <em>The DataLad Handbook</em>. DataLad. https://doi.org/<a href="https://doi.org/10.5281/zenodo.3608611">https://doi.org/10.5281/zenodo.3608611</a>. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source: <a href="https://github.com/datalad-handbook/book?tab=License-1-ov-file" class="uri">https://github.com/datalad-handbook/book?tab=License-1-ov-file</a>.
+</div>
+<div id="ref-GitHub2023" class="csl-entry" role="listitem">
+GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en" class="uri">https://docs.github.com/en</a>. Website: <a href="https://docs.github.com/en" class="uri">https://docs.github.com/en</a>.
+</div>
+<div id="ref-koziar2023" class="csl-entry" role="listitem">
+Koziar, Katherine E., Madicken Munk, Andrew Greene, Annajiat Alim Rasel, Ed Bennett, Sarah LR Stevens, Ece Turnator, et al. 2023. <em>Software Carpentry: Version Control with Git</em>. Zenodo. <a href="https://doi.org/10.5281/ZENODO.7908089">https://doi.org/10.5281/ZENODO.7908089</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/swcarpentry/git-novice" class="uri">https://github.com/swcarpentry/git-novice</a>. Website: <a href="https://swcarpentry.github.io/git-novice/" class="uri">https://swcarpentry.github.io/git-novice/</a>.
+</div>
+<div id="ref-community2022" class="csl-entry" role="listitem">
+The Turing Way Community. 2022. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3233853">https://doi.org/10.5281/zenodo.3233853</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source: <a href="https://github.com/the-turing-way/the-turing-way" class="uri">https://github.com/the-turing-way/the-turing-way</a>. Website: <a href="https://book.the-turing-way.org/reproducible-research/vcs" class="uri">https://book.the-turing-way.org/reproducible-research/vcs</a>.
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script defer="" data-domain="lennartwittkuhn.com/version-control-book" src="https://plausible.io/js/script.js"></script>
@@ -769,15 +937,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../misc/resources.html" class="pagination-link" aria-label="Resources">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resources</span>
+      <a href="../misc/cheatsheet.html" class="pagination-link" aria-label="Cheatsheet">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cheatsheet</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../misc/references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../misc/courses.html" class="pagination-link" aria-label="Courses">
+        <span class="nav-page-text">Courses</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -795,7 +963,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/courses.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/courses.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/misc/resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/misc/resources.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
 </div>
