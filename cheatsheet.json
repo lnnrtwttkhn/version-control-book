@@ -24,13 +24,15 @@
     "ls -alh *.csv": "Uses a wildcard to list all `.csv` files in the current working directory",
     "rm -r <FOLDER>": "Removes the folder `<FOLDER>`",
     "history": "Display the command history of the current terminal session",
-    "history > history.txt": "Saves the entire command history to a file named `history.txt`",
-    "history >> history.txt": "Adds the entire command history to the end of the file named `history.txt`"
+    "history > history.txt": "Saves the entire command history to a file named `history.txt` (overwrites existing content in `history.txt`)",
+    "history >> history.txt": "Adds the entire command history to the end of the file named `history.txt`",
+    "tree": "Displays a graphical representation of the directory structure",
+    "wget <URL>": "Downloads a file from the specified <URL> to the current directory"
   },
   "config": {
     "git config": "Get an overview of Git config commands",
-    "git config --global \"user.name\"": "Sets Git username",
-    "git config --global \"user.email\"": "Sets Git email address",
+    "git config --global user.name \"user.name\"": "Sets Git username",
+    "git config --global user.email \"user.email\"": "Sets Git email address",
     "git config --global core.editor \"editorname\"": "Sets Git text editor",
     "git config --global init.defaultBranch main": "Sets default branch name to `main`",
     "git config --list": "Views set Git configurations"
@@ -44,7 +46,8 @@
   },
   "essentials": {
     "git log": "Views past commits",
-    "git diff": "Views made changes compared to the last commit"
+    "git diff": "Views made changes compared to the last commit",
+    "git mv": "Renames or moves files and automatically stages the changes"
   },
   "remote_intro": {
     "git remote": "Manages remote repositories",
@@ -58,18 +61,22 @@
   },
   "branches": {
     "git branch": "Lists / creates and deletes branches",
+    "git branch feature": "Creates the `feature` branch",
+    "git branch -d feature": "Deletes the `feature` branch",
     "git switch": "Switches between branches",
+    "git switch feature": "Switches to the `feature` branch",
     "git checkout": "Switches between branches",
+    "git checkout -b feature": "Creates and switches to the `feature` branch",
     "git merge": "Merges branches",
+    "git merge feature": "Merges the `feature` branch into the current branch",
     "git merge --abort": "Aborts a merge",
     "git merge --squash": "Squaches commits on branch into a single commit and merge",
-    "git branch -d feature": "Deletes the `feature` branch",
-    "git stash": "Stores made changes for later use",
-    "git stash -m \"stashing message\"": "Stashes your changes and includes a message",
-    "git stash list":"Shows all of your stored stashes", 
-    "git stash apply": "Applies your latest stash",
+    "git stash": "Stashes changes for later use",
+    "git stash -m \"stashing message\"": "Stashes changes and includes a message",
+    "git stash list":"Shows stored stashes", 
+    "git stash apply": "Applies the latest stash",
     "git stash apply stash@{n}": "Applies a specific stash",
-    "git stash pop": "Applies your latest stash and removes it from stash list",
+    "git stash pop": "Applies the latest stash and removes it from stash list",
     "git stash pop stash@{n}": "Applies a specific stash and removes it from stash list",
     "git cherry-pick <commithash>": "Applies changes from `<commithash>`",
     "git rebase": "Different way of integrating changes from two branches"
