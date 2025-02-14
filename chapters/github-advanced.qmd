@@ -205,6 +205,24 @@ Click it, provide a new repository name and an optional description and decide w
 
 ![Screenshot of a template repository on GitHub](../static/github-template.png){#fig-template}
 
+### How to create or find templates
+
+You can create templates from your own repositories by enabling `template repository` in your repository's general settings, as shown in @fig-template-settings.
+This makes any of your own repositories usable as a template.
+Beware that if your repository is public, others can now use it as a template too.
+Alternatively, if you want to get started on a new repository with someone else's template, one approach is to search GitHub for `template` and you will get an extensive list.
+To narrow the results down, it is advisable to filter them by your desired programming language.
+
+![Screenshot of the template setting on GitHub](../static/github-template-settings.png){#fig-template-settings}
+
+### Differences between templates and forking
+
+The main difference between [forking](#forking) a repository and using a template is that, after forking, some connection to the original repository remains.
+With a forked repository, one can still push changes to the original repository, making it a great tool for contributing to a project.
+Additionally, the newly created repository will keep the [squashed](branches.qmd#squash-and-merge) commit history of the original repository as its first commit.
+A repository created from a template will have neither and gives you a clean slate to work with.
+Thus, one of the most important considerations when choosing to fork or to use a template is whether you want to contribute to the original repository later on.
+
 ## Branch protection
 
 When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
