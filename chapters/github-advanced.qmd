@@ -205,6 +205,38 @@ Click it, provide a new repository name and an optional description and decide w
 
 ![Screenshot of a template repository on GitHub](../static/github-template.png){#fig-template}
 
+### How to create or find templates
+
+You can create templates from your repositories by enabling the `Template repository` option in your repository's general settings, as shown in @fig-template-settings.
+This makes your repository available as a template.
+Keep in mind that if your repository is public, others can also use it as a template.
+Alternatively, if you want to start a new repository using someone else's template, search for `template` on GitHub to get a long list of options.
+To narrow down the results, it's helpful to filter by your preferred programming language.
+
+![Screenshot of the template setting on GitHub](../static/github-template-settings.png){#fig-template-settings}
+
+### Differences between templates and forking
+
+On GitHub, [forking](#forking) and [template repositories](#template-repositories) are two ways to create a copy of an existing repository, but they have key differences in how they work:
+
+##### Connection and contributions to the original repository {.unnumbered}
+
+- **Forking:** When you fork a repository, GitHub creates a copy of it under your account, but a connection remains to the original repository.
+You can still propose changes back to the original repository by creating a pull request.
+- **Template repository:**
+A repository created from a template has no connection to the original repository.
+It is simply a starting point for a new project with no link back.
+
+##### Commit history {.unnumbered}
+
+- **Forking:** The forked repository retains the entire commit history of the original repository
+The commit history is carried over, along with a "forked from" reference.
+- **Template repository:** A repository created from a template starts with no commit history from the original repository.
+Even though the template repository might contain multiple commits, when using the template, those commits will be [squashed](branches.qmd#squash-and-merge) into a single initial commit, which will be the starting point for the new repository.
+
+In summary, forking is ideal for contributing to an existing project, as it keeps the connection to the original repository and allows you to submit changes.
+In contrast, template repositories are better for starting a new project based on an existing structure, with no connection to the original.
+
 ## Branch protection
 
 When using Git hosting platforms like GitHub or GitLab, it's a good idea to enable branch protection rules for your critical branch(es), typically your `main` or `master` branch.
