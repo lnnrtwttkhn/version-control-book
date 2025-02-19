@@ -430,6 +430,8 @@ Including only essential files in version control keeps your repository clean, m
 Huge files, like big data files should also not be committed, since they can slow down working with your repository.
 To version control files with a big size, tools like [DataLad](https://www.datalad.org) are more appropriate.
 
+### Creating a `.gitignore` file
+
 To create a `.gitignore` file from the command line, navigate to your repository and use the `touch` command.
 Alternatively, create the file in your favorite text editor.
 
@@ -437,19 +439,33 @@ Alternatively, create the file in your favorite text editor.
 touch .gitignore
 ```
 
-`.gitignore` will be a hidden file, so to make it show up in the command line, you will have to use the `-a` flag in the `ls` command.
+`.gitignore` is a hidden file, so to make it show up in the command line, you will have to use the `-a` flag in the `ls` command.
 For details on listing of files and folders, see the chapter on the [command line](command-line.qmd).
 
 ```{zsh filename="Code"}
 ls -a
 ```
 
-Now you can write a filename or folder name inside it, to prevent Git from tracking it.
-If you specify a folder, git will also start to ignore every subfolder in it.
+### Adding files and folders to `.gitignore`
 
-It's recommended to add a project-specific `.gitignore` file to your repository using the regular stage-commit workflow that you learned about in this chapter, for example:
+Now, you can write a filename or folder name inside the `.gitignore` file to prevent Git from tracking that file or folder.
+If you specify a folder, Git will also ignore every subfolder within it.
+To ignore specific file types, it's helpful to use [wildcards](first-steps-git.qmd#wildcards).
 
-```{zsh}
+For example, to make Git ignore all `.png` files and a folder called `data`, add this to your `.gitignore` file:
+
+```{zsh filename=".gitignore"}
+*.png # <1>
+data # <2>
+```
+1. This entry makes Git ignore all `.png` files inside the repository.
+1. This entry makes Git ignore the `data` folder inside the repository.
+
+### Staging and committing the `.gitignore` file
+
+It's recommended to add a project-specific `.gitignore` file to your repository using the regular stage-commit workflow that you learned about in the previous chapter, for example:
+
+```{zsh filename="Code"}
 git add .gitignore
 git commit -m "Add .gitignore"
 ```
@@ -566,9 +582,13 @@ Should `.DS_Store` be tracked by Git, this can lead to unnecessary version confl
 3. **Irrelevant for collaborators with another operating system**: Anyone else who is not using macOS (for example, Windows or Linux users) do not need these files and they serve no purpose for them.
 Including `.DS_Store` in the repository could confuse contributors who are not using macOS.
 
+4. **Potential privacy concerns**: Adding `.DS_Store` files to Git could be a privacy concern because they store metadata about a directory's structure, such as custom view settings and file attributes.
+While it is unlikely to pose a significant risk if only project files and excluded files are in the directory, there could be sensitive information in those files that only you know about.
+Therefore, while it's usually not necessary to delete `.DS_Store` files for protection, if you're concerned about the potential exposure of this data, it's best to exclude them from Git.
+
 To add `.DS_Store` to `.gitignore`, you can include the following line in your `.gitignore` file:
 
-```{zsh filename="Code"}
+```{zsh filename=".gitignore"}
 .DS_Store
 ```
 
