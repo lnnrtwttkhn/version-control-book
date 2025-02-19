@@ -344,7 +344,10 @@ div.csl-indent {
   <li><a href="#partial-commits" id="toc-partial-commits" class="nav-link" data-scroll-target="#partial-commits"><span class="header-section-number">6.6</span> Partial commits</a></li>
   <li><a href="#ignoring-files-and-folders-.gitignore" id="toc-ignoring-files-and-folders-.gitignore" class="nav-link" data-scroll-target="#ignoring-files-and-folders-.gitignore"><span class="header-section-number">6.7</span> Ignoring files and folders: <code>.gitignore</code></a>
   <ul class="collapse">
-  <li><a href="#global-.gitignore-file" id="toc-global-.gitignore-file" class="nav-link" data-scroll-target="#global-.gitignore-file"><span class="header-section-number">6.7.1</span> Global <code>.gitignore</code> file</a></li>
+  <li><a href="#creating-a-.gitignore-file" id="toc-creating-a-.gitignore-file" class="nav-link" data-scroll-target="#creating-a-.gitignore-file"><span class="header-section-number">6.7.1</span> Creating a <code>.gitignore</code> file</a></li>
+  <li><a href="#adding-files-and-folders-to-.gitignore" id="toc-adding-files-and-folders-to-.gitignore" class="nav-link" data-scroll-target="#adding-files-and-folders-to-.gitignore"><span class="header-section-number">6.7.2</span> Adding files and folders to <code>.gitignore</code></a></li>
+  <li><a href="#staging-and-committing-the-.gitignore-file" id="toc-staging-and-committing-the-.gitignore-file" class="nav-link" data-scroll-target="#staging-and-committing-the-.gitignore-file"><span class="header-section-number">6.7.3</span> Staging and committing the <code>.gitignore</code> file</a></li>
+  <li><a href="#global-.gitignore-file" id="toc-global-.gitignore-file" class="nav-link" data-scroll-target="#global-.gitignore-file"><span class="header-section-number">6.7.4</span> Global <code>.gitignore</code> file</a></li>
   </ul></li>
   <li><a href="#renaming-files-with-git" id="toc-renaming-files-with-git" class="nav-link" data-scroll-target="#renaming-files-with-git"><span class="header-section-number">6.8</span> Renaming files with Git</a></li>
   <li><a href="#tracking-empty-folders" id="toc-tracking-empty-folders" class="nav-link" data-scroll-target="#tracking-empty-folders"><span class="header-section-number">6.9</span> Tracking empty folders</a></li>
@@ -870,6 +873,8 @@ Our recommendation: Use a GUI for partial commits
 <h2 data-number="6.7" class="anchored" data-anchor-id="ignoring-files-and-folders-.gitignore"><span class="header-section-number">6.7</span> Ignoring files and folders: <code>.gitignore</code></h2>
 <p><code>.gitignore</code> is a special file. It is used to specify files and folders that should be ignored and not tracked by Git. When you create a <code>.gitignore</code> file, place it inside your Git repository and specify names of files or folders inside it. Git will then exclude these files and directories from being staged or committed, for example when using <code>git add -A</code> which normally stages all your files. The <code>.gitignore</code> file does not have a file extension like <code>.txt</code> and is simply named <code>.gitignore</code>.</p>
 <p>The <code>.gitignore</code> file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history. Files that can recreated from the code, like for example <code>.png</code> plots from R code, should also be included in your project’s <code>.gitignore</code> file. Including only essential files in version control keeps your repository clean, making it easier for collaborators to focus on the important project files without distractions from unnecessary files. <code>.gitignore</code> can also help you avoid accidentally committing sensitive information like passwords, API keys, or personal data, which can lead to serious privacy breaches. Huge files, like big data files should also not be committed, since they can slow down working with your repository. To version control files with a big size, tools like <a href="https://www.datalad.org">DataLad</a> are more appropriate.</p>
+<section id="creating-a-.gitignore-file" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="creating-a-.gitignore-file"><span class="header-section-number">6.7.1</span> Creating a <code>.gitignore</code> file</h3>
 <p>To create a <code>.gitignore</code> file from the command line, navigate to your repository and use the <code>touch</code> command. Alternatively, create the file in your favorite text editor.</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -879,7 +884,7 @@ Our recommendation: Use a GUI for partial commits
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> .gitignore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p><code>.gitignore</code> will be a hidden file, so to make it show up in the command line, you will have to use the <code>-a</code> flag in the <code>ls</code> command. For details on listing of files and folders, see the chapter on the <a href="../chapters/command-line.html">command line</a>.</p>
+<p><code>.gitignore</code> is a hidden file, so to make it show up in the command line, you will have to use the <code>-a</code> flag in the <code>ls</code> command. For details on listing of files and folders, see the chapter on the <a href="../chapters/command-line.html">command line</a>.</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -888,14 +893,48 @@ Our recommendation: Use a GUI for partial commits
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Now you can write a filename or folder name inside it, to prevent Git from tracking it. If you specify a folder, git will also start to ignore every subfolder in it.</p>
-<p>It’s recommended to add a project-specific <code>.gitignore</code> file to your repository using the regular stage-commit workflow that you learned about in this chapter, for example:</p>
+</section>
+<section id="adding-files-and-folders-to-.gitignore" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="adding-files-and-folders-to-.gitignore"><span class="header-section-number">6.7.2</span> Adding files and folders to <code>.gitignore</code></h3>
+<p>Now, you can write a filename or folder name inside the <code>.gitignore</code> file to prevent Git from tracking that file or folder. If you specify a folder, Git will also ignore every subfolder within it. To ignore specific file types, it’s helpful to use <a href="../chapters/first-steps-git.html#wildcards">wildcards</a>.</p>
+<p>For example, to make Git ignore all <code>.png</code> files and a folder called <code>data</code>, add this to your <code>.gitignore</code> file:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.gitignore</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="annotated-cell-17"><pre class="sourceCode zsh code-annotation-code code-with-copy code-annotated"><code class="sourceCode zsh"><a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-17-1" class="code-annotation-target"><a href="#annotated-cell-17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*.png</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-17-2" class="code-annotation-target"><a href="#annotated-cell-17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">data</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-17" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="1" data-code-annotation="1">This entry makes Git ignore all <code>.png</code> files inside the repository.</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="2" data-code-annotation="2">This entry makes Git ignore the <code>data</code> folder inside the repository.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="staging-and-committing-the-.gitignore-file" class="level3" data-number="6.7.3">
+<h3 data-number="6.7.3" class="anchored" data-anchor-id="staging-and-committing-the-.gitignore-file"><span class="header-section-number">6.7.3</span> Staging and committing the <code>.gitignore</code> file</h3>
+<p>It’s recommended to add a project-specific <code>.gitignore</code> file to your repository using the regular stage-commit workflow that you learned about in the previous chapter, for example:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .gitignore</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add .gitignore"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="global-.gitignore-file" class="level3" data-number="6.7.1">
-<h3 data-number="6.7.1" class="anchored" data-anchor-id="global-.gitignore-file"><span class="header-section-number">6.7.1</span> Global <code>.gitignore</code> file</h3>
+</div>
+</section>
+<section id="global-.gitignore-file" class="level3" data-number="6.7.4">
+<h3 data-number="6.7.4" class="anchored" data-anchor-id="global-.gitignore-file"><span class="header-section-number">6.7.4</span> Global <code>.gitignore</code> file</h3>
 <p>Instead of specifying files you want Git to ignore for each folder, you can also create a global <code>.gitignore</code> file. To do this, you create a file named <code>.gitignore_global</code> (or any name you prefer) in your users’s home directory (located, for example, at <code>/Users/yourusername</code>). Then, you configure Git to use this global file by running:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -1022,12 +1061,13 @@ What is the <code>.DS_Store</code> file (macOS only)?
 <li><p><strong>Unnecessary for the project</strong>: <code>.DS_Store</code> files contain metadata that are only relevant to the local macOS file system and do not provide any useful information for the project itself. Including them in the repository adds unnecessary clutter.</p></li>
 <li><p><strong>Avoiding conflicts</strong>: Since <code>.DS_Store</code> files are automatically generated by macOS, different users may have different versions of <code>.DS_Store</code> files based on their personal Finder settings. Should <code>.DS_Store</code> be tracked by Git, this can lead to unnecessary version conflicts when collaborating on a project.</p></li>
 <li><p><strong>Irrelevant for collaborators with another operating system</strong>: Anyone else who is not using macOS (for example, Windows or Linux users) do not need these files and they serve no purpose for them. Including <code>.DS_Store</code> in the repository could confuse contributors who are not using macOS.</p></li>
+<li><p><strong>Potential privacy concerns</strong>: Adding <code>.DS_Store</code> files to Git could be a privacy concern because they store metadata about a directory’s structure, such as custom view settings and file attributes. While it is unlikely to pose a significant risk if only project files and excluded files are in the directory, there could be sensitive information in those files that only you know about. Therefore, while it’s usually not necessary to delete <code>.DS_Store</code> files for protection, if you’re concerned about the potential exposure of this data, it’s best to exclude them from Git.</p></li>
 </ol>
 <p>To add <code>.DS_Store</code> to <code>.gitignore</code>, you can include the following line in your <code>.gitignore</code> file:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Code</strong></pre>
+<pre><strong>.gitignore</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.DS_Store</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
