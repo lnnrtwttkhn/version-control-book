@@ -338,7 +338,11 @@ div.csl-indent {
   <li><a href="#pull-request-from-a-forked-repository" id="toc-pull-request-from-a-forked-repository" class="nav-link" data-scroll-target="#pull-request-from-a-forked-repository"><span class="header-section-number">10.6.2</span> Pull request from a forked repository</a></li>
   </ul></li>
   <li><a href="#git-blame" id="toc-git-blame" class="nav-link" data-scroll-target="#git-blame"><span class="header-section-number">10.7</span> Git blame</a></li>
-  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">10.8</span> Template repositories</a></li>
+  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">10.8</span> Template repositories</a>
+  <ul class="collapse">
+  <li><a href="#how-to-create-or-find-templates" id="toc-how-to-create-or-find-templates" class="nav-link" data-scroll-target="#how-to-create-or-find-templates"><span class="header-section-number">10.8.1</span> How to create or find templates</a></li>
+  <li><a href="#differences-between-templates-and-forking" id="toc-differences-between-templates-and-forking" class="nav-link" data-scroll-target="#differences-between-templates-and-forking"><span class="header-section-number">10.8.2</span> Differences between templates and forking</a></li>
+  </ul></li>
   <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">10.9</span> Branch protection</a>
   <ul class="collapse">
   <li><a href="#how-to-protect-the-main-branch-on-github" id="toc-how-to-protect-the-main-branch-on-github" class="nav-link" data-scroll-target="#how-to-protect-the-main-branch-on-github"><span class="header-section-number">10.9.1</span> How to protect the <code>main</code> branch on GitHub</a></li>
@@ -661,6 +665,39 @@ Figure&nbsp;10.2: Screenshot of a template repository on GitHub
 </figcaption>
 </figure>
 </div>
+<section id="how-to-create-or-find-templates" class="level3" data-number="10.8.1">
+<h3 data-number="10.8.1" class="anchored" data-anchor-id="how-to-create-or-find-templates"><span class="header-section-number">10.8.1</span> How to create or find templates</h3>
+<p>You can create templates from your repositories by enabling the <code>Template repository</code> option in your repository’s general settings, as shown in <a href="#fig-template-settings" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>. This makes your repository available as a template. Keep in mind that if your repository is public, others can also use it as a template. Alternatively, if you want to start a new repository using someone else’s template, search for <code>template</code> on GitHub to get a long list of options. To narrow down the results, it’s helpful to filter by your preferred programming language.</p>
+<div id="fig-template-settings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-template-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/github-template-settings.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-template-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.3: Screenshot of the template setting on GitHub
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="differences-between-templates-and-forking" class="level3" data-number="10.8.2">
+<h3 data-number="10.8.2" class="anchored" data-anchor-id="differences-between-templates-and-forking"><span class="header-section-number">10.8.2</span> Differences between templates and forking</h3>
+<p>On GitHub, <a href="#forking">forking</a> and <a href="#template-repositories">template repositories</a> are two ways to create a copy of an existing repository, but they have key differences in how they work:</p>
+<section id="connection-and-contributions-to-the-original-repository" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="connection-and-contributions-to-the-original-repository">Connection and contributions to the original repository</h5>
+<ul>
+<li><strong>Forking:</strong> When you fork a repository, GitHub creates a copy of it under your account, but a connection remains to the original repository. You can still propose changes back to the original repository by creating a pull request.</li>
+<li><strong>Template repository:</strong> A repository created from a template has no connection to the original repository. It is simply a starting point for a new project with no link back.</li>
+</ul>
+</section>
+<section id="commit-history" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="commit-history">Commit history</h5>
+<ul>
+<li><strong>Forking:</strong> The forked repository retains the entire commit history of the original repository The commit history is carried over, along with a “forked from” reference.</li>
+<li><strong>Template repository:</strong> A repository created from a template starts with no commit history from the original repository. Even though the template repository might contain multiple commits, when using the template, those commits will be <a href="../chapters/branches.html#squash-and-merge">squashed</a> into a single initial commit, which will be the starting point for the new repository.</li>
+</ul>
+<p>In summary, forking is ideal for contributing to an existing project, as it keeps the connection to the original repository and allows you to submit changes. In contrast, template repositories are better for starting a new project based on an existing structure, with no connection to the original.</p>
+</section>
+</section>
 </section>
 <section id="branch-protection" class="level2" data-number="10.9">
 <h2 data-number="10.9" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">10.9</span> Branch protection</h2>
