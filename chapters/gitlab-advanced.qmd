@@ -74,7 +74,7 @@ By default, the name of the forked project will be the same as the original repo
 The **Project Slug** will be automatically generated based on the project name, but you can also customize this URL-friendly version if needed. 
 Optionally, you can add a **Project Description** to help others understand the purpose of your forked repository.
 Next, set the **Visibility Level** of your forked project. 
-You have three options: Private (only you and the members you invite can see the project), Internal (any signed-in user can see the project), or Public (anyone on the internet can see the project).
+You have three options: Private, Internal, or Public [details here](#visibility-levels).
 Finally, select the namespace under which you want to fork the repository. 
 This could be your personal namespace or any group or organization you belong to.
 After configuring these settings, click the "Fork project" button to complete the process. Your forked repository will be created under your specified namespace with the chosen settings.
@@ -138,7 +138,7 @@ The project settings in GitLab provide comprehensive control over your project's
 In **General Settings**, you can manage basic information like the project name and description.
 You can also enable or disable features such as issues, merge requests, wiki, and snippets, and archive the project if it's no longer active. 
 In the subsection **Visibility, project features and permissions**, you can configure who can see your project and its contents.
-This section allows you to enable or disable project features and set permissions for different access levels (guest, reporter, developer, maintainer, and owner) to control user capabilities.
+This section allows you to enable or disable project features and set different [visibility](#visibility-levels) and [permission levels](#permission-levels-and-roles) to control user capabilities.
 
 The **Repository Settings** section includes options for protecting branches and tags to prevent unauthorized changes, specifying who can merge or push. 
 You can enforce push rules on commit messages, branch names, and file names for consistency, and monitor and manage repository size to ensure optimal performance.
@@ -160,15 +160,71 @@ You can check out the [GitLab documentation](https://about.gitlab.com/why-gitlab
 
 GitLab groups allow you to manage multiple related projects and users in a centralized structure, simplifying collaboration and access control.
 Groups enable you to set permissions, communicate with all group members, and manage projects efficiently. 
-If someone has access to the group, they automatically get access to all projects within that group. 
-For larger organizations, you can create subgroups to further organize projects and teams, with subgroups inheriting permissions from their parent groups.
+If someone has access to the group, they automatically get access to all projects within that group.
+For larger organizations, you can create subgroups, which inherit permissions from their parent groups.
 Additionally, you can implement consistent project templates and standards across all projects within the group.
-GitLab also offers visibility and reporting features that help track progress and performance across multiple projects.
+GitLab also offers visibility and reporting features that help track progress and performance across multiple projects.  
 
 To create a group, go to the left sidebar, select "Create new" and "New group."
 Enter the group name, URL path, and select the visibility level. 
 Optionally, you can personalize your GitLab experience by selecting your role, specifying the purpose of the group, and inviting members.
 For more detailed information about creating and managing groups, refer to the [GitLab documentation on groups](https://docs.gitlab.com/ee/user/group/).
+
+### Visibility levels
+
+Who can find a project or group is managed by the visibility levels.
+They can be set to private, internal or public.
+A **private** project or group can only be accessed by the owner and collaborators who've been specifically invited.
+An **internal** project or group, anyone who is logged into GitLab can see.
+This is especially useful if your organization runs a self-hosted GitLab site, which in this case means only people who can log into this specific GitLab can view the internal projects or groups.
+This can be a great way to e.g. share a best practices wiki or frequently needed forms with the entire organization, without having to manage everyone's permission levels.
+A **public project**, anyone on the internet can find, even if it's on a self-hosted GitLab.
+
+### Permission levels and roles
+
+GitLab allows for a very fine-grained approach to managing permission levels.
+Either use the default permission levels or customize them for each user.
+If the user is part of the project's group and the project, the higher permission level is applied.
+
+The default roles, ranked from most to least permissions:  
+1. **Owner**: Full control.  
+2. **Maintainer**:  Almost full control, but can't change project's visibility or delete it.  
+3. **Developer**: Push code and create merge requests.  
+4. **Reporter**: View project, comment on issues and merge request and generate reports.  
+5. **Planner**: Create, comment and review issues.  
+6. **Guest**: Very restricted. 
+View projects and create issues.
+
+### Issues
+
+Generally, issues serve the same function on GitLab as on GitHub.
+However, there are some very nice features, that are either not available on GitHub or simply not as well integrated in the workflow as on GitLab.
+First of all, it is easy to assign **due dates** to issues, which helps to keep track of a project's time line and what needs to be prioritized.
+Secondly, there is the option to make issues **confidential**, so they can only be seen by group members or the person who created them.
+This is especially helpful in public projects, where you might not want everyone on the internet to be able to follow your discussions on a bug or don't want to expose a security flaw you are currently trying to fix.
+
+#### Issue boards
+
+GitLab makes it easy to assign and manage issues using issue boards, see @fig-issue_board.
+Especially in larger groups or for longterm projects, this feature can help keep track of who is doing what and until when issues should be completed.
+Even if working by oneself, it can be helpful to have this visualization of what has already been accomplished and easily see what needs to be worked on next.
+
+![Screenshot of issue boards on GitLab ](../static/issue_board.png){#fig-issue_board}
+
+### Workflow and project management
+
+The different [visibility](#creating-a-fork) and [permission levels](#permission-levels-and-roles) allow for a workflow across the group that ensures everyone knows what the others are working on and the projects remain available.
+When team members are changing, transferring project ownership can be a hassle and minor projects are prone to be forgotten.
+
+The following sketches an exemplary workflow for your project as a part of a research group.  
+At the start, only you are working on the project, and it is set to the visibility level private.
+As it is part of your research groups private GitLab group, everyone in the group can see it and has a Guest or Reporter role.
+They can point out problems or add new ideas via creating a new issue.
+Your collaborators, that are part of your group or external ones, are assigned a Developer or Maintainer role and can push code and create merge requests.
+You manage the different issues and assign due dates and collaborators to them.
+On the issue board, you can easily see what has already been tackled and what your collaborators and you have already addressed.
+The principal investigator has a Maintainer or Owner role in the project and thus can ensure that a project remains available, even if the people in the research group change.
+Once the project is finished and a related paper is published, the visibility level is set to public and it can be accessed by anyone on the internet.
 
 ## Acknowledgements
 
