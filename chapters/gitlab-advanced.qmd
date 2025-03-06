@@ -1,6 +1,6 @@
 ---
 categories: [intermediate, gitlab, remote]
-image: ../static/gitla-logo.png
+image: ../static/gitlab-logo.png
 abstract: |
   In this chapter, we will explore more advanced features of GitLab.
 ---
@@ -14,7 +14,6 @@ abstract: |
 
 ## Differences to GitHub
 
-
 There are no major differences in basic Git operations (push, pull, clone) between GitLab and GitHub. 
 However, there are some differences worth noting:
 
@@ -24,19 +23,19 @@ However, both UIs are user-friendly and designed for similar purposes.
 
 - **Pull Requests vs. Merge Requests:** 
 GitLab refers to pull requests as "merge requests" (MRs), which may be more intuitive since the purpose is to merge code from one branch or fork into another. 
-GitHub sticks to the term "pull request."
+GitHub sticks to the term "pull request".
 
-- **Repositories (Repos) Naming:** 
+- **Repositories naming:** 
 GitHub simply refers to version-controlled projects as "repositories" or "repos." 
-GitLab refers to them as "projects." 
-Both terms fundamentally describe the same thing—a codebase under version control.
-GitLab’s emphasis on "projects" can also imply its broader focus on project managemen
+GitLab refers to them as "projects". 
+Both terms fundamentally describe the same thing — a directory of files under version control.
+GitLab's emphasis on "projects" can also imply its broader focus on project management.
 
-- **More Fine-grained Permissions:**
+- **More fine-grained permissions:**
 GitLab offers more detailed access control with multiple user roles such as Guest, Reporter, Developer, Maintainer, and Owner. 
-GitHub also provides roles, but GitLab’s structure allows for greater control over permissions at both the group and project level.
+GitHub also provides roles, but GitLab's structure allows for greater control over permissions at both the group and project level.
 
-- **CI/CD Integration:** 
+- **CI/CD integration:** 
 GitLab has built-in CI/CD (Continuous Integration and Continuous Deployment) features, whereas GitHub introduced its own GitHub Actions later. 
 GitLab’s CI/CD setup is considered to be more comprehensive and customizable, with pipelines that can be configured more extensively. 
 
@@ -44,47 +43,52 @@ GitLab’s CI/CD setup is considered to be more comprehensive and customizable, 
 For static site hosting, GitLab Pages offers the ability to host sites directly from a repository. 
 Unlike GitHub Pages, GitLab Pages for private repositories can require a login, which can be useful for more sensitive projects.
 
-- **Security Features:** 
+- **Security features:** 
 GitLab places a heavier emphasis on security features. 
 It includes built-in tools for vulnerability management, dependency scanning, and container scanning as part of its premium offerings.
 
-- **Licensing and Open Source:** 
-GitLab offers an open-source Community Edition (CE) in addition to its paid offerings, while GitHub is primarily a commercial product, though it has free tiers. 
+- **Licensing and open source:** 
+GitLab offers an open-source Community Edition (CE) in addition to its paid offerings, while GitHub is primarily a commercial product, though it has free tiers.
 This makes GitLab more appealing to users who prefer open-source platforms.
 
-## Forking
+## Forking on GitLab
 
 Forking a repository on GitLab is similar to GitHub and allows you to create a personal copy of someone else's project under your GitLab account.
-This copy includes all files, commit history, and branches, while maintaining a reference to the original repository. Forking is ideal for contributing to projects without needing direct access to the original repository. 
-You can make changes, create branches, and push modifications to your forked repository. To contribute your changes back to the original project, you can submit a merge request, which is explained in more detail below.
+This copy includes all files, commit history, and branches, while maintaining a reference to the original repository.
+Forking is ideal for contributing to projects without needing direct access to the original repository. 
+You can make changes, create branches, and push modifications to your forked repository.
+To contribute your changes back to the original project, you can submit a merge request, which is explained in more detail below.
 
 ### Creating a fork
 
-1. **Navigate to the Repository**:
-First, go to the repository you want to fork on GitLab. You can do this by searching for the repository or navigating to it directly if you have the URL.
+1. **Navigate to the repository:**
+First, go to the repository you want to fork on GitLab.
+You can do this by searching for the repository or navigating to it directly if you have the URL.
 
-2. **Click the Fork Button**:
+2. **Click the Fork button:**
 On the repository page, locate and click the "Fork" button, typically found in the upper-right corner of the page. 
 This action creates an identical copy of the repository under your GitLab account.
 
-3. **Choose Your Forking Settings**
+3. **Choose your forking setting:**
 After clicking the "Fork" button, you will be presented with the same options you have when creating a new GitLab repository, to configure your new fork. 
-Start by deciding on the **Project Name**.
-By default, the name of the forked project will be the same as the original repository, but you can change it if desired. 
-The **Project Slug** will be automatically generated based on the project name, but you can also customize this URL-friendly version if needed. 
-Optionally, you can add a **Project Description** to help others understand the purpose of your forked repository.
-Next, set the **Visibility Level** of your forked project. 
-You have three options: Private, Internal, or Public [details here](#visibility-levels).
-Finally, select the namespace under which you want to fork the repository. 
-This could be your personal namespace or any group or organization you belong to.
-After configuring these settings, click the "Fork project" button to complete the process. Your forked repository will be created under your specified namespace with the chosen settings.
 
+    - Start by deciding on the **Project Name**.
+    By default, the name of the forked project will be the same as the original repository, but you can change it if desired. 
+    - The **Project Slug** will be automatically generated based on the project name, but you can also customize this URL-friendly version if needed. 
+    - Optionally, you can add a **Project Description** to help others understand the purpose of your forked repository.
+    - Next, set the **Visibility Level** of your forked project.
+    You have three options: Private, Internal, or Public [details here](#visibility-levels).
+    - Finally, select the **Namespace** under which you want to fork the repository.
+    This could be your personal namespace or any group or organization you belong to.
 
-![Screenshot of the GitLab forking options](../static/gitlab_fork.png){#fig-forking_gitlab}
+After configuring these settings, click the "Fork project" button to complete the process.
+Your forked repository will be created under your specified namespace with the chosen settings.
 
-## Merge requests (pull requests)
+![Screenshot of the GitLab forking options.](../static/gitlab_fork.png){#fig-forking_gitlab}
 
-In GitLab, pull requests are referred to as merge requests (MRs). 
+## Pull Requests (Merge Requests)
+
+In GitLab, **pull requests are referred to as merge requests (MRs)**. 
 They serve the same purpose as pull requests in GitHub, allowing for code review and integration into a project's codebase.
 
 There are more ways to create a merge request on GitLab than the two explained below, you can check out the [GitLab documentation](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html?tab=Branch+only) for more info.
@@ -106,7 +110,8 @@ In the merge request interface, select the branch you made changes to in your fo
 Review the changes that will be included in the merge request.
 
 5. **Create merge request**:
-Click on the "Create merge request" button. Provide a meaningful title for your merge request and a description explaining the changes you made.
+Click on the "Create merge request" button.
+Provide a meaningful title for your merge request and a description explaining the changes you made.
 
 6. **Submit the merge request**:
 Submit the merge request. 
@@ -115,7 +120,7 @@ The owner of the original repository can now review and approve the changes, mer
 ### Creating a merge request from a branch within a repository
 
 In this scenario, contributors work directly within the original repository, creating a new branch for their changes. 
-After completing the changes in the branch, they create a merge request from that branch to the repository's default branch (typically main or master). 
+After completing the changes in the branch, they create a merge request from that branch to the repository's default branch (typically `main` or `master`). 
 The workflow is similar to that of opening a merge request from a forked repository.
 Follow the same steps as described above for opening a new merge request, choosing branches, reviewing changes, creating, and submitting the merge request.
 
@@ -125,15 +130,17 @@ Project templates in GitLab provide a convenient way to create new projects with
 Instead of starting a new project from scratch, you can use a project template that includes the necessary setup for specific types of projects, following best practices and common standards. 
 
 To use a project template in GitLab, navigate to the "New project" page. 
-Here, you will find various templates available, ranging from simple project setups to complex configurations for e.g. web applications or mobile apps.
-Select the desired template, and you will be prompted to provide a name for your new project, an optional description, and select whether the repository should be public or private. GitLab then creates a new project based on the chosen template, complete with the predefined structure and files.
-If you are a member of a group, you can also see the templates which were created in the group.
+Here, you will find various templates available, ranging from simple project setups to complex configurations, for e.g., web applications or mobile apps.
+Select the desired template, and you will be prompted to provide a name for your new project, an optional description, and select whether the repository should be public or private.
+GitLab then creates a new project based on the chosen template, complete with the predefined structure and files.
+If you are member of a group, you can also see the templates which were created in the group.
 
-![Screenshot of project templates in GitLab ](../static/gitlab_template.png){#fig-forking_gitlab}
+![Screenshot of project templates in GitLab.](../static/gitlab_template.png){#fig-forking_gitlab}
 
 ## Project settings
 
-The project settings in GitLab provide comprehensive control over your project's configuration, allowing you to customize various aspects to suit your workflow and security needs. These settings include:
+The project settings in GitLab provide comprehensive control over your project's configuration, allowing you to customize various aspects to suit your workflow and security needs.
+These settings include:
 
 In **General Settings**, you can manage basic information like the project name and description.
 You can also enable or disable features such as issues, merge requests, wiki, and snippets, and archive the project if it's no longer active. 
@@ -165,8 +172,8 @@ For larger organizations, you can create subgroups, which inherit permissions fr
 Additionally, you can implement consistent project templates and standards across all projects within the group.
 GitLab also offers visibility and reporting features that help track progress and performance across multiple projects.  
 
-To create a group, go to the left sidebar, select "Create new" and "New group."
-Enter the group name, URL path, and select the visibility level. 
+To create a group, go to the left sidebar, select "Create new" and "New group".
+Enter the group name, URL path, and select the visibility level.
 Optionally, you can personalize your GitLab experience by selecting your role, specifying the purpose of the group, and inviting members.
 For more detailed information about creating and managing groups, refer to the [GitLab documentation on groups](https://docs.gitlab.com/ee/user/group/).
 
@@ -234,6 +241,6 @@ Once the project is finished and a related paper is published, the visibility le
 #| message: false
 #| warning: false
 #| output: asis
-bibtexkeys = c( "chacon2014", "community2022", "gitlab2024")
+bibtexkeys = c("chacon2014", "community2022", "gitlab2024")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
