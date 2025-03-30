@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,10 +91,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9e228d6d4d66c12a9d11739da31c2b1c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-17c909d5fd25ae21b861c0c7a49b2096.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4d6d62db14233255fe53e48614185b6c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8895a4d19d0376a9e4451ed1dd0085fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -282,6 +282,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../misc/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently Asked Questions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../misc/resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
   </div>
@@ -408,7 +414,38 @@ Learning Objectives
 </div>
 </div>
 </div>
-<p><a href="https://version-control-branches.formr.org" class="btn btn-outline-secondary" role="button"><i class="fa-circle-question fa-regular" aria-label="regular"></i> Take the quiz!</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use case: Extending an existing analysis while preserving previous work
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In research, you often need to extend or modify a previous analysis, such as adding new data, refining methods, or testing alternative hypotheses. By creating a branch, you can develop this new version without risking the integrity of the previous working version. If necessary, you can easily switch back to the previous branch to reproduce or reference results.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use case: Maintaining code stability while collaborating
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A collaborator may request to review specific outputs, such as plots or results from a previous stage of the project. If you are in the middle of implementing new features or conducting a different analysis, this can create a problem. By using branches, you can keep the current experimental changes isolated. This allows you to quickly switch to the previous branch to provide the requested results without disrupting your ongoing development.</p>
+</div>
+</div>
+</div>
 <section id="why-branches" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="why-branches"><span class="header-section-number">7.1</span> Why branches?</h2>
 <p>In short, branches in Git allow you to keep different versions of your repository content in parallel, develop them independently, and integrate them when they are ready. Before we explain the concept of branches in more detail, let’s look at a few scenarios that illustrate why branches are useful <span class="citation" data-cites="community2022">(taken from <a href="../misc/references.html#ref-community2022" role="doc-biblioref">The Turing Way Community 2022</a>)</span>:</p>
@@ -498,7 +535,7 @@ Figure&nbsp;7.1: <strong>Illustration of branches in a Git repository.</strong> 
 </div>
 <p>Your newly created branch (here, <code>feature</code>) will show up, but your active branch should still be <code>main</code>. Note that <code>feature</code> is just a name. You could also call your branch <code>banana</code>, if you want. Find out more about naming convention for Git branches in the <a href="#best-practices">section on best practices</a> below.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git branch` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -507,7 +544,7 @@ Common <code>git branch</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-a</code> or <code>--all</code>: Lists both local and remote branches. (Remote branches will be introduced in the <a href="../chapters/remotes-intro.html">Remotes: Introduction</a> chapter )</p>
 <p><code>-r or --remote</code>: Lists only remote branches.</p>
@@ -551,7 +588,7 @@ Common <code>git branch</code> flags
 </div>
 <p>Now you can work on this branch as usual, staging and committing changes, as introduced in the chapter on <a href="../chapters/first-steps-git.html">basic Git commands</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Help: I just created a new Git repository but can't switch the branch! What is going on?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -560,14 +597,14 @@ Help: I just created a new Git repository but can’t switch the branch! What is
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Before you can switch branches for the first time, you need to have made at least one commit on your current branch (for example, on the <code>main</code> branch). This requirement ensures that there’s a baseline history in your repository, allowing Git to manage changes.</p>
 </div>
 </div>
 </div>
 <div id="nte-switch-checkout" class="callout callout-style-default callout-tip callout-titled" title="Find out more: What is the difference between `git checkout` and `git switch`?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -576,7 +613,7 @@ Tip&nbsp;7.1: Find out more: What is the difference between <code>git checkout</
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Prior to Git version 2.23, the <code>git checkout</code> command was the primary way to switch branches. It allows you to move to a different branch and update your working directory to reflect the state of that branch. In Git 2.23 and later versions, the <code>git switch</code> command was introduced as a safer and more intuitive alternative to <code>git checkout</code>. It simplifies the branch-switching process and provides clearer feedback in case of errors.</p>
 <p><code>git checkout</code> is a versatile and powerful command that, among other things, was traditionally used for switching branches. However, it has other use cases like checking out specific files or commits. It can be used for branch switching, but it may have some ambiguity in its syntax, especially when used for other purposes.</p>
@@ -780,7 +817,7 @@ Tip&nbsp;7.1: Find out more: What is the difference between <code>git checkout</
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -789,7 +826,7 @@ Common <code>git merge</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--abort</code>: Abort the current merge operation and reset the branch to its pre-merge state.</p>
 <p><code>--continue</code>: Continue the merge process after resolving conflicts.</p>
@@ -846,7 +883,7 @@ Common <code>git merge</code> flags
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="When is squashing useful?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -855,7 +892,7 @@ When is squashing useful?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Squashing commits can be desirable in a situation where <strong>you don’t want others to see the full history of individual commits</strong> made on the merged branch. For example, if you wrote a script and only want your collaborators to see the end result and not all the tiny changes you made on the way. In this situation, you could squash all previous commits and only merge the latest version of your script.</p>
 </div>
@@ -886,7 +923,7 @@ When is squashing useful?
 </div>
 <p>The addition <code>(was 2cb61c2)</code> represents the last commit hash of the branch you deleted. You can only delete a branch, you are <em>not</em> currently on.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Can I delete the default branch (`main` or `master`)?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -895,7 +932,7 @@ Can I delete the default branch (<code>main</code> or <code>master</code>)?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Since Git treats the default branch (<code>main</code> or <code>master</code>) branch like any other branch, <strong>you <em>can</em> also delete the default branch</strong> if you want. This is however not recommended to avoid confusion and might even be forbidden or not possible in some projects.</p>
 </div>
@@ -912,7 +949,7 @@ Can I delete the default branch (<code>main</code> or <code>master</code>)?
 <h3 data-number="7.9.2" class="anchored" data-anchor-id="name-branches-consistently"><span class="header-section-number">7.9.2</span> Name branches consistently</h3>
 <p>Adopt a <strong>consistent naming convention</strong> for branches that accurately <strong>reflects their purpose</strong>. This can include prefixes like <code>feature/</code>, <code>bug/</code>, followed by a descriptive name. Clear and standardized branch names make it easier to identify the purpose of each branch.</p>
 <div id="tip-branch-names" class="callout callout-style-default callout-tip callout-titled" title="Find out more: Naming conventions for Git branches">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -921,7 +958,7 @@ Tip&nbsp;7.1: Find out more: Naming conventions for Git branches
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Basic recommendations for branch names</strong></p>
 <ol type="1">
@@ -1075,7 +1112,7 @@ Tip&nbsp;7.1: Find out more: Naming conventions for Git branches
 </div>
 <p>The changes made in your stored stashed are now applied again in your working directory. Note that already staged files are not automatically staged again.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git stash` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1084,7 +1121,7 @@ Common <code>git stash</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>git stash -m "message"</code>: Save your changes in a stash with a message.</p>
 <p><code>git stash apply stash@{n}</code>: Apply the changes from the specified stash (identified by its index <code>n</code>) to your working directory.</p>
@@ -1132,7 +1169,7 @@ Figure&nbsp;7.2: Image from <a href="https://dev.to/0xkoji/what-is-git-cherry-pi
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git cherry-pick` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1141,7 +1178,7 @@ Common <code>git cherry-pick</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-n</code> or <code>--no commit</code>: Prevents Git from automatically creating a new commit after cherry-picking. It stages the changes, allowing you to make additional modifications or review them before committing.</p>
 <p><code>-e</code> or <code>--edit</code>: Opens the default text editor to edit the commit message of the new cherry-picked commit. Useful when you want to provide a custom message for the cherry-picked commit.</p>
@@ -1172,7 +1209,7 @@ Figure&nbsp;7.3: Image from <a href="https://dev.to/_mohanmurali/deep-dive-into-
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git rebase` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1181,7 +1218,7 @@ Common <code>git rebase</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--interactive</code> or <code>-i</code>: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.</p>
 <p><code>--continue</code>: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.</p>

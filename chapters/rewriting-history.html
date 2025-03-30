@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,10 +91,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9e228d6d4d66c12a9d11739da31c2b1c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-17c909d5fd25ae21b861c0c7a49b2096.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4d6d62db14233255fe53e48614185b6c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8895a4d19d0376a9e4451ed1dd0085fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -282,6 +282,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../misc/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently Asked Questions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../misc/resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
   </div>
@@ -373,6 +379,22 @@ div.csl-indent {
 </header>
 
 
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Correction of mistakes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mistakes, such as committing erroneous data, large files, or flawed analysis scripts, can affect the validity of ongoing experiments or shared repositories. For example, by reverting incorrect experimental results or removing extraneous data from the history, the research project remains clean and understandable for collaborators and peer reviewers.</p>
+</div>
+</div>
+</div>
 <section id="how-to-avoid-accidental-commits" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="how-to-avoid-accidental-commits"><span class="header-section-number">13.1</span> How to avoid accidental commits</h2>
 <p>Considering rewriting Git history? This usually comes into play when there are errors or changes needed in previous commits. There are a few tricks to avoid committing things you don’t want committed:</p>
@@ -460,7 +482,7 @@ Be careful about data loss!
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git rm` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -469,7 +491,7 @@ Find out more: Common <code>git rm</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-f</code> or <code>--force</code>: This flag forces the removal of files, even if they are modified.</p>
 <p><code>-r</code> or <code>--recursive</code>: Use this flag to remove directories and their contents.</p>
@@ -504,7 +526,7 @@ Find out more: Common <code>git rm</code> flags
 </div>
 <p>This will create a new commit that effectively undoes the changes made in the specified commit. This new commit will have the opposite changes, effectively canceling out the changes from the original commit. You might need to resolve a merge conflict, if the changes you want to revert conflict with changes in subsequent commits. By default the commit message will be <code>revert &lt;commit message of reverted commit&gt;</code>. However, Git will open an editor for you to change this message, if you don’t specify it otherwise.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: What are hashes?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -513,14 +535,14 @@ Find out more: What are hashes?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In Git, a commit hash, also known as a commit ID or SHA-1 hash, is a unique identifier for a specific commit in a Git repository. It’s a 40-character hexadecimal string that represents the contents and history of that commit. Each commit in a Git repository has a unique hash.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git revert` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -529,7 +551,7 @@ Find out more: Common <code>git revert</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-n</code> or <code>--no commit</code>: Prevents Git from automatically creating a new commit after reverting changes. It stages the changes, allowing you to make additional modifications or review them before committing.</p>
 <p><code>-m &lt;parent-number&gt;</code>: When dealing with a merge commit, this flag specifies which parent commit to use as the source for reverting. By default, Git uses the first parent (main branch), but you can specify another parent by providing its number.</p>
@@ -595,7 +617,7 @@ Be careful about data loss!
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: `git log` vs. `git reflog`">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -604,14 +626,14 @@ Find out more: <code>git log</code> vs.&nbsp;<code>git reflog</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>git log</code> shows the commit history, while <code>git reflog</code> shows a log of all changes to branches, including resets and other adjustments. Think of <code>git log</code> as a timeline of commits, and <code>git reflog</code> as a detailed diary of all recent changes, even those that alter commit history, providing a safety net for recovery.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Common `git reset` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -620,7 +642,7 @@ Find out more: Common <code>git reset</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--soft</code>: Resets the branch pointer to the specified commit but keeps changes staged. This allows you to rework the changes and create a new commit.</p>
 <p><code>--mixed</code> (default): Resets the branch pointer to the specified commit and unstages changes. Changes are kept in your working directory, allowing you to modify them before committing.</p>
@@ -714,7 +736,7 @@ Warning
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="I did not clone a fresh copy of the repository. Is this a problem?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -723,7 +745,7 @@ I did not clone a fresh copy of the repository. Is this a problem?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you did not clone a fresh copy of your repository, you may see this message after running the <code>git filter-repo</code> command:</p>
 <div class="cell">
@@ -773,7 +795,7 @@ I did not clone a fresh copy of the repository. Is this a problem?
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--force</span> <span class="at">--all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Error: `fatal: 'origin' does not appear to be a git repository`">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -782,7 +804,7 @@ Error: <code>fatal: 'origin' does not appear to be a git repository</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Did you receive this error message?</p>
 <div class="cell">
@@ -832,7 +854,7 @@ Error: <code>fatal: 'origin' does not appear to be a git repository</code>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--force</span> <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled" title="The dangers of force pushing">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -841,7 +863,7 @@ The dangers of force pushing
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>As stated in this example, force pushing can be very useful, for example if you committed and pushed data you want to remove again. However force pushing comes with potential drawbacks and should mostly be used as a last resort.</p>
 <p>Force pushing can lead to the <strong>loss of commit history</strong> on the remote branch, which may cause confusion or conflicts for collaborators who have based their work on the previous history. Force pushing to a shared branch can <strong>cause conflicts for collaborators</strong> who have already cloned the repository and pulled changes. Once a force push is executed, the old <strong>commit history may become difficult to recover.</strong></p>

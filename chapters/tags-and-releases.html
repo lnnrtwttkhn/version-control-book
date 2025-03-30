@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,10 +91,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9e228d6d4d66c12a9d11739da31c2b1c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-17c909d5fd25ae21b861c0c7a49b2096.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4d6d62db14233255fe53e48614185b6c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8895a4d19d0376a9e4451ed1dd0085fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -282,6 +282,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../misc/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently Asked Questions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../misc/resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
   </div>
@@ -386,6 +392,38 @@ Learning Objectives
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use case: Tracking the version used for paper submission
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When submitting a scientific paper, it’s crucial to know exactly which version of your code was used to generate the results. By tagging the commit with a descriptive name (e.g., <code>paper-submission-v1</code>), you can easily refer back to the exact state of your code and data that produced the results in the submission. This ensures reproducibility and helps to quickly trace the source of your published findings.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comparing changes between submission versions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When revising a paper based on reviewer feedback, it’s important to track what has changed between the original submission and the revised version. Tagging the first submission (e.g., <code>submission-v1</code>) and the revised version (e.g., <code>revision-v1</code>) allows you to easily compare the differences, ensuring that the revisions are clearly documented and traceable.</p>
+</div>
+</div>
+</div>
 <section id="tags" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="tags"><span class="header-section-number">10.1</span> Tags</h2>
 <section id="importance-of-tags" class="level3" data-number="10.1.1">
@@ -438,7 +476,7 @@ Learning Objectives
 </div>
 <p>Annotated tags are larger in size compared to lightweight tags due to the additional metadata.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git tag` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -447,7 +485,7 @@ Common <code>git tag</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-a</code> or <code>--annotate</code>: Creates an annotated tag, which includes additional metadata like tagger information and a tagging message.</p>
 <p><code>-m</code> or <code>--message</code>: Specifies the tagging message directly in the command. Useful when creating an annotated tag without opening an editor.</p>
@@ -591,7 +629,7 @@ Figure&nbsp;10.1: Screenshot of GitHub when creating a new release
 <p>Zenodo can be integrated with version control systems like Git and platforms like GitHub. This integration allows for <strong>automated archiving of specific releases or tags</strong> from Git repositories. Zenodo assigns a <strong>Digital Object Identifier (DOI)</strong> to each record, including those linked to GitHub repositories, providing a permanent link for citation.</p>
 <p>By linking your GitHub repository, you also ensure that your work is archived and accessible beyond the lifespan of GitHub. When you publish a research paper, journals increasingly require or encourage the deposition of associated data in a public repository. Uploading the contents of your GitHub repository to Zenodo ensures that your work is openly accessible and can be cited.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="What is a Digital Object Identifier (DOI)?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -600,7 +638,7 @@ What is a Digital Object Identifier (DOI)?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A Digital Object Identifier (DOI) is a unique alphanumeric string assigned to a digital document or resource to provide a permanent and stable link to it. DOIs are commonly used to identify and provide a persistent link to scholarly articles, research papers, books, datasets, and other types of digital content. The purpose of a DOI is to ensure that the content can be reliably located and accessed over time, even if the web address (URL) of the resource changes.</p>
 <p>Key features of DOIs include:</p>

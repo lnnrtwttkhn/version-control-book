@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,10 +91,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9e228d6d4d66c12a9d11739da31c2b1c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-17c909d5fd25ae21b861c0c7a49b2096.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4d6d62db14233255fe53e48614185b6c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8895a4d19d0376a9e4451ed1dd0085fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -282,6 +282,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../misc/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Frequently Asked Questions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../misc/resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
   </div>
@@ -383,6 +389,22 @@ Learning Objectives
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use case: Tracking your work
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It’s common to perform multiple analyses, run experiments, or manipulate datasets over time. By creating a Git repository, you can track every change you make to your analysis scripts, experimental code, or research notes. This helps in keeping a detailed history of your work, allowing you to revert back to any previous version if needed.</p>
+</div>
+</div>
+</div>
 <section id="creating-a-git-repository" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="creating-a-git-repository"><span class="header-section-number">5.1</span> Creating a Git repository</h2>
 <p>Let’s <em>git</em> started! First, we will create a so-called <strong>repository</strong> (or <strong>repo</strong>, for short). A repository is a regular folder on your computer that is tracked by Git. The full history of changes of a project and information about who changed what and when is also stored by Git in this folder.</p>
@@ -440,7 +462,7 @@ Remember to always <code>cd</code> into your Git repository first!
 <p>Git will create an already initialized folder at the path and with the name you use. Check your current working directory to be sure that you create the Git repository in the desired location <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. You can use both absolute and relative paths as arguments to the <code>git init</code> command to specify the location of your Git repository <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
 <p>Git can now track every file you move, create or change in this folder. You can use this folder like any other normal folder on you computer. The only difference is the tiny but powerful folder called <code>.git</code> within it, which stores the full history of files and relevant metadata of your project, thereby enabling the tracking of your project progress.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="`.git` folder?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -449,14 +471,14 @@ Remember to always <code>cd</code> into your Git repository first!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you want to verify that Git is tracking your folder, you can look for the <code>.git</code> folder. To do this navigate to the correct folder and use <code>ls -a</code> to receive a list of hidden files. If the folder has been initialized as a Git repository, you should see a folder called <code>.git</code>. Generally, you should not manually modify the <code>.git</code> folder, since doing so can corrupt your repository.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled" title="Don't mess with the `.git` folder!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -465,14 +487,14 @@ Don’t mess with the <code>.git</code> folder!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The <code>.git</code> folder in a Git repository contains all the essential information and configuration for the repository to function properly. Tampering with this folder can have serious consequences, as it can lead to data loss, corruption, or the inability to use the repository effectively. It’s essential to only modify Git repositories through Git commands and established workflows to ensure the integrity and reliability of your project. In short: Don’t mess with the <code>.git</code> folder.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled" title="Removing Git from a folder / undoing `git init`">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -481,7 +503,7 @@ Removing Git from a folder / undoing <code>git init</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Short version (if you know what you are doing): To remove Git from a folder run:</p>
 <div class="cell">
@@ -538,7 +560,7 @@ Removing Git from a folder / undoing <code>git init</code>
 <p>This indicates that there are no new changes to save or “commit” to the repository at this moment. Git is suggesting that if you want to start tracking changes, you should create or copy some files into the repository’s directory and then use the <code>git add</code> command to tell Git to start keeping track of those files. Once you’ve added files with <code>git add</code>, you can then commit those changes to save them in your project’s history (for more details, see below).</p>
 <p>As you can see <code>git status</code> gives you an overview, which files Git is tracking for you. The <code>git status</code> command is helpful for understanding the current state of your Git repository and we recommend to use it frequently, especially before adding or committing changes in files to the Git history (see below for more details).</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git status` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -547,7 +569,7 @@ Common <code>git status</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-s</code>: Provides a more compact and simplified output, showing only the file status in a short format.</p>
 <p><code>-b</code>: Includes information about the branch you are currently on along with the status.</p>
@@ -648,7 +670,7 @@ Editing files while using Git
 <section id="staging-all-changes" class="level4" data-number="5.2.3.1">
 <h4 data-number="5.2.3.1" class="anchored" data-anchor-id="staging-all-changes"><span class="header-section-number">5.2.3.1</span> Staging all changes</h4>
 <div class="callout callout-style-default callout-warning callout-titled" title="Be careful when staging *all* files!">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -657,7 +679,7 @@ Be careful when staging <em>all</em> files!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Especially for existing project folders that have a lot of files in them, be careful when you stage and / or commit all files in the project directory. Git might start to track files that you are actually not interested in tracking or even sensitive files that should not be tracked by Git at all. We recommend to use <code>git status</code> frequently to check which files are in the staging area and will therefore be added to the next commit.</p>
 </div>
@@ -682,7 +704,7 @@ Be careful when staging <em>all</em> files!
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git add` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -691,7 +713,7 @@ Common <code>git add</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-A</code>: Adds all changes, including modifications, deletions, and new files, in the entire working tree.</p>
 <p><code>-u</code>: Adds modifications and deletions, but not new files.</p>
@@ -728,7 +750,7 @@ Common <code>git add</code> flags
 <p>Congratulations! You have successfully created your first commit in the Git repository! <span class="emoji" data-emoji="tada">🎉</span></p>
 <p>Commits are the core elements of version control and the “commit history” of your Git repository. They allow you to track the history of your project and easily revert changes if needed. You can use the same workflow of <code>git add</code> and <code>git commit</code> for every file you add or make changes in.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="FAQ: &quot;I forgot to close the quotation marks of my commit message! What do I do?&quot;">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -737,7 +759,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In this situation, you command line probably looks like one of these examples:</p>
 <div class="cell" data-code-copy="false">
@@ -783,7 +805,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git commit` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -792,7 +814,7 @@ Common <code>git commit</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>-m</code> <message>: Specifies the commit message inline. For example, <code>git commit -m "Fix typo"</code> allows you to provide a short commit message directly in the command.</message></p>
 <p><code>-a</code> or <code>--all</code>: Automatically stages all modified and deleted files before committing. This skips the separate <code>git add</code> step.</p>
