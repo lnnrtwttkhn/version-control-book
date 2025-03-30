@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Graphical User Interfaces – The Version Control Book</title>
+<title>8&nbsp; Branches Advanced – The Version Control Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +63,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/rewriting-history.html" rel="next">
-<link href="../chapters/issues.html" rel="prev">
+<link href="../chapters/remotes-intro.html" rel="next">
+<link href="../chapters/branches.html" rel="prev">
 <link href="../static/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -61,8 +75,6 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-8895a4d19d0376a9e4451ed1dd0085fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,7 +117,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/gui.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/branches-advanced.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Branches Advanced</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -200,7 +212,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/branches-advanced.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/branches-advanced.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Branches Advanced</span></span></a>
   </div>
 </li>
@@ -230,7 +242,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
   </div>
 </li>
@@ -298,31 +310,29 @@ div.csl-indent {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-git-guis" id="toc-introduction-to-git-guis" class="nav-link active" data-scroll-target="#introduction-to-git-guis"><span class="header-section-number">13.1</span> Introduction to Git GUIs</a></li>
-  <li><a href="#popular-git-guis" id="toc-popular-git-guis" class="nav-link" data-scroll-target="#popular-git-guis"><span class="header-section-number">13.2</span> Popular Git GUIs</a>
+  <li><a href="#stashing" id="toc-stashing" class="nav-link active" data-scroll-target="#stashing"><span class="header-section-number">8.1</span> Stashing</a>
   <ul class="collapse">
-  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"><span class="header-section-number">13.2.1</span> <i class="fa-brands fa-github" aria-label="github"></i> GitHub Desktop</a></li>
-  <li><a href="#gitkraken" id="toc-gitkraken" class="nav-link" data-scroll-target="#gitkraken"><span class="header-section-number">13.2.2</span> <i class="fa-brands fa-gitkraken" aria-label="gitkraken"></i> GitKraken</a></li>
+  <li><a href="#stashing-changes" id="toc-stashing-changes" class="nav-link" data-scroll-target="#stashing-changes"><span class="header-section-number">8.1.1</span> Stashing changes</a></li>
+  <li><a href="#retrieving-stashed-changes" id="toc-retrieving-stashed-changes" class="nav-link" data-scroll-target="#retrieving-stashed-changes"><span class="header-section-number">8.1.2</span> Retrieving stashed changes</a></li>
+  <li><a href="#applying-stashed-changes" id="toc-applying-stashed-changes" class="nav-link" data-scroll-target="#applying-stashed-changes"><span class="header-section-number">8.1.3</span> Applying stashed changes</a></li>
   </ul></li>
-  <li><a href="#use-cases-for-git-guis" id="toc-use-cases-for-git-guis" class="nav-link" data-scroll-target="#use-cases-for-git-guis"><span class="header-section-number">13.3</span> Use cases for Git GUIs</a>
+  <li><a href="#alternatives-to-standard-merging" id="toc-alternatives-to-standard-merging" class="nav-link" data-scroll-target="#alternatives-to-standard-merging"><span class="header-section-number">8.2</span> Alternatives to standard merging</a>
   <ul class="collapse">
-  <li><a href="#partial-commits" id="toc-partial-commits" class="nav-link" data-scroll-target="#partial-commits"><span class="header-section-number">13.3.1</span> Partial commits</a></li>
-  <li><a href="#merge-conflict-resolution" id="toc-merge-conflict-resolution" class="nav-link" data-scroll-target="#merge-conflict-resolution"><span class="header-section-number">13.3.2</span> Merge conflict resolution</a></li>
+  <li><a href="#cherrypicking" id="toc-cherrypicking" class="nav-link" data-scroll-target="#cherrypicking"><span class="header-section-number">8.2.1</span> Cherrypicking</a></li>
+  <li><a href="#rebasing" id="toc-rebasing" class="nav-link" data-scroll-target="#rebasing"><span class="header-section-number">8.2.2</span> Rebasing</a></li>
   </ul></li>
-  <li><a href="#git-integration-in-rstudio" id="toc-git-integration-in-rstudio" class="nav-link" data-scroll-target="#git-integration-in-rstudio"><span class="header-section-number">13.4</span> Git Integration in RStudio</a></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">13.5</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#visualizing-branches" id="toc-visualizing-branches" class="nav-link" data-scroll-target="#visualizing-branches"><span class="header-section-number">8.3</span> Visualizing branches</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/gui.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/gui.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/branches-advanced.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches-advanced.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Branches Advanced</span></h1>
   <div class="quarto-categories">
-    <div class="quarto-category">beginner</div>
-    <div class="quarto-category">basics</div>
+    <div class="quarto-category">advanced</div>
   </div>
   </div>
 
@@ -338,7 +348,7 @@ div.csl-indent {
 <div>
   <div class="abstract">
     <div class="block-title">About this chapter</div>
-    <p>In this chapter, we will give an introduction to Graphical User Interfaces (GUIs) for Git. We will showcase two different, commonly used GUIs, including GitHub Desktop and GitKraken as well as the Git integration in RStudio. Finally, we will discuss specific use cases where a graphical user interface makes Git operations easier and less error-prone compared to the command-line.</p>
+    <p>This chapter introduces more advanced Git commands for working with branches. In particular, this chapter will cover stashing, alternatives to standard merging like cherry-picking and rebasing, as well as visualization techniques for branches.</p>
   </div>
 </div>
 
@@ -346,242 +356,292 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<section id="stashing" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="stashing"><span class="header-section-number">8.1</span> Stashing</h2>
+<p><code>git stash</code> is a valuable command in Git that allows you to save your current changes temporarily without committing them. This is useful when you need to switch branches or work on something else without creating a commit for unfinished work. For example, when you’re working on a feature and you need to switch to a different task quickly or your work gets interrupted unexpectedly, you may not want to commit your unfinished changes. When you run <code>git stash</code>, Git stores the changes in your working directory and staged changes in a special stash commit. The working directory is then reverted to the last committed state, providing a clean slate for your next task.</p>
+<section id="stashing-changes" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="stashing-changes"><span class="header-section-number">8.1.1</span> Stashing changes</h3>
+<p>To demonstrate the usefulness of <code>git stash</code>, you can edit one or more files in your repository, stage (or don’t stage) your changes, but don’t commit them. Now use <code>git status</code> to look at the current state of your working directory.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
 </div>
-<div class="callout-body-container">
-<h5 class="anchored">
-Learning Objectives
-</h5>
-<p><span class="emoji" data-emoji="bulb">💡</span> You understand the benefits of Git GUIs compared to the command line<br> <span class="emoji" data-emoji="bulb">💡</span> You can name at least two Git operations that can be considered easier in a GUI compared to the command line<br> <span class="emoji" data-emoji="bulb">💡</span> You try out different GUIs and become familiar with their features<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to manage branches in a GUI<br></p>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<p>You should get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
 </div>
-<section id="introduction-to-git-guis" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="introduction-to-git-guis"><span class="header-section-number">13.1</span> Introduction to Git GUIs</h2>
-<p>Graphical User Interfaces (GUIs) offer a more user-friendly way to work with Git compared to the <a href="../chapters/command-line.html">command-line</a>, using visual buttons and indicators instead of text commands. They show your project’s history, branches, and changes in a more colorful and easy-to-understand manner.</p>
-<p>GUIs make Git appear less scary and more accessible to everyone, helping you manage your code, without the hassle of remembering complex text-based commands in the command-line. While Git GUIs offer a user-friendly approach to version control, they come with a few limitations. One notable drawback is their reduced flexibility compared to the command-line interface. GUIs are designed to simplify common tasks, but more advanced or customized operations may be challenging to perform within a graphical environment. Despite their user-friendly design, understanding the underlying Git concepts and the specific workflow of a GUI is still very important.</p>
-<p>As this book primarily emphasizes learning Git through the <a href="../chapters/command-line.html">command line</a> interface, this chapter will only feature a short introduction, but not extensive tutorials for GUI tools.</p>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Changes</span> to be committed:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git reset HEAD &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   example.html</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Changes</span> not staged for commit:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git checkout -- &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   example.txt   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>In this example, there are changes on two tracked files, one staged and one not staged, that we want to stash. Just like when committing, it is possible to add a message when stashing using the <code>-m</code> flag. It makes sense to add a message because it serves as a reminder of what changes were stashed, making it easier to identify the purpose of the stash when you later list or apply stashes.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash <span class="at">-m</span> <span class="st">"feature X WIP"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You should get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Saved</span> working directory and index state On feature: <span class="st">"feature X WIP"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You can now use <code>git status</code> to look at your working directory again and should see an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit, working directory clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Now you can switch branches and work on something else or stop working on the project altogether.</p>
 </section>
-<section id="popular-git-guis" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="popular-git-guis"><span class="header-section-number">13.2</span> Popular Git GUIs</h2>
-<p>There is a wide variety of Git GUIs available, and each of them offers its own set of features and benefits, catering to different preferences and workflows. In this section, we will focus on <a href="https://desktop.github.com">GitHub Desktop</a> and <a href="https://www.gitkraken.com">GitKraken</a>, although many more options exist. For a more comprehensive overview, you can explore the <a href="https://git-scm.com/downloads/guis/">official Git website</a>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="How do GitHub Desktop and GitKraken differ and which should I choose?">
+<section id="retrieving-stashed-changes" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="retrieving-stashed-changes"><span class="header-section-number">8.1.2</span> Retrieving stashed changes</h3>
+<p>To look at all your stored stashes, you can use <code>git stash list</code>:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You should get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">stash@</span>{0}<span class="ex">:</span> On feature: feature X WIP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>All of your stored stashes should show up, with the most recent on top. Every stash should have a number, applied chronologically.</p>
+</section>
+<section id="applying-stashed-changes" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="applying-stashed-changes"><span class="header-section-number">8.1.3</span> Applying stashed changes</h3>
+<p>If you want to reapply your stashed changes, you can use <code>git stash apply</code>. This command automatically applies your latest stash. You can also specify a stored stash, for example <code>git stash apply stash@{0}</code></p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash apply stash@{0}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You should get an output similar to:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Changes</span> not staged for commit:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;.. ."</span> to update what will be committed<span class="kw">)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git checkout -- &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   example.html</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   example.txt</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ex">no</span> changes added to commit <span class="op">(us</span>e <span class="st">"git add"</span> and/or <span class="st">"git commit -a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>The changes made in your stored stashed are now applied again in your working directory. Note that already staged files are not automatically staged again.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git stash` flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How do GitHub Desktop and GitKraken differ and which should I choose?
+Common <code>git stash</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Whilst it is possible to switch between different GUIs or use multiple at the same time, you might just want to focus on one. If that’s the case, here are some considerations regarding GitHub Desktop and GitKraken that could help you decide which one is a better fit for you and your projects.<br>
-First of all, for Linux users, GitHub Desktop simply doesn’t offer an official version. Another factor can be cost, as GitHub Desktop is free to use, while GitKraken is only free for students or during a 7-day trial period. Overall, GitHub Desktop offers a simpler interface, making it more intuitive for beginners. However, this simplicity comes at the cost of having fewer features compared to GitKraken, which could be limiting if you want to perform more complex tasks. GitHub Desktop is very well integrated with GitHub, but can be restricting if you want to work with repositories hosted on other platforms. In that case, GitKraken offers better support for a wider range of Git hosting services.</p>
+<p><code>git stash -m "message"</code>: Save your changes in a stash with a message.</p>
+<p><code>git stash apply stash@{n}</code>: Apply the changes from the specified stash (identified by its index <code>n</code>) to your working directory.</p>
+<p><code>git stash pop stash@{n}</code>: Apply the changes from the specified stash (identified by its index <code>n</code>) to your working directory and remove the stash from the stash list.</p>
+<p><code>git stash list</code>: List all the stashes you have created, showing their reference numbers and stash messages.</p>
+<p><code>git stash drop stash@{n}</code>: Remove the specified stash (identified by its index <code>n</code>) from the stash list.</p>
+<p><code>git stash branch &lt;branchname&gt;</code>: Create a new branch named <code>&lt;branchname&gt;</code> from the commit where you originally stashed your changes and apply the stash to the new branch.</p>
+<p><code>git stash show stash@{n}</code>: Show the diff of the changes stored in the specified stash (identified by its index <code>n</code>).</p>
 </div>
 </div>
 </div>
-<section id="github-desktop" class="level3" data-number="13.2.1">
-<h3 data-number="13.2.1" class="anchored" data-anchor-id="github-desktop"><span class="header-section-number">13.2.1</span> <i class="fa-brands fa-github" aria-label="github"></i> GitHub Desktop</h3>
-<section id="download" class="level4" data-number="13.2.1.1">
-<h4 data-number="13.2.1.1" class="anchored" data-anchor-id="download"><span class="header-section-number">13.2.1.1</span> Download</h4>
-<p>GitHub Desktop is a desktop application developed by GitHub. It is free to download for macOS and Windows on <a href="https://desktop.github.com">the GitHub website</a>. There is currently no official version available for Linux.</p>
 </section>
-<section id="setup" class="level4" data-number="13.2.1.2">
-<h4 data-number="13.2.1.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">13.2.1.2</span> Setup</h4>
-<p>After you download and install the program, you will be required to log in using your GitHub account. Once logged in, you can select a repository to work on, either from GitHub or a local repository (as shown in <a href="#fig-GHD_start" class="quarto-xref">Figure&nbsp;<span>13.1</span></a>).</p>
-<div id="fig-GHD_start" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-GHD_start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/github-desktop-gettingstarted.png" class="img-fluid figure-img">
+</section>
+<section id="alternatives-to-standard-merging" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="alternatives-to-standard-merging"><span class="header-section-number">8.2</span> Alternatives to standard merging</h2>
+<section id="cherrypicking" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="cherrypicking"><span class="header-section-number">8.2.1</span> Cherrypicking</h3>
+<p><code>git cherry-pick</code> allows you to apply the changes from a specific commit from one branch to another. This means, you can pick and apply specific commits to your current branch without merging the entire branch. This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in <a href="#fig-cherry-pick" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>. You will need the hash of the commit you want to “cherry-pick” and then use the command:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GHD_start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.1: Screenshot of GitHub Desktop. Showing the start screen.
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="op">&lt;</span>commithash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Again, you might have to resolve merge conflicts. The default commit message will be:</p>
+<div class="cell" data-code-copy="false">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Cherry-pick</span> commit <span class="op">&lt;</span>commit-hash<span class="op">&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> commit was cherry-picked from <span class="op">&lt;</span>source-branch<span class="op">&gt;</span> at <span class="op">&lt;</span>source-commit-hash<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="fig-cherry-pick" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cherry-pick-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/cherry-pick.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cherry-pick-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Image from <a href="https://dev.to/0xkoji/what-is-git-cherry-pick-3fka">Blogpost “What IS git cherry-pick?”</a> by <a href="https://dev.to/0xkoji">0xkoji</a>
 </figcaption>
 </figure>
 </div>
-<p>Once you’ve picked a repository to work on, GitHub Desktop shows you the history of that repository in a visual way. You’ll see branches, commits, and tags displayed on a timeline in chronological order. This setup makes it easy to dive into version control tasks like handling branches, commits, changes, and pull requests.</p>
-<div id="fig-GHD_window" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-GHD_window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/github-desktop-window.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GHD_window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.2: Screenshot of GitHub Desktop. Showing an example repository.
-</figcaption>
-</figure>
-</div>
-<p>For a more extensive GitHub Desktop tutorial, you can check out the <a href="https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop">GitHub documentation</a>.</p>
-<p>GitHub Desktop’s interface is simple and user-friendly. Its primary advantage lies in its integration with <a href="github.com">GitHub</a>. However, this dependency can also be limiting if you’re looking to work with repositories on alternative Git hosting services.</p>
-</section>
-</section>
-<section id="gitkraken" class="level3" data-number="13.2.2">
-<h3 data-number="13.2.2" class="anchored" data-anchor-id="gitkraken"><span class="header-section-number">13.2.2</span> <i class="fa-brands fa-gitkraken" aria-label="gitkraken"></i> GitKraken</h3>
-<section id="download-1" class="level4" data-number="13.2.2.1">
-<h4 data-number="13.2.2.1" class="anchored" data-anchor-id="download-1"><span class="header-section-number">13.2.2.1</span> Download</h4>
-<p>GitKraken is a third-party program and another very popular Git GUI for Windows, macOS and Linux. You can download it from the <a href="https://www.gitkraken.com">official website</a>. Normally, GitKraken only offers a free seven-day trial period. However, if you are a student, you can get it for free, through the <a href="https://www.gitkraken.com/github-student-developer-pack">GitHub Student Developer Pack</a>.</p>
-</section>
-<section id="setup-1" class="level4" data-number="13.2.2.2">
-<h4 data-number="13.2.2.2" class="anchored" data-anchor-id="setup-1"><span class="header-section-number">13.2.2.2</span> Setup</h4>
-<p>After downloading, you either begin to track a local repository or log in to a hosting website like GitHub (but also to other ones) and work with your repositories from there.</p>
-<div id="fig-GK_start" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-GK_start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/gitkraken-gettingstarted.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GK_start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.3: Screenshot of GitKraken. Showing the start screen.
-</figcaption>
-</figure>
-</div>
-<p>After choosing a repository to track, you will see a visual representation of the commit history, branches, and commits.</p>
-<div id="fig-GK_window" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-GK_window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/gitkraken-window.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GK_window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.4: Screenshot of GitKraken. Showing an example repository.
-</figcaption>
-</figure>
-</div>
-<p>Just like with GitHub Desktop, your are able to manage your branches, push to or pull from remote branches and commit changes through GitKraken. For an extensive tutorial, you can check out the <a href="https://help.gitkraken.com/gitkraken-client/gitkraken-client-home/">GitKraken Client Documentation</a>.</p>
-</section>
-</section>
-</section>
-<section id="use-cases-for-git-guis" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="use-cases-for-git-guis"><span class="header-section-number">13.3</span> Use cases for Git GUIs</h2>
-<p>You can perform a wide range of basic and advanced Git operations with GUIs. Here, we present a few Git use cases where the use of a GUI can be particularly helpful as compared to doing the same thing from the command-line.</p>
-<section id="partial-commits" class="level3" data-number="13.3.1">
-<h3 data-number="13.3.1" class="anchored" data-anchor-id="partial-commits"><span class="header-section-number">13.3.1</span> Partial commits</h3>
-<p>One useful feature of Git GUIs is the ability to easily commit only specific parts or “hunks” of code from within a file. This is particularly handy when you’ve made changes to different parts of a file and want to commit them separately to group related changes together and keep a clean commit history. With a Git GUI, you can easily select the lines or blocks of code you want to include in a commit, stage them, and then commit just those changes.</p>
-<p>For example, to do this in GitKraken, change a file, then click on your last commit in the GitKraken GUI (see <a href="#fig-GK_staging" class="quarto-xref">Figure&nbsp;<span>13.5</span></a>). You will see a list of unstaged files with changes. After you click on one, you will see your additions highlighted green and your deletions highlighted red. If you hover over the changed lines you will see the option to “Stage this Line”. To stage multiple lines at the same time, highlight the ones you want to stage, do a right-click and select “Stage selected lines”. You can also stage the whole file or “hunk” and unstage specific changes.</p>
-<div id="fig-GK_staging" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-GK_staging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/gitkraken-staging.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GK_staging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.5: Screenshot of GitKraken. Showing staging an example file.
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Find out more: What is a hunk?">
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git cherry-pick` flags">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Find out more: What is a hunk?
+Common <code>git cherry-pick</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In Git, a “hunk” refers to a distinct block of code changes within a file. It represents a cohesive set of added, modified, or deleted lines in a specific location. Git automatically divides changes into hunks to facilitate easier review, selective staging, and conflict resolution during version control operations.</p>
+<p><code>-n</code> or <code>--no commit</code>: Prevents Git from automatically creating a new commit after cherry-picking. It stages the changes, allowing you to make additional modifications or review them before committing.</p>
+<p><code>-e</code> or <code>--edit</code>: Opens the default text editor to edit the commit message of the new cherry-picked commit. Useful when you want to provide a custom message for the cherry-picked commit.</p>
 </div>
 </div>
 </div>
-<p>You can also create a partial commit in GitHub Desktop. For details, see the <a href="https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop#creating-a-partial-commit">GitHub Desktop documentation</a>.</p>
 </section>
-<section id="merge-conflict-resolution" class="level3" data-number="13.3.2">
-<h3 data-number="13.3.2" class="anchored" data-anchor-id="merge-conflict-resolution"><span class="header-section-number">13.3.2</span> Merge conflict resolution</h3>
-<p>Git GUIs make resolving merge conflicts more intuitive. When conflicts arise due to incompatible changes made in different branches, a GUI helps you identify conflicting lines side by side. You can then select which changes to keep, discard, or modify. The graphical representation simplifies the process.</p>
-<p>To merge two branches in GitKraken, you can either drag and drop one branch onto another branch or use the right-click menu of the branch you want to merge in. If a merge conflict occurs you will see a list of conflicted files. When you click on a file, it will show you a side-by-side comparison of the conflicting changes, allowing you to choose which lines to keep. After resolving all conflicts, you can continue the merge process by completing the merge commit.</p>
-<div id="fig-GK_commit" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-GK_commit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/gitkraken-mergeconflict.png" class="img-fluid figure-img">
+<section id="rebasing" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="rebasing"><span class="header-section-number">8.2.2</span> Rebasing</h3>
+<p><code>git rebase</code> is a different way compared to a standard merge to integrate changes from one branch into another. For example, when you rebase the <code>feature</code> branch onto the <code>main</code> branch you “rearrange” the commits. It’s like taking your changes, applying them on top of the latest <code>main</code> branch, and making it all look like a smooth line. The new commits you made in the <code>feature</code> branch are still there, but they appear as if they were created after the latest changes in the <code>main</code> branch. It’s like picking up your changes and placing them on the latest code, resulting in a linear history. For an illustration, see <a href="#fig-rebasing" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-GK_commit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.6: Screenshot of Gitkraken. Showing an example merge conflict.
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for team members.</p>
+<div id="fig-rebasing" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rebasing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../static/rebasing.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rebasing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Image from <a href="https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05">Blogpost “Deep dive into Git Rebase”</a> by <a href="https://dev.to/_mohanmurali">Mohan Murali</a>
 </figcaption>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common `git rebase` flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common <code>git rebase</code> flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>--interactive</code> or <code>-i</code>: Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.</p>
+<p><code>--continue</code>: Continue the rebase after resolving conflicts or editing commits during an interactive rebase.</p>
+<p><code>--abort</code>: Abort the current rebase operation and return the branch to its original state before the rebase.</p>
+<p><code>--skip</code>: Skip the current commit during an interactive rebase.</p>
+<p><code>-p</code> or <code>--preserve-merges</code>: Preserve merge commits during the rebase.</p>
+<p><code>--autosquash</code>: Automatically squash commits marked with “squash” or “fixup” in their commit message during an interactive rebase.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="git-integration-in-rstudio" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="git-integration-in-rstudio"><span class="header-section-number">13.4</span> Git Integration in RStudio</h2>
-<p>Even though it is not a complete GUI, <a href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</a>, the most popular development environment for <i class="fa-brands fa-r-project" aria-label="r-project"></i> programming, offers Git integration to simplify version control within your projects.</p>
-<p>When opening a new RStudio project, you can choose to “Checkout a project from a version control project”. After choosing this, you have the option to clone a Git repository, for example from Github. RStudio will then download the files and you can start to edit them in RStudio.</p>
-<div id="fig-Rstudio_start" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Rstudio_start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/rstudio-newproject.png" class="img-fluid figure-img">
+<section id="visualizing-branches" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="visualizing-branches"><span class="header-section-number">8.3</span> Visualizing branches</h2>
+<p>Git also offers an option for rudimentary visualization of branches inside the command line. For that you can use <code>git log</code> (introduced in the previous chapter on <a href="../chapters/git-essentials.html#logging-commits">Git Essentials</a>) with four flags:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Rstudio_start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.7: Screenshot of Rstudio. Showing the options for loading a repository.
-</figcaption>
-</figure>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span> <span class="at">--graph</span> <span class="at">--all</span> <span class="at">--decorate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>After cloning a remote repository or opening a local Git repository folder, you can do things like committing, pushing or switching branches using buttons in Rstudio, instead of using the command line. The Git tab within the upper right panel enables you to stage, commit, push and pull changes. The branches tab in the Git pane displays a list of available branches, making it straightforward to switch between them.</p>
-<div id="fig-Rstudio_window" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Rstudio_window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/rstudio-panels.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Rstudio_window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.8: Screenshot of RStudio. Showing an example repository.
-</figcaption>
-</figure>
+<p>The flags to this <code>git log</code> command do the following:</p>
+<ul>
+<li><code>--oneline</code>: Displays each commit on a single line, providing a concise overview of the commit history.</li>
+<li><code>--graph</code>: Draws a text-based graph showing the relationships between commits and branches.</li>
+<li><code>--all</code>: Includes commits from all branches (both local and remote).</li>
+<li><code>--decorate</code>: Adds labels to commits showing which branches or tags they belong to.</li>
+</ul>
+<p>The output might look something like this:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
 </div>
-<p>Clicking “Commit” will open up a window, where you see your changes marked with colors. You can also easily write a commit message and have the option to amend your last command. It is also possible to stage specific lines.</p>
-<div id="fig-Rstudio_commit" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Rstudio_commit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../static/rstudio-commit.png" class="img-fluid figure-img">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>f5a433d (HEAD -&gt; feature) Add new feature</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>1b672d3 Merge branch 'main' into feature</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>|\</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>| * d5a7342 (main) Update README</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>| * 3f672c4 Initial commit</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>7a1d5d1 Fix typo in feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Rstudio_commit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13.9: Screenshot of Rstudio. Showing an example commit.
-</figcaption>
-</figure>
 </div>
-<p>For a more comprehensive tutorial on using Git in Rstudio you can check out the <a href="https://happygitwithr.com/rstudio-git-github.html">“Happy Git and GitHub for the useR” by Jenny Bryan</a>.</p>
-<p>You should keep in mind that while the RStudio GUI simplifies many Git tasks, it lacks the flexibility and customization of using the command line. But considering you can also open a command line tab in RStudio, the GUI might be a help in your workflow, if you work on a <i class="fa-brands fa-r-project" aria-label="r-project"></i> project and track it using Git.</p>
-</section>
-<section id="acknowledgements-further-reading" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">13.5</span> Acknowledgements &amp; further reading</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Authors</th>
-<th style="text-align: left;">Title</th>
-<th style="text-align: left;">Website</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Source</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><span class="citation" data-cites="bryan2023">Bryan (<a href="../misc/references.html#ref-bryan2023" role="doc-biblioref">2023</a>)</span></td>
-<td style="text-align: left;">Happy Git and GitHub for the useR</td>
-<td style="text-align: left;"><a href="https://happygitwithr.com/"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
-<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
-<td style="text-align: left;"><a href="https://github.com/jennybc/happy-git-with-r"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="citation" data-cites="GitHub2023">GitHub (<a href="../misc/references.html#ref-GitHub2023" role="doc-biblioref">2023</a>)</span></td>
-<td style="text-align: left;">GitHub Docs</td>
-<td style="text-align: left;"><a href="https://docs.github.com/en"><i class="fa-solid fa-display" aria-label="display"></i></a></td>
-<td style="text-align: left;"><a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></td>
-<td style="text-align: left;"><a href="https://docs.github.com/en"><i class="fa-brands fa-github" aria-label="github"></i></a></td>
-</tr>
-</tbody>
-</table>
+<p>In this example, the graph shows that the <code>feature</code> branch has diverged from the <code>main</code> branch and is currently ahead of <code>main</code> by two commits. The asterisk (<code>*</code>) represents commits, while the lines (<code>|</code>) show the relationships between these commits and branches. The <code>\</code> indicates that two branches (in this case, <code>main</code> and <code>feature</code>) have joined after being separate.</p>
+<section id="creating-an-alias" class="level4" data-number="8.3.0.1">
+<h4 data-number="8.3.0.1" class="anchored" data-anchor-id="creating-an-alias"><span class="header-section-number">8.3.0.1</span> Creating an alias</h4>
+<p>Creating an <a href="../chapters/setup.html#aliases">alias</a> for this visualization command can be a good idea, as it will likely be used often, and it’s easy to forget to add some flags. After running the command below, you can simply use <code>git graph</code> instead of <code>git log --oneline --graph --all --decorate</code> for the same result <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> alias.graph <span class="st">"log --oneline --graph --all --decorate"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-bryan2023" class="csl-entry" role="listitem">
-Bryan, Jenny. 2023. <em>Happy Git and GitHub for the useR</em>. Jenny Bryan. <a href="https://happygitwithr.com">https://happygitwithr.com</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://github.com/jennybc/happy-git-with-r" class="uri">https://github.com/jennybc/happy-git-with-r</a>. Website: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a>.
-</div>
-<div id="ref-GitHub2023" class="csl-entry" role="listitem">
-GitHub. 2023. <em>GitHub Docs</em>. GitHub. <a href="https://docs.github.com/en">https://docs.github.com/en</a>. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Source: <a href="https://docs.github.com/en" class="uri">https://docs.github.com/en</a>. Website: <a href="https://docs.github.com/en" class="uri">https://docs.github.com/en</a>.
-</div>
-</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This alias was adopted from <a href="https://coderefinery.github.io/git-intro/aliases">CodeRefinery 2024</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1010,13 +1070,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/issues.html" class="pagination-link" aria-label="Issues">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Issues</span></span>
+      <a href="../chapters/branches.html" class="pagination-link" aria-label="Branches">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Branches</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/rewriting-history.html" class="pagination-link" aria-label="Rewriting History">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rewriting History</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/remotes-intro.html" class="pagination-link" aria-label="Remotes: Introduction">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1034,7 +1094,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/gui.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/gui.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/branches-advanced.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/branches-advanced.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
 </div>

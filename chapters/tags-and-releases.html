@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Tags and Releases – The Version Control Book</title>
+<title>11&nbsp; Tags and Releases – The Version Control Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -139,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/tags-and-releases.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tags and Releases</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/tags-and-releases.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tags and Releases</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -234,38 +234,44 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/branches-advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Branches Advanced</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/remotes-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/github-advanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/tags-and-releases.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -326,23 +332,23 @@ div.csl-indent {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#tags" id="toc-tags" class="nav-link active" data-scroll-target="#tags"><span class="header-section-number">10.1</span> Tags</a>
+  <li><a href="#tags" id="toc-tags" class="nav-link active" data-scroll-target="#tags"><span class="header-section-number">11.1</span> Tags</a>
   <ul class="collapse">
-  <li><a href="#importance-of-tags" id="toc-importance-of-tags" class="nav-link" data-scroll-target="#importance-of-tags"><span class="header-section-number">10.1.1</span> Importance of Tags</a></li>
-  <li><a href="#lightweight-tags" id="toc-lightweight-tags" class="nav-link" data-scroll-target="#lightweight-tags"><span class="header-section-number">10.1.2</span> Lightweight Tags</a></li>
-  <li><a href="#annotated-tags" id="toc-annotated-tags" class="nav-link" data-scroll-target="#annotated-tags"><span class="header-section-number">10.1.3</span> Annotated Tags</a></li>
-  <li><a href="#tags-workflow" id="toc-tags-workflow" class="nav-link" data-scroll-target="#tags-workflow"><span class="header-section-number">10.1.4</span> Tags workflow</a></li>
-  <li><a href="#pushing-and-pulling-tags" id="toc-pushing-and-pulling-tags" class="nav-link" data-scroll-target="#pushing-and-pulling-tags"><span class="header-section-number">10.1.5</span> Pushing and pulling tags</a></li>
-  <li><a href="#tagging-a-previous-commit" id="toc-tagging-a-previous-commit" class="nav-link" data-scroll-target="#tagging-a-previous-commit"><span class="header-section-number">10.1.6</span> Tagging a previous commit</a></li>
+  <li><a href="#importance-of-tags" id="toc-importance-of-tags" class="nav-link" data-scroll-target="#importance-of-tags"><span class="header-section-number">11.1.1</span> Importance of Tags</a></li>
+  <li><a href="#lightweight-tags" id="toc-lightweight-tags" class="nav-link" data-scroll-target="#lightweight-tags"><span class="header-section-number">11.1.2</span> Lightweight Tags</a></li>
+  <li><a href="#annotated-tags" id="toc-annotated-tags" class="nav-link" data-scroll-target="#annotated-tags"><span class="header-section-number">11.1.3</span> Annotated Tags</a></li>
+  <li><a href="#tags-workflow" id="toc-tags-workflow" class="nav-link" data-scroll-target="#tags-workflow"><span class="header-section-number">11.1.4</span> Tags workflow</a></li>
+  <li><a href="#pushing-and-pulling-tags" id="toc-pushing-and-pulling-tags" class="nav-link" data-scroll-target="#pushing-and-pulling-tags"><span class="header-section-number">11.1.5</span> Pushing and pulling tags</a></li>
+  <li><a href="#tagging-a-previous-commit" id="toc-tagging-a-previous-commit" class="nav-link" data-scroll-target="#tagging-a-previous-commit"><span class="header-section-number">11.1.6</span> Tagging a previous commit</a></li>
   </ul></li>
-  <li><a href="#github-releases" id="toc-github-releases" class="nav-link" data-scroll-target="#github-releases"><span class="header-section-number">10.2</span> GitHub Releases</a></li>
-  <li><a href="#zenodo" id="toc-zenodo" class="nav-link" data-scroll-target="#zenodo"><span class="header-section-number">10.3</span> Zenodo</a>
+  <li><a href="#github-releases" id="toc-github-releases" class="nav-link" data-scroll-target="#github-releases"><span class="header-section-number">11.2</span> GitHub Releases</a></li>
+  <li><a href="#zenodo" id="toc-zenodo" class="nav-link" data-scroll-target="#zenodo"><span class="header-section-number">11.3</span> Zenodo</a>
   <ul class="collapse">
-  <li><a href="#creating-a-zenodo-account" id="toc-creating-a-zenodo-account" class="nav-link" data-scroll-target="#creating-a-zenodo-account"><span class="header-section-number">10.3.1</span> Creating a Zenodo account</a></li>
-  <li><a href="#uploading-a-git-repository" id="toc-uploading-a-git-repository" class="nav-link" data-scroll-target="#uploading-a-git-repository"><span class="header-section-number">10.3.2</span> Uploading a Git repository</a></li>
+  <li><a href="#creating-a-zenodo-account" id="toc-creating-a-zenodo-account" class="nav-link" data-scroll-target="#creating-a-zenodo-account"><span class="header-section-number">11.3.1</span> Creating a Zenodo account</a></li>
+  <li><a href="#uploading-a-git-repository" id="toc-uploading-a-git-repository" class="nav-link" data-scroll-target="#uploading-a-git-repository"><span class="header-section-number">11.3.2</span> Uploading a Git repository</a></li>
   </ul></li>
-  <li><a href="#acknowledgements-and-further-reading" id="toc-acknowledgements-and-further-reading" class="nav-link" data-scroll-target="#acknowledgements-and-further-reading"><span class="header-section-number">10.4</span> Acknowledgements and further reading</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">10.5</span> Cheatsheet</a></li>
+  <li><a href="#acknowledgements-and-further-reading" id="toc-acknowledgements-and-further-reading" class="nav-link" data-scroll-target="#acknowledgements-and-further-reading"><span class="header-section-number">11.4</span> Acknowledgements and further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">11.5</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/tags-and-releases.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/tags-and-releases.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -351,7 +357,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tags and Releases</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tags and Releases</span></h1>
   <div class="quarto-categories">
     <div class="quarto-category">intermediate</div>
     <div class="quarto-category">GitHub</div>
@@ -424,17 +430,17 @@ Comparing changes between submission versions
 </div>
 </div>
 </div>
-<section id="tags" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="tags"><span class="header-section-number">10.1</span> Tags</h2>
-<section id="importance-of-tags" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="importance-of-tags"><span class="header-section-number">10.1.1</span> Importance of Tags</h3>
+<section id="tags" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="tags"><span class="header-section-number">11.1</span> Tags</h2>
+<section id="importance-of-tags" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="importance-of-tags"><span class="header-section-number">11.1.1</span> Importance of Tags</h3>
 <p>At its core, a tag in version control systems like Git is a reference or a label associated with a <strong>specific commit</strong>. Tags are used to mark particular points in a project’s history, usually to signify important <strong>milestones</strong> or <strong>releases</strong>. It acts as a more human-readable reference to a particular state of the repository.</p>
 <p>Once created, a tag is generally immutable. It doesn’t move or change its associated commit. Tags don’t store changes themselves. They merely point to an existing commit. Tags should be named in a way that is meaningful and easy to understand. Commonly used names include version numbers (for example, <code>v1.0</code>, a practice known as <a href="https://semver.org/">semantic versioning</a>), release names, or other identifiers that convey the purpose of the tag.</p>
 <p>Tags can also be beneficial for collaboration within a development team, as they provide a <strong>common reference point</strong> for discussing and working on specific versions of the project. Unlike branches, which represent separate lines of development, tags are typically independent of branches. They can be created on any commit, regardless of the branch. Tags are stable references that don’t change even if new commits are added to the repository.</p>
 <p>There are two types of tags: Lightweight and Annotated tags.</p>
 </section>
-<section id="lightweight-tags" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="lightweight-tags"><span class="header-section-number">10.1.2</span> Lightweight Tags</h3>
+<section id="lightweight-tags" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="lightweight-tags"><span class="header-section-number">11.1.2</span> Lightweight Tags</h3>
 <p>Lightweight tags in Git are simple pointers to specific commits in the version control history. Unlike annotated tags, they carry <strong>minimal metadata</strong>, consisting only of the tag name and the hash of the associated commit. Lightweight tags are created using <code>git tag</code>, followed by the tag name:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -463,8 +469,8 @@ Comparing changes between submission versions
 </div>
 </div>
 </section>
-<section id="annotated-tags" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="annotated-tags"><span class="header-section-number">10.1.3</span> Annotated Tags</h3>
+<section id="annotated-tags" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="annotated-tags"><span class="header-section-number">11.1.3</span> Annotated Tags</h3>
 <p>Annotated tags in Git are tags that include <strong>additional metadata</strong> beyond a reference to a specific commit. When you create an annotated tag, Git stores information such as the tagger’s <strong>name</strong>, <strong>email</strong>, the <strong>date</strong> the tag was created, and a <strong>tagging message</strong>. This additional information provides context and details about the tag, making annotated tags more informative compared to lightweight tags. To create an annotated tag, you use <code>git tag</code> with the <code>-a</code> flag. To include a tagging message, the <code>-m</code> flag is used. If you do not use the <code>-m</code> flag, your text editor of choice will open up. The tagging message can be a detailed description of the tag, such as release notes or significant changes. For example:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -496,8 +502,8 @@ Common <code>git tag</code> flags
 </div>
 </div>
 </section>
-<section id="tags-workflow" class="level3" data-number="10.1.4">
-<h3 data-number="10.1.4" class="anchored" data-anchor-id="tags-workflow"><span class="header-section-number">10.1.4</span> Tags workflow</h3>
+<section id="tags-workflow" class="level3" data-number="11.1.4">
+<h3 data-number="11.1.4" class="anchored" data-anchor-id="tags-workflow"><span class="header-section-number">11.1.4</span> Tags workflow</h3>
 <p>Once you created a lightweight or annotated tag, it will show up if you use <code>git tag</code> or <code>git tag -l</code>. To switch to a tag, you can use <code>git checkout</code> followed by the name of the tag:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -511,8 +517,8 @@ Common <code>git tag</code> flags
 <p>In general, it’s not advisable to make changes directly after switching to a tag. When you switch to a tag in Git, you enter a “detached <code>HEAD</code>” state, meaning that you’re not on any branch. In this state, any new commits you make won’t belong to any branch, and you might lose those changes if you switch away from the tag. If you need to make changes based on a specific tag, it’s often better to create a new branch from the tag and then make your changes on that branch.</p>
 <p>A recommended practice is to treat <strong>annotated tags as suitable for public releases</strong> and <strong>lightweight tags as more appropriate for private use</strong>. Annotated tags include additional metadata such as the tagger’s name, email, and date, making them valuable for public releases where comprehensive information is beneficial. In contrast, lightweight tags act as simple “bookmarks” to a commit, serving as efficient pointers without the extra metadata. They are particularly useful for creating quick links to relevant commits in a more private or internal context.</p>
 </section>
-<section id="pushing-and-pulling-tags" class="level3" data-number="10.1.5">
-<h3 data-number="10.1.5" class="anchored" data-anchor-id="pushing-and-pulling-tags"><span class="header-section-number">10.1.5</span> Pushing and pulling tags</h3>
+<section id="pushing-and-pulling-tags" class="level3" data-number="11.1.5">
+<h3 data-number="11.1.5" class="anchored" data-anchor-id="pushing-and-pulling-tags"><span class="header-section-number">11.1.5</span> Pushing and pulling tags</h3>
 <p>Pushing and pulling tags in Git involves syncing tags between your local repository and a remote repository, such as GitHub, as discussed in the <a href="../chapters/remotes-intro.html">chapter about remote repositories</a>. To push a specific tag to the remote repository, use:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -559,8 +565,8 @@ Common <code>git tag</code> flags
 </div>
 <p>When you pull or fetch tags, Git fetches tag references, but it does not automatically switch to the state of a specific tag. If you want to work on a specific tag after pulling, use <code>git checkout</code> to switch to that tag.</p>
 </section>
-<section id="tagging-a-previous-commit" class="level3" data-number="10.1.6">
-<h3 data-number="10.1.6" class="anchored" data-anchor-id="tagging-a-previous-commit"><span class="header-section-number">10.1.6</span> Tagging a previous commit</h3>
+<section id="tagging-a-previous-commit" class="level3" data-number="11.1.6">
+<h3 data-number="11.1.6" class="anchored" data-anchor-id="tagging-a-previous-commit"><span class="header-section-number">11.1.6</span> Tagging a previous commit</h3>
 <p>Sometimes, you may want to create a tag for a commit that is not the most recent one, such as tagging a significant point in your project’s history that was missed earlier. You can easily do this in Git by specifying the commit hash when creating the tag.</p>
 <p>Here’s how you can tag a specific (previous) commit:</p>
 <p><strong>1. Find the commit hash:</strong> First, you need to identify the commit you want to tag <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
@@ -600,13 +606,13 @@ Common <code>git tag</code> flags
 <p>By following these steps, you can tag any commit in your repository, even if it’s an older one.</p>
 </section>
 </section>
-<section id="github-releases" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="github-releases"><span class="header-section-number">10.2</span> GitHub Releases</h2>
+<section id="github-releases" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="github-releases"><span class="header-section-number">11.2</span> GitHub Releases</h2>
 <p>Releases represent specific versions of your repository, that you can package and share with a broader audience for download and usage. These releases are tied to specific Git tags, which act as markers for specific points in your repository’s history.</p>
 <p>Here’s a step-by-step guide:</p>
 <ol type="1">
 <li><p>Go to the <strong>main page</strong> of your GitHub <strong>repository</strong>.</p></li>
-<li><p>Click on “<strong>Create a new release</strong>” under “<strong>Releases</strong>” tab located on the right side of your repository page. Now, you should see a page, similar to <a href="#fig-gh_releases" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>.</p></li>
+<li><p>Click on “<strong>Create a new release</strong>” under “<strong>Releases</strong>” tab located on the right side of your repository page. Now, you should see a page, similar to <a href="#fig-gh_releases" class="quarto-xref">Figure&nbsp;<span>11.1</span></a>.</p></li>
 <li><p>Choose an <strong>existing Git tag</strong> or <strong>create a new one</strong>. If you have created and pushed a tag, it should show up here. Enter the <strong>tag version</strong> in the “Choose a tag” field. Enter a <strong>meaningful title</strong> for your release. In the “<strong>Describe this release</strong>” field, provide <strong>release notes</strong>. This can include details about new features, bug fixes, and any other relevant information. If you have binary files, installers, or other assets related to the release, you can attach them by clicking on “Attach binaries by dropping them here or selecting them”.</p></li>
 <li><p>If you’re creating a draft release, you can save it as a draft by clicking on the “Save draft” button. Draft releases are not visible to the public. If you’re ready to make the release public, click on the “<strong>Publish release</strong>” button.</p></li>
 </ol>
@@ -616,15 +622,15 @@ Common <code>git tag</code> flags
 <img src="../static/github-releases.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gh_releases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.1: Screenshot of GitHub when creating a new release
+Figure&nbsp;11.1: Screenshot of GitHub when creating a new release
 </figcaption>
 </figure>
 </div>
 <p>That’s it! You’ve successfully created a GitHub release for your project! <span class="emoji" data-emoji="rocket">🚀</span></p>
 <p>After publishing the release, you and others can view it on the <strong>Releases page</strong> of your GitHub repository. It will include the release notes, associated Git tag, and any attached assets.</p>
 </section>
-<section id="zenodo" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="zenodo"><span class="header-section-number">10.3</span> Zenodo</h2>
+<section id="zenodo" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="zenodo"><span class="header-section-number">11.3</span> Zenodo</h2>
 <p><a href="https://zenodo.org">Zenodo</a> is an open-access digital repository platform designed to <strong>preserve and share research outputs</strong>. It is operated by CERN (European Organization for Nuclear Research) and supported by the European Commission. Zenodo provides a platform for researchers across various disciplines to deposit, share, and archive their scholarly works, datasets, code, and other research outputs.</p>
 <p>Zenodo can be integrated with version control systems like Git and platforms like GitHub. This integration allows for <strong>automated archiving of specific releases or tags</strong> from Git repositories. Zenodo assigns a <strong>Digital Object Identifier (DOI)</strong> to each record, including those linked to GitHub repositories, providing a permanent link for citation.</p>
 <p>By linking your GitHub repository, you also ensure that your work is archived and accessible beyond the lifespan of GitHub. When you publish a research paper, journals increasingly require or encourage the deposition of associated data in a public repository. Uploading the contents of your GitHub repository to Zenodo ensures that your work is openly accessible and can be cited.</p>
@@ -653,8 +659,8 @@ What is a Digital Object Identifier (DOI)?
 </div>
 </div>
 </div>
-<section id="creating-a-zenodo-account" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="creating-a-zenodo-account"><span class="header-section-number">10.3.1</span> Creating a Zenodo account</h3>
+<section id="creating-a-zenodo-account" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="creating-a-zenodo-account"><span class="header-section-number">11.3.1</span> Creating a Zenodo account</h3>
 <div class="callout callout-style-simple callout-important">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -667,8 +673,8 @@ What is a Digital Object Identifier (DOI)?
 </div>
 <p>To upload a Git repository to Zenodo, you first need to create a Zenodo account. On the Zenodo <a href="https://zenodo.org">start page</a>, you can click on “<strong>Sign Up</strong>” in the top right corner. Here you either can directly use your <strong>GitHub account</strong> to sign up, or sign up using <strong>your email</strong> (or other accounts) and link your GitHub account later on. To <strong>link your GitHub account</strong>, you can click on the arrow, next to your email, on the start page and select “GitHub”.</p>
 </section>
-<section id="uploading-a-git-repository" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="uploading-a-git-repository"><span class="header-section-number">10.3.2</span> Uploading a Git repository</h3>
+<section id="uploading-a-git-repository" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="uploading-a-git-repository"><span class="header-section-number">11.3.2</span> Uploading a Git repository</h3>
 <p>If you are just trying out how to upload a Git repository, we recommend to use the <a href="https://sandbox.zenodo.org">Zenodo Sandbox</a>, to not create an unnecessary real DOI which is hard to delete. If you created an account on the <a href="https://zenodo.org">regular Zenodo site</a> before, you will have to <strong>create a new account to use the</strong> Zenodo Sandbox, since the accounts do not synchronize.</p>
 <div class="callout callout-style-simple callout-important">
 <div class="callout-body d-flex">
@@ -684,8 +690,8 @@ What is a Digital Object Identifier (DOI)?
 <p>To upload an older release, you have to download your repository as a <code>.zip</code> file from GitHub and uploading it manually at <a href="https://sandbox.zenodo.org/uploads/new">https://sandbox.zenodo.org/uploads/new</a></p>
 <p>To upload a new release, visit the <a href="https://sandbox.zenodo.org/account/settings/github/">Zenodo GitHub settings</a>. Here you should see all your uploaded repositories, with the option to sync them by selecting the “on” button. If you now create a release, as discussed earlier, it will show up and be associated with a DOI. Please note that if you have created a release <em>before</em> syncing your repository, the release will not show up. You can delete the GitHub release without deleting your tag and create a new release, which is then going to appear on Zenodo.</p>
 <p>For a pictured guide on how to upload a GitHub repository to Zenodo, you check out <a href="https://coderefinery.github.io/github-without-command-line/doi/">this guide</a> from the <a href="https://coderefinery.org">Code Refinery</a>.</p>
-<section id="markdown-doi-badge" class="level4" data-number="10.3.2.1">
-<h4 data-number="10.3.2.1" class="anchored" data-anchor-id="markdown-doi-badge"><span class="header-section-number">10.3.2.1</span> Markdown DOI badge</h4>
+<section id="markdown-doi-badge" class="level4" data-number="11.3.2.1">
+<h4 data-number="11.3.2.1" class="anchored" data-anchor-id="markdown-doi-badge"><span class="header-section-number">11.3.2.1</span> Markdown DOI badge</h4>
 <p>After you have created a release in your synced repo, a DOI badge should show up in your <a href="https://sandbox.zenodo.org/account/settings/github/">Zenodo GitHub settings</a> next to the repository name. When you click on it there should be a section called <strong>Markdown</strong> with Markdown syntax below, for example:</p>
 <pre><code>[![DOI](https://sandbox.zenodo.org/badge/731953735.svg)](https://sandbox.zenodo.org/doi/10.5072/zenodo.71301)</code></pre>
 <p>You can copy and paste this syntax into your <code>README.md</code> file on GitHub to create a clickable DOI badge. This badge will then show up in your <code>README.md</code> file on GitHub as shown below. Now visitors of your GitHub repository only need to click on the badge to get to the release on Zenodo!</p>
@@ -693,8 +699,8 @@ What is a Digital Object Identifier (DOI)?
 </section>
 </section>
 </section>
-<section id="acknowledgements-and-further-reading" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="acknowledgements-and-further-reading"><span class="header-section-number">10.4</span> Acknowledgements and further reading</h2>
+<section id="acknowledgements-and-further-reading" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="acknowledgements-and-further-reading"><span class="header-section-number">11.4</span> Acknowledgements and further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="caption-top table">
 <thead>
@@ -724,8 +730,8 @@ What is a Digital Object Identifier (DOI)?
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">10.5</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">11.5</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1221,12 +1227,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/github-advanced.html" class="pagination-link" aria-label="GitHub: Advanced">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/issues.html" class="pagination-link" aria-label="Issues">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Issues</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Issues</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

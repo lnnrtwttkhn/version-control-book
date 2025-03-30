@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Rewriting History – The Version Control Book</title>
+<title>14&nbsp; Rewriting History – The Version Control Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -139,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/rewriting-history.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/rewriting-history.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rewriting History</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -234,38 +234,44 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/branches-advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Branches Advanced</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/remotes-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/github-advanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/tags-and-releases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -326,25 +332,25 @@ div.csl-indent {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#how-to-avoid-accidental-commits" id="toc-how-to-avoid-accidental-commits" class="nav-link active" data-scroll-target="#how-to-avoid-accidental-commits"><span class="header-section-number">13.1</span> How to avoid accidental commits</a></li>
-  <li><a href="#removing-changes-or-files" id="toc-removing-changes-or-files" class="nav-link" data-scroll-target="#removing-changes-or-files"><span class="header-section-number">13.2</span> Removing changes or files</a>
+  <li><a href="#how-to-avoid-accidental-commits" id="toc-how-to-avoid-accidental-commits" class="nav-link active" data-scroll-target="#how-to-avoid-accidental-commits"><span class="header-section-number">14.1</span> How to avoid accidental commits</a></li>
+  <li><a href="#removing-changes-or-files" id="toc-removing-changes-or-files" class="nav-link" data-scroll-target="#removing-changes-or-files"><span class="header-section-number">14.2</span> Removing changes or files</a>
   <ul class="collapse">
-  <li><a href="#discarding-changes-in-the-working-directory" id="toc-discarding-changes-in-the-working-directory" class="nav-link" data-scroll-target="#discarding-changes-in-the-working-directory"><span class="header-section-number">13.2.1</span> Discarding changes in the working directory</a></li>
-  <li><a href="#unstaging-files" id="toc-unstaging-files" class="nav-link" data-scroll-target="#unstaging-files"><span class="header-section-number">13.2.2</span> Unstaging files</a></li>
-  <li><a href="#deleting-files" id="toc-deleting-files" class="nav-link" data-scroll-target="#deleting-files"><span class="header-section-number">13.2.3</span> Deleting files</a></li>
-  <li><a href="#untracking-files" id="toc-untracking-files" class="nav-link" data-scroll-target="#untracking-files"><span class="header-section-number">13.2.4</span> “Untracking” files</a></li>
-  <li><a href="#reverting-commits" id="toc-reverting-commits" class="nav-link" data-scroll-target="#reverting-commits"><span class="header-section-number">13.2.5</span> Reverting commits</a></li>
-  <li><a href="#resetting-to-a-commit" id="toc-resetting-to-a-commit" class="nav-link" data-scroll-target="#resetting-to-a-commit"><span class="header-section-number">13.2.6</span> Resetting to a commit</a></li>
+  <li><a href="#discarding-changes-in-the-working-directory" id="toc-discarding-changes-in-the-working-directory" class="nav-link" data-scroll-target="#discarding-changes-in-the-working-directory"><span class="header-section-number">14.2.1</span> Discarding changes in the working directory</a></li>
+  <li><a href="#unstaging-files" id="toc-unstaging-files" class="nav-link" data-scroll-target="#unstaging-files"><span class="header-section-number">14.2.2</span> Unstaging files</a></li>
+  <li><a href="#deleting-files" id="toc-deleting-files" class="nav-link" data-scroll-target="#deleting-files"><span class="header-section-number">14.2.3</span> Deleting files</a></li>
+  <li><a href="#untracking-files" id="toc-untracking-files" class="nav-link" data-scroll-target="#untracking-files"><span class="header-section-number">14.2.4</span> “Untracking” files</a></li>
+  <li><a href="#reverting-commits" id="toc-reverting-commits" class="nav-link" data-scroll-target="#reverting-commits"><span class="header-section-number">14.2.5</span> Reverting commits</a></li>
+  <li><a href="#resetting-to-a-commit" id="toc-resetting-to-a-commit" class="nav-link" data-scroll-target="#resetting-to-a-commit"><span class="header-section-number">14.2.6</span> Resetting to a commit</a></li>
   </ul></li>
-  <li><a href="#purging-a-file-from-your-repositorys-history" id="toc-purging-a-file-from-your-repositorys-history" class="nav-link" data-scroll-target="#purging-a-file-from-your-repositorys-history"><span class="header-section-number">13.3</span> Purging a file from your repository’s history</a>
+  <li><a href="#purging-a-file-from-your-repositorys-history" id="toc-purging-a-file-from-your-repositorys-history" class="nav-link" data-scroll-target="#purging-a-file-from-your-repositorys-history"><span class="header-section-number">14.3</span> Purging a file from your repository’s history</a>
   <ul class="collapse">
-  <li><a href="#git-filter-repo" id="toc-git-filter-repo" class="nav-link" data-scroll-target="#git-filter-repo"><span class="header-section-number">13.3.1</span> git filter-repo</a></li>
-  <li><a href="#bfg" id="toc-bfg" class="nav-link" data-scroll-target="#bfg"><span class="header-section-number">13.3.2</span> BFG</a></li>
-  <li><a href="#force-push-your-local-changes-to-github" id="toc-force-push-your-local-changes-to-github" class="nav-link" data-scroll-target="#force-push-your-local-changes-to-github"><span class="header-section-number">13.3.3</span> Force-push your local changes to GitHub</a></li>
+  <li><a href="#git-filter-repo" id="toc-git-filter-repo" class="nav-link" data-scroll-target="#git-filter-repo"><span class="header-section-number">14.3.1</span> git filter-repo</a></li>
+  <li><a href="#bfg" id="toc-bfg" class="nav-link" data-scroll-target="#bfg"><span class="header-section-number">14.3.2</span> BFG</a></li>
+  <li><a href="#force-push-your-local-changes-to-github" id="toc-force-push-your-local-changes-to-github" class="nav-link" data-scroll-target="#force-push-your-local-changes-to-github"><span class="header-section-number">14.3.3</span> Force-push your local changes to GitHub</a></li>
   </ul></li>
-  <li><a href="#fully-removing-data-from-github" id="toc-fully-removing-data-from-github" class="nav-link" data-scroll-target="#fully-removing-data-from-github"><span class="header-section-number">13.4</span> Fully removing data from GitHub</a></li>
-  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">13.5</span> Acknowledgements &amp; further reading</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">13.6</span> Cheatsheet</a></li>
+  <li><a href="#fully-removing-data-from-github" id="toc-fully-removing-data-from-github" class="nav-link" data-scroll-target="#fully-removing-data-from-github"><span class="header-section-number">14.4</span> Fully removing data from GitHub</a></li>
+  <li><a href="#acknowledgements-further-reading" id="toc-acknowledgements-further-reading" class="nav-link" data-scroll-target="#acknowledgements-further-reading"><span class="header-section-number">14.5</span> Acknowledgements &amp; further reading</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">14.6</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/rewriting-history.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/rewriting-history.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -353,7 +359,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rewriting History</span></h1>
   <div class="quarto-categories">
     <div class="quarto-category">intermediate</div>
   </div>
@@ -395,8 +401,8 @@ Correction of mistakes
 </div>
 </div>
 </div>
-<section id="how-to-avoid-accidental-commits" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="how-to-avoid-accidental-commits"><span class="header-section-number">13.1</span> How to avoid accidental commits</h2>
+<section id="how-to-avoid-accidental-commits" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="how-to-avoid-accidental-commits"><span class="header-section-number">14.1</span> How to avoid accidental commits</h2>
 <p>Considering rewriting Git history? This usually comes into play when there are errors or changes needed in previous commits. There are a few tricks to avoid committing things you don’t want committed:</p>
 <ol type="1">
 <li><p>Avoid the catch-all commands <code>git add .</code> and <code>git commit -a</code>. Use <code>git add filename</code> and <code>git rm filename</code> to individually stage files.</p></li>
@@ -405,8 +411,8 @@ Correction of mistakes
 <li><p>You can use also a visual program like <a href="https://desktop.github.com">GitHub Desktop</a> or <a href="https://desktop.github.com">GitKraken</a> to commit changes. Visual programs generally make it easier to see exactly which files will be added, deleted, and modified with each commit.</p></li>
 </ol>
 </section>
-<section id="removing-changes-or-files" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="removing-changes-or-files"><span class="header-section-number">13.2</span> Removing changes or files</h2>
+<section id="removing-changes-or-files" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="removing-changes-or-files"><span class="header-section-number">14.2</span> Removing changes or files</h2>
 <div class="callout callout-style-default callout-warning callout-titled" title="Be careful about data loss!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -420,8 +426,8 @@ Be careful about data loss!
 <p>This section introduces Git commands that may delete changes in your repository beyond recovery. Especially if you apply them for the first time, take your time and only execute a command if you are certain about its consequences. Better yet, experiment with these commands in a separate test repository, not in a repository where you keep your most important work.</p>
 </div>
 </div>
-<section id="discarding-changes-in-the-working-directory" class="level3" data-number="13.2.1">
-<h3 data-number="13.2.1" class="anchored" data-anchor-id="discarding-changes-in-the-working-directory"><span class="header-section-number">13.2.1</span> Discarding changes in the working directory</h3>
+<section id="discarding-changes-in-the-working-directory" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="discarding-changes-in-the-working-directory"><span class="header-section-number">14.2.1</span> Discarding changes in the working directory</h3>
 <p>Sometimes you might want to revert files back to the state of your last commit. For example, this can be useful when you realize that the recent changes you made to a file have introduced an error. You can use <code>git restore</code> to <strong>discard changes in the working directory</strong> and revert the files to the state they were in when you last committed them.</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -441,8 +447,8 @@ Be careful about data loss!
 </div>
 </div>
 </section>
-<section id="unstaging-files" class="level3" data-number="13.2.2">
-<h3 data-number="13.2.2" class="anchored" data-anchor-id="unstaging-files"><span class="header-section-number">13.2.2</span> Unstaging files</h3>
+<section id="unstaging-files" class="level3" data-number="14.2.2">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="unstaging-files"><span class="header-section-number">14.2.2</span> Unstaging files</h3>
 <p>You can also use <code>git restore</code> with the <code>--staged</code> flag to unstage files, you have previously added to the staging area. This can be useful when you accidentally staged files or want to reorganize your commit.</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -462,8 +468,8 @@ Be careful about data loss!
 </div>
 </div>
 </section>
-<section id="deleting-files" class="level3" data-number="13.2.3">
-<h3 data-number="13.2.3" class="anchored" data-anchor-id="deleting-files"><span class="header-section-number">13.2.3</span> Deleting files</h3>
+<section id="deleting-files" class="level3" data-number="14.2.3">
+<h3 data-number="14.2.3" class="anchored" data-anchor-id="deleting-files"><span class="header-section-number">14.2.3</span> Deleting files</h3>
 <p>If you want to delete files from your computer and your Git repository, you can use the <code>git rm</code> command. This command removes files from your working directory and automatically stages this change for your next commit. The workflow would go like this:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -501,8 +507,8 @@ Find out more: Common <code>git rm</code> flags
 </div>
 </div>
 </section>
-<section id="untracking-files" class="level3" data-number="13.2.4">
-<h3 data-number="13.2.4" class="anchored" data-anchor-id="untracking-files"><span class="header-section-number">13.2.4</span> “Untracking” files</h3>
+<section id="untracking-files" class="level3" data-number="14.2.4">
+<h3 data-number="14.2.4" class="anchored" data-anchor-id="untracking-files"><span class="header-section-number">14.2.4</span> “Untracking” files</h3>
 <p>Sometimes, you may have files in your Git repository that you no longer want to track or include in future commits, but want to keep in your local filesystem. It makes sense to include these files in a <code>.gitignore</code> file, as discussed in the chapter on <a href="../chapters/first-steps-git.html">first steps with Git</a>. You could also use <code>git rm</code> in combination with the <code>--cached</code> flag.</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -513,8 +519,8 @@ Find out more: Common <code>git rm</code> flags
 </div>
 </div>
 </section>
-<section id="reverting-commits" class="level3" data-number="13.2.5">
-<h3 data-number="13.2.5" class="anchored" data-anchor-id="reverting-commits"><span class="header-section-number">13.2.5</span> Reverting commits</h3>
+<section id="reverting-commits" class="level3" data-number="14.2.5">
+<h3 data-number="14.2.5" class="anchored" data-anchor-id="reverting-commits"><span class="header-section-number">14.2.5</span> Reverting commits</h3>
 <p>The <code>git revert</code> command is used to create a <strong>new commit that undoes the changes made in a previous commit</strong>. It’s a way to safely reverse the effects of a specific commit without actually removing that commit from the commit history. It requires specifying the commit hash you want to revert. To look at the hashes of your commits, you can use the <code>git log</code> command, as described in the chapter on <a href="../chapters/first-steps-git.html">first steps with Git</a>. If you have a specific commit that you want to revert, you would use a command like:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -560,8 +566,8 @@ Find out more: Common <code>git revert</code> flags
 </div>
 </div>
 </section>
-<section id="resetting-to-a-commit" class="level3" data-number="13.2.6">
-<h3 data-number="13.2.6" class="anchored" data-anchor-id="resetting-to-a-commit"><span class="header-section-number">13.2.6</span> Resetting to a commit</h3>
+<section id="resetting-to-a-commit" class="level3" data-number="14.2.6">
+<h3 data-number="14.2.6" class="anchored" data-anchor-id="resetting-to-a-commit"><span class="header-section-number">14.2.6</span> Resetting to a commit</h3>
 <p>If you want to reset your repository to a commit that was made in the past, you can use the <code>git reset</code> command.</p>
 <p>To get an overview of your past commits you can either use <code>git log</code> or <code>git reflog</code>. Both commands should get you an overview of your past commits. For example:</p>
 <div class="cell">
@@ -655,24 +661,24 @@ Find out more: Common <code>git reset</code> flags
 </div>
 </section>
 </section>
-<section id="purging-a-file-from-your-repositorys-history" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="purging-a-file-from-your-repositorys-history"><span class="header-section-number">13.3</span> Purging a file from your repository’s history</h2>
+<section id="purging-a-file-from-your-repositorys-history" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="purging-a-file-from-your-repositorys-history"><span class="header-section-number">14.3</span> Purging a file from your repository’s history</h2>
 <p>Let’s say that you accidentally added a large file to a previous commit. Now you want to remove the file but keep all commits that came afterwards.</p>
 <p>For example, this could be the case if you committed sensitive data as a binary file. You will need to remove the file from the history, as you can’t modify it to remove or replace the data.</p>
-<section id="git-filter-repo" class="level3" data-number="13.3.1">
-<h3 data-number="13.3.1" class="anchored" data-anchor-id="git-filter-repo"><span class="header-section-number">13.3.1</span> git filter-repo</h3>
+<section id="git-filter-repo" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="git-filter-repo"><span class="header-section-number">14.3.1</span> git filter-repo</h3>
 <p><a href="https://github.com/newren/git-filter-repo">git filter-repo</a> is a very useful tool that is not part of the official Git distribution. It is a third-party tool and is designed to be used alongside Git for more advanced repository history manipulation tasks.</p>
 <p>To illustrate how <code>git filter-repo</code> works, we’ll show you how to remove your file with sensitive data from the history of your repository and add it to <code>.gitignore</code> to ensure that it is not accidentally re-committed.</p>
-<section id="installation" class="level4" data-number="13.3.1.1">
-<h4 data-number="13.3.1.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">13.3.1.1</span> Installation</h4>
+<section id="installation" class="level4" data-number="14.3.1.1">
+<h4 data-number="14.3.1.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">14.3.1.1</span> Installation</h4>
 <p>Since <code>git filter-repo</code> is not a part of standard Git, you will need to install it first. You can install <code>git-filter-repo</code> manually or by using a package manager. For example, to install the tool with <a href="https://brew.sh/">HomeBrew</a> on macOS, use the <code>brew install</code> command.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git-filter-repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For more information on installation, see <a href="https://github.com/newren/git-filter-repo/blob/main/INSTALL.md">INSTALL.md</a> in the <a href="(https://github.com/newren/git-filter-repo) repository">newren/git-filter-repo</a>.</p>
 </section>
-<section id="clone-a-fresh-copy-of-the-repository" class="level4" data-number="13.3.1.2">
-<h4 data-number="13.3.1.2" class="anchored" data-anchor-id="clone-a-fresh-copy-of-the-repository"><span class="header-section-number">13.3.1.2</span> Clone a fresh copy of the repository</h4>
+<section id="clone-a-fresh-copy-of-the-repository" class="level4" data-number="14.3.1.2">
+<h4 data-number="14.3.1.2" class="anchored" data-anchor-id="clone-a-fresh-copy-of-the-repository"><span class="header-section-number">14.3.1.2</span> Clone a fresh copy of the repository</h4>
 <p>If you don’t already have a local copy of your repository with sensitive data in its history, clone the repository to your local computer.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-14-1" class="code-annotation-target"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR-USERNAME<span class="op">&gt;</span>/YOUR-REPOSITORY</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -686,8 +692,8 @@ Find out more: Common <code>git reset</code> flags
 </div>
 </div>
 </section>
-<section id="navigate-into-the-repositorys-working-directory" class="level4" data-number="13.3.1.3">
-<h4 data-number="13.3.1.3" class="anchored" data-anchor-id="navigate-into-the-repositorys-working-directory"><span class="header-section-number">13.3.1.3</span> Navigate into the repository’s working directory</h4>
+<section id="navigate-into-the-repositorys-working-directory" class="level4" data-number="14.3.1.3">
+<h4 data-number="14.3.1.3" class="anchored" data-anchor-id="navigate-into-the-repositorys-working-directory"><span class="header-section-number">14.3.1.3</span> Navigate into the repository’s working directory</h4>
 <p>Navigate into the repository’s working directory. For details on folder navigation in the command line, see the <a href="../chapters/command-line.html">“Command Line” chapter</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-15-1" class="code-annotation-target"><a href="#annotated-cell-15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> YOUR-REPOSITORY</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -701,8 +707,8 @@ Find out more: Common <code>git reset</code> flags
 </div>
 </div>
 </section>
-<section id="running-git-filter-repo-command" class="level4" data-number="13.3.1.4">
-<h4 data-number="13.3.1.4" class="anchored" data-anchor-id="running-git-filter-repo-command"><span class="header-section-number">13.3.1.4</span> Running <code>git filter-repo</code> command</h4>
+<section id="running-git-filter-repo-command" class="level4" data-number="14.3.1.4">
+<h4 data-number="14.3.1.4" class="anchored" data-anchor-id="running-git-filter-repo-command"><span class="header-section-number">14.3.1.4</span> Running <code>git filter-repo</code> command</h4>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -764,8 +770,8 @@ I did not clone a fresh copy of the repository. Is this a problem?
 </div>
 </div>
 </section>
-<section id="add-your-file-to-.gitignore" class="level4" data-number="13.3.1.5">
-<h4 data-number="13.3.1.5" class="anchored" data-anchor-id="add-your-file-to-.gitignore"><span class="header-section-number">13.3.1.5</span> Add your file to <code>.gitignore</code></h4>
+<section id="add-your-file-to-.gitignore" class="level4" data-number="14.3.1.5">
+<h4 data-number="14.3.1.5" class="anchored" data-anchor-id="add-your-file-to-.gitignore"><span class="header-section-number">14.3.1.5</span> Add your file to <code>.gitignore</code></h4>
 <p>Add your file to <code>.gitignore</code> to ensure that you don’t accidentally commit it again. You can edit <code>.gitignore</code> in your favorite text editor.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-17"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-17-1" class="code-annotation-target"><a href="#annotated-cell-17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"PATH-TO-FILE-YOU-WANT-TO-REMOVE"</span> <span class="op">&gt;&gt;</span> .gitignore</span>
@@ -783,12 +789,12 @@ I did not clone a fresh copy of the repository. Is this a problem?
 <p>Double-check that you’ve removed everything you wanted to from your repository’s history, and that all of your branches are checked out.</p>
 </section>
 </section>
-<section id="bfg" class="level3" data-number="13.3.2">
-<h3 data-number="13.3.2" class="anchored" data-anchor-id="bfg"><span class="header-section-number">13.3.2</span> BFG</h3>
+<section id="bfg" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="bfg"><span class="header-section-number">14.3.2</span> BFG</h3>
 <p>Instead of using <code>git filter-repo</code> it is also possible to use the open source tool <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG repo cleaner</a>. The tool is especially useful if you need to remove very large files from your commit history.</p>
 </section>
-<section id="force-push-your-local-changes-to-github" class="level3" data-number="13.3.3">
-<h3 data-number="13.3.3" class="anchored" data-anchor-id="force-push-your-local-changes-to-github"><span class="header-section-number">13.3.3</span> Force-push your local changes to GitHub</h3>
+<section id="force-push-your-local-changes-to-github" class="level3" data-number="14.3.3">
+<h3 data-number="14.3.3" class="anchored" data-anchor-id="force-push-your-local-changes-to-github"><span class="header-section-number">14.3.3</span> Force-push your local changes to GitHub</h3>
 <p>If you are happy with the state of your repository, force-push your local changes to overwrite your repository to <a href="https://github.com">GitHub</a>, as well as all the branches you’ve pushed up. A force push is required to remove sensitive data from your commit history.</p>
 <p>When you perform a force push, you are essentially overwriting the existing commit history on the remote branch with the new commit history from your local branch. So instead of adding changes to your commit history, like with a normal push, a force push changes or discards the existing commit history on that branch. To do a force push, you use <code>git push</code> together with the <code>--force</code> flag. The <code>--all</code> flag is used to push all branches that have corresponding branches on the remote repository, that way you are updating multiple branches at once.</p>
 <div class="cell">
@@ -873,8 +879,8 @@ The dangers of force pushing
 </div>
 </section>
 </section>
-<section id="fully-removing-data-from-github" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="fully-removing-data-from-github"><span class="header-section-number">13.4</span> Fully removing data from GitHub</h2>
+<section id="fully-removing-data-from-github" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="fully-removing-data-from-github"><span class="header-section-number">14.4</span> Fully removing data from GitHub</h2>
 <p>If you you committed <strong>really</strong> sensitive data and want to make <strong>absolutely</strong> sure that it’s deleted, you will have to complete a few additional steps. After using either the <a href="#bfg">BFG</a> tool or <a href="#git-filter-repo">git filter-repo</a> to remove the sensitive data and pushing your changes to GitHub, you must take a few more steps to fully remove the data from GitHub.</p>
 <ol type="1">
 <li><p>Contact <a href="https://support.github.com/contact?tags=docs-generic">GitHub Support</a>, asking them to remove cached views and references to the sensitive data in pull requests on GitHub. Please provide the name of the repository and/or a link to the commit you need removed.</p></li>
@@ -904,8 +910,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="acknowledgements-further-reading" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">13.5</span> Acknowledgements &amp; further reading</h2>
+<section id="acknowledgements-further-reading" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="acknowledgements-further-reading"><span class="header-section-number">14.5</span> Acknowledgements &amp; further reading</h2>
 <p>We would like to express our gratitude to the following resources, which have been essential in shaping this chapter. We recommend these references for further reading:</p>
 <table class="caption-top table">
 <thead>
@@ -928,8 +934,8 @@ Tip
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">13.6</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">14.6</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1436,7 +1442,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/gui.html" class="pagination-link" aria-label="Graphical User Interfaces">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; GitHub: Advanced – The Version Control Book</title>
+<title>10&nbsp; GitHub: Advanced – The Version Control Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -139,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/github-advanced.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/github-advanced.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -234,38 +234,44 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/branches-advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Branches Advanced</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/remotes-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/github-advanced.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/tags-and-releases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/issues.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Issues</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/gui.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Graphical User Interfaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/rewriting-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rewriting History</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -326,36 +332,36 @@ div.csl-indent {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link active" data-scroll-target="#pull-requests"><span class="header-section-number">9.1</span> Pull requests</a>
+  <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link active" data-scroll-target="#pull-requests"><span class="header-section-number">10.1</span> Pull requests</a>
   <ul class="collapse">
-  <li><a href="#pull-request-from-a-branch-within-a-repository" id="toc-pull-request-from-a-branch-within-a-repository" class="nav-link" data-scroll-target="#pull-request-from-a-branch-within-a-repository"><span class="header-section-number">9.1.1</span> Pull request from a branch within a repository</a></li>
+  <li><a href="#pull-request-from-a-branch-within-a-repository" id="toc-pull-request-from-a-branch-within-a-repository" class="nav-link" data-scroll-target="#pull-request-from-a-branch-within-a-repository"><span class="header-section-number">10.1.1</span> Pull request from a branch within a repository</a></li>
   </ul></li>
-  <li><a href="#github-flow" id="toc-github-flow" class="nav-link" data-scroll-target="#github-flow"><span class="header-section-number">9.2</span> GitHub Flow</a>
+  <li><a href="#github-flow" id="toc-github-flow" class="nav-link" data-scroll-target="#github-flow"><span class="header-section-number">10.2</span> GitHub Flow</a>
   <ul class="collapse">
-  <li><a href="#steps-in-github-flow" id="toc-steps-in-github-flow" class="nav-link" data-scroll-target="#steps-in-github-flow"><span class="header-section-number">9.2.1</span> Steps in GitHub Flow</a></li>
+  <li><a href="#steps-in-github-flow" id="toc-steps-in-github-flow" class="nav-link" data-scroll-target="#steps-in-github-flow"><span class="header-section-number">10.2.1</span> Steps in GitHub Flow</a></li>
   </ul></li>
-  <li><a href="#readme-file" id="toc-readme-file" class="nav-link" data-scroll-target="#readme-file"><span class="header-section-number">9.3</span> <code>README</code> file</a>
+  <li><a href="#readme-file" id="toc-readme-file" class="nav-link" data-scroll-target="#readme-file"><span class="header-section-number">10.3</span> <code>README</code> file</a>
   <ul class="collapse">
-  <li><a href="#markdown-syntax" id="toc-markdown-syntax" class="nav-link" data-scroll-target="#markdown-syntax"><span class="header-section-number">10.5.1</span> Markdown syntax</a></li>
+  <li><a href="#markdown-syntax" id="toc-markdown-syntax" class="nav-link" data-scroll-target="#markdown-syntax"><span class="header-section-number">11.5.1</span> Markdown syntax</a></li>
   </ul></li>
-  <li><a href="#forking" id="toc-forking" class="nav-link" data-scroll-target="#forking"><span class="header-section-number">10.6</span> Forking</a>
+  <li><a href="#forking" id="toc-forking" class="nav-link" data-scroll-target="#forking"><span class="header-section-number">11.6</span> Forking</a>
   <ul class="collapse">
-  <li><a href="#creating-a-fork" id="toc-creating-a-fork" class="nav-link" data-scroll-target="#creating-a-fork"><span class="header-section-number">10.6.1</span> Creating a fork</a></li>
-  <li><a href="#pull-request-from-a-forked-repository" id="toc-pull-request-from-a-forked-repository" class="nav-link" data-scroll-target="#pull-request-from-a-forked-repository"><span class="header-section-number">10.6.2</span> Pull request from a forked repository</a></li>
+  <li><a href="#creating-a-fork" id="toc-creating-a-fork" class="nav-link" data-scroll-target="#creating-a-fork"><span class="header-section-number">11.6.1</span> Creating a fork</a></li>
+  <li><a href="#pull-request-from-a-forked-repository" id="toc-pull-request-from-a-forked-repository" class="nav-link" data-scroll-target="#pull-request-from-a-forked-repository"><span class="header-section-number">11.6.2</span> Pull request from a forked repository</a></li>
   </ul></li>
-  <li><a href="#git-blame" id="toc-git-blame" class="nav-link" data-scroll-target="#git-blame"><span class="header-section-number">10.7</span> Git blame</a></li>
-  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">10.8</span> Template repositories</a>
+  <li><a href="#git-blame" id="toc-git-blame" class="nav-link" data-scroll-target="#git-blame"><span class="header-section-number">11.7</span> Git blame</a></li>
+  <li><a href="#template-repositories" id="toc-template-repositories" class="nav-link" data-scroll-target="#template-repositories"><span class="header-section-number">11.8</span> Template repositories</a>
   <ul class="collapse">
-  <li><a href="#how-to-create-or-find-templates" id="toc-how-to-create-or-find-templates" class="nav-link" data-scroll-target="#how-to-create-or-find-templates"><span class="header-section-number">10.8.1</span> How to create or find templates</a></li>
-  <li><a href="#differences-between-templates-and-forking" id="toc-differences-between-templates-and-forking" class="nav-link" data-scroll-target="#differences-between-templates-and-forking"><span class="header-section-number">10.8.2</span> Differences between templates and forking</a></li>
+  <li><a href="#how-to-create-or-find-templates" id="toc-how-to-create-or-find-templates" class="nav-link" data-scroll-target="#how-to-create-or-find-templates"><span class="header-section-number">11.8.1</span> How to create or find templates</a></li>
+  <li><a href="#differences-between-templates-and-forking" id="toc-differences-between-templates-and-forking" class="nav-link" data-scroll-target="#differences-between-templates-and-forking"><span class="header-section-number">11.8.2</span> Differences between templates and forking</a></li>
   </ul></li>
-  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">10.9</span> Branch protection</a>
+  <li><a href="#branch-protection" id="toc-branch-protection" class="nav-link" data-scroll-target="#branch-protection"><span class="header-section-number">11.9</span> Branch protection</a>
   <ul class="collapse">
-  <li><a href="#how-to-protect-the-main-branch-on-github" id="toc-how-to-protect-the-main-branch-on-github" class="nav-link" data-scroll-target="#how-to-protect-the-main-branch-on-github"><span class="header-section-number">10.9.1</span> How to protect the <code>main</code> branch on GitHub</a></li>
+  <li><a href="#how-to-protect-the-main-branch-on-github" id="toc-how-to-protect-the-main-branch-on-github" class="nav-link" data-scroll-target="#how-to-protect-the-main-branch-on-github"><span class="header-section-number">11.9.1</span> How to protect the <code>main</code> branch on GitHub</a></li>
   </ul></li>
-  <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">10.10</span> Alternatives to GitHub</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">10.11</span> Acknowledgements</a></li>
-  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">10.12</span> Cheatsheet</a></li>
+  <li><a href="#alternatives-to-github" id="toc-alternatives-to-github" class="nav-link" data-scroll-target="#alternatives-to-github"><span class="header-section-number">11.10</span> Alternatives to GitHub</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="header-section-number">11.11</span> Acknowledgements</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="header-section-number">11.12</span> Cheatsheet</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lnnrtwttkhn/version-control-book/edit/main/chapters/github-advanced.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lnnrtwttkhn/version-control-book/blob/main/chapters/github-advanced.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -364,7 +370,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GitHub: Advanced</span></h1>
   <div class="quarto-categories">
     <div class="quarto-category">intermediate</div>
     <div class="quarto-category">github</div>
@@ -421,8 +427,8 @@ Use case: Collaborating on open-source research tools
 </div>
 </div>
 </div>
-<section id="pull-requests" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="pull-requests"><span class="header-section-number">9.1</span> Pull requests</h2>
+<section id="pull-requests" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="pull-requests"><span class="header-section-number">10.1</span> Pull requests</h2>
 <p>A <strong>pull request</strong> (PR) serves as a request for code review and integration into a project’s codebase, enabling collaboration and ensuring code quality before changes are merged. Basically, it’s a way to propose a merge from a branch. Often it’s used to merge changes from a <code>feature</code> branch into the <code>main</code> branch of the repository.</p>
 <p>When dealing with pull requests, there are two main workflows: (1) a pull request from a forked repository, (2) a pull request from a branch within a repository. Here’s a breakdown of the components of a pull request:</p>
 <ul>
@@ -431,27 +437,27 @@ Use case: Collaborating on open-source research tools
 <li><strong>Title:</strong> A concise description of the changes proposed.</li>
 <li><strong>Description:</strong> A detailed account of the changes, why they’re needed, and any other relevant information.</li>
 </ul>
-<p>In addition, to these basic components, the pull request interface provides sections for reviewers, assignees, labels, and milestones on the right-hand side (see <a href="#fig-pr" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>).</p>
-<section id="pull-request-from-a-branch-within-a-repository" class="level3" data-number="9.1.1">
-<h3 data-number="9.1.1" class="anchored" data-anchor-id="pull-request-from-a-branch-within-a-repository"><span class="header-section-number">9.1.1</span> Pull request from a branch within a repository</h3>
-<p>In this scenario, contributors work directly within the original repository, creating a new branch for their changes. After completing the changes in the branch, they create a pull request from that branch to the main repository’s default branch (typically <code>main</code> or <code>master</code>). The workflow for this is the same as for opening a pull request for a forked repository. You can see an example pull request within a repository in <a href="#fig-pr" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>.</p>
+<p>In addition, to these basic components, the pull request interface provides sections for reviewers, assignees, labels, and milestones on the right-hand side (see <a href="#fig-pr" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>).</p>
+<section id="pull-request-from-a-branch-within-a-repository" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="pull-request-from-a-branch-within-a-repository"><span class="header-section-number">10.1.1</span> Pull request from a branch within a repository</h3>
+<p>In this scenario, contributors work directly within the original repository, creating a new branch for their changes. After completing the changes in the branch, they create a pull request from that branch to the main repository’s default branch (typically <code>main</code> or <code>master</code>). The workflow for this is the same as for opening a pull request for a forked repository. You can see an example pull request within a repository in <a href="#fig-pr" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>.</p>
 <div id="fig-pr" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/pr_screenshot.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.1: Screenshot of a Pull Request on GitHub
+Figure&nbsp;10.1: Screenshot of a Pull Request on GitHub
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="github-flow" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="github-flow"><span class="header-section-number">9.2</span> GitHub Flow</h2>
+<section id="github-flow" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="github-flow"><span class="header-section-number">10.2</span> GitHub Flow</h2>
 <p>When using Git collaboratively, several workflow strategies or “flows” have been developed to manage the development process efficiently. <a href="https://docs.github.com/en/get-started/using-github/github-flow">GitHub Flow</a> is popular because it’s simple and it makes sure everyone’s contributions are reviewed and integrated smoothly.</p>
-<section id="steps-in-github-flow" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="steps-in-github-flow"><span class="header-section-number">9.2.1</span> Steps in GitHub Flow</h3>
+<section id="steps-in-github-flow" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="steps-in-github-flow"><span class="header-section-number">10.2.1</span> Steps in GitHub Flow</h3>
 <ol type="1">
 <li><p><strong>Create a branch:</strong> This step involves branching off from the main project (usually from the <code>main</code> or <code>master</code> branch). The branch should be named descriptively to reflect the work that will be done within it. For details, see the previous <a href="../chapters/branches.html">chapter on branches</a>.</p></li>
 <li><p><strong>Make changes:</strong> After creating your branch, you can start working on your project within this new branch. This involves making changes, adding new features, or fixing bugs. It’s recommended to commit your changes regularly with clear and concise commit messages.</p></li>
@@ -463,8 +469,8 @@ Figure&nbsp;9.1: Screenshot of a Pull Request on GitHub
 </ol>
 </section>
 </section>
-<section id="readme-file" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="readme-file"><span class="header-section-number">9.3</span> <code>README</code> file</h2>
+<section id="readme-file" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="readme-file"><span class="header-section-number">10.3</span> <code>README</code> file</h2>
 <p>A <code>README</code> is a text file that provides basic information about a project. As mentioned earlier, the <code>README</code> file can be created together with your repository or can be added later. In the context of a Git repository, the <code>README</code> file should contain “a description of your repository”. The exact content depends on your repository, but some general things that you might want to include are:</p>
 <ul>
 <li><p><strong>Project description</strong>: What function does this repository serve and what are it’s key features?</p></li>
@@ -503,25 +509,25 @@ Find out more: View the <code>README.md</code> file of this project.
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<section id="the-version-control-book" class="level1 callout-body-container callout-body" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> The Version Control Book</h1>
+<section id="the-version-control-book" class="level1 callout-body-container callout-body" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> The Version Control Book</h1>
 <p><a href="https://zenodo.org/doi/10.5281/zenodo.10724424"><img src="https://zenodo.org/badge/648830079.svg" class="img-fluid" alt="DOI"></a> <a href="https://doi.org/10.25592/uhhfdm.14149"><img src="https://www.fdr.uni-hamburg.de/badge/DOI/10.25592/uhhfdm.14149.svg" class="img-fluid" alt="DOI"></a> <a href="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml"><img src="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/publish.yml/badge.svg" class="img-fluid" alt="Quarto Publish"></a> <a href="#contributors"><img src="https://img.shields.io/github/all-contributors/lnnrtwttkhn/version-control-book?color=ee8449&amp;style=flat-square.png" class="img-fluid" alt="All Contributors"></a> <a href="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml"><img src="https://github.com/lnnrtwttkhn/version-control-book/actions/workflows/codespell.yml/badge.svg" class="img-fluid" alt="Codespell"></a></p>
-<section id="description" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="description"><span class="header-section-number">10.1</span> Description</h2>
+<section id="description" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="description"><span class="header-section-number">11.1</span> Description</h2>
 <p>Welcome to the <a href="https://lennartwittkuhn.com/version-control-book/">Version Control Book</a>, a resource initially created in the context of a <a href="https://lennartwittkuhn.com/version-control-course-uhh-ws23/">course on version control</a> at <a href="https://www.uni-hamburg.de">Universität Hamburg</a> in 2023/2024.</p>
 <p>The Version Control Book aims to summarize all the relevant course contents for the students, effectively serving as a textbook for this course. The book also aims to serve as an open-source learning resource for everyone, with a particular emphasis on providing guidance for researchers learning version control using Git and GitHub. This is a living resource on why and - more importantly - how to use Git. The rendered version is at <a href="https://lennartwittkuhn.com/version-control-book/" class="uri">https://lennartwittkuhn.com/version-control-book/</a> and is under constant development.</p>
 </section>
-<section id="contributing" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="contributing"><span class="header-section-number">10.2</span> Contributing</h2>
+<section id="contributing" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="contributing"><span class="header-section-number">11.2</span> Contributing</h2>
 <p>Contributions in any form - pull requests, issues, content requests, ideas, etc. - are always welcome. If you are using the book and find that something does not work, please <a href="https://github.com/lnnrtwttkhn/version-control-book/issues">let us know</a>. You can find out more on how to contribute <a href="https://lennartwittkuhn.com/version-control-book/misc/contributing.html">here</a>, and a list of all contributors so far <a href="#contributors">below</a>. Before contributing, please read the <a href="https://lennartwittkuhn.com/version-control-book/misc/contributing.html">guidelines for contributions</a> on how to get involved. To maintain consistency and readability, we follow a <a href="https://lennartwittkuhn.com/version-control-book/misc/style-guide.html">style guide</a>. Please refer to the Style Guide for details on formatting, coding standards, and other conventions. We appreciate your contributions and look forward to building a comprehensive and valuable resource on version control!</p>
 </section>
-<section id="usage" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="usage"><span class="header-section-number">10.3</span> Usage</h2>
+<section id="usage" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="usage"><span class="header-section-number">11.3</span> Usage</h2>
 <p>To render and preview, execute:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="license" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="license"><span class="header-section-number">10.4</span> License</h2>
+<section id="license" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="license"><span class="header-section-number">11.4</span> License</h2>
 <p><a href="LICENSE">CC-BY-SA</a></p>
 <p>You are free to</p>
 <ul>
@@ -534,8 +540,8 @@ Find out more: View the <code>README.md</code> file of this project.
 <li><p><strong>ShareAlike</strong> — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</p></li>
 </ol>
 </section>
-<section id="contributors" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="contributors"><span class="header-section-number">10.5</span> Contributors</h2>
+<section id="contributors" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="contributors"><span class="header-section-number">11.5</span> Contributors</h2>
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -587,25 +593,25 @@ Find out more: View the <code>README.md</code> file of this project.
 </section>
 </div>
 </div>
-<section id="markdown-syntax" class="level3" data-number="10.5.1">
-<h3 data-number="10.5.1" class="anchored" data-anchor-id="markdown-syntax"><span class="header-section-number">10.5.1</span> Markdown syntax</h3>
+<section id="markdown-syntax" class="level3" data-number="11.5.1">
+<h3 data-number="11.5.1" class="anchored" data-anchor-id="markdown-syntax"><span class="header-section-number">11.5.1</span> Markdown syntax</h3>
 <p>A <code>README</code> is typically a Markdown (<code>.md</code>) file, which means you can use <a href="https://www.markdownguide.org/">Markdown</a> syntax in it. Markdown allows you to easily format text, create lists, include links, and embed images.</p>
 </section>
 </section>
-<section id="forking" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="forking"><span class="header-section-number">10.6</span> Forking</h2>
+<section id="forking" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="forking"><span class="header-section-number">11.6</span> Forking</h2>
 <p>In the <a href="../chapters/remotes-intro.html">previous chapter</a>, you learned that you can invite other people as collaborators to your repository. However, this usually comes with a few privileges in administering your project that you might not want to share with any random person who would like to contribute to your project. At the same, a central idea of open-source development is that even people who don’t know each other can collaborate together on open-source code. This is where forking comes in: Forking a repository on GitHub allows you to <strong>create a personal copy of <em>someone else’s</em> project</strong> under your GitHub account and contributing to that project without direct access to the original repository.</p>
 <p>This copy of the repository includes all files, commit history, and branches and also keeps a reference to the repository it was copied from. Forking is commonly used when you want to contribute to a project but you don’t have direct access to the original repository. It enables you to make changes independently, create new branches, and push modifications to your forked repository. You can also submit changes to the original repository through so-called <a href="#pull-requests">pull requests</a> which will be explained in more detail below.</p>
-<section id="creating-a-fork" class="level3" data-number="10.6.1">
-<h3 data-number="10.6.1" class="anchored" data-anchor-id="creating-a-fork"><span class="header-section-number">10.6.1</span> Creating a fork</h3>
-<p>By clicking the <strong>Fork</strong> button on a repository page, as shown in <a href="#fig-forking" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>, you create an identical copy of the repository in your GitHub account.</p>
+<section id="creating-a-fork" class="level3" data-number="11.6.1">
+<h3 data-number="11.6.1" class="anchored" data-anchor-id="creating-a-fork"><span class="header-section-number">11.6.1</span> Creating a fork</h3>
+<p>By clicking the <strong>Fork</strong> button on a repository page, as shown in <a href="#fig-forking" class="quarto-xref">Figure&nbsp;<span>11.1</span></a>, you create an identical copy of the repository in your GitHub account.</p>
 <div id="fig-forking" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-forking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/github-forking.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.1: Screenshot of a repository with fork button
+Figure&nbsp;11.1: Screenshot of a repository with fork button
 </figcaption>
 </figure>
 </div>
@@ -627,8 +633,8 @@ Should I create a new branch after forking a repository?
 </div>
 </div>
 </section>
-<section id="pull-request-from-a-forked-repository" class="level3" data-number="10.6.2">
-<h3 data-number="10.6.2" class="anchored" data-anchor-id="pull-request-from-a-forked-repository"><span class="header-section-number">10.6.2</span> Pull request from a forked repository</h3>
+<section id="pull-request-from-a-forked-repository" class="level3" data-number="11.6.2">
+<h3 data-number="11.6.2" class="anchored" data-anchor-id="pull-request-from-a-forked-repository"><span class="header-section-number">11.6.2</span> Pull request from a forked repository</h3>
 <p>To create a pull request after forking a repository and making changes, follow these steps:</p>
 <ol type="1">
 <li><p>Navigate to your forked repository on GitHub. Make sure you are on the branch that contains the changes you want to propose.</p></li>
@@ -641,8 +647,8 @@ Should I create a new branch after forking a repository?
 <p>The owner of the original repository can now approve the changes and thereby merge your repository’s branch into his.</p>
 </section>
 </section>
-<section id="git-blame" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="git-blame"><span class="header-section-number">10.7</span> Git blame</h2>
+<section id="git-blame" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="git-blame"><span class="header-section-number">11.7</span> Git blame</h2>
 <p>The command <code>git blame</code> is useful when you are working on a project with multiple collaborators. It it used to show when and by whom, each line in a specific file was last changed. You have to specify a file when using it, for example:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -673,35 +679,35 @@ Find out more: Common <code>git blame</code> flags
 </div>
 </div>
 </section>
-<section id="template-repositories" class="level2" data-number="10.8">
-<h2 data-number="10.8" class="anchored" data-anchor-id="template-repositories"><span class="header-section-number">10.8</span> Template repositories</h2>
-<p>Template repositories, or repository templates, on GitHub allow you to create a repository that acts as a starting point for other new repositories. Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. This simplifies the process of setting up new projects that share common characteristics or follow best practices. Template repositories have a “Use this template” button on a template repository page, as shown in <a href="#fig-template" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>. Click it, provide a new repository name and an optional description and decide whether to include all branches and whether to create a public or private repository.</p>
+<section id="template-repositories" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="template-repositories"><span class="header-section-number">11.8</span> Template repositories</h2>
+<p>Template repositories, or repository templates, on GitHub allow you to create a repository that acts as a starting point for other new repositories. Instead of beginning a new project from scratch, you can use a template repository that already includes predefined files, directories, and even code. This simplifies the process of setting up new projects that share common characteristics or follow best practices. Template repositories have a “Use this template” button on a template repository page, as shown in <a href="#fig-template" class="quarto-xref">Figure&nbsp;<span>11.2</span></a>. Click it, provide a new repository name and an optional description and decide whether to include all branches and whether to create a public or private repository.</p>
 <div id="fig-template" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-template-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/github-template.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-template-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.2: Screenshot of a template repository on GitHub
+Figure&nbsp;11.2: Screenshot of a template repository on GitHub
 </figcaption>
 </figure>
 </div>
-<section id="how-to-create-or-find-templates" class="level3" data-number="10.8.1">
-<h3 data-number="10.8.1" class="anchored" data-anchor-id="how-to-create-or-find-templates"><span class="header-section-number">10.8.1</span> How to create or find templates</h3>
-<p>You can create templates from your repositories by enabling the <code>Template repository</code> option in your repository’s general settings, as shown in <a href="#fig-template-settings" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>. This makes your repository available as a template. Keep in mind that if your repository is public, others can also use it as a template. Alternatively, if you want to start a new repository using someone else’s template, search for <code>template</code> on GitHub to get a long list of options. To narrow down the results, it’s helpful to filter by your preferred programming language.</p>
+<section id="how-to-create-or-find-templates" class="level3" data-number="11.8.1">
+<h3 data-number="11.8.1" class="anchored" data-anchor-id="how-to-create-or-find-templates"><span class="header-section-number">11.8.1</span> How to create or find templates</h3>
+<p>You can create templates from your repositories by enabling the <code>Template repository</code> option in your repository’s general settings, as shown in <a href="#fig-template-settings" class="quarto-xref">Figure&nbsp;<span>11.3</span></a>. This makes your repository available as a template. Keep in mind that if your repository is public, others can also use it as a template. Alternatively, if you want to start a new repository using someone else’s template, search for <code>template</code> on GitHub to get a long list of options. To narrow down the results, it’s helpful to filter by your preferred programming language.</p>
 <div id="fig-template-settings" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-template-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../static/github-template-settings.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-template-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.3: Screenshot of the template setting on GitHub
+Figure&nbsp;11.3: Screenshot of the template setting on GitHub
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="differences-between-templates-and-forking" class="level3" data-number="10.8.2">
-<h3 data-number="10.8.2" class="anchored" data-anchor-id="differences-between-templates-and-forking"><span class="header-section-number">10.8.2</span> Differences between templates and forking</h3>
+<section id="differences-between-templates-and-forking" class="level3" data-number="11.8.2">
+<h3 data-number="11.8.2" class="anchored" data-anchor-id="differences-between-templates-and-forking"><span class="header-section-number">11.8.2</span> Differences between templates and forking</h3>
 <p>On GitHub, <a href="#forking">forking</a> and <a href="#template-repositories">template repositories</a> are two ways to create a copy of an existing repository, but they have key differences in how they work:</p>
 <section id="connection-and-contributions-to-the-original-repository" class="level5 unnumbered">
 <h5 class="unnumbered anchored" data-anchor-id="connection-and-contributions-to-the-original-repository">Connection and contributions to the original repository</h5>
@@ -720,11 +726,11 @@ Figure&nbsp;10.3: Screenshot of the template setting on GitHub
 </section>
 </section>
 </section>
-<section id="branch-protection" class="level2" data-number="10.9">
-<h2 data-number="10.9" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">10.9</span> Branch protection</h2>
+<section id="branch-protection" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="branch-protection"><span class="header-section-number">11.9</span> Branch protection</h2>
 <p>When using Git hosting platforms like GitHub or GitLab, it’s a good idea to enable branch protection rules for your critical branch(es), typically your <code>main</code> or <code>master</code> branch. By protecting it, you ensure that only reviewed and/or tested code gets merged into this branch. It also prevents accidental or unauthorized changes from being merged directly.</p>
-<section id="how-to-protect-the-main-branch-on-github" class="level3" data-number="10.9.1">
-<h3 data-number="10.9.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">10.9.1</span> How to protect the <code>main</code> branch on GitHub</h3>
+<section id="how-to-protect-the-main-branch-on-github" class="level3" data-number="11.9.1">
+<h3 data-number="11.9.1" class="anchored" data-anchor-id="how-to-protect-the-main-branch-on-github"><span class="header-section-number">11.9.1</span> How to protect the <code>main</code> branch on GitHub</h3>
 <ul>
 <li>Go to your repository on GitHub and click on “Settings”.</li>
 <li>In the left sidebar, select “Branches”.</li>
@@ -736,13 +742,13 @@ Figure&nbsp;10.3: Screenshot of the template setting on GitHub
 <p>A common option is to <strong>require pull request reviews</strong>. This requires one or more approving reviews before changes can be merged. Optionally, you can enable other protections, such as preventing force pushes or deleting the branch.</p>
 </section>
 </section>
-<section id="alternatives-to-github" class="level2" data-number="10.10">
-<h2 data-number="10.10" class="anchored" data-anchor-id="alternatives-to-github"><span class="header-section-number">10.10</span> Alternatives to GitHub</h2>
+<section id="alternatives-to-github" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="alternatives-to-github"><span class="header-section-number">11.10</span> Alternatives to GitHub</h2>
 <p>While GitHub is one of the most popular and widely used platforms for hosting Git repositories, there many alternatives to GitHub. Some prominent alternative include <a href="https://about.gitlab.com/de-de/">GitLab</a>, <a href="https://bitbucket.org">Bitbucket</a>, <a href="https://sourceforge.net">SourceForge</a> or <a href="https://codeberg.org/">Codeberg</a>.</p>
 <p>Potential disadvantages of GitHub include limited free private repositories, privacy concerns and a potential vendor lock in. On the other hand there are also advantages to GitHub, for example it’s user-friendly interface, the rich ecosystem and it’s extensive integration to third-party tools.</p>
 </section>
-<section id="acknowledgements" class="level2" data-number="10.11">
-<h2 data-number="10.11" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">10.11</span> Acknowledgements</h2>
+<section id="acknowledgements" class="level2" data-number="11.11">
+<h2 data-number="11.11" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">11.11</span> Acknowledgements</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -778,8 +784,8 @@ Figure&nbsp;10.3: Screenshot of the template setting on GitHub
 </tbody>
 </table>
 </section>
-<section id="cheatsheet" class="level2" data-number="10.12">
-<h2 data-number="10.12" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">10.12</span> Cheatsheet</h2>
+<section id="cheatsheet" class="level2" data-number="11.12">
+<h2 data-number="11.12" class="anchored" data-anchor-id="cheatsheet"><span class="header-section-number">11.12</span> Cheatsheet</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -1244,12 +1250,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/remotes-intro.html" class="pagination-link" aria-label="Remotes: Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Remotes: Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/tags-and-releases.html" class="pagination-link" aria-label="Tags and Releases">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tags and Releases</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
