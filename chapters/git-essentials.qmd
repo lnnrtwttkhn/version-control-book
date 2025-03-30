@@ -8,13 +8,172 @@ abstract: |
 
 # Git Essentials
 
-
 ::: {.callout-tip appearance="minimal"}
 <h5>Learning Objectives</h5>
 {{< include ../objectives/_objectives-essentials.qmd >}}
 :::
 
-[{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.basics >}}){.btn .btn-outline-secondary role="button"}
+## Good commits
+
+Now that you know how to create a Git repository, stage files, and make commits, it's time to discuss some good practices for Git commits.
+
+### Commit often
+
+Creating frequent commits helps to capture your work progress. 
+This makes it easier to track changes, identify when errors were introduced, or revert to a previous version of your project if something goes wrong.
+You can think of committing like saving your game in a video game (or rock climbing, see @nte-rock-climbing-analogy).
+You want to create saves (commits) regularly so that if you encounter an issue, you don't lose too much progress.
+
+::: {#nte-rock-climbing-analogy .callout-note title="The rock climbing analogy of Git commits"}
+
+Using Git commits can be compared to rock climbing:
+
+> Using a Git commit is like using anchors and other protection when climbing.
+If you’re crossing a dangerous rock face you want to make sure you’ve used protection to catch you if you fall.
+Commits play a similar role: if you make a mistake, you can’t fall past the previous commit.
+Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high!
+Like rock climbing protection, you want to be judicious in your use of commits.
+Committing too frequently will slow your progress; use more commits when you’re in uncertain or dangerous territory.
+Commits are also helpful to others, because they show your journey, not just the destination. 
+
+from [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html#git-commit)
+:::
+
+### Keep commits small
+
+You should *not* consider a commit as a general "Save" button, that you use to save all your recent changes in one go.
+Instead, each commit should ideally contain one isolated and complete change.
+This makes your project history easier to follow.
+
+For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
+
+This approach to commits helps you down the line. 
+For example, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
+If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
+
+### Use *meaningful* commit messages
+
+Git allows for a commit message with a 72 character limit and a description without such a limit.
+In general, you should aim to write clear and short commit messages (ideally under 50 characters), yet descriptive enough to clarify the purpose of the commit.
+There are different conventions across projects/persons but also some general guidelines, you can stick to.
+
+It's helpful to think about future you or others looking at this project later. 
+Will they understand what this commit was about without having to look at the actual changes?
+
+For example, `Fix typo in README` would be more descriptive as a commit message than `Update files`.
+If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed in the [previous chapter](first-steps-git.qmd)).
+
+### Write commits that explain *why* changes were made
+
+Instead of just stating *what you did* in a commit, it's even more helpful to explain *why* you made those changes.
+The "why" gives important context, especially when reviewing older commits.
+
+For example, use `Adjust participant exclusion criteria to improve data quality` instead of `Change participant exclusion criteria`.
+
+### Start with an imperative verb
+
+It is standard to **start the commit message with an imperative verb** to indicate the purpose of the commit, for example, "Add", "Fix" or "Improve".
+Here is an example:
+
+```{markdown filename="Example"}
+git commit -m "Implement user registration feature
+
+This commit adds the user registration functionality to the application. It includes the following changes:
+- Created a new 'register' route and view for user registration.
+- Added form validation for user input."
+```
+
+An example of commit messages, which are not really optimal, are illustrated in @fig-bad_commits_comic.
+
+!["Git Commit" by [xkcd](https://xkcd.com/1296/) (License: [CC BY-NC 2.5](https://xkcd.com/license.html))](../static/xkcd-git-commit.png){#fig-bad_commits_comic}
+
+
+::: {.callout-tip title="Commit messages examples" collapse="true"}
+Some examples for commit messages, which stick to the etiquette:
+
+- `"Add 'favourites.txt' to the project"`
+- `"Fix typo in first recipe"`
+- `"Improve code comments for clarity"`
+- `"Fix critical security vulnerability (CVE-2022-1234)"`
+- `"Refactor database query functions for efficiency"`
+- `"Update installation instructions in README"`
+
+:::
+
+### Stage changes selectively
+
+Only stage and commit files you actually want Git to track.
+You can use `git status` to double-check what files you have staged. 
+You can stage files selectively using `git add` to avoid committing unnecessary files (like temporary files or configuration files specific to your system).
+Using a `.gitignore` file to prevent certain files from being tracked by Git is also a good idea (for details, see below).
+
+In principle, any file can be tracked with Git.
+However, to make use of the full potential of Git, it is recommended to **mainly track plain text files** with Git.
+For recommendations on which file to track or *not* track with Git, see @tip-track and @tip-not-track, respectively.
+
+::: {#tip-track .callout-tip title="Which files can I track with Git?" collapse=true}
+
+#### Code files {.unnumbered}
+
+Tracking code files is the most common and original use case for version control with Git.
+Git is well-suited for tracking changes in source code, and it's widely used by developers and teams for this purpose.
+Whether it's a single developer maintaining a personal project or a large team collaborating on a complex software system, Git excels at tracking code files throughout the development lifecycle.
+
+#### Plain textfiles {.unnumbered}
+
+Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup that uses emails or shared Dropbox folders for "version control" (see the [introduction](intro-version-control.qmd) chapter). 
+However, to really be able to use the full set of features of Git, you should rely on plain text files for your project.
+This is because `.docx` files are saved as binary files, which makes meaningful outputs of the text inside it impossible for Git.
+"Plain textfiles" does not mean you have to use `.txt` files.
+Instead you can use formattable Markdown (`.md`) files.
+Markdown (`.md`) files are plain text files that contain formatting elements, making them more versatile than plain .txt files.
+Markdown allows you to add simple formatting like headings, lists, links, and images.
+
+:::
+
+::: {#tip-not-track .callout-tip title="Which files should I *not* track with Git?" collapse=true}
+
+#### Microsoft Office files {.unnumbered}
+
+As said earlier, it is not recommended to track Microsoft office files using Git, since Git treats `.docx` files as binary files.
+Binary files lack the inherent structure that allows Git to capture and display changes effectively.
+Git relies on understanding the differences between versions of files.
+With binary files, you won't benefit from the ability to view detailed textual differences (`git diff`) or effectively use [branches](branches.qmd).
+Collaborative work on binary files, such as simultaneous editing of a Word document, may result in complex [merge conflicts](branches.qmd) that are challenging to resolve.
+
+So while it is possible to track `.docx` files with Git, you will not be able to use the many features of Git, which rely on Git being able to display the file, since Git can only output the "zeros and ones" and not the text inside the `.docx` files.
+
+If you ever choose to track them regardless, you should use detailed commit messages, since you will not be able to easily look at the text content of past versions.
+You will also need to know about temporary word files. 
+For it's own version control system, Word creates temporary files in the folder of your word file.
+You should not track these files using Git, since Word creates a lot of them.
+To not stage or commit these files by accident, you can use the `.gitignore` file.
+
+:::
+
+### Review your changes before committing
+
+Before committing your changes, it's a good habit to review the differences between your working directory and the staged files using `git diff` (for details, see below).
+This ensures that you're aware of every change you're about to commit.
+
+### Reference issue numbers
+
+If your project is connected to an issue tracker system (like GitHub Issues), it's helpful to reference issue numbers in your commit messages. 
+This makes it easy to trace which commit addressed a particular issue.
+For an introduction to GitHub Issues, refer to our [Issues chapter](issues.qmd).
+For example:
+
+```{zsh filename="Code"}
+git commit -m "Fix login bug (fixes #42)"
+```
+
+This message indicates that the commit addresses issue number 42 in your issue tracker.
+
+### Avoid committing sensitive information
+
+Be careful not to commit sensitive information such as passwords or personal data. 
+Once something is committed, it becomes part of the repository's history, making it difficult to completely remove later.
+You can use `.gitignore` files to exclude sensitive files from being tracked (details below).
 
 ## Logging commits
 
@@ -42,7 +201,10 @@ This is the information specified using `git config` (for details, see the [setu
 1. This line is the commit message provided by the author, which briefly describes what this change does.
 
 `git log` is a very useful command because it provides a clear and organized view of a repository's commit history. 
-It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps. 
+It allows you to understand the evolution of a project over time by showing detailed information about each commit, including changes made, authors, and timestamps.
+
+To exit the `git log` view and return to the regular Terminal, press the {{< kbd q >}} key. 
+This applies to both macOS and Windows systems.
 
 ::: {.callout-tip title="Common `git log` flags" collapse="true"}
 `--oneline`: 
@@ -79,7 +241,7 @@ Another very handy feature is the `git diff` command.
 It allows you to **compare two different versions of your file(s)**.
 
 By default it shows you any uncommitted changes since the last commit.
-You can explore this by pasting any additional text in your `.txt` file, for example:
+You can explore this by pasting any additional text in a `.txt` file, for example:
 
 ```{markdown filename="Code"}
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
@@ -96,7 +258,7 @@ git diff
 
 You should see an output similar to the following:
 
-```{zsh filename="Output"}
+```{markdown filename="Output"}
 #| code-copy: false
 +++ b/filename.txt
 @@ -0,0 +1 @@
@@ -112,6 +274,8 @@ It shows where the changes occurred.
 Note, that this line will look different for each change or commit.
 - `+` indicates added lines and `-` indicates removed lines.
 Lines that are identical between the two versions are not explicitly shown.
+
+### Comparing commits
 
 You can also use `git diff` to **compare two specific commits**. 
 For example, if you want to compare the current state of your file with a commit from a few commits ago:
@@ -169,51 +333,6 @@ Think of it as a precise identifier that Git uses to track the specific state of
 Every commit hash is unique.
 Even the slightest change results in a completely different hash.
 
-### Good commits
-
-You should *not* consider a commit as a general `Save` button, that you use to save all your recent changes in one go.
-Instead, each commit should ideally contain one isolated and complete change.
-For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
-
-This approach to commits helps you down the line. 
-For example, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename.
-If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.
-
-## Commit message etiquette
-
-Git allows for a commit message with a 72 character limit and a description without such a limit.
-In general, you should aim to write clear and short commit messages.
-There are different conventions across projects/persons but also some general guidelines, you can stick to. 
-
-It is standard to start the title with an **imperative verb** to indicate the purpose of the commit, for example, "add", "fix" or "improve".
-It is also recommended to only write 50 characters for the title and up to 72 for the description (if such a description is even necessary).
-Here is an example:
-
-```{zsh filename="Example"}
-git commit -m "Implement user registration feature
-
-This commit adds the user registration functionality to the application. It includes the following changes:
-- Created a new 'register' route and view for user registration.
-- Added form validation for user input."
-```
-
-An example of commit messages, which are not really optimal, are illustrated in @fig-bad_commits_comic.
-
-!["Git Commit" by [xkcd](https://xkcd.com/1296/) (License: [CC BY-NC 2.5](https://xkcd.com/license.html))](../static/xkcd-git-commit.png){#fig-bad_commits_comic}
-
-
-::: {.callout-tip title="Commit messages examples" collapse="true"}
-Some examples for commit messages, which stick to the etiquette:
-
-- `"Add 'favourites.txt' to the project"`
-- `"Fix typo in first recipe"`
-- `"Improve code comments for clarity"`
-- `"Fix critical security vulnerability (CVE-2022-1234)"`
-- `"Refactor database query functions for efficiency"`
-- `"Update installation instructions in README"`
-
-:::
-
 ## Amending a commit
 
 The `git commit --amend` command is used to modify (or "amend") your most recent Git commit in your repository.
@@ -237,7 +356,7 @@ The `--no-edit` flag, lets you keep the commit message of your most recent commi
 
 #### The repeated `--amend` workflow
 
-Let's consider the following part of the [rock climbing analogy](#rock-climbing-analogy) for commits again:
+Let's consider the following part of the rock climbing analogy for commits again (for the full analogy, see @nte-rock-climbing-analogy):
 
 > use more commits when you’re in uncertain or dangerous territory.
 
@@ -296,48 +415,13 @@ This would be a good use case for a Git Graphical User Interface (GUI).
 To checkout how to do partial commits using [GitKraken](https://www.gitkraken.com) checkout the [GUI chapter](gui.qmd) in this book.
 :::
 
-## What files can/should I track with Git?
-
-In principle, any file can be tracked with Git.
-However, to make use of the full potential of Git, it is recommended to mainly track plain text files with Git.
-
-### Code files
-
-Tracking code files is the most common and original use case for version control with Git.
-Git is well-suited for tracking changes in source code, and it's widely used by developers and teams for this purpose.
-Whether it's a single developer maintaining a personal project or a large team collaborating on a complex software system, Git excels at tracking code files throughout the development lifecycle.
-
-### Plain textfiles
-
-Git is a useful tool even if your project contains few or no code at all, especially in comparison to a setup that uses emails or shared Dropbox folders for "version control" (see the [introduction](intro-version-control.qmd) chapter). 
-However, to really be able to use the full set of features of Git, you should rely on plain text files for your project.
-This is because `.docx` files are saved as binary files, which makes meaningful outputs of the text inside it impossible for Git.
-"Plain textfiles" does not mean you have to use `.txt` files.
-Instead you can use formattable Markdown (`.md`) files.
-Markdown (`.md`) files are plain text files that contain formatting elements, making them more versatile than plain .txt files.
-Markdown allows you to add simple formatting like headings, lists, links, and images.
-
-### Microsoft Office files
-As said earlier, it is not recommended to track Microsoft office files using Git, since Git treats `.docx` files as binary files.
-Binary files lack the inherent structure that allows Git to capture and display changes effectively.
-Git relies on understanding the differences between versions of files.
-With binary files, you won't benefit from the ability to view detailed textual differences (`git diff`) or effectively use [branches](branches.qmd).
-Collaborative work on binary files, such as simultaneous editing of a Word document, may result in complex [merge conflicts](branches.qmd) that are challenging to resolve.
-
-So while it is possible to track `.docx` files with Git, you will not be able to use the many features of Git, which rely on Git being able to display the file, since Git can only output the "zeros and ones" and not the text inside the `.docx` files.
-
-If you ever choose to track them regardless, you should use detailed commit messages, since you will not be able to easily look at the text content of past versions.
-You will also need to know about temporary word files. 
-For it's own version control system, Word creates temporary files in the folder of your word file.
-You should not track these files using Git, since Word creates a lot of them.
-To not stage or commit these files by accident, you can use the `.gitignore` file.
-
 ## Ignoring files and folders: `.gitignore`
 
 `.gitignore` is a special file.
 It is used to specify files and folders that should be ignored and not tracked by Git.
 When you create a `.gitignore` file, place it inside your Git repository and specify names of files or folders inside it.
 Git will then exclude these files and directories from being staged or committed, for example when using `git add -A` which normally stages all your files.
+The `.gitignore` file does not have a file extension like `.txt` and is simply named `.gitignore`.
 
 The `.gitignore` file is useful to prevent certain files or directories that are not essential for the project or generated during the development process from being included in the version history.
 Files that can recreated from the code, like for example `.png` plots from R code, should also be included in your project's `.gitignore` file.
@@ -346,6 +430,8 @@ Including only essential files in version control keeps your repository clean, m
 Huge files, like big data files should also not be committed, since they can slow down working with your repository.
 To version control files with a big size, tools like [DataLad](https://www.datalad.org) are more appropriate.
 
+### Creating a `.gitignore` file
+
 To create a `.gitignore` file from the command line, navigate to your repository and use the `touch` command.
 Alternatively, create the file in your favorite text editor.
 
@@ -353,25 +439,40 @@ Alternatively, create the file in your favorite text editor.
 touch .gitignore
 ```
 
-`.gitignore` will be a hidden file, so to make it show up in the command line, you will have to use the `-a` flag in the `ls` command.
+`.gitignore` is a hidden file, so to make it show up in the command line, you will have to use the `-a` flag in the `ls` command.
 For details on listing of files and folders, see the chapter on the [command line](command-line.qmd).
 
 ```{zsh filename="Code"}
 ls -a
 ```
 
-Now you can write a filename or folder name inside it, to prevent Git from tracking it.
+### Adding files and folders to `.gitignore`
 
-It's recommended to add a project-specific `.gitignore` file to your repository using the regular stage-commit workflow that you learned about in this chapter, for example:
+Now, you can write a filename or folder name inside the `.gitignore` file to prevent Git from tracking that file or folder.
+If you specify a folder, Git will also ignore every subfolder within it.
+To ignore specific file types, it's helpful to use [wildcards](first-steps-git.qmd#wildcards).
 
-```{zsh}
+For example, to make Git ignore all `.png` files and a folder called `data`, add this to your `.gitignore` file:
+
+```{zsh filename=".gitignore"}
+*.png # <1>
+data # <2>
+```
+1. This entry makes Git ignore all `.png` files inside the repository.
+1. This entry makes Git ignore the `data` folder inside the repository.
+
+### Staging and committing the `.gitignore` file
+
+It's recommended to add a project-specific `.gitignore` file to your repository using the regular stage-commit workflow that you learned about in the previous chapter, for example:
+
+```{zsh filename="Code"}
 git add .gitignore
 git commit -m "Add .gitignore"
 ```
 
 ### Global `.gitignore` file
 
-Instead of specifying files you want Git to ignore for each folder, you can also create global `.gitignore` file.
+Instead of specifying files you want Git to ignore for each folder, you can also create a global `.gitignore` file.
 To do this, you create a file named `.gitignore_global` (or any name you prefer) in your users's home directory (located, for example, at `/Users/yourusername`). 
 Then, you configure Git to use this global file by running:
 
@@ -481,15 +582,32 @@ Should `.DS_Store` be tracked by Git, this can lead to unnecessary version confl
 3. **Irrelevant for collaborators with another operating system**: Anyone else who is not using macOS (for example, Windows or Linux users) do not need these files and they serve no purpose for them.
 Including `.DS_Store` in the repository could confuse contributors who are not using macOS.
 
+4. **Potential privacy concerns**: Adding `.DS_Store` files to Git could be a privacy concern because they store metadata about a directory's structure, such as custom view settings and file attributes.
+While it is unlikely to pose a significant risk if only project files and excluded files are in the directory, there could be sensitive information in those files that only you know about.
+Therefore, while it's usually not necessary to delete `.DS_Store` files for protection, if you're concerned about the potential exposure of this data, it's best to exclude them from Git.
+
 To add `.DS_Store` to `.gitignore`, you can include the following line in your `.gitignore` file:
 
-```{zsh filename="Code"}
+```{zsh filename=".gitignore"}
 .DS_Store
 ```
 
 This will ensure that any `.DS_Store` files in the project directory and its subdirectories are ignored by Git and not tracked in the repository.
 
 :::
+
+## Renaming files with Git
+
+To rename files in Git, use the `git mv` command.
+This command not only renames the file but also stages the change for you, so the renaming is ready to be committed.
+This method is preferable to renaming the file manually, as it allows Git to track the change seamlessly and eliminates the need to stage both the removal of the old file and the addition of the new file separately.
+Here is an example:
+
+```{zsh filename="Code"}
+git mv old_filename.txt new_filename.txt
+```
+
+After running this command, Git stages the file rename, allowing you to commit the change like any other.
 
 ## Tracking empty folders
 
