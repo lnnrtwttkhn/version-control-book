@@ -19,7 +19,7 @@ deploy: clean static
 # download and extract images:
 .PHONY: static
 static:
-	curl $(STATIC_URL) -o $(STATIC_ARCHIVE)
+	curl -L $(STATIC_URL) -o $(STATIC_ARCHIVE)
 	unzip -j -o $(STATIC_ARCHIVE) -d $(STATIC_DIR)
 	rm -f $(STATIC_ARCHIVE)
 
