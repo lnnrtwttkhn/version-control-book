@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="../static/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-437f30c51863257f6a0e3763259ee6fb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-45e8e462cd760eca75dbd85b13f1b7a2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-69917508a473ae074f3201fc4239d3a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2372cede4d1bc0c51de30dc8dd275a8e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/kbd/kbd.js"></script>
@@ -158,7 +159,8 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../static/logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../static/logo.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../static/logo.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control Book</a> 
@@ -435,7 +437,7 @@ Learning Objectives
 <h2 data-number="2.1" class="anchored" data-anchor-id="why-using-git-from-the-command-line"><span class="header-section-number">2.1</span> Why using Git from the command line?</h2>
 <p>You are most likely used to interacting with programs on your computer through graphical user interfaces (GUIs) where you can select options through graphical icons and visual indicators using the computer mouse. However, computers have historically been controlled through text-based commands typed into command-line interfaces (CLIs) using the computer keyboard. To this day, the command line has persisted as a reliable (and sometimes the only) way to interact effectively with computer programs. Similarly, even though many GUIs for Git exist (for an overview, see the chapter on <a href="../chapters/gui.html">Graphical User Interfaces</a>), <strong>Git is fundamentally a command-line tool</strong>. This is why comfort with the command line is a good basis for learning Git. For more general advantages of the command line, see <a href="#tip-cli-advantages" class="quarto-xref">Tip&nbsp;<span>2.1</span></a>.</p>
 <div id="tip-cli-advantages" class="callout callout-style-default callout-tip callout-titled" title="More general advantages of the command line">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -481,12 +483,12 @@ Figure&nbsp;2.1: The command line (Bourne shell interaction in Version 7 Unix). 
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Which &quot;programming language&quot; does the command line use?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Which “programming language” does the command line use?
+<span class="screen-reader-only">Tip</span>Which “programming language” does the command line use?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -501,7 +503,7 @@ Which “programming language” does the command line use?
 <h2 data-number="2.3" class="anchored" data-anchor-id="finding-the-command-line"><span class="header-section-number">2.3</span> Finding the command line</h2>
 <p>This section helps you finding the command line on your operating system. Click on the tab for your operating system or computer environment for detailed information.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false"><i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false"><i class="fa-solid fa-rocket" aria-label="rocket"></i> UHH JupyterHub</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href=""><i class="fa-brands fa-linux" aria-label="linux"></i> Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href=""><i class="fa-solid fa-rocket" aria-label="rocket"></i> UHH JupyterHub</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="fig-git-for-windows" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -532,7 +534,7 @@ Figure&nbsp;2.3: Icon of the Terminal program on macOS (Source: <a href="https:/
 <ol type="1">
 <li>In the Finder, go to <code>Applications</code> &gt; <code>Utilities</code> &gt; <code>Terminal.app</code></li>
 <li>In the Finder, select the <code>Go</code> menu &gt; <code>Utilities</code> &gt; <code>Terminal.app</code></li>
-<li>Activate the Mac <code>Spotlight</code> search function, type <code>Terminal</code> in the search bar, and press the <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span> key.</li>
+<li>Activate the Mac <code>Spotlight</code> search function, type <code>Terminal</code> in the search bar, and press the <kbd title="Enter" aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span> key.</li>
 </ol>
 <p>You may want to keep the Terminal in your <a href="https://support.apple.com/guide/mac-help/open-apps-from-the-dock-mh35859/mac">Dock</a> to find it more easily, as shown in <a href="#fig-terminal-dock" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>.</p>
 <div id="fig-terminal-dock" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -547,12 +549,12 @@ Figure&nbsp;2.4: Terminal icon in the Dock on macOS
 </div>
 <p>On new Apple computers, especially those running recent versions of macOS, you might have to allow the Terminal access to certain files and folders after your initial commands. If a prompt appears asking for permission, you will need to confirm it to continue using Terminal with access to these files.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="macOS Terminal: Bash or Zsh?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-macOS Terminal: Bash or Zsh?
+<span class="screen-reader-only">Tip</span>macOS Terminal: Bash or Zsh?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -565,7 +567,7 @@ macOS Terminal: Bash or Zsh?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>If the output is <code>/bin/bash</code> or a similar path, it means your default shell is set to Bash. This is the most common shell on Unix-based systems, including macOS.</p>
@@ -575,12 +577,12 @@ macOS Terminal: Bash or Zsh?
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Which macOS version do I have installed?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Which macOS version do I have installed?
+<span class="screen-reader-only">Tip</span>Which macOS version do I have installed?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -595,12 +597,12 @@ Which macOS version do I have installed?
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="How can I customize the look of my shell?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How can I customize the look of my shell?
+<span class="screen-reader-only">Tip</span>How can I customize the look of my shell?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -616,7 +618,7 @@ How can I customize the look of my shell?
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing <kbd aria-hidden="true">Ctrl</kbd><span class="visually-hidden">Ctrl</span> (<code>control</code>) + <kbd aria-hidden="true">Alt</kbd><span class="visually-hidden">Alt</span> + <kbd aria-hidden="true">T</kbd><span class="visually-hidden">T</span> simultaneously. If this shortcut does not work, you can find the terminal application in your system’s applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.</p>
+<p>To open a fresh terminal window on Linux, you can usually use a keyboard shortcut, which often involves pressing <kbd title="Ctrl" aria-hidden="true">Ctrl</kbd><span class="visually-hidden">Ctrl</span> (<code>control</code>) + <kbd title="Alt" aria-hidden="true">Alt</kbd><span class="visually-hidden">Alt</span> + <kbd title="T" aria-hidden="true">T</kbd><span class="visually-hidden">T</span> simultaneously. If this shortcut does not work, you can find the terminal application in your system’s applications menu and click on it to open a new window. Additionally, if you are already in a graphical environment, right-clicking on the desktop or within a file manager may offer an option to open a terminal in the current location.</p>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p>If it is not possible for you to access a command line interface using your personal computer, you can use a remote solution with <a href="https://jupyter.org/hub">JupyterHub</a>. JupyterHub is a web-based platform that allows multiple users to access an interactive computing environment on a shared server.</p>
@@ -657,10 +659,10 @@ Figure&nbsp;2.6: Screenshot of JupyterHub, showing the terminal.
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<p>In the shell, the prompt is usually represented by the symbol <code>$</code> but it can look a bit different sometimes. In our examples, we will use <code>$</code> as the prompt. The important thing to remember is <strong>to not type the prompt, <code>$</code>, itself when entering commands</strong>. Only type the command that comes after the <code>$</code> prompt. For this reason, we remove the <code>$</code> prompt from all code examples in this guide. Also, remember to press the <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span> key after typing a command to execute it.</p>
+<p>In the shell, the prompt is usually represented by the symbol <code>$</code> but it can look a bit different sometimes. In our examples, we will use <code>$</code> as the prompt. The important thing to remember is <strong>to not type the prompt, <code>$</code>, itself when entering commands</strong>. Only type the command that comes after the <code>$</code> prompt. For this reason, we remove the <code>$</code> prompt from all code examples in this guide. Also, remember to press the <kbd title="Enter" aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span> key after typing a command to execute it.</p>
 <p>After the prompt, you’ll see a text cursor that shows where you can type. The cursor can be a flashing or solid block, or it can be an underscore or a pipe symbol. You may have seen a similar cursor in a text editing program.</p>
 <p>Keep in mind that your prompt may look slightly different. Usually, in popular shell environments, your username and the host name appear before the <code>$</code> symbol. For example, your prompt might look like this:</p>
 <div class="cell" data-code-copy="false">
@@ -668,7 +670,7 @@ Figure&nbsp;2.6: Screenshot of JupyterHub, showing the terminal.
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wittkuhn@lip-osx-005509:~$</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -683,7 +685,7 @@ Figure&nbsp;2.6: Screenshot of JupyterHub, showing the terminal.
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="directory-and-file-structure"><span class="header-section-number">2.5.2</span> Directory and file structure</h3>
 <p>In a file system, directories (or folders) and files are organized hierarchically to enable the storage and retrieval of data. Each level in the hierarchy is called a “level” or “depth”. In the context of file systems, the hierarchy of directories is often described as a parent-child relationship and folders are therefore often referred to as “parent directories” and “child directories” (for details, see <a href="#tip-parent-child-directories" class="quarto-xref">Tip&nbsp;<span>2.2</span></a>).</p>
 <div id="tip-parent-child-directories" class="callout callout-style-default callout-tip callout-titled" title="What are &quot;parent&quot; and &quot;child&quot; directories?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -704,12 +706,12 @@ Tip&nbsp;2.2: What are “parent” and “child” directories?
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">parent</span> $ tree</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">parent</span> $ tree</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> child1</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> child2</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">3</span> directories</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">3</span> directories</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>To visualize this hierarchy, you can use the <code>tree</code> command in the command line. The <code>tree</code> command generates a graphical representation of the directory structure, displaying the parent directory along with its child directories and files in a tree-like format. This makes it easier to understand the organization of files and directories within a specific directory.</p>
@@ -719,7 +721,7 @@ Tip&nbsp;2.2: What are “parent” and “child” directories?
 </div>
 <p>The <strong>root directory</strong> is the highest level in the hierarchy. On Unix-based systems (including macOS and Linux), the root directory is denoted by <code>/</code>. On Windows, it is typically denoted by a drive letter followed by <code>\</code> (for example, <code>C:\</code>). While the fundamental concepts of directories and files are consistent across operating systems, there are some differences in folder structures between macOS (Unix-based) and Windows (for details, see <a href="#tip-folder-os-diff" class="quarto-xref">Tip&nbsp;<span>2.3</span></a>)</p>
 <div id="tip-folder-os-diff" class="callout callout-style-default callout-tip callout-titled" title="Differences in folder structures between macOS and Windows">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -731,7 +733,7 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>On Windows operating systems, each drive, such as <code>C:</code> or <code>D:</code>, has its own root directory, denoted by the drive letter followed by a backslash, like <code>C:\</code>. Windows uses the backslash (<code>\</code>) as the directory separator. The <code>Users</code> folder, which typically contains the personal folders of all users on the system, is usually located in the root directory of the drive where Windows is installed. The standard path to the <code>Users</code> folder is <code>C:\Users</code>.</p>
@@ -745,7 +747,7 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\Users\username\Documents\file.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:\Users\username\Documents\file.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -756,7 +758,7 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/username/Documents/file.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/username/Documents/file.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -774,7 +776,7 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <details>
@@ -783,7 +785,7 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/runner/work/version-control-book/version-control-book</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/runner/work/version-control-book/version-control-book</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
@@ -796,7 +798,7 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pws:</span> command not found</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pws:</span> command not found</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -809,9 +811,9 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 <div class="code-with-filename-file">
 <pre><strong>Absolute path (Output)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd /Users/user/Downloads</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd /Users/user/Downloads</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> pwd</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Downloads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Downloads</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-code-copy="false">
@@ -819,19 +821,19 @@ Tip&nbsp;2.3: Differences in folder structures between macOS and Windows
 <div class="code-with-filename-file">
 <pre><strong>Relative path (Output)</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd Downloads</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd Downloads</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> pwd</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Downloads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Downloads</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>You may notice that the prompt has been updated to show the new working directory. If a path starts with a forward slash (<code>/</code>), it is considered an <em>absolute</em> path. Paths that do not start with a forward slash are considered <em>relative</em> to the current working directory.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Is Bash case sensitive?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Is Bash case sensitive?
+<span class="screen-reader-only">Tip</span>Is Bash case sensitive?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -843,7 +845,7 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> banana.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> banana.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell">
@@ -851,7 +853,7 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> B<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> B<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-code-copy="false">
@@ -859,7 +861,7 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ls:</span> B<span class="pp">*</span> No such file or directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ls:</span> B<span class="pp">*</span> No such file or directory</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell">
@@ -867,7 +869,7 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> b<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> b<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-code-copy="false">
@@ -875,7 +877,7 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">banana.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">banana.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>Note that this case sensitivity might not apply to paths on your computer. For example, <code>cd ~/Desktop</code> and <code>cd ~/desktop</code> might both lead macOS users to their <code>Desktop</code> directory. Generally, if you’re experiencing different behavior, it’s possible that you’re using a file system or environment where case sensitivity is not enforced, or there may be other factors at play. Some file systems, such as those commonly used in macOS, are case-insensitive by default, while others, like those used in most Linux distributions, are case-sensitive. Additionally, some configurations or filesystem options can affect this behavior.</p>
@@ -891,7 +893,7 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/User/Downloads/Directory</span> with space/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/User/Downloads/Directory</span> with space/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>If you attempt to use this path in a command without quotation marks, the command interpreter would understand it as three separate arguments since in command-line interfaces, spaces are typically used to separate different arguments or parameters. Navigating to this absolute path with spaces would look like this:</p>
@@ -900,7 +902,7 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="st">'/Users/User/Downloads/Directory with space/'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="st">'/Users/User/Downloads/Directory with space/'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>While the command line can handle paths (or files) with spaces in this way, we <strong>recommend to avoid spaces</strong> in folder and file names altogether, especially if you use the command line frequently. For example, change the name of a directory called <code>my folder</code> to <code>my_folder</code>, using an underscore instead of a space.</p>
@@ -915,7 +917,7 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>For example:</p>
@@ -924,30 +926,30 @@ Is Bash case sensitive?
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> cd ~</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> cd ~</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Finding the tilde (`~`) on your keyboard">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Finding the tilde (<code>~</code>) on your keyboard
+<span class="screen-reader-only">Tip</span>Finding the tilde (<code>~</code>) on your keyboard
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><i class="fa-brands fa-apple" aria-label="apple"></i> Apple</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><i class="fa-brands fa-windows" aria-label="windows"></i> Windows (German keyboard)</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Apple</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows (German keyboard)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p>On an Apple computer you can type the tilde (<code>~</code>) symbol by pressing the <kbd aria-hidden="true">option</kbd><span class="visually-hidden">option</span> (<code>option</code>) key and the <kbd aria-hidden="true">N</kbd><span class="visually-hidden">N</span> key simultaneously, then pressing <kbd aria-hidden="true">Space</kbd><span class="visually-hidden">Space</span>.</p>
+<p>On an Apple computer you can type the tilde (<code>~</code>) symbol by pressing the <kbd title="option" aria-hidden="true">option</kbd><span class="visually-hidden">option</span> (<code>option</code>) key and the <kbd title="N" aria-hidden="true">N</kbd><span class="visually-hidden">N</span> key simultaneously, then pressing <kbd title="Space" aria-hidden="true">Space</kbd><span class="visually-hidden">Space</span>.</p>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>On a Windows PC with a German keyboard layout, you can type the tilde (<code>~</code>) by holding the <kbd aria-hidden="true">AltGr</kbd><span class="visually-hidden">AltGr</span> key and pressing the <kbd aria-hidden="true">+</kbd><span class="visually-hidden">+</span> key.</p>
+<p>On a Windows PC with a German keyboard layout, you can type the tilde (<code>~</code>) by holding the <kbd title="AltGr" aria-hidden="true">AltGr</kbd><span class="visually-hidden">AltGr</span> key and pressing the <kbd title="+" aria-hidden="true">+</kbd><span class="visually-hidden">+</span> key.</p>
 </div>
 </div>
 </div>
@@ -963,8 +965,8 @@ Finding the tilde (<code>~</code>) on your keyboard
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd .</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd .</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>In turn, these two commands are equivalent:</p>
@@ -973,7 +975,7 @@ Finding the tilde (<code>~</code>) on your keyboard
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd ./Downloads</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd ./Downloads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-code-copy="false">
@@ -981,7 +983,7 @@ Finding the tilde (<code>~</code>) on your keyboard
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd Downloads</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd Downloads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -994,11 +996,11 @@ Finding the tilde (<code>~</code>) on your keyboard
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode zsh code-annotation-code code-with-copy code-annotated"><code class="sourceCode zsh"><a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-14-1" class="code-annotation-target"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd ~</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode zsh code-annotation-code code-with-copy code-annotated"><code class="sourceCode zsh"><a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-14-1" class="code-annotation-target"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd ~</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-14-2" class="code-annotation-target"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~$</span> cd Downloads</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-14-3" class="code-annotation-target"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Downloads$</span> cd ../Documents</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">~/Documents$</span> pwd</span>
-<span id="annotated-cell-14-5"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Documents</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-14-5"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/user/Documents</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
@@ -1035,48 +1037,48 @@ Finding the tilde (<code>~</code>) on your keyboard
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Autocompletion options depend on your shell!
+<span class="screen-reader-only">Warning</span>Autocompletion options depend on your shell!
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Unfortunately this feature is not available in all basic Shell versions. In Zsh and Powershell the autocompletion feature described here is available by default. In Bash, extensions have to be installed to get the same effect.</p>
 </div>
 </div>
-<p>While using the command line in Zsh or Powershell, instead of typing out the full command or path, you can press the <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> (<code>Tab</code>) key to automatically complete the rest of the command. Begin typing a command or the initial letters of a file or directory, for example:</p>
+<p>While using the command line in Zsh or Powershell, instead of typing out the full command or path, you can press the <kbd title="⇥" aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> (<code>Tab</code>) key to automatically complete the rest of the command. Begin typing a command or the initial letters of a file or directory, for example:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Doc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<p>Once you’ve typed a portion of the command or path, press the <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> key. The command-line interface will attempt to auto-complete the command or path based on what matches your input. In this example, it will :</p>
+<p>Once you’ve typed a portion of the command or path, press the <kbd title="⇥" aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> key. The command-line interface will attempt to auto-complete the command or path based on what matches your input. In this example, it will :</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/Documents</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/Documents</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<p>If there are multiple possibilities, pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> again will cycle through the available options, for example:</p>
+<p>If there are multiple possibilities, pressing <kbd title="⇥" aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> again will cycle through the available options, for example:</p>
 <div class="cell" data-code-copy="false">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>$ cd ~/Do</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>Documents/  Downloads/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>$ cd ~/Do</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>Documents/  Downloads/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<p>Similarly, in Bash, when pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> twice, it will return a list of the possible options, but won’t cycle through them.</p>
-<p>For Zsh and Powershell, autocompletion also works for system commands. For example, typing <code>ls</code> (you will find out more about this command <a href="#list-files-and-folders">below</a>) and pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> might complete it to <code>ls -l</code> or <code>ls -a</code>. Auto-completion also works for the Git commands that will be introduced in the following chapters of this book. You can also cycle <em>backwards</em> through autocompleted options by holding <kbd aria-hidden="true">Shift</kbd><span class="visually-hidden">Shift</span> (<code>Shift</code>), then pressing <kbd aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span>.</p>
+<p>Similarly, in Bash, when pressing <kbd title="⇥" aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> twice, it will return a list of the possible options, but won’t cycle through them.</p>
+<p>For Zsh and Powershell, autocompletion also works for system commands. For example, typing <code>ls</code> (you will find out more about this command <a href="#list-files-and-folders">below</a>) and pressing <kbd title="⇥" aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span> might complete it to <code>ls -l</code> or <code>ls -a</code>. Auto-completion also works for the Git commands that will be introduced in the following chapters of this book. You can also cycle <em>backwards</em> through autocompleted options by holding <kbd title="Shift" aria-hidden="true">Shift</kbd><span class="visually-hidden">Shift</span> (<code>Shift</code>), then pressing <kbd title="⇥" aria-hidden="true">⇥</kbd><span class="visually-hidden">⇥</span>.</p>
 </section>
 <section id="command-history" class="level3" data-number="2.6.2">
 <h3 data-number="2.6.2" class="anchored" data-anchor-id="command-history"><span class="header-section-number">2.6.2</span> Command history</h3>
 <p>Using the <code>Up</code> and <code>Down</code> arrow keys on your keyboard allows you to quickly access and reuse commands without retyping them.</p>
-<p>After executing one or multiple commands, pressing the <code>Up</code> arrow key retrieves the most recent command. If you’ve navigated back using the <code>Up</code> arrow, pressing the <code>Down</code> arrow key moves you forward through the command history. You can continue to press <code>Up</code> and <code>Down</code> to cycle through the executed commands. To execute a command, hit <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>, or you can edit it as needed before execution.</p>
+<p>After executing one or multiple commands, pressing the <code>Up</code> arrow key retrieves the most recent command. If you’ve navigated back using the <code>Up</code> arrow, pressing the <code>Down</code> arrow key moves you forward through the command history. You can continue to press <code>Up</code> and <code>Down</code> to cycle through the executed commands. To execute a command, hit <kbd title="Enter" aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>, or you can edit it as needed before execution.</p>
 <p>The main benefit of this is time efficiency. Instead of typing out the entire command, especially for lengthy or complex commands, you can retrieve and modify previous commands quickly. It also minimizes the chances of introducing typos or syntax errors when reusing commands. And it’s also <a href="https://www.commitstrip.com/en/2017/02/28/definitely-not-lazy/?">the reason</a> why the <code>Up</code> arrow key is among the earliest that needs replacement on software developers’ keyboards.</p>
 </section>
 <section id="clearing-the-command-line" class="level3" data-number="2.6.3">
@@ -1088,10 +1090,10 @@ Autocompletion options depend on your shell!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">clear</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<p>Press <kbd aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span> and the terminal screen will be cleared, leaving only a new prompt at the top of the window.</p>
+<p>Press <kbd title="Enter" aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span> and the terminal screen will be cleared, leaving only a new prompt at the top of the window.</p>
 </section>
 <section id="saving-command-line-history" class="level3" data-number="2.6.4">
 <h3 data-number="2.6.4" class="anchored" data-anchor-id="saving-command-line-history"><span class="header-section-number">2.6.4</span> Saving command line history</h3>
@@ -1102,7 +1104,7 @@ Autocompletion options depend on your shell!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">history</span> <span class="op">&gt;</span> history.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">history</span> <span class="op">&gt;</span> history.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This command will capture your entire command history and save it to a file named <code>history.txt</code> in your current directory. You can then view this file directly from the command line or through your usual file viewer.</p>
@@ -1122,7 +1124,7 @@ Autocompletion options depend on your shell!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <details>
@@ -1131,7 +1133,7 @@ Autocompletion options depend on your shell!
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb30"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>CITATION.cff</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>CITATION.cff</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>LICENSE</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>Makefile</span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>README.md</span>
@@ -1169,7 +1171,7 @@ Autocompletion options depend on your shell!
 <span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>site_libs</span>
 <span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>static</span>
 <span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a>usecases</span>
-<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a>version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a>version-control-book.Rproj</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
@@ -1182,7 +1184,7 @@ Autocompletion options depend on your shell!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> chapters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> chapters</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <details>
@@ -1191,7 +1193,7 @@ Autocompletion options depend on your shell!
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>branches-advanced.qmd</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>branches-advanced.qmd</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>branches.qmd</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>command-line.qmd</span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>command-line.rmarkdown</span>
@@ -1207,7 +1209,7 @@ Autocompletion options depend on your shell!
 <span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>remotes-intro.qmd</span>
 <span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>rewriting-history.qmd</span>
 <span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>setup.qmd</span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>tags-and-releases.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>tags-and-releases.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
@@ -1221,7 +1223,7 @@ Autocompletion options depend on your shell!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <details>
@@ -1230,7 +1232,7 @@ Autocompletion options depend on your shell!
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>.</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>..</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>.Renviron</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>.Rprofile</span>
@@ -1279,12 +1281,12 @@ Autocompletion options depend on your shell!
 <span id="cb34-47"><a href="#cb34-47" aria-hidden="true" tabindex="-1"></a>site_libs</span>
 <span id="cb34-48"><a href="#cb34-48" aria-hidden="true" tabindex="-1"></a>static</span>
 <span id="cb34-49"><a href="#cb34-49" aria-hidden="true" tabindex="-1"></a>usecases</span>
-<span id="cb34-50"><a href="#cb34-50" aria-hidden="true" tabindex="-1"></a>version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-50"><a href="#cb34-50" aria-hidden="true" tabindex="-1"></a>version-control-book.Rproj</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
 <div id="tip-only-hidden" class="callout callout-style-default callout-tip callout-titled" title="How can I list *only* hidden files?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1301,7 +1303,7 @@ Tip&nbsp;2.4: How can I list <em>only</em> hidden files?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-d</span> .<span class="pp">?*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-d</span> .<span class="pp">?*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>The <code>-d</code> (or <code>--directory</code>) flag lists directory entries instead of contents and does not dereference symbolic links. The <code>.?*</code> argument will only state hidden files.</p>
@@ -1311,7 +1313,7 @@ Tip&nbsp;2.4: How can I list <em>only</em> hidden files?
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>.Renviron</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>.Renviron</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>.Rprofile</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>.all-contributorsrc</span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>.codespellrc</span>
@@ -1319,7 +1321,7 @@ Tip&nbsp;2.4: How can I list <em>only</em> hidden files?
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>.github</span>
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>.gitignore</span>
 <span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>.quarto</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>.zenodo.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>.zenodo.json</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
@@ -1327,12 +1329,12 @@ Tip&nbsp;2.4: How can I list <em>only</em> hidden files?
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="What do `.` and `..` mean in the output of `ls -a`?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What do <code>.</code> and <code>..</code> mean in the output of <code>ls -a</code>?
+<span class="screen-reader-only">Note</span>What do <code>.</code> and <code>..</code> mean in the output of <code>ls -a</code>?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1344,8 +1346,8 @@ What do <code>.</code> and <code>..</code> mean in the output of <code>ls -a</co
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>.</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>As introduce above, <code>.</code> (single dot) represents the current directory while <code>..</code> (double dot) represents the parent directory. For example, if you are in <code>/Users/user/Documents</code>, <code>.</code> refers to <code>/Users/user/Documents</code> and <code>..</code> refers to <code>/Users/user</code>.</p>
@@ -1359,7 +1361,7 @@ What do <code>.</code> and <code>..</code> mean in the output of <code>ls -a</co
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Be cautious when modifying hidden files!
+<span class="screen-reader-only">Warning</span>Be cautious when modifying hidden files!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1378,7 +1380,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1390,7 +1392,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~/Desktop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~/Desktop</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1402,7 +1404,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <details>
@@ -1411,57 +1413,57 @@ Be cautious when modifying hidden files!
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 372K</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 20 runner runner 4.0K Sep 12 12:27 .</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 12 12:16 ..</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner   36 Sep 12 12:16 .Renviron</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner   48 Sep 12 12:16 .Rprofile</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 3.7K Sep 12 12:16 .all-contributorsrc</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner   81 Sep 12 12:16 .codespellrc</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner runner 4.0K Sep 12 12:26 .git</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 12 12:16 .github</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  193 Sep 12 12:16 .gitignore</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 10 runner runner 4.0K Sep 12 12:27 .quarto</span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  925 Sep 12 12:16 .zenodo.json</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 1.2K Sep 12 12:16 CITATION.cff</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  20K Sep 12 12:16 LICENSE</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  578 Sep 12 12:16 Makefile</span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  11K Sep 12 12:16 README.md</span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  935 Sep 12 12:16 _affiliations.yml</span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  861 Sep 12 12:16 _authors.yml</span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:26 _book</span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  939 Sep 12 12:16 _courses.yml</span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 12 12:16 _extensions</span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner   97 Sep 12 12:16 _metadata.yml</span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 3.5K Sep 12 12:16 _quarto.yml</span>
-<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 3.1K Sep 12 12:16 _variables.yml</span>
-<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:27 chapters</span>
-<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 6.7K Sep 12 12:16 cheatsheet.json</span>
-<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  23K Sep 12 12:16 chicago-author-date-note.csl</span>
-<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 12 12:26 city-guide</span>
-<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:16 code</span>
-<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  547 Sep 12 12:27 contents-listing.json</span>
-<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  56K Sep 12 12:27 contents.html</span>
-<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  636 Sep 12 12:16 contents.qmd</span>
-<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  265 Sep 12 12:16 custom.scss</span>
-<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:16 exercises</span>
-<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:26 exercises-repos</span>
-<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:16 faq</span>
-<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 2.4K Sep 12 12:16 functions.R</span>
-<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  145 Sep 12 12:16 github-buttons.html</span>
-<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  47K Sep 12 12:27 index.html</span>
-<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 6.2K Sep 12 12:16 index.qmd</span>
-<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:27 misc</span>
-<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:16 objectives</span>
-<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  118 Sep 12 12:16 plausible.html</span>
-<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 12 12:26 recipes</span>
-<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  13K Sep 12 12:16 references.bib</span>
-<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner runner 4.0K Sep 12 12:19 renv</span>
-<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  15K Sep 12 12:16 renv.lock</span>
-<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner runner 4.0K Sep 12 12:27 site_libs</span>
-<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:26 static</span>
-<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 12 12:16 usecases</span>
-<span id="cb41-51"><a href="#cb41-51" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  211 Sep 12 12:16 version-control-book.Rproj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 372K</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 20 runner runner 4.0K Sep 19 15:09 .</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 19 15:00 ..</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner   36 Sep 19 15:00 .Renviron</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner   48 Sep 19 15:00 .Rprofile</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 3.7K Sep 19 15:00 .all-contributorsrc</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner   81 Sep 19 15:00 .codespellrc</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  7 runner runner 4.0K Sep 19 15:09 .git</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 19 15:00 .github</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  212 Sep 19 15:09 .gitignore</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 10 runner runner 4.0K Sep 19 15:09 .quarto</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  925 Sep 19 15:00 .zenodo.json</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 1.2K Sep 19 15:00 CITATION.cff</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  20K Sep 19 15:00 LICENSE</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  578 Sep 19 15:00 Makefile</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  11K Sep 19 15:00 README.md</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  935 Sep 19 15:00 _affiliations.yml</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  861 Sep 19 15:00 _authors.yml</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:09 _book</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 2.5K Sep 19 15:00 _courses.yml</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 19 15:00 _extensions</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner   97 Sep 19 15:00 _metadata.yml</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 3.5K Sep 19 15:00 _quarto.yml</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 3.1K Sep 19 15:00 _variables.yml</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:09 chapters</span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 6.7K Sep 19 15:00 cheatsheet.json</span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  23K Sep 19 15:00 chicago-author-date-note.csl</span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 19 15:09 city-guide</span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:00 code</span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  547 Sep 19 15:09 contents-listing.json</span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  56K Sep 19 15:09 contents.html</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  636 Sep 19 15:00 contents.qmd</span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  265 Sep 19 15:00 custom.scss</span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:00 exercises</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:09 exercises-repos</span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:00 faq</span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 2.4K Sep 19 15:00 functions.R</span>
+<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  145 Sep 19 15:00 github-buttons.html</span>
+<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  48K Sep 19 15:09 index.html</span>
+<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner 6.2K Sep 19 15:00 index.qmd</span>
+<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:09 misc</span>
+<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:00 objectives</span>
+<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  118 Sep 19 15:00 plausible.html</span>
+<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 runner runner 4.0K Sep 19 15:09 recipes</span>
+<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  13K Sep 19 15:00 references.bib</span>
+<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 runner runner 4.0K Sep 19 15:02 renv</span>
+<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  15K Sep 19 15:00 renv.lock</span>
+<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  9 runner runner 4.0K Sep 19 15:09 site_libs</span>
+<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:09 static</span>
+<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  2 runner runner 4.0K Sep 19 15:00 usecases</span>
+<span id="cb41-51"><a href="#cb41-51" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span>  1 runner runner  211 Sep 19 15:00 version-control-book.Rproj</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
@@ -1470,7 +1472,7 @@ Be cautious when modifying hidden files!
 <h4 data-number="2.7.3.4" class="anchored" data-anchor-id="getting-help"><span class="header-section-number">2.7.3.4</span> Getting help</h4>
 <p>Getting help with commands can differ between operating systems. See the instructions for Windows and macOS below.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href=""><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>If you want to know what flags and arguments a command supports, most commands provide usage information when you use the flag <code>--help</code>. For example, you can use the <code>ls</code> command together with the <code>--help</code> flag:</p>
@@ -1479,7 +1481,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This will list all possible flags you can use together with the <code>ls</code> command.</p>
@@ -1491,7 +1493,7 @@ Be cautious when modifying hidden files!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1512,7 +1514,7 @@ Be cautious when modifying hidden files!
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Be aware <em>where</em> you are creating new directories!
+<span class="screen-reader-only">Warning</span>Be aware <em>where</em> you are creating new directories!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1521,7 +1523,7 @@ Be aware <em>where</em> you are creating new directories!
 </div>
 <p>The path of the directory we want to create is given as an argument to the command. If we want to create a directory in the current folder, we just need to use its name, as the path is assumed to be relative. For example, to create a new folder for your favorite recipes or a city guide, we can use the following command:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="cell">
@@ -1529,7 +1531,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1539,7 +1541,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> city-guide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> city-guide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1547,7 +1549,7 @@ Be aware <em>where</em> you are creating new directories!
 </div>
 <p>Make sure that the new folder is present by using the <code>ls</code> command, and then move into it by using the <code>cd</code> command.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div class="cell">
@@ -1555,7 +1557,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1565,7 +1567,7 @@ Be aware <em>where</em> you are creating new directories!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> city-guide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> city-guide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1577,7 +1579,7 @@ Be aware <em>where</em> you are creating new directories!
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Error <code>File exists</code>
+<span class="screen-reader-only">Note</span>Error <code>File exists</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1589,7 +1591,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mkdir:</span> recipes: File exists</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mkdir:</span> recipes: File exists</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1600,7 +1602,7 @@ Error <code>File exists</code>
 <h3 data-number="2.8.2" class="anchored" data-anchor-id="creating-multiple-folders"><span class="header-section-number">2.8.2</span> Creating multiple folders</h3>
 <p>Next, we will proceed to create multiple additional folders within the project folder. The <code>mkdir</code> command allows us to create multiple directories simultaneously by providing multiple arguments, each representing a separate folder. For example, we might create the following three folders:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <div class="cell">
@@ -1608,7 +1610,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> vegetarian vegan glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> vegetarian vegan glutenfree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1618,7 +1620,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> food nature museum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> food nature museum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1629,7 +1631,7 @@ Error <code>File exists</code>
 <h3 data-number="2.8.3" class="anchored" data-anchor-id="creating-files"><span class="header-section-number">2.8.3</span> Creating files</h3>
 <p>Let’s create some files in the project folder. To do this, you can use your favorite text editor or the command line. In the command line, you can use the <code>touch</code> command to create a new empty file. The file doesn’t need to contain anything. For example, to create an empty file, we can use the following command:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
 <div class="cell">
@@ -1637,7 +1639,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> recipes.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1647,7 +1649,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> city-guide.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> city-guide.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1658,11 +1660,11 @@ Error <code>File exists</code>
 <h3 data-number="2.8.4" class="anchored" data-anchor-id="opening-files"><span class="header-section-number">2.8.4</span> Opening files</h3>
 <p>To open files, you can use your preferred text editor but also the command line. On the command line, you can use the <code>start</code> command on Windows (using Git Bash) or the <code>open</code> command on macOS. These commands will open the specified file in the default application associated with the file type.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true"><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows (Git Bash)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true" href=""><i class="fa-brands fa-microsoft" aria-label="microsoft"></i> Windows (Git Bash)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> macOS</a></li></ul>
 <div class="tab-content">
 <div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
 <div class="cell">
@@ -1670,7 +1672,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">start</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">start</span> recipes.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1680,7 +1682,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="ex">start</span> city-guide.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="ex">start</span> city-guide.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1689,7 +1691,7 @@ Error <code>File exists</code>
 </div>
 <div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
 <div class="cell">
@@ -1697,7 +1699,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> recipes.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1707,7 +1709,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> city-guide.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> city-guide.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1728,7 +1730,7 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello World"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello World"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-code-copy="false">
@@ -1736,16 +1738,16 @@ Error <code>File exists</code>
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>Hello World</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>Hello World</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="FAQ: &quot;I forgot to close the quotation marks of my commit message! What do I do?&quot;">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-FAQ: “I forgot to close the quotation marks of my commit message! What do I do?”
+<span class="screen-reader-only">Tip</span>FAQ: “I forgot to close the quotation marks of my commit message! What do I do?”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1757,10 +1759,10 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello World</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello World</span></span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="st">&gt;</span></span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="st">&gt;</span></span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="st">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="st">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-code-copy="false">
@@ -1768,10 +1770,10 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add filename.txt</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add filename.txt</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="st">&gt;</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="st">&gt;</span></span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="st">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="st">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>You can try one of the following solutions:</p>
@@ -1791,7 +1793,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$HOME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$HOME</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <details>
@@ -1800,7 +1802,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb62"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/runner</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/runner</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
@@ -1813,12 +1815,12 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Current date: </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Current date: </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb64"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Current</span> date: Fri Sep 12 12:27:10 UTC 2025</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Current</span> date: Fri Sep 19 15:09:58 UTC 2025</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1826,7 +1828,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <h4 data-number="2.8.5.4" class="anchored" data-anchor-id="writing-short-text-into-files"><span class="header-section-number">2.8.5.4</span> Writing short text into files</h4>
 <p>The <code>echo</code> command can also be used to write text to a file directly from the command line. By combining echo with the <code>&gt;&gt;</code> operator, you can add content to an existing file. For example, to add text to the text file using the command line run the following command:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
 <div class="cell">
@@ -1834,7 +1836,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is a list of all my favorite recipes."</span> <span class="op">&gt;&gt;</span> recipes.txt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is a list of all my favorite recipes."</span> <span class="op">&gt;&gt;</span> recipes.txt </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1844,7 +1846,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is a list of all my favorite places."</span> <span class="op">&gt;&gt;</span> city-guide.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"This is a list of all my favorite places."</span> <span class="op">&gt;&gt;</span> city-guide.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1857,7 +1859,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>echo</code> when writing short text into files
+<span class="screen-reader-only">Warning</span>Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>echo</code> when writing short text into files
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1874,7 +1876,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <h3 data-number="2.8.6" class="anchored" data-anchor-id="viewing-file-content"><span class="header-section-number">2.8.6</span> Viewing file content</h3>
 <p>If you want to quickly view the content of a file without opening it, you can do so in the command line using the <code>cat</code> command. To display the content of a file, simply use <code>cat</code> followed by the file name. For example:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
 <div class="cell">
@@ -1882,7 +1884,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> recipes.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1892,7 +1894,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> city-guide.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> city-guide.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1905,7 +1907,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb69"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>/.quarto/</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb69"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>/.quarto/</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>/_book/</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>.Rproj.user</span>
 <span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>/env/</span>
@@ -1921,7 +1923,8 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <span id="cb69-14"><a href="#cb69-14" aria-hidden="true" tabindex="-1"></a>*.html.md</span>
 <span id="cb69-15"><a href="#cb69-15" aria-hidden="true" tabindex="-1"></a>site_libs/</span>
 <span id="cb69-16"><a href="#cb69-16" aria-hidden="true" tabindex="-1"></a>contents-listing.json</span>
-<span id="cb69-17"><a href="#cb69-17" aria-hidden="true" tabindex="-1"></a>.ipynb_checkpoints</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb69-17"><a href="#cb69-17" aria-hidden="true" tabindex="-1"></a>.ipynb_checkpoints</span>
+<span id="cb69-18"><a href="#cb69-18" aria-hidden="true" tabindex="-1"></a>**/*.quarto_ipynb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
@@ -1930,7 +1933,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <h3 data-number="2.8.7" class="anchored" data-anchor-id="moving-folders-and-files"><span class="header-section-number">2.8.7</span> Moving folders and files</h3>
 <p>Let’s say we want to move the text file to another subfolder. We can use the <code>mv</code> command to move files and folders. The <code>mv</code> command requires two arguments: the first is the files or folders to be moved, and the second is the path where they should be moved. To move the text file to the subfolder, the command would look like this:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
 <div class="cell">
@@ -1938,7 +1941,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt vegan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt vegan</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1948,7 +1951,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> city-guide.txt food</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> city-guide.txt food</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1959,7 +1962,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <h3 data-number="2.8.8" class="anchored" data-anchor-id="renaming-files-and-folders"><span class="header-section-number">2.8.8</span> Renaming files and folders</h3>
 <p>Suppose we don’t like the subfolders names because the text file actually contains content is more relevant for another subfolder. We can use the <code>mv</code> command to rename files and folders by moving them to a different location in the file system like this:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
 <div class="cell">
@@ -1967,7 +1970,7 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> vegan meat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> vegan meat</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1977,19 +1980,19 @@ Difference between using <code>&gt;&gt;</code> or <code>&gt;</code> with <code>e
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> food attractions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> food attractions</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="You can't be *inside* a folder when renaming it.">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-You can’t be <em>inside</em> a folder when renaming it.
+<span class="screen-reader-only">Note</span>You can’t be <em>inside</em> a folder when renaming it.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1997,7 +2000,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="callout-body-container callout-body">
 <p>Note that you can’t be <em>inside</em> a folder when renaming it (your current working directory is the folder that you want to rename) but you have to be in its parent directory. Let’s say that you try to rename the subfolder but you are <em>inside</em> the folder (check with <code>pwd</code>), you will receive an error like this:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-16-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-1" role="tab" aria-controls="tabset-16-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-2" role="tab" aria-controls="tabset-16-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-16-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-1" role="tab" aria-controls="tabset-16-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-2" role="tab" aria-controls="tabset-16-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-16-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-16-1-tab">
 <div class="cell" data-code-copy="false">
@@ -2005,8 +2008,8 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vegan$</span> mv vegan meat</span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mv:</span> rename vegan to meat: No such file or directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vegan$</span> mv vegan meat</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mv:</span> rename vegan to meat: No such file or directory</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2016,8 +2019,8 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Output</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="ex">food$</span> mv food attractions</span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mv:</span> rename food to attractions: No such file or directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="ex">food$</span> mv food attractions</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mv:</span> rename food to attractions: No such file or directory</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2030,7 +2033,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <h4 data-number="2.8.8.1" class="anchored" data-anchor-id="moving-files-to-the-parent-directory"><span class="header-section-number">2.8.8.1</span> Moving files to the parent directory</h4>
 <p>Let’s assume that you moved the text file to the subfolder, as shown above. Now let’s move the text file back to the parent folder. To do this, you can first <code>cd</code> into the subfolder and then use the <code>..</code> shortcut (for details on <code>..</code>, see the <a href="#dot-dot-..">section above</a>) in combination with the <code>mv</code> command:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-17-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-17-1-tab">
 <div class="cell">
@@ -2038,8 +2041,8 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> meat</span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> meat</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> recipes.txt ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2049,8 +2052,8 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> attractions</span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> city-guide.txt ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> attractions</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> city-guide.txt ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2063,7 +2066,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <p>There are various ways how you can download files from the internet using the command line. Here, we present two simple approaches using the tools <code>curl</code> and <code>wget</code>. Note, that <code>wget</code> is not natively installed on Windows. They are both powerful tools used to download files from the web directly through the command line. This is particularly useful for retrieving files from a remote server or downloading large datasets.</p>
 <p>To download a file into your current directory, simply use the following syntax:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-18-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-1" role="tab" aria-controls="tabset-18-1" aria-selected="true"><code>curl</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-2" role="tab" aria-controls="tabset-18-2" aria-selected="false"><code>wget</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-18-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-1" role="tab" aria-controls="tabset-18-1" aria-selected="true" href=""><code>curl</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-2" role="tab" aria-controls="tabset-18-2" aria-selected="false" href=""><code>wget</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-18-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-18-1-tab">
 <div class="cell">
@@ -2071,7 +2074,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="annotated-cell-150"><pre class="sourceCode zsh code-annotation-code code-with-copy code-annotated"><code class="sourceCode zsh"><a class="code-annotation-anchor" data-target-cell="annotated-cell-150" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-150-1" class="code-annotation-target"><a href="#annotated-cell-150-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> <span class="op">&lt;</span>URL<span class="op">&gt;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-150"><pre class="sourceCode zsh code-annotation-code code-with-copy code-annotated"><code class="sourceCode zsh"><a class="code-annotation-anchor" data-target-cell="annotated-cell-150" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-150-1" class="code-annotation-target"><a href="#annotated-cell-150-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> <span class="op">&lt;</span>URL<span class="op">&gt;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
@@ -2089,7 +2092,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="annotated-cell-151"><pre class="sourceCode zsh code-annotation-code code-with-copy code-annotated"><code class="sourceCode zsh"><a class="code-annotation-anchor" data-target-cell="annotated-cell-151" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-151-1" class="code-annotation-target"><a href="#annotated-cell-151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="op">&lt;</span>URL<span class="op">&gt;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-151"><pre class="sourceCode zsh code-annotation-code code-with-copy code-annotated"><code class="sourceCode zsh"><a class="code-annotation-anchor" data-target-cell="annotated-cell-151" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-151-1" class="code-annotation-target"><a href="#annotated-cell-151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="op">&lt;</span>URL<span class="op">&gt;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
@@ -2105,7 +2108,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 </div>
 <p>For example, if you want to download the logo of this project, you could use the following command:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-19-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-1" role="tab" aria-controls="tabset-19-1" aria-selected="true"><code>curl</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-19-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-2" role="tab" aria-controls="tabset-19-2" aria-selected="false"><code>wget</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-19-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-1" role="tab" aria-controls="tabset-19-1" aria-selected="true" href=""><code>curl</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-19-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-2" role="tab" aria-controls="tabset-19-2" aria-selected="false" href=""><code>wget</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-19-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-19-1-tab">
 <div class="cell">
@@ -2113,7 +2116,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://lennartwittkuhn.com/version-control-book/static/logo.svg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://lennartwittkuhn.com/version-control-book/static/logo.svg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2123,7 +2126,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://lennartwittkuhn.com/version-control-book/static/logo.svg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://lennartwittkuhn.com/version-control-book/static/logo.svg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2139,7 +2142,7 @@ You can’t be <em>inside</em> a folder when renaming it.
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> <span class="pp">*</span>.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> <span class="pp">*</span>.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <details>
@@ -2148,21 +2151,21 @@ You can’t be <em>inside</em> a folder when renaming it.
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb81"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner  935 Sep 12 12:16 _affiliations.yml</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner  861 Sep 12 12:16 _authors.yml</span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner  939 Sep 12 12:16 _courses.yml</span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner   97 Sep 12 12:16 _metadata.yml</span>
-<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner 3.5K Sep 12 12:16 _quarto.yml</span>
-<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner 3.1K Sep 12 12:16 _variables.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb81"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner  935 Sep 19 15:00 _affiliations.yml</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner  861 Sep 19 15:00 _authors.yml</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner 2.5K Sep 19 15:00 _courses.yml</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner   97 Sep 19 15:00 _metadata.yml</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner 3.5K Sep 19 15:00 _quarto.yml</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner 3.1K Sep 19 15:00 _variables.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What does this output mean?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What does this output mean?
+<span class="screen-reader-only">Tip</span>What does this output mean?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2185,7 +2188,7 @@ What does this output mean?
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> i<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-alh</span> i<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <details>
@@ -2194,8 +2197,8 @@ What does this output mean?
 </summary>
 <div class="cell" data-filename="Output" data-code-copy="false">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb83"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner  47K Sep 12 12:27 index.html</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner 6.2K Sep 12 12:16 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb83"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner  48K Sep 19 15:09 index.html</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>-rw-r--r-- 1 runner runner 6.2K Sep 19 15:00 index.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </details>
@@ -2209,7 +2212,7 @@ What does this output mean?
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning: Be careful when using the <code>rm</code> command!
+<span class="screen-reader-only">Important</span>Warning: Be careful when using the <code>rm</code> command!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2221,7 +2224,7 @@ Warning: Be careful when using the <code>rm</code> command!
 </div>
 <p>For example, to remove a specific folder, you would use the following command:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-20-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-20-1" role="tab" aria-controls="tabset-20-1" aria-selected="true"><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-20-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-20-2" role="tab" aria-controls="tabset-20-2" aria-selected="false"><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-20-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-20-1" role="tab" aria-controls="tabset-20-1" aria-selected="true" href=""><i class="fa-solid fa-utensils" aria-label="utensils"></i> Recipes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-20-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-20-2" role="tab" aria-controls="tabset-20-2" aria-selected="false" href=""><i class="fa-solid fa-tree-city" aria-label="tree-city"></i> City Guide</a></li></ul>
 <div class="tab-content">
 <div id="tabset-20-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-20-1-tab">
 <div class="cell">
@@ -2229,7 +2232,7 @@ Warning: Be careful when using the <code>rm</code> command!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> glutenfree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> glutenfree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2239,7 +2242,7 @@ Warning: Be careful when using the <code>rm</code> command!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> museum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> museum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2255,7 +2258,7 @@ Warning: Be careful when using the <code>rm</code> command!
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> new_directory <span class="kw">;</span> <span class="bu">cd</span> new_directory <span class="kw">;</span> <span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> new_directory <span class="kw">;</span> <span class="bu">cd</span> new_directory <span class="kw">;</span> <span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This will (1) create a new directory called <code>new_directory</code>, (2) change the current working directory to <code>new_directory</code> and (3) list the files in this new directory.</p>
@@ -2531,13 +2534,14 @@ Millman, K. Jarrod, Matthew Brett, Ross Barnowski, and Jean-Baptiste Poline. 201
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
