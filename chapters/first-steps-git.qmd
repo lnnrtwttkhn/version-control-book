@@ -279,6 +279,17 @@ As an alternative, this command will also stage all changes:
 git add .
 ```
 
+#### Removing a file from the staging area
+
+To remove a file from the staging area in Git (without deleting the actual file), use the following command:
+
+```{zsh filename="Code"}
+git restore --staged <filename>
+```
+
+This command *unstages* the file, moving it from the staging area back to your working directory.
+The changes in the file will still be present, but they won't be included in the next commit until you stage it again.
+
 ::: {.callout-tip title="Common `git add` flags" collapse="true"}
 `-A`: 
 Adds all changes, including modifications, deletions, and new files, in the entire working tree.
