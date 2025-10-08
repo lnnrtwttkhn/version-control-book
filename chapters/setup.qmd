@@ -421,9 +421,6 @@ To **prevent accidentally creating a Git repository in your home directory**, yo
 touch ~/.git
 ```
 
-::: {.callout-caution title="Mini Exercise: What does the `touch` command do in this case?"}
-:::
-
 This command creates an empty file called `.git` in your home directory.
 The path `~/` specifies the path to your home directory.
 If you then run the `git init` command to initialize a new Git repository (find out more about this in the [next chapter](first-steps-git.qmd)), the following (desired) error will appear and no Git repository is created in your home directory:
@@ -433,7 +430,9 @@ If you then run the `git init` command to initialize a new Git repository (find 
 fatal: invalid gitfile format: /Users/user/.git
 ```
 
-::: {.callout-tip title="Use this guardrail *shortly before* you create your first Git repository." collapse="false"}
+This way, you are protected from accidentally creating a Git repository in your home directory.
+
+::: {.callout-tip title="Recommendation: Use this guardrail *shortly before* you create your first Git repository" collapse="true"}
 When you implement this guardrail but haven't created your first Git repository yet, commands like `git config` will stop working as expected.
 To prevent this, we recommend the following procedure:
 
