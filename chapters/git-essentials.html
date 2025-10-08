@@ -409,50 +409,51 @@ div.csl-indent {
 <h5 class="anchored">
 Learning Objectives
 </h5>
-<p><span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history.<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits.<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file.<br> <span class="emoji" data-emoji="bulb">💡</span> You can discuss which files can (not) be tracked well with Git and why.<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to track empty folders in Git repositories.</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You know what good commits look like.<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history.<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits.<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file.<br> <span class="emoji" data-emoji="bulb">💡</span> You can discuss which files can (not) be tracked well with Git and why.<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to track empty folders in Git repositories.</p>
 </div>
 </div>
 </div>
 <section id="good-commits" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="good-commits"><span class="header-section-number">6.1</span> Good commits</h2>
-<p>Now that you know how to create a Git repository, stage files, and make commits, it’s time to discuss some good practices for Git commits.</p>
+<p>Now that you know how to create a Git repository, stage files, and make commits, it’s time to discuss some good practices for Git commits. Following these recommendations will make the history of your commits clearer and your collaborators (including your future self) happier! The better your commits, the easier it will be to understand the evolution of your project. But also remember that crafting good commits can be considered an art form that improves with practice. When joining a collaborative project, discuss commit conventions with your collaborators to ensure consistency.</p>
 <section id="commit-often" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="commit-often"><span class="header-section-number">6.1.1</span> Commit often</h3>
-<p>Creating frequent commits helps to capture your work progress. This makes it easier to track changes, identify when errors were introduced, or revert to a previous version of your project if something goes wrong. You can think of committing like saving your game in a video game (or rock climbing, see <a href="#nte-rock-climbing-analogy" class="quarto-xref">Note&nbsp;<span>6.1</span></a>). You want to create saves (commits) regularly so that if you encounter an issue, you don’t lose too much progress.</p>
+<p>Creating <strong>frequent commits helps to capture your work progress</strong>. This makes it easier to track changes, identify when errors were introduced, or revert to a previous version of your project if something goes wrong. You can think of committing like saving your game in a video game (or rock climbing, see <a href="#nte-rock-climbing-analogy" class="quarto-xref">Note&nbsp;<span>6.1</span></a>). You want to create saves (commits) regularly so that if you encounter an issue, you don’t lose too much progress. In addition, by committing often, you leave a detailed trail of your progress for others (including your future self). Your commits show your journey - how you created something step by step - not just the destination or end result.</p>
 <div id="nte-rock-climbing-analogy" class="callout callout-style-default callout-note callout-titled" title="The rock climbing analogy of Git commits">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note&nbsp;6.1: The rock climbing analogy of Git commits
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Using Git commits can be compared to rock climbing:</p>
 <blockquote class="blockquote">
-<p>Using a Git commit is like using anchors and other protection when climbing. If you’re crossing a dangerous rock face you want to make sure you’ve used protection to catch you if you fall. Commits play a similar role: if you make a mistake, you can’t fall past the previous commit. Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high! Like rock climbing protection, you want to be judicious in your use of commits. Committing too frequently will slow your progress; use more commits when you’re in uncertain or dangerous territory. Commits are also helpful to others, because they show your journey, not just the destination.</p>
+<p>Using a Git commit is like using anchors and other protection when climbing. If you’re crossing a dangerous rock face you want to make sure you’ve used protection to catch you if you fall. Commits play a similar role: <strong>if you make a mistake, you can’t fall past the previous commit</strong>. Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high! Like rock climbing protection, you want to be judicious in your use of commits. Committing too frequently will slow your progress; use more commits when you’re in uncertain or dangerous territory. <strong>Commits are also helpful to others, because they show your journey, not just the destination.</strong></p>
 </blockquote>
 <p>from <a href="http://r-pkgs.had.co.nz/git.html#git-commit">R Packages by Hadley Wickham</a></p>
+</div>
 </div>
 </div>
 </section>
 <section id="keep-commits-small" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="keep-commits-small"><span class="header-section-number">6.1.2</span> Keep commits small</h3>
-<p>You should <em>not</em> consider a commit as a general “Save” button, that you use to save all your recent changes in one go. Instead, each commit should ideally contain one isolated and complete change. This makes your project history easier to follow.</p>
+<p>You should <em>not</em> consider a commit as a general “Save” button, that you use to save <em>all</em> your recent changes in one go. Instead, <strong>each commit should ideally contain one isolated and complete change</strong>. This makes your project history easier to follow.</p>
 <p>For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.</p>
 <p>This approach to commits helps you down the line. For example, if you want to keep the enhancement but revert the renaming of the variable, you can revert the specific commit that contained the variable rename. If you put the variable rename and the enhancement in the same commit or spread the variable rename across multiple commits, you would spend more effort reverting your changes.</p>
 </section>
 <section id="use-meaningful-commit-messages" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="use-meaningful-commit-messages"><span class="header-section-number">6.1.3</span> Use <em>meaningful</em> commit messages</h3>
-<p>Git allows for a commit message with a 72 character limit and a description without such a limit. In general, you should aim to write clear and short commit messages (ideally under 50 characters), yet descriptive enough to clarify the purpose of the commit. There are different conventions across projects/persons but also some general guidelines, you can stick to.</p>
-<p>It’s helpful to think about future you or others looking at this project later. Will they understand what this commit was about without having to look at the actual changes?</p>
-<p>For example, <code>Fix typo in README</code> would be more descriptive as a commit message than <code>Update files</code>. If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed in the <a href="../chapters/first-steps-git.html">previous chapter</a>).</p>
+<p>Git allows for a commit message with a 72 character limit and a description without such a limit. In general, you should <strong>aim to write clear and short commit messages</strong> (ideally under 50 characters), yet descriptive enough to clarify the purpose of the commit. There are different conventions across projects and persons but also some general guidelines, you can stick to.</p>
+<p>When writing commit messages, it’s helpful to <strong>think about future you or others looking at this project later</strong>. Will they understand what this commit was about without having to look at the actual changes? For example, <code>Fix typo in README</code> would be more descriptive as a commit message than <code>Update files</code>. If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed in the <a href="../chapters/first-steps-git.html">previous chapter</a>).</p>
 </section>
 <section id="write-commits-that-explain-why-changes-were-made" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="write-commits-that-explain-why-changes-were-made"><span class="header-section-number">6.1.4</span> Write commits that explain <em>why</em> changes were made</h3>
-<p>Instead of just stating <em>what you did</em> in a commit, it’s even more helpful to explain <em>why</em> you made those changes. The “why” gives important context, especially when reviewing older commits.</p>
-<p>For example, use <code>Adjust participant exclusion criteria to improve data quality</code> instead of <code>Change participant exclusion criteria</code>.</p>
+<p>Instead of just stating <em>what you did</em> in a commit, it’s even more helpful to explain <em>why</em> you made those changes. The “why” gives important context, especially when reviewing older commits. For example, use <code>Adjust participant exclusion criteria to improve data quality</code> instead of <code>Change participant exclusion criteria</code>.</p>
 </section>
 <section id="start-with-an-imperative-verb" class="level3" data-number="6.1.5">
 <h3 data-number="6.1.5" class="anchored" data-anchor-id="start-with-an-imperative-verb"><span class="header-section-number">6.1.5</span> Start with an imperative verb</h3>
@@ -558,7 +559,7 @@ Tip&nbsp;6.2: Which files should I <em>not</em> track with Git?
 </section>
 <section id="reference-issue-numbers" class="level3" data-number="6.1.8">
 <h3 data-number="6.1.8" class="anchored" data-anchor-id="reference-issue-numbers"><span class="header-section-number">6.1.8</span> Reference issue numbers</h3>
-<p>If your project is connected to an issue tracker system (like GitHub Issues), it’s helpful to reference issue numbers in your commit messages. This makes it easy to trace which commit addressed a particular issue. For an introduction to GitHub Issues, refer to our <a href="../chapters/issues.html">Issues chapter</a>. For example:</p>
+<p>If your project is connected to an issue tracker system (like GitHub Issues, see the <a href="../chapters/issues.html">chapter on issues</a> for details), it can be helpful to reference issue numbers in your commit messages. This makes it easy to trace which commit addressed a particular issue. For an introduction to GitHub Issues, refer to our <a href="../chapters/issues.html">Issues chapter</a>. For example:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -568,6 +569,7 @@ Tip&nbsp;6.2: Which files should I <em>not</em> track with Git?
 </div>
 </div>
 <p>This message indicates that the commit addresses issue number 42 in your issue tracker.</p>
+<p>Note that instead of referencing issues in commit messages, it’s also common to link to them when proposing larger sets of changes as so-called “pull requests” (or “merge requests”). For details, see the chapter <a href="../chapters/github-advanced.html">“GitHub: Advanced”</a>. Again, how to best reference issues will depend on the project and the conventions you’ve agreed upon with your collaborators.</p>
 </section>
 <section id="avoid-committing-sensitive-information" class="level3" data-number="6.1.9">
 <h3 data-number="6.1.9" class="anchored" data-anchor-id="avoid-committing-sensitive-information"><span class="header-section-number">6.1.9</span> Avoid committing sensitive information</h3>
