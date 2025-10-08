@@ -871,7 +871,7 @@ Mini Exercise: View the contents of <code>.gitconfig</code> with one command fro
 </section>
 <section id="helpful-guardrails" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="helpful-guardrails"><span class="header-section-number">4.8</span> Helpful guardrails</h2>
-<p>Especially if you are new to Git (but not only then!), you might be worried that something will go terribly wrong, that you will lose files beyond recovery, or that you will break your computer. While we won’t assure you that this will <em>not</em> happen (if you try really hard, you can always break stuff), it’s quite unlikely that something bad will happen. In this section, we therefore collect pieces of advice and other tricks to make your Git journey as smoothly as possible.</p>
+<p>Especially if you’re new to Git (though not only then!), you might worry that something will go terribly wrong, that you’ll lose files beyond recovery or even “break your computer”. While we can’t guarantee that this will <em>never</em> happen (if you try hard enough, it’s always possible to break things), it’s quite unlikely that anything serious will go wrong. In this section, we’ve collected tips and tricks to help make your Git journey as smooth as possible.</p>
 <section id="preventing-a-git-repository-in-your-home-directory" class="level3" data-number="4.8.1">
 <h3 data-number="4.8.1" class="anchored" data-anchor-id="preventing-a-git-repository-in-your-home-directory"><span class="header-section-number">4.8.1</span> Preventing a Git repository in your home directory</h3>
 <p>In the next chapter, you will take your <a href="../chapters/first-steps-git.html">first steps with Git</a>. This will involve creating your first Git repository in a folder on your computer. It is then possible to track changes in the files in that folder.</p>
@@ -885,19 +885,6 @@ Mini Exercise: View the contents of <code>.gitconfig</code> with one command fro
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> ~/.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Mini Exercise: What does the `touch` command do in this case?">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mini Exercise: What does the <code>touch</code> command do in this case?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
 <p>This command creates an empty file called <code>.git</code> in your home directory. The path <code>~/</code> specifies the path to your home directory. If you then run the <code>git init</code> command to initialize a new Git repository (find out more about this in the <a href="../chapters/first-steps-git.html">next chapter</a>), the following (desired) error will appear and no Git repository is created in your home directory:</p>
 <div class="cell" data-code-copy="false">
 <div class="code-with-filename">
@@ -907,17 +894,18 @@ Mini Exercise: What does the <code>touch</code> command do in this case?
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fatal:</span> invalid gitfile format: /Users/user/.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Use this guardrail *shortly before* you create your first Git repository.">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<p>This way, you are protected from accidentally creating a Git repository in your home directory.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Recommendation: Use this guardrail *shortly before* you create your first Git repository">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Use this guardrail <em>shortly before</em> you create your first Git repository.
+Recommendation: Use this guardrail <em>shortly before</em> you create your first Git repository
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When you implement this guardrail but haven’t created your first Git repository yet, commands like <code>git config</code> will stop working as expected. To prevent this, we recommend the following procedure:</p>
 <ol type="1">
@@ -929,7 +917,22 @@ Use this guardrail <em>shortly before</em> you create your first Git repository.
 </div>
 </div>
 </div>
-<p>Thanks to <a href="https://social.coop/@eamon/112434377857903339">Eamon Caddigan</a> for this tip!</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Potential interference with other applications (like Psychopy or DataLad)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Potential interference with other applications (like Psychopy or DataLad)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Note that some applications on your computer (like <a href="https://www.psychopy.org/">PsychoPy</a> and <a href="https://www.datalad.org/">DataLad</a>) will scan your directory hierarchy for existing Git repositories and display an error message when they detect the empty <code>.git</code> file you may have set up as a guardrail. In this situation, we recommend simply removing the empty <code>.git</code> file in your home directory (and possibly re-creating it after you set up your project in the other application). Remember that this is intended as a <em>helpful</em> guardrail and provides extra protection against accidentally creating a Git repository in your home directory. However, if it proves more annoying than helpful, feel free to remove it.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="acknowledgements-and-further-reading" class="level2" data-number="4.9">
