@@ -445,6 +445,13 @@ You can also set up this guardrail *after* you created your first Git repository
 There is no required order, we only want to make sure Git works as expected and prevent you from creating a Git repository in your home directory.
 :::
 
+::: {.callout-warning title="Potential interference with other applications (like Psychopy or DataLad)" collapse="true"}
+Note that some applications on your computer (like [PsychoPy](https://www.psychopy.org/) and [DataLad](https://www.datalad.org/)) will scan your directory hierarchy for existing Git repositories and display an error message when they detect the empty `.git` file you may have set up as a guardrail.
+In this situation, we recommend simply removing the empty `.git` file in your home directory (and possibly re-creating it after you set up your project in the other application).
+Remember that this is intended as a *helpful* guardrail and provides extra protection against accidentally creating a Git repository in your home directory.
+However, if it proves more annoying than helpful, feel free to remove it.
+:::
+
 ## Acknowledgements and further reading
 
 We would like to express our gratitude to the following resources, which have been essential in shaping this chapter.
