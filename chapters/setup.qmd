@@ -400,9 +400,9 @@ Check out the [list of aliases](https://coderefinery.github.io/git-intro/aliases
 
 ## Helpful guardrails
 
-Especially if you are new to Git (but not only then!), you might be worried that something will go terribly wrong, that you will lose files beyond recovery, or that you will break your computer.
-While we won't assure you that this will *not* happen (if you try really hard, you can always break stuff), it's quite unlikely that something bad will happen.
-In this section, we therefore collect pieces of advice and other tricks to make your Git journey as smoothly as possible.
+Especially if you're new to Git (though not only then!), you might worry that something will go terribly wrong, that you'll lose files beyond recovery or even "break your computer".
+While we can't guarantee that this will *never* happen (if you try hard enough, it's always possible to break things), it's quite unlikely that anything serious will go wrong.
+In this section, we've collected tips and tricks to help make your Git journey as smooth as possible.
 
 ### Preventing a Git repository in your home directory
 
@@ -421,9 +421,6 @@ To **prevent accidentally creating a Git repository in your home directory**, yo
 touch ~/.git
 ```
 
-::: {.callout-caution title="Mini Exercise: What does the `touch` command do in this case?"}
-:::
-
 This command creates an empty file called `.git` in your home directory.
 The path `~/` specifies the path to your home directory.
 If you then run the `git init` command to initialize a new Git repository (find out more about this in the [next chapter](first-steps-git.qmd)), the following (desired) error will appear and no Git repository is created in your home directory:
@@ -433,7 +430,9 @@ If you then run the `git init` command to initialize a new Git repository (find 
 fatal: invalid gitfile format: /Users/user/.git
 ```
 
-::: {.callout-tip title="Use this guardrail *shortly before* you create your first Git repository." collapse="false"}
+This way, you are protected from accidentally creating a Git repository in your home directory.
+
+::: {.callout-tip title="Recommendation: Use this guardrail *shortly before* you create your first Git repository" collapse="true"}
 When you implement this guardrail but haven't created your first Git repository yet, commands like `git config` will stop working as expected.
 To prevent this, we recommend the following procedure:
 
@@ -443,10 +442,14 @@ To prevent this, we recommend the following procedure:
 
 You can also set up this guardrail *after* you created your first Git repository in a suitable location.
 There is no required order, we only want to make sure Git works as expected and prevent you from creating a Git repository in your home directory.
-
 :::
 
-Thanks to [Eamon Caddigan](https://social.coop/@eamon/112434377857903339) for this tip!
+::: {.callout-warning title="Potential interference with other applications (like Psychopy or DataLad)" collapse="true"}
+Note that some applications on your computer (like [PsychoPy](https://www.psychopy.org/) and [DataLad](https://www.datalad.org/)) will scan your directory hierarchy for existing Git repositories and display an error message when they detect the empty `.git` file you may have set up as a guardrail.
+In this situation, we recommend simply removing the empty `.git` file in your home directory (and possibly re-creating it after you set up your project in the other application).
+Remember that this is intended as a *helpful* guardrail and provides extra protection against accidentally creating a Git repository in your home directory.
+However, if it proves more annoying than helpful, feel free to remove it.
+:::
 
 ## Acknowledgements and further reading
 
