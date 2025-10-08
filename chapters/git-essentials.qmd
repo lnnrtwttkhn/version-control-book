@@ -16,33 +16,39 @@ abstract: |
 ## Good commits
 
 Now that you know how to create a Git repository, stage files, and make commits, it's time to discuss some good practices for Git commits.
+Following these recommendations will make the history of your commits clearer and your collaborators (including your future self) happier!
+The better your commits, the easier it will be to understand the evolution of your project.
+But also remember that crafting good commits can be considered an art form that improves with practice.
+When joining a collaborative project, discuss commit conventions with your collaborators to ensure consistency.
 
 ### Commit often
 
-Creating frequent commits helps to capture your work progress. 
+Creating **frequent commits helps to capture your work progress**. 
 This makes it easier to track changes, identify when errors were introduced, or revert to a previous version of your project if something goes wrong.
 You can think of committing like saving your game in a video game (or rock climbing, see @nte-rock-climbing-analogy).
 You want to create saves (commits) regularly so that if you encounter an issue, you don't lose too much progress.
+In addition, by committing often, you leave a detailed trail of your progress for others (including your future self).
+Your commits show your journey - how you created something step by step - not just the destination or end result.
 
-::: {#nte-rock-climbing-analogy .callout-note title="The rock climbing analogy of Git commits"}
+::: {#nte-rock-climbing-analogy .callout-note title="The rock climbing analogy of Git commits" collapse="true"}
 
 Using Git commits can be compared to rock climbing:
 
 > Using a Git commit is like using anchors and other protection when climbing.
 If you’re crossing a dangerous rock face you want to make sure you’ve used protection to catch you if you fall.
-Commits play a similar role: if you make a mistake, you can’t fall past the previous commit.
+Commits play a similar role: **if you make a mistake, you can’t fall past the previous commit**.
 Coding without commits is like free-climbing: you can travel much faster in the short-term, but in the long-term the chances of catastrophic failure are high!
 Like rock climbing protection, you want to be judicious in your use of commits.
 Committing too frequently will slow your progress; use more commits when you’re in uncertain or dangerous territory.
-Commits are also helpful to others, because they show your journey, not just the destination. 
+**Commits are also helpful to others, because they show your journey, not just the destination.**
 
 from [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html#git-commit)
 :::
 
 ### Keep commits small
 
-You should *not* consider a commit as a general "Save" button, that you use to save all your recent changes in one go.
-Instead, each commit should ideally contain one isolated and complete change.
+You should *not* consider a commit as a general "Save" button, that you use to save *all* your recent changes in one go.
+Instead, **each commit should ideally contain one isolated and complete change**.
 This makes your project history easier to follow.
 
 For example, if you want to rename a variable and add a new enhancement, put the variable rename in one commit and the enhancement in another commit.
@@ -54,12 +60,11 @@ If you put the variable rename and the enhancement in the same commit or spread 
 ### Use *meaningful* commit messages
 
 Git allows for a commit message with a 72 character limit and a description without such a limit.
-In general, you should aim to write clear and short commit messages (ideally under 50 characters), yet descriptive enough to clarify the purpose of the commit.
-There are different conventions across projects/persons but also some general guidelines, you can stick to.
+In general, you should **aim to write clear and short commit messages** (ideally under 50 characters), yet descriptive enough to clarify the purpose of the commit.
+There are different conventions across projects and persons but also some general guidelines, you can stick to.
 
-It's helpful to think about future you or others looking at this project later. 
+When writing commit messages, it's helpful to **think about future you or others looking at this project later**. 
 Will they understand what this commit was about without having to look at the actual changes?
-
 For example, `Fix typo in README` would be more descriptive as a commit message than `Update files`.
 If more detail is necessary, you can use the option to add a longer description to the commit (as we discussed in the [previous chapter](first-steps-git.qmd)).
 
@@ -67,7 +72,6 @@ If more detail is necessary, you can use the option to add a longer description 
 
 Instead of just stating *what you did* in a commit, it's even more helpful to explain *why* you made those changes.
 The "why" gives important context, especially when reviewing older commits.
-
 For example, use `Adjust participant exclusion criteria to improve data quality` instead of `Change participant exclusion criteria`.
 
 ### Start with an imperative verb
@@ -86,7 +90,6 @@ This commit adds the user registration functionality to the application. It incl
 An example of commit messages, which are not really optimal, are illustrated in @fig-bad_commits_comic.
 
 !["Git Commit" by [xkcd](https://xkcd.com/1296/) (License: [CC BY-NC 2.5](https://xkcd.com/license.html))](../static/xkcd-git-commit.png){#fig-bad_commits_comic}
-
 
 ::: {.callout-tip title="Commit messages examples" collapse="true"}
 Some examples for commit messages, which stick to the etiquette:
@@ -158,7 +161,7 @@ This ensures that you're aware of every change you're about to commit.
 
 ### Reference issue numbers
 
-If your project is connected to an issue tracker system (like GitHub Issues), it's helpful to reference issue numbers in your commit messages. 
+If your project is connected to an issue tracker system (like GitHub Issues, see the [chapter on issues](issues.qmd) for details), it can be helpful to reference issue numbers in your commit messages. 
 This makes it easy to trace which commit addressed a particular issue.
 For an introduction to GitHub Issues, refer to our [Issues chapter](issues.qmd).
 For example:
@@ -168,6 +171,10 @@ git commit -m "Fix login bug (fixes #42)"
 ```
 
 This message indicates that the commit addresses issue number 42 in your issue tracker.
+
+Note that instead of referencing issues in commit messages, it's also common to link to them when proposing larger sets of changes as so-called "pull requests" (or "merge requests").
+For details, see the chapter ["GitHub: Advanced"](github-advanced.qmd).
+Again, how to best reference issues will depend on the project and the conventions you've agreed upon with your collaborators.
 
 ### Avoid committing sensitive information
 
