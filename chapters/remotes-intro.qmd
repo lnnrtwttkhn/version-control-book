@@ -225,6 +225,13 @@ To avoid typing the passphrase each time you connect, you can securely store it 
 For more details, see the [GitHub documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases).
 :::
 
+::: {#nte-t-flag .callout-note title="What does the `-t` flag in the `ssh-keygen` command do?" collapse="true"}
+The `-t` flag in the `ssh-keygen` command specifies the **type of key** to generate.
+Common options include `rsa`, `ecdsa`, and `ed25519`.
+For example, `-t ed25519` generates a modern and secure Ed25519 key, which is recommended for most users.
+This flag ensures you're using the desired encryption algorithm when creating your SSH key.
+:::
+
 After (not) having entered a passphrase, your command line output should look similar to this: 
 
 ```{markdown filename="Output"}
