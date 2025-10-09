@@ -692,6 +692,22 @@ Note&nbsp;7.1: Find out more: What is the difference between <code>git checkout<
 </div>
 </div>
 <p>The output reveals a <strong>“fast-forward” merge</strong> operation, where changes from commit <code>555ba0c</code> to <code>994bb8d</code> are incorporated. The common starting point of the two branches is commit <code>555ba0c</code> and commit <code>994bb8d</code> marks the latest commit in the merged branch. A “fast-forward” merge, the simplest form of merges, updates your position to the latest changes without creating a new commit. In this example, the merge modified only one file, the <code>example.txt</code> file, introducing four new lines denoted by <code>4 ++++</code>. For more information about different types of merges, see the <a href="#types-of-merges">section on “Types of merges”</a> below.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Is it possible to merge multiple branches with one command?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Is it possible to merge multiple branches with one command?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>There is <strong>no built-in Git command to merge all branches</strong> into the current branch with a single command, primarily because mass-merging can be risky and prone to conflicts. That said, it is technically possible using a script or loop that identifies all branches and merges them one by one. However, since this approach is generally discouraged and can lead to complex merge issues, we do not include instructions in this guide. If needed, you can find examples and tutorials online.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="merge-conflicts" class="level2" data-number="7.7">
 <h2 data-number="7.7" class="anchored" data-anchor-id="merge-conflicts"><span class="header-section-number">7.7</span> Merge conflicts</h2>
@@ -811,7 +827,7 @@ Note&nbsp;7.1: Find out more: What is the difference between <code>git checkout<
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git merge` flags">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -820,7 +836,7 @@ Common <code>git merge</code> flags
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>--abort</code>: Abort the current merge operation and reset the branch to its pre-merge state.</p>
 <p><code>--continue</code>: Continue the merge process after resolving conflicts.</p>
@@ -877,7 +893,7 @@ Common <code>git merge</code> flags
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="When is squashing useful?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -886,7 +902,7 @@ When is squashing useful?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Squashing commits can be desirable in a situation where <strong>you don’t want others to see the full history of individual commits</strong> made on the merged branch. For example, if you wrote a script and only want your collaborators to see the end result and not all the tiny changes you made on the way. In this situation, you could squash all previous commits and only merge the latest version of your script.</p>
 </div>
@@ -917,7 +933,7 @@ When is squashing useful?
 </div>
 <p>The addition <code>(was 2cb61c2)</code> represents the last commit hash of the branch you deleted. You can only delete a branch, you are <em>not</em> currently on.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Can I delete the default branch (`main` or `master`)?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -926,7 +942,7 @@ Can I delete the default branch (<code>main</code> or <code>master</code>)?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Since Git treats the default branch (<code>main</code> or <code>master</code>) branch like any other branch, <strong>you <em>can</em> also delete the default branch</strong> if you want. This is however not recommended to avoid confusion and might even be forbidden or not possible in some projects.</p>
 </div>
@@ -943,7 +959,7 @@ Can I delete the default branch (<code>main</code> or <code>master</code>)?
 <h3 data-number="7.9.2" class="anchored" data-anchor-id="name-branches-consistently"><span class="header-section-number">7.9.2</span> Name branches consistently</h3>
 <p>Adopt a <strong>consistent naming convention</strong> for branches that accurately <strong>reflects their purpose</strong>. This can include prefixes like <code>feature/</code>, <code>bug/</code>, followed by a descriptive name. Clear and standardized branch names make it easier to identify the purpose of each branch.</p>
 <div id="tip-branch-names" class="callout callout-style-default callout-tip callout-titled" title="Find out more: Naming conventions for Git branches">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -952,7 +968,7 @@ Tip&nbsp;7.1: Find out more: Naming conventions for Git branches
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Basic recommendations for branch names</strong></p>
 <ol type="1">
