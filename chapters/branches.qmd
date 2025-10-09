@@ -263,6 +263,14 @@ A "fast-forward" merge, the simplest form of merges, updates your position to th
 In this example, the merge modified only one file, the `example.txt` file, introducing four new lines denoted by `4 ++++`.
 For more information about different types of merges, see the [section on "Types of merges"](#types-of-merges) below.
 
+::: {.callout-note title="Is it possible to merge multiple branches with one command?" collapse="true"}
+
+There is **no built-in Git command to merge all branches** into the current branch with a single command, primarily because mass-merging can be risky and prone to conflicts.
+That said, it is technically possible using a script or loop that identifies all branches and merges them one by one.
+However, since this approach is generally discouraged and can lead to complex merge issues, we do not include instructions in this guide.
+If needed, you can find examples and tutorials online.
+
+:::
 ## Merge conflicts
 
 Merge conflicts occur when Git is unable to automatically resolve differences between two branches during a merge. 
