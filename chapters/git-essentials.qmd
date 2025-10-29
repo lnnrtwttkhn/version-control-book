@@ -480,15 +480,24 @@ git commit -m "Add .gitignore"
 ### Global `.gitignore` file
 
 Instead of specifying files you want Git to ignore for each folder, you can also create a global `.gitignore` file.
-To do this, you create a file named `.gitignore_global` (or any name you prefer) in your users's home directory (located, for example, at `/Users/yourusername`). 
-Then, you configure Git to use this global file by running:
+To do this, you create a file named `.gitignore_global` (or any name you prefer) in your user's home directory (located, for example, at `/Users/yourusername`). 
+Then, you configure Git to use this global file by running the following command (once):
 
 ```{zsh filename="Code"}
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
 After this setup, you can add common files to this list, that you want to ignore.
-These rules will apply across to *all* Git repositories on your computer.
+These rules will apply to *all* Git repositories of the current user.
+
+::: {.callout-tip title="Should I track the global `.gitignore` in Git?" collapse="true"}
+Great idea!
+Once you appreciate the benefits of tracking changes in your files, it makes sense to also manage your global `.gitignore` file with Git.
+This approach aligns with the general idea of keeping important configuration files, or ["dotfiles"](https://wiki.archlinux.org/title/Dotfiles), under version control.
+In short, yes, you can include your global `.gitignore` file in version control, possibly along with other relevant configuration files.
+Keep in mind that these files are usually located in your user's home directory, and you should avoid tracking all files in its subdirectories.
+Make sure to track only your global `.gitignore` file and any other specific dotfiles you want to manage.
+:::
 
 ::: {.callout-tip title="Common wildcards" collapse="true"}
 
