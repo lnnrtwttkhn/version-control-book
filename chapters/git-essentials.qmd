@@ -480,15 +480,41 @@ git commit -m "Add .gitignore"
 ### Global `.gitignore` file
 
 Instead of specifying files you want Git to ignore for each folder, you can also create a global `.gitignore` file.
-To do this, you create a file named `.gitignore_global` (or any name you prefer) in your users's home directory (located, for example, at `/Users/yourusername`). 
-Then, you configure Git to use this global file by running:
+To do this, you create a file named `.gitignore_global` (or any name you prefer) in your user's home directory (located, for example, at `/Users/yourusername`). 
+Then, you configure Git to use this global file by running the following command (once):
 
 ```{zsh filename="Code"}
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
 After this setup, you can add common files to this list, that you want to ignore.
-These rules will apply across to *all* Git repositories on your computer.
+These rules will apply to *all* Git repositories of the current user.
+
+::: {.callout-tip title="Should I track the global `.gitignore` in Git?" collapse="true"}
+Great idea!
+Once you appreciate the benefits of tracking changes in your files, it makes sense to also manage your global `.gitignore` file with Git.
+This approach aligns with the general idea of keeping important configuration files, or ["dotfiles"](https://wiki.archlinux.org/title/Dotfiles), under version control.
+In short, yes, you can include your global `.gitignore` file in version control, possibly along with other relevant configuration files.
+Keep in mind that these files are usually located in your user's home directory, and you should avoid tracking all files in its subdirectories.
+Make sure to track only your global `.gitignore` file and any other specific dotfiles you want to manage.
+:::
+
+::: {.callout-tip title="Instead of using a `.gitignore` file, can I just not track specific files?" collapse="true"}
+Yes, of course!
+Only files that are deliberately staged and committed will be tracked by Git.
+As long as you avoid staging and committing them, they will remain untracked.
+However, there are several reasons to still use a `.gitignore` file:
+
+1. Even with the intention to avoid tracking certain files, it's possible to accidentally add them.
+The `.gitignore` file helps prevent this by automatically excluding specified files.
+1. Although it's generally not recommended to use commands like `git add .` or `git add -a` to stage all changes at once, there may be cases (for example, when working with many files) where you still choose to do so.
+In such situations, a `.gitignore` file helps ensure that unwanted files are not tracked by mistake.
+1. Even if you are careful not to commit certain files, your collaborators might not be.
+A `.gitignore` file provides a shared safeguard to help prevent accidental commits of unnecessary or sensitive files.
+
+While it is possible to modify a repository's commit history later, it is best to prevent sensitive or irrelevant files from entering the repository in the first place.
+The `.gitignore` file is a useful tool to achieve this.
+:::
 
 ::: {.callout-tip title="Common wildcards" collapse="true"}
 
