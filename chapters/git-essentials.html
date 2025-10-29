@@ -949,7 +949,7 @@ Our recommendation: Use a GUI for partial commits
 </section>
 <section id="global-.gitignore-file" class="level3" data-number="6.7.4">
 <h3 data-number="6.7.4" class="anchored" data-anchor-id="global-.gitignore-file"><span class="header-section-number">6.7.4</span> Global <code>.gitignore</code> file</h3>
-<p>Instead of specifying files you want Git to ignore for each folder, you can also create a global <code>.gitignore</code> file. To do this, you create a file named <code>.gitignore_global</code> (or any name you prefer) in your users’s home directory (located, for example, at <code>/Users/yourusername</code>). Then, you configure Git to use this global file by running:</p>
+<p>Instead of specifying files you want Git to ignore for each folder, you can also create a global <code>.gitignore</code> file. To do this, you create a file named <code>.gitignore_global</code> (or any name you prefer) in your user’s home directory (located, for example, at <code>/Users/yourusername</code>). Then, you configure Git to use this global file by running the following command (once):</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -958,9 +958,47 @@ Our recommendation: Use a GUI for partial commits
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.excludesfile ~/.gitignore_global</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>After this setup, you can add common files to this list, that you want to ignore. These rules will apply across to <em>all</em> Git repositories on your computer.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Common wildcards">
+<p>After this setup, you can add common files to this list, that you want to ignore. These rules will apply to <em>all</em> Git repositories of the current user.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Should I track the global `.gitignore` in Git?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Should I track the global <code>.gitignore</code> in Git?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Great idea! Once you appreciate the benefits of tracking changes in your files, it makes sense to also manage your global <code>.gitignore</code> file with Git. This approach aligns with the general idea of keeping important configuration files, or <a href="https://wiki.archlinux.org/title/Dotfiles">“dotfiles”</a>, under version control. In short, yes, you can include your global <code>.gitignore</code> file in version control, possibly along with other relevant configuration files. Keep in mind that these files are usually located in your user’s home directory, and you should avoid tracking all files in its subdirectories. Make sure to track only your global <code>.gitignore</code> file and any other specific dotfiles you want to manage.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Instead of using a `.gitignore` file, can I just not track specific files?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instead of using a <code>.gitignore</code> file, can I just not track specific files?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Yes, of course! Only files that are deliberately staged and committed will be tracked by Git. As long as you avoid staging and committing them, they will remain untracked. However, there are several reasons to still use a <code>.gitignore</code> file:</p>
+<ol type="1">
+<li>Even with the intention to avoid tracking certain files, it’s possible to accidentally add them. The <code>.gitignore</code> file helps prevent this by automatically excluding specified files.</li>
+<li>Although it’s generally not recommended to use commands like <code>git add .</code> or <code>git add -a</code> to stage all changes at once, there may be cases (for example, when working with many files) where you still choose to do so. In such situations, a <code>.gitignore</code> file helps ensure that unwanted files are not tracked by mistake.</li>
+<li>Even if you are careful not to commit certain files, your collaborators might not be. A <code>.gitignore</code> file provides a shared safeguard to help prevent accidental commits of unnecessary or sensitive files.</li>
+</ol>
+<p>While it is possible to modify a repository’s commit history later, it is best to prevent sensitive or irrelevant files from entering the repository in the first place. The <code>.gitignore</code> file is a useful tool to achieve this.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Common wildcards">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -969,7 +1007,7 @@ Common wildcards
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>As discussed in the <a href="../chapters/command-line.html">command line chapter</a> wildcards are special characters that represent patterns of filenames or directory names. They can be used to specify multiple files or directories that should be ignored by Git when tracking changes. Wildcards allow you to match multiple files with a single rule, making it more convenient to exclude specific types of files or patterns.</p>
 <p><code>*</code>: Matches any number of characters within a filename. For example, *.txt will match all files with the extension .txt in any directory.</p>
@@ -981,7 +1019,7 @@ Common wildcards
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common files to ignore in scientific settings">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -990,7 +1028,7 @@ Common files to ignore in scientific settings
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Temporary files and output:</strong> Ignore files generated during analysis, like log files, temporary files, or intermediate data files.</li>
@@ -1005,7 +1043,7 @@ Common files to ignore in scientific settings
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Example `.gitignore` file for an R project">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1014,7 +1052,7 @@ Example <code>.gitignore</code> file for an R project
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -1059,7 +1097,7 @@ Example <code>.gitignore</code> file for an R project
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What is the `.DS_Store` file (macOS only)?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1068,7 +1106,7 @@ What is the <code>.DS_Store</code> file (macOS only)?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>.DS_Store</code> is a hidden file created by macOS in every folder to store custom attributes of the folder, such as the position of icons or the choice of a background image. The filename stands for “Desktop Services Store” and it helps macOS Finder maintain the folder’s view settings. <code>.DS_Store</code> is very commonly ignored from version control using the <code>.gitignore</code> file, for various reasons:</p>
 <ol type="1">
@@ -1110,7 +1148,7 @@ What is the <code>.DS_Store</code> file (macOS only)?
 <p>Normally, Git does not track empty folders in a repository. However, tracking an empty directory in a Git repository can be useful in some scenarios. For example, you want to track an empty folder as a placeholder for future content or as a way to organize the project more clearly.</p>
 <p>A workaround, to get Git to track your empty folder, is adding a hidden <code>.gitkeep</code> file in this folder <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This not an official Git feature but rather a convention adopted by software developers. That means you could name this file anything, but <code>.gitkeep</code> is used by convention to explicitly state its purpose for keeping otherwise empty folders in Git.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Use-cases for empty folders in Git repositories for scientific projects">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1119,7 +1157,7 @@ Use-cases for empty folders in Git repositories for scientific projects
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>As discussed above, Git is not suitable for tracking a lot of large files, as is often the case when working with research data. Imagine that you use Git for your code that you use to analyze data from a research project. Usually, your analysis code needs access to the research data but you think that the research data is too large to be tracked with Git.</p>
 <p>Here is what you could do:</p>
