@@ -1,0 +1,12 @@
+1. Navigate into the `recipes` repository using `cd` (or a similar path).
+1. Create a new branch called `feature/stash-exercise` using `git branch`.
+1. Switch to the new branch using `git switch`.
+Alternatively, you could have also done the two last steps with one command using `git checkout -b feature/stash-exercise`.
+1. Make any change to any of the files in your project directory.
+Here, we use the `echo` command to append text to the end of `recipes.txt`.
+1. Stash your changes without adding a message using `git stash`.
+1. Verify that the working directory is clean using `git status`.
+Check that the output indeed indicates a clean working directory.
+1. Apply the stash to your working directory using `git stash apply`.
+1. Verify that your changes are restored.
+Here, we use `tail -1 recipes.txt` to print the last line of `recipes.txt`.

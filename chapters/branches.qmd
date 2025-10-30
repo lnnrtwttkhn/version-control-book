@@ -2,8 +2,11 @@
 image: ../static/branches.svg
 categories: [beginner, basics]
 abstract: |
-  In this chapter you will learn about the power of branches.
-  Create, manage and merge branches like a pro!
+  This chapter introduces Git branches and their advantages for projects by enabling work on different versions simultaneously.
+  Branches allow you to explore new ideas or address issues without altering the main project.
+  We explain how to create and manage branches for parallel work and cover merging changes from different branches, including resolving conflicts.
+  Additionally, we discuss stashing, which lets you temporarily set aside changes to switch tasks.
+  By the end of this chapter, you'll understand how branches support concurrent project development and help keep your research organized.
 ---
 
 # Branches
@@ -13,7 +16,13 @@ abstract: |
 {{< include ../objectives/_objectives-branches.qmd >}}
 :::
 
-[{{< fa circle-question regular >}} Take the quiz!]({{< var quiz.branches >}}){.btn .btn-outline-secondary role="button"}
+::: {.callout-tip collapse="true"}
+{{< include ../usecases/_usecase_branches_preservation.qmd >}}
+:::
+
+::: {.callout-tip collapse="true"}
+{{< include ../usecases/_usecase_branches_collaboration.qmd >}}
+:::
 
 ## Why branches?
 
@@ -23,11 +32,12 @@ Before we explain the concept of branches in more detail, let's look at a few sc
 1. You want to add a new feature to your project (for example, a new analysis) but while doing so, you run the risk of accidentally breaking your working code as you test the new feature.
 You may want to quickly go back to your previous working version while working on the new feature but keep the as yet unfinished progress on the new feature.
 
-2. If you collaborate with others on the same Git repository (we will look at collaboration with Git in the [chapter on Git remotes](remotes-intro.qmd)) and everyone would work on the main branch simultaneously, this could cause a lot of confusion and conflicting changes.
+2. If you collaborate with others on the same Git repository (we will look at collaboration with Git in the [chapter on Git remotes](remotes-intro.qmd)) and everyone would work on the default branch simultaneously, this could cause a lot of confusion and conflicting changes.
 
 ## What are branches?
 
 By default, every Git repository has one default branch, typically called `main` or `master`.
+If you have just recently started using Git, your repository likely has only one branch (`main` or `master`) with one commit after another (see they gray dots in @fig-branches).
 Git branches are like separate versions or workspaces within the same Git repository.
 Branching allows to create a copy of a project and continue to make commits without integrating them into the default branch right away.
 Branches let you work on a parallel version of your repository's contents without changing the content on your default branch (your `main` or `master` branch). 
@@ -47,7 +57,7 @@ With branches, you can work independently and keep your code organized.
 ## Checking your branches
 
 By default, your work is on the default branch, usually called `main` (or `master`). 
-We recommend changing your default branch name to `main`, as discussed in the [setup](setup.qmd) chapter.
+We recommend changing your default branch name to `main`, as discussed in the [setup](setup.qmd) chapter ^[:bulb: Tip: If your default branch is called `master`, you can use `git branch -m master main` to rename your default branch to `main` (for details, see the [setup](setup.qmd) chapter).].
 You can list the available branches in your repository by using `git branch`:
 
 ```{zsh, filename="Code"}
@@ -68,12 +78,12 @@ In Git, you can have multiple branches in your project, and the `git branch` hel
 The one with the asterisk is the branch where your working directory is currently positioned. 
 In this case, `main` is the active branch.
 If there were other branches listed without an asterisk, it means they exist, but you are not currently "on" those branches.
-You are currently "on main".
+You are currently "on `main`".
 
 You can also use `git status` to check which branch you are on.
 `git status` will return an output similar to the following:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 #| code-copy: false
 On branch main
 nothing to commit, working tree clean
@@ -111,7 +121,7 @@ Note that `feature` is just a name.
 You could also call your branch `banana`, if you want.
 Find out more about naming convention for Git branches in the [section on best practices](#best-practices) below.
 
-::: {.callout-tip title="Common `git branch` flags" collapse="false"}
+::: {.callout-tip title="Common `git branch` flags" collapse="true"}
 `-a` or `--all`: Lists both local and remote branches. (Remote branches will be introduced in the [Remotes: Introduction](remotes-intro.qmd) chapter )
 
 `-r or --remote`: Lists only remote branches.
@@ -158,16 +168,23 @@ You should see a confirmation message indicating the successful creation and swi
 
 #### Command Line {{< fa terminal >}}
 
-To switch to another branch, you can use `git checkout` or `git switch`.
+To switch to another branch, you can use `git switch`.
 For example, enter the following command to switch to the newly created `feature` branch:
 
 ```{zsh, filename="Code"}
 git switch feature
 ```
 
+Alternatively, you can also use `git checkout` to switch branches.
+For details about the differences between `git switch` and `git checkout`, see @nte-switch-checkout.
+
+```{zsh, filename="Code"}
+git checkout feature
+```
+
 If you switched branches successfully, you should receive an output similar to this:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 #| code-copy: false
 Switched to branch 'feature'
 ```
@@ -181,7 +198,7 @@ This requirement ensures that there's a baseline history in your repository, all
 
 :::
 
-::: {.callout-tip title="Find out more: What is the difference between `git checkout` and `git switch`?" collapse="true"}
+::: {#nte-switch-checkout .callout-tip title="Find out more: What is the difference between `git checkout` and `git switch`?" collapse="true"}
 Prior to Git version 2.23, the `git checkout` command was the primary way to switch branches. 
 It allows you to move to a different branch and update your working directory to reflect the state of that branch. 
 In Git 2.23 and later versions, the `git switch` command was introduced as a safer and more intuitive alternative to `git checkout`. 
@@ -271,7 +288,7 @@ For example, if you want to merge changes *into* the `main` branch *from* the `f
 
 If you have not yet made any changes on the `feature` branch you should get the following output:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 #| code-copy: false
 Already up to date.
 ```
@@ -297,6 +314,14 @@ A "fast-forward" merge, the simplest form of merges, updates your position to th
 In this example, the merge modified only one file, the `example.txt` file, introducing four new lines denoted by `4 ++++`.
 For more information about different types of merges, see the [section on "Types of merges"](#types-of-merges) below.
 
+::: {.callout-note title="Is it possible to merge multiple branches with one command?" collapse="true"}
+
+There is **no built-in Git command to merge all branches** into the current branch with a single command, primarily because mass-merging can be risky and prone to conflicts.
+That said, it is technically possible using a script or loop that identifies all branches and merges them one by one.
+However, since this approach is generally discouraged and can lead to complex merge issues, we do not include instructions in this guide.
+If needed, you can find examples and tutorials online.
+
+:::
 ## Merge conflicts
 
 Merge conflicts occur when Git is unable to automatically resolve differences between two branches during a merge. 
@@ -312,13 +337,14 @@ Merge conflicts can be a bit of a headache.
 If you only work locally on your computer, without a remote repository (for example, an online version of your repository on [GitHub or GitLab](remotes-intro.qmd)), you can avoid merge conflicts easier because you are less likely to edit the same part of the same file on different branches.
 However, once you start to collaborate with others, it may not be possible to entirely avoid merge conflicts.
 That being said, employing good development practices can minimize the occurrence of merge conflicts.
-Regularly pulling changes from the remote repository into your local branch (using `git pull`) and keeping your branch up-to-date can help identify and resolve conflicts early.
+**Regularly pulling changes** from the remote repository into your local branch (using `git pull`) and **keeping your branch up-to-date** can help identify and resolve conflicts early.
 You will learn more about how to effectively manage collaborative work on Git repositories in the following chapters on [remote repositories](remotes-intro.qmd).
 
 ### Example merge conflict
 
 Let's look at an example merge conflict.
-You can recreate this example yourself by following the instructions below.
+You can recreate this example yourself by following the instructions below. 
+In order for this example to work, you need to have at least one previous commit on the `main` branch.
 
 1. Create a new file, for example called `example.txt`.
 1. Create and switch to a new branch, for example called `feature`.
@@ -409,6 +435,8 @@ git commit -m "Resolve merge conflict"
 ```
 
 Your branches should now be merged and your conflict resolved.
+The feature branch itself remains unchanged unless you delete it. 
+You can continue using it or delete it if it's no longer needed.
 
 Before you try to fix more complex merge conflicts, make sure you understand the changes that don't match up to avoid making things more complicated.
 Resolving conflicts can be tricky, especially when merging branches with many differences.
@@ -464,7 +492,7 @@ git merge --no-ff
 
 #### Squash and merge
 
-When you squash a branch, Git combines all commits of the branch into a single commit.
+When you squash a branch, Git **combines all commits of the branch into a single commit**.
 This new commit is then added to the history, but the individual commits that were part of the branch are not retained or preserved separately.
 Instead, the squashed commit represents the collective changes made in the branch, creating a cleaner and more concise history.
 
@@ -472,15 +500,17 @@ Instead, the squashed commit represents the collective changes made in the branc
 git merge --squash
 ```
 
-Squashing commits can be desirable in a situation where you don't want others to see the history of individual commits made on the `feature` branch.
-For example, imagine writing the draft of a paper and you've made a couple of changes in the early phase of writing the draft that you consider silly and you only want your collaborators to see the final draft version.
-In this situation, you could squash all previous commits and only merge the latest version of your draft.
+::: {.callout-tip title="When is squashing useful?" collapse="false"}
+Squashing commits can be desirable in a situation where **you don't want others to see the full history of individual commits** made on the merged branch.
+For example, if you wrote a script and only want your collaborators to see the end result and not all the tiny changes you made on the way.
+In this situation, you could squash all previous commits and only merge the latest version of your script.
+:::
 
 ## Deleting Branches
 
 Once a branch has served its purpose and is no longer needed, it can be deleted.
 Removing branches that are no longer active helps maintain a clean and manageable branch structure.
-To delete a branch you can use the `git branch` command, followed by a `-d` flag.
+To delete a branch, you can use the `git branch` command, followed by a `-d` flag.
 
 ```{zsh, filename="Code"}
 git branch -d feature
@@ -488,12 +518,18 @@ git branch -d feature
 
 This should yield an output similar to:
 
-```{zsh, filename="Output"}
+```{markdown, filename="Output"}
 #| code-copy: false
-Deleted branch feature.
+Deleted branch feature (was 2cb61c2).
 ```
 
+The addition `(was 2cb61c2)` represents the last commit hash of the branch you deleted.
 You can only delete a branch, you are *not* currently on.
+
+::: {.callout-tip title="Can I delete the default branch (`main` or `master`)?" collapse="false"}
+Since Git treats the default branch (`main` or `master`) branch like any other branch, **you *can* also delete the default branch** if you want.
+This is however not recommended to avoid confusion and might even be forbidden or not possible in some projects.
+:::
 
 ## Best practices
 
@@ -539,10 +575,9 @@ For more recommendations on branch naming conventions, see for example @amin2023
 ### Keep branches specific and short-lived
 
 Create branches with a **specific goal or task** in mind, and aim to **keep them short-lived**.
-As for your main branch, you should try to keep individual branches clean by focusing on adding one new feature per branch.
-This approach ensures that completed features can be merged into the main branch independently of those that are still in progress.
+As for your default branch, you should try to keep individual branches clean by focusing on adding one new feature per branch.
 Long-lived branches can lead to conflicts and make it harder to merge changes.
-Once the task is complete or the feature is integrated, consider deleting the branch.
+Once the task is complete or the feature is integrated, don't forget to delete the branch to avoid clutter.
 
 ### Avoiding merge conflicts
 
@@ -554,209 +589,8 @@ If multiple people have worked on the same branches, open communication and good
 
 ::: {.callout-caution collapse="false" appearance="simple"}
 This section concludes the most important Git commands for working with branches for new learners.
-The following sections will dive into more advanced Git commands that become relevant once you start using branches more extensively.
-If you're just learning about branches and the commands above worked without any problems, feel free to skip to the next chapter for now.
-:::
-
-## Stashing
-
-`git stash` is a valuable command in Git that allows you to save your current changes temporarily without committing them.
-This is useful when you need to switch branches or work on something else without creating a commit for unfinished work.
-For example, when you're working on a feature and you need to switch to a different task quickly or your work gets interrupted unexpectedly, you may not want to commit your unfinished changes.
-When you run `git stash`, Git stores the changes in your working directory and staged changes in a special stash commit.
-The working directory is then reverted to the last committed state, providing a clean slate for your next task.
-
-### Stashing changes
-
-To demonstrate the usefulness of `git stash`, you can edit one or more files in your repository, stage (or don't stage) your changes, but don't commit them.
-Now use `git status` to look at the current state of your working directory.
-
-```{zsh, filename="Code"}
-git status
-```
-
-You should get an output similar to:
-
-```{zsh, filename="Output"}
-#| code-copy: false
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	modified:   example.html
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   example.txt   
-```
-
-In this example, there are changes on two tracked files, one staged and one not staged, that we want to stash.
-Just like when committing, it is possible to add a message when stashing using the `-m` flag.
-It makes sense to add a message because it serves as a reminder of what changes were stashed, making it easier to identify the purpose of the stash when you later list or apply stashes.
-
-```{zsh, filename="Code"}
-git stash -m "feature X WIP"
-```
-
-You should get an output similar to:
-
-```{zsh, filename="Output"}
-#| code-copy: false
-Saved working directory and index state On feature: "feature X WIP"
-```
-
-You can now use `git status` to look at your working directory again and should see an output similar to:
-
-```{zsh, filename="Output"}
-#| code-copy: false
-On branch main
-nothing to commit, working directory clean
-```
-
-Now you can switch branches and work on something else or stop working on the project altogether.
-
-### Retrieving stashed changes
-
-To look at all your stored stashes, you can use `git stash list`:
-
-```{zsh, filename="Code"}
-git stash list
-```
-
-You should get an output similar to:
-
-```{zsh, filename="Output"}
-#| code-copy: false
-stash@{0}: On feature: feature X WIP
-```
-
-All of your stored stashes should show up, with the most recent on top.
-Every stash should have a number, applied chronologically.
-
-### Applying stashed changes
-
-If you want to reapply your stashed changes, you can use `git stash apply`. 
-This command automatically applies your latest stash.
-You can also specify a stored stash, for example `git stash apply stash@{0}`
-
-```{zsh, filename="Code"}
-git stash apply stash@{0}
-```
-
-You should get an output similar to:
-
-```{zsh, filename="Output"}
-#| code-copy: false
-On branch main
-Changes not staged for commit:
-  (use "git add <file>.. ." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   example.html
-	modified:   example.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
-
-The changes made in your stored stashed are now applied again in your working directory.
-Note that already staged files are not automatically staged again.
-
-::: {.callout-tip title="Common `git stash` flags" collapse="true"}
-`git stash -m "message"`:
-Save your changes in a stash with a message.
-
-`git stash apply stash@{n}`:
-Apply the changes from the specified stash (identified by its index `n`) to your working directory.
-
-`git stash pop stash@{n}`:
-Apply the changes from the specified stash (identified by its index `n`) to your working directory and remove the stash from the stash list.
-
-`git stash list`:
-List all the stashes you have created, showing their reference numbers and stash messages.
-
-`git stash drop stash@{n}`:
-Remove the specified stash (identified by its index `n`) from the stash list. 
-
-`git stash branch <branchname>`:
-Create a new branch named `<branchname>` from the commit where you originally stashed your changes and apply the stash to the new branch.
-
-`git stash show stash@{n}`: 
-Show the diff of the changes stored in the specified stash (identified by its index `n`).
-
-:::
-
-## Alternatives to standard merging
-
-### Cherrypicking
-
-`git cherry-pick` allows you to apply the changes from a specific commit from one branch to another. 
-This means, you can pick and apply specific commits to your current branch without merging the entire branch.
-This can be useful when you only want to bring in specific changes from another branch into your current branch, in contrast to merging all commits of a branch, as visualized in @fig-cherry-pick.
-You will need the hash of the commit you want to "cherry-pick" and then use the command:
-
-```{zsh, filename="Code"}
-git cherry-pick <commithash>
-```
-
-Again, you might have to resolve merge conflicts.
-The default commit message will be: 
-
-```{zsh, filename="Output"}
-#| code-copy: false
-Cherry-pick commit <commit-hash>
-This commit was cherry-picked from <source-branch> at <source-commit-hash>
-```
-
-![Image from [Blogpost "What IS git cherry-pick? "](https://dev.to/0xkoji/what-is-git-cherry-pick-3fka) by [0xkoji](https://dev.to/0xkoji)](../static/cherry-pick.png){#fig-cherry-pick}
-
-::: {.callout-tip title="Common `git cherry-pick` flags" collapse="true"}
-
-`-n` or `--no commit`:
-Prevents Git from automatically creating a new commit after cherry-picking.
-It stages the changes, allowing you to make additional modifications or review them before committing.
-
-`-e` or `--edit`: 
-Opens the default text editor to edit the commit message of the new cherry-picked commit.
-Useful when you want to provide a custom message for the cherry-picked commit.
-:::
-
-### Rebasing
-
-`git rebase` is a different way compared to a standard merge to integrate changes from one branch into another. 
-For example, when you rebase the `feature` branch onto the `main` branch you "rearrange" the commits. 
-It's like taking your changes, applying them on top of the latest `main` branch, and making it all look like a smooth line. 
-The new commits you made in the `feature` branch are still there, but they appear as if they were created after the latest changes in the `main` branch. 
-It's like picking up your changes and placing them on the latest code, resulting in a linear history.
-For an illustration, see @fig-rebasing.
-
-```{zsh, filename="Code"}
-git rebase main
-```
-
-However, you should use rebase with caution when collaborating with others, as it can rewrite commit history and create conflicts for team members.
-
-![Image from [Blogpost "Deep dive into Git Rebase"](https://dev.to/_mohanmurali/deep-dive-into-git-rebase-5b05) by [Mohan Murali](https://dev.to/_mohanmurali)](../static/rebasing.jpg){#fig-rebasing}
-
-::: {.callout-tip title="Common `git rebase` flags" collapse="true"}
-
-`--interactive` or `-i`:
-Start an interactive rebase, allowing you to edit, reorder, or squash commits interactively.
-
-`--continue`:
-Continue the rebase after resolving conflicts or editing commits during an interactive rebase.
-
-`--abort`:
-Abort the current rebase operation and return the branch to its original state before the rebase.
-
-`--skip`:
-Skip the current commit during an interactive rebase.
-
-`-p` or `--preserve-merges`:
-Preserve merge commits during the rebase.
-
-`--autosquash`: 
-Automatically squash commits marked with "squash" or "fixup" in their commit message during an interactive rebase.
+The following chapter will dive into more advanced Git commands that become relevant once you start using branches more extensively.
+If you're just learning about branches and the commands above worked without any problems, feel free to skip the next chapter for now.
 :::
 
 ## Acknowledgements & further reading
@@ -770,7 +604,7 @@ We recommend these references for further reading:
 #| message: false
 #| warning: false
 #| output: asis
-bibtexkeys = c("GitHub2023", "chacon2014", "community2022", "amin2023")
+bibtexkeys = c("GitHub2023", "chacon2014", "community2022", "amin2023", "coderefinery2024")
 knitr::kable(ref_table(bibtexkeys), format = "markdown")
 ```
 

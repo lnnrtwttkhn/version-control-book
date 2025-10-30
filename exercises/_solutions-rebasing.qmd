@@ -1,0 +1,20 @@
+1. Navigate into the `recipes` repository using `cd` (or a similar path).
+1. Create a new branch called `feature/rebase-exercise` using `git branch`.
+1. Switch to the new branch using `git switch`.
+Alternatively, you could have also done the two last steps with one command using `git checkout -b feature/rebase-exercise`.
+1. Make any change to any of the files in your project directory.
+Here, we append the text `"New feature content"` to the file `feature.txt`.
+1. Stage your change using `git add <filename> `.
+1. Commit your changes using `git commit -m "commit message"`.
+1. Switch back to the `main` branch using `git switch`.
+1. Make any change to any of the files in your project directory.
+Here, we append `"Main branch content"` to a file named `main.txt`.
+This change simulates working on the `main` branch simultaneously.
+1. Stage your changes using `git add <filename> `.
+1. Commit your changes using `git commit -m "commit message"`.
+1. Switch back to the `feature` branch using `git switch feature/rebase-exercise`.
+1. Rebase the commit of the `feature/rebase-exercise` branch onto your `main` branch using `git rebase main`.
+1. Switch back to the `main` branch using `git switch main`.
+1. Verify that the commit from `feature/rebase-exercise` is now on top of the commits from `main` using `git log`.
+
+
