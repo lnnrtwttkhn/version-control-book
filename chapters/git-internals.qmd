@@ -1,0 +1,292 @@
+---
+image: ../static/
+categories: [advanced]
+abstract: |
+  How does Git work under the hood?
+engine: knitr
+execute:
+  eval: false
+---
+
+# Git internals
+ 
+::: {.callout-tip appearance="minimal"}
+<h5>Learning Objectives</h5>
+{{< include ../objectives/_objectives-git-internals.qmd >}}
+:::
+
+## Introduction
+
+Understanding the internal work of Git provides significant benefits for anyone managing projects with version control.
+This knowledge can e.g. lead to better control over project changes and more effective troubleshooting when issues arise. 
+By learning about the inner workings of Git, particularly the `.git` folder, you can gain a deeper understanding of how Git tracks changes and maintains the history of your work. 
+This understanding is not just for developers.
+Everybody can use these insights to manage their projects more effectively.
+
+The `.git` folder is the "heart" of any Git repository. 
+It contains all the metadata and object data that Git uses to manage and track your project versions. 
+By unterstanding its structure and contents, you can better understand how Git operate. 
+This chapter aims to clearly explain what is going on in the `.git` folder, making its structure and function more clear.
+
+Git's architecture is built around the concept of snapshots and content addressability. I
+nstead of storing differences between file versions, Git captures the state of the entire repository at each commit. 
+These snapshots are stored as objects in the `.git` directory, each identified by a unique SHA-1 `hash`. 
+This design ensures that every object is fixed and verifiable, allowing Git to quickly and reliably reconstruct the history of any project.
+
+By the end of this chapter, you will have a clearer understanding of how Git manages your project's history, enabling you to use Git more effectively and troubleshoot any issues with confidence.
+
+## `.git` folder
+
+The `.git` folder is the basis of any Git repository.
+When you initialize a Git repository using `git init`, this hidden folder is created inside your project. 
+It contains all the metadata and object data that Git needs to manage and track your project's versions.
+This data is stored in files and folders that you can normally open and view.
+If you use `ls -a` in your `.git` folder to show all files and folders in it, you should normally get the output:
+
+```{zsh, filename="Output"}
+config
+description
+HEAD
+hooks/
+info/
+objects/
+refs/
+```
+
+This chapter is going to explain the most relevant files and folders of these down below.
+
+### `config` file
+
+The config file within the .git directory is where Git stores 
+configuration settings (e.g. name, email...) specific to that repository, that are not set globally.
+The `config` file is organized in sections, each containing related configuration variables.
+For instance:
+
+```
+[user]: Contains the user's name and email.
+[core]: General settings, such as file modes.
+[remote "origin"]: Details about the default remote repository.
+
+```
+
+Instead of using `git config` you could also edit this file directly to make changes.
+
+### `HEAD` file
+
+The `HEAD` file in the `.git` folder points to the latest commit on the current branch you are working on. 
+Typically, `HEAD` contains a reference to the branch name, such as `ref: refs/heads/main`. 
+This means `HEAD` is pointing to the `main` branch.
+When you checkout a specific commit rather than a branch, `HEAD` is said to be in a "detached" state, pointing directly to that commit’s hash.
+
+You view the content of your own `HEAD` file simply navigate in your `.git` folder using `cd .git` and then use .... on Windows/`open HEAD` on Mac OS.
+This chapter is going to explain some of the file/folder´s content in detail down below.
+
+### `hooks` folder
+
+The `hooks` folder allows you to automate various tasks in your Git workflow. 
+Git hooks are scripts that are executed by specific events in the Git lifecycle, such as committing changes or pushing to a repository. 
+To create a hook you have to write a script inside a file in `.git/hooks`.
+Git uses predefined names for hook scripts. 
+You cannot choose arbitrary names; instead, you must use the names that Git recognizes for the various hooks. 
+Git hooks are typically written in bash, but can be in any programming language, provided the scripts are executable on your system. 
+
+::: {.callout-tip title="Example Hook script " collapse="false"}
+
+**Commit message hook**:
+
+This hook would run after a commit message is entered but before the commit is finalized.
+To ensure that Git recognizes it, you have to place it inside `.git/hooks` and name it: `commit-msg` (without any file ending)
+Hooks that run before a a commit message is input, can be useful for enforcing commit message standards.
+
+**Example:**
+
+```
+#!/bin/sh
+COMMIT_MSG_FILE=$1
+MSG=$(cat $COMMIT_MSG_FILE)
+if ! echo "$MSG" | grep -q "Reviewed"
+then
+  echo "Commit message must contain the word 'Reviewed'"
+  exit 1
+fi
+
+```
+
+The script ensures commit messages include the word "Reviewed".
+This could be useful in a workflow where commits need to be reviewed by another team member before they are accepted.
+It reads the commit message from a file provided as an argument and checks if the commit message contains the word "Reviewed".
+If the word is not found, it prints an error message and prevents the commit.
+
+
+There are many more ways to use hooks (e.g. pre-commit, pre-push etc..). 
+
+You can check out the [Git documentation about hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) for more information.
+:::
+
+### `info` folder
+
+The `info` folder within the `.git` directory contains information and configurations which manages it´s behavior.
+The two important files in this folder are the `exclude` file and the `refs` file.
+
+#### `exclude` file
+
+The `exclude` file allows you to specify file patterns to be ignored by Git, similar to a `.gitignore` file.
+The file is not intended to be committed to the repository, since it is located in the `.git` folder, which is saved locally in your system. 
+It is used to define ignore patterns that are specific to your local repository environment.
+The patterns defined in the `exclude` file are not shared with other collaborators, making it useful for ignoring files that are specific to your local development environment and should not affect others working on the same repository.
+To edit the `exclude` file, navigate to the info directory within your `.git` folder using `cd .git/info` and then open the exclude file with a text editor of your choice.
+The exclude file syntax follows the same rules as `.gitignore` files, enabling you to specify patterns for files and directories that Git should ignore.
+
+#### `refs` file
+
+The `refs` file within the info folder provides references to commits in the repository. 
+This file is part of Git's internal mechanism for keeping track of different branches and tags within the repository. 
+It contains pointers to the commit objects, helping Git manage the repository’s history and branching structure.
+
+E.g., in the repository of this book the `refs` file looks like this:
+
+```
+ad24067d74f0196bb2c07cb6389220d6c9217737	refs/heads/GUI
+a7049cab0d3092be2bcb16042ac782acd57e969c	refs/heads/README.md
+89a9f0a57297f5febe31b2b83f535f5717e735e5	refs/heads/branches_ss24
+334d7149901dff1cb44829d9017a9504eaf8c62d	refs/heads/chapter/git_internals
+460601f061240a2b536a7251aab1fd18fb816545	refs/heads/cheatsheet
+37904c94d20e843e12aac118a06a7a4d48ee71c2	refs/heads/cheatsheet_branches
+c7781e284971ea8e2c61c8366ed323c9d9a7d176	refs/heads/cli
+a7d83248280c708d14ce27ad840eaeaaa0796ff0	refs/heads/commonmistakes
+ed85342fef5e40d991f8dd67ef0a63f972c631f8	refs/heads/content/branches
+d01f7626e9a67a57778002b4d028b0c52b6cc10b	refs/heads/content/first_steps
+6c421e034c3354fa07f9e13c53df8e89bfc87cb6	refs/heads/content/setup
+d5a6080b59cfc924fb2c11b69941ecad3bd07437	refs/heads/contributing
+a5cd2f53e1ddfc467d280a766453092dcd898ce7	refs/heads/draft
+c662cdf6e838ab86f59483c12b68ba24d6598412	refs/heads/editexisting
+03156e5568ee8b1db4ccc67ee7d0116a17e34b48	refs/heads/editpreface
+```
+To view or edit the refs file, navigate to the info directory within your `.git` folder using `cd .git/info` and open the refs file with a text editor. 
+It is not recommended that you edit this file by hand, as incorrect modifications can lead to issues with the repository’s references and history.
+
+### `objects` folder
+
+The `objects` folder within the `.git` directory is a fundamental part of Git's internal storage  system. 
+This folder contains all the objects that Git uses to track the history and state of your repository. 
+
+When you explore the `objects` folder, you will see a series of subfolders, each named with two hexadecimal characters (e.g., d6, e9, fa). 
+These subfolders contain files whose names are the remaining 38 characters of a 40-character SHA-1 hash. 
+Each file represents a Git object, and the full 40-character hash is used as the unique identifier for the object.
+
+Whenever you create a new commit, Git calculates the SHA-1 hash for each object (blob, tree, commit, or tag) and stores it in the appropriate subfolder within the objects directory. 
+These objects are stored in a compressed format to save space. 
+The unique hash ensures that each object is stored only once, even if the same file or commit appears multiple times in the repository's history.
+For example, if you modify a file and commit the changes, Git creates a new blob for the modified file's contents, a new tree to reflect the updated directory structure, and a new commit object that points to the new tree. 
+All these objects are stored in the objects folder, and their SHA-1 hashes link them together.
+
+You can explore the contents of the objects folder by navigating to it using the command line (`cd .git/objects`) and listing its contents with `ls -a`. 
+However, it's important to note that the files within the objects folder are not human-readable in their raw form, as they are stored in a compressed and encoded format.
+
+Although you can inspect individual objects using Git commands (e.g., `git cat-file -p <hash>`), it is generally not necessary to interact with the objects folder directly.
+
+Understanding the objects folder can give you insight into how Git efficiently tracks and stores every change in your repository.
+Objects in Git fall into four main types:
+
+#### Blobs:
+A blob (binary large object) is used to store the contents of a file. 
+Blobs contain the raw data of a file but do not include any metadata like filenames or file modes. 
+Each unique version of a file in your repository is stored as a separate blob, identified by its SHA-1 hash.
+
+#### Trees:
+A tree object represents a directory and serves as a snapshot of the contents of a directory at a particular point in time. A tree contains references (hashes) to blobs (representing files) and other trees (representing subdirectories). This structure allows Git to represent the entire file hierarchy of a repository.
+
+#### Commits:
+A commit object is a snapshot of the entire repository at a specific point in time.
+It includes a reference to a tree object, metadata about the commit (such as the author, date, and commit message), and references to parent commits (if any).
+Commits are the building blocks of Git's history, linking together to form a directed acyclic graph (DAG).
+
+#### Tags:
+A tag object is used to mark a specific commit as significant, such as a release point (e.g., `v1.0`). 
+There are two types of tags in Git: lightweight tags (which are simply pointers to a commit) and annotated tags (which are full objects that can store metadata like the tagger's name and a message).
+
+
+## Practical Tips
+
+In this section, we will explore some practical tips for working with the `.git` folder. 
+These tips will help you maintain your repository's health, and troubleshoot common issues.
+
+### Inspect Objects
+
+Inspecting objects within the `.gi`t folder can provide  insights into how Git stores and manages your data. 
+it offers  commands to explore and examine the four different types of objects (blobs, trees, commits, and tags) that are stored in the objects directory.
+
+To inspect an object, you can use the `git cat-file command`.
+This command allows you to view the content of an object by specifying its type and SHA-1 hash.
+The `-p` flag in the git cat-file command stands for "pretty-print."
+When you use this flag, `git cat-file` outputs the content of the specified Git object in a human-readable form.
+
+```{zsh filename="Code"}
+git cat-file -p <object-hash>
+```
+
+### Garbage Collection
+
+Over time, your Git repository may accumulate unnecessary objects, such as unreachable commits, that can bloat the size of the `.git` folder. 
+Git includes a built-in mechanism called garbage collection to clean up these unused objects and optimize the repository's storage.
+You can trigger garbage collection manually using the following command:
+
+```{zsh filename="Code"}
+git gc
+```
+
+This command compresses file revisions to reduce storage space and removes objects that are no longer reachable from any branch or tag.
+Running `git gc` regularly helps keep your repository clean and ensures that it remains efficient as your project grows.+
+
+### Repairing `.git` folder
+
+In some cases, your Git repository might become corrupted or experience issues that prevent you from using it. Understanding how to repair the `.git` folder can help you recover from these situations without losing valuable data.
+
+#### Corrupted Objects
+
+The `git fsck` command checks the integrity of your repository and identifies corrupted objects. 
+If you encounter an error indicating that an object is corrupted, you can attempt to recover it by re-fetching it from a remote repository:
+
+```{zsh filename="Code"}
+git fetch --all
+git fsck --full
+```
+
+If the issue persists, consider recovering the object from another clone of the repository.
+
+#### Lost commits or branches
+
+If you accidentally delete a branch or commit, you can often recover it using Git's reflog:
+
+```{zsh filename="Code"}
+git reflog
+```
+
+This command shows a log of all changes made to `HEAD` and branches, allowing you to find the commit hash before the deletion.
+Once identified, you can restore the branch:
+
+```{zsh filename="Code"}
+git checkout -b <branch-name> <commit-hash>
+```
+
+By familiarizing yourself with these repair techniques, you can address and resolve issues that might otherwise hinder you working with Git.
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| output: asis
+bibtexkeys = c("GitHub2023", "chacon2014", "community2022", "amin2023")
+knitr::kable(ref_table(bibtexkeys), format = "markdown")
+```
+
+## Cheatsheet
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+knitr::kable(table_cheatsheet(name = "internals"), format = "markdown", row.names = FALSE)
+```
