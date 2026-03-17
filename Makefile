@@ -1,6 +1,6 @@
-STATIC_URL=https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download
-STATIC_ARCHIVE=version-control-book.zip
-STATIC_DIR=static/
+IMAGES_URL=https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download
+IMAGES_ARCHIVE=version-control-book.zip
+IMAGES_DIR=images/
 
 all: render
 
@@ -9,23 +9,23 @@ preview:
 	quarto preview
 
 .PHONY: render
-render: clean static
+render: clean images
 	quarto render
 	
 .PHONY: deploy
-deploy: clean static
+deploy: clean images
 	quarto publish gh-pages
 
 # download and extract images:
-.PHONY: static
-static:
-	curl -L $(STATIC_URL) -o $(STATIC_ARCHIVE)
-	unzip -j -o $(STATIC_ARCHIVE) -d $(STATIC_DIR)
-	rm -f $(STATIC_ARCHIVE)
+.PHONY: images
+images:
+	curl -L $(IMAGES_URL) -o $(IMAGES_ARCHIVE)
+	unzip -j -o $(IMAGES_ARCHIVE) -d $(IMAGES_DIR)
+	rm -f $(IMAGES_ARCHIVE)
 
 .PHONY: clean
 clean:
-	rm -rf $(STATIC_DIR)* _book/
+	rm -rf $(IMAGES_DIR)* _book/
 	
 .PHONY: exercises
 exercises:
