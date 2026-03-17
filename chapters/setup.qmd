@@ -12,6 +12,39 @@ abstract: |
 {{< include ../objectives/_objectives-setup.qmd >}}
 :::
 
+::: {.callout-warning title="Learning Git through RStudio? Create an RStudio project first!" collapse="true"}
+
+An RStudio project is a folder that contains all files related to your analysis, such as code, data, and documentation.
+It serves as a complete research object, making your work organized and reproducible.
+
+To create a new project in RStudio:
+
+1. Go to **File** → **New Project** → **New Directory**.
+
+	![](../images/rstudio-new-directory.png){#fig-rstudio-new-directory}
+
+1. In the **Project Type** screen, select **New Project**.
+
+	![](../images/rstudio-new-project.png){#fig-rstudio-new-project}
+
+1. In the **Create New Project** screen, enter a project name (e.g., `my-project`).
+Make sure **Create a git repository** is checked.
+Click **Create Project**.
+
+	![](../images/rstudio-create-new-project.png){#fig-rstudio-create-new-project}
+
+RStudio will create a new folder for your project and set R's working directory to that location.
+You will see two files in the new project folder:
+
+![](../images/rstudio-git-files.png){#fig-rstudio-git-files}
+
+- **.gitignore** – Lists files and folders that Git should ignore (for example, sensitive data or files that do not need version control).
+See [`.gitignore` configuration](git-essentials.qmd#ignoring-files-and-folders-.gitignore) for more details.
+- **my-project.Rproj** – Stores configuration information for the RStudio project.
+
+Don't worry about these files for now.
+:::
+
 ## Configuring Git
 
 Once you [installed Git](installation.qmd), it's time to set it up.
