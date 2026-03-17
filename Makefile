@@ -1,4 +1,4 @@
-IMAGES_URL=https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download
+IMAGES_URL=https://nx81903.your-storageshare.de/s/PfSwyibwJmpWtaJ/download
 IMAGES_ARCHIVE=version-control-book.zip
 IMAGES_DIR=images/
 
