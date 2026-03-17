@@ -415,7 +415,7 @@ git status # <1>
 ### Background
 
 Images are stored in a [NextCloud folder]({{< var links.nextcloud >}}).
-They are downloaded into the `/static` folder using the command specified in the `Makefile`.
+They are downloaded into the `/images` folder using the command specified in the `Makefile`.
 
 ### Installation
 
@@ -463,7 +463,7 @@ TBA
 After you installed all the required software, run this command:
 
 ```{bash}
-make static
+make images
 ```
 
 ::: {.callout-tip title="What's a Makefile and what does it do?" collapse="true"}
@@ -484,13 +484,13 @@ Please use `-` to separate word in the filename.
 1. Reference the image in the Quarto document relative to the root of the project directory:
 
 ```{markdown}
-![](static/NEW-IMAGE.png)
+![](images/NEW-IMAGE.png)
 ```
 
 ### Download images in pre-render command
 
-It's also possible to include the `make static` as a project script in the `pre-render` script.
-This would re-execute `make static` before every render.
+It's also possible to include the `make images` as a project script in the `pre-render` script.
+This would re-execute `make images` before every render.
 For the moment, we disabled this option, but it can be enabled in `_quarto.yml`.
 
 ## Variables {#sec-variables}
@@ -517,7 +517,7 @@ Variables can be either simple values or can include arbitrary Markdown content.
 </details>
 
 The `var` shortcode then allows to include references to those variables within any document in this project.
-For example, to include the link to the Nextcloud folder that stores static contents (images etc.) as a variable in a document, use `{{{< var links.nextcloud >}}}`.
+For example, to include the link to the Nextcloud folder that stores images contents (images etc.) as a variable in a document, use `{{{< var links.nextcloud >}}}`.
 
 For more details on variables, read the chapter on [Variables](https://quarto.org/docs/authoring/variables.html) in the Quarto documentation. 
 

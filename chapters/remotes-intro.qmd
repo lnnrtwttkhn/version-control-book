@@ -1,6 +1,6 @@
 ---
 categories: [intermediate, remotes, github, gitlab]
-image: ../static/githubchapter.png
+image: ../images/githubchapter.png
 abstract: |
   This chapter will introduce you to **remote repositories**.
   These are versions of your Git repository that are hosted on a server, in particular using popular platforms like GitHub and GitLab.
@@ -44,7 +44,7 @@ If a contributor's computer fails or their files get corrupted, they can always 
 This ensures that the project's progress is not dependent on a single person's computer.
 @fig-git-in-case-of-fire jokingly illustrates this point.
 
-!["In case of fire" by [Louis-Michel Couture](https://github.com/louim) (License: [MIT](https://github.com/louim/in-case-of-fire/blob/master/LICENSE); [Source on GitHub](https://github.com/louim/in-case-of-fire))](../static/git-in-case-of-fire){#fig-git-in-case-of-fire width="60%"}
+!["In case of fire" by [Louis-Michel Couture](https://github.com/louim) (License: [MIT](https://github.com/louim/in-case-of-fire/blob/master/LICENSE); [Source on GitHub](https://github.com/louim/in-case-of-fire))](../images/git-in-case-of-fire){#fig-git-in-case-of-fire width="60%"}
 
 ## Creating an account
 
@@ -152,7 +152,7 @@ Your **private key is the actual key** that opens those padlocks.
 You keep it safe and never share it.
 As long as your key stays secure, it doesn't matter how many padlocks you've distributed.
 
-!["Understanding public key private key concepts" by [Blake Smith](https://blakesmith.me/) (License: Unknown; [Source on GitHub](https://blakesmith.me/2010/02/08/understanding-public-key-private-key-concepts.html))](../static/ssh-key-public-private.png){#fig-ssh-key-public-private width="60%"}
+!["Understanding public key private key concepts" by [Blake Smith](https://blakesmith.me/) (License: Unknown; [Source on GitHub](https://blakesmith.me/2010/02/08/understanding-public-key-private-key-concepts.html))](../images/ssh-key-public-private.png){#fig-ssh-key-public-private width="60%"}
 
 When you try to connect to a server, SSH checks if the padlock (public key) on that server matches your key.
 If they match, the door opens.
@@ -366,7 +366,7 @@ If you use Git Bash on Windows, your terminal will open a window where you can c
 
 {{< include ../faq/_pat-no-show.qmd >}}
 
-![Screenshot of the personal access token settings](../static/github-pat.png){#fig-pat}
+![Screenshot of the personal access token settings](../images/github-pat.png){#fig-pat}
 
 ::: {.callout-tip title="Find out more: More details about PAT settings" collapse="true"}
 **Expiration Date:**
@@ -448,7 +448,7 @@ If you have admin permissions for a repository, you can change its visibility.
 This means you can later still make a public repository private and private repository public, if needed.
 :::
 
-![Screenshot of creating a new repository on GitHub](../static/github-newrepository.png){#fig-newrepo}
+![Screenshot of creating a new repository on GitHub](../images/github-newrepository.png){#fig-newrepo}
 
 #### Repository settings
 
@@ -763,7 +763,7 @@ Cloning is commonly used when you want to contribute to a project or work on it 
 To clone a repository, you need the repository's URL from the relevant repository hosting service.
 You can find the repository's HTTPS or SSH URL on the repository page, if you click on the green **Code** button (see @fig-github-https-url-clone-cli).
 
-![Cloning a repository from GitHub (License: [CC BY 4.0](https://github.com/github/docs/blob/main/LICENSE)](../static/github-https-url-clone-cli.png){#fig-github-https-url-clone-cli width="50%"}
+![Cloning a repository from GitHub (License: [CC BY 4.0](https://github.com/github/docs/blob/main/LICENSE)](../images/github-https-url-clone-cli.png){#fig-github-https-url-clone-cli width="50%"}
 
 Then use the command line to navigate to the directory where you want to clone the repository ^[:bulb: Tip: Use `cd` (details [here](command-line.qmd#moving-between-folders))].
 Finally, use the `git clone` command followed by the URL of the remote repository:
