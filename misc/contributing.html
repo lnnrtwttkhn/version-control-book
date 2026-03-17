@@ -84,7 +84,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../misc/acknowledgements.html" rel="prev">
-<link href="../static/logo.svg" rel="icon" type="image/svg+xml">
+<link href="../images/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -153,7 +153,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../static/logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../images/logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control Book</a> 
@@ -544,7 +544,7 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <span id="cb4-22"><a href="#cb4-22"></a>  <span class="ex">repo-branch:</span> main</span>
 <span id="cb4-23"><a href="#cb4-23"></a>  <span class="ex">repo-actions:</span> [edit, issue, source]</span>
 <span id="cb4-24"><a href="#cb4-24"></a>  <span class="co"># downloads: [pdf, epub]</span></span>
-<span id="cb4-25"><a href="#cb4-25"></a>  <span class="ex">favicon:</span> static/logo.svg</span>
+<span id="cb4-25"><a href="#cb4-25"></a>  <span class="ex">favicon:</span> images/logo.svg</span>
 <span id="cb4-26"><a href="#cb4-26"></a>  <span class="ex">twitter-card:</span> false</span>
 <span id="cb4-27"><a href="#cb4-27"></a>  <span class="ex">site-url:</span> https://lennartwittkuhn.com/version-control-book</span>
 <span id="cb4-28"><a href="#cb4-28"></a>  <span class="ex">chapters:</span></span>
@@ -581,7 +581,7 @@ Click here to view the full <code>_quarto.yml</code> file of this project.
 <span id="cb4-59"><a href="#cb4-59"></a>  <span class="ex">sidebar:</span></span>
 <span id="cb4-60"><a href="#cb4-60"></a>    <span class="ex">id:</span> sidebar</span>
 <span id="cb4-61"><a href="#cb4-61"></a>    <span class="ex">title:</span> <span class="st">"{{&lt; var project.title &gt;}}"</span></span>
-<span id="cb4-62"><a href="#cb4-62"></a>    <span class="ex">logo:</span> static/logo.svg</span>
+<span id="cb4-62"><a href="#cb4-62"></a>    <span class="ex">logo:</span> images/logo.svg</span>
 <span id="cb4-63"><a href="#cb4-63"></a>    <span class="ex">search:</span> true</span>
 <span id="cb4-64"><a href="#cb4-64"></a>    <span class="ex">tools:</span></span>
 <span id="cb4-65"><a href="#cb4-65"></a>      <span class="ex">-</span> icon: globe</span>
@@ -1923,7 +1923,7 @@ Click here for the output of this example.
 <h2 class="anchored" data-anchor-id="sec-images">Images</h2>
 <section id="background" class="level3">
 <h3 class="anchored" data-anchor-id="background">Background</h3>
-<p>Images are stored in a <a href="https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT">NextCloud folder</a>. They are downloaded into the <code>/static</code> folder using the command specified in the <code>Makefile</code>.</p>
+<p>Images are stored in a <a href="https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT">NextCloud folder</a>. They are downloaded into the <code>/images</code> folder using the command specified in the <code>Makefile</code>.</p>
 </section>
 <section id="installation" class="level3">
 <h3 class="anchored" data-anchor-id="installation">Installation</h3>
@@ -1966,7 +1966,7 @@ Click here for the output of this example.
 <h3 class="anchored" data-anchor-id="retrieve-images">Retrieve images</h3>
 <p>After you installed all the required software, run this command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> static</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> images</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What's a Makefile and what does it do?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -1985,9 +1985,9 @@ What’s a Makefile and what does it do?
 <div class="code-with-filename-file">
 <pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="va">STATIC_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="va">STATIC_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="va">STATIC_DIR</span><span class="op">=</span>static/</span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="va">IMAGES_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="va">IMAGES_DIR</span><span class="op">=</span>images/</span>
 <span id="cb23-4"><a href="#cb23-4"></a></span>
 <span id="cb23-5"><a href="#cb23-5"></a><span class="ex">all:</span> render</span>
 <span id="cb23-6"><a href="#cb23-6"></a></span>
@@ -1996,23 +1996,23 @@ What’s a Makefile and what does it do?
 <span id="cb23-9"><a href="#cb23-9"></a>    <span class="ex">quarto</span> preview</span>
 <span id="cb23-10"><a href="#cb23-10"></a></span>
 <span id="cb23-11"><a href="#cb23-11"></a><span class="ex">.PHONY:</span> render</span>
-<span id="cb23-12"><a href="#cb23-12"></a><span class="ex">render:</span> clean static</span>
+<span id="cb23-12"><a href="#cb23-12"></a><span class="ex">render:</span> clean images</span>
 <span id="cb23-13"><a href="#cb23-13"></a>    <span class="ex">quarto</span> render</span>
 <span id="cb23-14"><a href="#cb23-14"></a>    </span>
 <span id="cb23-15"><a href="#cb23-15"></a><span class="ex">.PHONY:</span> deploy</span>
-<span id="cb23-16"><a href="#cb23-16"></a><span class="ex">deploy:</span> clean static</span>
+<span id="cb23-16"><a href="#cb23-16"></a><span class="ex">deploy:</span> clean images</span>
 <span id="cb23-17"><a href="#cb23-17"></a>    <span class="ex">quarto</span> publish gh-pages</span>
 <span id="cb23-18"><a href="#cb23-18"></a></span>
 <span id="cb23-19"><a href="#cb23-19"></a><span class="co"># download and extract images:</span></span>
-<span id="cb23-20"><a href="#cb23-20"></a><span class="ex">.PHONY:</span> static</span>
-<span id="cb23-21"><a href="#cb23-21"></a><span class="ex">static:</span></span>
-<span id="cb23-22"><a href="#cb23-22"></a>    <span class="ex">curl</span> <span class="at">-L</span> <span class="va">$(</span><span class="ex">STATIC_URL</span><span class="va">)</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span></span>
-<span id="cb23-23"><a href="#cb23-23"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">STATIC_DIR</span><span class="va">)</span></span>
-<span id="cb23-24"><a href="#cb23-24"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb23-20"><a href="#cb23-20"></a><span class="ex">.PHONY:</span> images</span>
+<span id="cb23-21"><a href="#cb23-21"></a><span class="ex">images:</span></span>
+<span id="cb23-22"><a href="#cb23-22"></a>    <span class="ex">curl</span> <span class="at">-L</span> <span class="va">$(</span><span class="ex">IMAGES_URL</span><span class="va">)</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb23-23"><a href="#cb23-23"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span></span>
+<span id="cb23-24"><a href="#cb23-24"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
 <span id="cb23-25"><a href="#cb23-25"></a></span>
 <span id="cb23-26"><a href="#cb23-26"></a><span class="ex">.PHONY:</span> clean</span>
 <span id="cb23-27"><a href="#cb23-27"></a><span class="ex">clean:</span></span>
-<span id="cb23-28"><a href="#cb23-28"></a>    <span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$(</span><span class="ex">STATIC_DIR</span><span class="va">)</span><span class="pp">*</span> _book/</span>
+<span id="cb23-28"><a href="#cb23-28"></a>    <span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span><span class="pp">*</span> _book/</span>
 <span id="cb23-29"><a href="#cb23-29"></a>    </span>
 <span id="cb23-30"><a href="#cb23-30"></a><span class="ex">.PHONY:</span> exercises</span>
 <span id="cb23-31"><a href="#cb23-31"></a><span class="ex">exercises:</span></span>
@@ -2032,12 +2032,12 @@ What’s a Makefile and what does it do?
 <li>Reference the image in the Quarto document relative to the root of the project directory:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](static/NEW-IMAGE.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/NEW-IMAGE.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="download-images-in-pre-render-command" class="level3">
 <h3 class="anchored" data-anchor-id="download-images-in-pre-render-command">Download images in pre-render command</h3>
-<p>It’s also possible to include the <code>make static</code> as a project script in the <code>pre-render</code> script. This would re-execute <code>make static</code> before every render. For the moment, we disabled this option, but it can be enabled in <code>_quarto.yml</code>.</p>
+<p>It’s also possible to include the <code>make images</code> as a project script in the <code>pre-render</code> script. This would re-execute <code>make images</code> before every render. For the moment, we disabled this option, but it can be enabled in <code>_quarto.yml</code>.</p>
 </section>
 </section>
 <section id="sec-variables" class="level2">
@@ -2132,7 +2132,7 @@ Click here to view the full <code>_variables.yml</code> file of this project.
 </div>
 </div>
 </details>
-<p>The <code>var</code> shortcode then allows to include references to those variables within any document in this project. For example, to include the link to the Nextcloud folder that stores static contents (images etc.) as a variable in a document, use <code>{{&lt; var links.nextcloud &gt;}}</code>.</p>
+<p>The <code>var</code> shortcode then allows to include references to those variables within any document in this project. For example, to include the link to the Nextcloud folder that stores images contents (images etc.) as a variable in a document, use <code>{{&lt; var links.nextcloud &gt;}}</code>.</p>
 <p>For more details on variables, read the chapter on <a href="https://quarto.org/docs/authoring/variables.html">Variables</a> in the Quarto documentation.</p>
 </section>
 <section id="sec-icons" class="level2">

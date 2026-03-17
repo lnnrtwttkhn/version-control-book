@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../misc/contributing.html" rel="next">
 <link href="../misc/references.html" rel="prev">
-<link href="../static/logo.svg" rel="icon" type="image/svg+xml">
+<link href="../images/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -134,7 +134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../static/logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../images/logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Version Control Book</a> 
@@ -368,9 +368,9 @@ Click here to view the full <code>Makefile</code> of this project.
 <div class="code-with-filename-file">
 <pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="va">STATIC_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="va">STATIC_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="va">STATIC_DIR</span><span class="op">=</span>static/</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="va">IMAGES_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="va">IMAGES_DIR</span><span class="op">=</span>images/</span>
 <span id="cb2-4"><a href="#cb2-4"></a></span>
 <span id="cb2-5"><a href="#cb2-5"></a><span class="ex">all:</span> render</span>
 <span id="cb2-6"><a href="#cb2-6"></a></span>
@@ -379,23 +379,23 @@ Click here to view the full <code>Makefile</code> of this project.
 <span id="cb2-9"><a href="#cb2-9"></a>    <span class="ex">quarto</span> preview</span>
 <span id="cb2-10"><a href="#cb2-10"></a></span>
 <span id="cb2-11"><a href="#cb2-11"></a><span class="ex">.PHONY:</span> render</span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="ex">render:</span> clean static</span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="ex">render:</span> clean images</span>
 <span id="cb2-13"><a href="#cb2-13"></a>    <span class="ex">quarto</span> render</span>
 <span id="cb2-14"><a href="#cb2-14"></a>    </span>
 <span id="cb2-15"><a href="#cb2-15"></a><span class="ex">.PHONY:</span> deploy</span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="ex">deploy:</span> clean static</span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="ex">deploy:</span> clean images</span>
 <span id="cb2-17"><a href="#cb2-17"></a>    <span class="ex">quarto</span> publish gh-pages</span>
 <span id="cb2-18"><a href="#cb2-18"></a></span>
 <span id="cb2-19"><a href="#cb2-19"></a><span class="co"># download and extract images:</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="ex">.PHONY:</span> static</span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="ex">static:</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a>    <span class="ex">curl</span> <span class="at">-L</span> <span class="va">$(</span><span class="ex">STATIC_URL</span><span class="va">)</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">STATIC_DIR</span><span class="va">)</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">STATIC_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="ex">.PHONY:</span> images</span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="ex">images:</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a>    <span class="ex">curl</span> <span class="at">-L</span> <span class="va">$(</span><span class="ex">IMAGES_URL</span><span class="va">)</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a>    <span class="fu">unzip</span> <span class="at">-j</span> <span class="at">-o</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span> <span class="at">-d</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a>    <span class="fu">rm</span> <span class="at">-f</span> <span class="va">$(</span><span class="ex">IMAGES_ARCHIVE</span><span class="va">)</span></span>
 <span id="cb2-25"><a href="#cb2-25"></a></span>
 <span id="cb2-26"><a href="#cb2-26"></a><span class="ex">.PHONY:</span> clean</span>
 <span id="cb2-27"><a href="#cb2-27"></a><span class="ex">clean:</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>    <span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$(</span><span class="ex">STATIC_DIR</span><span class="va">)</span><span class="pp">*</span> _book/</span>
+<span id="cb2-28"><a href="#cb2-28"></a>    <span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$(</span><span class="ex">IMAGES_DIR</span><span class="va">)</span><span class="pp">*</span> _book/</span>
 <span id="cb2-29"><a href="#cb2-29"></a>    </span>
 <span id="cb2-30"><a href="#cb2-30"></a><span class="ex">.PHONY:</span> exercises</span>
 <span id="cb2-31"><a href="#cb2-31"></a><span class="ex">exercises:</span></span>
