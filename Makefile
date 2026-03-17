@@ -30,3 +30,8 @@ clean:
 .PHONY: exercises
 exercises:
 	sh code/code-exercises.sh
+	
+.PHONY: docker-rstudio
+docker-rstudio:
+	docker run --rm -p 8787:8787 -e PASSWORD=password rocker/rstudio:4.5.1
+	open http://localhost:8787/
