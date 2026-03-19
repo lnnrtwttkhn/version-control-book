@@ -404,6 +404,70 @@ Learning Objectives
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Learning Git through RStudio? Create an RStudio project first!">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Git through RStudio? Create an RStudio project first!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>An RStudio project is a folder that contains all files related to your analysis, such as code, data, and documentation. It serves as a complete research object, making your work organized and reproducible.</p>
+<p>To create a new project in RStudio:</p>
+<ol type="1">
+<li><p>Go to <strong>File</strong> → <strong>New Project</strong> → <strong>New Directory</strong>.</p>
+<div id="fig-rstudio-new-directory" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-new-directory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-new-directory.png" id="fig-rstudio-new-directory" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-rstudio-new-directory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div></li>
+<li><p>In the <strong>Project Type</strong> screen, select <strong>New Project</strong>.</p>
+<div id="fig-rstudio-new-project" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-new-project.png" id="fig-rstudio-new-project" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-rstudio-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div></li>
+<li><p>In the <strong>Create New Project</strong> screen, enter a project name (e.g., <code>my-project</code>). Make sure <strong>Create a git repository</strong> is checked. Click <strong>Create Project</strong>.</p>
+<div id="fig-rstudio-create-new-project" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-create-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-create-new-project.png" id="fig-rstudio-create-new-project" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-rstudio-create-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div></li>
+</ol>
+<p>RStudio will create a new folder for your project and set R’s working directory to that location. You will see two files in the new project folder:</p>
+<div id="fig-rstudio-git-files" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-git-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-git-files.png" id="fig-rstudio-git-files" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-rstudio-git-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>.gitignore</strong> – Lists files and folders that Git should ignore (for example, sensitive data or files that do not need version control). See <a href="../chapters/git-essentials.html#ignoring-files-and-folders-.gitignore"><code>.gitignore</code> configuration</a> for more details.</li>
+<li><strong>my-project.Rproj</strong> – Stores configuration information for the RStudio project.</li>
+</ul>
+<p>Don’t worry about these files for now.</p>
+</div>
+</div>
+</div>
 <section id="configuring-git" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="configuring-git"><span class="header-section-number">4.1</span> Configuring Git</h2>
 <p>Once you <a href="../chapters/installation.html">installed Git</a>, it’s time to set it up. We will use the the <a href="../chapters/command-line.html">command line</a> to set up and configure Git. The <code>git config</code> command is used to get and set configuration settings. It allows you to customize Git according to your preferences and requirements. This chapter will focus on the most important and necessary configurations. To look at all the different configuration options, enter <code>git config</code> into the command line:</p>
@@ -417,7 +481,7 @@ Learning Objectives
 </div>
 <p>In Git, configuration values can be stored at three different configuration levels: the <em>system</em>, <em>global</em>, and <em>local</em> level. Find out more in <a href="#tip-config-levels" class="quarto-xref">Tip&nbsp;<span>4.1</span></a> how you can set configuration values at each level.</p>
 <div id="tip-config-levels" class="callout callout-style-default callout-tip callout-titled" title="What are the different Git configuration levels?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -426,7 +490,7 @@ Tip&nbsp;4.1: What are the different Git configuration levels?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Git configuration values can be stored at <strong>three different configuration levels</strong>:</p>
 <p><strong>System-level configuration</strong>: This level applies configuration values to every user on the system and all their repositories. To read or write configuration values at this level, you need administrative privileges. To set a system-level configuration, use the following command syntax:</p>
@@ -461,7 +525,7 @@ Tip&nbsp;4.1: What are the different Git configuration levels?
 </div>
 </div>
 <div id="tip-git-bash-copy-paste" class="callout callout-style-default callout-tip callout-titled" title="Windows users: How to enable copy and paste in Git Bash?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -470,7 +534,7 @@ Tip&nbsp;4.2: Windows users: How to enable copy and paste in Git Bash?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>By default, copy and pasting is disabled in Git Bash for Windows. To enable it, follow these steps:</p>
 <ol type="1">
@@ -485,7 +549,7 @@ Tip&nbsp;4.2: Windows users: How to enable copy and paste in Git Bash?
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="identifying-yourself"><span class="header-section-number">4.1.1</span> Identifying yourself</h3>
 <p>Before you start using Git, it’s important to set your username and email address. This information is crucial because Git uses it to identify the author of each change you track with Git. By associating your changes with your username and email, it allows others (including future you) to see who made the changes which facilitates transparency and collaboration within a project. You will be able to connect Git to remote repositories like GitHub using this email address. So it makes sense to set your email address to the one you use (or will use) to create a GitHub account.</p>
 <div id="tip-setup-username" class="callout callout-style-default callout-tip callout-titled" title="Which username should I use for Git?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -494,7 +558,7 @@ Tip&nbsp;4.3: Which username should I use for Git?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Your username will be attached to the changes you track with Git, so <strong>choose something that is meaningful and informative</strong> for others and yourself in the future. After all, one main purpose of Git is to be able to track of <em>who</em> made which changes and when. This can help a lot in the future when you need to figure out who to talk to about a particular change. Your username can be your <strong>real name</strong>, your <strong>GitHub username</strong>, or something informative about you. You can change your username and email address for different projects by setting them up on the respective configuration level (for details, see <a href="#tip-config-levels" class="quarto-xref">Tip&nbsp;<span>4.1</span></a>). This can be useful if you have a work related and a private GitHub account or work for several companies at the same time.</p>
 </div>
@@ -650,7 +714,7 @@ Important: Consider your privacy preferences!
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="FAQ: I entered `vim` without providing a filename like `filename.txt`? What do I do now?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -659,7 +723,7 @@ FAQ: I entered <code>vim</code> without providing a filename like <code>filename
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you entered <code>vim</code> into the command line without providing a filename, a welcome screen similar to the following will appear:</p>
 <div class="cell" data-code-copy="false">
@@ -707,7 +771,7 @@ FAQ: I entered <code>vim</code> without providing a filename like <code>filename
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Error: `E37: No write since last change (add ! to override)`">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -716,7 +780,7 @@ Error: <code>E37: No write since last change (add ! to override)</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This error might occur if you made changes to a file using Vim and tried to exit Vim using <code>:q</code> but didn’t use <code>:w</code> before to save the changes. Vim therefore warns you that you didn’t “write since last change”:</p>
 <div class="cell" data-code-copy="false">
@@ -747,7 +811,7 @@ Error: <code>E37: No write since last change (add ! to override)</code>
 </div>
 <p>For a more detailed and interactive tutorial of Vim, you can check out <a href="https://www.openvim.com">openvim.com</a>. For more information about common Vim commands, also see the box below.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Find out more: Vim commands">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -756,7 +820,7 @@ Find out more: Vim commands
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To navigate through the text in Normal mode without using the arrow keys, you can use <code>h</code> to move left, <code>j</code> to move down, <code>k</code> to move up, and <code>l</code> to move right. If you need to delete a character in <em>Normal mode</em>, simply press <code>x</code>. This will remove the character under the cursor. To delete an entire line, use <code>dd</code>.</p>
 <p>Undoing changes is also straightforward in Vim. Press <code>u</code> in Normal mode to undo the last action, and <code>Ctrl + r</code> to redo an action if you’ve undone too much.</p>
@@ -816,7 +880,7 @@ Find out more: Vim commands
 <h2 data-number="4.6" class="anchored" data-anchor-id="the-.gitconfig-file"><span class="header-section-number">4.6</span> The <code>.gitconfig</code> file</h2>
 <p>The configurations that you apply to Git using the <code>git config</code> command are stored in a configuration file called <code>.gitconfig</code> that can usually be found in the user’s home directory.</p>
 <div class="callout callout-style-default callout-caution callout-titled" title="Mini Exercise: View the contents of `.gitconfig` with one command from the command line.">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -825,7 +889,7 @@ Mini Exercise: View the contents of <code>.gitconfig</code> with one command fro
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>As always, there are multiple ways how to view the contents of <code>.gitconfig</code> with one command from the command line. Here is one example using the <code>cat</code> command in combination with the <code>~</code>:</p>
 <div class="cell">
@@ -896,7 +960,7 @@ Mini Exercise: View the contents of <code>.gitconfig</code> with one command fro
 </div>
 <p>This way, you are protected from accidentally creating a Git repository in your home directory.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Recommendation: Use this guardrail *shortly before* you create your first Git repository">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -905,7 +969,7 @@ Recommendation: Use this guardrail <em>shortly before</em> you create your first
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When you implement this guardrail but haven’t created your first Git repository yet, commands like <code>git config</code> will stop working as expected. To prevent this, we recommend the following procedure:</p>
 <ol type="1">
@@ -918,7 +982,7 @@ Recommendation: Use this guardrail <em>shortly before</em> you create your first
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled" title="Potential interference with other applications (like Psychopy or DataLad)">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -927,7 +991,7 @@ Potential interference with other applications (like Psychopy or DataLad)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Note that some applications on your computer (like <a href="https://www.psychopy.org/">PsychoPy</a> and <a href="https://www.datalad.org/">DataLad</a>) will scan your directory hierarchy for existing Git repositories and display an error message when they detect the empty <code>.git</code> file you may have set up as a guardrail. In this situation, we recommend simply removing the empty <code>.git</code> file in your home directory (and possibly re-creating it after you set up your project in the other application). Remember that this is intended as a <em>helpful</em> guardrail and provides extra protection against accidentally creating a Git repository in your home directory. However, if it proves more annoying than helpful, feel free to remove it.</p>
 </div>

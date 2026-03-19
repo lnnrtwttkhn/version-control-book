@@ -1985,7 +1985,7 @@ What’s a Makefile and what does it do?
 <div class="code-with-filename-file">
 <pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://nx81903.your-storageshare.de/s/PfSwyibwJmpWtaJ/download</span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="va">IMAGES_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
 <span id="cb23-3"><a href="#cb23-3"></a><span class="va">IMAGES_DIR</span><span class="op">=</span>images/</span>
 <span id="cb23-4"><a href="#cb23-4"></a></span>
@@ -2016,7 +2016,12 @@ What’s a Makefile and what does it do?
 <span id="cb23-29"><a href="#cb23-29"></a>    </span>
 <span id="cb23-30"><a href="#cb23-30"></a><span class="ex">.PHONY:</span> exercises</span>
 <span id="cb23-31"><a href="#cb23-31"></a><span class="ex">exercises:</span></span>
-<span id="cb23-32"><a href="#cb23-32"></a>    <span class="fu">sh</span> code/code-exercises.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-32"><a href="#cb23-32"></a>    <span class="fu">sh</span> code/code-exercises.sh</span>
+<span id="cb23-33"><a href="#cb23-33"></a>    </span>
+<span id="cb23-34"><a href="#cb23-34"></a><span class="ex">.PHONY:</span> docker-rstudio</span>
+<span id="cb23-35"><a href="#cb23-35"></a><span class="ex">docker-rstudio:</span></span>
+<span id="cb23-36"><a href="#cb23-36"></a>    <span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-p</span> 8787:8787 <span class="at">-e</span> PASSWORD=password rocker/rstudio:4.5.1</span>
+<span id="cb23-37"><a href="#cb23-37"></a>    <span class="ex">open</span> http://localhost:8787/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

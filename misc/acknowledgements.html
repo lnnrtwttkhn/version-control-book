@@ -368,7 +368,7 @@ Click here to view the full <code>Makefile</code> of this project.
 <div class="code-with-filename-file">
 <pre><strong>Makefile</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="va">IMAGES_URL</span><span class="op">=</span>https://nx81903.your-storageshare.de/s/PfSwyibwJmpWtaJ/download</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="va">IMAGES_ARCHIVE</span><span class="op">=</span>version-control-book.zip</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="va">IMAGES_DIR</span><span class="op">=</span>images/</span>
 <span id="cb2-4"><a href="#cb2-4"></a></span>
@@ -399,7 +399,12 @@ Click here to view the full <code>Makefile</code> of this project.
 <span id="cb2-29"><a href="#cb2-29"></a>    </span>
 <span id="cb2-30"><a href="#cb2-30"></a><span class="ex">.PHONY:</span> exercises</span>
 <span id="cb2-31"><a href="#cb2-31"></a><span class="ex">exercises:</span></span>
-<span id="cb2-32"><a href="#cb2-32"></a>    <span class="fu">sh</span> code/code-exercises.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-32"><a href="#cb2-32"></a>    <span class="fu">sh</span> code/code-exercises.sh</span>
+<span id="cb2-33"><a href="#cb2-33"></a>    </span>
+<span id="cb2-34"><a href="#cb2-34"></a><span class="ex">.PHONY:</span> docker-rstudio</span>
+<span id="cb2-35"><a href="#cb2-35"></a><span class="ex">docker-rstudio:</span></span>
+<span id="cb2-36"><a href="#cb2-36"></a>    <span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-p</span> 8787:8787 <span class="at">-e</span> PASSWORD=password rocker/rstudio:4.5.1</span>
+<span id="cb2-37"><a href="#cb2-37"></a>    <span class="ex">open</span> http://localhost:8787/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </details>

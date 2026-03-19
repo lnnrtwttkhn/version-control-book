@@ -648,6 +648,10 @@ Editing files while using Git
 </section>
 <section id="staging" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="staging"><span class="header-section-number">5.2.3</span> Staging</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Command Line <i class="fa-solid fa-terminal" aria-label="terminal"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">RStudio <i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>You can use <code>git add</code> to place new or modified files in the staging area. The staging area acts as a space for gathering changes you plan to commit shortly. It bridges between your modified files and the next commit. For example, you can stage a specific file like this:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -741,11 +745,48 @@ Common <code>git add</code> flags
 </div>
 </div>
 </section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>In RStudio, you can use the built-in Git interface to stage your changes without using the command line:</p>
+<ol type="1">
+<li><strong>Open the Git tab</strong>: In RStudio, go to the top right pane where you can find the “Git” tab. Click on it to open the Git interface.</li>
+</ol>
+<div id="fig-rstudio-git-tab" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-git-tab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-git-tab.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-git-tab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: The Git tab in RStudio
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><p><strong>View changed files</strong>: Under the Git tab, you will see a list of files that have been changed or are new. These are equivalent to the files that you would see if you ran <code>git status</code> in the command line.</p></li>
+<li><p><strong>Stage specific files</strong>: To stage a specific file, check the box next to the file you want to stage. This action is equivalent to running <code>git add filename.txt</code> in the command line. The files you check are now in the staging area and ready to be committed.</p></li>
+</ol>
+<div id="fig-rstudio-staging" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-staging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-staging.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-staging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Staging changes in RStudio
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="committing" class="level3" data-number="5.2.4">
 <h3 data-number="5.2.4" class="anchored" data-anchor-id="committing"><span class="header-section-number">5.2.4</span> Committing</h3>
 <p>Now that the changes to your file(s) are staged, you are ready to <strong>create a commit</strong>.</p>
 <p>In simple terms, <strong>a commit in Git is like taking a snapshot of your project</strong> at a specific moment in time. It’s a way to save the changes you’ve made to your files. When you make a commit, you’re saying, “I want to remember what my project looks like right now”. Each commit in Git includes a record of the changes you’ve made, a description of what you did, and a unique identifier. Commits are like milestones in your project’s history, and they allow you to keep track of all the different versions of your work over time. You can go back to any commit to see what your project looked like at that point or even undo changes if needed. Commits help you manage and document the history of your project.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Command Line <i class="fa-solid fa-terminal" aria-label="terminal"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">RStudio <i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>To create a commit, use the <code>git commit</code> command followed by the flag <code>-m</code> and a commit message <em>in quotes</em> that describes the changes you made. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. If you just use <code>git commit</code> without adding a commit massage, the text editor of <a href="../chapters/setup.html">your choosing</a>, opens up and lets you type in a commit message.</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -811,6 +852,61 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>You can also create commits using the Git Interface in RStudio:</p>
+<ol type="1">
+<li><p><strong>Stage your changes</strong>: Before committing, make sure you have staged the changes you want to include in the commit. You can do this by checking the boxes next to the files in the “Git” tab, as explained in the previous section.</p>
+<div id="fig-rstudio-staging" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-staging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-staging.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-staging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Staging a file in RStudio
+</figcaption>
+</figure>
+</div></li>
+<li><p><strong>Open the commit tab</strong>: Once you have staged your change(s), click the “Commit” button on top of the Git tab. This will open a new window where you can enter your commit message.</p>
+<div id="fig-rstudio-commit-tab" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-commit-tab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-commit-tab.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-commit-tab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: Commit tab in RStudio
+</figcaption>
+</figure>
+</div></li>
+<li><p><strong>Review the staged changes</strong>: Below the commit message box, you will see a list of the changes that are staged for the commit. You can review these changes to make sure everything you want to commit is included.</p></li>
+<li><p><strong>Enter a commit message</strong>: In the commit dialogue window, you will see a text box where you can type your commit message. The commit message should be short yet informative, providing enough detail to understand the purpose of the commit. For example, you might type: <code>Add R Project file</code> or <code>Add filename.txt</code>.</p>
+<div id="fig-rstudio-commit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-commit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio-commit.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-commit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.5: Creating a commit in RStudio
+</figcaption>
+</figure>
+</div></li>
+<li><p><strong>Create the commit</strong>: After entering your commit message and reviewing the staged changes, click the “Commit” button at the bottom of the commit dialog window. This will create the commit with the specified message.</p></li>
+<li><p><strong>View the output</strong>: After committing, you will see output in the Git tab similar to the following:</p></li>
+</ol>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">main (root-commit) e9ea807</span><span class="co">]</span> Add filename.txt file</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>1 file changed, 0 insertions(+), 0 deletions(-)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>create mode 100644 filename.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>You have now successfully created a commit in the Git repository in RStudio!</p>
+</div>
+</div>
+</div>
 <section id="commit-description" class="level4" data-number="5.2.4.1">
 <h4 data-number="5.2.4.1" class="anchored" data-anchor-id="commit-description"><span class="header-section-number">5.2.4.1</span> Commit description</h4>
 <p>Although it’s not required, it can be a good idea to add a more thorough description to the commit, in addition to the (shorter) commit message. While the commit message is usually a single short (less than 50 character) line summarizing the change, a more thorough description can be used to add more background information or helpful links that may help to understand the changes of the commit.</p>
@@ -820,7 +916,7 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Message"</span> <span class="at">-m</span> <span class="st">"Description"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Message"</span> <span class="at">-m</span> <span class="st">"Description"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Common `git commit` flags">

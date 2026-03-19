@@ -499,6 +499,10 @@ Figure&nbsp;7.1: <strong>Illustration of branches in a Git repository.</strong> 
 </section>
 <section id="creating-a-new-branch" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="creating-a-new-branch"><span class="header-section-number">7.4</span> Creating a new branch</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Command Line <i class="fa-solid fa-terminal" aria-label="terminal"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">RStudio <i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>To create a new branch, use <code>git branch</code> followed by a branch name. For example, to create a new branch called <code>feature</code> run the following command:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -550,9 +554,35 @@ Common <code>git branch</code> flags
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>To create a new branch using the RStudio GUI, follow these steps:</p>
+<ol type="1">
+<li><p><strong>Access the Git Pane</strong>: Locate the Git pane, usually found in the top-right corner of the RStudio interface.</p></li>
+<li><p><strong>Create a New Branch</strong>: On the top of the pane, on the left side to the name of the branch you are currently on, there is a purple branch symbol. Click on it.</p></li>
+<li><p><strong>Name the New Branch</strong>: A prompt will appear asking you to name the new branch. Enter the desired name for your new branch, for example, <code>feature</code>. You can also choose to setup a remote branch with the same name.</p></li>
+<li><p><strong>Create and Switch to the New Branch</strong>: After naming the new branch, click “Create” to create the branch. RStudio will create the new branch and automatically switch to it. You should see a confirmation message indicating the successful creation and switch to the new branch.</p></li>
+</ol>
+<div id="fig-rstudio_newbranch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio_newbranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio_newbranch.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio_newbranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: Creating a branch using Rstudio
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="switching-branches" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="switching-branches"><span class="header-section-number">7.5</span> Switching branches</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Command Line <i class="fa-solid fa-terminal" aria-label="terminal"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">RStudio <i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>To switch to another branch, you can use <code>git switch</code>. For example, enter the following command to switch to the newly created <code>feature</code> branch:</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -614,6 +644,27 @@ Note&nbsp;7.1: Find out more: What is the difference between <code>git checkout<
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>To switch to another branch using the RStudio GUI, follow these steps:</p>
+<ol type="1">
+<li><p><strong>Access the Git Pane</strong>: Locate the Git pane, usually found in the top-right corner of the RStudio interface.</p></li>
+<li><p><strong>View Branches</strong>: In the Git pane, you should see the name of the branch you are currently on. E.g. “Main” or “Master”. Click on the name of your current branch. This will open a dialog showing the current branch and available branches.</p></li>
+<li><p><strong>Switch to Another Branch</strong>: In the branches dialog, you will see a list of branches. Locate the branch you want to switch to, for example, feature. Click on the branch name (e.g., feature) to select it. After clicking on it, RStudio will switch to the selected branch. You should see a confirmation message indicating the successful switch, similar to the command line output: Switched to branch ‘feature’</p></li>
+</ol>
+<div id="fig-rstudio_switchbranch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio_switchbranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rstudio_switchbranch.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio_switchbranch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: Switching branches using Rstudio
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <section id="switching-branches-with-uncommitted-changes" class="level3" data-number="7.5.1">
 <h3 data-number="7.5.1" class="anchored" data-anchor-id="switching-branches-with-uncommitted-changes"><span class="header-section-number">7.5.1</span> Switching branches with uncommitted changes</h3>
 <div class="callout callout-style-simple callout-caution">
@@ -655,13 +706,13 @@ Note&nbsp;7.1: Find out more: What is the difference between <code>git checkout<
 <div class="code-with-filename-file">
 <pre><strong>Code</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-11-1" class="code-annotation-target"><a href="#annotated-cell-11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge feature</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-1" class="code-annotation-target"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge feature</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="1" data-code-annotation="1">Replace <code>feature</code> with the name of your branch, if needed.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="1" data-code-annotation="1">Replace <code>feature</code> with the name of your branch, if needed.</span>
 </dd>
 </dl>
 </div>
