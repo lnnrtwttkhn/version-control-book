@@ -1,4 +1,4 @@
-IMAGES_URL=https://cloud.uni-hamburg.de/s/aD7NTNB9f4NDorT/download
+IMAGES_URL=https://nx81903.your-storageshare.de/s/PfSwyibwJmpWtaJ/download
 IMAGES_ARCHIVE=version-control-book.zip
 IMAGES_DIR=images/
 
@@ -30,3 +30,8 @@ clean:
 .PHONY: exercises
 exercises:
 	sh code/code-exercises.sh
+	
+.PHONY: docker-rstudio
+docker-rstudio:
+	docker run --rm -p 8787:8787 -e PASSWORD=password rocker/rstudio:4.5.1
+	open http://localhost:8787/
