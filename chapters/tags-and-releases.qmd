@@ -209,6 +209,69 @@ You've successfully created a GitHub release for your project! :rocket:
 After publishing the release, you and others can view it on the **Releases page** of your GitHub repository.
 It will include the release notes, associated Git tag, and any attached assets.
 
+## Using others' work
+
+Research projects often require the input of contributors apart from a paper's authors.
+This can be newly developed software or data that has been collected.
+Citing research outputs and work beyond paper's helps highlight the significance of other contributions and increases transparency by attributing work more accurately.
+This is important as in academia citations are often used as the main measure of people's output. 
+In turn, this acknowledgment can be an incentive to make research output more openly accessible.
+
+### Citation File
+
+A citation file is a file in your repository that tells others how they should cite your work.
+This decreases the risk of false citations and simplifies the process for everyone.
+Your file should be named `CITATION.cff` and once you add it to your default branch, GitHub will automatically create a `Cite this repository` button, which creates an APA style or BibTex citation.
+This is possible because the file contains machine- and human-readable information.
+Whilst GitLab does not automatically create this neat citation button, you can still include a similar citation file to ensure your work is cited correctly.
+To create a citation file on GitHub, you can make use of their template.
+Simply go to add a file on your project's main branch.
+Name the file `CITATION.cff` and an `Insert example` button will pop up.
+Click it and GitHub will insert the template, to which you which you  edit the information in the and then commit it.  
+Alternatively, you can make use of the free website [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/#/).
+It will ask you to provide them with the needed information to create a citation and will return the finished citation file to you.
+Add this to the root of your repository and you just made referencing your work a lot easier.
+
+### Licenses
+
+Licenses are telling people exactly what they can and can't use your work for.
+By default, your public repositories fall under copyright, which means others are not allowed to copy, modify or distribute it.
+Thus, if you want to make your work accessible or open source, you'll **have to** explicitly state what others are allowed to do with it.
+You might not want your project used for commercial purposes but are happy to see it in non-commercial ones.  
+For this it is helpful to refer to different types of licences.
+Whilst you could theoretically come up with your own license, it is highly advisable that you refer to a commonly used one, which not only prevents you from getting lost in the world of licences but also makes it easy for others to understand.  
+One major differentiation to consider is whether you want a `copyleft` or `permissive` license.
+`Copyleft` generally means that derivatives of your work will have to be made accessible under similar licenses.
+The derivatives are also made available and can in turn be built upon by others.
+`Permissive` licenses allow for flexible licensing of derivatives.
+They also allow for derivatives from open source work to be used under other licenses, which might make access more restricted.  
+Another differentiation is `attribution`, which defines whether derivatives have to include a reference  to your original work.  
+Whilst there are many licenses out there, Creative Commons or CC licenses are widely used across fields, from photography to code, and are easily understood.
+Use this [CC license chooser](https://chooser-beta.creativecommons.org/) to guide you to a CC license that suits you.
+[Choosealicense.com/](https://choosealicense.com/) from GitHub focuses on other widely used licenses and can be helpful in deciding on one.  
+Now that you've chosen a license, it is good practice to put it into the root of your repository under the file name `LICENSE.txt` so people can easily find it.
+Simply create the `LICENSE.txt` file and copy your chosen license's text into it.
+Also refer to it in your repository's `README.md`, so it really can't be missed.
+GitHub will automatically pick this up and display it on the right side in your repository's `About` section.
+If you want to know more about licensing, [The Turing Way](https://book.the-turing-way.org/reproducible-research/licensing) dives deeper into license discourse like the 'Ethical Source' movement and into pitfalls such as license compatibility.
+
+:::{.callout-tip collapse="true" title="Which license should I use?"}
+Whilst ultimately you have to decide how your work can to be used, the following licenses are commonly used for the respective outputs.  
+For code, the [MIT License](https://mit-license.org/) is often used and is a permissive license which does not call for attribution.
+For text, common licenses are [CC-BY](https://creativecommons.org/licenses/by/4.0/) and [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) which both require attribution, but differ in how derivatives have to be licensed.
+:::
+
+:::{.callout-tip collapse="true" title="Can I have files under different licenses in the same repository?"}
+If you want to make parts of your work accessible under different conditions, you can use different licenses in the same repository.
+In this case, really make sure to clearly declare this, mentioning it in each files header, as to not create too much confusion.
+:::
+
+:::{.callout-tip collapse="true" title="GitHub: Forking allowed!"}
+If you're using GitHub, you've already agreed to viewing and forking of your public repositories when you created your account and agreed to the "Terms of Service".
+However, this simply means people can look at and create a copy of your work, a fork, but that doesn't actually allow for them to use of modify it.
+This is where licences come in again and you can define how people can proceed with using your work.
+:::
+
 ## Zenodo
 
 [Zenodo](https://zenodo.org) is an open-access digital repository platform designed to **preserve and share research outputs**.
