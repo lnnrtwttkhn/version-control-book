@@ -1,0 +1,38 @@
+::: {.callout-tip collapse="true" title="FAQ: How can I compare two analyses on separate branches?"}
+
+If the two analyses are stored on two branches, you can compare them with Git's [`git diff`](https://git-scm.com/docs/git-diff) command.
+
+First, make sure that both branches exist in your local repository (use `git branch` to list them).
+Then compare the branches, for example `main` and `feature`:
+
+```{zsh filename="Code"}
+git diff main..feature
+```
+
+This shows the differences between the two branch tips: what you would need to change in `main` to get the content of `feature`.
+The branch that you consider the "old" or "reference" version goes first, and the branch that you want to compare against it goes second.
+
+Useful variants:
+
+- `git diff main..feature --stat` shows a summary of the changed files instead of the full diff.
+- `git diff main..feature -- analysis/` restricts the comparison to a specific folder, for example the folder that contains your analysis scripts.
+- `git diff main..feature -- analysis/script.R` compares a single file.
+- `git diff main...feature` (with three dots) compares the point where the two branches diverged (the *merge base*) with the tip of `feature`.
+This shows only the changes that were made on `feature` since it branched off, which can be easier to read when `main` has also changed in the meantime.
+- `git diff --word-diff main..feature` highlights changed words instead of changed lines, which can be helpful for comparing text such as manuscripts.
+- `git log --oneline --graph --all --decorate` visualizes the commit history of both branches.
+
+`git diff` only works for files that Git tracks and that it can display as text.
+If your analyses produce large binary files (for example, images or `.docx` files), Git cannot show a meaningful difference for them.
+In that case, check out each branch and compare the output files with a dedicated comparison tool, or use [`git difftool`](https://git-scm.com/docs/git-difftool).
+
+If you want to run or inspect both analyses at the same time without switching branches back and forth, you can use [`git worktree`](https://git-scm.com/docs/git-worktree) to check out a second branch into a separate folder:
+
+```{zsh filename="Code"}
+git worktree add ../analysis-feature feature
+```
+
+This creates a new folder `../analysis-feature` that contains the files from the `feature` branch, while your current folder stays on its current branch.
+You can then run both analyses and compare their outputs directly.
+
+:::

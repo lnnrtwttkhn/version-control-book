@@ -1,0 +1,23 @@
+::: {.callout-tip collapse="true" title="FAQ: What is the difference between Git Bash and PowerShell on Windows?"}
+
+**Git Bash** and **PowerShell** are two different command-line shells that you can use on Windows.
+They differ in their origin, their syntax, and the commands and tools that they provide.
+
+- **Git Bash** is installed together with [Git for Windows]({{< var links.git-for-windows >}}).
+It provides a [Bash]({{< var links.gnu-bash >}}) emulation based on [MSYS2](https://www.msys2.org/) and a set of common Unix command-line tools, such as `ls`, `cd`, `grep`, `rm`, and `ssh`.
+It uses Unix-style paths (for example, `/c/Users/yourusername`) and the Bash syntax that most commands in this book are written for.
+- **PowerShell** is Microsoft's task automation and configuration management framework.
+It includes a command-line shell and a scripting language that is built on .NET.
+PowerShell uses *cmdlets* with a verb-noun naming scheme (for example, `Get-ChildItem`), an object-oriented pipeline, and Windows-style paths (for example, `C:\Users\yourusername`).
+Many Unix-style names such as `ls` or `cd` also work as aliases for cmdlets, but their output and behavior can differ from their Unix counterparts.
+
+The Git program itself works in both shells, and Git commands such as `git status` or `git commit` are the same in both.
+The difference is the shell that interprets your input: Git Bash uses Bash syntax and Unix tools, while PowerShell uses PowerShell syntax and cmdlets.
+Some commands that work in Git Bash will therefore not work in PowerShell without modification, and vice versa.
+For example, the environment variable for your home folder is `$HOME` in Git Bash but `$env:USERPROFILE` in PowerShell.
+
+**Our recommendation:** On Windows, use **Git Bash** for the examples in this book.
+The commands in this book are written for Bash or Zsh, and Git Bash provides the Unix tools and syntax that they rely on.
+If you prefer PowerShell, you can still use Git, but you may need to translate some commands and path specifications.
+
+:::
