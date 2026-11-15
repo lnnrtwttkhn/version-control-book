@@ -1,0 +1,20 @@
+::: {.callout-tip collapse="true" title="FAQ: How many branches is normal?"}
+
+There is **no fixed or "normal" number of branches**.
+The right number depends on the size of your project, the number of people working on it, and your workflow.
+For a small research project, having a handful of active branches at any given time is typical. You do not need dozens of branches.
+
+Some general guidelines:
+
+- Every repository has at least one branch: the default branch, usually called `main` or `master`.
+- A common pattern is to have the default branch plus **one short-lived branch per task**, such as a new feature, a bug fix, or a single analysis.
+Once the work is finished and merged, the branch is deleted.
+- In research projects, it can make sense to use one branch per analysis variant, manuscript revision, or experiment, so that you can compare and switch between them without affecting the main branch.
+- Large software projects may have additional long-lived branches, for example for releases or for maintaining older versions.
+This is optional and usually not necessary for small research projects.
+
+Branches in Git are cheap: they are just pointers to commits, so creating a new branch does not copy your files.
+The real challenge is keeping them organized.
+To avoid clutter, follow the [best practices for branches](../chapters/branches.qmd#best-practices), [name branches consistently](../chapters/branches.qmd#name-branches-consistently), keep them focused on a single task, delete branches after merging, and do not keep stale branches around longer than necessary.
+
+:::

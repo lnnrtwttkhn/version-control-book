@@ -1,0 +1,17 @@
+::: {.callout-tip collapse="true" title="FAQ: What are the differences between Bash and Zsh?"}
+
+[Bash]({{< var links.gnu-bash >}}) (Bourne Again SHell) and [Zsh](https://www.zsh.org/) (Z shell) are both Unix shells.
+They are largely compatible, and the Git commands used in this book work in both of them.
+
+The most important differences are:
+
+- **Default shell:** Bash is the default shell on most Linux distributions and on macOS up to Mojave.
+Zsh is the default shell on macOS Catalina and later.
+- **Interactive features:** Zsh offers more advanced features for interactive use, such as improved tab completion, spelling correction, powerful globbing, customizable prompts, and a large ecosystem of plugins and themes (for example, [Oh My Zsh](https://ohmyz.sh/)).
+- **Scripting syntax:** There are differences that matter when writing shell scripts, for example in array indexing (Bash arrays start at index 0, while Zsh arrays start at index 1 by default), word splitting, and globbing behavior.
+Bash and Zsh also use different startup files (for example, `.bashrc` and `.bash_profile` versus `.zshrc` and `.zprofile`).
+
+For everyday Git usage, these differences rarely matter: the commands `git status`, `git add`, `git commit`, `git switch`, and so on are identical in Bash and Zsh.
+**Our recommendation:** Use the default shell of your operating system, or Git Bash on Windows, and do not worry about switching shells for this book.
+
+:::

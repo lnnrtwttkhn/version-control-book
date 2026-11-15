@@ -1,0 +1,24 @@
+::: {.callout-tip collapse="true" title="FAQ: What are the differences between GitHub and GitLab?"}
+
+[GitHub]({{< var links.github >}}) and [GitLab]({{< var links.gitlab >}}) are both **platforms for hosting Git repositories** and collaborating on projects.
+They are not replacements for Git: Git is the version control system that runs on your computer, while GitHub and GitLab are remote hosting services that store Git repositories on the internet or on a server.
+The Git commands in this book work in the same way with both platforms.
+
+The two platforms share many features, including repositories, issues, pull requests or merge requests, code review, wikis, releases, and continuous integration and delivery (CI/CD).
+Some differences are:
+
+- **Terminology:** GitHub calls a proposed change a *pull request*, while GitLab calls it a *merge request*.
+On GitHub, users and repositories can be organized in *organizations*. On GitLab, the equivalent is a *group*.
+- **CI/CD:** GitHub uses [GitHub Actions](https://docs.github.com/en/actions), configured in `.github/workflows/`. GitLab uses [GitLab CI/CD](https://docs.gitlab.com/ci/), configured in a `.gitlab-ci.yml` file.
+- **Hosting:** GitHub is primarily used as a cloud service at [github.com]({{< var links.github >}}).
+GitLab is also available as a cloud service at [gitlab.com]({{< var links.gitlab >}}), but its Community Edition can additionally be installed and operated on your own server.
+This is why many universities and research institutions, including the University of Hamburg and the Max Planck Institute for Human Development, run their own GitLab instances.
+- **Popularity and ecosystem:** GitHub is the largest platform for open-source projects and has a very large ecosystem of integrations.
+GitLab is particularly common in organizations and research institutions that value self-hosting and an integrated DevOps platform.
+- **Free plans:** Both platforms offer free plans, but the included features and limits differ and can change over time.
+Check the current [GitHub pricing](https://github.com/pricing) and [GitLab pricing](https://about.gitlab.com/pricing/) pages before choosing a plan.
+
+**Which one should you use?** In most cases, use the platform that your institution, your research group, or your collaborators use.
+If you are free to choose, GitHub is a good default because of its popularity and large community, while GitLab is a strong choice if you need to host repositories on your own infrastructure.
+
+:::
