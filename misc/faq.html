@@ -411,6 +411,51 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: What is the difference between Git Bash and PowerShell on Windows?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: What is the difference between Git Bash and PowerShell on Windows?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Git Bash</strong> and <strong>PowerShell</strong> are two different command-line shells that you can use on Windows. They differ in their origin, their syntax, and the commands and tools that they provide.</p>
+<ul>
+<li><strong>Git Bash</strong> is installed together with <a href="https://gitforwindows.org/">Git for Windows</a>. It provides a <a href="https://www.gnu.org/software/bash/">Bash</a> emulation based on <a href="https://www.msys2.org/">MSYS2</a> and a set of common Unix command-line tools, such as <code>ls</code>, <code>cd</code>, <code>grep</code>, <code>rm</code>, and <code>ssh</code>. It uses Unix-style paths (for example, <code>/c/Users/yourusername</code>) and the Bash syntax that most commands in this book are written for.</li>
+<li><strong>PowerShell</strong> is Microsoft’s task automation and configuration management framework. It includes a command-line shell and a scripting language that is built on .NET. PowerShell uses <em>cmdlets</em> with a verb-noun naming scheme (for example, <code>Get-ChildItem</code>), an object-oriented pipeline, and Windows-style paths (for example, <code>C:\Users\yourusername</code>). Many Unix-style names such as <code>ls</code> or <code>cd</code> also work as aliases for cmdlets, but their output and behavior can differ from their Unix counterparts.</li>
+</ul>
+<p>The Git program itself works in both shells, and Git commands such as <code>git status</code> or <code>git commit</code> are the same in both. The difference is the shell that interprets your input: Git Bash uses Bash syntax and Unix tools, while PowerShell uses PowerShell syntax and cmdlets. Some commands that work in Git Bash will therefore not work in PowerShell without modification, and vice versa. For example, the environment variable for your home folder is <code>$HOME</code> in Git Bash but <code>$env:USERPROFILE</code> in PowerShell.</p>
+<p><strong>Our recommendation:</strong> On Windows, use <strong>Git Bash</strong> for the examples in this book. The commands in this book are written for Bash or Zsh, and Git Bash provides the Unix tools and syntax that they rely on. If you prefer PowerShell, you can still use Git, but you may need to translate some commands and path specifications.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: What are the differences between Bash and Zsh?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: What are the differences between Bash and Zsh?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><a href="https://www.gnu.org/software/bash/">Bash</a> (Bourne Again SHell) and <a href="https://www.zsh.org/">Zsh</a> (Z shell) are both Unix shells. They are largely compatible, and the Git commands used in this book work in both of them.</p>
+<p>The most important differences are:</p>
+<ul>
+<li><strong>Default shell:</strong> Bash is the default shell on most Linux distributions and on macOS up to Mojave. Zsh is the default shell on macOS Catalina and later.</li>
+<li><strong>Interactive features:</strong> Zsh offers more advanced features for interactive use, such as improved tab completion, spelling correction, powerful globbing, customizable prompts, and a large ecosystem of plugins and themes (for example, <a href="https://ohmyz.sh/">Oh My Zsh</a>).</li>
+<li><strong>Scripting syntax:</strong> There are differences that matter when writing shell scripts, for example in array indexing (Bash arrays start at index 0, while Zsh arrays start at index 1 by default), word splitting, and globbing behavior. Bash and Zsh also use different startup files (for example, <code>.bashrc</code> and <code>.bash_profile</code> versus <code>.zshrc</code> and <code>.zprofile</code>).</li>
+</ul>
+<p>For everyday Git usage, these differences rarely matter: the commands <code>git status</code>, <code>git add</code>, <code>git commit</code>, <code>git switch</code>, and so on are identical in Bash and Zsh. <strong>Our recommendation:</strong> Use the default shell of your operating system, or Git Bash on Windows, and do not worry about switching shells for this book.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
@@ -426,11 +471,106 @@ FAQ: “I forgot to close the quotation marks of my commit message! What do I do
 </section>
 <section id="branches" class="level2">
 <h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: How many branches is normal?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: How many branches is normal?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>There is <strong>no fixed or “normal” number of branches</strong>. The right number depends on the size of your project, the number of people working on it, and your workflow. For a small research project, having a handful of active branches at any given time is typical. You do not need dozens of branches.</p>
+<p>Some general guidelines:</p>
+<ul>
+<li>Every repository has at least one branch: the default branch, usually called <code>main</code> or <code>master</code>.</li>
+<li>A common pattern is to have the default branch plus <strong>one short-lived branch per task</strong>, such as a new feature, a bug fix, or a single analysis. Once the work is finished and merged, the branch is deleted.</li>
+<li>In research projects, it can make sense to use one branch per analysis variant, manuscript revision, or experiment, so that you can compare and switch between them without affecting the main branch.</li>
+<li>Large software projects may have additional long-lived branches, for example for releases or for maintaining older versions. This is optional and usually not necessary for small research projects.</li>
+</ul>
+<p>Branches in Git are cheap: they are just pointers to commits, so creating a new branch does not copy your files. The real challenge is keeping them organized. To avoid clutter, follow the <a href="../chapters/branches.html#best-practices">best practices for branches</a>, <a href="../chapters/branches.html#name-branches-consistently">name branches consistently</a>, keep them focused on a single task, delete branches after merging, and do not keep stale branches around longer than necessary.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: How can I compare two analyses on separate branches?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: How can I compare two analyses on separate branches?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If the two analyses are stored on two branches, you can compare them with Git’s <a href="https://git-scm.com/docs/git-diff"><code>git diff</code></a> command.</p>
+<p>First, make sure that both branches exist in your local repository (use <code>git branch</code> to list them). Then compare the branches, for example <code>main</code> and <code>feature</code>:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main..feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This shows the differences between the two branch tips: what you would need to change in <code>main</code> to get the content of <code>feature</code>. The branch that you consider the “old” or “reference” version goes first, and the branch that you want to compare against it goes second.</p>
+<p>Useful variants:</p>
+<ul>
+<li><code>git diff main..feature --stat</code> shows a summary of the changed files instead of the full diff.</li>
+<li><code>git diff main..feature -- analysis/</code> restricts the comparison to a specific folder, for example the folder that contains your analysis scripts.</li>
+<li><code>git diff main..feature -- analysis/script.R</code> compares a single file.</li>
+<li><code>git diff main...feature</code> (with three dots) compares the point where the two branches diverged (the <em>merge base</em>) with the tip of <code>feature</code>. This shows only the changes that were made on <code>feature</code> since it branched off, which can be easier to read when <code>main</code> has also changed in the meantime.</li>
+<li><code>git diff --word-diff main..feature</code> highlights changed words instead of changed lines, which can be helpful for comparing text such as manuscripts.</li>
+<li><code>git log --oneline --graph --all --decorate</code> visualizes the commit history of both branches.</li>
+</ul>
+<p><code>git diff</code> only works for files that Git tracks and that it can display as text. If your analyses produce large binary files (for example, images or <code>.docx</code> files), Git cannot show a meaningful difference for them. In that case, check out each branch and compare the output files with a dedicated comparison tool, or use <a href="https://git-scm.com/docs/git-difftool"><code>git difftool</code></a>.</p>
+<p>If you want to run or inspect both analyses at the same time without switching branches back and forth, you can use <a href="https://git-scm.com/docs/git-worktree"><code>git worktree</code></a> to check out a second branch into a separate folder:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> worktree add ../analysis-feature feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This creates a new folder <code>../analysis-feature</code> that contains the files from the <code>feature</code> branch, while your current folder stays on its current branch. You can then run both analyses and compare their outputs directly.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="remotes-introduction" class="level2">
 <h2 class="anchored" data-anchor-id="remotes-introduction">Remotes: Introduction</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: What are the differences between GitHub and GitLab?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: What are the differences between GitHub and GitLab?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><a href="https://github.com/">GitHub</a> and <a href="https://gitlab.com/">GitLab</a> are both <strong>platforms for hosting Git repositories</strong> and collaborating on projects. They are not replacements for Git: Git is the version control system that runs on your computer, while GitHub and GitLab are remote hosting services that store Git repositories on the internet or on a server. The Git commands in this book work in the same way with both platforms.</p>
+<p>The two platforms share many features, including repositories, issues, pull requests or merge requests, code review, wikis, releases, and continuous integration and delivery (CI/CD). Some differences are:</p>
+<ul>
+<li><strong>Terminology:</strong> GitHub calls a proposed change a <em>pull request</em>, while GitLab calls it a <em>merge request</em>. On GitHub, users and repositories can be organized in <em>organizations</em>. On GitLab, the equivalent is a <em>group</em>.</li>
+<li><strong>CI/CD:</strong> GitHub uses <a href="https://docs.github.com/en/actions">GitHub Actions</a>, configured in <code>.github/workflows/</code>. GitLab uses <a href="https://docs.gitlab.com/ci/">GitLab CI/CD</a>, configured in a <code>.gitlab-ci.yml</code> file.</li>
+<li><strong>Hosting:</strong> GitHub is primarily used as a cloud service at <a href="https://github.com/">github.com</a>. GitLab is also available as a cloud service at <a href="https://gitlab.com/">gitlab.com</a>, but its Community Edition can additionally be installed and operated on your own server. This is why many universities and research institutions, including the University of Hamburg and the Max Planck Institute for Human Development, run their own GitLab instances.</li>
+<li><strong>Popularity and ecosystem:</strong> GitHub is the largest platform for open-source projects and has a very large ecosystem of integrations. GitLab is particularly common in organizations and research institutions that value self-hosting and an integrated DevOps platform.</li>
+<li><strong>Free plans:</strong> Both platforms offer free plans, but the included features and limits differ and can change over time. Check the current <a href="https://github.com/pricing">GitHub pricing</a> and <a href="https://about.gitlab.com/pricing/">GitLab pricing</a> pages before choosing a plan.</li>
+</ul>
+<p><strong>Which one should you use?</strong> In most cases, use the platform that your institution, your research group, or your collaborators use. If you are free to choose, GitHub is a good default because of its popularity and large community, while GitLab is a strong choice if you need to host repositories on your own infrastructure.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="FAQ: I can't connect using my SSH key?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -439,7 +579,7 @@ FAQ: I can’t connect using my SSH key?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>As a first step, try going through the process again, whilst paying special attention to doing every step carefully. Oftentimes, there is some confusion when copying the SSH key to the clipboard or when entering a new passphrase, as there’s no visible feedback. After entering the <a href="remotes-intro.qmd#copying-the-public-ssh-key-to-your-clipboard">command for copying</a> the SSH key, you can usually trust that it is in your clipboard and move on to the next step. Similarly, be cautious what you are typing in as a passphrase, as you can’t see what you are entering. If you don’t want a passphrase, simply click enter twice when asked to set one up, leaving the passphrase empty.<br>
 Another issue could be that you have a pre-existing SSH key set up. You will get a warning about this and can simply use this pre-existing one to connect to your remote server of choice.</p>
@@ -448,7 +588,7 @@ Another issue could be that you have a pre-existing SSH key set up. You will get
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="FAQ: My PAT is not shown when I enter it into the terminal?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -457,7 +597,7 @@ FAQ: My PAT is not shown when I enter it into the terminal?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>When authenticating with GitHub on macOS, you may notice that the password doesn’t show up in the command line as you type it. This is normal behavior to ensure security. You can still enter your password (or delete what you typed) even though it doesn’t appear on the screen. You can also copy and paste text, for example your PAT from GitHub. When authenticating on Windows, a new window might pop up in which you can enter your PAT.</p>
 </div>

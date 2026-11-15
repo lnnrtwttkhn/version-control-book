@@ -631,6 +631,52 @@ Common <code>git rebase</code> flags
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> alias.graph <span class="st">"log --oneline --graph --all --decorate"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="FAQ: How can I compare two analyses on separate branches?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAQ: How can I compare two analyses on separate branches?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If the two analyses are stored on two branches, you can compare them with Git’s <a href="https://git-scm.com/docs/git-diff"><code>git diff</code></a> command.</p>
+<p>First, make sure that both branches exist in your local repository (use <code>git branch</code> to list them). Then compare the branches, for example <code>main</code> and <code>feature</code>:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff main..feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This shows the differences between the two branch tips: what you would need to change in <code>main</code> to get the content of <code>feature</code>. The branch that you consider the “old” or “reference” version goes first, and the branch that you want to compare against it goes second.</p>
+<p>Useful variants:</p>
+<ul>
+<li><code>git diff main..feature --stat</code> shows a summary of the changed files instead of the full diff.</li>
+<li><code>git diff main..feature -- analysis/</code> restricts the comparison to a specific folder, for example the folder that contains your analysis scripts.</li>
+<li><code>git diff main..feature -- analysis/script.R</code> compares a single file.</li>
+<li><code>git diff main...feature</code> (with three dots) compares the point where the two branches diverged (the <em>merge base</em>) with the tip of <code>feature</code>. This shows only the changes that were made on <code>feature</code> since it branched off, which can be easier to read when <code>main</code> has also changed in the meantime.</li>
+<li><code>git diff --word-diff main..feature</code> highlights changed words instead of changed lines, which can be helpful for comparing text such as manuscripts.</li>
+<li><code>git log --oneline --graph --all --decorate</code> visualizes the commit history of both branches.</li>
+</ul>
+<p><code>git diff</code> only works for files that Git tracks and that it can display as text. If your analyses produce large binary files (for example, images or <code>.docx</code> files), Git cannot show a meaningful difference for them. In that case, check out each branch and compare the output files with a dedicated comparison tool, or use <a href="https://git-scm.com/docs/git-difftool"><code>git difftool</code></a>.</p>
+<p>If you want to run or inspect both analyses at the same time without switching branches back and forth, you can use <a href="https://git-scm.com/docs/git-worktree"><code>git worktree</code></a> to check out a second branch into a separate folder:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Code</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> worktree add ../analysis-feature feature</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>This creates a new folder <code>../analysis-feature</code> that contains the files from the <code>feature</code> branch, while your current folder stays on its current branch. You can then run both analyses and compare their outputs directly.</p>
+</div>
+</div>
+</div>
 
 
 </section>
